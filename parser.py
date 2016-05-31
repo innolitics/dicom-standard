@@ -67,6 +67,7 @@ def get_module_attr_raw(standard):
             table_data = extract_table_data(table_body)
             attr_names = []
             attr_tags = []
+            attr_types = []
             attr_descriptions = []
             for row in table_data:
                 try:
@@ -76,11 +77,17 @@ def get_module_attr_raw(standard):
                     else:
                         attr_names.append(row[0])
                     attr_tags.append(row[1])
-                    attr_descriptions.append(row[2])
+                    i = 2
+                    if (len(row) < 4):
+                        attr_types.append(None)     
+                    else:
+                        attr_types.append(row[i])
+                        i += 1
+                    attr_descriptions.append(row[i])
                 except IndexError:
                     module_attr_rough.write("Index error, table row not conforming to standard module-attribute structure.\n")
 
-            module_attr_rough.write(json.dumps([table_name, {'Attribute Name': attr_names, 'Tag': attr_tags, 'Description': attr_descriptions} ], sort_keys=True, indent=4, separators=(',',':')) + "\n")
+            module_attr_rough.write(json.dumps([table_name, {'Attribute Name': attr_names, 'Tag': attr_tags, 'Type': attr_types, 'Description': attr_descriptions} ], sort_keys=True, indent=4, separators=(',',':')) + "\n")
     module_attr_rough.close()
 
 def extract_doc_links(table_body):
