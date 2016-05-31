@@ -81,11 +81,7 @@ def get_module_attr_raw(standard):
                     if (basic_entry_header_pattern.match(row[0]) or enhanced_encoding_header_pattern.match(row[0])):
                         i += 1
                         continue
-                    if (link_pattern.match(row[0])):
-                        if (not ref_links[i]):
-                            print("Error: Link not found")
-                            i += 1
-                            continue
+                    if (ref_links[i] is not None):
                         a_name, a_tag, a_type, a_descrip = get_linked_attrs(all_tables, ref_links[i])
                         attr_names.extend(a_name)
                         attr_tags.extend(a_tag)
@@ -111,7 +107,6 @@ def get_module_attr_raw(standard):
     module_attr_rough.close()
 
 def get_linked_attrs(all_tables, ref_id):
-    link_pattern = re.compile('.*Include.*')
     basic_entry_header_pattern = re.compile(".*BASIC CODED ENTRY ATTRIBUTES$")
     enhanced_encoding_header_pattern = re.compile(".*ENHANCED ENCODING MODE$")
     attr_names = []
@@ -134,11 +129,7 @@ def get_linked_attrs(all_tables, ref_id):
                 if (basic_entry_header_pattern.match(row[0]) or enhanced_encoding_header_pattern.match(row[0])):
                     i += 1
                     continue
-                if (link_pattern.match(row[0])):
-                    if (not ref_links[i]):
-                        print("Error: Link not found")
-                        i += 1
-                        continue
+                if (ref_links[i] is not None):
                     a_name, a_tag, a_type, a_descrip = get_linked_attrs(all_tables, ref_links[i])
                     attr_names.extend(a_name)
                     attr_tags.extend(a_tag)
@@ -173,7 +164,7 @@ def get_include_links(table_body):
                 span_text = col.p.span
                 # If we find a span with "Include" and a link, we've found one!
                 #if ((span_text is not None) and (span_text.a is not None)):
-                if (link_pattern.match(span_text.get_text())):
+                if ((span_text.a is not None) and (link_pattern.match(span_text.get_text()))):
                     ref_links.append(span_text.a.get('href'))
                     appended = True
                     break
