@@ -55,7 +55,10 @@ def get_ciod_module_raw(standard):
 
 def get_module_attr_raw(standard):
     module_table_pattern = re.compile(".*Module Attributes$")
-    macro_pattern = re.compile(".*Include.*")
+    basic_entry_header_pattern = re.compile(".*BASIC CODED ENTRY ATTRIBUTES$")
+    enhanced_encoding_header_pattern = re.compile(".*ENHANCED ENCODING MODE$")
+    link_pattern = re.compile(".*Include.*")
+    all_tables = standard.find_all('div', class_='table')
     module_table_divs = get_chapter_table_divs(standard, 'chapter_C')
     module_attr_rough = open('module_attr_rough.json', 'w')
     # Extract all the module description tables
@@ -69,26 +72,125 @@ def get_module_attr_raw(standard):
             attr_tags = []
             attr_types = []
             attr_descriptions = []
+            ref_links = get_include_links(table_body)
+            i = 0
             for row in table_data:
                 try:
-                    # Skip macros right now until we define a way to follow those links
-                    if (macro_pattern.match(row[0])):
-                        continue 
+                    # There seem to be only two headers like this in the whole standard. They break form, so 
+                    # we catch them with a regex match.
+                    if (basic_entry_header_pattern.match(row[0]) or enhanced_encoding_header_pattern.match(row[0])):
+                        i += 1
+                        continue
+                    if (link_pattern.match(row[0])):
+                        if (not ref_links[i]):
+                            print("Error: Link not found")
+                            i += 1
+                            continue
+                        a_name, a_tag, a_type, a_descrip = get_linked_attrs(all_tables, ref_links[i])
+                        attr_names.extend(a_name)
+                        attr_tags.extend(a_tag)
+                        attr_types.extend(a_type)
+                        attr_descriptions.extend(a_descrip)
+                        i += 1
+                        continue
                     else:
                         attr_names.append(row[0])
                     attr_tags.append(row[1])
-                    i = 2
+                    j = 2
                     if (len(row) < 4):
                         attr_types.append(None)     
                     else:
-                        attr_types.append(row[i])
-                        i += 1
-                    attr_descriptions.append(row[i])
+                        attr_types.append(row[j])
+                        j += 1
+                    attr_descriptions.append(row[j])
                 except IndexError:
                     module_attr_rough.write("Index error, table row not conforming to standard module-attribute structure.\n")
+                i += 1
 
             module_attr_rough.write(json.dumps([table_name, {'Attribute Name': attr_names, 'Tag': attr_tags, 'Type': attr_types, 'Description': attr_descriptions} ], sort_keys=True, indent=4, separators=(',',':')) + "\n")
     module_attr_rough.close()
+
+def get_linked_attrs(all_tables, ref_id):
+    link_pattern = re.compile('.*Include.*')
+    basic_entry_header_pattern = re.compile(".*BASIC CODED ENTRY ATTRIBUTES$")
+    enhanced_encoding_header_pattern = re.compile(".*ENHANCED ENCODING MODE$")
+    attr_names = []
+    attr_tags = []
+    attr_types = []
+    attr_descriptions = []
+    for table in all_tables:
+        if (table.a.get('id') == ref_id):
+            table_body = table.div.table.tbody
+            table_data = extract_table_data(table_body)
+            ref_links = get_include_links(table_body)
+            # Prevent an infinitely recursive reference
+            for i in range(len(ref_links)):
+                if (ref_links[i] == ref_id):
+                    ref_links[i] = None
+            i = 0
+            for row in table_data:
+                # There seem to be only two headers like this in the whole standard. They break form, so 
+                # we catch them with a specific regex match.
+                if (basic_entry_header_pattern.match(row[0]) or enhanced_encoding_header_pattern.match(row[0])):
+                    i += 1
+                    continue
+                if (link_pattern.match(row[0])):
+                    if (not ref_links[i]):
+                        print("Error: Link not found")
+                        i += 1
+                        continue
+                    a_name, a_tag, a_type, a_descrip = get_linked_attrs(all_tables, ref_links[i])
+                    attr_names.extend(a_name)
+                    attr_tags.extend(a_tag)
+                    attr_types.extend(a_type)
+                    attr_descriptions.extend(a_descrip)
+                    i += 1
+                    continue
+                else:
+                    attr_names.append(row[0])
+                attr_tags.append(row[1])
+                j = 2
+                if (len(row) < 4):
+                    attr_types.append(None)     
+                else:
+                    attr_types.append(row[j])
+                    j += 1
+                attr_descriptions.append(row[j])
+                i += 1
+    return (attr_names, attr_tags, attr_types, attr_descriptions) 
+
+# Generate a list containing the href for every include link for each table row.
+# If a table row doesn't have an href, the list contains a placeholder None
+def get_include_links(table_body):
+    link_pattern = re.compile('.*Include.*')
+    ref_links = []
+    rows = table_body.find_all('tr')
+    for row in rows:
+        appended = False
+        cols = row.find_all('td')
+        for col in cols:
+            try:
+                span_text = col.p.span
+                # If we find a span with "Include" and a link, we've found one!
+                #if ((span_text is not None) and (span_text.a is not None)):
+                if (link_pattern.match(span_text.get_text())):
+                    ref_links.append(span_text.a.get('href'))
+                    appended = True
+                    break
+            except AttributeError:
+                continue
+        if not appended:
+            ref_links.append(None)
+    # Separate the div ID from the URL
+    i = 0
+    for link in ref_links:
+        if link:
+            _url, _pound, table_id = link.partition('#')
+            if table_id is None:
+                print("URL formatting error")
+            ref_links[i] = table_id
+        i += 1    
+    return ref_links
 
 def extract_doc_links(table_body):
     data = []
