@@ -6,30 +6,48 @@
 
 from bs4 import BeautifulSoup
 import json
-import subprocess as sp
+import re
 
 def main():
-    # Modify incoming html file to remove illegal unicode characters
-    # TODO: this will later be moved to a Makefile macro
-    sp.call(['cp', './PS3.3.html', './temp_standard.html'])
-    sp.call(['sed', '-i', '-e', "s/&nbsp;/ /g", './temp_standard.html'])
-
-    html_doc = open('./temp_standard.html', 'r')
+    html_doc = open('temp_standard.html', 'r')
     standard = BeautifulSoup(html_doc, 'html.parser')
+    
+    iod_table_pattern = re.compile(".*IOD Modules$")
 
     ciod_table_divs = get_composite_IOD_divs(standard)
     # Extract all the composite IOD tables 
     for tdiv in ciod_table_divs:
         data = []
-        table_body = tdiv.div.table.tbody
         table_name = tdiv.p.strong.get_text()
-        table_data = extract_table_data(table_body)
-        print(table_name)
-        print(table_data)
-        # Below is the json encoding for tables A.2-1 and on
-        # TODO: divide the chapter A tables up into groups
-        # json.dumps([table_name, {'IE': unicode(table_data[0]),'Module': unicode(table_data[1]), 'Reference': unicode(table_data[2]), 'Usage': unicode(table_data[3])} ])
-
+        if iod_table_pattern.match(table_name):
+            table_body = tdiv.div.table.tbody
+            table_data = extract_table_data(table_body)
+            last_ie = table_data[0][0]
+            ies = []
+            modules = []
+            references = []
+            usage = []
+            for row in table_data:
+                try: 
+                    i = 0
+                    # If row has three entries, it's because the first column is merged. Use
+                    # the previous IE entry to get the correct value here.
+                    if (len(row) < 4):
+                        ies.append(last_ie)
+                        i = 0
+                    else:
+                        ies.append(row[0])
+                        last_ie = row[0]
+                        i = 1
+                    modules.append(row[i])
+                    i += 1
+                    references.append(row[i])
+                    i += 1
+                    usage.append(row[i])
+                except IndexError:
+                    print("Index error, table row not conforming to standard IOD table structure.")
+            print json.dumps([table_name, {'IE': unicode(ies),'Module': unicode(modules), 'Reference': unicode(references), 'Usage': unicode(usage)} ], sort_keys=True, indent=4, separators=(',',':'))
+            
 def extract_table_data(table_body):
     data = []
     rows = table_body.find_all('tr')
