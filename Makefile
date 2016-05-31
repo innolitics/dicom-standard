@@ -6,7 +6,7 @@ all: parser.py PS3.3.html
 	rm -f temp_standard.html
 
 clean: 
-	rm -f ciod_module_rough.json parser.pyc requirements.txt
+	rm -f ciod_module_rough.json module_attr_rough.json parser.pyc requirements.txt
 
 install:
 	pip freeze > requirements.txt
