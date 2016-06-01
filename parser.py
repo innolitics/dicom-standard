@@ -1,24 +1,29 @@
-# parser.py
-#
-# Parse the DICOM standard HTML file to extract the composite
-# IOD table, module table, attributes table, and their 
-# relationship tables.
+'''
+parser.py
 
-from bs4 import BeautifulSoup
+Parse the DICOM standard HTML file to extract the composite
+IOD table, module table, attributes table, and their 
+relationship tables.
+'''
+
 import json
 import re
+import sys
 
-def main():
-    html_doc = open('temp_standard.html', 'r')
+from bs4 import BeautifulSoup
+
+def main(html_standard_path):
+    html_doc = open(html_standard_path, 'r')
     standard = BeautifulSoup(html_doc, 'html.parser')
     get_ciod_module_raw(standard)
     get_module_attr_raw(standard)
+    html_doc.close()
 
 def get_ciod_module_raw(standard):
     iod_table_pattern = re.compile(".*IOD Modules$")
     ciod_table_divs = get_chapter_table_divs(standard, 'chapter_A')
     # Extract all the composite IOD tables 
-    ciod_module_rough = open('ciod_module_rough.json', 'w')
+    ciod_module_rough = open('tmp/ciod_module_rough.json', 'w')
     for tdiv in ciod_table_divs:
         data = []
         table_name = tdiv.p.strong.get_text()
@@ -50,7 +55,10 @@ def get_ciod_module_raw(standard):
                     usage.append(row[i])
                 except IndexError:
                     ciod_module_rough.write("Index error, table row not conforming to standard IOD table structure.\n")
-            ciod_module_rough.write(json.dumps([table_name, {'IE': ies,'Module': modules, 'Reference': references, 'Usage': usage, 'Urls': urls} ], sort_keys=True, indent=4, separators=(',',':')) + "\n")
+            json_list = [table_name]
+            for i in range (len(ies)):
+                json_list.append({'IE Name': ies[i], 'Module': modules[i], 'Doc Reference': references[i], 'Usage': usage[i], 'URL':urls[i]})
+            ciod_module_rough.write(json.dumps(json_list, sort_keys=True, indent=4, separators=(',',':')) + "\n")
     ciod_module_rough.close()
 
 def get_module_attr_raw(standard):
@@ -60,7 +68,7 @@ def get_module_attr_raw(standard):
     link_pattern = re.compile(".*Include.*")
     all_tables = standard.find_all('div', class_='table')
     module_table_divs = get_chapter_table_divs(standard, 'chapter_C')
-    module_attr_rough = open('module_attr_rough.json', 'w')
+    module_attr_rough = open('tmp/module_attr_rough.json', 'w')
     # Extract all the module description tables
     for tdiv in module_table_divs:
         data = []
@@ -101,9 +109,29 @@ def get_module_attr_raw(standard):
                     attr_descriptions.append(row[j])
                 except IndexError:
                     module_attr_rough.write("Index error, table row not conforming to standard module-attribute structure.\n")
+                    # Catch errors and insert None into each field as a placeholder.
+                    if (len(attr_names)-1 == i):
+                        attr_names[len(attr_names)-1] = None
+                    else:
+                        attr_names.append(None)
+                    if (len(attr_tags)-1 == i):
+                        attr_tags[len(attr_tags)-1] = None
+                    else:
+                        attr_tags.append(None)
+                    if (len(attr_types)-1 == i):
+                        attr_types[len(attr_types)-1] = None
+                    else:
+                        attr_types.append(None)
+                    if (len(attr_descriptions)-1 == i):
+                        attr_descriptions[len(attr_descriptions)-1] = None
+                    else:
+                        attr_descriptions.append(None)
                 i += 1
 
-            module_attr_rough.write(json.dumps([table_name, {'Attribute Name': attr_names, 'Tag': attr_tags, 'Type': attr_types, 'Description': attr_descriptions} ], sort_keys=True, indent=4, separators=(',',':')) + "\n")
+            json_list = [table_name]
+            for i in range (len(attr_descriptions)):
+                json_list.append({'Attribute:': attr_names[i], 'Tag': attr_tags[i], 'Type': attr_types[i], 'Description': attr_descriptions[i]});
+            module_attr_rough.write(json.dumps(json_list, sort_keys=True, indent=4, separators=(',',':')) + "\n")
     module_attr_rough.close()
 
 def get_linked_attrs(all_tables, ref_id):
@@ -208,4 +236,8 @@ def get_chapter_table_divs(standard, chapter_name):
             table_divs = chapter.find_all('div', class_='table')
             return table_divs
 
-main()
+if __name__ == '__main__':
+    if sys.argv[1] is not None:
+        main(sys.argv[1])
+    else:
+        print("No DICOM standard HTML file path specified. Please pass a path to the script.")
