@@ -34,32 +34,12 @@ def get_ciod_module_raw(standard_path, json_path):
         table_name = tdiv.p.strong.get_text()
         if iod_table_pattern.match(table_name):
             table_body = tdiv.div.table.tbody
-            table_data = pl.extract_table_data(table_body)
             urls = pl.extract_doc_links(table_body)
-            last_ie = table_data[0][0]
-            ies = []
-            modules = []
-            references = []
-            usage = []
-            for row in table_data:
-                try: 
-                    i = 0
-                    # If row has three entries, it's because the first column is merged. Use
-                    # the previous IE entry to get the correct value here.
-                    if (len(row) < 4):
-                        ies.append(last_ie)
-                        i = 0
-                    else:
-                        ies.append(row[0])
-                        last_ie = row[0]
-                        i = 1
-                    modules.append(row[i])
-                    i += 1
-                    references.append(row[i])
-                    i += 1
-                    usage.append(row[i])
-                except IndexError:
-                    ciod_module_rough.write("Index error, table row not conforming to standard IOD table structure.\n")
+            table_fields = pl.separate_table_data(table_body, ['ies', 'modules', 'references', 'usage'], hanging_indent=True)
+            ies = table_fields[0]
+            modules = table_fields[1]
+            references = table_fields[2]
+            usage = table_fields[3]
             json_list = [table_name]
             for i in range (len(ies)):
                 json_list.append({'IE Name': ies[i], 'Module': modules[i], 'Doc Reference': references[i], 'Usage': usage[i], 'URL':urls[i]})
