@@ -143,10 +143,10 @@ def get_table_headers(table_div):
         headers[2] = "Type"
     return headers
 
-def table_to_dataframe(table_div):
+def table_to_list(table_div):
+    table = []
     column_headers = get_table_headers(table_div)
     table_body = table_div.find('tbody') 
-    df = pd.DataFrame([], columns=column_headers)
     rows = table_body.find_all('tr')
     for i in range(len(rows)):
         cells = []
@@ -155,38 +155,59 @@ def table_to_dataframe(table_div):
             cells.append(str(cell_obj))
         for j in range(len(cells),len(column_headers)):
             cells.append(None)
-        df.loc[i] = cells
-    return df
+        table.append(cells)
+    return table
 
 def get_td_html_content(td_html):
     split_html = re.split('(<td.*?>)|(</td>)', td_html)
     return split_html[3]
 
-def slide_down_col(start_idx, num_slides, row_series):
+def slide_down(start_idx, num_slides, row):
     i = 1
-    row = row_series.tolist()
     try:
         sliding_columns = row[start_idx+1:len(row)-num_slides]
         row = row[0:len(row)-len(sliding_columns)]
         row.extend(sliding_columns)
         return row 
     except IndexError:
-        raise ValueError('Cell spans more columns than exist in the table!') 
+        raise ValueError('Cell spans beyond table!') 
 
 def expand_colspan(df):
-    for i in range(len(df.index.values)):
-        for j in range(len(df.loc[i])):
-            cell = BeautifulSoup(df.loc[i][j], 'html.parser')
+    for i in range(len(df)):
+        for j in range(len(df[i])):
+            cell = BeautifulSoup(df[i][j], 'html.parser')
             td = cell.find('td')
             if (td is not None):
-                df.loc[i][j] = get_td_html_content(str(cell))
+                df[i][j] = get_td_html_content(str(cell))
                 if td.has_attr('colspan'):
                     slide_number = int(td.get('colspan')) - 1
-                    df.loc[i] = slide_down_col(j, slide_number, df.loc[i])
-                    repeating_content = df.loc[i][j] 
-                    for k in range(0,slide_number+1):
-                        df.loc[i][j+k] = repeating_content
+                    df[i] = slide_down(j, slide_number, df[i])
+                    repeating_content = df[i][j]
+                    for k in range(1,slide_number+1):
+                        df[i][j+k] = repeating_content
     return df
+
+def expand_rowspan(df):
+    for i in range(len(df)):
+        for j in range(len(df[i])):
+            if (df[i][j] is not None):
+                cell = BeautifulSoup(df[i][j], 'html.parser')
+                td = cell.find('td')
+                if (td is not None):
+                    df[i][j] = get_td_html_content(str(cell))
+                    if td.has_attr('rowspan'):
+                        slide_number = int(td.get('rowspan')) - 1
+                        for k in range(1,slide_number+1):
+                            df[i+k] = slide_down(j-1,1,df[i+k]) 
+                        row = [row[j] for row in df]
+                        row = slide_down(i,slide_number, row)
+                        repeating_content = row[i]
+                        for k in range(slide_number+1):
+                            row[i+k] = repeating_content
+                        for k in range(len(row)):
+                            df[k][j] = row[k]
+    return df
+
 
 def extract_table_data(table_body):
     data = []
