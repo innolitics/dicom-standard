@@ -6,16 +6,16 @@ DICOM standard HTML file.
 '''
 
 import re
+from copy import deepcopy
 
 from bs4 import BeautifulSoup
 import pandas as pd
 
-
+# Not in use, will be removed next commit
 def separate_table_data(table_body, fields, standard=None, hanging_indent=False, follow_links=False, current_ref=None):
     table_data = extract_table_data(table_body)
     num_columns = len(fields)
     field_data = [[] for i in fields]
-
     include_links = None
     all_tables = None
     if follow_links:
@@ -28,10 +28,6 @@ def separate_table_data(table_body, fields, standard=None, hanging_indent=False,
             for k in range(len(include_links)):
                 if include_links[k] == current_ref:
                     include_links[k] = None
-
-    # if ((num_columns != len(table_data[0])) and (num_columns-1 != len(table_data[0]))):
-        # raise TypeError('Incorrect fields supplied for this table.')
-
     previous_row = table_data[0][0]
     row_idx = -1
     for row in table_data:
@@ -39,7 +35,6 @@ def separate_table_data(table_body, fields, standard=None, hanging_indent=False,
         i = 0
         j = 0
 
-        # Special Cases
         if hanging_indent:
             if one_less_column(row, fields):
                 field_data[j].append(previous_row)
@@ -54,7 +49,6 @@ def separate_table_data(table_body, fields, standard=None, hanging_indent=False,
                 row_idx -= 1
                 continue
             if include_links[row_idx] is not None:
-                # Recursion!
                 new_table = find_sub_table_body(all_tables, include_links[row_idx])
                 subfield_data = separate_table_data(new_table, fields, standard, hanging_indent=False, follow_links=True, current_ref=include_links[row_idx])
                 for k in range(len(subfield_data)):
@@ -92,8 +86,6 @@ def find_sub_table_body(all_tables, table_id):
 def one_less_column(row, fields):
     return len(row) == len(fields)-1
 
-# Generate a list containing the href for every include link for each table row.
-# If a table row doesn't have an href, the list contains a placeholder None
 def get_include_links(table_body):
     link_pattern = re.compile('.*Include.*')
     ref_links = []
@@ -104,8 +96,6 @@ def get_include_links(table_body):
         for col in cols:
             try:
                 span_text = col.p.span
-                # If we find a span with "Include" and a link, we've found one!
-                #if ((span_text is not None) and (span_text.a is not None)):
                 if (span_text.a is not None) and link_pattern.match(span_text.get_text()):
                     ref_links.append(span_text.a.get('href'))
                     appended = True
@@ -158,12 +148,29 @@ def table_to_list(table_div):
         table.append(cells)
     return table
 
+def get_spans(table):
+    spans = [[None for col in row] for row in table]
+    for i in range(len(table)):
+        for j in range(len(table[i])):
+            if table[i][j] is None:
+                spans[i][j] = None
+                continue
+            cell = BeautifulSoup(table[i][j], 'html.parser')
+            td = cell.find('td')
+            cell_span = [1, 1, get_td_html_content(str(td))]
+            if td.has_attr('rowspan'):
+                cell_span[0] = int(td.get('rowspan'))
+            if td.has_attr('colspan'):
+                cell_span[1] = int(td.get('colspan'))
+            spans[i][j] = cell_span
+    return spans
+
+
 def get_td_html_content(td_html):
     split_html = re.split('(<td.*?>)|(</td>)', td_html)
     return split_html[3]
 
 def slide_down(start_idx, num_slides, row):
-    i = 1
     try:
         sliding_columns = row[start_idx+1:len(row)-num_slides]
         row = row[0:len(row)-len(sliding_columns)]
@@ -172,42 +179,34 @@ def slide_down(start_idx, num_slides, row):
     except IndexError:
         raise ValueError('Cell spans beyond table!') 
 
-def expand_colspan(df):
+def expand_spans(df):
+    expanded_table = [[None for col in row] for row in df]
+    spans = get_spans(df)
     for i in range(len(df)):
         for j in range(len(df[i])):
-            cell = BeautifulSoup(df[i][j], 'html.parser')
-            td = cell.find('td')
-            if (td is not None):
-                df[i][j] = get_td_html_content(str(cell))
-                if td.has_attr('colspan'):
-                    slide_number = int(td.get('colspan')) - 1
-                    df[i] = slide_down(j, slide_number, df[i])
-                    repeating_content = df[i][j]
-                    for k in range(1,slide_number+1):
-                        df[i][j+k] = repeating_content
-    return df
+            if spans[i][j] is not None:
+                expanded_table[i][j]  = spans[i][j][2]
+                if (spans[i][j][0] > 1):
+                    spans = expand_rowspan(spans, i, j)
+                if (spans[i][j][1] > 1):
+                    spans = expand_colspan(spans, i, j)
+    return expanded_table 
 
-def expand_rowspan(df):
-    for i in range(len(df)):
-        for j in range(len(df[i])):
-            if (df[i][j] is not None):
-                cell = BeautifulSoup(df[i][j], 'html.parser')
-                td = cell.find('td')
-                if (td is not None):
-                    df[i][j] = get_td_html_content(str(cell))
-                    if td.has_attr('rowspan'):
-                        slide_number = int(td.get('rowspan')) - 1
-                        for k in range(1,slide_number+1):
-                            df[i+k] = slide_down(j-1,1,df[i+k]) 
-                        row = [row[j] for row in df]
-                        row = slide_down(i,slide_number, row)
-                        repeating_content = row[i]
-                        for k in range(slide_number+1):
-                            row[i+k] = repeating_content
-                        for k in range(len(row)):
-                            df[k][j] = row[k]
-    return df
+def expand_rowspan(spans, i, j):
+    row_slides = spans[i][j][0] - 1
+    spans[i][j][0] = 1
+    for k in range(1,row_slides+1):
+        spans[i+k] = slide_down(j-1, 1, spans[i+k])
+        spans[i+k][j] = deepcopy(spans[i][j])
+    return spans
 
+def expand_colspan(spans, i, j):
+    col_slides = spans[i][j][1] - 1
+    spans[i][j][1] = 1
+    spans[i] = slide_down(j,col_slides,spans[i])
+    for k in range(1,col_slides+1):
+        spans[i][j+k] = deepcopy(spans[i][j])
+    return spans
 
 def extract_table_data(table_body):
     data = []
@@ -215,7 +214,7 @@ def extract_table_data(table_body):
     for row in rows:
         cols = row.find_all('td')
         cols = [ele.text.strip() for ele in cols]
-        data.append([ele for ele in cols if ele]) # Get rid of empty values
+        data.append([ele for ele in cols if ele]) 
     return data
 
 def get_chapter_table_divs(standard, chapter_name):

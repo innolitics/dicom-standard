@@ -52,7 +52,7 @@ def test_get_td_html():
 def test_expand_colspan():
     table = BeautifulSoup(colspan, 'html.parser')
     df = pl.table_to_list(table)
-    df = pl.expand_colspan(df)
+    df = pl.expand_spans(df)
     expected_df = [ ['<a href="somelink">1</a>', '<a href="somelink">1</a>', '<a href="somelink">1</a>', '4'],
                     ['1','2','3','4'],
                     ['1','2','3','4']]
@@ -61,9 +61,21 @@ def test_expand_colspan():
 def test_expand_rowspan():
     table = BeautifulSoup(rowspan, 'html.parser')
     df = pl.table_to_list(table)
-    print(df)
-    df = pl.expand_rowspan(df)
+    df = pl.expand_spans(df)
     expected_df = [ ['<a href="somelink">1</a>', '2', '3', '4'],
                     ['<a href="somelink">1</a>', '2', '3', '4'],
                     ['<a href="somelink">1</a>', '2', '3', '4']]
+    print(df)
+    print(expected_df)
+    assert df == expected_df
+
+def test_expand_both():
+    table = BeautifulSoup(bothspan, 'html.parser')
+    df = pl.table_to_list(table)
+    df = pl.expand_spans(df)
+    expected_df = [ ['<a href="somelink">1</a>', '<a href="somelink">1</a>', '<a href="somelink">1</a>', '4'],
+                    ['<a href="somelink">1</a>', '<a href="somelink">1</a>', '<a href="somelink">1</a>', '4'],
+                    ['1','2','3','4']]
+    print(df)
+    print(expected_df)
     assert df == expected_df
