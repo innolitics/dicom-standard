@@ -20,15 +20,15 @@ def get_ciod_module_raw(standard_path, json_path):
     ciod_table_divs = pl.get_chapter_table_divs(standard, 'chapter_A')
 
     ciod_module_rough = open(json_path, 'w')
+    all_tables = standard.find_all('div', class_='table')
     for tdiv in ciod_table_divs:
         data = []
         table_name = tdiv.p.strong.get_text()
         if iod_table_pattern.match(table_name):
             table_body = tdiv.div.table.tbody
             urls = pl.extract_doc_links(table_body)
-            table = pl.table_to_list(tdiv)
+            table = pl.table_to_list(tdiv, all_tables)
             table = pl.expand_spans(table)
-            ies = table[0]
             ies = [row[0] for row in table]
             modules = [row[1] for row in table]
             references = [row[2] for row in table]

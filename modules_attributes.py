@@ -23,16 +23,16 @@ def get_module_attr_raw(standard_path, json_path):
     basic_entry_header_pattern = re.compile(".*BASIC CODED ENTRY ATTRIBUTES$")
     enhanced_encoding_header_pattern = re.compile(".*ENHANCED ENCODING MODE$")
     link_pattern = re.compile(".*Include.*")
+
     all_tables = standard.find_all('div', class_='table')
     module_table_divs = pl.get_chapter_table_divs(standard, 'chapter_C')
     module_attr_rough = open(json_path, 'w')
-
     for tdiv in module_table_divs:
         data = []
         table_name = tdiv.p.strong.get_text()
         if (module_table_pattern.match(table_name)):
             table_body = tdiv.div.table.tbody
-            table = pl.table_to_list(tdiv)
+            table = pl.table_to_list(tdiv, all_tables)
             table = pl.expand_spans(table)
             attr_names = [row[0] for row in table]
             attr_tags = [row[1] for row in table]

@@ -9,111 +9,15 @@ import re
 from copy import deepcopy
 
 from bs4 import BeautifulSoup
-import pandas as pd
 
-# Not in use, will be removed next commit
-def separate_table_data(table_body, fields, standard=None, hanging_indent=False, follow_links=False, current_ref=None):
-    table_data = extract_table_data(table_body)
-    num_columns = len(fields)
-    field_data = [[] for i in fields]
-    include_links = None
-    all_tables = None
-    if follow_links:
-        include_links = get_include_links(table_body)
-        if standard is None:
-            raise TypeError('Did not supply standard parse object when follow_links is True')
-        all_tables = standard.find_all('div', class_='table')
-        # Prevent infinite recursion
-        if current_ref is not None:
-            for k in range(len(include_links)):
-                if include_links[k] == current_ref:
-                    include_links[k] = None
-    previous_row = table_data[0][0]
-    row_idx = -1
-    for row in table_data:
-        row_idx += 1
-        i = 0
-        j = 0
-
-        if hanging_indent:
-            if one_less_column(row, fields):
-                field_data[j].append(previous_row)
-            else:
-                field_data[j].append(row[i])
-                previous_row = row[i]
-                i += 1
-            j += 1
-
-        elif follow_links:
-            if blacklisted_row(row, include_links[row_idx], num_columns):
-                row_idx -= 1
-                continue
-            if include_links[row_idx] is not None:
-                new_table = find_sub_table_body(all_tables, include_links[row_idx])
-                subfield_data = separate_table_data(new_table, fields, standard, hanging_indent=False, follow_links=True, current_ref=include_links[row_idx])
-                for k in range(len(subfield_data)):
-                    field_data[k].extend(subfield_data[k])
-                continue 
-
-        for j in range(j,num_columns):
-            if follow_links and (j == 2) and one_less_column(row, fields):
-                field_data[j].append(None)
-                continue
-            field_data[j].append(row[i])
-            i += 1
-
-    return field_data
-
-def blacklisted_row(row, link, num_columns):
-    if (len(row) != num_columns) and (len(row) != num_columns - 1) and (link is None):
-        return True
-    basic_entry_header_pattern = re.compile(".*BASIC CODED ENTRY ATTRIBUTES$")
-    enhanced_encoding_header_pattern = re.compile(".*ENHANCED ENCODING MODE$")
-    non_table_pattern = re.compile("^sect.*")
-    if (link is not None) and non_table_pattern.match(link):
-        return True
-    if basic_entry_header_pattern.match(row[0]) or enhanced_encoding_header_pattern.match(row[0]):
-        return True
-    return False
-
-def find_sub_table_body(all_tables, table_id):
-    for table in all_tables:
-        if (table.a.get('id') == table_id):
-            return table.div.table.tbody
-    print(table_id)
-    return None
-
-def one_less_column(row, fields):
-    return len(row) == len(fields)-1
-
-def get_include_links(table_body):
-    link_pattern = re.compile('.*Include.*')
-    ref_links = []
-    rows = table_body.find_all('tr')
-    for row in rows:
-        appended = False
-        cols = row.find_all('td')
-        for col in cols:
-            try:
-                span_text = col.p.span
-                if (span_text.a is not None) and link_pattern.match(span_text.get_text()):
-                    ref_links.append(span_text.a.get('href'))
-                    appended = True
-                    break
-            except AttributeError:
-                continue
-        if not appended:
-            ref_links.append(None)
-    # Separate the div ID from the URL
-    i = 0
-    for link in ref_links:
-        if link:
-            _url, _pound, table_id = link.partition('#')
-            if table_id is None:
-                print("URL formatting error")
-            ref_links[i] = table_id
-        i += 1    
-    return ref_links
+def find_sub_table_div(all_tables, table_id):
+    try:
+        for table in all_tables:
+            if (table.a.get('id') == table_id):
+                return table
+        return None
+    except AttributeError:
+        return None
 
 def extract_doc_links(table_body):
     data = []
@@ -133,7 +37,10 @@ def get_table_headers(table_div):
         headers[2] = "Type"
     return headers
 
-def table_to_list(table_div):
+def table_to_list(table_div, all_tables=None):
+    if table_div is None:
+        return None
+    current_table_id = table_div.a.get('id')
     table = []
     column_headers = get_table_headers(table_div)
     table_body = table_div.find('tbody') 
@@ -141,12 +48,37 @@ def table_to_list(table_div):
     for i in range(len(rows)):
         cells = []
         cell_objs = rows[i].find_all('td')
+        if (all_tables is not None):
+            macro = macro_expansion(cell_objs, current_table_id, all_tables)
+            if macro is not None:
+                table.extend(macro)
+                continue
         for cell_obj in cell_objs:
             cells.append(str(cell_obj))
         for j in range(len(cells),len(column_headers)):
             cells.append(None)
         table.append(cells)
     return table
+
+def macro_link(cell):
+    link_pattern = re.compile('.*Include.*')
+    try:
+        return cell.p.span.a is not None and link_pattern.match(cell.p.span.get_text()) is not None
+    except AttributeError:
+            return False
+    
+def macro_expansion(row, current_table_id, all_tables):
+    if macro_link(row[0]):
+        link = row[0].p.span.a.get('href')
+        _url, _pound, table_id = link.partition('#')
+        if table_id is None:
+            raise ValueError("URL formatting error")
+        if table_id == current_table_id:
+            return None
+        macro_div = find_sub_table_div(all_tables, table_id)
+        macro_table = table_to_list(macro_div, all_tables)
+        return macro_table
+    return None
 
 def get_spans(table):
     spans = [[None for col in row] for row in table]
@@ -165,7 +97,6 @@ def get_spans(table):
             spans[i][j] = cell_span
     return spans
 
-
 def get_td_html_content(td_html):
     split_html = re.split('(<td.*?>)|(</td>)', td_html)
     return split_html[3]
@@ -179,11 +110,11 @@ def slide_down(start_idx, num_slides, row):
     except IndexError:
         raise ValueError('Cell spans beyond table!') 
 
-def expand_spans(df):
-    expanded_table = [[None for col in row] for row in df]
-    spans = get_spans(df)
-    for i in range(len(df)):
-        for j in range(len(df[i])):
+def expand_spans(table):
+    expanded_table = [[None for col in row] for row in table]
+    spans = get_spans(table)
+    for i in range(len(table)):
+        for j in range(len(table[i])):
             if spans[i][j] is not None:
                 expanded_table[i][j]  = spans[i][j][2]
                 if (spans[i][j][0] > 1):

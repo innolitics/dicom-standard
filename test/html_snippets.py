@@ -1,5 +1,6 @@
 flat = '''
 <div>
+<a id="flat"></a>
 <table frame="box" rules="all">
 <thead>
 <tr>
@@ -23,6 +24,7 @@ flat = '''
 
 with_links = '''
 <div>
+<a id="with_links"></a>
 <table frame="box" rules="all">
 <thead>
 <tr>
@@ -47,6 +49,7 @@ with_links = '''
 
 rowspan = '''
 <div>
+<a id="rowspan"></a>
 <table frame="box" rules="all">
 <thead>
 <tr>
@@ -70,6 +73,7 @@ rowspan = '''
 
 colspan = '''
 <div>
+<a id="colspan"></a>
 <table frame="box" rules="all">
 <thead>
 <tr>
@@ -93,6 +97,7 @@ colspan = '''
 
 bothspan = '''
 <div>
+<a id="bothspan"></a>
 <table frame="box" rules="all">
 <thead>
 <tr>
