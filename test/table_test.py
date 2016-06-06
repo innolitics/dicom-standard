@@ -1,5 +1,4 @@
 from bs4 import BeautifulSoup
-import pandas as pd
 
 from html_snippets import *
 import parse_lib as pl

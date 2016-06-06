@@ -27,74 +27,68 @@ def extract_doc_links(table_body):
             data.append(link.get('href'))
     return data
 
-def get_table_headers(table_div):
-    headers = []
-    cols = table_div.find_all('th')
-    for col in cols:
-        headers.append(col.get_text())
-    if len(headers) == 3: # TODO: clearer way to state this?
-        headers.append(headers[2])
-        headers[2] = "Type"
-    return headers
-
-def table_to_list(table_div, all_tables=None):
+def table_to_list(table_div, macro_table_list=None):
     if table_div is None:
         return None
     current_table_id = table_div.a.get('id')
     table = []
-    column_headers = get_table_headers(table_div)
+    full_table_column_num = 4
     table_body = table_div.find('tbody') 
     rows = table_body.find_all('tr')
-    for i in range(len(rows)):
+    for row in table_body.find_all('tr'):
         cells = []
-        cell_objs = rows[i].find_all('td')
-        if (all_tables is not None):
-            macro = macro_expansion(cell_objs, current_table_id, all_tables)
-            if macro is not None:
-                table.extend(macro)
+        cell_html = row.find_all('td')
+        if (macro_table_list is not None):
+            specified_macro = macro_expansion(cell_html, current_table_id, macro_table_list)
+            if specified_macro is not None:
+                table.extend(specified_macro)
                 continue
-        for cell_obj in cell_objs:
-            cells.append(str(cell_obj))
-        for j in range(len(cells),len(column_headers)):
+        for cell in cell_html:
+            cells.append(str(cell))
+        for j in range(len(cells), full_table_column_num):
             cells.append(None)
         table.append(cells)
     return table
 
-def macro_link(cell):
+def is_macro_link(cell):
     link_pattern = re.compile('.*Include.*')
     try:
-        return cell.p.span.a is not None and link_pattern.match(cell.p.span.get_text()) is not None
+        has_link = cell.p.span.a is not None
+        link_is_include = link_pattern.match(cell.p.span.get_text()) is not None
+        return has_link and link_is_include
     except AttributeError:
-            return False
+        return False
     
-def macro_expansion(row, current_table_id, all_tables):
-    if macro_link(row[0]):
+def macro_expansion(row, current_table_id, macro_table_list):
+    if is_macro_link(row[0]):
         link = row[0].p.span.a.get('href')
         _url, _pound, table_id = link.partition('#')
         if table_id is None:
             raise ValueError("URL formatting error")
         if table_id == current_table_id:
             return None
-        macro_div = find_sub_table_div(all_tables, table_id)
-        macro_table = table_to_list(macro_div, all_tables)
+        macro_div = find_sub_table_div(macro_table_list, table_id)
+        macro_table = table_to_list(macro_div, macro_table_list)
         return macro_table
     return None
 
 def get_spans(table):
-    spans = [[None for col in row] for row in table]
-    for i in range(len(table)):
-        for j in range(len(table[i])):
-            if table[i][j] is None:
-                spans[i][j] = None
+    spans = []
+    for row in table:
+        row_spans = []
+        for cell in row:
+            if cell is None:
+                row_spans.append(None)
                 continue
-            cell = BeautifulSoup(table[i][j], 'html.parser')
-            td = cell.find('td')
-            cell_span = [1, 1, get_td_html_content(str(td))]
-            if td.has_attr('rowspan'):
-                cell_span[0] = int(td.get('rowspan'))
-            if td.has_attr('colspan'):
-                cell_span[1] = int(td.get('colspan'))
-            spans[i][j] = cell_span
+            cell_html = BeautifulSoup(cell, 'html.parser')
+            td = cell_html.find('td')
+            cell_span = [
+                int(td.get('rowspan', 1)),
+                int(td.get('colspan', 1)),
+                get_td_html_content(str(td))
+            ]
+            row_spans.append(cell_span) 
+        spans.append(row_spans)
     return spans
 
 def get_td_html_content(td_html):
@@ -104,23 +98,28 @@ def get_td_html_content(td_html):
 def slide_down(start_idx, num_slides, row):
     try:
         sliding_columns = row[start_idx+1:len(row)-num_slides]
-        row = row[0:len(row)-len(sliding_columns)]
-        row.extend(sliding_columns)
-        return row 
+        new_row = row[0:len(row)-len(sliding_columns)]
+        new_row.extend(sliding_columns)
+        return new_row 
     except IndexError:
         raise ValueError('Cell spans beyond table!') 
 
 def expand_spans(table):
-    expanded_table = [[None for col in row] for row in table]
+    expanded_table = [] 
     spans = get_spans(table)
     for i in range(len(table)):
+        row = []
         for j in range(len(table[i])):
-            if spans[i][j] is not None:
-                expanded_table[i][j]  = spans[i][j][2]
-                if (spans[i][j][0] > 1):
+            if spans[i][j] is None:
+                row.append(None)
+            else:
+                rowspan, colspan, html = spans[i][j]
+                row.append(html) 
+                if (rowspan > 1):
                     spans = expand_rowspan(spans, i, j)
-                if (spans[i][j][1] > 1):
+                if (colspan > 1):
                     spans = expand_colspan(spans, i, j)
+        expanded_table.append(row)
     return expanded_table 
 
 def expand_rowspan(spans, i, j):
