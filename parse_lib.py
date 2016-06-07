@@ -96,6 +96,11 @@ def get_td_html_content(td_html):
     return split_html[3]
 
 def slide_down(start_idx, num_slides, row):
+    '''
+    Moves cells down a row or column by num_slides positions starting 
+    after index start_idx. Used to make room for rowspan and colspan
+    unpacking.
+    '''
     try:
         sliding_columns = row[start_idx+1:len(row)-num_slides]
         new_row = row[0:len(row)-len(sliding_columns)]
@@ -105,6 +110,10 @@ def slide_down(start_idx, num_slides, row):
         raise ValueError('Cell spans beyond table!') 
 
 def expand_spans(table):
+    '''
+    Fills in tables by unpacking rowspans and colspans. Results in a
+    table with an equal number of cells in each row.
+    '''
     expanded_table = [] 
     spans = get_spans(table)
     for i in range(len(table)):
