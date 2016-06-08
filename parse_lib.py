@@ -5,10 +5,13 @@ Common functions for extracting information from the
 DICOM standard HTML file.
 '''
 
+import json
 import re
 from copy import deepcopy
 
 from bs4 import BeautifulSoup
+
+FULL_TABLE_COLUMN_NUM = 4
 
 def find_sub_table_div(all_tables, table_id):
     try:
@@ -32,7 +35,6 @@ def table_to_list(table_div, macro_table_list=None):
         return None
     current_table_id = table_div.a.get('id')
     table = []
-    full_table_column_num = 4
     table_body = table_div.find('tbody') 
     rows = table_body.find_all('tr')
     for row in table_body.find_all('tr'):
@@ -45,7 +47,7 @@ def table_to_list(table_div, macro_table_list=None):
                 continue
         for cell in cell_html:
             cells.append(str(cell))
-        for j in range(len(cells), full_table_column_num):
+        for j in range(len(cells), 4):
             cells.append(None)
         table.append(cells)
     return table
@@ -96,11 +98,11 @@ def get_td_html_content(td_html):
     return split_html[3]
 
 def slide_down(start_idx, num_slides, row):
-    '''
+    ''' 
     Moves cells down a row or column by num_slides positions starting 
     after index start_idx. Used to make room for rowspan and colspan
     unpacking.
-    '''
+    ''' 
     try:
         sliding_columns = row[start_idx+1:len(row)-num_slides]
         new_row = row[0:len(row)-len(sliding_columns)]
@@ -163,3 +165,54 @@ def get_chapter_table_divs(standard, chapter_name):
         if chapter.div.div.div.h1.a.get('id') == chapter_name:
             table_divs = chapter.find_all('div', class_='table')
             return table_divs
+
+def standard_tables_to_json(standard_path, json_path, mode):
+    chapter_name = None 
+    match_pattern = None
+    column_titles = []
+    column_correction = False
+    if mode == 'ciods':
+        chapter_name = "chapter_A"
+        match_pattern = re.compile(".*IOD Modules$")
+        column_titles = ['IE Name', 'Module', 'Doc Reference', 'Usage']
+    elif mode == 'modules':
+        chapter_name = "chapter_C"
+        match_pattern = re.compile(".*Module Attributes$")
+        column_titles = ['Attribute', 'Tag', 'Type', 'Description']
+        column_correction = True
+    else:
+        raise ValueError('Invalid mode')
+    with open(standard_path, 'r') as standard_file, open(json_path, 'w') as output_json_rough:
+        standard = BeautifulSoup(standard_file, 'html.parser')
+        all_tables = standard.find_all('div', class_='table')
+        chapter_tables = get_chapter_table_divs(standard, chapter_name)
+        for tdiv in chapter_tables:
+            table_name = tdiv.p.strong.get_text()
+            if match_pattern.match(table_name):
+                table_body = tdiv.div.table.tbody
+                raw_table = table_to_list(tdiv, all_tables)
+                full_table = expand_spans(raw_table)
+                if column_correction:
+                    full_table = correct_for_missing_type_column(full_table) 
+                col1, col2, col3, col4 = zip(*full_table)
+                table_data = []
+                for c1, c2, c3, c4 in zip(col1, col2, col3, col4):
+                    table_data.append({column_titles[0]: c1, column_titles[1]: c2, column_titles[2]: c3, column_titles[3]: c4})
+                json_list = [{
+                    'tableName': table_name,
+                    'tableData': table_data
+                }]
+                output_json_rough.write(json.dumps(json_list, sort_keys=False, indent=4, separators=(',',':')) + "\n")
+
+def correct_for_missing_type_column(full_table):
+    corrected_table = []
+    for a_name, a_tag, a_type, a_descr in full_table:
+        corrected_row = [a_name, a_tag]
+        if a_descr is None:
+            a_corrected_type = a_descr
+            a_corrected_descr = a_type
+            corrected_row.extend([a_corrected_type, a_corrected_descr])
+        else:
+            corrected_row.extend([a_type, a_descr])
+        corrected_table.append(corrected_row)
+    return corrected_table
