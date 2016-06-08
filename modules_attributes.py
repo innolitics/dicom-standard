@@ -5,6 +5,7 @@ Load the module-attribute tables from DICOM Standard PS3.3, Annex C.
 Expand out macros in-line for each module. Output the tables in JSON
 format, one entry per attribute.
 '''
+import sys
 
 import parse_lib as pl
 
