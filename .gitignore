@@ -1,9 +1,9 @@
-*.pyc
 # Do not include intermediate files
-parse/tmp/*
-parse/__pycache__/*
-parse/.cache/*
-parse/test/.cache/*
-parse/test/__pycache/*
+tmp/*
+__pycache__/*
+.cache/*
+test/.cache/*
+test/__pycache/*
+
 # Do not include virtualenv 
 venv/*
