@@ -12,6 +12,7 @@ from copy import deepcopy
 from bs4 import BeautifulSoup
 
 FULL_TABLE_COLUMN_NUM = 4
+REFERENCE_COLUMN = 2
 
 def find_sub_table_div(all_tables, table_id):
     try:
@@ -171,10 +172,12 @@ def standard_tables_to_json(standard_path, json_path, mode):
     match_pattern = None
     column_titles = []
     column_correction = False
+    link_correction = False
     if mode == 'ciods':
         chapter_name = "chapter_A"
         match_pattern = re.compile(".*IOD Modules$")
         column_titles = ['IE Name', 'Module', 'Doc Reference', 'Usage']
+        link_correction = True
     elif mode == 'modules':
         chapter_name = "chapter_C"
         match_pattern = re.compile(".*Module Attributes$")
@@ -194,15 +197,33 @@ def standard_tables_to_json(standard_path, json_path, mode):
                 full_table = expand_spans(raw_table)
                 if column_correction:
                     full_table = correct_for_missing_type_column(full_table) 
-                col1, col2, col3, col4 = zip(*full_table)
+                final_table = extract_text_from_html(full_table, link_correction)
+                col1, col2, col3, col4 = zip(*final_table)
                 table_data = []
                 for c1, c2, c3, c4 in zip(col1, col2, col3, col4):
                     table_data.append({column_titles[0]: c1, column_titles[1]: c2, column_titles[2]: c3, column_titles[3]: c4})
-                json_list = [{
+                json_list = {
                     'tableName': table_name,
                     'tableData': table_data
-                }]
-                output_json_rough.write(json.dumps(json_list, sort_keys=False, indent=4, separators=(',',':')) + "\n")
+                }
+                output_json_rough.write(json.dumps(json_list, sort_keys=False, indent=4, separators=(',',':')) + ",\n")
+
+def extract_text_from_html(full_table, link_correction):
+    final_table = []
+    for row in full_table:
+        temp_row = []
+        for i in range(len(row)):
+            if row[i] is None:
+                temp_row.append(None)
+                continue
+            html = BeautifulSoup(row[i], 'html.parser')
+            if i == REFERENCE_COLUMN and link_correction:
+                id_sequence, ref_link = html.find_all('a')
+                temp_row.append(ref_link.get('href'))
+            else:
+                temp_row.append(html.get_text())
+        final_table.append(temp_row)
+    return final_table
 
 def correct_for_missing_type_column(full_table):
     corrected_table = []
