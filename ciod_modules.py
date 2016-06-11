@@ -9,7 +9,7 @@ import sys
 import parse_lib as pl
 
 def get_ciod_module_raw(standard_path, json_path):
-    pl.standard_tables_to_json(standard_path, json_path, 'ciods')
+    pl.get_json_from_standard(standard_path, json_path, 'ciods')
 
 if __name__ == '__main__':
     try:
