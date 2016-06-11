@@ -16,7 +16,7 @@ def get_vr_vm_attributes(standard_path, json_path):
         standard = BeautifulSoup(standard_html, 'html.parser')
         all_tables = standard.find_all('div', class_='table')
         vr_vm_table = pl.find_table_div(all_tables, 'table_6-1')
-        raw_vr_vm_data = pl.extract_table_data(vr_vm_table.div.table.tbody);
+        raw_vr_vm_data =extract_table_data(vr_vm_table.div.table.tbody);
         vr_vm_data = remove_irregular_rows(raw_vr_vm_data)
         table_data = []
         for tag, name, keyword, vr, *vm in vr_vm_data:
@@ -32,6 +32,15 @@ def get_vr_vm_attributes(standard_path, json_path):
 def remove_irregular_rows(table):
     new_table = [row for row in table if len(row) >= 5]
     return new_table
+
+def extract_table_data(table_body):
+    data = []
+    rows = table_body.find_all('tr')
+    for row in rows:
+        cols = row.find_all('td')
+        cols = [ele.text.strip() for ele in cols]
+        data.append([ele for ele in cols if ele]) 
+    return data
          
 if __name__ == '__main__':
     try:

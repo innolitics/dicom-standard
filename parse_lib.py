@@ -29,7 +29,7 @@ def get_json_from_standard(standard_path, json_path, mode):
             if match_pattern.match(table_name):
                 final_table = condition_table_data(tdiv, all_tables, column_correction)
                 json_list = table_to_json(final_table, column_titles, table_name)
-                output_json_rough.write(json.dumps(json_list, sort_keys=False, indent=4, separators=(',',':')) + "\n")
+                output_json_rough.write(json.dumps(json_list, sort_keys=False, indent=4, separators=(',',':')) + ", \n")
 
 def get_table_headers_and_location(mode):
     chapter_name = None 
