@@ -21,12 +21,12 @@ def get_vr_vm_attributes(standard_path, json_path):
         table_data = []
         for tag, name, keyword, vr, *vm in vr_vm_data:
             table_data.append({ 
-                               "Tag": tag,
-                               "Keyword": keyword,
-                               "VR": vr,
-                               "VM": vm[0]
+                               "tag": tag,
+                               "keyword": keyword,
+                               "vr": vr,
+                               "vm": vm[0]
                              })
-        json_dict = { "Table Data": table_data }
+        json_dict = { "table_data": table_data }
         json_file.write(json.dumps(json_dict, sort_keys=False, indent=4, separators=(',', ':')) + "\n")
 
 def remove_irregular_rows(table):

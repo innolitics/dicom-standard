@@ -21,15 +21,22 @@ def get_json_from_standard(standard_path, json_path, mode):
     '''
     chapter_name, match_pattern, column_titles, column_correction = get_table_headers_and_location(mode)
     with open(standard_path, 'r') as standard_file, open(json_path, 'w') as output_json_rough:
+        output_json_rough.write("[")
         standard = BeautifulSoup(standard_file, 'html.parser')
         all_tables = standard.find_all('div', class_='table')
         chapter_tables = get_all_tdivs_from_chapter(standard, chapter_name)
+        first_iteration = True 
         for tdiv in chapter_tables:
             table_name = tdiv.p.strong.get_text()
             if match_pattern.match(table_name):
+                if first_iteration:
+                    first_iteration = False
+                else:
+                    output_json_rough.write(",\n")
                 final_table = condition_table_data(tdiv, all_tables, column_correction)
                 json_list = table_to_json(final_table, column_titles, table_name)
-                output_json_rough.write(json.dumps(json_list, sort_keys=False, indent=4, separators=(',',':')) + ", \n")
+                output_json_rough.write(json.dumps(json_list, sort_keys=False, indent=4, separators=(',',':')))
+        output_json_rough.write("]")
 
 def get_table_headers_and_location(mode):
     chapter_name = None 
@@ -39,11 +46,11 @@ def get_table_headers_and_location(mode):
     if mode == 'ciods':
         chapter_name = "chapter_A"
         match_pattern = re.compile(".*IOD Modules$")
-        column_titles = ['IE Name', 'Module', 'Doc Reference', 'Usage']
+        column_titles = ['ie_name', 'module', 'doc_reference', 'usage']
     elif mode == 'modules':
         chapter_name = "chapter_C"
         match_pattern = re.compile(".*Module Attributes$")
-        column_titles = ['Attribute', 'Tag', 'Type', 'Description']
+        column_titles = ['attribute', 'tag', 'type', 'description']
         column_correction = True
     else:
         raise ValueError('Invalid mode')
@@ -247,8 +254,8 @@ def table_to_json(final_table, column_titles, table_name):
     for c1, c2, c3, c4 in zip(col1, col2, col3, col4):
         table_data.append({column_titles[0]: c1, column_titles[1]: c2, column_titles[2]: c3, column_titles[3]: c4})
     json_list = {
-        'tableName': table_name,
-        'tableData': table_data
+        'table_name': table_name,
+        'table_data': table_data
     }
     return json_list
 
