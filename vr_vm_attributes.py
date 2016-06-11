@@ -19,20 +19,15 @@ def get_vr_vm_attributes(standard_path, json_path):
         raw_vr_vm_data = pl.extract_table_data(vr_vm_table.div.table.tbody);
         vr_vm_data = remove_irregular_rows(raw_vr_vm_data)
         table_data = []
-        try:
-            for tag, name, keyword, vr, *vm in vr_vm_data:
-                table_data.append({ 
-                                   "Tag": tag,
-                                   "Keyword": keyword,
-                                   "VR": vr,
-                                   "VM": vm[0]
-                                })
-        except ValueError:
-            print(table_data)
-        json_dict = {
-                        "Table Data": table_data
-                    }
-        json_file.write(json.dumps(json_dict, sort_keys=False, indent=4, separators=(',',':')) + "\n")
+        for tag, name, keyword, vr, *vm in vr_vm_data:
+            table_data.append({ 
+                               "Tag": tag,
+                               "Keyword": keyword,
+                               "VR": vr,
+                               "VM": vm[0]
+                             })
+        json_dict = { "Table Data": table_data }
+        json_file.write(json.dumps(json_dict, sort_keys=False, indent=4, separators=(',', ':')) + "\n")
 
 def remove_irregular_rows(table):
     new_table = [row for row in table if len(row) >= 5]
