@@ -13,7 +13,7 @@ from bs4 import BeautifulSoup
 
 FULL_TABLE_COLUMN_NUM = 4
 
-def find_sub_table_div(all_tables, table_id):
+def find_table_div(all_tables, table_id):
     try:
         for table in all_tables:
             if (table.a.get('id') == table_id):
@@ -69,7 +69,7 @@ def macro_expansion(row, current_table_id, macro_table_list):
             raise ValueError("URL formatting error")
         if table_id == current_table_id:
             return None
-        macro_div = find_sub_table_div(macro_table_list, table_id)
+        macro_div = find_table_div(macro_table_list, table_id)
         macro_table = table_to_list(macro_div, macro_table_list)
         return macro_table
     return None
