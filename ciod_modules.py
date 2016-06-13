@@ -12,7 +12,4 @@ def get_ciod_module_raw(standard_path, json_path):
     pl.get_json_from_standard(standard_path, json_path, 'ciods')
 
 if __name__ == '__main__':
-    try:
-        get_ciod_module_raw(sys.argv[1], sys.argv[2])
-    except IndexError:
-        print("Not enough arguments specified. Please pass a path to the standard AND an output path for the JSON object.")
+    get_ciod_module_raw(sys.argv[1], sys.argv[2])

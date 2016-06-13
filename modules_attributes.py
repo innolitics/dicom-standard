@@ -13,7 +13,4 @@ def get_module_attr_raw(standard_path, json_path):
     pl.get_json_from_standard(standard_path, json_path, 'modules')
 
 if __name__ == '__main__':
-    try:
-        get_module_attr_raw(sys.argv[1], sys.argv[2])
-    except IndexError:
-        print("Not enough arguments specified. Please pass a path to the standard AND an output path for the JSON object.")
+    get_module_attr_raw(sys.argv[1], sys.argv[2])

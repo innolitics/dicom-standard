@@ -25,18 +25,41 @@ def get_json_from_standard(standard_path, json_path, mode):
         standard = BeautifulSoup(standard_file, 'html.parser')
         all_tables = standard.find_all('div', class_='table')
         chapter_tables = get_all_tdivs_from_chapter(standard, chapter_name)
-        first_iteration = True 
+        ciod_descriptions = None
+        if mode == 'ciods':
+            ciod_descriptions = get_ciod_descriptions(chapter_tables, match_pattern)
+        table_counter = 0
         for tdiv in chapter_tables:
             table_name = tdiv.p.strong.get_text()
             if match_pattern.match(table_name):
-                if first_iteration:
-                    first_iteration = False
-                else:
+                if table_counter != 0:
                     output_json_rough.write(",\n")
                 final_table = condition_table_data(tdiv, all_tables, column_correction)
-                json_list = table_to_json(final_table, column_titles, table_name)
+                json_list = []
+                if mode == 'ciods':
+                    json_list = table_to_json(final_table, column_titles, table_name, ciod_descriptions[table_counter])
+                else:
+                    json_list = table_to_json(final_table, column_titles, table_name)
                 output_json_rough.write(json.dumps(json_list, sort_keys=False, indent=4, separators=(',',':')))
+                table_counter += 1
         output_json_rough.write("]")
+
+def get_ciod_descriptions(chapter_tables, match_pattern):
+    description_title_match = re.compile(".*IOD Description.*")
+    filtered_tables = [table for table in chapter_tables if match_pattern.match(table.p.strong.get_text())]
+    descriptions = []
+    for tdiv in filtered_tables:
+        descriptions.append(find_description_text(tdiv))
+    return descriptions
+    
+def find_description_text(tdiv):
+    section = tdiv.parent.parent
+    description_title = section.find('h3', class_='title')
+    try:
+        description_text = description_title.parent.parent.parent.parent.p.get_text()
+        return description_text
+    except AttributeError:
+        return None
 
 def get_table_headers_and_location(mode):
     chapter_name = None 
@@ -245,7 +268,7 @@ def get_text_or_href_from_cell(cell_html, column_idx, link_correction):
     else:
         return html.get_text()
 
-def table_to_json(final_table, column_titles, table_name):
+def table_to_json(final_table, column_titles, table_name, ciod_description=None):
     '''
     Convert a single table to a JSON dictionary. 
     '''
@@ -257,5 +280,7 @@ def table_to_json(final_table, column_titles, table_name):
         'table_name': table_name,
         'table_data': table_data
     }
+    if ciod_description is not None:
+        json_list['ciod_description'] = ciod_description
     return json_list
 
