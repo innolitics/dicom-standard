@@ -1,0 +1,9 @@
+# Do not include intermediate files
+tmp/*
+__pycache__/*
+.cache/*
+test/.cache/*
+test/__pycache/*
+
+# Do not include virtualenv 
+venv/*
