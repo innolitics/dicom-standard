@@ -24,14 +24,18 @@ def add_ciod_description_fields(ciod_json_list, descriptions):
     return ciod_json_list
 
 def get_ciod_descriptions_from_standard(standard):
-    match_pattern = re.compile(".*IOD Modules$")
-    chapter_tables = pl.get_all_tdivs_from_chapter(standard, 'chapter_A')
-    filtered_tables = [table for table in chapter_tables
-                       if match_pattern.match(table.p.strong.get_text())]
+    filtered_tables = find_ciod_tables(standard)
     descriptions = []
     for tdiv in filtered_tables:
         descriptions.append(find_description_text_in_html(tdiv))
     return descriptions
+
+def find_ciod_tables(standard):
+    match_pattern = re.compile(".*IOD Modules$")
+    chapter_tables = pl.get_all_tdivs_from_chapter(standard, 'chapter_A')
+    filtered_tables = [table for table in chapter_tables
+                       if match_pattern.match(table.p.strong.get_text())]
+    return filtered_tables
 
 def find_description_text_in_html(tdiv):
     section = tdiv.parent.parent
