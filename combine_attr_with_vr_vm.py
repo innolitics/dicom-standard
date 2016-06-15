@@ -1,54 +1,40 @@
 '''
 combine_attr_with_vr_vm.py
 Add the VR, VM, and keyword fields to the correct attributes by combining the
-attribute and vr_vm JSON files. 
+attribute and vr_vm JSON files.
 '''
 import sys
-import json
 from copy import deepcopy
 
-def combine_attr_and_vr_vm(attribute_json_path, vr_vm_json_path, output_json_path):
-    standard_attrs, vr_vms = get_json_objects(attribute_json_path, vr_vm_json_path)
+import pandas as pd
+
+from parse_lib import dump_pretty_json
+from parse_lib import read_json_to_dict
+
+def join_by_tag_attrs_and_vr_vm(standard_attrs, vr_vms):
     full_attrs = []
+    vr_vm_dataframe = pd.DataFrame.from_dict(vr_vms, orient='index')
+    vr_vm_dataframe.index.name = 'tag'
     for module in standard_attrs:
-        new_module = { 'table_name': module['table_name'], 'table_data': [] }
-        for attr in module['table_data']:
-            new_attr = append_new_fields_to_json(attr, vr_vms)
-            if new_attr is None:
-                continue
-            new_module['table_data'].append(new_attr)
+        new_module = {'table_name': module['table_name'], 'table_data': []}
+        module_dataframe = pd.DataFrame(module['table_data']).applymap(remove_stray_newlines)
+        joined_dataframe = pd.merge(module_dataframe, vr_vm_dataframe,
+                                    left_on='tag', right_index=True)
+        new_module['table_data'] = (joined_dataframe.to_dict(orient='records'))
         full_attrs.append(new_module)
-    with open(output_json_path, 'w') as output_json_complete:
-        output_json_complete.write(json.dumps(full_attrs, sort_keys=False, indent=4, separators=(',',':')) + "\n")
+    return full_attrs
 
-def get_json_objects(attribute_json_path, vr_vm_json_path):
-    with open(attribute_json_path, 'r') as attr_file, open(vr_vm_json_path, 'r') as vr_vm_file:
-        attr_string = attr_file.read()
-        vr_vm_string = vr_vm_file.read()
-        standard_attrs = json.loads(attr_string)
-        vr_vms = json.loads(vr_vm_string)
-        return standard_attrs, vr_vms
+def remove_stray_newlines(attribute_value):
+    if isinstance(attribute_value, str):
+        return attribute_value.replace('\n', '')
+    else:
+        return attribute_value
 
-def find_tag_in_vr_vm_table(tag, vr_vms):
-    for attr in vr_vms["table_data"]:
-        if attr["tag"] == tag:
-            return attr
-    raise ValueError("Tag not found in Section 6!")
-
-def append_new_fields_to_json(old_attr, vr_vms):
-    tag = old_attr["tag"].replace('\n', '')
-    new_attr = deepcopy(old_attr)
-    try:
-        vr_vm_entry = find_tag_in_vr_vm_table(tag, vr_vms)
-    except ValueError:
-        return None 
-    new_attr["vr"] = vr_vm_entry["vr"]
-    new_attr["vm"] = vr_vm_entry["vm"]
-    new_attr["keyword"] = vr_vm_entry["keyword"]
-    return new_attr
+def main(standard_json_path, vr_vm_json_path, output_json_path):
+    standard_attrs = read_json_to_dict(standard_json_path)
+    vr_vms = read_json_to_dict(vr_vm_json_path)
+    full_attrs = join_by_tag_attrs_and_vr_vm(standard_attrs, vr_vms)
+    dump_pretty_json(output_json_path, 'w', full_attrs)
 
 if __name__ == '__main__':
-    try:
-        combine_attr_and_vr_vm(sys.argv[1], sys.argv[2], sys.argv[3])
-    except IndexError:
-        print("Not enough arguments specified. Please pass a path to the standard AND an output path for the JSON object.")
+    main(sys.argv[1], sys.argv[2], sys.argv[3])

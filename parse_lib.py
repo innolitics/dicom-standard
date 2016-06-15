@@ -1,7 +1,7 @@
 '''
 parse_lib.py
 
-Common functions for extracting information from the 
+Common functions for extracting information from the
 DICOM standard HTML file.
 '''
 
@@ -14,55 +14,26 @@ from bs4 import BeautifulSoup
 FULL_TABLE_COLUMN_NUM = 4
 REFERENCE_COLUMN = 2
 
-def get_json_from_standard(standard_path, json_path, mode):
+def get_table_data_from_standard(standard, mode):
     '''
     Given a section of the standard, parse the HTML tables and return the data
     in a JSON file.
     '''
     chapter_name, match_pattern, column_titles, column_correction = get_table_headers_and_location(mode)
-    with open(standard_path, 'r') as standard_file, open(json_path, 'w') as output_json_rough:
-        output_json_rough.write("[")
-        standard = BeautifulSoup(standard_file, 'html.parser')
-        all_tables = standard.find_all('div', class_='table')
-        chapter_tables = get_all_tdivs_from_chapter(standard, chapter_name)
-        ciod_descriptions = None
-        if mode == 'ciods':
-            ciod_descriptions = get_ciod_descriptions(chapter_tables, match_pattern)
-        table_counter = 0
-        for tdiv in chapter_tables:
-            table_name = tdiv.p.strong.get_text()
-            if match_pattern.match(table_name):
-                if table_counter != 0:
-                    output_json_rough.write(",\n")
-                final_table = condition_table_data(tdiv, all_tables, column_correction)
-                json_list = []
-                if mode == 'ciods':
-                    json_list = table_to_json(final_table, column_titles, table_name, ciod_descriptions[table_counter])
-                else:
-                    json_list = table_to_json(final_table, column_titles, table_name)
-                output_json_rough.write(json.dumps(json_list, sort_keys=False, indent=4, separators=(',',':')))
-                table_counter += 1
-        output_json_rough.write("]")
-
-def get_ciod_descriptions(chapter_tables, match_pattern):
-    description_title_match = re.compile(".*IOD Description.*")
-    filtered_tables = [table for table in chapter_tables if match_pattern.match(table.p.strong.get_text())]
-    descriptions = []
-    for tdiv in filtered_tables:
-        descriptions.append(find_description_text(tdiv))
-    return descriptions
-    
-def find_description_text(tdiv):
-    section = tdiv.parent.parent
-    description_title = section.find('h3', class_='title')
-    try:
-        description_text = description_title.parent.parent.parent.parent.p.get_text()
-        return description_text
-    except AttributeError:
-        return None
+    all_tables = standard.find_all('div', class_='table')
+    chapter_tables = get_all_tdivs_from_chapter(standard, chapter_name)
+    table_counter = 0
+    json_list = []
+    for tdiv in chapter_tables:
+        table_name = tdiv.p.strong.get_text()
+        if match_pattern.match(table_name):
+            final_table = condition_table_data(tdiv, all_tables, column_correction)
+            json_list.append(table_to_json(final_table, column_titles, table_name))
+            table_counter += 1
+    return json_list
 
 def get_table_headers_and_location(mode):
-    chapter_name = None 
+    chapter_name = None
     match_pattern = None
     column_titles = []
     column_correction = False
@@ -88,11 +59,10 @@ def get_all_tdivs_from_chapter(standard, chapter_name):
             return table_divs
 
 def condition_table_data(tdiv, all_tables, column_correction):
-    table_body = tdiv.div.table.tbody
     raw_table = table_to_list(tdiv, all_tables)
     full_table = expand_spans(raw_table)
     if column_correction:
-        full_table = correct_for_missing_type_column(full_table) 
+        full_table = correct_for_missing_type_column(full_table)
     link_correction = not column_correction
     final_table = extract_text_from_html(full_table, link_correction)
     return final_table
@@ -133,7 +103,7 @@ def get_spans(table):
                 int(td.get('colspan', 1)),
                 get_td_html_content(str(td))
             ]
-            row_spans.append(cell_span) 
+            row_spans.append(cell_span)
         spans.append(row_spans)
     return spans
 
@@ -146,7 +116,7 @@ def expand_spans(table):
     Fills in tables by unpacking rowspans and colspans. Results in a
     table with an equal number of cells in each row.
     '''
-    expanded_table = [] 
+    expanded_table = []
     spans = get_spans(table)
     for i in range(len(table)):
         row = []
@@ -155,18 +125,18 @@ def expand_spans(table):
                 row.append(None)
             else:
                 rowspan, colspan, html = spans[i][j]
-                row.append(html) 
-                if (rowspan > 1):
+                row.append(html)
+                if rowspan > 1:
                     spans = expand_rowspan(spans, i, j)
-                if (colspan > 1):
+                if colspan > 1:
                     spans = expand_colspan(spans, i, j)
         expanded_table.append(row)
-    return expanded_table 
+    return expanded_table
 
 def expand_rowspan(spans, i, j):
     row_slides = spans[i][j][0] - 1
     spans[i][j][0] = 1
-    for k in range(1,row_slides+1):
+    for k in range(1, row_slides+1):
         spans[i+k] = slide_down(j-1, 1, spans[i+k])
         spans[i+k][j] = deepcopy(spans[i][j])
     return spans
@@ -174,24 +144,24 @@ def expand_rowspan(spans, i, j):
 def expand_colspan(spans, i, j):
     col_slides = spans[i][j][1] - 1
     spans[i][j][1] = 1
-    spans[i] = slide_down(j,col_slides,spans[i])
-    for k in range(1,col_slides+1):
+    spans[i] = slide_down(j, col_slides, spans[i])
+    for k in range(1, col_slides+1):
         spans[i][j+k] = deepcopy(spans[i][j])
     return spans
 
 def slide_down(start_idx, num_slides, row):
-    ''' 
-    Moves cells down a row or column by num_slides positions starting 
+    '''
+    Moves cells down a row or column by num_slides positions starting
     after index start_idx. Used to make room for rowspan and colspan
     unpacking.
-    ''' 
+    '''
     try:
         sliding_columns = row[start_idx+1:len(row)-num_slides]
         new_row = row[0:len(row)-len(sliding_columns)]
         new_row.extend(sliding_columns)
-        return new_row 
+        return new_row
     except IndexError:
-        raise ValueError('Cell spans beyond table!') 
+        raise ValueError('Cell spans beyond table!')
 
 def table_to_list(table_div, macro_table_list=None):
     '''
@@ -201,12 +171,11 @@ def table_to_list(table_div, macro_table_list=None):
         return None
     current_table_id = table_div.a.get('id')
     table = []
-    table_body = table_div.find('tbody') 
-    rows = table_body.find_all('tr')
+    table_body = table_div.find('tbody')
     for row in table_body.find_all('tr'):
         cells = []
         cell_html = row.find_all('td')
-        if (macro_table_list is not None):
+        if macro_table_list is not None:
             specified_macro = macro_expansion(cell_html, current_table_id, macro_table_list)
             if specified_macro is not None:
                 table.extend(specified_macro)
@@ -226,7 +195,7 @@ def is_macro_link(cell):
         return has_link and link_is_include
     except AttributeError:
         return False
-    
+
 def macro_expansion(row, current_table_id, macro_table_list):
     if is_macro_link(row[0]):
         link = row[0].p.span.a.get('href')
@@ -243,7 +212,7 @@ def macro_expansion(row, current_table_id, macro_table_list):
 def find_table_div(all_tables, table_id):
     try:
         for table in all_tables:
-            if (table.a.get('id') == table_id):
+            if table.a.get('id') == table_id:
                 return table
         return None
     except AttributeError:
@@ -268,19 +237,33 @@ def get_text_or_href_from_cell(cell_html, column_idx, link_correction):
     else:
         return html.get_text()
 
-def table_to_json(final_table, column_titles, table_name, ciod_description=None):
+def table_to_json(final_table, column_titles, table_name):
     '''
-    Convert a single table to a JSON dictionary. 
+    Convert a single table to a JSON dictionary.
     '''
     col1, col2, col3, col4 = zip(*final_table)
     table_data = []
-    for c1, c2, c3, c4 in zip(col1, col2, col3, col4):
-        table_data.append({column_titles[0]: c1, column_titles[1]: c2, column_titles[2]: c3, column_titles[3]: c4})
+    for cell1, cell2, cell3, cell4 in zip(col1, col2, col3, col4):
+        table_data.append({column_titles[0]: cell1, column_titles[1]: cell2,
+                           column_titles[2]: cell3, column_titles[3]: cell4})
     json_list = {
         'table_name': table_name,
         'table_data': table_data
     }
-    if ciod_description is not None:
-        json_list['ciod_description'] = ciod_description
     return json_list
 
+def get_bs_from_html(filepath):
+    with open(filepath, 'r') as html_file:
+        return BeautifulSoup(html_file, 'html.parser')
+
+def dump_pretty_json(filepath, write_status, data, prefix=None):
+    with open(filepath, write_status) as json_file:
+        if prefix is not None:
+            json_file.write(prefix)
+        json.dump(data, json_file, sort_keys=False, indent=4, separators=(',', ':'))
+
+def read_json_to_dict(filepath):
+    with open(filepath, 'r') as json_file:
+        json_string = json_file.read()
+        json_dict = json.loads(json_string)
+        return json_dict

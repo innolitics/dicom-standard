@@ -11,23 +11,21 @@ from bs4 import BeautifulSoup
 
 import parse_lib as pl
 
-def get_vr_vm_attributes(standard_path, json_path):
-    with open(standard_path, 'r') as standard_html, open(json_path, 'w') as json_file:
-        standard = BeautifulSoup(standard_html, 'html.parser')
-        all_tables = standard.find_all('div', class_='table')
-        vr_vm_table = pl.find_table_div(all_tables, 'table_6-1')
-        raw_vr_vm_data =extract_table_data(vr_vm_table.div.table.tbody);
-        vr_vm_data = remove_irregular_rows(raw_vr_vm_data)
-        table_data = []
-        for tag, name, keyword, vr, *vm in vr_vm_data:
-            table_data.append({ 
-                               "tag": tag,
-                               "keyword": keyword,
-                               "vr": vr,
-                               "vm": vm[0]
-                             })
-        json_dict = { "table_data": table_data }
-        json_file.write(json.dumps(json_dict, sort_keys=False, indent=4, separators=(',', ':')) + "\n")
+def get_data_characteristic_attributes(standard):
+    all_tables = standard.find_all('div', class_='table')
+    html_table = pl.find_table_div(all_tables, 'table_6-1')
+    raw_table_data = extract_table_data(html_table.div.table.tbody)
+    table_data = remove_irregular_rows(raw_table_data)
+    json_data = {}
+    for tag, name, keyword, vr, *vm in table_data:
+        retired = len(vm) > 1
+        json_data[tag] = { 
+                           "keyword": keyword,
+                           "vr": vr,
+                           "vm": vm[0],
+                           "retired": retired
+                           }
+    return json_data 
 
 def remove_irregular_rows(table):
     new_table = [row for row in table if len(row) >= 5]
@@ -41,9 +39,11 @@ def extract_table_data(table_body):
         cols = [ele.text.strip() for ele in cols]
         data.append([ele for ele in cols if ele]) 
     return data
-         
+        
+def main(standard_path, json_path):
+    standard = pl.get_bs_from_html(standard_path)
+    table_data = get_data_characteristic_attributes(standard) 
+    pl.dump_pretty_json(json_path, 'w', table_data)
+
 if __name__ == '__main__':
-    try:
-        get_vr_vm_attributes(sys.argv[1], sys.argv[2])
-    except IndexError:
-        print("Not enough arguments specified. Please pass a path to the standard AND an output path for the JSON file.")
+    main(sys.argv[1], sys.argv[2])
