@@ -174,13 +174,16 @@ def table_to_list(table_div, macro_table_list=None):
     table_body = table_div.find('tbody')
     for row in table_body.find_all('tr'):
         cells = []
-        cell_html = row.find_all('td')
-        if macro_table_list is not None:
-            specified_macro = macro_expansion(cell_html, current_table_id, macro_table_list)
+        all_cells_in_row = row.find_all('td')
+        if (macro_table_list is not None):
+            cell = all_cells_in_row[0]
+            specified_macro = None
+            if is_macro_link(cell):
+                specified_macro = macro_expansion(cell, current_table_id, macro_table_list)
             if specified_macro is not None:
                 table.extend(specified_macro)
                 continue
-        for cell in cell_html:
+        for cell in all_cells_in_row:
             cells.append(str(cell))
         for j in range(len(cells), 4):
             cells.append(None)
@@ -196,18 +199,22 @@ def is_macro_link(cell):
     except AttributeError:
         return False
 
-def macro_expansion(row, current_table_id, macro_table_list):
-    if is_macro_link(row[0]):
-        link = row[0].p.span.a.get('href')
-        _url, _pound, table_id = link.partition('#')
-        if table_id is None:
-            raise ValueError("URL formatting error")
+def macro_expansion(cell, current_table_id, macro_table_list):
+    if is_macro_link(cell):
+        table_id = get_css_id_from_href(cell)
         if table_id == current_table_id:
             return None
         macro_div = find_table_div(macro_table_list, table_id)
         macro_table = table_to_list(macro_div, macro_table_list)
         return macro_table
     return None
+
+def get_css_id_from_href(cell):
+    link = cell.p.span.a.get('href')
+    _url, _pound, table_id = link.partition('#')
+    if table_id is None:
+        raise ValueError("URL formatting error")
+    return table_id
 
 def find_table_div(all_tables, table_id):
     try:
