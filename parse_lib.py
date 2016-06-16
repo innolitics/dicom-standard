@@ -64,8 +64,15 @@ def condition_table_data(tdiv, all_tables, column_correction):
     if column_correction:
         full_table = correct_for_missing_type_column(full_table)
     link_correction = not column_correction
-    final_table = extract_text_from_html(full_table, link_correction)
+    text_table_with_newlines = extract_text_from_html(full_table, link_correction)
+    final_table = [map(remove_stray_newlines, row) for row in text_table_with_newlines]
     return final_table
+
+def remove_stray_newlines(attribute_value):
+    if isinstance(attribute_value, str):
+        return attribute_value.replace('\n', '')
+    else:
+        return attribute_value
 
 def correct_for_missing_type_column(full_table):
     '''

@@ -4,7 +4,6 @@ Add the VR, VM, and keyword fields to the correct attributes by combining the
 attribute and vr_vm JSON files.
 '''
 import sys
-from copy import deepcopy
 
 import pandas as pd
 
@@ -17,18 +16,12 @@ def join_by_tag_attrs_and_vr_vm(standard_attrs, vr_vms):
     vr_vm_dataframe.index.name = 'tag'
     for module in standard_attrs:
         new_module = {'table_name': module['table_name'], 'table_data': []}
-        module_dataframe = pd.DataFrame(module['table_data']).applymap(remove_stray_newlines)
+        module_dataframe = pd.DataFrame(module['table_data'])
         joined_dataframe = pd.merge(module_dataframe, vr_vm_dataframe,
                                     left_on='tag', right_index=True)
         new_module['table_data'] = (joined_dataframe.to_dict(orient='records'))
         full_attrs.append(new_module)
     return full_attrs
-
-def remove_stray_newlines(attribute_value):
-    if isinstance(attribute_value, str):
-        return attribute_value.replace('\n', '')
-    else:
-        return attribute_value
 
 def main(standard_json_path, vr_vm_json_path, output_json_path):
     standard_attrs = read_json_to_dict(standard_json_path)
