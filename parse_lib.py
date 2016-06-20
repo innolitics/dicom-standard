@@ -30,8 +30,6 @@ def get_table_data_from_standard(standard, mode):
             json_list.append(table_to_json(final_table, column_titles, table_name))
     return json_list
 
-
-
 def get_table_headers_and_location(mode):
     chapter_name = None
     match_pattern = None
