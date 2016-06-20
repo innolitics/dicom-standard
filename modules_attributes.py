@@ -9,11 +9,10 @@ import sys
 
 import parse_lib as pl
 
-def get_module_attr_raw(standard_path, json_path):
-    pl.get_json_from_standard(standard_path, json_path, 'modules')
+def main(standard_path, json_path):
+    standard = pl.get_bs_from_html(standard_path)
+    modules_json = pl.get_table_data_from_standard(standard, 'modules')
+    pl.dump_pretty_json(json_path, 'w', modules_json)
 
 if __name__ == '__main__':
-    try:
-        get_module_attr_raw(sys.argv[1], sys.argv[2])
-    except IndexError:
-        print("Not enough arguments specified. Please pass a path to the standard AND an output path for the JSON object.")
+    main(sys.argv[1], sys.argv[2])
