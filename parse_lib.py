@@ -22,15 +22,15 @@ def get_table_data_from_standard(standard, mode):
     chapter_name, match_pattern, column_titles, column_correction = get_table_headers_and_location(mode)
     all_tables = standard.find_all('div', class_='table')
     chapter_tables = get_all_tdivs_from_chapter(standard, chapter_name)
-    table_counter = 0
     json_list = []
     for tdiv in chapter_tables:
         table_name = tdiv.p.strong.get_text()
         if match_pattern.match(table_name):
             final_table = condition_table_data(tdiv, all_tables, column_correction)
             json_list.append(table_to_json(final_table, column_titles, table_name))
-            table_counter += 1
     return json_list
+
+
 
 def get_table_headers_and_location(mode):
     chapter_name = None
@@ -138,7 +138,7 @@ def expand_spans(table):
 
 def expand_span_in_cell(spans, i, j):
     if spans[i][j] is None:
-        return None
+        return spans, None
     else:
         rowspan, colspan, html = spans[i][j]
         if rowspan > 1:

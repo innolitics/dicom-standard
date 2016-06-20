@@ -25,9 +25,7 @@ def add_ciod_description_fields(ciod_json_list, descriptions):
 
 def get_ciod_descriptions_from_standard(standard):
     filtered_tables = find_ciod_tables(standard)
-    descriptions = []
-    for tdiv in filtered_tables:
-        descriptions.append(find_description_text_in_html(tdiv))
+    descriptions = list(map(find_description_text_in_html, filtered_tables))
     return descriptions
 
 def find_ciod_tables(standard):
