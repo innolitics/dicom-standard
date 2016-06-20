@@ -100,19 +100,22 @@ def get_spans(table):
     for row in table:
         row_spans = []
         for cell in row:
-            if cell is None:
-                row_spans.append(None)
-                continue
-            cell_html = BeautifulSoup(cell, 'html.parser')
-            td = cell_html.find('td')
-            cell_span = [
-                int(td.get('rowspan', 1)),
-                int(td.get('colspan', 1)),
-                get_td_html_content(str(td))
-            ]
+            cell_span = get_span_from_cell(cell)
             row_spans.append(cell_span)
         spans.append(row_spans)
     return spans
+
+def get_span_from_cell(cell):
+    if cell is None:
+        return None
+    cell_html = BeautifulSoup(cell, 'html.parser')
+    td_tag = cell_html.find('td')
+    cell_span = [
+        int(td_tag.get('rowspan', 1)),
+        int(td_tag.get('colspan', 1)),
+        get_td_html_content(str(td_tag))
+    ]
+    return cell_span
 
 def get_td_html_content(td_html):
     split_html = re.split('(<td.*?>)|(</td>)', td_html)
@@ -128,17 +131,21 @@ def expand_spans(table):
     for i in range(len(table)):
         row = []
         for j in range(len(table[i])):
-            if spans[i][j] is None:
-                row.append(None)
-            else:
-                rowspan, colspan, html = spans[i][j]
-                row.append(html)
-                if rowspan > 1:
-                    spans = expand_rowspan(spans, i, j)
-                if colspan > 1:
-                    spans = expand_colspan(spans, i, j)
+            spans, html = expand_span_in_cell(spans, i, j)
+            row.append(html)
         expanded_table.append(row)
     return expanded_table
+
+def expand_span_in_cell(spans, i, j):
+    if spans[i][j] is None:
+        return None
+    else:
+        rowspan, colspan, html = spans[i][j]
+        if rowspan > 1:
+            spans = expand_rowspan(spans, i, j)
+        if colspan > 1:
+            spans = expand_colspan(spans, i, j)
+        return spans, html
 
 def expand_rowspan(spans, i, j):
     row_slides = spans[i][j][0] - 1
@@ -180,22 +187,33 @@ def table_to_list(table_div, macro_table_list=None):
     table = []
     table_body = table_div.find('tbody')
     for row in table_body.find_all('tr'):
-        cells = []
-        all_cells_in_row = row.find_all('td')
-        if (macro_table_list is not None):
-            cell = all_cells_in_row[0]
-            specified_macro = None
-            if is_macro_link(cell):
-                specified_macro = macro_expansion(cell, current_table_id, macro_table_list)
-            if specified_macro is not None:
-                table.extend(specified_macro)
-                continue
-        for cell in all_cells_in_row:
-            cells.append(str(cell))
-        for j in range(len(cells), 4):
-            cells.append(None)
+        macro_reference = check_for_macros(row, macro_table_list, current_table_id)
+        if macro_reference is not None:
+            table.extend(macro_reference)
+            continue
+        cells = convert_row_to_list(row)
         table.append(cells)
     return table
+
+def convert_row_to_list(row):
+    cells = []
+    all_cells_in_row = row.find_all('td')
+    for cell in all_cells_in_row:
+        cells.append(str(cell))
+    for j in range(len(cells), 4):
+        cells.append(None)
+    return cells
+
+def check_for_macros(row, macro_table_list, current_table_id):
+    if macro_table_list is not None:
+        all_cells_in_row = row.find_all('td')
+        cell = all_cells_in_row[0]
+        specified_macro = None
+        if is_macro_link(cell):
+            specified_macro = macro_expansion(cell, current_table_id, macro_table_list)
+        if specified_macro is not None:
+            return specified_macro
+    return None
 
 def is_macro_link(cell):
     link_pattern = re.compile('.*Include.*')
