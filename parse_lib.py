@@ -24,7 +24,7 @@ def get_table_data_from_standard(standard, mode):
     chapter_tables = get_all_tdivs_from_chapter(standard, chapter_name)
     json_list = []
     for tdiv in chapter_tables:
-        table_name = separate_name_and_slug(tdiv.p.strong.get_text())
+        table_name = tdiv.p.strong.get_text()
         if match_pattern.match(table_name):
             final_table = condition_table_data(tdiv, all_tables, column_correction)
             json_list.append(table_to_json(final_table, column_titles, table_name))
@@ -38,7 +38,7 @@ def get_table_headers_and_location(mode):
     if mode == 'ciods':
         chapter_name = "chapter_A"
         match_pattern = re.compile(".*IOD Modules$")
-        column_titles = ['ie_name', 'module', 'doc_reference', 'usage']
+        column_titles = ['information_entity', 'module', 'doc_reference', 'usage']
     elif mode == 'modules':
         chapter_name = "chapter_C"
         match_pattern = re.compile(".*Module Attributes$")
@@ -58,15 +58,15 @@ def get_all_tdivs_from_chapter(standard, chapter_name):
 
 def get_clean_table_name(name):
     table, section, title = re.split('\u00a0', name)
-    clean_title, whitespace = re.split(' IOD Modules', title)
-    return clean_title
+    clean_title, *splits = re.split('(IOD Modules)|(Module Attributes)|(Macro Attributes)', title)
+    return clean_title.strip()
 
 def get_slug_from_name(name):
     table, section, title = re.split('\u00a0', name)
-    slug = get_slug(table, section)
+    slug = create_slug(table, section)
     return slug
 
-def get_slug(table, section):
+def create_slug(table, section):
     slug = table + " " + section
     return slug.lower().replace(" ", "-")
 
@@ -286,13 +286,16 @@ def table_to_json(final_table, column_titles, table_name):
     Convert a single table to a JSON dictionary.
     '''
     col1, col2, col3, col4 = zip(*final_table)
+    clean_name = get_clean_table_name(table_name)
+    slug = get_slug_from_name(table_name)
     table_data = []
     for cell1, cell2, cell3, cell4 in zip(col1, col2, col3, col4):
         table_data.append({column_titles[0]: cell1, column_titles[1]: cell2,
                            column_titles[2]: cell3, column_titles[3]: cell4})
     json_list = {
-        'table_name': table_name,
-        'table_data': table_data
+        'name': clean_name,
+        'data': table_data,
+        'slug': slug
     }
     return json_list
 
