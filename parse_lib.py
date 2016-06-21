@@ -291,9 +291,12 @@ def table_to_json(final_table, column_titles, table_name, table_id):
     slug = get_slug_from_name(table_name)
     doc_link = get_doc_link(table_id)
     table_data = []
+    i = -1
     for cell1, cell2, cell3, cell4 in zip(col1, col2, col3, col4):
+        i += 1
         table_data.append({column_titles[0]: cell1, column_titles[1]: cell2,
-                           column_titles[2]: cell3, column_titles[3]: cell4})
+                           column_titles[2]: cell3, column_titles[3]: cell4,
+                           "order": i})
     json_list = {
         'name': clean_name,
         'data': table_data,
