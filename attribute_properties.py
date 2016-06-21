@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 
 import parse.parse_lib as pl
 
-def get_attribute_properties(standard):
+def find_attribute_properties(standard):
     all_tables = standard.find_all('div', class_='table')
     html_table = pl.find_table_div(all_tables, 'table_6-1')
     raw_table_data = extract_table_data(html_table.div.table.tbody)
@@ -46,7 +46,7 @@ def extract_table_data(table_body):
 
 def main(standard_path, json_path):
     standard = pl.parse_object_from_html(standard_path)
-    table_data = get_attribute_properties(standard)
+    table_data = find_attribute_properties(standard)
     pl.dump_pretty_json(json_path, 'w', table_data)
 
 if __name__ == '__main__':

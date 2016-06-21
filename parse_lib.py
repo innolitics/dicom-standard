@@ -104,7 +104,7 @@ def correct_for_missing_type_column(full_table):
         corrected_table.append(corrected_row)
     return corrected_table
 
-def get_spans(table):
+def find_spans(table):
     '''
     Find all rowspans and colspans in an HTML table. Returns a 2D list of
     tuples of the form (rowspan value, colspan value, html content)
@@ -140,7 +140,7 @@ def expand_spans(table):
     table with an equal number of cells in each row.
     '''
     expanded_table = []
-    spans = get_spans(table)
+    spans = find_spans(table)
     for i in range(len(table)):
         row = []
         for j in range(len(table[i])):
@@ -289,7 +289,7 @@ def table_to_dict(final_table, column_titles, table_name, table_id):
     col1, col2, col3, col4 = zip(*final_table)
     clean_name = clean_table_name(table_name)
     slug = slug_from_name(table_name)
-    doc_link = get_doc_link(table_id)
+    doc_link = find_doc_link(table_id)
     table_data = []
     i = -1
     for cell1, cell2, cell3, cell4 in zip(col1, col2, col3, col4):
@@ -305,7 +305,7 @@ def table_to_dict(final_table, column_titles, table_name, table_id):
     }
     return table_dict
 
-def get_doc_link(table_id):
+def find_doc_link(table_id):
     url_prefix = "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#"
     return url_prefix + table_id
 

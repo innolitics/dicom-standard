@@ -20,7 +20,8 @@ def join_by_tag_attrs_and_properties(standard_attrs, properties):
     return full_attrs
 
 def natural_join(properties_dataframe, module):
-    new_module = {'name': module['name'], 'slug': module['slug'], 'link': module['link_to_standard'], 'data': []}
+    new_module = {'name': module['name'], 'slug': module['slug'],
+                  'link_to_standard': module['link_to_standard'], 'data': []}
     module_dataframe = pd.DataFrame(module['data'])
     joined_dataframe = pd.merge(module_dataframe, properties_dataframe,
                                 left_on='tag', right_index=True)

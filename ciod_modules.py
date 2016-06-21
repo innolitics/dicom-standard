@@ -13,7 +13,7 @@ def main(standard_path, json_path):
     standard = pl.parse_object_from_html(standard_path)
     ciod_json_list = pl.table_data_from_standard(standard, 'ciods')
     expand_module_usage_fields(ciod_json_list)
-    descriptions = get_ciod_descriptions_from_standard(standard)
+    descriptions = ciod_descriptions_from_standard(standard)
     final_json_list = add_ciod_description_fields(ciod_json_list, descriptions)
     pl.dump_pretty_json(json_path, 'w', final_json_list)
 
@@ -41,7 +41,7 @@ def add_ciod_description_fields(ciod_json_list, descriptions):
         i += 1
     return ciod_json_list
 
-def get_ciod_descriptions_from_standard(standard):
+def ciod_descriptions_from_standard(standard):
     filtered_tables = find_ciod_tables(standard)
     descriptions = list(map(find_description_text_in_html, filtered_tables))
     return descriptions
