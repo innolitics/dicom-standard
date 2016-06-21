@@ -24,7 +24,7 @@ def get_table_data_from_standard(standard, mode):
     chapter_tables = get_all_tdivs_from_chapter(standard, chapter_name)
     json_list = []
     for tdiv in chapter_tables:
-        table_name = tdiv.p.strong.get_text()
+        table_name = separate_name_and_slug(tdiv.p.strong.get_text())
         if match_pattern.match(table_name):
             final_table = condition_table_data(tdiv, all_tables, column_correction)
             json_list.append(table_to_json(final_table, column_titles, table_name))
@@ -55,6 +55,20 @@ def get_all_tdivs_from_chapter(standard, chapter_name):
         if chapter.div.div.div.h1.a.get('id') == chapter_name:
             table_divs = chapter.find_all('div', class_='table')
             return table_divs
+
+def get_clean_table_name(name):
+    table, section, title = re.split('\u00a0', name)
+    clean_title, whitespace = re.split(' IOD Modules', title)
+    return clean_title
+
+def get_slug_from_name(name):
+    table, section, title = re.split('\u00a0', name)
+    slug = get_slug(table, section)
+    return slug
+
+def get_slug(table, section):
+    slug = table + " " + section
+    return slug.lower().replace(" ", "-")
 
 def condition_table_data(tdiv, all_tables, column_correction):
     raw_table = table_to_list(tdiv, all_tables)
