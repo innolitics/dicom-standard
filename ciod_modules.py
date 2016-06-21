@@ -12,9 +12,27 @@ import parse.parse_lib as pl
 def main(standard_path, json_path):
     standard = pl.get_bs_from_html(standard_path)
     ciod_json_list = pl.get_table_data_from_standard(standard, 'ciods')
+    expand_module_usage_fields(ciod_json_list)
     descriptions = get_ciod_descriptions_from_standard(standard)
     final_json_list = add_ciod_description_fields(ciod_json_list, descriptions)
     pl.dump_pretty_json(json_path, 'w', final_json_list)
+
+def expand_module_usage_fields(ciod_json_raw):
+    for ciod in ciod_json_raw:
+        for module in ciod['data']:
+            usage, conditional_statement = expand_conditional_statement(module['usage'])
+            module['usage'] = usage
+            module['conditional_statement'] = conditional_statement
+
+def expand_conditional_statement(usage_field):
+    conditional = re.compile("^C.*")
+    if conditional.match(usage_field):
+        usage, *conditional_statement = re.split("-", usage_field)
+        return usage.strip(), ''.join(conditional_statement).strip()
+    else:
+        usage = usage_field.strip()
+        conditional_statement = None
+        return usage, conditional_statement
 
 def add_ciod_description_fields(ciod_json_list, descriptions):
     i = 0

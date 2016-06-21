@@ -7,7 +7,7 @@ format, one entry per attribute.
 '''
 import sys
 
-import parse_lib as pl
+import parse.parse_lib as pl
 
 def main(standard_path, json_path):
     standard = pl.get_bs_from_html(standard_path)
