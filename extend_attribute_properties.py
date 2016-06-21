@@ -20,11 +20,11 @@ def join_by_tag_attrs_and_properties(standard_attrs, properties):
     return full_attrs
 
 def natural_join(properties_dataframe, module):
-    new_module = {'table_name': module['table_name'], 'table_data': []}
-    module_dataframe = pd.DataFrame(module['table_data'])
+    new_module = {'name': module['name'], 'slug': module['slug'], 'link': module['link'], 'data': []}
+    module_dataframe = pd.DataFrame(module['data'])
     joined_dataframe = pd.merge(module_dataframe, properties_dataframe,
                                 left_on='tag', right_index=True)
-    new_module['table_data'] = (joined_dataframe.to_dict(orient='records'))
+    new_module['data'] = (joined_dataframe.to_dict(orient='records'))
     return new_module
 
 def main(standard_json_path, properties_json_path, output_json_path):

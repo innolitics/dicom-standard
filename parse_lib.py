@@ -25,9 +25,10 @@ def get_table_data_from_standard(standard, mode):
     json_list = []
     for tdiv in chapter_tables:
         table_name = tdiv.p.strong.get_text()
+        table_id = tdiv.a.get('id')
         if match_pattern.match(table_name):
             final_table = condition_table_data(tdiv, all_tables, column_correction)
-            json_list.append(table_to_json(final_table, column_titles, table_name))
+            json_list.append(table_to_json(final_table, column_titles, table_name, table_id))
     return json_list
 
 def get_table_headers_and_location(mode):
@@ -281,13 +282,14 @@ def get_text_or_href_from_cell(cell_html, column_idx, link_correction):
     else:
         return html.get_text()
 
-def table_to_json(final_table, column_titles, table_name):
+def table_to_json(final_table, column_titles, table_name, table_id):
     '''
     Convert a single table to a JSON dictionary.
     '''
     col1, col2, col3, col4 = zip(*final_table)
     clean_name = get_clean_table_name(table_name)
     slug = get_slug_from_name(table_name)
+    doc_link = get_doc_link(table_id)
     table_data = []
     for cell1, cell2, cell3, cell4 in zip(col1, col2, col3, col4):
         table_data.append({column_titles[0]: cell1, column_titles[1]: cell2,
@@ -295,9 +297,14 @@ def table_to_json(final_table, column_titles, table_name):
     json_list = {
         'name': clean_name,
         'data': table_data,
-        'slug': slug
+        'slug': slug, 
+        'link': doc_link
     }
     return json_list
+
+def get_doc_link(table_id):
+    url_prefix = "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#"
+    return url_prefix + table_id
 
 def get_bs_from_html(filepath):
     with open(filepath, 'r') as html_file:
