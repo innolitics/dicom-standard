@@ -10,8 +10,8 @@ import re
 import parse.parse_lib as pl
 
 def main(standard_path, json_path):
-    standard = pl.get_bs_from_html(standard_path)
-    ciod_json_list = pl.get_table_data_from_standard(standard, 'ciods')
+    standard = pl.parse_object_from_html(standard_path)
+    ciod_json_list = pl.table_data_from_standard(standard, 'ciods')
     expand_module_usage_fields(ciod_json_list)
     descriptions = get_ciod_descriptions_from_standard(standard)
     final_json_list = add_ciod_description_fields(ciod_json_list, descriptions)
@@ -27,12 +27,12 @@ def expand_module_usage_fields(ciod_json_raw):
 def expand_conditional_statement(usage_field):
     conditional = re.compile("^C.*")
     if conditional.match(usage_field):
-        usage, *conditional_statement = re.split("-", usage_field)
-        return usage.strip(), ''.join(conditional_statement).strip()
+        usage, *conditional_statement_parts = re.split("-", usage_field)
+        conditional_statement = ''.join(conditional_statement_parts).strip()
     else:
-        usage = usage_field.strip()
+        usage = usage_field
         conditional_statement = None
-        return usage, conditional_statement
+    return usage.strip(), conditional_statement
 
 def add_ciod_description_fields(ciod_json_list, descriptions):
     i = 0
@@ -48,7 +48,7 @@ def get_ciod_descriptions_from_standard(standard):
 
 def find_ciod_tables(standard):
     match_pattern = re.compile(".*IOD Modules$")
-    chapter_tables = pl.get_all_tdivs_from_chapter(standard, 'chapter_A')
+    chapter_tables = pl.all_tdivs_in_chapter(standard, 'chapter_A')
     filtered_tables = [table for table in chapter_tables
                        if match_pattern.match(table.p.strong.get_text())]
     return filtered_tables

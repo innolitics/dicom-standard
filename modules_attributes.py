@@ -10,8 +10,8 @@ import sys
 import parse.parse_lib as pl
 
 def main(standard_path, json_path):
-    standard = pl.get_bs_from_html(standard_path)
-    modules_json = pl.get_table_data_from_standard(standard, 'modules')
+    standard = pl.parse_object_from_html(standard_path)
+    modules_json = pl.table_data_from_standard(standard, 'modules')
     pl.dump_pretty_json(json_path, 'w', modules_json)
 
 if __name__ == '__main__':

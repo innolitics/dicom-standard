@@ -14,24 +14,24 @@ from bs4 import BeautifulSoup
 FULL_TABLE_COLUMN_NUM = 4
 REFERENCE_COLUMN = 2
 
-def get_table_data_from_standard(standard, mode):
+def table_data_from_standard(standard, mode):
     '''
     Given a section of the standard, parse the HTML tables and return the data
     in a JSON file.
     '''
-    chapter_name, match_pattern, column_titles, column_correction = get_table_headers_and_location(mode)
+    chapter_name, match_pattern, column_titles, column_correction = table_headers_and_location(mode)
     all_tables = standard.find_all('div', class_='table')
-    chapter_tables = get_all_tdivs_from_chapter(standard, chapter_name)
-    json_list = []
+    chapter_tables = all_tdivs_in_chapter(standard, chapter_name)
+    all_table_dicts = []
     for tdiv in chapter_tables:
         table_name = tdiv.p.strong.get_text()
         table_id = tdiv.a.get('id')
         if match_pattern.match(table_name):
             final_table = condition_table_data(tdiv, all_tables, column_correction)
-            json_list.append(table_to_json(final_table, column_titles, table_name, table_id))
-    return json_list
+            all_table_dicts.append(table_to_dict(final_table, column_titles, table_name, table_id))
+    return all_table_dicts 
 
-def get_table_headers_and_location(mode):
+def table_headers_and_location(mode):
     chapter_name = None
     match_pattern = None
     column_titles = []
@@ -39,7 +39,7 @@ def get_table_headers_and_location(mode):
     if mode == 'ciods':
         chapter_name = "chapter_A"
         match_pattern = re.compile(".*IOD Modules$")
-        column_titles = ['information_entity', 'module', 'doc_reference', 'usage']
+        column_titles = ['information_entity', 'module', 'link_to_standard', 'usage']
     elif mode == 'modules':
         chapter_name = "chapter_C"
         match_pattern = re.compile(".*Module Attributes$")
@@ -49,7 +49,7 @@ def get_table_headers_and_location(mode):
         raise ValueError('Invalid mode')
     return (chapter_name, match_pattern, column_titles, column_correction)
 
-def get_all_tdivs_from_chapter(standard, chapter_name):
+def all_tdivs_in_chapter(standard, chapter_name):
     table_divs = []
     chapter_divs = standard.find_all('div', class_='chapter')
     for chapter in chapter_divs:
@@ -57,12 +57,12 @@ def get_all_tdivs_from_chapter(standard, chapter_name):
             table_divs = chapter.find_all('div', class_='table')
             return table_divs
 
-def get_clean_table_name(name):
+def clean_table_name(name):
     table, section, title = re.split('\u00a0', name)
     clean_title, *splits = re.split('(IOD Modules)|(Module Attributes)|(Macro Attributes)', title)
     return clean_title.strip()
 
-def get_slug_from_name(name):
+def slug_from_name(name):
     table, section, title = re.split('\u00a0', name)
     slug = create_slug(table, section)
     return slug
@@ -113,12 +113,12 @@ def get_spans(table):
     for row in table:
         row_spans = []
         for cell in row:
-            cell_span = get_span_from_cell(cell)
+            cell_span = span_from_cell(cell)
             row_spans.append(cell_span)
         spans.append(row_spans)
     return spans
 
-def get_span_from_cell(cell):
+def span_from_cell(cell):
     if cell is None:
         return None
     cell_html = BeautifulSoup(cell, 'html.parser')
@@ -126,11 +126,11 @@ def get_span_from_cell(cell):
     cell_span = [
         int(td_tag.get('rowspan', 1)),
         int(td_tag.get('colspan', 1)),
-        get_td_html_content(str(td_tag))
+        td_html_content(str(td_tag))
     ]
     return cell_span
 
-def get_td_html_content(td_html):
+def td_html_content(td_html):
     split_html = re.split('(<td.*?>)|(</td>)', td_html)
     return split_html[3]
 
@@ -239,7 +239,7 @@ def is_macro_link(cell):
 
 def macro_expansion(cell, current_table_id, macro_table_list):
     if is_macro_link(cell):
-        table_id = get_css_id_from_href(cell)
+        table_id = css_id_from_href(cell)
         if table_id == current_table_id:
             return None
         macro_div = find_table_div(macro_table_list, table_id)
@@ -247,7 +247,7 @@ def macro_expansion(cell, current_table_id, macro_table_list):
         return macro_table
     return None
 
-def get_css_id_from_href(cell):
+def css_id_from_href(cell):
     link = cell.p.span.a.get('href')
     _url, _pound, table_id = link.partition('#')
     if table_id is None:
@@ -268,11 +268,11 @@ def extract_text_from_html(full_table, link_correction):
     for row in full_table:
         temp_row = []
         for i in range(len(row)):
-            temp_row.append(get_text_or_href_from_cell(row[i], i, link_correction))
+            temp_row.append(text_or_href_from_cell(row[i], i, link_correction))
         final_table.append(temp_row)
     return final_table
 
-def get_text_or_href_from_cell(cell_html, column_idx, link_correction):
+def text_or_href_from_cell(cell_html, column_idx, link_correction):
     if cell_html is None:
         return None
     html = BeautifulSoup(cell_html, 'html.parser')
@@ -282,13 +282,13 @@ def get_text_or_href_from_cell(cell_html, column_idx, link_correction):
     else:
         return html.get_text()
 
-def table_to_json(final_table, column_titles, table_name, table_id):
+def table_to_dict(final_table, column_titles, table_name, table_id):
     '''
-    Convert a single table to a JSON dictionary.
+    Convert a single table to a dictionary.
     '''
     col1, col2, col3, col4 = zip(*final_table)
-    clean_name = get_clean_table_name(table_name)
-    slug = get_slug_from_name(table_name)
+    clean_name = clean_table_name(table_name)
+    slug = slug_from_name(table_name)
     doc_link = get_doc_link(table_id)
     table_data = []
     i = -1
@@ -297,19 +297,19 @@ def table_to_json(final_table, column_titles, table_name, table_id):
         table_data.append({column_titles[0]: cell1, column_titles[1]: cell2,
                            column_titles[2]: cell3, column_titles[3]: cell4,
                            "order": i})
-    json_list = {
+    table_dict = {
         'name': clean_name,
         'data': table_data,
-        'slug': slug, 
-        'link': doc_link
+        'slug': slug,
+        'link_to_standard': doc_link
     }
-    return json_list
+    return table_dict
 
 def get_doc_link(table_id):
     url_prefix = "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#"
     return url_prefix + table_id
 
-def get_bs_from_html(filepath):
+def parse_object_from_html(filepath):
     with open(filepath, 'r') as html_file:
         return BeautifulSoup(html_file, 'html.parser')
 

@@ -7,8 +7,8 @@ import sys
 
 import pandas as pd
 
-from parse_lib import dump_pretty_json
-from parse_lib import read_json_to_dict
+from parse.parse_lib import dump_pretty_json
+from parse.parse_lib import read_json_to_dict
 
 def join_by_tag_attrs_and_properties(standard_attrs, properties):
     full_attrs = []
@@ -20,7 +20,7 @@ def join_by_tag_attrs_and_properties(standard_attrs, properties):
     return full_attrs
 
 def natural_join(properties_dataframe, module):
-    new_module = {'name': module['name'], 'slug': module['slug'], 'link': module['link'], 'data': []}
+    new_module = {'name': module['name'], 'slug': module['slug'], 'link': module['link_to_standard'], 'data': []}
     module_dataframe = pd.DataFrame(module['data'])
     joined_dataframe = pd.merge(module_dataframe, properties_dataframe,
                                 left_on='tag', right_index=True)
