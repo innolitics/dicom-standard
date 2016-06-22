@@ -9,7 +9,7 @@ import json
 import re
 from copy import deepcopy
 
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, NavigableString
 
 FULL_TABLE_COLUMN_NUM = 4
 REFERENCE_COLUMN = 2
@@ -244,6 +244,7 @@ def macro_expansion(cell, current_table_id, macro_table_list):
             return None
         macro_div = find_table_div(macro_table_list, table_id)
         macro_table = table_to_list(macro_div, macro_table_list)
+        prepend_sequence_indicators(cell, macro_table)
         return macro_table
     return None
 
@@ -262,6 +263,26 @@ def find_table_div(all_tables, table_id):
         return None
     except AttributeError:
         return None
+
+def prepend_sequence_indicators(cell, macro_table):
+    if macro_table is None:
+        return
+    indicator = sequence_indicator_from_cell(cell.p.span.get_text())
+    for row in macro_table:
+        row[0] = insert_indicator_into_html(indicator, row[0])
+
+def insert_indicator_into_html(indicator, html):
+    name_cell = BeautifulSoup(html, 'html.parser').find('td')
+    name_cell.insert(0, NavigableString(indicator))
+    return str(name_cell)
+
+def sequence_indicator_from_cell(cell):
+    preceding_space, *split = re.split('^(>+)', cell)
+    if split == []:
+        indicator = ''
+    else:
+        indicator = split[0]
+    return indicator
 
 def extract_text_from_html(full_table, link_correction):
     final_table = []
