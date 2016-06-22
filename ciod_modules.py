@@ -11,7 +11,7 @@ import parse.parse_lib as pl
 
 def main(standard_path, json_path):
     standard = pl.parse_object_from_html(standard_path)
-    ciod_json_list = pl.table_data_from_standard(standard, 'ciods')
+    ciod_json_list = pl.ciod_module_data_from_standard(standard)
     expand_module_usage_fields(ciod_json_list)
     descriptions = ciod_descriptions_from_standard(standard)
     final_json_list = add_ciod_description_fields(ciod_json_list, descriptions)
