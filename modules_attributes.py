@@ -22,7 +22,7 @@ def main(standard_path, json_path):
 def add_attribute_slugs(all_modules):
     for module in all_modules:
         for attribute in module['data']:
-            attribute['slug'] = attribute['tag'].replace('(', '').replace(')', '').replace(',', '-')
+            attribute['slug'] = pl.create_slug(attribute['tag'])
 
 def add_parent_ids_to_table(all_modules):
     for module in all_modules:

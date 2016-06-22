@@ -60,7 +60,8 @@ def clean_table_name(name):
     return clean_title.strip()
 
 def create_slug(title):
-    return title.lower().replace(" ", "-")
+    first_pass_slugify = title.lower().replace(" ", "-").replace(",", "-")
+    return re.sub('(\()|(\))', '', first_pass_slugify)
 
 def condition_table_data(tdiv, all_tables, column_correction):
     raw_table = table_to_list(tdiv, all_tables)
