@@ -13,7 +13,7 @@ import parse.parse_lib as pl
 
 def main(standard_path, json_path):
     standard = pl.parse_object_from_html(standard_path)
-    all_modules = pl.table_data_from_standard(standard, 'modules')
+    all_modules = pl.module_attribute_data_from_standard(standard)
     add_attribute_slugs(all_modules)
     add_parent_ids_to_table(all_modules)
     clean_all_attribute_names(all_modules)
@@ -22,7 +22,7 @@ def main(standard_path, json_path):
 def add_attribute_slugs(all_modules):
     for module in all_modules:
         for attribute in module['data']:
-            attribute['slug'] = attribute['tag'].replace('(', '').replace(')', '').replace(',', '-')
+            attribute['slug'] = pl.create_slug(attribute['tag'])
 
 def add_parent_ids_to_table(all_modules):
     for module in all_modules:

@@ -14,12 +14,27 @@ from bs4 import BeautifulSoup, NavigableString
 FULL_TABLE_COLUMN_NUM = 4
 REFERENCE_COLUMN = 2
 
-def table_data_from_standard(standard, mode):
+def ciod_module_data_from_standard(standard):
+    chapter_name = "chapter_A"
+    match_pattern = re.compile(".*IOD Modules$")
+    column_titles = ['information_entity', 'module', 'link_to_standard', 'usage']
+    column_correction = False
+    return table_data_from_standard(standard, chapter_name, match_pattern,
+                                    column_titles, column_correction)
+
+def module_attribute_data_from_standard(standard):
+    chapter_name = "chapter_C"
+    match_pattern = re.compile(".*Module Attributes$")
+    column_titles = ['attribute', 'tag', 'type', 'description']
+    column_correction = True
+    return table_data_from_standard(standard, chapter_name, match_pattern,
+                                    column_titles, column_correction)
+
+def table_data_from_standard(standard, chapter_name, match_pattern, column_titles, column_correction):
     '''
     Given a section of the standard, parse the HTML tables and return the data
     in a JSON file.
     '''
-    chapter_name, match_pattern, column_titles, column_correction = table_headers_and_location(mode)
     all_tables = standard.find_all('div', class_='table')
     chapter_tables = all_tdivs_in_chapter(standard, chapter_name)
     all_table_dicts = []
@@ -30,24 +45,6 @@ def table_data_from_standard(standard, mode):
             final_table = condition_table_data(tdiv, all_tables, column_correction)
             all_table_dicts.append(table_to_dict(final_table, column_titles, table_name, table_id))
     return all_table_dicts 
-
-def table_headers_and_location(mode):
-    chapter_name = None
-    match_pattern = None
-    column_titles = []
-    column_correction = False
-    if mode == 'ciods':
-        chapter_name = "chapter_A"
-        match_pattern = re.compile(".*IOD Modules$")
-        column_titles = ['information_entity', 'module', 'link_to_standard', 'usage']
-    elif mode == 'modules':
-        chapter_name = "chapter_C"
-        match_pattern = re.compile(".*Module Attributes$")
-        column_titles = ['attribute', 'tag', 'type', 'description']
-        column_correction = True
-    else:
-        raise ValueError('Invalid mode')
-    return (chapter_name, match_pattern, column_titles, column_correction)
 
 def all_tdivs_in_chapter(standard, chapter_name):
     table_divs = []
@@ -62,14 +59,9 @@ def clean_table_name(name):
     clean_title, *splits = re.split('(IOD Modules)|(Module Attributes)|(Macro Attributes)', title)
     return clean_title.strip()
 
-def slug_from_name(name):
-    table, section, title = re.split('\u00a0', name)
-    slug = create_slug(table, section)
-    return slug
-
-def create_slug(table, section):
-    slug = table + " " + section
-    return slug.lower().replace(" ", "-")
+def create_slug(title):
+    first_pass_slugify = title.lower().replace(" ", "-").replace(",", "-")
+    return re.sub('(\()|(\))', '', first_pass_slugify)
 
 def condition_table_data(tdiv, all_tables, column_correction):
     raw_table = table_to_list(tdiv, all_tables)
@@ -239,7 +231,7 @@ def is_macro_link(cell):
 
 def macro_expansion(cell, current_table_id, macro_table_list):
     if is_macro_link(cell):
-        table_id = css_id_from_href(cell)
+        table_id = extract_referenced_table_id(cell)
         if table_id == current_table_id:
             return None
         macro_div = find_table_div(macro_table_list, table_id)
@@ -248,11 +240,11 @@ def macro_expansion(cell, current_table_id, macro_table_list):
         return macro_table
     return None
 
-def css_id_from_href(cell):
+def extract_referenced_table_id(cell):
     link = cell.p.span.a.get('href')
     _url, _pound, table_id = link.partition('#')
     if table_id is None:
-        raise ValueError("URL formatting error")
+        raise ValueError("Formatting error")
     return table_id
 
 def find_table_div(all_tables, table_id):
@@ -309,7 +301,7 @@ def table_to_dict(final_table, column_titles, table_name, table_id):
     '''
     col1, col2, col3, col4 = zip(*final_table)
     clean_name = clean_table_name(table_name)
-    slug = slug_from_name(table_name)
+    slug = create_slug(clean_name)
     doc_link = find_doc_link(table_id)
     table_data = []
     i = -1
