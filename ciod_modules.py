@@ -10,11 +10,29 @@ import re
 import parse.parse_lib as pl
 
 def main(standard_path, json_path):
-    standard = pl.get_bs_from_html(standard_path)
-    ciod_json_list = pl.get_table_data_from_standard(standard, 'ciods')
-    descriptions = get_ciod_descriptions_from_standard(standard)
+    standard = pl.parse_object_from_html(standard_path)
+    ciod_json_list = pl.table_data_from_standard(standard, 'ciods')
+    expand_module_usage_fields(ciod_json_list)
+    descriptions = ciod_descriptions_from_standard(standard)
     final_json_list = add_ciod_description_fields(ciod_json_list, descriptions)
     pl.dump_pretty_json(json_path, 'w', final_json_list)
+
+def expand_module_usage_fields(ciod_json_raw):
+    for ciod in ciod_json_raw:
+        for module in ciod['data']:
+            usage, conditional_statement = expand_conditional_statement(module['usage'])
+            module['usage'] = usage
+            module['conditional_statement'] = conditional_statement
+
+def expand_conditional_statement(usage_field):
+    conditional = re.compile("^C.*")
+    if conditional.match(usage_field):
+        usage, *conditional_statement_parts = re.split("-", usage_field)
+        conditional_statement = ''.join(conditional_statement_parts).strip()
+    else:
+        usage = usage_field
+        conditional_statement = None
+    return usage.strip(), conditional_statement
 
 def add_ciod_description_fields(ciod_json_list, descriptions):
     i = 0
@@ -23,14 +41,14 @@ def add_ciod_description_fields(ciod_json_list, descriptions):
         i += 1
     return ciod_json_list
 
-def get_ciod_descriptions_from_standard(standard):
+def ciod_descriptions_from_standard(standard):
     filtered_tables = find_ciod_tables(standard)
     descriptions = list(map(find_description_text_in_html, filtered_tables))
     return descriptions
 
 def find_ciod_tables(standard):
     match_pattern = re.compile(".*IOD Modules$")
-    chapter_tables = pl.get_all_tdivs_from_chapter(standard, 'chapter_A')
+    chapter_tables = pl.all_tdivs_in_chapter(standard, 'chapter_A')
     filtered_tables = [table for table in chapter_tables
                        if match_pattern.match(table.p.strong.get_text())]
     return filtered_tables
