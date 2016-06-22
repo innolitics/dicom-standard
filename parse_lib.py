@@ -62,14 +62,8 @@ def clean_table_name(name):
     clean_title, *splits = re.split('(IOD Modules)|(Module Attributes)|(Macro Attributes)', title)
     return clean_title.strip()
 
-def slug_from_name(name):
-    table, section, title = re.split('\u00a0', name)
-    slug = create_slug(table, section)
-    return slug
-
-def create_slug(table, section):
-    slug = table + " " + section
-    return slug.lower().replace(" ", "-")
+def create_slug(title):
+    return title.lower().replace(" ", "-")
 
 def condition_table_data(tdiv, all_tables, column_correction):
     raw_table = table_to_list(tdiv, all_tables)
@@ -239,7 +233,7 @@ def is_macro_link(cell):
 
 def macro_expansion(cell, current_table_id, macro_table_list):
     if is_macro_link(cell):
-        table_id = css_id_from_href(cell)
+        table_id = extract_referenced_table_id(cell)
         if table_id == current_table_id:
             return None
         macro_div = find_table_div(macro_table_list, table_id)
@@ -248,11 +242,11 @@ def macro_expansion(cell, current_table_id, macro_table_list):
         return macro_table
     return None
 
-def css_id_from_href(cell):
+def extract_referenced_table_id(cell):
     link = cell.p.span.a.get('href')
     _url, _pound, table_id = link.partition('#')
     if table_id is None:
-        raise ValueError("URL formatting error")
+        raise ValueError("Formatting error")
     return table_id
 
 def find_table_div(all_tables, table_id):
@@ -309,7 +303,7 @@ def table_to_dict(final_table, column_titles, table_name, table_id):
     '''
     col1, col2, col3, col4 = zip(*final_table)
     clean_name = clean_table_name(table_name)
-    slug = slug_from_name(table_name)
+    slug = create_slug(clean_name)
     doc_link = find_doc_link(table_id)
     table_data = []
     i = -1
