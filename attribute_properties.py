@@ -25,8 +25,8 @@ def properties_to_dict(table_data):
         retired = len(vm) > 1
         properties_dict[tag] = {
             "keyword": keyword,
-            "vr": vr,
-            "vm": vm[0],
+            "value_representation": vr,
+            "value_multiplicity": vm[0],
             "retired": retired
         }
     return properties_dict
