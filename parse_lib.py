@@ -46,24 +46,6 @@ def table_data_from_standard(standard, chapter_name, match_pattern, column_title
             all_table_dicts.append(table_to_dict(final_table, column_titles, table_name, table_id))
     return all_table_dicts 
 
-def table_headers_and_location(mode):
-    chapter_name = None
-    match_pattern = None
-    column_titles = []
-    column_correction = False
-    if mode == 'ciods':
-        chapter_name = "chapter_A"
-        match_pattern = re.compile(".*IOD Modules$")
-        column_titles = ['information_entity', 'module', 'link_to_standard', 'usage']
-    elif mode == 'modules':
-        chapter_name = "chapter_C"
-        match_pattern = re.compile(".*Module Attributes$")
-        column_titles = ['attribute', 'tag', 'type', 'description']
-        column_correction = True
-    else:
-        raise ValueError('Invalid mode')
-    return (chapter_name, match_pattern, column_titles, column_correction)
-
 def all_tdivs_in_chapter(standard, chapter_name):
     table_divs = []
     chapter_divs = standard.find_all('div', class_='chapter')
