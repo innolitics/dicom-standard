@@ -10,8 +10,8 @@ def normalize_modules(input_json_path, modules_output_path):
 def module_table_from_raw_list(module_attr_list):
     modules = {}
     for module in module_attr_list:
-        modules[module['name']] = {
-            'slug': module['slug'],
+        modules[module['slug']] = {
+            'name': module['name'],
             'link_to_standard': module['link_to_standard']
         }
     return modules
