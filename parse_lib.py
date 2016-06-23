@@ -25,7 +25,7 @@ def ciod_module_data_from_standard(standard):
 def module_attribute_data_from_standard(standard):
     chapter_name = "chapter_C"
     match_pattern = re.compile(".*Module Attributes$")
-    column_titles = ['attribute', 'tag', 'type', 'description']
+    column_titles = ['name', 'tag', 'type', 'description']
     column_correction = True
     return table_data_from_standard(standard, chapter_name, match_pattern,
                                     column_titles, column_correction)
