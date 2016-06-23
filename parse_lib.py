@@ -24,7 +24,7 @@ def ciod_module_data_from_standard(standard):
 
 def module_attribute_data_from_standard(standard):
     chapter_name = "chapter_C"
-    match_pattern = re.compile(".*Module Attributes$")
+    match_pattern = re.compile("(.*Module Attributes$)|(.*Module Table$)")
     column_titles = ['name', 'tag', 'type', 'description']
     column_correction = True
     return table_data_from_standard(standard, chapter_name, match_pattern,
@@ -56,7 +56,7 @@ def all_tdivs_in_chapter(standard, chapter_name):
 
 def clean_table_name(name):
     table, section, title = re.split('\u00a0', name)
-    clean_title, *splits = re.split('(IOD Modules)|(Module Attributes)|(Macro Attributes)', title)
+    clean_title, *splits = re.split('(IOD Modules)|(Module Attributes)|(Macro Attributes)|(Module Table)', title)
     return clean_title.strip()
 
 def create_slug(title):
