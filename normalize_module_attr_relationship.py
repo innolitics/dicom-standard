@@ -9,7 +9,10 @@ def module_attr_relationship_table(module_attr_relationship_list):
             entries.append({
                 'module': module['slug'],
                 'attribute': attribute['slug'],
+                'tag': attribute['tag'],
                 'order': attribute['order'],
+                'type': attribute['type'],
+                'description': attribute['description']
             })
     return entries
 

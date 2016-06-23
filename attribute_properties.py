@@ -27,6 +27,7 @@ def properties_to_dict(table_data):
             "keyword": keyword,
             "value_representation": vr,
             "value_multiplicity": vm[0],
+            "name": name,
             "retired": retired
         }
     return properties_dict
