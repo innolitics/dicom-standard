@@ -15,8 +15,7 @@ import parse.parse_lib as pl
 def find_attribute_properties(standard):
     all_tables = standard.find_all('div', class_='table')
     html_table = pl.find_table_div(all_tables, 'table_6-1')
-    raw_table_data = extract_table_data(html_table.div.table.tbody)
-    table_data = remove_irregular_rows(raw_table_data)
+    table_data = extract_table_data(html_table.div.table.tbody)
     properties_dict = properties_to_dict(table_data)
     return properties_dict
 
@@ -36,10 +35,6 @@ def properties_to_dict(table_data):
         }
     return properties_dict
 
-def remove_irregular_rows(table):
-    new_table = [row for row in table if len(row) >= 6]
-    return new_table
-
 def extract_table_data(table_body):
     data = []
     rows = table_body.find_all('tr')
@@ -47,7 +42,6 @@ def extract_table_data(table_body):
         cols = row.find_all('td')
         cols = [ele.text.strip() for ele in cols]
         data.append(cols)
-        # data.append([ele for ele in cols if ele])
     return data
 
 def main(standard_path, json_path):

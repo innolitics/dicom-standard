@@ -7,12 +7,6 @@ def attributes_table_from_raw_list(attr_list, module_attr_list):
     for tag, attribute in attr_list.items():
         attributes[tag] = attribute
         attributes[tag]['slug'] = pl.create_slug(tag)
-        attributes[tag]['type'] = None
-        for module in module_attr_list:
-            for attr in module['data']:
-                if attr['tag'] == tag and attr['type'] is not None:
-                    attributes[tag]['type'] = attr['type']
-                    break
     return attributes
 
 if __name__ == "__main__":
