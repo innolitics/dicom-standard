@@ -59,6 +59,10 @@ def clean_table_name(name):
     clean_title, *splits = re.split('(IOD Modules)|(Module Attributes)|(Macro Attributes)|(Module Table)', title)
     return clean_title.strip()
 
+def clean_table_entry(name):
+    clean_title, *splits = re.split('Module', name)
+    return clean_title.strip()
+
 def create_slug(title):
     first_pass_slugify = title.lower().replace(" ", "-").replace(",", "-")
     return re.sub('(\()|(\))', '', first_pass_slugify)
@@ -293,7 +297,7 @@ def text_or_href_from_cell(cell_html, column_idx, link_correction):
         id_sequence, ref_link = html.find_all('a')
         return ref_link.get('href')
     else:
-        return html.get_text()
+        return clean_table_entry(html.get_text())
 
 def table_to_dict(final_table, column_titles, table_name, table_id):
     '''
