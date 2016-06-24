@@ -38,12 +38,17 @@ def add_parent_ids_to_table(all_modules):
                                                                          attributes_listed_in_order)
                 if attribute['parent_slug'] != '':
                     attribute['slug'] = attribute['parent_slug'] + ":" + attribute['slug']
-            previous_attribute = {
-                'slug': attribute['slug'],
-                'sequence_indicator': sequence_indicator,
-                'parent_slug': attribute['parent_slug']
-            }
+            previous_attribute = set_new_previous_attribute(attribute)
         module['data'] = attributes_listed_in_order
+
+def set_new_previous_attribute(attribute):
+    sequence_indicator = pl.sequence_indicator_from_cell(attribute['name'])
+    previous_attribute = {
+        'slug': attribute['slug'],
+        'sequence_indicator': sequence_indicator,
+        'parent_slug': attribute['parent_slug']
+    }
+    return previous_attribute
 
 def record_parent_id_to_attribute(sequence_indicator, previous_attribute, attributes_listed_in_order):
     if is_sub_attribute_of_previous(sequence_indicator, previous_attribute):

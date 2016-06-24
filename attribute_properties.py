@@ -22,22 +22,22 @@ def find_attribute_properties(standard):
 
 def properties_to_dict(table_data):
     properties_dict = {}
-    for tag, name, keyword, vr, *vm in table_data:
-        if (len(vm) > 1):
-            retired = re.match("RET", vm[1]) is not None
+    for tag, name, keyword, value_representation, value_multiplicity, extra in table_data:
+        if extra is not None:
+            retired = re.match("RET", extra) is not None
         else:
             retired = False
         properties_dict[tag] = {
             "keyword": keyword,
-            "value_representation": vr,
-            "value_multiplicity": vm[0],
+            "value_representation": value_representation,
+            "value_multiplicity": value_multiplicity,
             "name": name,
             "retired": retired
         }
     return properties_dict
 
 def remove_irregular_rows(table):
-    new_table = [row for row in table if len(row) >= 5]
+    new_table = [row for row in table if len(row) >= 6]
     return new_table
 
 def extract_table_data(table_body):
@@ -46,7 +46,8 @@ def extract_table_data(table_body):
     for row in rows:
         cols = row.find_all('td')
         cols = [ele.text.strip() for ele in cols]
-        data.append([ele for ele in cols if ele])
+        data.append(cols)
+        # data.append([ele for ele in cols if ele])
     return data
 
 def main(standard_path, json_path):
