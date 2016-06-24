@@ -6,6 +6,7 @@ JSON file, which will then be appended to the attribute list from PS3.3.
 '''
 import sys
 import json
+import re
 
 from bs4 import BeautifulSoup
 
@@ -22,7 +23,10 @@ def find_attribute_properties(standard):
 def properties_to_dict(table_data):
     properties_dict = {}
     for tag, name, keyword, vr, *vm in table_data:
-        retired = len(vm) > 1
+        if (len(vm) > 1):
+            retired = re.match("RET", vm[1]) is not None
+        else:
+            retired = False
         properties_dict[tag] = {
             "keyword": keyword,
             "value_representation": vr,

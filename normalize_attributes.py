@@ -11,8 +11,9 @@ def attributes_table_from_raw_list(attr_list, module_attr_list):
         for module in module_attr_list:
             for attr in module['data']:
                 if attr['tag'] == tag:
-                    attributes[tag]['type'] = attr['type']
-                    break
+                    if attr['type'] is not None:
+                        attributes[tag]['type'] = attr['type']
+                        break
     return attributes
 
 if __name__ == "__main__":
