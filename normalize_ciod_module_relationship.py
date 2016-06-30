@@ -1,6 +1,6 @@
 import sys
 
-import parse.parse_lib as pl
+import parse_lib as pl
 
 def ciod_module_relationship_table(ciod_module_list):
     entries = []

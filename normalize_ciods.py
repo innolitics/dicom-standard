@@ -1,6 +1,6 @@
 import sys
 
-import parse.parse_lib as pl
+import parse_lib as pl
 
 def ciod_table_from_raw_list(ciod_module_list):
     ciods = {}

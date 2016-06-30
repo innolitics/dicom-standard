@@ -7,8 +7,8 @@ import sys
 
 import pandas as pd
 
-from parse.parse_lib import dump_pretty_json
-from parse.parse_lib import read_json_to_dict
+from parse_lib import dump_pretty_json
+from parse_lib import read_json_to_dict
 
 def join_by_tag_attrs_and_properties(standard_attrs, properties):
     full_attrs = []

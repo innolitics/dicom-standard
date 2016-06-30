@@ -10,7 +10,7 @@ import re
 
 from bs4 import BeautifulSoup
 
-import parse.parse_lib as pl
+import parse_lib as pl
 
 def find_attribute_properties(standard):
     all_tables = standard.find_all('div', class_='table')

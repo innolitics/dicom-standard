@@ -7,7 +7,7 @@ Output the tables in JSON format, one entry per module.
 import sys
 import re
 
-import parse.parse_lib as pl
+import parse_lib as pl
 
 def main(standard_path, json_path):
     standard = pl.parse_object_from_html(standard_path)

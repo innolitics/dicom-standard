@@ -9,7 +9,7 @@ import sys
 import re
 from operator import itemgetter
 
-import parse.parse_lib as pl
+import parse_lib as pl
 
 def main(standard_path, json_path):
     standard = pl.parse_object_from_html(standard_path)
