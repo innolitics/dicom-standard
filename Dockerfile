@@ -6,4 +6,4 @@ COPY . /source/
 WORKDIR /source
 ENV PYTHONPATH=$PYTHONPATH:/source
 ENV LANG C.UTF-8
-CMD pip3 install --upgrade pip && make install && make standard && make test_all 
+CMD pip3 install --upgrade pip && make install && make all 
