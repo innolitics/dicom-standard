@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM ubuntu:latest
 MAINTAINER Reece Stevens
 RUN apt-get update
 RUN apt-get install -y lxc python3 python3-pip python3-pandas make
