@@ -1,4 +1,14 @@
+PYTEST_BIN=python3 -m pytest
+
 all: normalize_individual normalized_relationship
+
+test: unittest endtoendtest
+
+unittest: 
+	$(PYTEST_BIN) -m 'not endtoend'
+
+endtoendtest:
+	$(PYTEST_BIN) -m 'endtoend'
 
 normalized_relationship: tmp/module_attr_relationship.json tmp/ciod_module_relationship.json
 
@@ -52,7 +62,7 @@ tmp/PS3.6-space-expand.html: PS3.6.html
 	cat $< | sed -e 's/&nbps;/ /g' > $@
 
 clean: 
-	rm -f *.pyc tmp/* tests/*.pyc api/input/*.pyc tests/*.pyc api/input/*.json
+	rm -f *.pyc tmp/* tests/*.pyc tests/*.pyc
 
 install:
 	pip3 install -r requirements.txt

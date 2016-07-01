@@ -3,7 +3,6 @@ bs4==0.0.1
 numpy==1.11.0
 pandas==0.17.1
 py==1.4.31
-pydicom==0.9.9
 pytest==2.9.2
 python-dateutil==2.5.3
 pytz==2016.4
