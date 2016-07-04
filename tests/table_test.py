@@ -59,8 +59,6 @@ def test_expand_rowspan():
     expected_table_list = [ ['<a href="somelink">1</a>', '2', '3', '4'],
                     ['<a href="somelink">1</a>', '2', '3', '4'],
                     ['<a href="somelink">1</a>', '2', '3', '4']]
-    print(table_list)
-    print(expected_table_list)
     assert table_list == expected_table_list
 
 def test_expand_both():
@@ -70,6 +68,4 @@ def test_expand_both():
     expected_table_list = [ ['<a href="somelink">1</a>', '<a href="somelink">1</a>', '<a href="somelink">1</a>', '4'],
                     ['<a href="somelink">1</a>', '<a href="somelink">1</a>', '<a href="somelink">1</a>', '4'],
                     ['1','2','3','4']]
-    print(table_list)
-    print(expected_table_list)
     assert table_list == expected_table_list
