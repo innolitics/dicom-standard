@@ -38,7 +38,10 @@ tmp/data_element_registry.json: tmp/PS3.6-cleaned.html extract_data_element_regi
 tmp/ciods_with_modules.json: tmp/PS3.3-cleaned.html extract_ciods_with_modules.py
 	python3 extract_ciods_with_modules.py $< $@
 
-tmp/modules_with_attributes.json: tmp/PS3.3-cleaned.html extract_modules_with_attributes.py
+tmp/modules_with_attributes.json: tmp/modules_with_raw_attributes.json process_modules_with_attributes.py
+	python3 process_modules_with_attributes.py $< $@
+
+tmp/modules_with_raw_attributes.json: tmp/PS3.3-cleaned.html extract_modules_with_attributes.py
 	python3 extract_modules_with_attributes.py $< $@
 
 
