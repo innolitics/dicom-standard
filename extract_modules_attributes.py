@@ -29,7 +29,7 @@ def add_parent_ids_to_table(all_modules):
         for attribute in attributes_listed_in_order:
             sequence_indicator = pl.sequence_indicator_from_cell(attribute['name'])
             if previous_attribute == {}:
-                attribute['parent_slug'] = None 
+                attribute['parent_slug'] = None
             else:
                 attribute['parent_slug'] = record_parent_id_to_attribute(sequence_indicator,
                                                                          previous_attribute,
@@ -60,7 +60,7 @@ def find_non_adjacent_parent(sequence_indicator, previous_attribute, attributes_
     difference = reference_level_difference(sequence_indicator, previous_attribute)
     parent_slug = previous_attribute['parent_slug']
     for i in range(difference):
-        if parent_slug is None: 
+        if parent_slug is None:
             break
         for other_attr in attributes_listed_in_order:
             if other_attr['slug'] == parent_slug:
@@ -93,7 +93,7 @@ def clean_attribute_name(name):
     if split != []:
         return split[1]
     else:
-        return name 
+        return name
 
 if __name__ == '__main__':
     main(sys.argv[1], sys.argv[2])

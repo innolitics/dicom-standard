@@ -42,7 +42,7 @@ def table_data_from_standard(standard, chapter_name, match_pattern, column_title
         if match_pattern.match(table_name):
             final_table = condition_table_data(tdiv, all_tables, column_correction)
             all_table_dicts.append(table_to_dict(final_table, column_titles, table_name, table_id))
-    return all_table_dicts 
+    return all_table_dicts
 
 def all_tdivs_in_chapter(standard, chapter_name):
     table_divs = []
