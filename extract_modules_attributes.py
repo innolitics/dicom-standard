@@ -9,14 +9,6 @@ from operator import itemgetter
 
 import parse_lib as pl
 
-def main(standard_path, json_path):
-    standard = pl.parse_object_from_html(standard_path)
-    all_modules = pl.module_attribute_data_from_standard(standard)
-    add_attribute_slugs(all_modules)
-    add_parent_ids_to_table(all_modules)
-    clean_all_attribute_names(all_modules)
-    pl.dump_pretty_json(json_path, 'w', all_modules)
-
 def add_attribute_slugs(all_modules):
     for module in all_modules:
         for attribute in module['data']:
@@ -96,4 +88,11 @@ def clean_attribute_name(name):
         return name
 
 if __name__ == '__main__':
-    main(sys.argv[1], sys.argv[2])
+    standard = pl.parse_object_from_html(sys.argv[1])
+
+    all_modules = pl.module_attribute_data_from_standard(standard)
+    add_attribute_slugs(all_modules)
+    add_parent_ids_to_table(all_modules)
+    clean_all_attribute_names(all_modules)
+
+    pl.dump_pretty_json(sys.argv[2], 'w', all_modules)
