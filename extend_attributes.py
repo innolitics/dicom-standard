@@ -14,12 +14,19 @@ def left_join(left_table, right_table, key):
     for key, left_row in left_table.items():
         try:
             right_row = right_table[key]
-            joined[key] = {**left_row, **right_row}
         except KeyError as e:
-            print(key)
-            print(left_row)
-            raise e
+            message = "Error joining the tables on key {}. Left row {}"
+            raise Exception(message.format(key, left_row))
+
+        check_overlapping_key_similarity(left_row, right_row)
+        joined[key] = {**left_row, **right_row}
     return joined
+
+
+def check_overlapping_key_similarity(left, right):
+    overlapping_keys = set(left.keys()) & set(right.keys())
+    for k in overlapping_keys:
+        assert left[k] == right[k]
 
 
 if __name__ == '__main__':
