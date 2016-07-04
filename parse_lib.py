@@ -9,8 +9,10 @@ from copy import deepcopy
 
 from bs4 import BeautifulSoup, NavigableString
 
+
 FULL_TABLE_COLUMN_NUM = 4
 REFERENCE_COLUMN = 2
+
 
 def table_data_from_standard(standard, chapter_name, match_pattern, column_titles, column_correction):
     '''
@@ -28,26 +30,30 @@ def table_data_from_standard(standard, chapter_name, match_pattern, column_title
             all_table_dicts.append(table_to_dict(final_table, column_titles, table_name, table_id))
     return all_table_dicts
 
+
 def all_tdivs_in_chapter(standard, chapter_name):
-    table_divs = []
     chapter_divs = standard.find_all('div', class_='chapter')
     for chapter in chapter_divs:
         if chapter.div.div.div.h1.a.get('id') == chapter_name:
             table_divs = chapter.find_all('div', class_='table')
             return table_divs
 
+
 def clean_table_name(name):
     table, section, title = re.split('\u00a0', name)
     clean_title, *splits = re.split('(IOD Modules)|(Module Attributes)|(Macro Attributes)|(Module Table)', title)
     return clean_title.strip()
 
+
 def clean_table_entry(name):
     clean_title, *splits = re.split('Module', name)
     return clean_title.strip()
 
+
 def create_slug(title):
     first_pass_slugify = title.lower().replace(" ", "-").replace(",", "-")
     return re.sub('(\()|(\))', '', first_pass_slugify)
+
 
 def condition_table_data(tdiv, all_tables, column_correction):
     raw_table = table_to_list(tdiv, all_tables)
@@ -58,6 +64,7 @@ def condition_table_data(tdiv, all_tables, column_correction):
     text_table_with_newlines = extract_text_from_html(full_table, link_correction)
     final_table = [map(remove_stray_newlines, row) for row in text_table_with_newlines]
     return final_table
+
 
 def remove_stray_newlines(attribute_value):
     if isinstance(attribute_value, str):
