@@ -10,31 +10,31 @@ unittest:
 endtoendtest:
 	$(PYTEST_BIN) -m 'endtoend'
 
-normalized_relationship: tmp/module_attr_relationship.json tmp/ciod_module_relationship.json
+normalized_relationship: dist/module_attr_relationship.json dist/ciod_module_relationship.json
 
-normalize_individual: tmp/ciods.json tmp/modules.json tmp/attributes.json
+normalize_individual: dist/ciods.json dist/modules.json dist/attributes.json
 
-modules: tmp/modules_raw.json
+modules: dist/modules_raw.json
 
-attributes: tmp/complete_attrs.json
+attributes: dist/complete_attrs.json
 
-raw_attributes: tmp/attributes_raw.json
+raw_attributes: dist/attributes_raw.json
 
-attr_properties: tmp/attribute_properties.json
+attr_properties: dist/attribute_properties.json
 
-tmp/module_attr_relationship.json: tmp/complete_attrs.json
+dist/module_attr_relationship.json: tmp/complete_attrs.json
 	python3 normalize_module_attr_relationship.py $< $@
 
-tmp/ciod_module_relationship.json: tmp/modules_raw.json
+dist/ciod_module_relationship.json: tmp/modules_raw.json
 	python3 normalize_ciod_module_relationship.py $< $@
 
-tmp/ciods.json: tmp/modules_raw.json
+dist/ciods.json: tmp/modules_raw.json
 	python3 normalize_ciods.py $< $@
 
-tmp/modules.json: tmp/complete_attrs.json
+dist/modules.json: tmp/complete_attrs.json
 	python3 normalize_modules.py $< $@
 
-tmp/attributes.json: tmp/attribute_properties.json tmp/complete_attrs.json
+dist/attributes.json: tmp/attribute_properties.json tmp/complete_attrs.json
 	python3 normalize_attributes.py $^ $@
 
 api/input/file_meta.json: api/input/ex_scan/IM-0001-0001.dcm
