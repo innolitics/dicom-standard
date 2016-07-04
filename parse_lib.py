@@ -85,6 +85,13 @@ def condition_table_data(tdiv, all_tables, column_correction):
     return text_table
 
 
+def extraneous_attribute_table_row(row):
+    # TODO: pull this out from the general parsing lib
+    cells = row.find_all('td')
+    expected_number_of_cells = 4
+    return len(cells) != expected_number_of_cells
+
+
 def strip_whitespace(attribute_value):
     if isinstance(attribute_value, str):
         return attribute_value.strip()
@@ -196,10 +203,12 @@ def slide_down(start_idx, num_slides, row):
     except IndexError:
         raise ValueError('Cell spans beyond table!')
 
-def table_to_list(table_div, macro_table_list=None):
+
+def table_to_list(table_div, macro_table_list=None, skip_if=None):
     '''
     Converts an HTML table to a 2D list, expanding macros along the way.
     '''
+    # TODO: split this into smaller parts
     if table_div is None:
         return None
     current_table_id = table_div.a.get('id')
@@ -209,6 +218,8 @@ def table_to_list(table_div, macro_table_list=None):
         macro_reference = check_for_macros(row, macro_table_list, current_table_id)
         if macro_reference is not None:
             table.extend(macro_reference)
+            continue
+        if skip_if and skip_if(row):
             continue
         cells = convert_row_to_list(row)
         table.append(cells)
