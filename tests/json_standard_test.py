@@ -9,8 +9,8 @@ are in the test_tables.py file.
 from bs4 import BeautifulSoup
 
 import parse_lib as pl
-import extract_ciod_modules as cm
-import extract_modules_attributes as ma
+import extract_ciods_with_modules as cm
+import process_modules_with_attributes as ma
 import normalize_ciods as nc
 import normalize_modules as nm
 import normalize_attributes as na
@@ -430,18 +430,12 @@ def test_normalize_modules():
     assert modules['module-1'] == matching_entry
 
 def test_normalize_attributes():
-    test_attribute_list = {
-        "(0001,0001)": {
-            'name': 'Attribute 1'
-        }
-    }
-    test_attribute_module_list = [
+    test_modules_with_attributes = [
         {
-            'data':[
+            'data': [
                 {
                     'slug': '0001-0001',
                     'name': 'Attribute 1',
-                    'order': 0,
                     'parent_slug': None,
                     'type': None,
                     'description': None,
@@ -450,10 +444,14 @@ def test_normalize_attributes():
             ]
         }
     ]
-    attributes = na.attributes_table_from_raw_list(test_attribute_list, test_attribute_module_list)
+    attributes = na.extract_attributes(test_modules_with_attributes)
     matching_entry = {
         'name': 'Attribute 1',
-        'slug': '0001-0001'
+        'parent_slug': None,
+        'slug': '0001-0001',
+        'type': None,
+        'description': None,
+        'tag': '(0001,0001)',
     }
     assert attributes['(0001,0001)'] == matching_entry
 
@@ -471,7 +469,6 @@ def test_normalize_ciod_module_relationship():
                     "module":"Patient",
                     "link_to_standard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.1.1",
                     "usage":"M",
-                    "order":0
                 },
             ]
         }
@@ -504,7 +501,6 @@ def normalize_module_attribute_relationship():
                     "value_multiplicity":"1",
                     "type":None,
                     "name":"Referenced Study Sequence",
-                    "order":0
                 }
             ],
             "slug":"patient-relationship"
