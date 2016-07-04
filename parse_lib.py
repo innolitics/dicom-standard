@@ -61,16 +61,17 @@ def condition_table_data(tdiv, all_tables, column_correction):
     if column_correction:
         full_table = correct_for_missing_type_column(full_table)
     link_correction = not column_correction
-    text_table_with_newlines = extract_text_from_html(full_table, link_correction)
-    final_table = [map(remove_stray_newlines, row) for row in text_table_with_newlines]
-    return final_table
+    unstripped_text_table = extract_text_from_html(full_table, link_correction)
+    text_table = [map(strip_whitespace, row) for row in unstripped_text_table]
+    return text_table
 
 
-def remove_stray_newlines(attribute_value):
+def strip_whitespace(attribute_value):
     if isinstance(attribute_value, str):
-        return attribute_value.replace('\n', '')
+        return attribute_value.strip()
     else:
         return attribute_value
+
 
 def correct_for_missing_type_column(full_table):
     '''
@@ -88,6 +89,7 @@ def correct_for_missing_type_column(full_table):
             corrected_row.extend([a_type, a_descr])
         corrected_table.append(corrected_row)
     return corrected_table
+
 
 def find_spans(table):
     '''
@@ -309,19 +311,23 @@ def table_to_dict(final_table, column_titles, table_name, table_id):
     }
     return table_dict
 
+
 def standard_link_from_fragment(fragment):
     url_prefix = "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#"
     return url_prefix + fragment
 
+
 def parse_html_file(filepath):
     with open(filepath, 'r') as html_file:
         return BeautifulSoup(html_file, 'html.parser')
+
 
 def dump_pretty_json(filepath, write_status, data, prefix=None):
     with open(filepath, write_status) as json_file:
         if prefix is not None:
             json_file.write(prefix)
         json.dump(data, json_file, sort_keys=False, indent=4, separators=(',', ':'))
+
 
 def read_json_to_dict(filepath):
     with open(filepath, 'r') as json_file:
