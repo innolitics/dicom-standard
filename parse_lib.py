@@ -344,6 +344,10 @@ def left_join(list_of_dicts, dict_of_dicts, left_key):
     joined = []
     for left_row in list_of_dicts:
         key_value = left_row[left_key]
-        right_row = dict_of_dicts[key_value]
+        try:
+            right_row = dict_of_dicts[key_value]
+        except KeyError as e:
+            print(left_row, e)
+            raise e
         joined.append({**left_row, **right_row})
     return joined

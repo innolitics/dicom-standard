@@ -11,8 +11,8 @@ are in the test_tables.py file.
 from bs4 import BeautifulSoup
 
 import parse_lib as pl
-import ciod_modules as cm
-import modules_attributes as ma
+import extract_ciod_modules as cm
+import extract_modules_attributes as ma
 import normalize_ciods as nc
 import normalize_modules as nm
 import normalize_attributes as na
