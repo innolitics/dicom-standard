@@ -6,7 +6,7 @@ import parse_lib as pl
 @pytest.mark.endtoend
 @pytest.fixture(scope='module')
 def make_standard():
-    subprocess.run(['make', 'all'])
+    subprocess.run(['make', 'all', '--jobs', '4'])
 
 @pytest.mark.endtoend
 @pytest.fixture(scope='module')
