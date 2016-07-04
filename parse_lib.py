@@ -12,22 +12,6 @@ from bs4 import BeautifulSoup, NavigableString
 FULL_TABLE_COLUMN_NUM = 4
 REFERENCE_COLUMN = 2
 
-def ciod_module_data_from_standard(standard):
-    chapter_name = "chapter_A"
-    match_pattern = re.compile(".*IOD Modules$")
-    column_titles = ['information_entity', 'module', 'link_to_standard', 'usage']
-    column_correction = False
-    return table_data_from_standard(standard, chapter_name, match_pattern,
-                                    column_titles, column_correction)
-
-def module_attribute_data_from_standard(standard):
-    chapter_name = "chapter_C"
-    match_pattern = re.compile("(.*Module Attributes$)|(.*Module Table$)")
-    column_titles = ['name', 'tag', 'type', 'description']
-    column_correction = True
-    return table_data_from_standard(standard, chapter_name, match_pattern,
-                                    column_titles, column_correction)
-
 def table_data_from_standard(standard, chapter_name, match_pattern, column_titles, column_correction):
     '''
     Given a section of the standard, parse the HTML tables and return the data

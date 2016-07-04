@@ -7,6 +7,14 @@ import re
 
 import parse_lib as pl
 
+def ciod_module_data_from_standard(standard):
+    chapter_name = "chapter_A"
+    match_pattern = re.compile(".*IOD Modules$")
+    column_titles = ['information_entity', 'module', 'link_to_standard', 'usage']
+    column_correction = False
+    return table_data_from_standard(standard, chapter_name, match_pattern,
+                                    column_titles, column_correction)
+
 
 def expand_module_usage_fields(ciod_json_raw):
     for ciod in ciod_json_raw:

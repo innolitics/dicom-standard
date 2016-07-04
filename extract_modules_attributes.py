@@ -9,6 +9,14 @@ from operator import itemgetter
 
 import parse_lib as pl
 
+def module_attribute_data_from_standard(standard):
+    chapter_name = "chapter_C"
+    match_pattern = re.compile("(.*Module Attributes$)|(.*Module Table$)")
+    column_titles = ['name', 'tag', 'type', 'description']
+    column_correction = True
+    return table_data_from_standard(standard, chapter_name, match_pattern,
+                                    column_titles, column_correction)
+
 def add_attribute_slugs(all_modules):
     for module in all_modules:
         for attribute in module['data']:
@@ -90,7 +98,7 @@ def clean_attribute_name(name):
 if __name__ == '__main__':
     standard = pl.parse_html_file(sys.argv[1])
 
-    all_modules = pl.module_attribute_data_from_standard(standard)
+    all_modules = module_attribute_data_from_standard(standard)
     add_attribute_slugs(all_modules)
     add_parent_ids_to_table(all_modules)
     clean_all_attribute_names(all_modules)
