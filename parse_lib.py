@@ -1,6 +1,4 @@
 '''
-parse_lib.py
-
 Common functions for extracting information from the
 DICOM standard HTML file.
 '''
