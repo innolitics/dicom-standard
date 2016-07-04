@@ -11,27 +11,27 @@ def make_standard():
 @pytest.mark.endtoend
 @pytest.fixture(scope='module')
 def ciods(make_standard):
-    return pl.read_json_to_dict('tmp/ciods.json')
+    return pl.read_json_to_dict('dist/ciods.json')
 
 @pytest.mark.endtoend
 @pytest.fixture(scope='module')
 def modules(make_standard):
-    return pl.read_json_to_dict('tmp/modules.json')
+    return pl.read_json_to_dict('dist/modules.json')
 
 @pytest.mark.endtoend
 @pytest.fixture(scope='module')
 def attributes(make_standard):
-    return pl.read_json_to_dict('tmp/attributes.json')
+    return pl.read_json_to_dict('dist/attributes.json')
 
 @pytest.mark.endtoend
 @pytest.fixture(scope='module')
 def ciod_module_relationship(make_standard):
-    return pl.read_json_to_dict('tmp/ciod_module_relationship.json')
+    return pl.read_json_to_dict('dist/ciod_to_modules.json')
 
 @pytest.mark.endtoend
 @pytest.fixture(scope='module')
 def module_attribute_relationship(make_standard):
-    return pl.read_json_to_dict('tmp/module_attr_relationship.json')
+    return pl.read_json_to_dict('dist/module_to_attributes.json')
 
 @pytest.mark.endtoend
 def test_total_number_ciods(ciods):
