@@ -23,9 +23,9 @@ def expand_module_usage_fields(ciod_json_raw):
             usage, conditional_statement = expand_conditional_statement(module['usage'])
             module['usage'] = usage
             module['conditional_statement'] = conditional_statement
-            table_id = module['fragment_only_link'][1:]
-            module['link_to_standard'] = pl.standard_link_from_fragment()
-            del module['table_id']
+            fragment = module['fragment_only_link'][1:]
+            module['link_to_standard'] = pl.standard_link_from_fragment(fragment)
+            del module['fragment_only_link']
 
 
 def expand_conditional_statement(usage_field):
