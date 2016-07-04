@@ -1,7 +1,5 @@
 beautifulsoup4==4.4.1
 bs4==0.0.1
-numpy==1.11.0
-pandas==0.17.1
 py==1.4.31
 pytest==2.9.2
 python-dateutil==2.5.3
