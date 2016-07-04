@@ -55,4 +55,4 @@ tmp/PS3.6-cleaned.html: PS3.6.html
 
 
 clean: 
-	rm -f *.pyc tmp/* tests/*.pyc tests/*.pyc
+	rm -f *.pyc tmp/* dist/* tests/*.pyc tests/*.pyc

@@ -14,7 +14,7 @@ def module_attribute_data_from_standard(standard):
     match_pattern = re.compile("(.*Module Attributes$)|(.*Module Table$)")
     column_titles = ['name', 'tag', 'type', 'description']
     column_correction = True
-    return table_data_from_standard(standard, chapter_name, match_pattern,
+    return pl.table_data_from_standard(standard, chapter_name, match_pattern,
                                     column_titles, column_correction)
 
 def add_attribute_slugs(all_modules):
