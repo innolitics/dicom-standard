@@ -323,15 +323,3 @@ def read_json_to_dict(filepath):
         json_string = json_file.read()
         json_dict = json.loads(json_string)
         return json_dict
-
-def left_join(list_of_dicts, dict_of_dicts, left_key):
-    joined = []
-    for left_row in list_of_dicts:
-        key_value = left_row[left_key]
-        try:
-            right_row = dict_of_dicts[key_value]
-        except KeyError as e:
-            print(left_row, e)
-            raise e
-        joined.append({**left_row, **right_row})
-    return joined

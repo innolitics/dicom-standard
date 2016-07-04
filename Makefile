@@ -1,50 +1,45 @@
+.SUFFIXES:
+
 PYTEST_BIN=python3 -m pytest
 
-all: normalize_individual normalized_relationship
+
+all: core_tables relationship_tables
 
 
-test: unittest endtoendtest
+core_tables: dist/ciods.json dist/modules.json dist/attributes.json
 
-unittest: 
-	$(PYTEST_BIN) -m 'not endtoend'
-
-endtoendtest:
-	$(PYTEST_BIN) -m 'endtoend'
+relationship_tables: dist/ciod_to_modules.json dist/module_to_attributes.json
 
 
-normalized_relationship: dist/module_attr_relationship.json dist/ciod_module_relationship.json
-
-dist/module_attr_relationship.json: tmp/complete_attrs.json
-	python3 normalize_module_attr_relationship.py $< $@
-
-dist/ciod_module_relationship.json: tmp/modules_raw.json
+dist/ciod_to_modules.json: tmp/ciods_with_modules.json
 	python3 normalize_ciod_module_relationship.py $< $@
 
+dist/module_to_attributes.json: tmp/modules_with_attributes.json
+	python3 normalize_module_attr_relationship.py $< $@
 
-normalize_individual: dist/ciods.json dist/modules.json dist/attributes.json
 
-dist/ciods.json: tmp/modules_raw.json
-	python3 normalize_ciods.py $< $@
+dist/attributes.json: tmp/attributes_partial.json tmp/data_element_registry.json
+	python3 extend_attributes.py $^ $@
 
-dist/modules.json: tmp/complete_attrs.json
-	python3 normalize_modules.py $< $@
 
-dist/attributes.json: tmp/complete_attrs.json
+tmp/attributes_partial.json: tmp/modules_with_attributes.json
 	python3 normalize_attributes.py $< $@
 
+dist/ciods.json: tmp/ciods_with_modules.json
+	python3 normalize_ciods.py $< $@
 
-tmp/complete_attrs.json: tmp/attributes_raw.json tmp/data_element_registry.json
-	python3 extend_attribute_properties.py $^ $@
+dist/modules.json: tmp/modules_with_attributes.json
+	python3 normalize_modules.py $< $@
 
 
 tmp/data_element_registry.json: tmp/PS3.6-cleaned.html extract_data_element_registry.py
 	python3 extract_data_element_registry.py $< $@
 
-tmp/attributes_raw.json: tmp/PS3.3-cleaned.html extract_modules_attributes.py
-	python3 extract_modules_attributes.py $< $@
+tmp/modules_with_attributes.json: tmp/PS3.3-cleaned.html extract_modules_with_attributes.py
+	python3 extract_modules_with_attributes.py $< $@
 
-tmp/modules_raw.json: tmp/PS3.3-cleaned.html extract_ciod_modules.py
-	python3 extract_ciod_modules.py $< $@
+tmp/ciods_with_modules.json: tmp/PS3.3-cleaned.html extract_ciods_with_modules.py
+	python3 extract_ciods_with_modules.py $< $@
 
 
 tmp/PS3.3-cleaned.html: PS3.3.html
@@ -54,5 +49,15 @@ tmp/PS3.6-cleaned.html: PS3.6.html
 	cat $< | sed -e 's/&nbps;/ /g' -e 's/\\u200b//g' > $@
 
 
-clean: 
+
+tests: unittest endtoendtest
+
+unittest:
+	$(PYTEST_BIN) -m 'not endtoend'
+
+endtoendtest:
+	$(PYTEST_BIN) -m 'endtoend'
+
+
+clean:
 	rm -f *.pyc tmp/* dist/* tests/*.pyc tests/*.pyc
