@@ -40,26 +40,23 @@ dist/attributes.json: tmp/attribute_properties.json tmp/complete_attrs.json
 api/input/file_meta.json: api/input/ex_scan/IM-0001-0001.dcm
 	python3 api/input/read_dicom_file.py $< $@
 
-tmp/complete_attrs.json: tmp/attributes_raw.json tmp/attribute_properties_unicode_violation_removed.json
+tmp/complete_attrs.json: tmp/attributes_raw.json tmp/attribute_properties.json
 	python3 extend_attribute_properties.py $^ $@
 
-tmp/attribute_properties_unicode_violation_removed.json: tmp/attribute_properties.json
-	cat $< | sed -e 's/\\u200b//g' > $@
-
-tmp/attribute_properties.json: tmp/PS3.6-space-expand.html attribute_properties.py
+tmp/attribute_properties.json: tmp/PS3.6-cleaned.html attribute_properties.py
 	python3 attribute_properties.py $< $@
 
-tmp/attributes_raw.json: tmp/PS3.3-space-expand.html modules_attributes.py
+tmp/attributes_raw.json: tmp/PS3.3-cleaned.html modules_attributes.py
 	python3 modules_attributes.py $< $@
 
-tmp/modules_raw.json: tmp/PS3.3-space-expand.html ciod_modules.py
+tmp/modules_raw.json: tmp/PS3.3-cleaned.html ciod_modules.py
 	python3 ciod_modules.py $< $@
 
-tmp/PS3.3-space-expand.html: PS3.3.html
+tmp/PS3.3-cleaned.html: PS3.3.html
 	cat $< | sed -e 's/&nbps;/ /g' > $@
 
-tmp/PS3.6-space-expand.html: PS3.6.html
-	cat $< | sed -e 's/&nbps;/ /g' > $@
+tmp/PS3.6-cleaned.html: PS3.6.html
+	cat $< | sed -e 's/&nbps;/ /g' -e 's/\\u200b//g' > $@
 
 clean: 
 	rm -f *.pyc tmp/* tests/*.pyc tests/*.pyc
