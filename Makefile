@@ -63,6 +63,3 @@ tmp/PS3.6-space-expand.html: PS3.6.html
 
 clean: 
 	rm -f *.pyc tmp/* tests/*.pyc tests/*.pyc
-
-install:
-	pip3 install -r requirements.txt
