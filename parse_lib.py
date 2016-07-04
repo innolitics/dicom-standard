@@ -131,6 +131,7 @@ def find_spans(table):
         spans.append(row_spans)
     return spans
 
+
 def span_from_cell(cell):
     if cell is None:
         return None
@@ -143,9 +144,11 @@ def span_from_cell(cell):
     ]
     return cell_span
 
+
 def td_html_content(td_html):
     split_html = re.split('(<td.*?>)|(</td>)', td_html)
     return split_html[3]
+
 
 def expand_spans(table):
     '''
@@ -162,6 +165,7 @@ def expand_spans(table):
         expanded_table.append(row)
     return expanded_table
 
+
 def expand_span_in_cell(spans, i, j):
     if spans[i][j] is None:
         return spans, None
@@ -173,6 +177,7 @@ def expand_span_in_cell(spans, i, j):
             spans = expand_colspan(spans, i, j)
         return spans, html
 
+
 def expand_rowspan(spans, i, j):
     row_slides = spans[i][j][0] - 1
     spans[i][j][0] = 1
@@ -181,6 +186,7 @@ def expand_rowspan(spans, i, j):
         spans[i+k][j] = deepcopy(spans[i][j])
     return spans
 
+
 def expand_colspan(spans, i, j):
     col_slides = spans[i][j][1] - 1
     spans[i][j][1] = 1
@@ -188,6 +194,7 @@ def expand_colspan(spans, i, j):
     for k in range(1, col_slides+1):
         spans[i][j+k] = deepcopy(spans[i][j])
     return spans
+
 
 def slide_down(start_idx, num_slides, row):
     '''
@@ -225,6 +232,7 @@ def table_to_list(table_div, macro_table_list=None, skip_if=None):
         table.append(cells)
     return table
 
+
 def convert_row_to_list(row):
     cells = []
     all_cells_in_row = row.find_all('td')
@@ -233,6 +241,7 @@ def convert_row_to_list(row):
     for j in range(len(cells), 4):
         cells.append(None)
     return cells
+
 
 def check_for_macros(row, macro_table_list, current_table_id):
     if macro_table_list is not None:
@@ -245,6 +254,7 @@ def check_for_macros(row, macro_table_list, current_table_id):
             return specified_macro
     return None
 
+
 def is_macro_link(cell):
     link_pattern = re.compile('.*Include.*')
     try:
@@ -253,6 +263,7 @@ def is_macro_link(cell):
         return has_link and link_is_include
     except AttributeError:
         return False
+
 
 def macro_expansion(cell, current_table_id, macro_table_list):
     if is_macro_link(cell):
@@ -265,12 +276,14 @@ def macro_expansion(cell, current_table_id, macro_table_list):
         return macro_table
     return None
 
+
 def extract_referenced_table_id(cell):
     link = cell.p.span.a.get('href')
     _url, _pound, table_id = link.partition('#')
     if table_id is None:
         raise ValueError("Formatting error")
     return table_id
+
 
 def find_table_div(all_tables, table_id):
     try:
@@ -281,6 +294,7 @@ def find_table_div(all_tables, table_id):
     except AttributeError:
         return None
 
+
 def prepend_sequence_indicators(cell, macro_table):
     if macro_table is None:
         return
@@ -288,10 +302,12 @@ def prepend_sequence_indicators(cell, macro_table):
     for row in macro_table:
         row[0] = insert_indicator_into_html(indicator, row[0])
 
+
 def insert_indicator_into_html(indicator, html):
     name_cell = BeautifulSoup(html, 'html.parser').find('td')
     name_cell.insert(0, NavigableString(indicator))
     return str(name_cell)
+
 
 def sequence_indicator_from_cell(cell):
     preceding_space, *split = re.split('^(>+)', cell)
@@ -301,6 +317,7 @@ def sequence_indicator_from_cell(cell):
         indicator = split[0]
     return indicator
 
+
 def extract_text_from_html(full_table, link_correction):
     final_table = []
     for row in full_table:
@@ -309,6 +326,7 @@ def extract_text_from_html(full_table, link_correction):
             temp_row.append(text_or_href_from_cell(row[i], i, link_correction))
         final_table.append(temp_row)
     return final_table
+
 
 def text_or_href_from_cell(cell_html, column_idx, link_correction):
     if cell_html is None:
