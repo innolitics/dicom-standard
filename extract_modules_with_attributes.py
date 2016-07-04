@@ -20,4 +20,4 @@ def module_attribute_data_from_standard(standard):
 if __name__ == '__main__':
     standard = pl.parse_html_file(sys.argv[1])
     all_modules = module_attribute_data_from_standard(standard)
-    pl.dump_pretty_json(sys.argv[2], 'w', all_modules)
+    pl.write_pretty_json(sys.argv[2], all_modules)

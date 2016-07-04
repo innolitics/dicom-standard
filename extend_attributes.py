@@ -6,7 +6,7 @@ In particular, extend the attributes with the VR, VM, keyword, and retired field
 '''
 import sys
 
-from parse_lib import dump_pretty_json, read_json_to_dict
+from parse_lib import write_pretty_json, read_json_to_dict
 
 
 def left_join(left_table, right_table, key):
@@ -26,4 +26,4 @@ if __name__ == '__main__':
     attributes = read_json_to_dict(sys.argv[1])
     data_element_registry = read_json_to_dict(sys.argv[2])
     extended_attributes = left_join(attributes, data_element_registry, 'tag')
-    dump_pretty_json(sys.argv[3], 'w', extended_attributes)
+    write_pretty_json(sys.argv[3], extended_attributes)

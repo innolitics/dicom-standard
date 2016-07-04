@@ -77,4 +77,4 @@ if __name__ == '__main__':
     expand_module_usage_fields(ciod_json_list)
     descriptions = ciod_descriptions_from_standard(standard)
     final_json_list = add_ciod_description_fields(ciod_json_list, descriptions)
-    pl.dump_pretty_json(sys.argv[2], 'w', final_json_list)
+    pl.write_pretty_json(sys.argv[2], final_json_list)

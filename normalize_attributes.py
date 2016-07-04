@@ -16,4 +16,4 @@ def extract_attributes(modules_with_attributes):
 if __name__ == "__main__":
     modules_with_attributes = pl.read_json_to_dict(sys.argv[1])
     attributes = extract_attributes(modules_with_attributes)
-    pl.dump_pretty_json(sys.argv[2], 'w', attributes)
+    pl.write_pretty_json(sys.argv[2], attributes)

@@ -15,4 +15,4 @@ def ciod_table_from_raw_list(ciod_module_list):
 if __name__ == "__main__":
     ciod_module_list = pl.read_json_to_dict(sys.argv[1])
     ciods = ciod_table_from_raw_list(ciod_module_list)
-    pl.dump_pretty_json(sys.argv[2], 'w', ciods)
+    pl.write_pretty_json(sys.argv[2], ciods)

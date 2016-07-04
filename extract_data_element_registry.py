@@ -46,7 +46,7 @@ def extract_table_data(table_body):
 def main(standard_path, json_path):
     standard = pl.parse_html_file(standard_path)
     table_data = find_attribute_properties(standard)
-    pl.dump_pretty_json(json_path, 'w', table_data)
+    pl.write_pretty_json(json_path, table_data)
 
 if __name__ == '__main__':
     main(sys.argv[1], sys.argv[2])

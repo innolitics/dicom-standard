@@ -101,4 +101,4 @@ if __name__ == '__main__':
     add_parent_ids_to_table(modules_with_attributes)
     clean_all_attribute_names(modules_with_attributes)
 
-    pl.dump_pretty_json(sys.argv[2], 'w', modules_with_attributes)
+    pl.write_pretty_json(sys.argv[2], modules_with_attributes)
