@@ -29,8 +29,8 @@ dist/ciods.json: tmp/modules_raw.json
 dist/modules.json: tmp/complete_attrs.json
 	python3 normalize_modules.py $< $@
 
-dist/attributes.json: tmp/data_element_registry.json tmp/complete_attrs.json
-	python3 normalize_attributes.py $^ $@
+dist/attributes.json: tmp/complete_attrs.json
+	python3 normalize_attributes.py $< $@
 
 
 tmp/complete_attrs.json: tmp/attributes_raw.json tmp/data_element_registry.json
