@@ -88,7 +88,7 @@ def clean_attribute_name(name):
         return name
 
 if __name__ == '__main__':
-    standard = pl.parse_object_from_html(sys.argv[1])
+    standard = pl.parse_html_file(sys.argv[1])
 
     all_modules = pl.module_attribute_data_from_standard(standard)
     add_attribute_slugs(all_modules)

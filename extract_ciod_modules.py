@@ -8,7 +8,7 @@ import re
 import parse_lib as pl
 
 def main(standard_path, json_path):
-    standard = pl.parse_object_from_html(standard_path)
+    standard = pl.parse_html_file(standard_path)
     ciod_json_list = pl.ciod_module_data_from_standard(standard)
     expand_module_usage_fields(ciod_json_list)
     descriptions = ciod_descriptions_from_standard(standard)

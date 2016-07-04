@@ -44,7 +44,7 @@ def extract_table_data(table_body):
     return data
 
 def main(standard_path, json_path):
-    standard = pl.parse_object_from_html(standard_path)
+    standard = pl.parse_html_file(standard_path)
     table_data = find_attribute_properties(standard)
     pl.dump_pretty_json(json_path, 'w', table_data)
 

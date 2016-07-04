@@ -324,7 +324,7 @@ def find_doc_link(table_id):
     url_prefix = "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#"
     return url_prefix + table_id
 
-def parse_object_from_html(filepath):
+def parse_html_file(filepath):
     with open(filepath, 'r') as html_file:
         return BeautifulSoup(html_file, 'html.parser')
 
