@@ -26,7 +26,9 @@ def left_join(left_table, right_table, key):
 def check_overlapping_key_similarity(left, right):
     overlapping_keys = set(left.keys()) & set(right.keys())
     for k in overlapping_keys:
-        assert left[k] == right[k]
+        if left[k] != right[k]:
+            message = 'Error when joining {}.  Left = "{}", right = "{}"'
+            print(message.format(k, left[k], right[k]))
 
 
 if __name__ == '__main__':
