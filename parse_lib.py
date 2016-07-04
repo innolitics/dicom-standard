@@ -26,8 +26,22 @@ def table_data_from_standard(standard, chapter_name, match_pattern, column_title
         table_name = tdiv.p.strong.get_text()
         table_id = tdiv.a.get('id')
         if match_pattern.match(table_name):
-            final_table = condition_table_data(tdiv, all_tables, column_correction)
+            final_table_as_list_of_lists = condition_table_data(tdiv, all_tables, column_correction)
+            final_table_as_list_of_dicts = table_to_dict(final_table_as_list_of_lists, column_titles)
+
+            clean_name = clean_table_name(table_name)
+            slug = create_slug(clean_name)
+            doc_link = standard_link_from_fragment(table_id)
+
+            table_dict = {
+                'name': clean_name,
+                'data': final_table_as_list_of_dicts,
+                'slug': slug,
+                'link_to_standard': doc_link
+            }
+
             all_table_dicts.append(table_to_dict(final_table, column_titles, table_name, table_id))
+
     return all_table_dicts
 
 
@@ -37,12 +51,6 @@ def all_tdivs_in_chapter(standard, chapter_name):
         if chapter.div.div.div.h1.a.get('id') == chapter_name:
             table_divs = chapter.find_all('div', class_='table')
             return table_divs
-
-
-def clean_table_name(name):
-    table, section, title = re.split('\u00a0', name)
-    clean_title, *splits = re.split('(IOD Modules)|(Module Attributes)|(Macro Attributes)|(Module Table)', title)
-    return clean_title.strip()
 
 
 def clean_table_entry(name):
@@ -56,8 +64,19 @@ def create_slug(title):
 
 
 def condition_table_data(tdiv, all_tables, column_correction):
-    raw_table = table_to_list(tdiv, all_tables)
+    # TODO: pull out `column_correction` one-off
+    # This is very specific to parsing a specific type of function, and should
+    # not be in our general purpose "parse lib"
+
+    if column_correction:
+        skip_if = extraneous_attribute_table_row
+    else:
+        skip_if = None
+
+    raw_table = table_to_list(tdiv, all_tables, skip_if=skip_if)
+
     full_table = expand_spans(raw_table)
+
     if column_correction:
         full_table = correct_for_missing_type_column(full_table)
     link_correction = not column_correction
@@ -290,26 +309,15 @@ def text_or_href_from_cell(cell_html, column_idx, link_correction):
     else:
         return clean_table_entry(html.get_text())
 
-def table_to_dict(final_table, column_titles, table_name, table_id):
-    '''
-    Convert a single table to a dictionary.
-    '''
-    col1, col2, col3, col4 = zip(*final_table)
-    clean_name = clean_table_name(table_name)
-    slug = create_slug(clean_name)
-    doc_link = standard_link_from_fragment(table_id)
-    table_data = []
-    for cell1, cell2, cell3, cell4 in zip(col1, col2, col3, col4):
-        table_data.append({column_titles[0]: cell1, column_titles[1]: cell2,
-                           column_titles[2]: cell3, column_titles[3]: cell4})
 
-    table_dict = {
-        'name': clean_name,
-        'data': table_data,
-        'slug': slug,
-        'link_to_standard': doc_link
-    }
-    return table_dict
+def table_to_dict(table, column_names):
+    return [dict(zip(column_names, row)) for row in table]
+
+
+def clean_table_name(name):
+    table, section, title = re.split('\u00a0', name)
+    clean_title, *splits = re.split('(IOD Modules)|(Module Attributes)|(Macro Attributes)|(Module Table)', title)
+    return clean_title.strip()
 
 
 def standard_link_from_fragment(fragment):

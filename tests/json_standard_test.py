@@ -18,19 +18,18 @@ import normalize_ciod_module_relationship as ncm
 import normalize_module_attr_relationship as nma
 import tests.standard_snippets
 
-def test_table_to_dict_conversion():
-    '''
-    Check that all JSON object values are correctly saved.
-    '''
-    table = [['1', '2', '3', '4'], ['5', '6', '7', '8'], ['9', '10', '11', '12']]
-    column_titles = ['col1', 'col2', 'col3', 'col4']
-    table_name = 'Table\u00a0TestSection\u00a0Some Element IOD Modules'
-    table_id = "someID"
-    table_dict = pl.table_to_dict(table, column_titles, table_name, table_id)
-    assert table_dict['name'] == 'Some Element'
-    for i in range(len(table_dict['data'])):
-        for j in range(4):
-            assert table_dict['data'][i][column_titles[j]] == table[i][j]
+
+def test_table_to_dict():
+    table = [['1', '2', '3'], ['4', '5', '6']]
+    columns = ['col1', 'col2', 'col3']
+
+    expected_dict = [
+        {'col1': '1', 'col2': '2', 'col3': '3'},
+        {'col1': '4', 'col2': '5', 'col3': '6'},
+    ]
+
+    assert pl.table_to_dict(table, columns) == expected_dict
+
 
 def test_add_descriptions_to_dict():
     json_dict = [{}, {}, {}]
