@@ -5,12 +5,12 @@ import parse_lib as pl
 def module_attr_relationship_table(module_attr_relationship_list):
     entries = []
     for module in module_attr_relationship_list:
-        for attribute in module['data']:
+        for i, attribute in enumerate(module['data']):
             entries.append({
                 'module': module['slug'],
                 'attribute': attribute['slug'],
                 'tag': attribute['tag'],
-                'order': attribute['order'],
+                'order': i,
                 'type': attribute['type'],
                 'description': attribute['description']
             })

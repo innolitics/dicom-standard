@@ -290,12 +290,10 @@ def table_to_dict(final_table, column_titles, table_name, table_id):
     slug = create_slug(clean_name)
     doc_link = standard_link_from_fragment(table_id)
     table_data = []
-    i = -1
     for cell1, cell2, cell3, cell4 in zip(col1, col2, col3, col4):
-        i += 1
         table_data.append({column_titles[0]: cell1, column_titles[1]: cell2,
-                           column_titles[2]: cell3, column_titles[3]: cell4,
-                           "order": i})
+                           column_titles[2]: cell3, column_titles[3]: cell4})
+
     table_dict = {
         'name': clean_name,
         'data': table_data,
