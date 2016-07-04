@@ -13,14 +13,12 @@ from bs4 import BeautifulSoup
 import parse_lib as pl
 import ciod_modules as cm
 import modules_attributes as ma
-
 import normalize_ciods as nc
 import normalize_modules as nm
 import normalize_attributes as na
 import normalize_ciod_module_relationship as ncm
 import normalize_module_attr_relationship as nma
-
-from standard_snippets import *
+import tests.standard_snippets
 
 def test_table_to_dict_conversion():
     '''
@@ -83,7 +81,7 @@ def test_extract_referenced_table_id():
     assert table_id == "sect_C.7.1.3"
 
 def test_find_table_div():
-    divs = BeautifulSoup(divlist, 'html.parser').find_all('div', class_='table')
+    divs = BeautifulSoup(tests.standard_snippets.divlist, 'html.parser').find_all('div', class_='table')
     table2 = pl.find_table_div(divs, 'tbl2')
     assert table2.a.get('id') == 'tbl2'
 
@@ -93,7 +91,7 @@ def test_table_to_list_no_macros():
     Note: the long, unbroken string is unfortunately required for matching
     and cannot be indented for better readability.
     '''
-    section = BeautifulSoup(cr_iod_section, 'html.parser')
+    section = BeautifulSoup(tests.standard_snippets.cr_iod_section, 'html.parser')
     tdiv = section.find('div', class_='table')
     table = pl.table_to_list(tdiv)
     expected_html = '''<td align="left" colspan="1" rowspan="2">\n<p>\n<a id="para_5aa8b3f7-568e-412b-9b86-87014069f3a3" shape="rect"></a>Patient</p>\n</td>'''
@@ -101,9 +99,9 @@ def test_table_to_list_no_macros():
     assert table[0][0] == expected_html
 
 def test_table_to_list_with_macros():
-    original_table = BeautifulSoup(macro_caller, 'html.parser')
+    original_table = BeautifulSoup(tests.standard_snippets.macro_caller, 'html.parser')
     original_tdiv = original_table.find('div', class_='table')
-    macro_list = BeautifulSoup(macro_callee, 'html.parser')
+    macro_list = BeautifulSoup(tests.standard_snippets.macro_callee, 'html.parser')
     macro_tables = macro_list.find_all('div', class_='table')
     table = pl.table_to_list(original_tdiv, macro_tables)
     print(table)
@@ -132,7 +130,7 @@ def test_get_span_from_cell():
 
 def test_get_attribute_properties():
     from attribute_properties import extract_table_data, properties_to_dict
-    properties_table = BeautifulSoup(properties_snippet, 'html.parser')
+    properties_table = BeautifulSoup(tests.standard_snippets.properties_snippet, 'html.parser')
     table = properties_table.find('div', class_='table')
     data = extract_table_data(table.div.table.tbody)
     json_data = properties_to_dict(data)
