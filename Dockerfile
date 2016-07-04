@@ -1,9 +1,10 @@
-FROM ubuntu:latest
-MAINTAINER Reece Stevens
-RUN apt-get update
-RUN apt-get install -y lxc python3 python3-pip python3-pandas make
-COPY . /source/
-WORKDIR /source
-ENV PYTHONPATH=$PYTHONPATH:/source
+FROM python:3.5
 ENV LANG C.UTF-8
-CMD pip3 install --upgrade pip && make install && make test
+RUN apt-get update && apt-get install -y make
+RUN mkdir /source
+WORKDIR /source
+COPY requirements.txt /source/
+RUN pip install -r requirements.txt
+COPY . /source/
+ENV PYTHONPATH=$PYTHONPATH:/source
+CMD make
