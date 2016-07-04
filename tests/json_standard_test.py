@@ -128,8 +128,8 @@ def test_get_span_from_cell():
     span = pl.span_from_cell(cell)
     assert [2, 1, inner_html] == span
 
-def test_get_attribute_properties():
-    from attribute_properties import extract_table_data, properties_to_dict
+def test_extract_data_element_registry():
+    from extract_data_element_registry import extract_table_data, properties_to_dict
     properties_table = BeautifulSoup(tests.standard_snippets.properties_snippet, 'html.parser')
     table = properties_table.find('div', class_='table')
     data = extract_table_data(table.div.table.tbody)

@@ -20,8 +20,6 @@ attributes: dist/complete_attrs.json
 
 raw_attributes: dist/attributes_raw.json
 
-attr_properties: dist/attribute_properties.json
-
 dist/module_attr_relationship.json: tmp/complete_attrs.json
 	python3 normalize_module_attr_relationship.py $< $@
 
@@ -34,17 +32,17 @@ dist/ciods.json: tmp/modules_raw.json
 dist/modules.json: tmp/complete_attrs.json
 	python3 normalize_modules.py $< $@
 
-dist/attributes.json: tmp/attribute_properties.json tmp/complete_attrs.json
+dist/attributes.json: tmp/data_element_registry.json tmp/complete_attrs.json
 	python3 normalize_attributes.py $^ $@
 
 api/input/file_meta.json: api/input/ex_scan/IM-0001-0001.dcm
 	python3 api/input/read_dicom_file.py $< $@
 
-tmp/complete_attrs.json: tmp/attributes_raw.json tmp/attribute_properties.json
+tmp/complete_attrs.json: tmp/attributes_raw.json tmp/data_element_registry.json
 	python3 extend_attribute_properties.py $^ $@
 
-tmp/attribute_properties.json: tmp/PS3.6-cleaned.html attribute_properties.py
-	python3 attribute_properties.py $< $@
+tmp/data_element_registry.json: tmp/PS3.6-cleaned.html extract_data_element_registry.py
+	python3 extract_data_element_registry.py $< $@
 
 tmp/attributes_raw.json: tmp/PS3.3-cleaned.html modules_attributes.py
 	python3 modules_attributes.py $< $@

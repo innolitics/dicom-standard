@@ -9,13 +9,13 @@ import pandas as pd
 from parse_lib import dump_pretty_json, read_json_to_dict
 
 
-def extend_module_attributes(modules_with_attributes, data_dictionary):
+def extend_module_attributes(modules_with_attributes, data_element_registry):
     '''
     Given a list of DICOM modules each containing a list of DICOM attributes
-    from section 3, extend them with extra properties from the DICOM data
-    dictionary in section 6.
+    from section 3, extend the attributes with the extra properties from the DICOM data
+    element registry in section 6.
     '''
-    data_dictionary_dataframe = pd.DataFrame.from_dict(data_dictionary, orient='index')
+    data_dictionary_dataframe = pd.DataFrame.from_dict(data_element_registry, orient='index')
     data_dictionary_dataframe.index.name = 'tag'
     for module in modules_with_attributes:
         module_attributes = module['data']
@@ -32,8 +32,8 @@ def natural_join(data_dictionary_dataframe, raw_attributes):
 
 if __name__ == '__main__':
     modules_with_attributes = read_json_to_dict(sys.argv[1])
-    data_dictionary = read_json_to_dict(sys.argv[2])
+    data_element_registry = read_json_to_dict(sys.argv[2])
 
-    modules_with_extended_attributes = extend_module_attributes(modules_with_attributes, data_dictionary)
+    modules_with_extended_attributes = extend_module_attributes(modules_with_attributes, data_element_registry)
 
     dump_pretty_json(sys.argv[3], 'w', modules_with_extended_attributes)
