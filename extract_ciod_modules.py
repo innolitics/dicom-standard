@@ -1,6 +1,4 @@
 '''
-ciod_modules.py
-
 Load the CIOD module tables from DICOM Standard PS3.3, Annex A.
 Output the tables in JSON format, one entry per module.
 '''

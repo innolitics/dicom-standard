@@ -1,6 +1,4 @@
 '''
-json_standard_test.py
-
 Unit tests checking the json output from standard parsing.
 
 These tests cover most of the functions in parse_lib.py. Functions

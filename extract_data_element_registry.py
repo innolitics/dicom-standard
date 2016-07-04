@@ -1,5 +1,4 @@
 '''
-vr_vm_attributes.py
 Read the table from PS3.6 to determine the value multiplicity and value
 representation of the different DICOM attributes. Output this information in a
 JSON file, which will then be appended to the attribute list from PS3.3. 
