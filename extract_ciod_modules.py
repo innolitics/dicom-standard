@@ -7,13 +7,6 @@ import re
 
 import parse_lib as pl
 
-def main(standard_path, json_path):
-    standard = pl.parse_html_file(standard_path)
-    ciod_json_list = pl.ciod_module_data_from_standard(standard)
-    expand_module_usage_fields(ciod_json_list)
-    descriptions = ciod_descriptions_from_standard(standard)
-    final_json_list = add_ciod_description_fields(ciod_json_list, descriptions)
-    pl.dump_pretty_json(json_path, 'w', final_json_list)
 
 def expand_module_usage_fields(ciod_json_raw):
     for ciod in ciod_json_raw:
@@ -61,4 +54,9 @@ def find_description_text_in_html(tdiv):
         return None
 
 if __name__ == '__main__':
-    main(sys.argv[1], sys.argv[2])
+    standard = pl.parse_html_file(sys.argv[1])
+    ciod_json_list = ciod_module_data_from_standard(standard)
+    expand_module_usage_fields(ciod_json_list)
+    descriptions = ciod_descriptions_from_standard(standard)
+    final_json_list = add_ciod_description_fields(ciod_json_list, descriptions)
+    pl.dump_pretty_json(sys.argv[2], 'w', final_json_list)
