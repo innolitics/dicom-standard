@@ -288,7 +288,7 @@ def table_to_dict(final_table, column_titles, table_name, table_id):
     col1, col2, col3, col4 = zip(*final_table)
     clean_name = clean_table_name(table_name)
     slug = create_slug(clean_name)
-    doc_link = find_doc_link(table_id)
+    doc_link = standard_link_from_fragment(table_id)
     table_data = []
     i = -1
     for cell1, cell2, cell3, cell4 in zip(col1, col2, col3, col4):
@@ -304,9 +304,9 @@ def table_to_dict(final_table, column_titles, table_name, table_id):
     }
     return table_dict
 
-def find_doc_link(table_id):
+def standard_link_from_fragment(fragment):
     url_prefix = "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#"
-    return url_prefix + table_id
+    return url_prefix + fragment
 
 def parse_html_file(filepath):
     with open(filepath, 'r') as html_file:

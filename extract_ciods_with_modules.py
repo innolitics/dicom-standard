@@ -1,16 +1,17 @@
 '''
 Load the CIOD module tables from DICOM Standard PS3.3, Annex A.
-Output the tables in JSON format, one entry per module.
+Output the tables in JSON format, one entry per CIOD.
 '''
 import sys
 import re
 
 import parse_lib as pl
 
+
 def ciod_module_data_from_standard(standard):
     chapter_name = "chapter_A"
     match_pattern = re.compile(".*IOD Modules$")
-    column_titles = ['information_entity', 'module', 'link_to_standard', 'usage']
+    column_titles = ['information_entity', 'module', 'fragment_only_link', 'usage']
     column_correction = False
     return pl.table_data_from_standard(standard, chapter_name, match_pattern,
                                     column_titles, column_correction)
@@ -22,6 +23,10 @@ def expand_module_usage_fields(ciod_json_raw):
             usage, conditional_statement = expand_conditional_statement(module['usage'])
             module['usage'] = usage
             module['conditional_statement'] = conditional_statement
+            table_id = module['fragment_only_link'][1:]
+            module['link_to_standard'] = pl.standard_link_from_fragment()
+            del module['table_id']
+
 
 def expand_conditional_statement(usage_field):
     conditional = re.compile("^C.*")
@@ -33,6 +38,7 @@ def expand_conditional_statement(usage_field):
         conditional_statement = None
     return usage.strip(), conditional_statement
 
+
 def add_ciod_description_fields(ciod_json_list, descriptions):
     i = 0
     for ciod in ciod_json_list:
@@ -40,10 +46,12 @@ def add_ciod_description_fields(ciod_json_list, descriptions):
         i += 1
     return ciod_json_list
 
+
 def ciod_descriptions_from_standard(standard):
     filtered_tables = find_ciod_tables(standard)
     descriptions = list(map(find_description_text_in_html, filtered_tables))
     return descriptions
+
 
 def find_ciod_tables(standard):
     match_pattern = re.compile(".*IOD Modules$")
@@ -52,14 +60,16 @@ def find_ciod_tables(standard):
                        if match_pattern.match(table.p.strong.get_text())]
     return filtered_tables
 
+
 def find_description_text_in_html(tdiv):
     section = tdiv.parent.parent
     description_title = section.find('h3', class_='title')
     try:
         description_text = description_title.parent.parent.parent.parent.p.get_text()
-        return description_text
+        return description_text.strip()
     except AttributeError:
         return None
+
 
 if __name__ == '__main__':
     standard = pl.parse_html_file(sys.argv[1])
