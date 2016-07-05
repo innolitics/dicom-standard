@@ -173,137 +173,114 @@ def test_get_macro_slug_from_name():
     expected_slug = 'basic-code-sequence'
     assert pl.create_slug(name) == expected_slug
 
-def test_add_parent_id_descending_order():
-    test_modules = [
+
+def test_add_attribute_parent_ids():
+    test_attributes = [
         {
-            'data': [
-                {
-                    'name': 'Attribute 1',
-                    'slug': '0001-0001',
-                    'tag': '(0001,0001)',
-                    'order': 0
-                },
-                {
-                    'name': '>Attribute 2',
-                    'slug': '0001-0002',
-                    'tag': '(0001,0002)',
-                    'order': 1
-                },
-                {
-                    'name': '>>Attribute 3',
-                    'slug': '0001-0003',
-                    'tag': '(0001,0003)',
-                    'order': 2
-                }
-            ]
-        }
+            'name': 'Attribute 1',
+            'slug': '0001-0001',
+            'tag': '(0001,0001)',
+        },
+        {
+            'name': '>Attribute 2',
+            'slug': '0001-0002',
+            'tag': '(0001,0002)',
+        },
+        {
+            'name': '>>Attribute 3',
+            'slug': '0001-0003',
+            'tag': '(0001,0003)',
+        },
     ]
-    ma.add_parent_ids_to_table(test_modules)
-    assert test_modules[0]['data'][0]['parent_slug'] is None
-    assert test_modules[0]['data'][1]['parent_slug'] == '0001-0001'
-    assert test_modules[0]['data'][2]['parent_slug'] == '0001-0001:0001-0002'
+    ma.add_attribute_parent_ids(test_attributes)
+    assert test_attributes[0]['parent_slug'] is None
+    assert test_attributes[1]['parent_slug'] == '0001-0001'
+    assert test_attributes[2]['parent_slug'] == '0001-0001:0001-0002'
+
 
 def test_add_parent_id_different_levels():
-    test_modules = [
+    test_attributes = [
         {
-            'data': [
-                {
-                    'name': 'Attribute 1',
-                    'slug': '0001-0001',
-                    'tag': '(0001,0001)',
-                    'order': 0
-                },
-                {
-                    'name': '>Attribute 2',
-                    'slug': '0001-0002',
-                    'tag': '(0001,0002)',
-                    'order': 1
-                },
-                {
-                    'name': '>>Attribute 3',
-                    'slug': '0001-0003',
-                    'tag': '(0001,0003)',
-                    'order': 2
-                },
-                {
-                    'name': '>>>Attribute 4',
-                    'slug': '0001-0004',
-                    'tag': '(0001,0004)',
-                    'order': 3
-                },
-                {
-                    'name': '>>Attribute 5',
-                    'slug': '0001-0005',
-                    'tag': '(0001,0005)',
-                    'order': 4
-                },
-                {
-                    'name': '>Attribute 6',
-                    'slug': '0001-0006',
-                    'tag': '(0001,0006)',
-                    'order': 5
-                }
-            ]
+            'name': 'Attribute 1',
+            'slug': '0001-0001',
+            'tag': '(0001,0001)',
+        },
+        {
+            'name': '>Attribute 2',
+            'slug': '0001-0002',
+            'tag': '(0001,0002)',
+        },
+        {
+            'name': '>>Attribute 3',
+            'slug': '0001-0003',
+            'tag': '(0001,0003)',
+        },
+        {
+            'name': '>>>Attribute 4',
+            'slug': '0001-0004',
+            'tag': '(0001,0004)',
+        },
+        {
+            'name': '>>Attribute 5',
+            'slug': '0001-0005',
+            'tag': '(0001,0005)',
+        },
+        {
+            'name': '>Attribute 6',
+            'slug': '0001-0006',
+            'tag': '(0001,0006)',
         }
     ]
-    ma.add_parent_ids_to_table(test_modules)
-    assert test_modules[0]['data'][0]['parent_slug'] is None
-    assert test_modules[0]['data'][1]['parent_slug'] == '0001-0001'
-    assert test_modules[0]['data'][2]['parent_slug'] == '0001-0001:0001-0002'
-    assert test_modules[0]['data'][3]['parent_slug'] == '0001-0001:0001-0002:0001-0003' 
-    assert test_modules[0]['data'][4]['parent_slug'] == '0001-0001:0001-0002'
-    assert test_modules[0]['data'][5]['parent_slug'] == '0001-0001'
+    ma.add_attribute_parent_ids(test_attributes)
+    assert test_attributes[0]['parent_slug'] is None
+    assert test_attributes[1]['parent_slug'] == '0001-0001'
+    assert test_attributes[2]['parent_slug'] == '0001-0001:0001-0002'
+    assert test_attributes[3]['parent_slug'] == '0001-0001:0001-0002:0001-0003' 
+    assert test_attributes[4]['parent_slug'] == '0001-0001:0001-0002'
+    assert test_attributes[5]['parent_slug'] == '0001-0001'
+
 
 def test_add_parent_id_small_sequences():
-    test_modules = [
+    test_attributes = [
         {
-            'data': [
-                {
-                    'name': 'Attribute 1',
-                    'slug': '0001-0001',
-                    'tag': '(0001,0001)',
-                    'order': 0
-                },
-                {
-                    'name': '>Attribute 2',
-                    'slug': '0001-0002',
-                    'tag': '(0001,0002)',
-                    'order': 1
-                },
-                {
-                    'name': '>>Attribute 3',
-                    'slug': '0001-0003',
-                    'tag': '(0001,0003)',
-                    'order': 2
-                },
-                {
-                    'name': 'Attribute 4',
-                    'slug': '0001-0004',
-                    'tag': '(0001,0004)',
-                    'order': 3
-                },
-                {
-                    'name': '>Attribute 5',
-                    'slug': '0001-0005',
-                    'tag': '(0001,0005)',
-                    'order': 4
-                },
-                {
-                    'name': '>Attribute 6',
-                    'slug': '0001-0006',
-                    'tag': '(0001,0006)',
-                    'order': 5
-                }
-            ]
+            'name': 'Attribute 1',
+            'slug': '0001-0001',
+            'tag': '(0001,0001)',
+        },
+        {
+            'name': '>Attribute 2',
+            'slug': '0001-0002',
+            'tag': '(0001,0002)',
+        },
+        {
+            'name': '>>Attribute 3',
+            'slug': '0001-0003',
+            'tag': '(0001,0003)',
+        },
+        {
+            'name': 'Attribute 4',
+            'slug': '0001-0004',
+            'tag': '(0001,0004)',
+        },
+        {
+            'name': '>Attribute 5',
+            'slug': '0001-0005',
+            'tag': '(0001,0005)',
+        },
+        {
+            'name': '>Attribute 6',
+            'slug': '0001-0006',
+            'tag': '(0001,0006)',
         }
     ]
-    ma.add_parent_ids_to_table(test_modules)
-    assert test_modules[0]['data'][0]['parent_slug'] is None
-    assert test_modules[0]['data'][1]['parent_slug'] == '0001-0001'
-    assert test_modules[0]['data'][2]['parent_slug'] == '0001-0001:0001-0002'
-    assert test_modules[0]['data'][3]['parent_slug'] is None
-    assert test_modules[0]['data'][4]['parent_slug'] == '0001-0004'
-    assert test_modules[0]['data'][5]['parent_slug'] == '0001-0004'
+    ma.add_attribute_parent_ids(test_attributes)
+    assert test_attributes[0]['parent_slug'] is None
+    assert test_attributes[1]['parent_slug'] == '0001-0001'
+    assert test_attributes[2]['parent_slug'] == '0001-0001:0001-0002'
+    assert test_attributes[3]['parent_slug'] is None
+    assert test_attributes[4]['parent_slug'] == '0001-0004'
+    assert test_attributes[5]['parent_slug'] == '0001-0004'
+
 
 def test_find_non_adjacent_parent():
     attribute_list = [
@@ -312,28 +289,24 @@ def test_find_non_adjacent_parent():
             'slug': '0001-0001',
             'parent_slug': None,
             'tag': '(0001,0001)',
-            'order': 0
         },
         {
             'name': '>Attribute 2',
             'slug': '0001-0002',
             'parent_slug': '0001-0001',
             'tag': '(0001,0002)',
-            'order': 1
         },
         {
             'name': '>>Attribute 3',
             'slug': '0001-0003',
             'parent_slug': '0001-0003',
             'tag': '(0001,0003)',
-            'order': 2
         },
         {
             'name': '>Attribute 4',
             'slug': '0001-0004',
             'parent_slug': '0001-0004',
             'tag': '(0001,0004)',
-            'order': 3
         }    
     ]
     previous_attribute = {
@@ -344,6 +317,7 @@ def test_find_non_adjacent_parent():
     parent_slug = ma.find_non_adjacent_parent('>', previous_attribute, attribute_list)
     assert parent_slug == '0001-0001'
 
+
 def test_find_adjacent_parent():
     attribute_list = [
         {
@@ -351,14 +325,12 @@ def test_find_adjacent_parent():
             'slug': '0001-0001',
             'parent_slug': None,
             'tag': '(0001,0001)',
-            'order': 0
         },
         {
             'name': '>Attribute 2',
             'slug': '0001-0002',
             'parent_slug': '0001-0001',
             'tag': '(0001,0002)',
-            'order': 1
         }
     ]
     previous_attribute = {
@@ -368,6 +340,7 @@ def test_find_adjacent_parent():
     }
     parent_slug = ma.record_parent_id_to_attribute('>', previous_attribute, attribute_list)
     assert parent_slug == '0001-0001'
+
 
 def test_find_adjacent_parent_with_preceding_sibling_elements():
     attribute_list = [
@@ -401,6 +374,7 @@ def test_find_adjacent_parent_with_preceding_sibling_elements():
     parent_slug = ma.record_parent_id_to_attribute('>', previous_attribute, attribute_list)
     assert parent_slug == '0001-0001'
 
+
 def test_normalize_ciods():
     test_ciod_list = [
         {
@@ -415,6 +389,7 @@ def test_normalize_ciods():
     del matching_entry['slug']
     assert ciods['ciod-1'] == matching_entry
 
+
 def test_normalize_modules():
     test_module_list = [
         {
@@ -427,6 +402,7 @@ def test_normalize_modules():
     matching_entry = test_module_list[0]
     del matching_entry['slug']
     assert modules['module-1'] == matching_entry
+
 
 def test_normalize_attributes():
     test_modules_with_attributes = [
@@ -453,6 +429,7 @@ def test_normalize_attributes():
         'tag': '(0001,0001)',
     }
     assert attributes['(0001,0001)'] == matching_entry
+
 
 def test_normalize_ciod_module_relationship():
     ciod_module_list = [

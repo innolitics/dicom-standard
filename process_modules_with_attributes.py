@@ -4,28 +4,24 @@ import re
 import parse_lib as pl
 
 
-def add_attribute_slugs(all_modules):
-    for module in all_modules:
-        for attribute in module['data']:
-            attribute['slug'] = pl.create_slug(attribute['tag'])
+def add_attribute_slugs(attributes):
+    for attribute in attributes:
+        attribute['slug'] = pl.create_slug(attribute['tag'])
 
 
-def add_parent_ids_to_table(all_modules):
-    for module in all_modules:
-        previous_attribute = {}
-        attributes = module['data']
-        for attribute in attributes:
-            sequence_indicator = pl.sequence_indicator_from_cell(attribute['name'])
-            if previous_attribute == {}:
-                attribute['parent_slug'] = None
-            else:
-                attribute['parent_slug'] = record_parent_id_to_attribute(sequence_indicator,
-                                                                         previous_attribute,
-                                                                         attributes)
-                if attribute['parent_slug'] is not None:
-                    attribute['slug'] = attribute['parent_slug'] + ":" + attribute['slug']
-            previous_attribute = set_new_previous_attribute(attribute)
-        module['data'] = attributes
+def add_attribute_parent_ids(attributes):
+    previous_attribute = {}
+    for attribute in attributes:
+        sequence_indicator = pl.sequence_indicator_from_cell(attribute['name'])
+        if previous_attribute == {}:
+            attribute['parent_slug'] = None
+        else:
+            attribute['parent_slug'] = record_parent_id_to_attribute(sequence_indicator,
+                                                                     previous_attribute,
+                                                                     attributes)
+            if attribute['parent_slug'] is not None:
+                attribute['slug'] = attribute['parent_slug'] + ":" + attribute['slug']
+        previous_attribute = set_new_previous_attribute(attribute)
 
 
 def set_new_previous_attribute(attribute):
@@ -79,11 +75,10 @@ def is_part_of_sequence(attribute_name):
     return re.match('^(>+)', attribute_name) is not None
 
 
-def clean_all_attribute_names(all_modules):
-    for module in all_modules:
-        for attribute in module['data']:
-            stripped_name = attribute['name'].strip()
-            attribute['name'] = clean_attribute_name(stripped_name)
+def clean_attribute_names(attributes):
+    for attribute in attributes:
+        stripped_name = attribute['name'].strip()
+        attribute['name'] = clean_attribute_name(stripped_name)
 
 
 def clean_attribute_name(name):
@@ -97,8 +92,11 @@ def clean_attribute_name(name):
 if __name__ == '__main__':
     modules_with_attributes = pl.read_json_to_dict(sys.argv[1])
 
-    add_attribute_slugs(modules_with_attributes)
-    add_parent_ids_to_table(modules_with_attributes)
-    clean_all_attribute_names(modules_with_attributes)
+    for module in modules_with_attributes:
+        module_attributes = module['data']
+
+        add_attribute_slugs(module_attributes)
+        add_attribute_parent_ids(module_attributes)
+        clean_attribute_names(module_attributes)
 
     pl.write_pretty_json(sys.argv[2], modules_with_attributes)
