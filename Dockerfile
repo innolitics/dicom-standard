@@ -7,4 +7,4 @@ COPY requirements.txt /source/
 RUN pip install -r requirements.txt
 COPY . /source/
 ENV PYTHONPATH=$PYTHONPATH:/source
-CMD make
+CMD make tests && make
