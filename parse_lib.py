@@ -40,7 +40,7 @@ def table_data_from_standard(standard, chapter_name, match_pattern, column_title
                 'link_to_standard': doc_link
             }
 
-            all_table_dicts.append(table_to_dict(final_table, column_titles, table_name, table_id))
+            all_table_dicts.append(table_dict)
 
     return all_table_dicts
 
@@ -222,7 +222,7 @@ def table_to_list(table_div, macro_table_list=None, skip_if=None):
     table = []
     table_body = table_div.find('tbody')
     for row in table_body.find_all('tr'):
-        macro_reference = check_for_macros(row, macro_table_list, current_table_id)
+        macro_reference = check_for_macros(row, macro_table_list, current_table_id, skip_if=skip_if)
         if macro_reference is not None:
             table.extend(macro_reference)
             continue
@@ -243,13 +243,13 @@ def convert_row_to_list(row):
     return cells
 
 
-def check_for_macros(row, macro_table_list, current_table_id):
+def check_for_macros(row, macro_table_list, current_table_id, skip_if=None):
     if macro_table_list is not None:
         all_cells_in_row = row.find_all('td')
         cell = all_cells_in_row[0]
         specified_macro = None
         if is_macro_link(cell):
-            specified_macro = macro_expansion(cell, current_table_id, macro_table_list)
+            specified_macro = macro_expansion(cell, current_table_id, macro_table_list, skip_if=skip_if)
         if specified_macro is not None:
             return specified_macro
     return None
@@ -265,13 +265,13 @@ def is_macro_link(cell):
         return False
 
 
-def macro_expansion(cell, current_table_id, macro_table_list):
+def macro_expansion(cell, current_table_id, macro_table_list, skip_if=None):
     if is_macro_link(cell):
         table_id = extract_referenced_table_id(cell)
         if table_id == current_table_id:
             return None
         macro_div = find_table_div(macro_table_list, table_id)
-        macro_table = table_to_list(macro_div, macro_table_list)
+        macro_table = table_to_list(macro_div, macro_table_list, skip_if=skip_if)
         prepend_sequence_indicators(cell, macro_table)
         return macro_table
     return None
