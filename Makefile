@@ -49,7 +49,7 @@ tmp/PS3.3-cleaned.html: PS3.3.html
 	cat $< | sed -e 's/&nbps;/ /g' > $@
 
 tmp/PS3.6-cleaned.html: PS3.6.html
-	cat $< | sed -e 's/&nbps;/ /g' -e 's/\\u200b//g' > $@
+	cat $< | sed -e 's/&nbps;/ /g' -e 's/​//g' > $@
 
 
 tests: unittest endtoendtest
