@@ -71,10 +71,6 @@ def reference_level_difference(sequence_indicator, previous_attribute):
     return len(previous_attribute['sequence_indicator']) - len(sequence_indicator)
 
 
-def is_part_of_sequence(attribute_name):
-    return re.match('^(>+)', attribute_name) is not None
-
-
 def clean_attribute_names(attributes):
     for attribute in attributes:
         stripped_name = attribute['name'].strip()
