@@ -18,7 +18,7 @@ dist/module_to_attributes.json: tmp/modules_with_attributes.json
 	python3 normalize_module_attr_relationship.py $< $@
 
 
-dist/attributes.json: tmp/attributes_partial.json tmp/data_element_registry.json
+tmp/modules_with_complete_attributes.json: tmp/modules_with_attributes.json dist/attributes.json
 	python3 extend_attributes.py $^ $@
 
 
@@ -28,11 +28,8 @@ dist/ciods.json: tmp/ciods_with_modules.json
 dist/modules.json: tmp/modules_with_attributes.json
 	python3 normalize_modules.py $< $@
 
-tmp/attributes_partial.json: tmp/modules_with_attributes.json
-	python3 normalize_attributes.py $< $@
 
-
-tmp/data_element_registry.json: tmp/PS3.6-cleaned.html extract_data_element_registry.py
+dist/attributes.json: tmp/PS3.6-cleaned.html extract_data_element_registry.py
 	python3 extract_data_element_registry.py $< $@
 
 tmp/ciods_with_modules.json: tmp/PS3.3-cleaned.html extract_ciods_with_modules.py

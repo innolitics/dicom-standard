@@ -40,7 +40,7 @@ def test_total_number_ciods(ciods):
 
 @pytest.mark.endtoend
 def test_total_number_attributes(attributes):
-    defined_valid_attributes = 4078
+    defined_valid_attributes = 4084
     assert len(attributes) == defined_valid_attributes
 
 @pytest.mark.endtoend
@@ -74,7 +74,7 @@ def test_vertical_samples_from_standard(ciods, modules, attributes):
         "(0010,0010)": {
             "slug": "0010-0010",
             "retired": False,
-            "keyword": "Patient\u200bName",
+            "keyword": "PatientName",
             "name": "Patient's Name",
             "value_multiplicity": "1",
             "value_representation": "PN"
@@ -82,7 +82,7 @@ def test_vertical_samples_from_standard(ciods, modules, attributes):
         "(0008,0034)": {
             "slug": "0008-0034",
             "retired": True,
-            "keyword": "Overlay\u200bTime",
+            "keyword": "OverlayTime",
             "name": "Overlay Time",
             "value_multiplicity": "1", 
             "value_representation": "TM"
@@ -90,7 +90,7 @@ def test_vertical_samples_from_standard(ciods, modules, attributes):
         "(0008,0108)": {
             "slug": "0008-0108",
             "retired": False,
-            "keyword": "Extended\u200bCode\u200bMeaning",
+            "keyword": "ExtendedCodeMeaning",
             "name": "Extended Code Meaning",
             "value_multiplicity": "1", 
             "value_representation": "LT"
@@ -110,7 +110,7 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship,
             "name":"Equivalent Code Sequence",
             "retired": False,
             "value_multiplicity":"1",
-            "keyword":"Equivalent\u200bCode\u200bSequence",
+            "keyword":"EquivalentCodeSequence",
             "value_representation":"SQ",
             "slug":"0008-0121"
         }
@@ -118,18 +118,18 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship,
     module_attr = [
         {
             "type":"3",
-            "order":10,
+            "order":8,
             "module":"patient-study",
             "tag":"(0008,0121)",
-            "description":"Codes that are considered equivalent by the creating system.One or more Items are permitted in this Sequence.See Section\u00a08.9.",
+            "description":"Codes that are considered equivalent by the creating system.\n\nOne or more Items are permitted in this Sequence.\n\nSee Section\u00a08.9.",
             "attribute":"0008-1084:0008-0121"
         },
         {
             "type":"3",
-            "order":49,
+            "order":43,
             "module":"patient-study",
             "tag":"(0008,0121)",
-            "description":"Codes that are considered equivalent by the creating system.One or more Items are permitted in this Sequence.See Section\u00a08.9.",
+            "description":"Codes that are considered equivalent by the creating system.\n\nOne or more Items are permitted in this Sequence.\n\nSee Section\u00a08.9.",
             "attribute":"0010-1021:0008-0121"
         }
     ]
@@ -167,20 +167,20 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship,
 def test_number_of_attribute_appearances(module_attribute_relationship, attributes):
     module_attr = [
         {
-            "type":None,
-            "order":279,
-            "module":"patient-demographic",
-            "tag":"(0010,0213)",
-            "description":"The nomenclature used for Strain Description (0010,0212). See Section\u00a0C.7.1.1.1.4.",
-            "attribute":"0010-0213"
+            "type": None,
+            "order": 288,
+            "module": "patient-demographic",
+            "tag": "(0010,0213)",
+            "description": "The nomenclature used for Strain Description (0010,0212). See Section\u00a0C.7.1.1.1.4.",
+            "attribute": "0010-0213"
         },
         {
-            "type":"3",
-            "order":316,
-            "module":"patient",
-            "tag":"(0010,0213)",
-            "description":"The nomenclature used for Strain Description (0010,0212). See Section\u00a0C.7.1.1.1.4.",
-            "attribute":"0010-0213"
+            "type": "3",
+            "order": 288,
+            "module": "patient",
+            "tag": "(0010,0213)",
+            "description": "The nomenclature used for Strain Description (0010,0212). See Section\u00a0C.7.1.1.1.4.",
+            "attribute": "0010-0213"
         }
     ]
 
@@ -189,7 +189,7 @@ def test_number_of_attribute_appearances(module_attribute_relationship, attribut
             "name":"Strain Nomenclature",
             "retired":False,
             "value_multiplicity":"1",
-            "keyword":"Strain\u200bNomenclature",
+            "keyword":"StrainNomenclature",
             "value_representation":"LO",
             "slug":"0010-0213"
         }

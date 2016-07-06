@@ -73,7 +73,7 @@ def reference_level_difference(sequence_indicator, previous_attribute):
 
 def clean_attribute_names(attributes):
     for attribute in attributes:
-        stripped_name = attribute['name'].strip()
+        stripped_name = attribute['name'].replace('\n', '')
         attribute['name'] = clean_attribute_name(stripped_name)
 
 

@@ -30,6 +30,7 @@ def properties_to_dict(table_data):
             "value_representation": value_representation,
             "value_multiplicity": value_multiplicity,
             "name": name,
+            "slug": pl.create_slug(tag),
             "retired": retired
         }
     return properties_dict
