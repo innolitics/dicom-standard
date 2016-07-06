@@ -1,3 +1,4 @@
+import re
 import sys
 
 import parse_lib as pl

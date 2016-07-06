@@ -68,12 +68,7 @@ def condition_table_data(tdiv, all_tables, column_correction):
     # This is very specific to parsing a specific type of function, and should
     # not be in our general purpose "parse lib"
 
-    if column_correction:
-        skip_if = extraneous_attribute_table_row
-    else:
-        skip_if = None
-
-    raw_table = table_to_list(tdiv, all_tables, skip_if=skip_if)
+    raw_table = table_to_list(tdiv, all_tables)
 
     full_table = expand_spans(raw_table)
 
@@ -88,8 +83,8 @@ def condition_table_data(tdiv, all_tables, column_correction):
 def extraneous_attribute_table_row(row):
     # TODO: pull this out from the general parsing lib
     cells = row.find_all('td')
-    expected_number_of_cells = 4
-    return len(cells) != expected_number_of_cells
+    expected_number_of_cells = 3
+    return len(cells) < expected_number_of_cells
 
 
 def strip_whitespace(attribute_value):
@@ -211,7 +206,7 @@ def slide_down(start_idx, num_slides, row):
         raise ValueError('Cell spans beyond table!')
 
 
-def table_to_list(table_div, macro_table_list=None, skip_if=None):
+def table_to_list(table_div, macro_table_list=None):
     '''
     Converts an HTML table to a 2D list, expanding macros along the way.
     '''
@@ -222,11 +217,13 @@ def table_to_list(table_div, macro_table_list=None, skip_if=None):
     table = []
     table_body = table_div.find('tbody')
     for row in table_body.find_all('tr'):
-        macro_reference = check_for_macros(row, macro_table_list, current_table_id, skip_if=skip_if)
+        macro_reference = check_for_macros(row, macro_table_list, current_table_id)
         if macro_reference is not None:
             table.extend(macro_reference)
             continue
-        if skip_if and skip_if(row):
+        first_cell = row.find('td')
+        exception_rows = re.compile("(.*COD.*)|(.*Include.*)|(.*Any Attribute.*)", re.DOTALL)
+        if exception_rows.match(first_cell.get_text()):
             continue
         cells = convert_row_to_list(row)
         table.append(cells)
@@ -243,13 +240,13 @@ def convert_row_to_list(row):
     return cells
 
 
-def check_for_macros(row, macro_table_list, current_table_id, skip_if=None):
+def check_for_macros(row, macro_table_list, current_table_id):
     if macro_table_list is not None:
         all_cells_in_row = row.find_all('td')
         cell = all_cells_in_row[0]
         specified_macro = None
         if is_macro_link(cell):
-            specified_macro = macro_expansion(cell, current_table_id, macro_table_list, skip_if=skip_if)
+            specified_macro = macro_expansion(cell, current_table_id, macro_table_list)
         if specified_macro is not None:
             return specified_macro
     return None
@@ -265,13 +262,13 @@ def is_macro_link(cell):
         return False
 
 
-def macro_expansion(cell, current_table_id, macro_table_list, skip_if=None):
+def macro_expansion(cell, current_table_id, macro_table_list):
     if is_macro_link(cell):
         table_id = extract_referenced_table_id(cell)
         if table_id == current_table_id:
             return None
         macro_div = find_table_div(macro_table_list, table_id)
-        macro_table = table_to_list(macro_div, macro_table_list, skip_if=skip_if)
+        macro_table = table_to_list(macro_div, macro_table_list)
         prepend_sequence_indicators(cell, macro_table)
         return macro_table
     return None

@@ -25,7 +25,7 @@ def properties_to_dict(table_data):
             retired = re.match("RET", extra) is not None
         else:
             retired = False
-        properties_dict[tag] = {
+        properties_dict[tag.upper()] = {
             "keyword": keyword,
             "value_representation": value_representation,
             "value_multiplicity": value_multiplicity,

@@ -71,10 +71,11 @@ def reference_level_difference(sequence_indicator, previous_attribute):
     return len(previous_attribute['sequence_indicator']) - len(sequence_indicator)
 
 
-def clean_attribute_names(attributes):
+def clean_attributes(attributes):
     for attribute in attributes:
         stripped_name = attribute['name'].replace('\n', '')
         attribute['name'] = clean_attribute_name(stripped_name)
+        attribute['tag'] = attribute['tag'].upper()
 
 
 def clean_attribute_name(name):
@@ -93,6 +94,6 @@ if __name__ == '__main__':
 
         add_attribute_slugs(module_attributes)
         add_attribute_parent_ids(module_attributes)
-        clean_attribute_names(module_attributes)
+        clean_attributes(module_attributes)
 
     pl.write_pretty_json(sys.argv[2], modules_with_attributes)

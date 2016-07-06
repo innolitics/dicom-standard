@@ -168,7 +168,7 @@ def test_number_of_attribute_appearances(module_attribute_relationship, attribut
     module_attr = [
         {
             "type": None,
-            "order": 288,
+            "order": 251,
             "module": "patient-demographic",
             "tag": "(0010,0213)",
             "description": "The nomenclature used for Strain Description (0010,0212). See Section\u00a0C.7.1.1.1.4.",
