@@ -132,10 +132,10 @@ def test_extract_data_element_registry():
     json_data = properties_to_dict(data)
     expected_data = {
         "keyword": "Length ToEnd",
-        "value_representation": "UL",
-        "value_multiplicity": '1',
+        "valueRepresentation": "UL",
+        "valueMultiplicity": '1',
         "name": "Length to End",
-        "id": "0008-0001",
+        "id": "00080001",
         "retired": True
     }
     assert expected_data == json_data['(0008,0001)']
@@ -179,7 +179,7 @@ def test_normalize_ciods():
         {
             'id': 'ciod-1',
             'description': 'Some description of ciod 1.',
-            'link_to_standard': 'http://somelink.com',
+            'linkToStandard': 'http://somelink.com',
             'name': 'Ciod 1'
         }
     ]
@@ -193,7 +193,7 @@ def test_normalize_modules():
     test_module_list = [
         {
             'id': 'module-1',
-            'link_to_standard': 'http://somelink.com',
+            'linkToStandard': 'http://somelink.com',
             'name': 'Module 1'
         }
     ]
@@ -230,15 +230,15 @@ def test_normalize_ciod_module_relationship():
     ciod_module_list = [
         {
             "id":"cr-image",
-            "link_to_standard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_A.2-1",
+            "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_A.2-1",
             "description":"\nThe Computed Radiography (CR) Image Information Object Definition specifies an image that has been created by a computed radiography imaging device.",
             "name":"CR Image",
             "data":[
                 {
-                    "information_entity":"Patient",
-                    "conditional_statement":None,
+                    "informationEntity":"Patient",
+                    "conditionalStatement":None,
                     "module":"Patient",
-                    "link_to_standard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.1.1",
+                    "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.1.1",
                     "usage":"M",
                 },
             ]
@@ -249,27 +249,27 @@ def test_normalize_ciod_module_relationship():
         'ciod': 'cr-image',
         'module': 'patient',
         'usage': 'M',
-        'conditional_statement': None,
+        'conditionalStatement': None,
         'order': 0,
-        'information_entity': 'Patient'
+        'informationEntity': 'Patient'
     }
     assert relationship_table_list[0] == expected_entry
 
 def normalize_module_attribute_relationship():
     module_attribute_list = [
         {
-            "link_to_standard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.2-1",
+            "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.2-1",
             "name":"Patient Relationship",
             "data":[
                 {
                     "keyword":"ReferencedStudySequence",
                     "retired":False,
-                    "value_representation":"SQ",
+                    "valueRepresentation":"SQ",
                     "tag":"(0008,1110)",
-                    "parent_id":None,
+                    "parentId":None,
                     "description":"Uniquely identifies the Study SOP Instances associated with the Patient SOP Instance. One or more Items shall be included in this Sequence.See Section\u00a010.6.1.",
                     "id":"0008-1110",
-                    "value_multiplicity":"1",
+                    "valueMultiplicity":"1",
                     "type":None,
                     "name":"Referenced Study Sequence",
                 }

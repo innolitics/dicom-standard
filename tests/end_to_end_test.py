@@ -60,40 +60,40 @@ def test_vertical_samples_from_standard(ciods, modules, attributes):
     test_ciod = {
         "us-multi-frame-image": {
             "description": "The Ultrasound (US) Multi-frame Image Information Object Definition specifies a Multi-frame image that has been created by an ultrasound imaging device.",
-            "link_to_standard": "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_A.7-1",
+            "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_A.7-1",
             "name": "US Multi-frame Image"
         }
     }
     test_module = {
         "patient": {
             "name": "Patient",
-            "link_to_standard": "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-1"
+            "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-1"
         }
     }
     test_attribute = {
         "(0010,0010)": {
-            "id": "0010-0010",
+            "id": "00100010",
             "retired": False,
             "keyword": "PatientName",
             "name": "Patient's Name",
-            "value_multiplicity": "1",
-            "value_representation": "PN"
+            "valueMultiplicity": "1",
+            "valueRepresentation": "PN"
         },
         "(0008,0034)": {
-            "id": "0008-0034",
+            "id": "00080034",
             "retired": True,
             "keyword": "OverlayTime",
             "name": "Overlay Time",
-            "value_multiplicity": "1", 
-            "value_representation": "TM"
+            "valueMultiplicity": "1", 
+            "valueRepresentation": "TM"
         },
         "(0008,0108)": {
-            "id": "0008-0108",
+            "id": "00080108",
             "retired": False,
             "keyword": "ExtendedCodeMeaning",
             "name": "Extended Code Meaning",
-            "value_multiplicity": "1", 
-            "value_representation": "LT"
+            "valueMultiplicity": "1", 
+            "valueRepresentation": "LT"
         }
     }
     assert test_ciod["us-multi-frame-image"] == ciods["us-multi-frame-image"] 
@@ -109,10 +109,10 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship,
         "(0008,0121)": {
             "name":"Equivalent Code Sequence",
             "retired": False,
-            "value_multiplicity":"1",
+            "valueMultiplicity":"1",
             "keyword":"EquivalentCodeSequence",
-            "value_representation":"SQ",
-            "id":"0008-0121"
+            "valueRepresentation":"SQ",
+            "id":"00080121"
         }
     }
     module_attr = [
@@ -122,7 +122,7 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship,
             "module":"patient-study",
             "tag":"(0008,0121)",
             "description":"Codes that are considered equivalent by the creating system.\n\nOne or more Items are permitted in this Sequence.\n\nSee Section\u00a08.9.",
-            "attribute":"0008-1084:0008-0121"
+            "attribute":"00081084:00080121"
         },
         {
             "type":"3",
@@ -130,21 +130,21 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship,
             "module":"patient-study",
             "tag":"(0008,0121)",
             "description":"Codes that are considered equivalent by the creating system.\n\nOne or more Items are permitted in this Sequence.\n\nSee Section\u00a08.9.",
-            "attribute":"0010-1021:0008-0121"
+            "attribute":"00101021:00080121"
         }
     ]
     module = {
         "patient-study": {
             "name":"Patient Study",
-            "link_to_standard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-4a"
+            "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-4a"
         }
     }
     ciod_module = [
         {
-            "information_entity":"Study",
+            "informationEntity":"Study",
             "module":"patient-study",
             "usage":"U",
-            "conditional_statement":None,
+            "conditionalStatement":None,
             "ciod":"cr-image",
             "order":3
         }
@@ -153,7 +153,7 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship,
         "cr-image": {
             "description":"The Computed Radiography (CR) Image Information Object Definition specifies an image that has been created by a computed radiography imaging device.",
             "name":"CR Image",
-            "link_to_standard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_A.2-1"
+            "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_A.2-1"
         }
     }
     assert attr['(0008,0121)'] == attributes['(0008,0121)']
@@ -172,7 +172,7 @@ def test_number_of_attribute_appearances(module_attribute_relationship, attribut
             "module": "patient-demographic",
             "tag": "(0010,0213)",
             "description": "The nomenclature used for Strain Description (0010,0212). See Section\u00a0C.7.1.1.1.4.",
-            "attribute": "0010-0213"
+            "attribute": "00100213"
         },
         {
             "type": "3",
@@ -180,7 +180,7 @@ def test_number_of_attribute_appearances(module_attribute_relationship, attribut
             "module": "patient",
             "tag": "(0010,0213)",
             "description": "The nomenclature used for Strain Description (0010,0212). See Section\u00a0C.7.1.1.1.4.",
-            "attribute": "0010-0213"
+            "attribute": "00100213"
         }
     ]
 
@@ -188,10 +188,10 @@ def test_number_of_attribute_appearances(module_attribute_relationship, attribut
         "(0010,0213)": {
             "name":"Strain Nomenclature",
             "retired":False,
-            "value_multiplicity":"1",
+            "valueMultiplicity":"1",
             "keyword":"StrainNomenclature",
-            "value_representation":"LO",
-            "id":"0010-0213"
+            "valueRepresentation":"LO",
+            "id":"00100213"
         }
     }
     assert attrs['(0010,0213)'] == attributes['(0010,0213)']
@@ -206,15 +206,15 @@ def test_number_of_module_appearances(ciods, ciod_module_relationship, modules):
     module = {
         "volume-cropping": {
             "name":"Volume Cropping",
-            "link_to_standard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11.24-1"
+            "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11.24-1"
         }
     }
     ciod_module = [
         {
-            "information_entity":"Presentation State",
+            "informationEntity":"Presentation State",
             "module":"volume-cropping",
             "usage":"U",
-            "conditional_statement":None,
+            "conditionalStatement":None,
             "ciod":"planar-mpr-volumetric-presentation-state",
             "order":13
         }
