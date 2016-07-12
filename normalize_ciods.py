@@ -8,7 +8,8 @@ def ciod_table_from_raw_list(ciod_module_list):
         ciods[ciod['id']] = {
             'description': ciod['description'].strip(),
             'linkToStandard': ciod['linkToStandard'],
-            'name': ciod['name']
+            'name': ciod['name'],
+            'order': ciod['order']
         }
     return ciods
 

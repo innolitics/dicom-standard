@@ -43,6 +43,7 @@ def add_ciod_description_fields(ciod_json_list, descriptions):
     i = 0
     for ciod in ciod_json_list:
         ciod['description'] = descriptions[i]
+        ciod['order'] = i
         i += 1
     return ciod_json_list
 
