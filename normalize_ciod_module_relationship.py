@@ -7,12 +7,12 @@ def ciod_module_relationship_table(ciod_module_list):
     for ciod in ciod_module_list:
         for i, module in enumerate(ciod['data']):
             entries.append({
-                'ciod': ciod['slug'],
+                'ciod': ciod['id'],
                 'module': pl.create_slug(module['module']),
                 'usage': module['usage'],
-                'conditional_statement': module['conditional_statement'],
+                'conditionalStatement': module['conditionalStatement'],
                 'order': i,
-                'information_entity': module['information_entity']
+                'informationEntity': module['informationEntity']
             })
     return entries
 

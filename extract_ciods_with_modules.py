@@ -11,7 +11,7 @@ import parse_lib as pl
 def ciod_module_data_from_standard(standard):
     chapter_name = "chapter_A"
     match_pattern = re.compile(".*IOD Modules$")
-    column_titles = ['information_entity', 'module', 'fragment_only_link', 'usage']
+    column_titles = ['informationEntity', 'module', 'fragment_only_link', 'usage']
     column_correction = False
     return pl.table_data_from_standard(standard, chapter_name, match_pattern,
                                     column_titles, column_correction)
@@ -22,9 +22,9 @@ def expand_module_usage_fields(ciod_json_raw):
         for module in ciod['data']:
             usage, conditional_statement = expand_conditional_statement(module['usage'])
             module['usage'] = usage
-            module['conditional_statement'] = conditional_statement
+            module['conditionalStatement'] = conditional_statement
             fragment = module['fragment_only_link'][1:]
-            module['link_to_standard'] = pl.standard_link_from_fragment(fragment)
+            module['linkToStandard'] = pl.standard_link_from_fragment(fragment)
             del module['fragment_only_link']
 
 

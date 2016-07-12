@@ -5,9 +5,9 @@ import parse_lib as pl
 def module_table_from_raw_list(module_attr_list):
     modules = {}
     for module in module_attr_list:
-        modules[module['slug']] = {
+        modules[module['id']] = {
             'name': module['name'],
-            'link_to_standard': module['link_to_standard']
+            'linkToStandard': module['linkToStandard']
         }
     return modules
 

@@ -27,10 +27,10 @@ def properties_to_dict(table_data):
             retired = False
         properties_dict[tag.upper()] = {
             "keyword": keyword,
-            "value_representation": value_representation,
-            "value_multiplicity": value_multiplicity,
+            "valueRepresentation": value_representation,
+            "valueMultiplicity": value_multiplicity,
             "name": name,
-            "slug": pl.create_slug(tag),
+            "id": pl.create_slug(tag),
             "retired": retired
         }
     return properties_dict

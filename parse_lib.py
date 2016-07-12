@@ -36,8 +36,8 @@ def table_data_from_standard(standard, chapter_name, match_pattern, column_title
             table_dict = {
                 'name': clean_name,
                 'data': final_table_as_list_of_dicts,
-                'slug': slug,
-                'link_to_standard': doc_link
+                'id': slug,
+                'linkToStandard': doc_link
             }
 
             all_table_dicts.append(table_dict)
@@ -59,7 +59,7 @@ def clean_table_entry(name):
 
 
 def create_slug(title):
-    first_pass_slugify = title.lower().replace(" ", "-").replace(",", "-")
+    first_pass_slugify = title.lower().replace(" ", "-").replace(",", "")
     return re.sub('(\()|(\))', '', first_pass_slugify)
 
 

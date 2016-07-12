@@ -6,7 +6,7 @@ import parse_lib as pl
 
 def add_attribute_slugs(attributes):
     for attribute in attributes:
-        attribute['slug'] = pl.create_slug(attribute['tag'])
+        attribute['id'] = pl.create_slug(attribute['tag'])
 
 
 def add_attribute_parent_ids(attributes):
@@ -14,49 +14,49 @@ def add_attribute_parent_ids(attributes):
     for attribute in attributes:
         sequence_indicator = pl.sequence_indicator_from_cell(attribute['name'])
         if previous_attribute == {}:
-            attribute['parent_slug'] = None
+            attribute['parentId'] = None
         else:
-            attribute['parent_slug'] = record_parent_id_to_attribute(sequence_indicator,
+            attribute['parentId'] = record_parent_id_to_attribute(sequence_indicator,
                                                                      previous_attribute,
                                                                      attributes)
-            if attribute['parent_slug'] is not None:
-                attribute['slug'] = attribute['parent_slug'] + ":" + attribute['slug']
+            if attribute['parentId'] is not None:
+                attribute['id'] = attribute['parentId'] + ":" + attribute['id']
         previous_attribute = set_new_previous_attribute(attribute)
 
 
 def set_new_previous_attribute(attribute):
     sequence_indicator = pl.sequence_indicator_from_cell(attribute['name'])
     previous_attribute = {
-        'slug': attribute['slug'],
+        'id': attribute['id'],
         'sequence_indicator': sequence_indicator,
-        'parent_slug': attribute['parent_slug']
+        'parentId': attribute['parentId']
     }
     return previous_attribute
 
 
 def record_parent_id_to_attribute(sequence_indicator, previous_attribute, attributes):
     if is_sub_attribute_of_previous(sequence_indicator, previous_attribute):
-        return previous_attribute['slug']
+        return previous_attribute['id']
     elif is_same_level_as_previous(sequence_indicator, previous_attribute):
-        return previous_attribute['parent_slug']
+        return previous_attribute['parentId']
     else:
         return find_non_adjacent_parent(sequence_indicator, previous_attribute, attributes)
 
 
 def find_non_adjacent_parent(sequence_indicator, previous_attribute, attributes):
     difference = reference_level_difference(sequence_indicator, previous_attribute)
-    parent_slug = previous_attribute['parent_slug']
+    parentId = previous_attribute['parentId']
     for i in range(difference):
-        if parent_slug is None:
+        if parentId is None:
             break
         for other_attr in attributes:
-            if other_attr['slug'] == parent_slug:
+            if other_attr['id'] == parentId:
                 try:
-                    parent_slug = other_attr['parent_slug']
+                    parentId = other_attr['parentId']
                 except KeyError:
-                    parent_slug = None
+                    parentId = None
                 break
-    return parent_slug
+    return parentId
 
 
 def is_sub_attribute_of_previous(sequence_indicator, previous_attribute):

@@ -72,7 +72,7 @@ def test_vertical_samples_from_standard(ciods, modules, attributes):
     }
     test_attribute = {
         "(0010,0010)": {
-            "slug": "0010-0010",
+            "id": "0010-0010",
             "retired": False,
             "keyword": "PatientName",
             "name": "Patient's Name",
@@ -80,7 +80,7 @@ def test_vertical_samples_from_standard(ciods, modules, attributes):
             "value_representation": "PN"
         },
         "(0008,0034)": {
-            "slug": "0008-0034",
+            "id": "0008-0034",
             "retired": True,
             "keyword": "OverlayTime",
             "name": "Overlay Time",
@@ -88,7 +88,7 @@ def test_vertical_samples_from_standard(ciods, modules, attributes):
             "value_representation": "TM"
         },
         "(0008,0108)": {
-            "slug": "0008-0108",
+            "id": "0008-0108",
             "retired": False,
             "keyword": "ExtendedCodeMeaning",
             "name": "Extended Code Meaning",
@@ -112,7 +112,7 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship,
             "value_multiplicity":"1",
             "keyword":"EquivalentCodeSequence",
             "value_representation":"SQ",
-            "slug":"0008-0121"
+            "id":"0008-0121"
         }
     }
     module_attr = [
@@ -191,7 +191,7 @@ def test_number_of_attribute_appearances(module_attribute_relationship, attribut
             "value_multiplicity":"1",
             "keyword":"StrainNomenclature",
             "value_representation":"LO",
-            "slug":"0010-0213"
+            "id":"0010-0213"
         }
     }
     assert attrs['(0010,0213)'] == attributes['(0010,0213)']

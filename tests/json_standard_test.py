@@ -135,7 +135,7 @@ def test_extract_data_element_registry():
         "value_representation": "UL",
         "value_multiplicity": '1',
         "name": "Length to End",
-        "slug": "0008-0001",
+        "id": "0008-0001",
         "retired": True
     }
     assert expected_data == json_data['(0008,0001)']
@@ -177,7 +177,7 @@ def test_get_macro_slug_from_name():
 def test_normalize_ciods():
     test_ciod_list = [
         {
-            'slug': 'ciod-1',
+            'id': 'ciod-1',
             'description': 'Some description of ciod 1.',
             'link_to_standard': 'http://somelink.com',
             'name': 'Ciod 1'
@@ -185,21 +185,21 @@ def test_normalize_ciods():
     ]
     ciods = nc.ciod_table_from_raw_list(test_ciod_list)
     matching_entry = test_ciod_list[0]
-    del matching_entry['slug']
+    del matching_entry['id']
     assert ciods['ciod-1'] == matching_entry
 
 
 def test_normalize_modules():
     test_module_list = [
         {
-            'slug': 'module-1',
+            'id': 'module-1',
             'link_to_standard': 'http://somelink.com',
             'name': 'Module 1'
         }
     ]
     modules = nm.module_table_from_raw_list(test_module_list)
     matching_entry = test_module_list[0]
-    del matching_entry['slug']
+    del matching_entry['id']
     assert modules['module-1'] == matching_entry
 
 
@@ -208,9 +208,9 @@ def test_normalize_modules():
 #         {
 #             'data': [
 #                 {
-#                     'slug': '0001-0001',
+#                     'id': '0001-0001',
 #                     'name': 'Attribute 1',
-#                     'parent_slug': None,
+#                     'parent_id': None,
 #                     'type': None,
 #                     'description': None,
 #                     'tag': '(0001,0001)'
@@ -218,7 +218,7 @@ def test_normalize_modules():
 #             ]
 #         }
 #     ]
-#     attributes = na.extract_attributes(test_modules_with_attributes) # Right now, just adds an attribute slug.
+#     attributes = na.extract_attributes(test_modules_with_attributes) # Right now, just adds an attribute id.
 #     matching_entry = {
 #         'name': 'Attribute 1',
 #         'tag': '(0001,0001)',
@@ -229,7 +229,7 @@ def test_normalize_modules():
 def test_normalize_ciod_module_relationship():
     ciod_module_list = [
         {
-            "slug":"cr-image",
+            "id":"cr-image",
             "link_to_standard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_A.2-1",
             "description":"\nThe Computed Radiography (CR) Image Information Object Definition specifies an image that has been created by a computed radiography imaging device.",
             "name":"CR Image",
@@ -266,15 +266,15 @@ def normalize_module_attribute_relationship():
                     "retired":False,
                     "value_representation":"SQ",
                     "tag":"(0008,1110)",
-                    "parent_slug":None,
+                    "parent_id":None,
                     "description":"Uniquely identifies the Study SOP Instances associated with the Patient SOP Instance. One or more Items shall be included in this Sequence.See Section\u00a010.6.1.",
-                    "slug":"0008-1110",
+                    "id":"0008-1110",
                     "value_multiplicity":"1",
                     "type":None,
                     "name":"Referenced Study Sequence",
                 }
             ],
-            "slug":"patient-relationship"
+            "id":"patient-relationship"
         }
     ]
     relationship_table_list = nma.module_attr_relationship_table(module_attribute_list)

@@ -6,9 +6,9 @@ import parse_lib as pl
 def extract_attributes(attribute_dict):
     attributes = {}
     for tag, attribute in attribute_dict.items():
-        capital_tag = tag.upper()
-        attributes[capital_tag] = attribute
-        attributes[capital_tag]['slug'] = pl.create_slug(captial_tag)
+        lowercase_tag = tag.lower()
+        attributes[lowercase_tag] = attribute
+        attributes[lowercase_tag]['id'] = pl.create_slug(lowercase_tag)
     return attributes
 
 
