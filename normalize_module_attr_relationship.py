@@ -4,17 +4,17 @@ import sys
 import parse_lib as pl
 
 def module_attr_relationship_table(module_attr_relationship_list):
-    entries = []
+    entries = {}
     for module in module_attr_relationship_list:
         for i, attribute in enumerate(module['data']):
-            entries.append({
+            id_path = (module['id'] + ':' + attribute['id'])
+            entries[id_path] = {
                 'module': module['id'],
-                'path': (module['id'] + ':' + attribute['id']),
                 'tag': attribute['tag'],
                 'order': i,
                 'type': attribute['type'],
                 'description': attribute['description']
-            })
+            }
     return entries
 
 if __name__ == "__main__":
