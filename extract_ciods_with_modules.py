@@ -39,7 +39,7 @@ def expand_conditional_statement(usage_field):
     return usage.strip(), conditional_statement
 
 
-def add_ciod_description_fields(ciod_json_list, descriptions):
+def add_ciod_description_and_order(ciod_json_list, descriptions):
     i = 0
     for ciod in ciod_json_list:
         ciod['description'] = descriptions[i]
@@ -77,5 +77,5 @@ if __name__ == '__main__':
     ciod_json_list = ciod_module_data_from_standard(standard)
     expand_module_usage_fields(ciod_json_list)
     descriptions = ciod_descriptions_from_standard(standard)
-    final_json_list = add_ciod_description_fields(ciod_json_list, descriptions)
+    final_json_list = add_ciod_description_and_order(ciod_json_list, descriptions)
     pl.write_pretty_json(sys.argv[2], final_json_list)
