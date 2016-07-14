@@ -33,21 +33,10 @@ def test_table_to_dict():
 def test_add_descriptions_to_dict():
     json_dict = [{}, {}, {}]
     descriptions = ["First", "Second", "Third"]
-    descriptions_dict = cm.add_ciod_description_and_order(json_dict, descriptions)
-    assert  descriptions_dict == [
-        {
-            "description": "First",
-            "order": 0
-        },
-        {
-            "description": "Second",
-            "order": 1
-        },
-        {
-            "description": "Third",
-            "order": 2
-        }
-    ]
+    descriptions_dict = cm.add_ciod_description_fields(json_dict, descriptions)
+    assert  descriptions_dict == [{"description": "First"},
+                                  {"description": "Second"},
+                                  {"description": "Third"}]
 
 def test_get_text_or_href_from_html():
     '''
@@ -191,8 +180,7 @@ def test_normalize_ciods():
             'id': 'ciod-1',
             'description': 'Some description of ciod 1.',
             'linkToStandard': 'http://somelink.com',
-            'name': 'Ciod 1',
-            'order': 0
+            'name': 'Ciod 1'
         }
     ]
     ciods = nc.ciod_table_from_raw_list(test_ciod_list)
@@ -265,7 +253,7 @@ def test_normalize_ciod_module_relationship():
         'order': 0,
         'informationEntity': 'Patient'
     }
-    assert relationship_table_list['cr-image:patient'] == expected_entry
+    assert relationship_table_list[0] == expected_entry
 
 def normalize_module_attribute_relationship():
     module_attribute_list = [
