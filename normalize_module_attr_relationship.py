@@ -12,10 +12,14 @@ def module_attr_relationship_table(module_attr_relationship_list):
                 'module': module['id'],
                 'tag': attribute['tag'],
                 'order': i,
+                'depth': get_depth(attribute['id']),
                 'type': attribute['type'],
                 'description': attribute['description']
             }
     return entries
+
+def get_depth(attribute_id):
+    return len(attribute_id.split(':'))-1
 
 if __name__ == "__main__":
     module_attr_list = pl.read_json_to_dict(sys.argv[1])
