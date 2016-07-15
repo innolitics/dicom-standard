@@ -25,12 +25,12 @@ def properties_to_dict(table_data):
             retired = re.match("RET", extra) is not None
         else:
             retired = False
-        properties_dict[tag.upper()] = {
+        properties_dict[pl.create_slug(tag)] = {
             "keyword": keyword,
             "valueRepresentation": value_representation,
             "valueMultiplicity": value_multiplicity,
             "name": name,
-            "id": pl.create_slug(tag),
+            "tag": tag.upper(),
             "retired": retired
         }
     return properties_dict
