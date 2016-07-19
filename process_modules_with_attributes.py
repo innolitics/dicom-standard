@@ -70,6 +70,9 @@ def is_same_level_as_previous(sequence_indicator, previous_attribute):
 def reference_level_difference(sequence_indicator, previous_attribute):
     return len(previous_attribute['sequence_indicator']) - len(sequence_indicator)
 
+def remove_newlines_from_name(attributes):
+    for attribute in attributes:
+        attribute['name'] = attribute['name'].replace('\n', '')
 
 def clean_attributes(attributes):
     for attribute in attributes:
@@ -92,6 +95,7 @@ if __name__ == '__main__':
     for module in modules_with_attributes:
         module_attributes = module['data']
 
+        remove_newlines_from_name(module_attributes)
         add_attribute_slugs(module_attributes)
         add_attribute_parent_ids(module_attributes)
         clean_attributes(module_attributes)
