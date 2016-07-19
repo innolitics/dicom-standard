@@ -12,7 +12,6 @@ import parse_lib as pl
 import extract_ciods_with_modules as cm
 import normalize_ciods as nc
 import normalize_modules as nm
-import normalize_attributes as na
 import normalize_ciod_module_relationship as ncm
 import normalize_module_attr_relationship as nma
 import tests.standard_snippets
@@ -34,9 +33,9 @@ def test_add_descriptions_to_dict():
     json_dict = [{}, {}, {}]
     descriptions = ["First", "Second", "Third"]
     descriptions_dict = cm.add_ciod_description_fields(json_dict, descriptions)
-    assert  descriptions_dict == [{"description": "First"},
-                                  {"description": "Second"},
-                                  {"description": "Third"}]
+    assert  descriptions_dict == [{"description": "First", "order": 0},
+                                  {"description": "Second", "order": 1},
+                                  {"description": "Third", "order": 2}]
 
 def test_get_text_or_href_from_html():
     '''
@@ -135,10 +134,10 @@ def test_extract_data_element_registry():
         "valueRepresentation": "UL",
         "valueMultiplicity": '1',
         "name": "Length to End",
-        "id": "00080001",
+        "tag": "(0008,0001)",
         "retired": True
     }
-    assert expected_data == json_data['(0008,0001)']
+    assert expected_data == json_data['00080001']
 
 def test_clean_ciod_name():
     name = 'Table\u00a0A.2-1.\u00a0CR Image IOD Modules'
@@ -180,6 +179,7 @@ def test_normalize_ciods():
             'id': 'ciod-1',
             'description': 'Some description of ciod 1.',
             'linkToStandard': 'http://somelink.com',
+            'order': 0,
             'name': 'Ciod 1'
         }
     ]

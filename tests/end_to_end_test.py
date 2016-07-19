@@ -53,7 +53,7 @@ def test_valid_foreign_keys_ciod_module(ciod_module_relationship, ciods, modules
 def test_valid_foreign_keys_module_attribute(module_attribute_relationship, modules, attributes):
     for pair in module_attribute_relationship:
         assert pair['module'] in modules
-        assert pair['tag'] in attributes
+        assert pair['path'].split(':')[-1] in attributes
 
 @pytest.mark.endtoend
 def test_vertical_samples_from_standard(ciods, modules, attributes):
@@ -61,7 +61,8 @@ def test_vertical_samples_from_standard(ciods, modules, attributes):
         "us-multi-frame-image": {
             "description": "The Ultrasound (US) Multi-frame Image Information Object Definition specifies a Multi-frame image that has been created by an ultrasound imaging device.",
             "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_A.7-1",
-            "name": "US Multi-frame Image"
+            "name": "US Multi-frame Image",
+            "order": 5
         }
     }
     test_module = {
@@ -71,24 +72,24 @@ def test_vertical_samples_from_standard(ciods, modules, attributes):
         }
     }
     test_attribute = {
-        "(0010,0010)": {
-            "id": "00100010",
+        "00100010": {
+            "tag":"(0010,0010)",
             "retired": False,
             "keyword": "PatientName",
             "name": "Patient's Name",
             "valueMultiplicity": "1",
             "valueRepresentation": "PN"
         },
-        "(0008,0034)": {
-            "id": "00080034",
+        "00080034": {
+            "tag": "(0008,0034)",
             "retired": True,
             "keyword": "OverlayTime",
             "name": "Overlay Time",
             "valueMultiplicity": "1", 
             "valueRepresentation": "TM"
         },
-        "(0008,0108)": {
-            "id": "00080108",
+        "00080108": {
+            "tag": "(0008,0108)",
             "retired": False,
             "keyword": "ExtendedCodeMeaning",
             "name": "Extended Code Meaning",
@@ -98,39 +99,41 @@ def test_vertical_samples_from_standard(ciods, modules, attributes):
     }
     assert test_ciod["us-multi-frame-image"] == ciods["us-multi-frame-image"] 
     assert test_module["patient"] == modules["patient"] 
-    assert test_attribute["(0010,0010)"] == attributes["(0010,0010)"]
-    assert test_attribute["(0008,0034)"] == attributes["(0008,0034)"]
-    assert test_attribute["(0008,0108)"] == attributes["(0008,0108)"]
+    assert test_attribute["00100010"] == attributes["00100010"]
+    assert test_attribute["00080034"] == attributes["00080034"]
+    assert test_attribute["00080108"] == attributes["00080108"]
 
 @pytest.mark.endtoend
 def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship,
         modules, module_attribute_relationship, attributes):
     attr = {
-        "(0008,0121)": {
+        "00080121": {
             "name":"Equivalent Code Sequence",
             "retired": False,
             "valueMultiplicity":"1",
             "keyword":"EquivalentCodeSequence",
             "valueRepresentation":"SQ",
-            "id":"00080121"
+            "tag": "(0008,0121)"
         }
     }
     module_attr = [
         {
             "type":"3",
             "order":8,
+            "depth": 1,
             "module":"patient-study",
             "tag":"(0008,0121)",
             "description":"Codes that are considered equivalent by the creating system.\n\nOne or more Items are permitted in this Sequence.\n\nSee Section\u00a08.9.",
-            "attribute":"00081084:00080121"
+            "path":"patient-study:00081084:00080121"
         },
         {
             "type":"3",
             "order":43,
+            "depth": 1,
             "module":"patient-study",
             "tag":"(0008,0121)",
             "description":"Codes that are considered equivalent by the creating system.\n\nOne or more Items are permitted in this Sequence.\n\nSee Section\u00a08.9.",
-            "attribute":"00101021:00080121"
+            "path":"patient-study:00101021:00080121"
         }
     ]
     module = {
@@ -153,10 +156,11 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship,
         "cr-image": {
             "description":"The Computed Radiography (CR) Image Information Object Definition specifies an image that has been created by a computed radiography imaging device.",
             "name":"CR Image",
-            "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_A.2-1"
+            "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_A.2-1",
+            "order": 0
         }
     }
-    assert attr['(0008,0121)'] == attributes['(0008,0121)']
+    assert attr["00080121"] == attributes["00080121"]
     assert module_attr[0] in module_attribute_relationship
     assert module_attr[1] in module_attribute_relationship
     assert module['patient-study'] == modules['patient-study']
@@ -170,31 +174,33 @@ def test_number_of_attribute_appearances(module_attribute_relationship, attribut
             "type": None,
             "order": 251,
             "module": "patient-demographic",
+            "depth": 0,
             "tag": "(0010,0213)",
             "description": "The nomenclature used for Strain Description (0010,0212). See Section\u00a0C.7.1.1.1.4.",
-            "attribute": "00100213"
+            "path": "patient-demographic:00100213"
         },
         {
             "type": "3",
             "order": 288,
             "module": "patient",
+            "depth": 0,
             "tag": "(0010,0213)",
             "description": "The nomenclature used for Strain Description (0010,0212). See Section\u00a0C.7.1.1.1.4.",
-            "attribute": "00100213"
+            "path": "patient:00100213"
         }
     ]
 
     attrs = {
-        "(0010,0213)": {
+        "00100213": {
             "name":"Strain Nomenclature",
             "retired":False,
             "valueMultiplicity":"1",
             "keyword":"StrainNomenclature",
             "valueRepresentation":"LO",
-            "id":"00100213"
+            "tag": "(0010,0213)"
         }
     }
-    assert attrs['(0010,0213)'] == attributes['(0010,0213)']
+    assert attrs['00100213'] == attributes['00100213']
     assert module_attr[0] in module_attribute_relationship
     assert module_attr[1] in module_attribute_relationship
     all_attribute_appearances = [rel for rel in module_attribute_relationship
