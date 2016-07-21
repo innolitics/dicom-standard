@@ -6,6 +6,7 @@ def module_table_from_raw_list(module_attr_list):
     modules = {}
     for module in module_attr_list:
         modules[module['id']] = {
+            'id': module['id'],
             'name': module['name'],
             'linkToStandard': module['linkToStandard']
         }
