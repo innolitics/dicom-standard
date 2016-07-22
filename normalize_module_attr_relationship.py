@@ -14,6 +14,7 @@ def module_attr_relationship_table(module_attr_relationship_list):
                 'order': i,
                 'depth': get_depth(attribute['id']),
                 'type': attribute['type'],
+                'linkToStandard': attribute['linkToStandard'],
                 'description': attribute['description']
             })
     return entries

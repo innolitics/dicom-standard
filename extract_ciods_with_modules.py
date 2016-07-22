@@ -11,7 +11,7 @@ import parse_lib as pl
 def ciod_module_data_from_standard(standard):
     chapter_name = "chapter_A"
     match_pattern = re.compile(".*IOD Modules$")
-    column_titles = ['informationEntity', 'module', 'fragment_only_link', 'usage']
+    column_titles = ['informationEntity', 'module', 'fragment_only_link', 'usage', 'macro_table_id']
     column_correction = False
     return pl.table_data_from_standard(standard, chapter_name, match_pattern,
                                     column_titles, column_correction)

@@ -100,14 +100,14 @@ def correct_for_missing_type_column(full_table):
     column in the HTML version of the standard.
     '''
     corrected_table = []
-    for a_name, a_tag, a_type, a_descr in full_table:
+    for a_name, a_tag, a_type, a_descr, a_macro in full_table:
         corrected_row = [a_name, a_tag]
         if a_descr is None:
             a_corrected_type = a_descr
             a_corrected_descr = a_type
-            corrected_row.extend([a_corrected_type, a_corrected_descr])
+            corrected_row.extend([a_corrected_type, a_corrected_descr, a_macro])
         else:
-            corrected_row.extend([a_type, a_descr])
+            corrected_row.extend([a_type, a_descr, a_macro])
         corrected_table.append(corrected_row)
     return corrected_table
 
@@ -132,12 +132,14 @@ def span_from_cell(cell):
         return None
     cell_html = BeautifulSoup(cell, 'html.parser')
     td_tag = cell_html.find('td')
-    cell_span = [
-        int(td_tag.get('rowspan', 1)),
-        int(td_tag.get('colspan', 1)),
-        td_html_content(str(td_tag))
-    ]
-    return cell_span
+    try:
+        return [
+            int(td_tag.get('rowspan', 1)),
+            int(td_tag.get('colspan', 1)),
+            td_html_content(str(td_tag))
+        ]
+    except AttributeError:
+        return [1, 1, cell]
 
 
 def td_html_content(td_html):
@@ -206,7 +208,7 @@ def slide_down(start_idx, num_slides, row):
         raise ValueError('Cell spans beyond table!')
 
 
-def table_to_list(table_div, macro_table_list=None):
+def table_to_list(table_div, macro_table_list=None, macro_table_id=None):
     '''
     Converts an HTML table to a 2D list, expanding macros along the way.
     '''
@@ -225,18 +227,19 @@ def table_to_list(table_div, macro_table_list=None):
         exception_rows = re.compile("(.*COD.*)|(.*Include.*)|(.*Any Attribute.*)", re.DOTALL)
         if exception_rows.match(first_cell.get_text()):
             continue
-        cells = convert_row_to_list(row)
+        cells = convert_row_to_list(row, macro_table_id)
         table.append(cells)
     return table
 
 
-def convert_row_to_list(row):
+def convert_row_to_list(row, macro_table_id):
     cells = []
     all_cells_in_row = row.find_all('td')
     for cell in all_cells_in_row:
         cells.append(str(cell))
     for j in range(len(cells), 4):
         cells.append(None)
+    cells.append(macro_table_id)
     return cells
 
 
@@ -268,7 +271,7 @@ def macro_expansion(cell, current_table_id, macro_table_list):
         if table_id == current_table_id:
             return None
         macro_div = find_table_div(macro_table_list, table_id)
-        macro_table = table_to_list(macro_div, macro_table_list)
+        macro_table = table_to_list(macro_div, macro_table_list, table_id)
         prepend_sequence_indicators(cell, macro_table)
         return macro_table
     return None

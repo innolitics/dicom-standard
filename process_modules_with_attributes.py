@@ -88,6 +88,12 @@ def clean_attribute_name(name):
     else:
         return name
 
+def addMacroLinks(attributes):
+    for attribute in attributes:
+        if attribute['macro_table_id'] is not None:
+            attribute['linkToStandard'] = pl.standard_link_from_fragment(attribute['macro_table_id'])
+        else:
+            attribute['linkToStandard'] = None
 
 if __name__ == '__main__':
     modules_with_attributes = pl.read_json_to_dict(sys.argv[1])
@@ -99,5 +105,6 @@ if __name__ == '__main__':
         add_attribute_slugs(module_attributes)
         add_attribute_parent_ids(module_attributes)
         clean_attributes(module_attributes)
+        addMacroLinks(module_attributes)
 
     pl.write_pretty_json(sys.argv[2], modules_with_attributes)
