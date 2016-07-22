@@ -126,7 +126,8 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship,
             "module":"patient-study",
             "tag":"(0008,0121)",
             "description":"Codes that are considered equivalent by the creating system.\n\nOne or more Items are permitted in this Sequence.\n\nSee Section\u00a08.9.",
-            "path":"patient-study:00081084:00080121"
+            "path":"patient-study:00081084:00080121",
+            "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_8.8-1",
         },
         {
             "type":"3",
@@ -135,7 +136,8 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship,
             "module":"patient-study",
             "tag":"(0008,0121)",
             "description":"Codes that are considered equivalent by the creating system.\n\nOne or more Items are permitted in this Sequence.\n\nSee Section\u00a08.9.",
-            "path":"patient-study:00101021:00080121"
+            "path":"patient-study:00101021:00080121",
+            "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_8.8-1",
         }
     ]
     module = {
@@ -181,7 +183,8 @@ def test_number_of_attribute_appearances(module_attribute_relationship, attribut
             "depth": 0,
             "tag": "(0010,0213)",
             "description": "The nomenclature used for Strain Description (0010,0212). See Section\u00a0C.7.1.1.1.4.",
-            "path": "patient-demographic:00100213"
+            "path": "patient-demographic:00100213",
+            "linkToStandard": None
         },
         {
             "type": "3",
@@ -190,7 +193,8 @@ def test_number_of_attribute_appearances(module_attribute_relationship, attribut
             "depth": 0,
             "tag": "(0010,0213)",
             "description": "The nomenclature used for Strain Description (0010,0212). See Section\u00a0C.7.1.1.1.4.",
-            "path": "patient:00100213"
+            "path": "patient:00100213",
+            "linkToStandard": None
         }
     ]
 
