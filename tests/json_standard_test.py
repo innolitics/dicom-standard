@@ -100,7 +100,7 @@ def test_table_to_list_with_macros():
     macro_tables = macro_list.find_all('div', class_='table')
     table = pl.table_to_list(original_tdiv, macro_tables)
     print(table)
-    assert table == [['<td>Useful Information</td>', None, None, None]]
+    assert table == [['<td>Useful Information</td>', None, None, None, 'macro']]
 
 def test_row_to_list():
     cell1 = '<td>Cell 1</td>'
@@ -109,8 +109,8 @@ def test_row_to_list():
     cell4 = '<td>Cell 4</td>'
     row_html = '<tr>' + cell1 + cell2 + cell3 + cell4 + '</tr>'
     row = BeautifulSoup(row_html, 'html.parser')
-    cells = pl.convert_row_to_list(row)
-    assert [cell1, cell2, cell3, cell4] == cells
+    cells = pl.convert_row_to_list(row, None)
+    assert [cell1, cell2, cell3, cell4, None] == cells
 
 def test_get_td_html():
     cell = '<td align="left" rowspan="2" colspan="1">This is <a href="content_link">some content</a> I want.</td>'

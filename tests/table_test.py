@@ -6,33 +6,33 @@ import parse_lib as pl
 def test_flat():
     table = BeautifulSoup(tests.html_snippets.flat, 'html.parser')
     table_list = pl.table_to_list(table)
-    expected_table_list = [ ['<td>1</td>', '<td>2</td>', '<td>3</td>', '<td>4</td>'],
-                    ['<td>1</td>', '<td>2</td>', '<td>3</td>', '<td>4</td>'],
-                    ['<td>1</td>', '<td>2</td>', '<td>3</td>', '<td>4</td>'] ]
+    expected_table_list = [ ['<td>1</td>', '<td>2</td>', '<td>3</td>', '<td>4</td>', None],
+                    ['<td>1</td>', '<td>2</td>', '<td>3</td>', '<td>4</td>', None],
+                    ['<td>1</td>', '<td>2</td>', '<td>3</td>', '<td>4</td>', None] ]
     assert table_list == expected_table_list 
 
 def test_with_links():
     table = BeautifulSoup(tests.html_snippets.with_links, 'html.parser')
     table_list = pl.table_to_list(table)
-    expected_table_list = [ ['<td><a href="somelink">1</a></td>', '<td>2</td>', '<td>3</td>', '<td>4</td>'],
-                    ['<td><a href="somelink">1</a></td>', '<td>2</td>', '<td>3</td>', '<td>4</td>'],
-                    ['<td><a href="somelink">1</a></td>', '<td>2</td>', '<td>3</td>', '<td>4</td>'] ]
+    expected_table_list = [ ['<td><a href="somelink">1</a></td>', '<td>2</td>', '<td>3</td>', '<td>4</td>', None],
+                    ['<td><a href="somelink">1</a></td>', '<td>2</td>', '<td>3</td>', '<td>4</td>', None],
+                    ['<td><a href="somelink">1</a></td>', '<td>2</td>', '<td>3</td>', '<td>4</td>', None] ]
     assert table_list == expected_table_list
 
 def test_rowspan():
     table = BeautifulSoup(tests.html_snippets.rowspan, 'html.parser')
     table_list = pl.table_to_list(table)
-    expected_table_list = [ ['<td rowspan="3"><a href="somelink">1</a></td>', '<td>2</td>', '<td>3</td>', '<td>4</td>'],
-                    ['<td>2</td>', '<td>3</td>', '<td>4</td>', None],
-                    ['<td>2</td>', '<td>3</td>', '<td>4</td>', None] ]
+    expected_table_list = [ ['<td rowspan="3"><a href="somelink">1</a></td>', '<td>2</td>', '<td>3</td>', '<td>4</td>', None],
+                    ['<td>2</td>', '<td>3</td>', '<td>4</td>', None, None],
+                    ['<td>2</td>', '<td>3</td>', '<td>4</td>', None, None] ]
     assert table_list == expected_table_list
 
 def test_colspan():
     table = BeautifulSoup(tests.html_snippets.colspan, 'html.parser')
     table_list = pl.table_to_list(table)
-    expected_table_list = [ ['<td colspan="3"><a href="somelink">1</a></td>', '<td>4</td>', None, None],
-                    ['<td>1</td>', '<td>2</td>', '<td>3</td>', '<td>4</td>'],
-                    ['<td>1</td>', '<td>2</td>', '<td>3</td>', '<td>4</td>'] ]
+    expected_table_list = [ ['<td colspan="3"><a href="somelink">1</a></td>', '<td>4</td>', None, None, None],
+                    ['<td>1</td>', '<td>2</td>', '<td>3</td>', '<td>4</td>', None],
+                    ['<td>1</td>', '<td>2</td>', '<td>3</td>', '<td>4</td>', None] ]
     assert table_list == expected_table_list 
 
 def test_slide():
@@ -47,25 +47,25 @@ def test_expand_colspan():
     table = BeautifulSoup(tests.html_snippets.colspan, 'html.parser')
     table_list = pl.table_to_list(table)
     table_list = pl.expand_spans(table_list)
-    expected_table_list = [ ['<a href="somelink">1</a>', '<a href="somelink">1</a>', '<a href="somelink">1</a>', '4'],
-                    ['1','2','3','4'],
-                    ['1','2','3','4']]
+    expected_table_list = [ ['<a href="somelink">1</a>', '<a href="somelink">1</a>', '<a href="somelink">1</a>', '4', None],
+                    ['1','2','3','4', None],
+                    ['1','2','3','4', None]]
     assert table_list == expected_table_list
 
 def test_expand_rowspan():
     table = BeautifulSoup(tests.html_snippets.rowspan, 'html.parser')
     table_list = pl.table_to_list(table)
     table_list = pl.expand_spans(table_list)
-    expected_table_list = [ ['<a href="somelink">1</a>', '2', '3', '4'],
-                    ['<a href="somelink">1</a>', '2', '3', '4'],
-                    ['<a href="somelink">1</a>', '2', '3', '4']]
+    expected_table_list = [ ['<a href="somelink">1</a>', '2', '3', '4', None],
+                    ['<a href="somelink">1</a>', '2', '3', '4', None],
+                    ['<a href="somelink">1</a>', '2', '3', '4', None]]
     assert table_list == expected_table_list
 
 def test_expand_both():
     table = BeautifulSoup(tests.html_snippets.bothspan, 'html.parser')
     table_list = pl.table_to_list(table)
     table_list = pl.expand_spans(table_list)
-    expected_table_list = [ ['<a href="somelink">1</a>', '<a href="somelink">1</a>', '<a href="somelink">1</a>', '4'],
-                    ['<a href="somelink">1</a>', '<a href="somelink">1</a>', '<a href="somelink">1</a>', '4'],
-                    ['1','2','3','4']]
+    expected_table_list = [ ['<a href="somelink">1</a>', '<a href="somelink">1</a>', '<a href="somelink">1</a>', '4', None],
+                    ['<a href="somelink">1</a>', '<a href="somelink">1</a>', '<a href="somelink">1</a>', '4', None],
+                    ['1','2','3','4', None]]
     assert table_list == expected_table_list
