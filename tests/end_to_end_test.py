@@ -62,13 +62,15 @@ def test_vertical_samples_from_standard(ciods, modules, attributes):
             "description": "The Ultrasound (US) Multi-frame Image Information Object Definition specifies a Multi-frame image that has been created by an ultrasound imaging device.",
             "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_A.7-1",
             "name": "US Multi-frame Image",
+            "id": "us-multi-frame-image",
             "order": 5
         }
     }
     test_module = {
         "patient": {
             "name": "Patient",
-            "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-1"
+            "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-1",
+            "id": "patient"
         }
     }
     test_attribute = {
@@ -139,7 +141,8 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship,
     module = {
         "patient-study": {
             "name":"Patient Study",
-            "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-4a"
+            "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-4a",
+            "id": "patient-study"
         }
     }
     ciod_module = [
@@ -157,6 +160,7 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship,
             "description":"The Computed Radiography (CR) Image Information Object Definition specifies an image that has been created by a computed radiography imaging device.",
             "name":"CR Image",
             "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_A.2-1",
+            "id": "cr-image",
             "order": 0
         }
     }
@@ -212,7 +216,8 @@ def test_number_of_module_appearances(ciods, ciod_module_relationship, modules):
     module = {
         "volume-cropping": {
             "name":"Volume Cropping",
-            "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11.24-1"
+            "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11.24-1",
+            "id": "volume-cropping"
         }
     }
     ciod_module = [

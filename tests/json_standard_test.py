@@ -185,7 +185,6 @@ def test_normalize_ciods():
     ]
     ciods = nc.ciod_table_from_raw_list(test_ciod_list)
     matching_entry = test_ciod_list[0]
-    del matching_entry['id']
     assert ciods['ciod-1'] == matching_entry
 
 
@@ -199,31 +198,7 @@ def test_normalize_modules():
     ]
     modules = nm.module_table_from_raw_list(test_module_list)
     matching_entry = test_module_list[0]
-    del matching_entry['id']
     assert modules['module-1'] == matching_entry
-
-
-# def test_normalize_attributes():
-#     test_modules_with_attributes = [
-#         {
-#             'data': [
-#                 {
-#                     'id': '0001-0001',
-#                     'name': 'Attribute 1',
-#                     'parent_id': None,
-#                     'type': None,
-#                     'description': None,
-#                     'tag': '(0001,0001)'
-#                 }
-#             ]
-#         }
-#     ]
-#     attributes = na.extract_attributes(test_modules_with_attributes) # Right now, just adds an attribute id.
-#     matching_entry = {
-#         'name': 'Attribute 1',
-#         'tag': '(0001,0001)',
-#     }
-#     assert attributes['(0001,0001)'] == matching_entry
 
 
 def test_normalize_ciod_module_relationship():
