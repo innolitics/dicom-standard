@@ -14,10 +14,16 @@ def module_attr_relationship_table(module_attr_relationship_list):
                 'order': i,
                 'depth': get_depth(attribute['id']),
                 'type': attribute['type'],
-                'linkToStandard': attribute['linkToStandard'],
+                'linkToStandard': get_standard_link(module, attribute),
                 'description': attribute['description']
             })
     return entries
+
+def get_standard_link(module, attribute):
+    if attribute['linkToStandard'] is None:
+        return module['linkToStandard']
+    else:
+        return attribute['linkToStandard']
 
 def get_depth(attribute_id):
     return len(attribute_id.split(':'))-1
