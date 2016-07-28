@@ -1,47 +1,51 @@
-import pytest
 import subprocess
+
+import pytest
 
 import parse_lib as pl
 
-@pytest.mark.endtoend
+
 @pytest.fixture(scope='module')
 def make_standard():
-    subprocess.run(['make', 'all', '--jobs', '4'])
+    subprocess.run(['make', 'all'])
 
-@pytest.mark.endtoend
+
 @pytest.fixture(scope='module')
 def ciods(make_standard):
     return pl.read_json_to_dict('dist/ciods.json')
 
-@pytest.mark.endtoend
+
 @pytest.fixture(scope='module')
 def modules(make_standard):
     return pl.read_json_to_dict('dist/modules.json')
 
-@pytest.mark.endtoend
+
 @pytest.fixture(scope='module')
 def attributes(make_standard):
     return pl.read_json_to_dict('dist/attributes.json')
 
-@pytest.mark.endtoend
+
 @pytest.fixture(scope='module')
 def ciod_module_relationship(make_standard):
     return pl.read_json_to_dict('dist/ciod_to_modules.json')
 
-@pytest.mark.endtoend
+
 @pytest.fixture(scope='module')
 def module_attribute_relationship(make_standard):
     return pl.read_json_to_dict('dist/module_to_attributes.json')
+
 
 @pytest.mark.endtoend
 def test_total_number_ciods(ciods):
     defined_ciods = 119
     assert len(ciods) == defined_ciods 
 
+
 @pytest.mark.endtoend
 def test_total_number_attributes(attributes):
     defined_valid_attributes = 4084
     assert len(attributes) == defined_valid_attributes
+
 
 @pytest.mark.endtoend
 def test_valid_foreign_keys_ciod_module(ciod_module_relationship, ciods, modules):
@@ -49,11 +53,13 @@ def test_valid_foreign_keys_ciod_module(ciod_module_relationship, ciods, modules
         assert pair['ciod'] in ciods 
         assert pair['module'] in modules
 
+
 @pytest.mark.endtoend
 def test_valid_foreign_keys_module_attribute(module_attribute_relationship, modules, attributes):
     for pair in module_attribute_relationship:
         assert pair['module'] in modules
         assert pair['path'].split(':')[-1] in attributes
+
 
 @pytest.mark.endtoend
 def test_vertical_samples_from_standard(ciods, modules, attributes):
