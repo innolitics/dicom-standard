@@ -80,6 +80,16 @@ def condition_table_data(tdiv, all_tables, column_correction):
     return text_table
 
 
+def extract_text_from_html(full_table, link_correction):
+    final_table = []
+    for row in full_table:
+        temp_row = []
+        for i in range(len(row)):
+            temp_row.append(text_or_href_from_cell(row[i], i, link_correction))
+        final_table.append(temp_row)
+    return final_table
+
+
 def extraneous_attribute_table_row(row):
     # TODO: pull this out from the general parsing lib
     cells = row.find_all('td')
@@ -316,16 +326,6 @@ def sequence_indicator_from_cell(cell):
     else:
         indicator = split[0]
     return indicator
-
-
-def extract_text_from_html(full_table, link_correction):
-    final_table = []
-    for row in full_table:
-        temp_row = []
-        for i in range(len(row)):
-            temp_row.append(text_or_href_from_cell(row[i], i, link_correction))
-        final_table.append(temp_row)
-    return final_table
 
 
 def text_or_href_from_cell(cell_html, column_idx, link_correction):
