@@ -59,7 +59,7 @@ def clean_table_entry(name):
 
 
 def create_slug(title):
-    first_pass_slugify = title.lower().replace(" ", "-").replace(",", "")
+    first_pass_slugify = title.lower().replace(" ", "-").replace(",", "").replace("/", "-")
     return re.sub('(\()|(\))', '', first_pass_slugify)
 
 
