@@ -84,8 +84,9 @@ def extract_text_from_html(full_table, link_correction):
     final_table = []
     for row in full_table:
         temp_row = []
-        for i in range(len(row)):
-            temp_row.append(text_or_href_from_cell(row[i], i, link_correction))
+        for idx, cell in enumerate(row):
+            description_cell = idx == 3
+            temp_row.append(text_or_href_from_cell(cell, idx, link_correction, description_cell))
         final_table.append(temp_row)
     return final_table
 
@@ -130,24 +131,32 @@ def find_spans(table):
     spans = []
     for row in table:
         row_spans = []
-        for cell in row:
-            cell_span = span_from_cell(cell)
+        for column, cell in enumerate(row):
+            description_cell = column ==  3
+            cell_span = span_from_cell(cell, description_cell)
             row_spans.append(cell_span)
         spans.append(row_spans)
     return spans
 
 
-def span_from_cell(cell):
+def span_from_cell(cell, description_cell):
     if cell is None:
         return None
     cell_html = BeautifulSoup(cell, 'html.parser')
     td_tag = cell_html.find('td')
     try:
-        return [
-            int(td_tag.get('rowspan', 1)),
-            int(td_tag.get('colspan', 1)),
-            td_html_content(str(td_tag))
-        ]
+        if (description_cell):
+            return [
+                int(td_tag.get('rowspan', 1)),
+                int(td_tag.get('colspan', 1)),
+                str(td_tag)
+            ]
+        else:
+            return [
+                int(td_tag.get('rowspan', 1)),
+                int(td_tag.get('colspan', 1)),
+                td_html_content(str(td_tag))
+            ]
     except AttributeError:
         return [1, 1, cell]
 
@@ -328,13 +337,15 @@ def sequence_indicator_from_cell(cell):
     return indicator
 
 
-def text_or_href_from_cell(cell_html, column_idx, link_correction):
+def text_or_href_from_cell(cell_html, column_idx, link_correction, description_cell):
     if cell_html is None:
         return None
     html = BeautifulSoup(cell_html, 'html.parser')
     if column_idx == REFERENCE_COLUMN and link_correction:
         id_sequence, ref_link = html.find_all('a')
         return ref_link.get('href')
+    elif description_cell:
+        return str(html)
     else:
         return clean_table_entry(html.get_text())
 
