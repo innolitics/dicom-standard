@@ -149,7 +149,7 @@ def span_from_cell(cell, description_cell):
             return [
                 int(td_tag.get('rowspan', 1)),
                 int(td_tag.get('colspan', 1)),
-                str(td_tag)
+                getRawInnerHTML(td_tag)
             ]
         else:
             return [
@@ -160,6 +160,8 @@ def span_from_cell(cell, description_cell):
     except AttributeError:
         return [1, 1, cell]
 
+def getRawInnerHTML(tag):
+    return ''.join(list(map(str, tag.contents)))
 
 def td_html_content(td_html):
     split_html = re.split('(<td.*?>)|(</td>)', td_html)
