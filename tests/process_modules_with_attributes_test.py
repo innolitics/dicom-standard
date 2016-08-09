@@ -1,4 +1,4 @@
-from process_modules_with_attributes import add_attribute_parent_ids, find_non_adjacent_parent, record_parent_id_to_attribute,remove_attributes_from_description_html 
+from process_modules_with_attributes import add_attribute_parent_ids, find_non_adjacent_parent, record_parent_id_to_attribute,remove_attributes_from_description_html, resolve_hrefs
 from bs4 import BeautifulSoup
 
 
@@ -206,6 +206,13 @@ def test_remove_attributes_from_tag():
     tag = '<p style="So much style">This is an <a href="coolsite" style="Some other cool style">awesome</a> <div>description</div>.</p>'
     html = BeautifulSoup(tag, 'html.parser')
     top_level_tag = html.find('p')
-    top_level_tag = remove_attributes_from_description_html(top_level_tag)
-    assert top_level_tag.attrs == {}
-    assert top_level_tag.find('a').attrs == {'href': 'coolsite'}
+    new_top_level_tag = remove_attributes_from_description_html(top_level_tag)
+    assert new_top_level_tag.attrs == {}
+    assert new_top_level_tag.find('a').attrs == {'href': 'coolsite'}
+
+def test_resolve_hrefs_in_description():
+    tag = '<p style="So much style">This is an <a href="#coolAttribute" style="Some other cool style">awesome</a> <div>link to the standard</div>.</p>'
+    html = BeautifulSoup(tag, 'html.parser')
+    top_level_tag = html.find('p')
+    top_level_tag_with_resolved_hrefs = resolve_hrefs(top_level_tag)
+    assert top_level_tag_with_resolved_hrefs.find('a')['href'] == "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#coolAttribute"
