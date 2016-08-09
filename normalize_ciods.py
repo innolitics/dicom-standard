@@ -3,6 +3,8 @@ from bs4 import BeautifulSoup
 
 import parse_lib as pl
 
+BASE_URL = "http://dicom.nema.org/medical/dicom/current/output/html/part03.html"
+
 def ciod_table_from_raw_list(ciod_module_list):
     ciods = {}
     for ciod in ciod_module_list:
@@ -21,7 +23,7 @@ def clean_description(raw_html):
     if top_level_tag is None:
         top_level_tag = description_html.find('div', recursive=False)
     tag_with_no_extra_attributes = pl.remove_attributes_from_description_html(top_level_tag)
-    tag_with_resolved_hrefs = pl.resolve_hrefs(tag_with_no_extra_attributes)
+    tag_with_resolved_hrefs = pl.resolve_hrefs(tag_with_no_extra_attributes, BASE_URL)
     return str(pl.add_targets_to_anchors(tag_with_resolved_hrefs))
 
 if __name__ == "__main__":

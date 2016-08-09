@@ -393,17 +393,15 @@ def remove_attributes_from_description_html(top_level_tag):
             child.attrs = clean_tag_attributes(child)
     return top_level_tag
 
-def clean_tag_attributes(tag, ignored_attributes=['href']):
+def clean_tag_attributes(tag, ignored_attributes=None):
+    if ignored_attributes is None:
+        ignored_attributes = ['href']
     if tag.attrs != {}:
-        new_attrs = deepcopy(tag.attrs)
-        for attr, val in tag.attrs.items():
-            if attr not in ignored_attributes: 
-                del new_attrs[attr]
-        return new_attrs
+        return {a:v for a,v in tag.attrs.items() if a in ignored_attributes}
     else:
         return tag.attrs
 
-def resolve_hrefs(tag, base_url="http://dicom.nema.org/medical/dicom/current/output/html/part03.html"):
+def resolve_hrefs(tag, base_url):
     anchors = tag.find_all('a')
     for anchor in anchors:
         if 'href' in anchor.attrs.keys():
