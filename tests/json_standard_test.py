@@ -177,7 +177,7 @@ def test_normalize_ciods():
     test_ciod_list = [
         {
             'id': 'ciod-1',
-            'description': 'Some description of ciod 1.',
+            'description': '<p>Some description of ciod 1.</p>',
             'linkToStandard': 'http://somelink.com',
             'order': 0,
             'name': 'Ciod 1'

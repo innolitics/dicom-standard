@@ -2,6 +2,7 @@ from process_modules_with_attributes import add_attribute_parent_ids, find_non_a
 from parse_lib import remove_attributes_from_description_html, resolve_hrefs, add_targets_to_anchors
 from bs4 import BeautifulSoup
 
+BASE_URL = "http://dicom.nema.org/medical/dicom/current/output/html/part03.html"
 
 def test_add_attribute_parent_ids():
     test_attributes = [
@@ -215,7 +216,7 @@ def test_resolve_hrefs_in_description():
     tag = '<p style="So much style">This is an <a href="#coolAttribute" style="Some other cool style">awesome</a> <div>link to the standard</div>.</p>'
     html = BeautifulSoup(tag, 'html.parser')
     top_level_tag = html.find('p')
-    top_level_tag_with_resolved_hrefs = resolve_hrefs(top_level_tag)
+    top_level_tag_with_resolved_hrefs = resolve_hrefs(top_level_tag, BASE_URL)
     assert top_level_tag_with_resolved_hrefs.find('a')['href'] == "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#coolAttribute"
 
 def test_add_targets_to_anchors():
