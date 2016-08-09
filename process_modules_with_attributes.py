@@ -130,6 +130,13 @@ def resolve_hrefs(tag, base_url="http://dicom.nema.org/medical/dicom/current/out
             anchor['href'] = base_url + anchor['href']
     return tag
 
+def add_targets_to_anchors(tag):
+    anchors = tag.find_all('a')
+    for anchor in anchors:
+        if 'href' in anchor.attrs.keys():
+            anchor['target'] = '_blank' 
+    return tag
+
 if __name__ == '__main__':
     modules_with_attributes = pl.read_json_to_dict(sys.argv[1])
 
