@@ -1,4 +1,5 @@
-from process_modules_with_attributes import add_attribute_parent_ids, find_non_adjacent_parent, record_parent_id_to_attribute
+from process_modules_with_attributes import add_attribute_parent_ids, find_non_adjacent_parent, record_parent_id_to_attribute,remove_attributes_from_description_html 
+from bs4 import BeautifulSoup
 
 
 def test_add_attribute_parent_ids():
@@ -200,3 +201,11 @@ def test_find_adjacent_parent_with_preceding_sibling_elements():
     }
     parent_id = record_parent_id_to_attribute('>', previous_attribute, attribute_list)
     assert parent_id == '0001-0001'
+
+def test_remove_attributes_from_tag():
+    tag = '<p style="So much style">This is an <a href="coolsite" style="Some other cool style">awesome</a> <div>description</div>.</p>'
+    html = BeautifulSoup(tag, 'html.parser')
+    top_level_tag = html.find('p')
+    top_level_tag = remove_attributes_from_description_html(top_level_tag)
+    assert top_level_tag.attrs == {}
+    assert top_level_tag.find('a').attrs == {'href': 'coolsite'}

@@ -1,5 +1,8 @@
 import sys
 import re
+from bs4 import BeautifulSoup
+from bs4.element import Tag
+from copy import deepcopy
 
 import parse_lib as pl
 
@@ -94,6 +97,32 @@ def addMacroLinks(attributes):
             attribute['linkToStandard'] = pl.standard_link_from_fragment(attribute['macro_table_id'])
         else:
             attribute['linkToStandard'] = None
+
+def remove_attributes_from_all_descriptions(attributes, ignored_attributes=['href']):
+    for attribute in attributes:
+        description_html = BeautifulSoup(attribute['description'], 'html.parser')
+        top_level_tag = description_html.find('p', recursive=False)
+        if (top_level_tag is None):
+            top_level_tag = description_html.find('div', recursive=False)
+        top_level_tag = remove_attributes_from_description_html(top_level_tag)
+
+def remove_attributes_from_description_html(top_level_tag):
+    top_level_tag.attrs = clean_tag_attributes(top_level_tag)
+    for child in top_level_tag.descendants:
+        if isinstance(child, Tag):
+            child.attrs = clean_tag_attributes(child)
+    return top_level_tag
+
+def clean_tag_attributes(tag, ignored_attributes=['href']):
+    if tag.attrs != {}:
+        new_attrs = deepcopy(tag.attrs)
+        for attr, val in tag.attrs.items():
+            if attr not in ignored_attributes: 
+                del new_attrs[attr]
+        return new_attrs
+    else:
+        return tag.attrs
+
 
 if __name__ == '__main__':
     modules_with_attributes = pl.read_json_to_dict(sys.argv[1])

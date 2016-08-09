@@ -45,9 +45,9 @@ def test_get_text_or_href_from_html():
     cell = '<h3><a id="this is the id link"></a>This is a really cool <a href="link">link</a> to a website.</h3>'
     only_text = 'This is a really cool link to a website.'
     href_text = 'link'
-    text = pl.text_or_href_from_cell(cell, 0, False)
+    text = pl.text_or_href_from_cell(cell, 0, False, False)
     assert text == only_text
-    link = pl.text_or_href_from_cell(cell, 2, True)
+    link = pl.text_or_href_from_cell(cell, 2, True, False)
     assert link == href_text
 
 def test_get_text_from_table():
@@ -56,7 +56,7 @@ def test_get_text_from_table():
              ['<h1>9</h1>', '<h1>10</h1>', '<h1>11</h1>', '<h1>12</h1>']]
     extract_links = False
     text_table = pl.extract_text_from_html(table, extract_links)
-    expected_text_table = [['1', '2', '3', '4'], ['5', '6', '7', '8'], ['9', '10', '11', '12']]
+    expected_text_table = [['1', '2', '3', '<h1>4</h1>'], ['5', '6', '7', '<h1>8</h1>'], ['9', '10', '11', '<h1>12</h1>']]
     assert text_table == expected_text_table
 
 def test_get_text_from_table_with_links():
@@ -120,7 +120,7 @@ def test_get_td_html():
 def test_get_span_from_cell():
     inner_html = 'This is <a href="content_link">a cell</a> with spans to be expanded.'
     cell = '<td align="left" rowspan="2" colspan="1">' + inner_html + '</td>'
-    span = pl.span_from_cell(cell)
+    span = pl.span_from_cell(cell, False)
     assert [2, 1, inner_html] == span
 
 def test_extract_data_element_registry():
