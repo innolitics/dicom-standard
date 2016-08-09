@@ -346,7 +346,7 @@ def text_or_href_from_cell(cell_html, column_idx, link_correction, description_c
     if column_idx == REFERENCE_COLUMN and link_correction:
         id_sequence, ref_link = html.find_all('a')
         return ref_link.get('href')
-    elif description_cell:
+    elif description_cell and not link_correction:
         return str(html)
     else:
         return clean_table_entry(html.get_text())
