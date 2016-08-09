@@ -6,6 +6,7 @@ DICOM standard HTML file.
 import json
 import re
 from copy import deepcopy
+from bs4.element import Tag
 
 from bs4 import BeautifulSoup, NavigableString
 
@@ -384,3 +385,34 @@ def read_json_to_dict(filepath):
         json_string = json_file.read()
         json_dict = json.loads(json_string)
         return json_dict
+
+def remove_attributes_from_description_html(top_level_tag):
+    top_level_tag.attrs = clean_tag_attributes(top_level_tag)
+    for child in top_level_tag.descendants:
+        if isinstance(child, Tag):
+            child.attrs = clean_tag_attributes(child)
+    return top_level_tag
+
+def clean_tag_attributes(tag, ignored_attributes=['href']):
+    if tag.attrs != {}:
+        new_attrs = deepcopy(tag.attrs)
+        for attr, val in tag.attrs.items():
+            if attr not in ignored_attributes: 
+                del new_attrs[attr]
+        return new_attrs
+    else:
+        return tag.attrs
+
+def resolve_hrefs(tag, base_url="http://dicom.nema.org/medical/dicom/current/output/html/part03.html"):
+    anchors = tag.find_all('a')
+    for anchor in anchors:
+        if 'href' in anchor.attrs.keys():
+            anchor['href'] = base_url + anchor['href']
+    return tag
+
+def add_targets_to_anchors(tag):
+    anchors = tag.find_all('a')
+    for anchor in anchors:
+        if 'href' in anchor.attrs.keys():
+            anchor['target'] = '_blank'
+    return tag

@@ -1,7 +1,6 @@
 import sys
 import re
 from bs4 import BeautifulSoup
-from bs4.element import Tag
 from copy import deepcopy
 
 import parse_lib as pl
@@ -102,45 +101,12 @@ def clean_description_html(attributes, ignored_attributes=['href']):
     for attribute in attributes:
         description_html = BeautifulSoup(attribute['description'], 'html.parser')
         top_level_tag = description_html.find('p', recursive=False)
-        if (top_level_tag is None):
+        if top_level_tag is None:
             top_level_tag = description_html.find('div', recursive=False)
-        top_level_tag = remove_attributes_from_description_html(top_level_tag)
-        tag_with_no_extra_attributes = remove_attributes_from_description_html(top_level_tag)
-        tag_with_resolved_hrefs = resolve_hrefs(tag_with_no_extra_attributes)
-        tag_with_target_anchors = add_targets_to_anchors(tag_with_resolved_hrefs)
+        tag_with_no_extra_attributes = pl.remove_attributes_from_description_html(top_level_tag)
+        tag_with_resolved_hrefs = pl.resolve_hrefs(tag_with_no_extra_attributes)
+        tag_with_target_anchors = pl.add_targets_to_anchors(tag_with_resolved_hrefs)
         attribute['description'] = str(tag_with_target_anchors)
-
-
-def remove_attributes_from_description_html(top_level_tag):
-    top_level_tag.attrs = clean_tag_attributes(top_level_tag)
-    for child in top_level_tag.descendants:
-        if isinstance(child, Tag):
-            child.attrs = clean_tag_attributes(child)
-    return top_level_tag
-
-def clean_tag_attributes(tag, ignored_attributes=['href']):
-    if tag.attrs != {}:
-        new_attrs = deepcopy(tag.attrs)
-        for attr, val in tag.attrs.items():
-            if attr not in ignored_attributes: 
-                del new_attrs[attr]
-        return new_attrs
-    else:
-        return tag.attrs
-
-def resolve_hrefs(tag, base_url="http://dicom.nema.org/medical/dicom/current/output/html/part03.html"):
-    anchors = tag.find_all('a')
-    for anchor in anchors:
-        if 'href' in anchor.attrs.keys():
-            anchor['href'] = base_url + anchor['href']
-    return tag
-
-def add_targets_to_anchors(tag):
-    anchors = tag.find_all('a')
-    for anchor in anchors:
-        if 'href' in anchor.attrs.keys():
-            anchor['target'] = '_blank' 
-    return tag
 
 if __name__ == '__main__':
     modules_with_attributes = pl.read_json_to_dict(sys.argv[1])

@@ -1,4 +1,5 @@
-from process_modules_with_attributes import add_attribute_parent_ids, find_non_adjacent_parent, record_parent_id_to_attribute,remove_attributes_from_description_html, resolve_hrefs, add_targets_to_anchors
+from process_modules_with_attributes import add_attribute_parent_ids, find_non_adjacent_parent, record_parent_id_to_attribute
+from parse_lib import remove_attributes_from_description_html, resolve_hrefs, add_targets_to_anchors
 from bs4 import BeautifulSoup
 
 
