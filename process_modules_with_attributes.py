@@ -98,13 +98,18 @@ def addMacroLinks(attributes):
         else:
             attribute['linkToStandard'] = None
 
-def remove_attributes_from_all_descriptions(attributes, ignored_attributes=['href']):
+def clean_description_html(attributes, ignored_attributes=['href']):
     for attribute in attributes:
         description_html = BeautifulSoup(attribute['description'], 'html.parser')
         top_level_tag = description_html.find('p', recursive=False)
         if (top_level_tag is None):
             top_level_tag = description_html.find('div', recursive=False)
         top_level_tag = remove_attributes_from_description_html(top_level_tag)
+        tag_with_no_extra_attributes = remove_attributes_from_description_html(top_level_tag)
+        tag_with_resolved_hrefs = resolve_hrefs(tag_with_no_extra_attributes)
+        tag_with_target_anchors = add_targets_to_anchors(tag_with_resolved_hrefs)
+        attribute['description'] = str(tag_with_target_anchors)
+
 
 def remove_attributes_from_description_html(top_level_tag):
     top_level_tag.attrs = clean_tag_attributes(top_level_tag)
@@ -147,6 +152,7 @@ if __name__ == '__main__':
         add_attribute_slugs(module_attributes)
         add_attribute_parent_ids(module_attributes)
         clean_attributes(module_attributes)
+        clean_description_html(module_attributes)
         addMacroLinks(module_attributes)
 
     pl.write_pretty_json(sys.argv[2], modules_with_attributes)
