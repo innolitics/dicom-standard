@@ -1,6 +1,7 @@
 import sys
 import re
 from bs4 import BeautifulSoup
+from bs4.element import Tag
 from copy import deepcopy
 
 import parse_lib as pl
@@ -101,13 +102,16 @@ def addMacroLinks(attributes):
 def clean_description_html(attributes):
     for attribute in attributes:
         description_html = BeautifulSoup(attribute['description'], 'html.parser')
-        top_level_tag = description_html.find('p', recursive=False)
-        if top_level_tag is None:
-            top_level_tag = description_html.find('div', recursive=False)
-        tag_with_no_extra_attributes = pl.remove_attributes_from_description_html(top_level_tag)
-        tag_with_resolved_hrefs = pl.resolve_hrefs(tag_with_no_extra_attributes, BASE_URL)
-        tag_with_target_anchors = pl.add_targets_to_anchors(tag_with_resolved_hrefs)
-        attribute['description'] = str(tag_with_target_anchors)
+        top_level_tags = description_html.contents
+        cleaned_html = ''
+        for tag in top_level_tags:
+            if not isinstance(tag, Tag):
+                continue
+            tag_with_no_extra_attributes = pl.remove_attributes_from_description_html(tag)
+            tag_with_resolved_hrefs = pl.resolve_hrefs(tag_with_no_extra_attributes, BASE_URL)
+            tag_with_target_anchors = pl.add_targets_to_anchors(tag_with_resolved_hrefs)
+            cleaned_html += str(tag_with_target_anchors)
+        attribute['description'] = cleaned_html
 
 if __name__ == '__main__':
     modules_with_attributes = pl.read_json_to_dict(sys.argv[1])
