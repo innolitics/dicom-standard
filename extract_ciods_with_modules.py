@@ -29,14 +29,20 @@ def expand_module_usage_fields(ciod_json_raw):
 
 
 def expand_conditional_statement(usage_field):
-    conditional = re.compile("^C.*")
-    if conditional.match(usage_field):
-        usage, *conditional_statement_parts = re.split("-", usage_field)
-        conditional_statement = ''.join(conditional_statement_parts).strip()
+    stripped_usage_field = usage_field.strip()
+
+    if len(stripped_usage_field) == 0:
+        raise Exception('Empty module usage field')
+
+    if stripped_usage_field.startswith('C - '):
+        conditional_statement = stripped_usage_field[4:].strip()
+    elif stripped_usage_field.startswith('C') and len(stripped_usage_field) > 1:
+        conditional_statement = stripped_usage_field[1:].strip()
     else:
-        usage = usage_field
         conditional_statement = None
-    return usage.strip(), conditional_statement
+
+    usage = stripped_usage_field[0]
+    return usage, conditional_statement
 
 
 def add_ciod_description_fields(ciod_json_list, descriptions):

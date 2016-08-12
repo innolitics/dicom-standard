@@ -22,9 +22,9 @@ def test_expand_conditional_statement_with_conditional_statement_containing_dash
 
 
 def test_expand_conditional_statement_with_weirdly_formatted_statements():
-    with pytest.raises(Exception):
-        expand_conditional_statement('C Whaa')
-
+    # there are a couple of these in the standard
+    conditional_statement_with_tabs_and_newlines = 'C 	Whaa'
+    assert expand_conditional_statement(conditional_statement_with_tabs_and_newlines) == ('C', 'Whaa')
 
 def test_expand_conditional_statement_raises_if_empty():
     with pytest.raises(Exception):
