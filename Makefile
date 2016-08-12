@@ -54,5 +54,10 @@ endtoendtest:
 	$(PYTEST_BIN) -m 'endtoend'
 
 
+updatestandard:
+	wget http://dicom.nema.org/medical/dicom/current/output/html/part03.html -O PS3.3.html
+	wget http://dicom.nema.org/medical/dicom/current/output/html/part06.html -O PS3.6.html
+
+
 clean:
 	rm -f *.pyc tmp/* dist/* tests/*.pyc tests/*.pyc
