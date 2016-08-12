@@ -66,9 +66,7 @@ def find_description_text_in_html(tdiv):
     section = tdiv.parent.parent
     description_title = section.find('h3', class_='title')
     try:
-        # description_text = description_title.parent.parent.parent.parent.p.get_text()
         return str(description_title.parent.parent.parent.parent.p)
-        # return description_text.strip()
     except AttributeError:
         return None
 
