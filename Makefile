@@ -3,13 +3,15 @@
 PYTEST_BIN=python3 -m pytest
 
 
-all: core_tables relationship_tables
+all: core_tables relationship_tables sitemaps
 
 
 core_tables: dist/ciods.json dist/modules.json dist/attributes.json
 
 relationship_tables: dist/ciod_to_modules.json dist/module_to_attributes.json
 
+sitemaps:
+	python3 generate_sitemaps.py
 
 dist/ciod_to_modules.json: tmp/ciods_with_modules.json
 	python3 normalize_ciod_module_relationship.py $< $@
