@@ -405,6 +405,9 @@ def resolve_hrefs(tag, base_url):
     anchors = tag.find_all('a')
     for anchor in anchors:
         if 'href' in anchor.attrs.keys():
+            # TODO: bug here, hrefs to other sections get incorrectly assembled
+            # i.e. If we are in part03.html:
+            # http://dicom.nema.org/medical/dicom/current/output/html/part03.htmlpart06.html#PS3.6
             anchor['href'] = base_url + anchor['href']
     return tag
 

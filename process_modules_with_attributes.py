@@ -123,7 +123,7 @@ if __name__ == '__main__':
         add_attribute_slugs(module_attributes)
         add_attribute_parent_ids(module_attributes)
         clean_attributes(module_attributes)
-        clean_description_html(module_attributes)
         addMacroLinks(module_attributes)
+        clean_description_html(module_attributes)
 
     pl.write_pretty_json(sys.argv[2], modules_with_attributes)
