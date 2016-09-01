@@ -100,7 +100,9 @@ def addMacroLinks(attributes):
             attribute['linkToStandard'] = None
 
 def clean_description_html(attributes):
+    extra_sections = {}
     for attribute in attributes:
+        extra_sections[attribute['path'] = {}
         description_html = BeautifulSoup(attribute['description'], 'html.parser')
         top_level_tags = description_html.contents
         cleaned_html = ''
@@ -112,6 +114,7 @@ def clean_description_html(attributes):
             tag_with_target_anchors = pl.add_targets_to_anchors(tag_with_resolved_hrefs)
             cleaned_html += str(tag_with_target_anchors)
         attribute['description'] = cleaned_html
+
 
 if __name__ == '__main__':
     modules_with_attributes = pl.read_json_to_dict(sys.argv[1])

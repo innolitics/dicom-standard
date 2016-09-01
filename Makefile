@@ -33,6 +33,9 @@ dist/attributes.json: tmp/PS3.6-cleaned.html extract_data_element_registry.py
 tmp/ciods_with_modules.json: tmp/PS3.3-cleaned.html extract_ciods_with_modules.py
 	python3 extract_ciods_with_modules.py $< $@
 
+tmp/extra_referenced_sections.json: tmp/modules_with_attributes.json tmp/PS3.3-cleaned.html
+	python3 parse_extra_sections.py $@ $^
+
 tmp/modules_with_attributes.json: tmp/modules_with_raw_attributes.json process_modules_with_attributes.py
 	python3 process_modules_with_attributes.py $< $@
 
