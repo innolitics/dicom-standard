@@ -6,7 +6,7 @@ from copy import deepcopy
 
 import parse_lib as pl
 
-BASE_URL = "http://dicom.nema.org/medical/dicom/current/output/html/part03.html"
+BASE_URL = "http://dicom.nema.org/medical/dicom/current/output/html/"
 
 def add_attribute_slugs(attributes):
     for attribute in attributes:
@@ -100,9 +100,7 @@ def addMacroLinks(attributes):
             attribute['linkToStandard'] = None
 
 def clean_description_html(attributes):
-    extra_sections = {}
     for attribute in attributes:
-        extra_sections[attribute['path'] = {}
         description_html = BeautifulSoup(attribute['description'], 'html.parser')
         top_level_tags = description_html.contents
         cleaned_html = ''

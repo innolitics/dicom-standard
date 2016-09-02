@@ -3,15 +3,22 @@
 PYTEST_BIN=python3 -m pytest
 
 
-all: core_tables relationship_tables sitemaps
+all: core_tables relationship_tables extra_tables sitemaps
 
 
 core_tables: dist/ciods.json dist/modules.json dist/attributes.json
 
 relationship_tables: dist/ciod_to_modules.json dist/module_to_attributes.json
 
+extra_tables: dist/extra_referenced_sections.json
+
 sitemaps:
 	python3 generate_sitemaps.py
+
+
+dist/extra_referenced_sections.json: dist/module_to_attributes.json tmp/PS3.3-cleaned.html
+	python3 parse_extra_sections.py $@ $^
+
 
 dist/ciod_to_modules.json: tmp/ciods_with_modules.json
 	python3 normalize_ciod_module_relationship.py $< $@
@@ -26,15 +33,12 @@ dist/ciods.json: tmp/ciods_with_modules.json
 dist/modules.json: tmp/modules_with_attributes.json
 	python3 normalize_modules.py $< $@
 
-
 dist/attributes.json: tmp/PS3.6-cleaned.html extract_data_element_registry.py
 	python3 extract_data_element_registry.py $< $@
 
+
 tmp/ciods_with_modules.json: tmp/PS3.3-cleaned.html extract_ciods_with_modules.py
 	python3 extract_ciods_with_modules.py $< $@
-
-tmp/extra_referenced_sections.json: tmp/modules_with_attributes.json tmp/PS3.3-cleaned.html
-	python3 parse_extra_sections.py $@ $^
 
 tmp/modules_with_attributes.json: tmp/modules_with_raw_attributes.json process_modules_with_attributes.py
 	python3 process_modules_with_attributes.py $< $@

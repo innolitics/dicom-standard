@@ -4,17 +4,18 @@ from bs4 import BeautifulSoup
 
 import parse_lib as pl
 
+BASE_URL = "http://dicom.nema.org/medical/dicom/current/output/html/"
 
-def parse_extra_sections(modules_with_attributes, parseable_html):
+def parse_extra_standard_content(module_to_attributes, parseable_html):
     extra_sections = {}
-    for module in modules_with_attributes:
+    for module in module_to_attributes:
         module_attributes = module['data']
         for attribute in module_attributes:
-            referenced_sections = get_referenced_sections(attribute, parseable_html)
-            extra_sections[attribute['path']] = referenced_sections
+            referenced_sections = get_all_references(attribute, parseable_html)
+            extra_sections[attribute['id']] = referenced_sections
     return extra_sections
 
-def get_referenced_sections(attribute, parseable_html):
+def get_all_references(attribute, parseable_html):
     description_html = BeautifulSoup(attribute['description'], 'html.parser')
     top_level_tags = description_html.contents
     sections = []
@@ -22,25 +23,37 @@ def get_referenced_sections(attribute, parseable_html):
         anchors = tag.find_all('a')
         for anchor in anchors:
             if 'href' in anchor.attrs.keys():
-                section_reference = anchor['href'].split('#')
-                sections.append(get_section_or_fig_from_reference(section_reference[-1], parseable_html)) 
+                section_reference = anchor['href'].split(BASE_URL)
+                sections.append(html_string_from_reference(section_reference[-1], parseable_html))
     return sections
 
-def get_section_or_fig_from_reference(section_id, parseable_html):
-    # TODO: There are two distinct reference types:
-    #       1. References to sections
-    #       2. References to figures (haven't implemented yet)
-    # Need to regex match and treat each case separately
-    id_tag = parseable_html.find(id=section_id)
-    if re.match('sect', section_id):
-        referenced_html = get_section_html(id_tag)
-    return referenced_html
+def html_string_from_reference(target_section, parseable_html):
+    target_file, section_id = target_section.split('#')
+    # TODO: Load other HTML files that are referenced (part16.html, part06.html)
+    #       and find their appropriate sections.
+    if target_file == 'part03.html':
+        id_tag = parseable_html.find(id=section_id)
+        referenced_html = ''
+        if id_tag is None:
+            return None
+        if re.match('sect.*', section_id) is not None:
+            referenced_html = get_section_html(id_tag)
+        elif re.match('figure.*', section_id) is not None:
+            referenced_html = get_figure_html(id_tag)
+        return referenced_html
 
 def get_section_html(id_tag):
-    return id_tag.parent.parent.parent.parent.parent
+    return str(id_tag.parent.parent.parent.parent.parent)
+
+def get_figure_html(id_tag):
+    top_div = id_tag.parent
+    img_tag = top_div.div.div.img
+    img_tag['src'] = BASE_URL + img_tag['src']
+    return str(id_tag.parent)
 
 if __name__ == "__main__":
-    modules_with_attributes = pl.read_json_to_dict(sys.argv[2])
-    parseable_html = BeautifulSoup(sys.argv[3], 'html.parser')
-    extra_sections = parse_extra_sections(modules_with_attributes, parseable_html)
-    pl.write_pretty_json(sys.argv[1], extra_sections)
+    with open(sys.argv[3], 'r') as standard_html:
+        module_to_attributes = pl.read_json_to_dict(sys.argv[2])
+        parseable_html = BeautifulSoup(standard_html, 'html.parser')
+        extra_sections = parse_extra_standard_content(module_to_attributes, parseable_html)
+        pl.write_pretty_json(sys.argv[1], extra_sections)
