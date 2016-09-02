@@ -2,7 +2,7 @@ from process_modules_with_attributes import add_attribute_parent_ids, find_non_a
 from parse_lib import remove_attributes_from_description_html, resolve_hrefs, add_targets_to_anchors
 from bs4 import BeautifulSoup
 
-BASE_URL = "http://dicom.nema.org/medical/dicom/current/output/html/part03.html"
+BASE_URL = "http://dicom.nema.org/medical/dicom/current/output/html/"
 
 def test_add_attribute_parent_ids():
     test_attributes = [
