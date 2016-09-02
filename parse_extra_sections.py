@@ -9,11 +9,11 @@ BASE_URL = "http://dicom.nema.org/medical/dicom/current/output/html/"
 def parse_extra_standard_content(module_to_attributes, parseable_html):
     extra_sections = {}
     for attribute in module_to_attributes:
-        referenced_sections = get_all_references(attribute, parseable_html)
-        extra_sections[attribute['path']] = referenced_sections
+        referenced_sections = get_all_references(attribute, parseable_html, extra_sections)
+        extra_sections = {**extra_sections, **referenced_sections}
     return extra_sections
 
-def get_all_references(attribute, parseable_html):
+def get_all_references(attribute, parseable_html, extra_sections):
     description_html = BeautifulSoup(attribute['description'], 'html.parser')
     top_level_tags = description_html.contents
     sections = {}
@@ -21,6 +21,8 @@ def get_all_references(attribute, parseable_html):
         anchors = tag.find_all('a')
         for anchor in anchors:
             if 'href' in anchor.attrs.keys():
+                if anchor.get_text() in extra_sections.keys():
+                    continue
                 section_reference = anchor['href'].split(BASE_URL)
                 sections[anchor.get_text()] = html_string_from_reference(section_reference[-1], parseable_html)
     return sections
