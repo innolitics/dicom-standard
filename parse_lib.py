@@ -410,7 +410,6 @@ def resolve_hrefs(tag, base_url):
                 anchor['href'] = base_url + 'part03.html'+ anchor['href']
             else:
                 anchor['href'] = base_url + anchor['href']
-            print(anchor['href'])
     return tag
 
 def add_targets_to_anchors(tag):
