@@ -4,7 +4,7 @@ from parse_lib import create_slug, read_json_to_dict
 
 SITEMAP_INDEX_HEADER = '<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 SITEMAP_INDEX_FOOTER = '</sitemapindex>\n'
-BASE_URL = "dicom.innolitics.com/ciods"
+BASE_URL = "http://dicom.innolitics.com/ciods"
 
 def main():
     ciods = read_json_to_dict('./dist/ciods.json')
