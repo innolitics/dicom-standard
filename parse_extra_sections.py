@@ -28,6 +28,11 @@ def get_all_references(attribute, parseable_html, extra_sections):
     return sections
 
 def html_string_from_reference(target_section, parseable_html):
+    if '#' not in target_section:
+        # TODO: the only reference that this catches is an ftp link,
+        # ftp://medical.nema.org/MEDICAL/Dicom/2004/printed/04_03pu3.pdf.
+        # Skip this for now.
+        return None
     target_file, section_id = target_section.split('#')
     # TODO: Load other HTML files that are referenced (part16.html, part06.html)
     #       and find their appropriate sections.
