@@ -17,8 +17,8 @@ sitemaps:
 
 
 dist/extra_referenced_sections.json: dist/module_to_attributes.json tmp/PS3.3-cleaned.html
-	python3 parse_extra_sections.py $@ $^
-
+	python3 parse_extra_sections.py tmp/extra_sections_raw.json $^
+	cat tmp/extra_sections_raw.json | sed -e 's/\\u00a0/ /g' > $@
 
 dist/ciod_to_modules.json: tmp/ciods_with_modules.json
 	python3 normalize_ciod_module_relationship.py $< $@
