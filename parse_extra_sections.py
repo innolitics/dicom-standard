@@ -42,10 +42,31 @@ def html_string_from_reference(target_section, parseable_html):
         if id_tag is None:
             return None
         if re.match('sect.*', section_id) is not None:
-            referenced_html = get_section_html(id_tag)
+            referenced_html = expand_hrefs_to_absolute(get_section_html(id_tag))
         elif re.match('figure.*', section_id) is not None:
             referenced_html = get_figure_html(id_tag)
         return referenced_html
+
+def expand_hrefs_to_absolute(raw_html):
+    html = BeautifulSoup(raw_html, 'html.parser')
+    anchors = html.find_all("a")
+    imgs = html.find_all("img")
+    for a in anchors:
+        if 'href' in a.attrs.keys():
+            fragments = a['href'].split('#')
+            if (len(fragments) < 2):
+                a['href'] = BASE_URL + a['href']
+                continue
+            page, section_id = fragments
+            if page == "":
+                a['href'] = BASE_URL + 'part03.html' + a['href']
+            else:
+                a['href'] = BASE_URL + a['href']
+    for img in imgs:
+        if 'src' in img.attrs.keys():
+            img['src'] = BASE_URL + img['src']
+    return str(html)
+
 
 def get_section_html(id_tag):
     return str(id_tag.parent.parent.parent.parent.parent)
