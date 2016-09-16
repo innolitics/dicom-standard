@@ -1,10 +1,17 @@
 .SUFFIXES:
 
+.PHONY:
+	directories clean tests unittest endtoendtest updatestandard
+
 PYTEST_BIN=python3 -m pytest
 
 
-all: core_tables relationship_tables extra_tables sitemaps
+all: directories core_tables relationship_tables extra_tables sitemaps
 
+
+directories:
+	mkdir -p dist
+	mkdir -p tmp
 
 core_tables: dist/ciods.json dist/modules.json dist/attributes.json
 
@@ -69,4 +76,6 @@ updatestandard:
 
 
 clean:
-	rm -f *.pyc tmp/* dist/* tests/*.pyc tests/*.pyc
+	rm -rf tmp dist
+	find . -type f -name "*.py[co]" -delete
+	find . -type d -name "__pycache__" -delete
