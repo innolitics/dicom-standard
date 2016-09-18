@@ -146,7 +146,7 @@ def span_from_cell(cell, description_cell):
     cell_html = BeautifulSoup(cell, 'html.parser')
     td_tag = cell_html.find('td')
     try:
-        if (description_cell):
+        if description_cell:
             return [
                 int(td_tag.get('rowspan', 1)),
                 int(td_tag.get('colspan', 1)),
@@ -406,7 +406,7 @@ def resolve_hrefs(tag, base_url):
     for anchor in anchors:
         if 'href' in anchor.attrs.keys():
             anchor_href_split = anchor['href'].split('#')
-            if (anchor_href_split[0] == ''):
+            if anchor_href_split[0] == '':
                 anchor['href'] = base_url + 'part03.html'+ anchor['href']
             else:
                 anchor['href'] = base_url + anchor['href']
