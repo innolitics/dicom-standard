@@ -54,14 +54,10 @@ def expand_hrefs_to_absolute(raw_html):
     for a in anchors:
         if 'href' in a.attrs.keys():
             fragments = a['href'].split('#')
-            if (len(fragments) < 2):
+            if len(fragments) < 2 or fragments[0] != "":
                 a['href'] = BASE_URL + a['href']
-                continue
-            page, section_id = fragments
-            if page == "":
-                a['href'] = BASE_URL + 'part03.html' + a['href']
             else:
-                a['href'] = BASE_URL + a['href']
+                a['href'] = BASE_URL + 'part03.html' + a['href']
     for img in imgs:
         if 'src' in img.attrs.keys():
             img['src'] = BASE_URL + img['src']
