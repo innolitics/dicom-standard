@@ -20,9 +20,9 @@ def test_get_figure_html():
 def test_expand_hrefs_part03():
     expandable_html = '''<div><a href="#something"></a></div>'''
     expanded_html = '''<div><a href="http://dicom.nema.org/medical/dicom/current/output/html/part03.html#something"></a></div>'''
-    assert expanded_html == p.expand_hrefs_to_absolute(expandable_html)
+    assert expanded_html == p.expand_resource_links_to_absolute(expandable_html)
 
 def test_expand_hrefs_external():
     expandable_external_ref_html = '''<div><a href="part16.html#something"></a></div>'''
     expanded_external_ref_html = '''<div><a href="http://dicom.nema.org/medical/dicom/current/output/html/part16.html#something"></a></div>'''
-    assert expanded_external_ref_html == p.expand_hrefs_to_absolute(expandable_external_ref_html)
+    assert expanded_external_ref_html == p.expand_resource_links_to_absolute(expandable_external_ref_html)

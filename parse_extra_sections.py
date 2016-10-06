@@ -24,7 +24,9 @@ def get_all_references(attribute_description, parseable_html, extra_sections):
                 if anchor.get_text() in extra_sections.keys():
                     continue
                 section_reference = anchor['href'].split(BASE_URL)
-                sections[anchor.get_text()] = html_string_from_reference(section_reference[-1], parseable_html)
+                html_string = html_string_from_reference(section_reference[-1], parseable_html)
+                if (html_string):
+                    sections[anchor.get_text()] = html_string
     return sections
 
 def html_string_from_reference(target_section, parseable_html):
@@ -42,15 +44,16 @@ def html_string_from_reference(target_section, parseable_html):
         if id_tag is None:
             return None
         if re.match('sect.*', section_id) is not None:
-            referenced_html = expand_hrefs_to_absolute(get_section_html(id_tag))
+            referenced_html = expand_resource_links_to_absolute(get_section_html(id_tag))
         elif re.match('figure.*', section_id) is not None:
             referenced_html = get_figure_html(id_tag)
         return referenced_html
 
-def expand_hrefs_to_absolute(raw_html):
+def expand_resource_links_to_absolute(raw_html):
     html = BeautifulSoup(raw_html, 'html.parser')
     anchors = html.find_all("a")
     imgs = html.find_all("img")
+    equations = html.find_all("object")
     for a in anchors:
         if 'href' in a.attrs.keys():
             fragments = a['href'].split('#')
@@ -61,6 +64,9 @@ def expand_hrefs_to_absolute(raw_html):
     for img in imgs:
         if 'src' in img.attrs.keys():
             img['src'] = BASE_URL + img['src']
+    for equation in equations:
+        if 'data' in equation.attrs.keys():
+            equation['data'] = BASE_URL + equation['data']
     return str(html)
 
 
