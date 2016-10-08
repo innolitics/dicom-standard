@@ -26,7 +26,7 @@ def get_all_references(attribute_description, parseable_html, extra_sections):
                 section_reference = anchor['href'].split(BASE_URL)
                 html_string = html_string_from_reference(section_reference[-1], parseable_html)
                 if (html_string):
-                    sections[anchor.get_text()] = html_string
+                    sections[anchor.get_text()] = {"html": html_string, "sourceUrl": anchor['href']}
     return sections
 
 def html_string_from_reference(target_section, parseable_html):
