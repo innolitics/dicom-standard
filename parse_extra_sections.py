@@ -9,9 +9,10 @@ BASE_URL = "http://dicom.nema.org/medical/dicom/current/output/html/"
 def parse_extra_standard_content(module_to_attributes, parseable_html):
     extra_sections = {}
     for attribute in module_to_attributes:
-        referenced_sections = get_all_references(attribute['description'], parseable_html, extra_sections)
+        referenced_sections, updated_description = get_all_references(attribute['description'], parseable_html, extra_sections)
+        attribute['description'] = updated_description
         extra_sections = {**extra_sections, **referenced_sections}
-    return extra_sections
+    return extra_sections, module_to_attributes
 
 def get_all_references(attribute_description, parseable_html, extra_sections):
     description_html = BeautifulSoup(attribute_description, 'html.parser')
@@ -22,12 +23,20 @@ def get_all_references(attribute_description, parseable_html, extra_sections):
         for anchor in anchors:
             if 'href' in anchor.attrs.keys():
                 if anchor.get_text() in extra_sections.keys():
+                    mark_as_saved(anchor)
                     continue
                 section_reference = anchor['href'].split(BASE_URL)
                 html_string = html_string_from_reference(section_reference[-1], parseable_html)
                 if (html_string):
                     sections[anchor.get_text()] = {"html": html_string, "sourceUrl": anchor['href']}
-    return sections
+                    mark_as_saved(anchor)
+    return sections, str(description_html)
+
+def mark_as_saved(anchor):
+    classnames = anchor.get('class', [])
+    classnames.append('locally-saved')
+    anchor['class'] = classnames
+    anchor['href'] = ''
 
 def html_string_from_reference(target_section, parseable_html):
     if '#' not in target_section:
@@ -83,5 +92,6 @@ if __name__ == "__main__":
     with open(sys.argv[3], 'r') as standard_html:
         module_to_attributes = pl.read_json_to_dict(sys.argv[2])
         parseable_html = BeautifulSoup(standard_html, 'html.parser')
-        extra_sections = parse_extra_standard_content(module_to_attributes, parseable_html)
+        extra_sections, updated_module_attributes = parse_extra_standard_content(module_to_attributes, parseable_html)
         pl.write_pretty_json(sys.argv[1], extra_sections)
+        pl.write_pretty_json(sys.argv[2], updated_module_attributes)
