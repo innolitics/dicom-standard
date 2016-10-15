@@ -1,6 +1,6 @@
 import sys
 import re
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, NavigableString
 
 import parse_lib as pl
 
@@ -28,15 +28,28 @@ def get_all_references(attribute_description, parseable_html, extra_sections):
                 section_reference = anchor['href'].split(BASE_URL)
                 html_string = html_string_from_reference(section_reference[-1], parseable_html)
                 if (html_string):
-                    sections[anchor.get_text()] = {"html": html_string, "sourceUrl": anchor['href']}
+                    clean_html = clean_html_string(html_string)
+                    sections[anchor.get_text()] = {"html": clean_html, "sourceUrl": anchor['href']}
                     mark_as_saved(anchor)
     return sections, str(description_html)
 
+def clean_html_string(html_string):
+    parseable_html = BeautifulSoup(html_string, 'html.parser')
+    parent_div = parseable_html.find('div')
+    for tag in parent_div.descendants:
+            tag = remove_attributes(tag)
+    parent_div = remove_attributes(parent_div)
+    return str(parent_div)
+
+def remove_attributes(tag):
+    allowed_attributes = ["class", "href", "src"]
+    if not isinstance(tag, NavigableString):
+        tag.attrs = {k: v for k,v in tag.attrs.items() if k in allowed_attributes}
+    return tag
+
 def mark_as_saved(anchor):
-    classnames = anchor.get('class', [])
-    classnames.append('locally-saved')
-    anchor['class'] = classnames
     anchor['href'] = ''
+    anchor.name = 'span'
 
 def html_string_from_reference(target_section, parseable_html):
     if '#' not in target_section:
