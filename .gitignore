@@ -1,8 +1,5 @@
 *.pyc
 __pycache__
 *.cache*
-tmp/*
-dist/*
-# Do not include virtualenv 
 venv
 env
