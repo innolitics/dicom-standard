@@ -9,16 +9,16 @@ import parse_lib as pl
 BASE_URL = "http://dicom.nema.org/medical/dicom/current/output/html/"
 
 
-def parse_extra_standard_content(module_to_attributes, parseable_html):
+def parse_extra_standard_content(module_to_attributes, id_to_section_html):
     extra_sections = {}
     for attribute in module_to_attributes:
-        referenced_sections, updated_description = get_all_references(attribute['description'], parseable_html, extra_sections)
+        referenced_sections, updated_description = get_all_references(attribute['description'], id_to_section_html, extra_sections)
         attribute['description'] = updated_description
         extra_sections = {**extra_sections, **referenced_sections}
     return extra_sections, module_to_attributes
 
 
-def get_all_references(attribute_description, parseable_html, extra_sections):
+def get_all_references(attribute_description, id_to_section_html, extra_sections):
     description_html = BeautifulSoup(attribute_description, 'html.parser')
     sections = {}
     for anchor in description_html.find_all('a', href=True):
@@ -26,7 +26,7 @@ def get_all_references(attribute_description, parseable_html, extra_sections):
             mark_as_saved(anchor)
             continue
         section_reference = anchor['href'].split(BASE_URL)
-        html_string = html_string_from_reference(section_reference[-1], parseable_html)
+        html_string = html_string_from_reference(section_reference[-1], id_to_section_html)
         if html_string:
             clean_html = clean_html_string(html_string)
             sections[anchor.get_text()] = {"html": clean_html, "sourceUrl": anchor['href']}
@@ -55,7 +55,7 @@ def mark_as_saved(anchor):
     anchor.name = 'span'
 
 
-def html_string_from_reference(target_section, parseable_html):
+def html_string_from_reference(target_section, id_to_section_html):
     if '#' not in target_section:
         # TODO: the only reference that this catches is an ftp link,
         # ftp://medical.nema.org/MEDICAL/Dicom/2004/printed/04_03pu3.pdf.
@@ -65,7 +65,11 @@ def html_string_from_reference(target_section, parseable_html):
     # TODO: Load other HTML files that are referenced (part16.html, part06.html)
     #       and find their appropriate sections.
     if target_file == 'part03.html':
-        id_tag = parseable_html.find(id=section_id)
+        try:
+            id_tag = id_to_section_html[section_id]
+        except KeyError:
+            return None
+
         referenced_html = ''
         if id_tag is None:
             return None
@@ -75,6 +79,14 @@ def html_string_from_reference(target_section, parseable_html):
             referenced_html = get_figure_html(id_tag)
         return referenced_html
 
+
+def is_id_for_expandable_section(html_id):
+    if re.match('sect.*', html_id) is not None:
+        return True
+    elif re.match('figure.*', html_id) is not None:
+        return True
+    else:
+        return False
 
 def expand_resource_links_to_absolute(raw_html):
     html = BeautifulSoup(raw_html, 'html.parser')
@@ -114,7 +126,9 @@ if __name__ == "__main__":
     with open(sys.argv[3], 'r') as standard_html:
         parseable_html = BeautifulSoup(standard_html, 'html.parser')
 
-    extra_sections, updated_module_attributes = parse_extra_standard_content(module_to_attributes, parseable_html)
+    id_to_section_html = {e['id']: e for e in parseable_html.find_all(id=True) if is_id_for_expandable_section(e['id'])}
+
+    extra_sections, updated_module_attributes = parse_extra_standard_content(module_to_attributes, id_to_section_html)
 
     pl.write_pretty_json(sys.argv[1], extra_sections)
     pl.write_pretty_json(sys.argv[2], updated_module_attributes)
