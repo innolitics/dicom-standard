@@ -37,7 +37,8 @@ def test_print_sitemap():
         'g': {},
     }}
 
-    expected_lines = [
+    expected_lines_no_base_url = [
+        '',
         '/c',
         '/c/d',
         '/c/d/e',
@@ -49,4 +50,6 @@ def test_print_sitemap():
     fake_file = io.StringIO()
     print_sitemap(base_url, tree, fake_file)
 
-    assert set(fake_file.getvalue()) == set(''.join(base_url + l + '\n' for l in expected_lines))
+    actual_lines = fake_file.getvalue().split('\n')[:-1]
+
+    assert set(actual_lines) == set(base_url + l for l in expected_lines_no_base_url)
