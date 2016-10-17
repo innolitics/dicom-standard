@@ -5,6 +5,10 @@ from parse_lib import create_slug, read_json_to_dict
 
 
 def site_tree(ciod_to_modules, module_to_attributes):
+    '''
+    Build a tree representation (a nested dict) of the URL structure of the
+    site.
+    '''
     module_trees = defaultdict(lambda: {})
     for relationship in module_to_attributes:
         module, *path = relationship['path'].split(':')
