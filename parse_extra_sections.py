@@ -20,21 +20,17 @@ def parse_extra_standard_content(module_to_attributes, parseable_html):
 
 def get_all_references(attribute_description, parseable_html, extra_sections):
     description_html = BeautifulSoup(attribute_description, 'html.parser')
-    top_level_tags = description_html.contents
     sections = {}
-    for tag in top_level_tags:
-        anchors = tag.find_all('a')
-        for anchor in anchors:
-            if 'href' in anchor.attrs.keys():
-                if anchor.get_text() in extra_sections.keys():
-                    mark_as_saved(anchor)
-                    continue
-                section_reference = anchor['href'].split(BASE_URL)
-                html_string = html_string_from_reference(section_reference[-1], parseable_html)
-                if (html_string):
-                    clean_html = clean_html_string(html_string)
-                    sections[anchor.get_text()] = {"html": clean_html, "sourceUrl": anchor['href']}
-                    mark_as_saved(anchor)
+    for anchor in description_html.find_all('a', href=True):
+        if anchor.get_text() in extra_sections.keys():
+            mark_as_saved(anchor)
+            continue
+        section_reference = anchor['href'].split(BASE_URL)
+        html_string = html_string_from_reference(section_reference[-1], parseable_html)
+        if html_string:
+            clean_html = clean_html_string(html_string)
+            sections[anchor.get_text()] = {"html": clean_html, "sourceUrl": anchor['href']}
+            mark_as_saved(anchor)
     return sections, str(description_html)
 
 
