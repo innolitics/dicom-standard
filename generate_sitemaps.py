@@ -1,7 +1,6 @@
 from collections import defaultdict
-import json
 
-from parse_lib import create_slug, read_json_to_dict
+from parse_lib import read_json_to_dict
 
 
 def site_tree(ciod_to_modules, module_to_attributes):
@@ -50,9 +49,9 @@ if __name__ == "__main__":
 
     site_tree = site_tree(ciod_to_modules, module_to_attributes)
 
+    base_sitemap_url = base_site_url + '/sitemaps'
+    ciods = site_tree.keys()
     with open("./sitemap/sitemapindex.xml", "w") as sitemap_index_file:
-        base_sitemap_url = base_site_url + '/sitemaps'
-        ciods = site_tree.keys()
         print_sitemap_index(base_sitemap_url, ciods, sitemap_index_file)
 
     for ciod, module_tree in site_tree.items():

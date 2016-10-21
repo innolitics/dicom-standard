@@ -121,9 +121,9 @@ def get_figure_html(id_tag):
 
 
 if __name__ == "__main__":
-    module_to_attributes = pl.read_json_to_dict(sys.argv[2])
+    module_to_attributes = pl.read_json_to_dict(sys.argv[3])
 
-    with open(sys.argv[3], 'r') as standard_html:
+    with open(sys.argv[4], 'r') as standard_html:
         parseable_html = BeautifulSoup(standard_html, 'html.parser')
 
     id_to_section_html = {e['id']: e for e in parseable_html.find_all(id=True) if is_id_for_expandable_section(e['id'])}
