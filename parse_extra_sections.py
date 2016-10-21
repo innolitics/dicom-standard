@@ -1,12 +1,13 @@
 import sys
 import re
+from functools import partial
 
 from bs4 import BeautifulSoup, NavigableString
 
 import parse_lib as pl
 
 
-BASE_URL = "http://dicom.nema.org/medical/dicom/current/output/html/"
+BASE_REMOTE_RESOURCE_URL = "http://dicom.nema.org/medical/dicom/current/output/html/"
 
 
 def parse_extra_standard_content(module_to_attributes, id_to_section_html):
@@ -21,26 +22,35 @@ def parse_extra_standard_content(module_to_attributes, id_to_section_html):
 def get_all_references(attribute_description, id_to_section_html, extra_sections):
     description_html = BeautifulSoup(attribute_description, 'html.parser')
     sections = {}
+    record_html_from_anchor_ref = partial(get_reference_html_string, description_html, sections, id_to_section_html, extra_sections)
     for anchor in description_html.find_all('a', href=True):
-        if anchor.get_text() in extra_sections.keys():
-            mark_as_saved(anchor)
-            continue
-        section_reference = anchor['href'].split(BASE_URL)
-        html_string = html_string_from_reference(section_reference[-1], id_to_section_html)
-        if html_string:
-            clean_html = clean_html_string(html_string)
-            sections[anchor.get_text()] = {"html": clean_html, "sourceUrl": anchor['href']}
-            mark_as_saved(anchor)
+        record_html_from_anchor_ref(anchor)
     return sections, str(description_html)
+
+
+def get_reference_html_string(description_html, sections, id_to_section_html, extra_sections, anchor):
+    if anchor.get_text() in extra_sections.keys():
+        mark_as_saved(anchor)
+        return None
+    section_reference = anchor['href'].split(BASE_REMOTE_RESOURCE_URL)
+    html_string = html_string_from_reference(section_reference[-1], id_to_section_html)
+    if html_string:
+        clean_html = clean_html_string(html_string)
+        sections[anchor.get_text()] = {"html": clean_html, "sourceUrl": anchor['href']}
+        mark_as_saved(anchor)
 
 
 def clean_html_string(html_string):
     parseable_html = BeautifulSoup(html_string, 'html.parser')
-    parent_div = parseable_html.find('div')
-    for tag in parent_div.descendants:
+    parent = parseable_html.find('div')
+    if parent is None:
+        parent = parseable_html.find('p')
+    for tag in parent.descendants:
         tag = remove_attributes(tag)
-    parent_div = remove_attributes(parent_div)
-    return str(parent_div)
+    parent = remove_attributes(parent)
+    cleaned_html_string = str(parent)
+    abbreviation_tags_removed = re.sub("(<abbr>)|(</abbr>)", "", cleaned_html_string)
+    return abbreviation_tags_removed
 
 
 def remove_attributes(tag):
@@ -65,28 +75,30 @@ def html_string_from_reference(target_section, id_to_section_html):
     # TODO: Load other HTML files that are referenced (part16.html, part06.html)
     #       and find their appropriate sections.
     if target_file == 'part03.html':
-        try:
-            id_tag = id_to_section_html[section_id]
-        except KeyError:
-            return None
-
+        id_tag = id_to_section_html[section_id]
         referenced_html = ''
         if id_tag is None:
             return None
-        if re.match('sect.*', section_id) is not None:
-            referenced_html = expand_resource_links_to_absolute(get_section_html(id_tag))
-        elif re.match('figure.*', section_id) is not None:
+        if re.match('sect.*', section_id):
+            referenced_html = get_section_html(id_tag)
+        elif re.match('biblio.*', section_id):
+            referenced_html = get_bibliography_html(id_tag)
+        elif re.match('table.*', section_id):
+            referenced_html = get_table_html(id_tag)
+        elif re.match('note.*', section_id):
+            referenced_html = get_note_html(id_tag)
+        elif re.match('figure.*', section_id):
             referenced_html = get_figure_html(id_tag)
         return referenced_html
 
 
 def is_id_for_expandable_section(html_id):
-    if re.match('sect.*', html_id) is not None:
-        return True
-    elif re.match('figure.*', html_id) is not None:
-        return True
-    else:
-        return False
+    matching_ids = ['sect.*', 'figure.*', 'biblio.*', 'table.*', 'note.*', 'glossentry.*']
+    for pattern in matching_ids:
+        if re.match(pattern, html_id):
+            return True
+    return False
+
 
 def expand_resource_links_to_absolute(raw_html):
     html = BeautifulSoup(raw_html, 'html.parser')
@@ -97,26 +109,34 @@ def expand_resource_links_to_absolute(raw_html):
         if 'href' in a.attrs.keys():
             fragments = a['href'].split('#')
             if len(fragments) < 2 or fragments[0] != "":
-                a['href'] = BASE_URL + a['href']
+                a['href'] = BASE_REMOTE_RESOURCE_URL + a['href']
             else:
-                a['href'] = BASE_URL + 'part03.html' + a['href']
+                a['href'] = BASE_REMOTE_RESOURCE_URL + 'part03.html' + a['href']
     for img in imgs:
         if 'src' in img.attrs.keys():
-            img['src'] = BASE_URL + img['src']
+            img['src'] = BASE_REMOTE_RESOURCE_URL + img['src']
     for equation in equations:
         if 'data' in equation.attrs.keys():
-            equation['data'] = BASE_URL + equation['data']
+            equation['data'] = BASE_REMOTE_RESOURCE_URL + equation['data']
     return str(html)
 
 
 def get_section_html(id_tag):
-    return str(id_tag.parent.parent.parent.parent.parent)
+    return expand_resource_links_to_absolute(str(id_tag.parent.parent.parent.parent.parent))
 
+def get_bibliography_html(id_tag):
+    return expand_resource_links_to_absolute(str(id_tag.parent))
+
+def get_table_html(id_tag):
+    return expand_resource_links_to_absolute(str(id_tag.parent))
+
+def get_note_html(id_tag):
+    return expand_resource_links_to_absolute(str(id_tag.parent))
 
 def get_figure_html(id_tag):
     top_div = id_tag.parent
     img_tag = top_div.div.div.img
-    img_tag['src'] = BASE_URL + img_tag['src']
+    img_tag['src'] = BASE_REMOTE_RESOURCE_URL + img_tag['src']
     return str(id_tag.parent)
 
 
