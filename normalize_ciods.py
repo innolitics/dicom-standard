@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 import parse_lib as pl
 
-BASE_URL = "http://dicom.nema.org/medical/dicom/current/output/html/part03.html"
+BASE_URL = "http://dicom.nema.org/medical/dicom/current/output/html/"
 
 def ciod_table_from_raw_list(ciod_module_list):
     ciods = {}

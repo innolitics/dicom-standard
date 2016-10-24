@@ -6,7 +6,7 @@ from copy import deepcopy
 
 import parse_lib as pl
 
-BASE_URL = "http://dicom.nema.org/medical/dicom/current/output/html/part03.html"
+BASE_URL = "http://dicom.nema.org/medical/dicom/current/output/html/"
 
 def add_attribute_slugs(attributes):
     for attribute in attributes:
@@ -113,6 +113,7 @@ def clean_description_html(attributes):
             cleaned_html += str(tag_with_target_anchors)
         attribute['description'] = cleaned_html
 
+
 if __name__ == '__main__':
     modules_with_attributes = pl.read_json_to_dict(sys.argv[1])
 
@@ -123,7 +124,7 @@ if __name__ == '__main__':
         add_attribute_slugs(module_attributes)
         add_attribute_parent_ids(module_attributes)
         clean_attributes(module_attributes)
-        clean_description_html(module_attributes)
         addMacroLinks(module_attributes)
+        clean_description_html(module_attributes)
 
     pl.write_pretty_json(sys.argv[2], modules_with_attributes)

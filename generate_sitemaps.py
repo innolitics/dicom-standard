@@ -1,36 +1,60 @@
-import json
+from collections import defaultdict
 
-from parse_lib import create_slug, read_json_to_dict
+from parse_lib import read_json_to_dict
 
-SITEMAP_INDEX_HEADER = '<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-SITEMAP_INDEX_FOOTER = '</sitemapindex>\n'
-BASE_URL = "http://dicom.innolitics.com/ciods"
 
-def main():
-    ciods = read_json_to_dict('./dist/ciods.json')
-    ciod_modules = read_json_to_dict('./dist/ciod_to_modules.json')
-    module_attributes = read_json_to_dict('./dist/module_to_attributes.json')
+def site_tree(ciod_to_modules, module_to_attributes):
+    '''
+    Build a tree representation (a nested dict) of the URL structure of the
+    site.
+    '''
+    module_trees = defaultdict(lambda: {})
+    for relationship in module_to_attributes:
+        module, *path = relationship['path'].split(':')
+        parent = module_trees[module]
+        for segment in path:
+            if segment not in parent:
+                parent[segment] = {}
+            parent = parent[segment]
 
-    with open("./sitemap/sitemapindex.xml", "w") as sm_index:
-        sm_index.write(SITEMAP_INDEX_HEADER)
-        for slug in ciods.keys():
-            sm_index.write(sitemap_index_entry(slug))
-            with open("./sitemap/"+slug+".sitemap.txt", "w") as sitemap:
-                sitemap.write(BASE_URL + "/" + slug + "\n")
-                for rel in ciod_modules:
-                    if rel["ciod"] == slug:
-                        sitemap.write(BASE_URL + "/" + slug + "/" + rel["module"] + "\n")
-                        for pair in module_attributes:
-                            if pair["module"] == rel["module"]:
-                                sitemap.write(BASE_URL + "/" + slug + "/" + pretty_print_path(pair["path"]) + "\n")
-        sm_index.write(SITEMAP_INDEX_FOOTER)
+    site_tree = defaultdict(lambda: {})
+    for relationship in ciod_to_modules:
+        ciod = relationship['ciod']
+        module = relationship['module']
+        site_tree[ciod][module] = module_trees[module]
 
-def sitemap_index_entry(slug):
-    return "<sitemap><loc>dicom.innolitics.com/sitemaps/"+slug+".sitemap.txt</loc></sitemap>\n"
+    return site_tree
 
-def pretty_print_path(path):
-    newpath = path.replace(":", "/")
-    return newpath
+
+def print_sitemap_index(base_url, sitemap_names, f):
+    print('<?xml version="1.0" encoding="UTF-8"?>', file=f)
+    print('<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">', file=f)
+    for sitemap_name in sitemap_names:
+        sitemap_url = base_url + '/' + sitemap_name + '.sitemap.txt'
+        print('<sitemap><loc>' + sitemap_url + '</loc></sitemap>', file=f)
+    print('</sitemapindex>', file=f)
+
+
+def print_sitemap(base_url, tree, f):
+    print(base_url, file=f)
+    for path_part, sub_tree in tree.items():
+        print_sitemap(base_url + '/' + path_part, sub_tree, f)
+
 
 if __name__ == "__main__":
-    main()
+    base_site_url = 'http://dicom.innolitics.com'
+
+    ciod_to_modules = read_json_to_dict('./dist/ciod_to_modules.json')
+    module_to_attributes = read_json_to_dict('./dist/module_to_attributes.json')
+
+    site_tree = site_tree(ciod_to_modules, module_to_attributes)
+
+    base_sitemap_url = base_site_url + '/sitemaps'
+    ciods = site_tree.keys()
+    with open("./sitemap/sitemapindex.xml", "w") as sitemap_index_file:
+        print_sitemap_index(base_sitemap_url, ciods, sitemap_index_file)
+
+    for ciod, module_tree in site_tree.items():
+        base_url = base_site_url + '/ciods/' + ciod
+        with open("./sitemap/" + ciod + ".sitemap.txt", "w") as sitemap_file:
+            print_sitemap(base_url, module_tree, sitemap_file)
