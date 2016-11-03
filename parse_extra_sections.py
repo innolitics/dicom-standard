@@ -54,7 +54,7 @@ def clean_html_string(html_string):
 
 
 def remove_attributes(tag):
-    allowed_attributes = ["class", "href", "src", "type", "data"]
+    allowed_attributes = ["class", "href", "src", "type", "data", "colspan", "rowspan"]
     if not isinstance(tag, NavigableString):
         tag.attrs = {k: v for k,v in tag.attrs.items() if k in allowed_attributes}
     return tag
