@@ -13,8 +13,9 @@ BASE_REMOTE_RESOURCE_URL = "http://dicom.nema.org/medical/dicom/current/output/h
 def parse_extra_standard_content(module_to_attributes, id_to_section_html):
     extra_sections = {}
     for attribute in module_to_attributes:
-        referenced_sections, updated_description = get_all_references(attribute['description'], id_to_section_html, extra_sections)
+        referenced_sections, urls, updated_description = get_all_references(attribute['description'], id_to_section_html, extra_sections)
         attribute['description'] = updated_description
+        attribute['urls'] = urls
         extra_sections = {**extra_sections, **referenced_sections}
     return extra_sections, module_to_attributes
 
@@ -22,13 +23,14 @@ def parse_extra_standard_content(module_to_attributes, id_to_section_html):
 def get_all_references(attribute_description, id_to_section_html, extra_sections):
     description_html = BeautifulSoup(attribute_description, 'html.parser')
     sections = {}
-    record_html_from_anchor_ref = partial(get_reference_html_string, description_html, sections, id_to_section_html, extra_sections)
+    urls = []
+    record_html_from_anchor_ref = partial(get_reference_html_string, description_html, sections, urls, id_to_section_html, extra_sections)
     for anchor in description_html.find_all('a', href=True):
         record_html_from_anchor_ref(anchor)
-    return sections, str(description_html)
+    return sections, urls, str(description_html)
 
 
-def get_reference_html_string(description_html, sections, id_to_section_html, extra_sections, anchor):
+def get_reference_html_string(description_html, sections, urls, id_to_section_html, extra_sections, anchor):
     if anchor.get_text() in extra_sections.keys():
         mark_as_saved(anchor)
         return None
@@ -37,6 +39,7 @@ def get_reference_html_string(description_html, sections, id_to_section_html, ex
     if html_string:
         clean_html = clean_html_string(html_string)
         sections[anchor.get_text()] = {"html": clean_html, "sourceUrl": anchor['href']}
+        urls.append({"text": anchor.get_text(), "sourceUrl": anchor['href']})
         mark_as_saved(anchor)
 
 
