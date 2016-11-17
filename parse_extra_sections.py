@@ -34,11 +34,11 @@ def get_reference_html_string(description_html, sections, urls, id_to_section_ht
     if anchor.get_text() in extra_sections.keys():
         mark_as_saved(anchor)
         return None
-    section_reference = anchor['href'].split(BASE_REMOTE_RESOURCE_URL)
-    html_string = html_string_from_reference(section_reference[-1], id_to_section_html)
+    section_reference = anchor['href'].split(BASE_REMOTE_RESOURCE_URL)[-1]
+    html_string = html_string_from_reference(section_reference, id_to_section_html)
     if html_string:
         clean_html = clean_html_string(html_string)
-        sections[anchor.get_text()] = {"html": clean_html, "sourceUrl": anchor['href']}
+        sections[section_reference] = {"html": clean_html, "sourceUrl": anchor['href']}
         urls.append({"text": anchor.get_text(), "sourceUrl": anchor['href']})
         mark_as_saved(anchor)
 
