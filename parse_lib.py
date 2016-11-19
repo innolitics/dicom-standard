@@ -33,17 +33,23 @@ def table_data_from_standard(standard, chapter_name, match_pattern, column_title
             clean_name = clean_table_name(table_name)
             slug = create_slug(clean_name)
             doc_link = standard_link_from_fragment(table_id)
+            description = get_table_description(tdiv)
 
             table_dict = {
                 'name': clean_name,
                 'data': final_table_as_list_of_dicts,
                 'id': slug,
+                'description': description,
                 'linkToStandard': doc_link
             }
 
             all_table_dicts.append(table_dict)
 
     return all_table_dicts
+
+
+def get_table_description(tdiv):
+    return str(tdiv.parent.find('p'))
 
 
 def all_tdivs_in_chapter(standard, chapter_name):

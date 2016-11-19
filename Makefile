@@ -6,8 +6,10 @@
 PYTEST_BIN=python3 -m pytest
 
 
-all: core_tables relationship_tables sitemaps
+all: dist core_tables relationship_tables sitemaps
 
+dist:
+	mkdir dist
 
 core_tables: dist/ciods.json dist/modules.json dist/attributes.json
 

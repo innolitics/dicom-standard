@@ -8,6 +8,7 @@ def module_table_from_raw_list(module_attr_list):
         modules[module['id']] = {
             'id': module['id'],
             'name': module['name'],
+            'description': module['description'],
             'linkToStandard': module['linkToStandard']
         }
     return modules

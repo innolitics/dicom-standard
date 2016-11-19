@@ -9,6 +9,7 @@ def module_attr_relationship_table(module_attr_relationship_list):
         for i, attribute in enumerate(module['data']):
             entries.append({
                 'module': module['id'],
+                'moduleDescription': module['description'],
                 'path': (module['id'] + ':' + attribute['id']),
                 'tag': attribute['tag'],
                 'order': i,
