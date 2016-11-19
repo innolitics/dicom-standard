@@ -2,7 +2,6 @@ import sys
 import re
 from bs4 import BeautifulSoup
 from bs4.element import Tag
-from copy import deepcopy
 
 import parse_lib as pl
 
