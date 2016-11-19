@@ -38,7 +38,7 @@ def get_reference_html_string(description_html, sections, urls, id_to_section_ht
     html_string = html_string_from_reference(section_reference, id_to_section_html)
     if html_string:
         clean_html = clean_html_string(html_string)
-        sections[section_reference] = {"html": clean_html, "sourceUrl": anchor['href']}
+        sections[anchor['href']] = {"html": clean_html, "sourceUrl": anchor['href']}
         urls.append({"text": anchor.get_text(), "sourceUrl": anchor['href']})
         mark_as_saved(anchor)
 
