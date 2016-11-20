@@ -107,6 +107,25 @@ def clean_description_html(node):
         cleaned_html += str(tag_with_target_anchors)
     node['description'] = cleaned_html
 
+
+def modify_module_description_table_link(module):
+    parsable_description = BeautifulSoup(module['description'], 'html.parser')
+    anchor_tags = parsable_description.find_all('a')
+    if (anchor_tags is not None):
+        for anchor in anchor_tags:
+            if (anchor.string is not None) and re.match("Table.*", anchor.string) is not None:
+                anchor.name = 'span'
+                anchor['href'] = ''
+                anchor.string = 'This module'
+                break
+    module['description'] = str(parsable_description)
+
+
+def process_module_description(module):
+    clean_description_html(module)
+    modify_module_description_table_link(module)
+
+
 def process_attribute(attribute):
     remove_newlines_from_name(attribute)
     add_attribute_slugs(attribute)
@@ -119,7 +138,7 @@ if __name__ == '__main__':
 
     for module in modules_with_attributes:
         module_attributes = module['data']
-        clean_description_html(module)
+        process_module_description(module)
         for attribute in module_attributes:
             process_attribute(attribute)
         add_attribute_parent_ids(module_attributes)
