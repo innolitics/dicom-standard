@@ -7,7 +7,7 @@ import parse_lib as pl
 
 BASE_URL = "http://dicom.nema.org/medical/dicom/current/output/html/"
 
-def add_attribute_slugs(attribute):
+def add_attribute_slug(attribute):
     attribute['id'] = pl.create_slug(attribute['tag'])
 
 
@@ -88,7 +88,7 @@ def clean_attribute_name(name):
     else:
         return name
 
-def addMacroLinks(attribute):
+def add_macro_links(attribute):
     if attribute['macro_table_id'] is not None:
         attribute['linkToStandard'] = pl.standard_link_from_fragment(attribute['macro_table_id'])
     else:
@@ -128,9 +128,9 @@ def process_module_description(module):
 
 def process_attribute(attribute):
     remove_newlines_from_name(attribute)
-    add_attribute_slugs(attribute)
+    add_attribute_slug(attribute)
     clean_attribute(attribute)
-    addMacroLinks(attribute)
+    add_macro_links(attribute)
     clean_description_html(attribute)
 
 if __name__ == '__main__':
