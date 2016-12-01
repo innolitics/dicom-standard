@@ -126,13 +126,13 @@ def process_module_description(module):
     modify_module_description_table_link(module)
 
 
-def process_attributes(attributes):
+def slugify_attribute_ids(attributes):
     for attribute in attributes:
-        remove_newlines_from_name(attribute)
         add_attribute_slug(attribute)
 
 def clean_and_strip_attributes(attributes):
     for attribute in attributes:
+        remove_newlines_from_name(attribute)
         clean_attribute(attribute)
         add_macro_links(attribute)
         clean_description_html(attribute)
@@ -143,9 +143,8 @@ if __name__ == '__main__':
     for module in modules_with_attributes:
         module_attributes = module['data']
         process_module_description(module)
-        process_attributes(module_attributes)
+        slugify_attribute_ids(module_attributes)
         add_attribute_parent_ids(module_attributes)
         clean_and_strip_attributes(module_attributes)
-        module['data'] = module_attributes
 
     pl.write_pretty_json(sys.argv[2], modules_with_attributes)
