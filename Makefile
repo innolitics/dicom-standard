@@ -68,6 +68,8 @@ endtoendtest:
 
 
 updatestandard:
+	if [ ! -d old_standards ]; then mkdir old_standards; fi
+	mv PS3.* old_standards/
 	wget http://dicom.nema.org/medical/dicom/current/output/html/part03.html -O PS3.3.html
 	wget http://dicom.nema.org/medical/dicom/current/output/html/part06.html -O PS3.6.html
 
