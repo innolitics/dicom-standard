@@ -351,8 +351,8 @@ def text_or_href_from_cell(cell_html, column_idx, link_correction, description_c
         return None
     html = BeautifulSoup(cell_html, 'html.parser')
     if column_idx == REFERENCE_COLUMN and link_correction:
-        id_sequence, ref_link = html.find_all('a')
-        return ref_link.get('href')
+        anchor_tags = html.find_all('a')
+        return anchor_tags[-1].get('href')
     elif description_cell and not link_correction:
         return str(html)
     else:
