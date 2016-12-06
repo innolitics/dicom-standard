@@ -20,14 +20,14 @@ sitemaps: dist/ciod_to_modules.json dist/extra_referenced_sections.json
 	python3 generate_sitemaps.py
 
 
-dist/extra_referenced_sections.json: tmp/module_to_attributes_raw.json dist/module_to_attributes_raw.json parse_extra_sections.py
-	python3 parse_extra_sections.py tmp/extra_sections_raw.json dist/module_to_attributes_raw.json $^
-	cat tmp/extra_sections_raw.json | sed -e 's/\\u00a0/ /g' > $@
+dist/module_to_attributes.json dist/extra_referenced_sections.json: tmp/module_to_attributes_raw.json parse_extra_sections.py
+	python3 parse_extra_sections.py tmp/extra_sections_raw.json dist/module_to_attributes.json $^
+	cat tmp/extra_sections_raw.json | sed -e 's/\\u00a0/ /g' > dist/extra_referenced_sections.json
 
-dist/ciod_to_modules.json: tmp/ciods_with_modules.json
+dist/ciod_to_modules.json: tmp/ciods_with_modules.json normalize_ciod_module_relationship.py
 	python3 normalize_ciod_module_relationship.py $< $@
 
-tmp/module_to_attributes_raw.json: tmp/modules_with_attributes.json
+tmp/module_to_attributes_raw.json: tmp/modules_with_attributes.json normalize_module_attr_relationship.py
 	python3 normalize_module_attr_relationship.py $< $@
 
 
