@@ -20,8 +20,8 @@ sitemaps: dist/ciod_to_modules.json dist/extra_referenced_sections.json
 	python3 generate_sitemaps.py
 
 
-dist/extra_referenced_sections.json: tmp/module_to_attributes_raw_description.json dist/module_to_attributes_raw.json parse_extra_sections.py
-	python3 parse_extra_sections.py tmp/extra_sections_raw.json dist/module_to_attributes_raw_description.json $^
+dist/extra_referenced_sections.json: tmp/module_to_attributes_raw.json dist/module_to_attributes_raw.json parse_extra_sections.py
+	python3 parse_extra_sections.py tmp/extra_sections_raw.json dist/module_to_attributes_raw.json $^
 	cat tmp/extra_sections_raw.json | sed -e 's/\\u00a0/ /g' > $@
 
 dist/ciod_to_modules.json: tmp/ciods_with_modules.json
