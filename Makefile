@@ -16,11 +16,12 @@ core_tables: dist/ciods.json dist/modules.json dist/attributes.json
 relationship_tables: dist/ciod_to_modules.json dist/extra_referenced_sections.json
 
 
-sitemaps: dist/ciod_to_modules.json dist/extra_referenced_sections.json
+sitemap: dist/ciod_to_modules.json dist/module_to_attributes.json generate_sitemaps.py
 	python3 generate_sitemaps.py
+	touch $@
 
 
-dist/extra_referenced_sections.json: tmp/module_to_attributes_raw_description.json tmp/PS3.3-cleaned.html parse_extra_sections.py
+dist/extra_referenced_sections.json: tmp/module_to_attributes_raw_description.json dist/module_to_attributes.json parse_extra_sections.py
 	python3 parse_extra_sections.py tmp/extra_sections_raw.json dist/module_to_attributes.json $^
 	cat tmp/extra_sections_raw.json | sed -e 's/\\u00a0/ /g' > $@
 
