@@ -16,19 +16,18 @@ core_tables: dist/ciods.json dist/modules.json dist/attributes.json
 relationship_tables: dist/ciod_to_modules.json dist/extra_referenced_sections.json
 
 
-sitemap: dist/ciod_to_modules.json dist/module_to_attributes.json generate_sitemaps.py
+sitemaps: dist/ciod_to_modules.json dist/extra_referenced_sections.json
 	python3 generate_sitemaps.py
-	touch $@
 
 
-dist/extra_referenced_sections.json: tmp/module_to_attributes_raw_description.json dist/module_to_attributes.json parse_extra_sections.py
-	python3 parse_extra_sections.py tmp/extra_sections_raw.json dist/module_to_attributes.json $^
+dist/extra_referenced_sections.json: tmp/module_to_attributes_raw_description.json dist/module_to_attributes_raw.json parse_extra_sections.py
+	python3 parse_extra_sections.py tmp/extra_sections_raw.json dist/module_to_attributes_raw_description.json $^
 	cat tmp/extra_sections_raw.json | sed -e 's/\\u00a0/ /g' > $@
 
 dist/ciod_to_modules.json: tmp/ciods_with_modules.json
 	python3 normalize_ciod_module_relationship.py $< $@
 
-tmp/module_to_attributes_raw_description.json: tmp/modules_with_attributes.json
+tmp/module_to_attributes_raw.json: tmp/modules_with_attributes.json
 	python3 normalize_module_attr_relationship.py $< $@
 
 
