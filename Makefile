@@ -13,16 +13,16 @@ dist:
 
 core_tables: dist/ciods.json dist/modules.json dist/attributes.json
 
-relationship_tables: dist/ciod_to_modules.json dist/extra_referenced_sections.json
+relationship_tables: dist/ciod_to_modules.json dist/references.json
 
 
-sitemaps: dist/ciod_to_modules.json dist/extra_referenced_sections.json
+sitemaps: dist/ciod_to_modules.json dist/references.json
 	python3 generate_sitemaps.py
 
 
-dist/module_to_attributes.json dist/extra_referenced_sections.json: tmp/module_to_attributes_raw.json parse_extra_sections.py
-	python3 parse_extra_sections.py tmp/extra_sections_raw.json dist/module_to_attributes.json $^
-	cat tmp/extra_sections_raw.json | sed -e 's/\\u00a0/ /g' > dist/extra_referenced_sections.json
+dist/module_to_attributes.json dist/references.json: tmp/module_to_attributes_raw.json extract_references.py
+	python3 extract_references.py tmp/references_raw.json dist/module_to_attributes.json $^
+	cat tmp/references_raw.json | sed -e 's/\\u00a0/ /g' > dist/references.json
 
 dist/ciod_to_modules.json: tmp/ciods_with_modules.json normalize_ciod_module_relationship.py
 	python3 normalize_ciod_module_relationship.py $< $@
