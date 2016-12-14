@@ -6,19 +6,22 @@
 PYTEST_BIN=python3 -m pytest
 
 
-all: dist core_tables relationship_tables sitemaps
+all: dist core_tables relationship_tables sitemaps dist/references.json
 
 dist:
 	mkdir dist
 
 core_tables: dist/ciods.json dist/modules.json dist/attributes.json
 
-relationship_tables: dist/ciod_to_modules.json dist/references.json
+relationship_tables: dist/ciod_to_modules.json dist/module_to_attributes.json
 
 
-sitemaps: dist/ciod_to_modules.json dist/references.json
+sitemaps: dist/ciod_to_modules.json
 	python3 generate_sitemaps.py
 
+# TODO: find a way around doing this
+# module_to_attributes is made as a side effect when making references
+dist/module_to_attributes.json: dist/references.json
 
 dist/references.json: tmp/module_to_attributes_raw_description.json tmp/PS3.3-cleaned.html extract_references.py
 	python3 extract_references.py tmp/references_raw.json dist/module_to_attributes.json $^
