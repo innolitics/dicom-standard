@@ -11,27 +11,27 @@ BASE_REMOTE_RESOURCE_URL = "http://dicom.nema.org/medical/dicom/current/output/h
 
 
 def parse_extra_standard_content(module_to_attributes, id_to_section_html):
-    references = {}
+    extra_sections = {}
     for attribute in module_to_attributes:
-        referenced_sections, externalReferences, updated_description = get_all_references(attribute['description'], id_to_section_html, references)
+        referenced_sections, externalReferences, updated_description = get_all_references(attribute['description'], id_to_section_html, extra_sections)
         attribute['description'] = updated_description
         attribute['externalReferences'] = externalReferences
-        references = {**references, **referenced_sections}
-    return references, module_to_attributes
+        extra_sections = {**extra_sections, **referenced_sections}
+    return extra_sections, module_to_attributes
 
 
-def get_all_references(attribute_description, id_to_section_html, references):
+def get_all_references(attribute_description, id_to_section_html, extra_sections):
     description_html = BeautifulSoup(attribute_description, 'html.parser')
     sections = {}
     externalReferences = []
-    record_html_from_anchor_ref = partial(get_reference_html_string, description_html, sections, externalReferences, id_to_section_html, references)
+    record_html_from_anchor_ref = partial(get_reference_html_string, description_html, sections, externalReferences, id_to_section_html, extra_sections)
     for anchor in description_html.find_all('a', href=True):
         record_html_from_anchor_ref(anchor)
     return sections, externalReferences, str(description_html)
 
 
-def get_reference_html_string(description_html, sections, externalReferences, id_to_section_html, references, anchor):
-    if anchor.get_text() in references.keys():
+def get_reference_html_string(description_html, sections, externalReferences, id_to_section_html, extra_sections, anchor):
+    if anchor.get_text() in extra_sections.keys():
         mark_as_saved(anchor)
         return None
     section_reference = anchor['href'].split(BASE_REMOTE_RESOURCE_URL)[-1]
@@ -151,8 +151,7 @@ if __name__ == "__main__":
 
     id_to_section_html = {e['id']: e for e in parseable_html.find_all(id=True) if is_id_for_expandable_section(e['id'])}
 
-    import ipdb; ipdb.set_trace()
-    references, updated_module_attributes = parse_extra_standard_content(module_to_attributes, id_to_section_html)
+    extra_sections, updated_module_attributes = parse_extra_standard_content(module_to_attributes, id_to_section_html)
 
-    pl.write_pretty_json(sys.argv[1], references)
+    pl.write_pretty_json(sys.argv[1], extra_sections)
     pl.write_pretty_json(sys.argv[2], updated_module_attributes)
