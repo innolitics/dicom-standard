@@ -1,7 +1,7 @@
 .SUFFIXES:
 
 .PHONY:
-	clean tests unittest endtoendtest updatestandard
+	clean tests unittest endtoendtest updatestandard checkversions
 
 PYTEST_BIN=python3 -m pytest
 
@@ -76,6 +76,8 @@ updatestandard:
 	wget http://dicom.nema.org/medical/dicom/current/output/html/part03.html -O PS3.3.html
 	wget http://dicom.nema.org/medical/dicom/current/output/html/part06.html -O PS3.6.html
 
+checkversions:
+	@python3 --version 2>&1 | grep -q 3.5. || { echo "Need Python 3.5" && exit 1; }
 
 clean:
 	git clean -fqx dist tmp
