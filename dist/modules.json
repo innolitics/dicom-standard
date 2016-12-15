@@ -1,0 +1,1928 @@
+{
+    "ophthalmic-axial-measurements-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.25.13-1",
+        "name":"Ophthalmic Axial Measurements Series",
+        "id":"ophthalmic-axial-measurements-series",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that identify and describe general information about the Ophthalmic Axial Measurements Series.</p>"
+    },
+    "storage-commitment":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.14-1",
+        "name":"Storage Commitment",
+        "id":"storage-commitment",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the Attributes for referencing SOP Instances that are contained in a Storage Commitment Request/Response.</p>"
+    },
+    "xa-xrf-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.19.1-1",
+        "name":"XA/XRF Series",
+        "id":"xa-xrf-series",
+        "description":"<p>\n<a></a>The XA/XRF X-Ray IODs use the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.3.1\" target=\"_blank\">General Series Module</a>, specialized by the XA/XRF Series Module, to describe the DICOM Series Entity specified in <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_A.47\" target=\"_blank\">Section\u00a0A.47</a> and <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_A.48\" target=\"_blank\">Section\u00a0A.48</a>. It is defining what constitutes a Series for the context of projection XA/XRF device.</p>"
+    },
+    "structured-display-image-box":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11.17-1",
+        "name":"Structured Display Image Box",
+        "id":"structured-display-image-box",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> describes the attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.11.17\" target=\"_blank\">Structured Display Image Box Module</a>.</p>"
+    },
+    "rt-brachy-application-setup-delivery-instruction":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.8.30-1",
+        "name":"RT Brachy Application Setup Delivery Instruction",
+        "id":"rt-brachy-application-setup-delivery-instruction",
+        "description":"<p>\n<a></a>The RT Brachy Application Setup Delivery Instruction Module contains additional information required by a Treatment Delivery System (TDS) when specifying delivery of a brachytherapy treatment.</p>"
+    },
+    "lensometry-measurements":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.25.8-1",
+        "name":"Lensometry Measurements",
+        "id":"lensometry-measurements",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the Attributes used to capture the refractive measurements by a lensometer for spectacles. This is typically for a pair of lenses, but sometimes for just one. Sometimes a single lens is measured with an unknown laterality.</p>"
+    },
+    "displayed-area":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.10-4",
+        "name":"Displayed Area",
+        "id":"displayed-area",
+        "description":"<p>\n<a></a>This Module describes Attributes required to define a Specified Displayed Area space.</p>"
+    },
+    "mask":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-16",
+        "name":"Mask",
+        "id":"mask",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe mask operations for a Multi-frame image.</p>"
+    },
+    "corneal-topography-map-image":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.30.2-1",
+        "name":"Corneal Topography Map Image",
+        "id":"corneal-topography-map-image",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe an Image produced by corneal topography mapping devices.</p>"
+    },
+    "sr-document-content":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.17-4",
+        "name":"SR Document Content",
+        "id":"sr-document-content",
+        "description":"<p>\n<a></a>This section specifies the Attributes contained in the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.17.3\" target=\"_blank\">SR Document Content Module</a>. The Attributes in this Module convey the content of an SR Document.</p>"
+    },
+    "mr-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-101",
+        "name":"MR Series",
+        "id":"mr-series",
+        "description":"<p>\n<a></a>The MR IODs use the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.3.1\" target=\"_blank\">General Series Module</a>, specialized by the MR Series Module, to describe the DICOM Series Entity described in <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_A.1.2.3\" target=\"_blank\">Section\u00a0A.1.2.3</a>, and to define what constitutes a Series for the context of MR device.</p>"
+    },
+    "rt-ion-machine-verification":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.31-3",
+        "name":"RT Ion Machine Verification",
+        "id":"rt-ion-machine-verification",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes used to convey the parameters used in external verification of a radiotherapy ion treatment delivery.</p>"
+    },
+    "rt-dvh":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-40",
+        "name":"RT DVH",
+        "id":"rt-dvh",
+        "description":"<p>\n<a></a>The <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.8.8.4\" target=\"_blank\">RT DVH Module</a> provides for the inclusion of differential or cumulative dose volume histogram data. The data contained within this module may supplement dose data in the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.8.8.3\" target=\"_blank\">RT Dose Module</a> and/or <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.8.8.7\" target=\"_blank\">RT Dose ROI Module</a>, or it may be present in the absence of other dose data.</p>"
+    },
+    "ophthalmic-photography-image":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.17.2-1",
+        "name":"Ophthalmic Photography Image",
+        "id":"ophthalmic-photography-image",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe an Ophthalmic Photography Image produced by Ophthalmic Photography equipment (OP) imaging Modalities.</p>"
+    },
+    "cr-image":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-2",
+        "name":"CR Image",
+        "id":"cr-image",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains IOD Attributes that describe computed radiography images.</p>"
+    },
+    "rt-roi-observations":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-44",
+        "name":"RT ROI Observations",
+        "id":"rt-roi-observations",
+        "description":"<p>\n<a></a>The RT ROI Observations module specifies the identification and interpretation of an ROI specified in the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.8.8.5\" target=\"_blank\">Structure Set Module</a> and <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.8.8.6\" target=\"_blank\">ROI Contour Module</a>.</p>"
+    },
+    "xrf-positioner":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-31",
+        "name":"XRF Positioner",
+        "id":"xrf-positioner",
+        "description":"<p>\n<strong>Table\u00a0C.8-31.\u00a0XRF Positioner Module Attributes</strong>\n</p>"
+    },
+    "graphic-group":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.10-12",
+        "name":"Graphic Group",
+        "id":"graphic-group",
+        "description":"<p>\n<a></a>Graphic Group Module provides the label and description for the logical associations made by the Graphic Group ID (0070,0295) of graphic objects.</p>"
+    },
+    "x-ray-table":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-29",
+        "name":"X-Ray Table",
+        "id":"x-ray-table",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains Attributes that describe X-Ray images acquired with movement of the patient imaging table.</p>"
+    },
+    "radiation-dose":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.4-16",
+        "name":"Radiation Dose",
+        "id":"radiation-dose",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the Attributes that may be used to communicate information related to radiation dose values. The attributes are intended to enable the Information System to store Patient exposure to ionizing radiation for legal purposes. Though these attributes are not intended to be used to accurately calculate volume dose distribution, they may serve for some quality control purposes.</p>"
+    },
+    "intraocular-lens-calculations":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.25.16-1",
+        "name":"Intraocular Lens Calculations",
+        "id":"intraocular-lens-calculations",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the Attributes used to calculate the power of an intraocular lens to be placed in a patient's eye. This is typically done for both eyes for comparison, but may be for just one eye. Values used may be measurements acquired using the axial length measurements device, manually entered, or derived from a referenced SOP class or other data source.</p>"
+    },
+    "ocular-region-imaged":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.17.5-1",
+        "name":"Ocular Region Imaged",
+        "id":"ocular-region-imaged",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains IOD Attributes that describe the anatomy contained in an Ophthalmic Photography or Ophthalmic Tomography IOD.</p>"
+    },
+    "sc-image":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-25",
+        "name":"SC Image",
+        "id":"sc-image",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains IOD Attributes that describe Secondary Capture Images.</p>"
+    },
+    "point-cloud":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.27.5-1",
+        "name":"Point Cloud",
+        "id":"point-cloud",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes of the Point Cloud Module.</p>"
+    },
+    "enhanced-xa-xrf-image":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.19.2-1",
+        "name":"Enhanced XA/XRF Image",
+        "id":"enhanced-xa-xrf-image",
+        "description":"<p>\n<a></a>This section describes the Enhanced XA/XRF Image Module. <span href=\"\" target=\"_blank\">This module</span> contains IOD Attributes that describe a XA/XRF Image by specializing Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.6.1\" target=\"_blank\">General Image Module</a> and <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.6.3\" target=\"_blank\">Image Pixel Module</a>, and adding additional Attributes.</p>"
+    },
+    "icc-profile":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11.15-1",
+        "name":"ICC Profile",
+        "id":"icc-profile",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains Attributes that identify and describe an ICC Profile.</p>"
+    },
+    "rt-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-37",
+        "name":"RT Series",
+        "id":"rt-series",
+        "description":"<p>\n<a></a>There exist significant differences in the manner in which RT objects as compared to diagnostic objects. An RT object can be one of several types, and a series of a given object type may be created over a temporal span of several weeks. The <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.8.8.1\" target=\"_blank\">RT Series Module</a> has been created to satisfy the requirements of the standard DICOM Query/Retrieve model while including only those attributes relevant to the identification and selection of radiotherapy objects.</p>"
+    },
+    "corneal-topography-map-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.30.1-1",
+        "name":"Corneal Topography Map Series",
+        "id":"corneal-topography-map-series",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that identify and describe general information about the Corneal Topography Map Series.</p>"
+    },
+    "patient-study":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-4a",
+        "name":"Patient Study",
+        "id":"patient-study",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines Attributes that provide information about the Patient at the time the Study started.</p>"
+    },
+    "presentation-lut":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11-4",
+        "name":"Presentation LUT",
+        "id":"presentation-lut",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe the Presentation LUT.</p>"
+    },
+    "real-world-value-mapping":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.25.2-1",
+        "name":"Real World Value Mapping",
+        "id":"real-world-value-mapping",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the general Attributes of the Real World Value Mapping Module.</p>"
+    },
+    "performed-procedure-step-information":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.4-14",
+        "name":"Performed Procedure Step Information",
+        "id":"performed-procedure-step-information",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the general attributes that may be used by all specific Procedure Steps.</p>"
+    },
+    "slide-coordinates":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-78",
+        "name":"Slide Coordinates",
+        "id":"slide-coordinates",
+        "description":"<p>\n<a></a>The table in this Section contains Attributes that describe Slide Coordinates. Slide Coordinates provide a means to locate an image within a given Frame of Reference.</p>"
+    },
+    "whole-slide-microscopy-image":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.12.4-1",
+        "name":"Whole Slide Microscopy Image",
+        "id":"whole-slide-microscopy-image",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe the Whole Slide Microscopy Image Module.</p>"
+    },
+    "rt-beams":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-50",
+        "name":"RT Beams",
+        "id":"rt-beams",
+        "description":"<p>\n<a></a>The <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.8.8.14\" target=\"_blank\">RT Beams Module</a> contains information defining equipment parameters for delivery of external radiation beams.</p>"
+    },
+    "uv-mapping":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.27.6-1",
+        "name":"UV Mapping",
+        "id":"uv-mapping",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes of the UV Mapping Module.</p>"
+    },
+    "general-ophthalmic-refractive-measurements":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.25.7-1",
+        "name":"General Ophthalmic Refractive Measurements",
+        "id":"general-ophthalmic-refractive-measurements",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the General Ophthalmic Refractive Measurements module attributes.</p>"
+    },
+    "x-ray-3d-angiographic-acquisition":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.21.3.2-1",
+        "name":"X-Ray 3D Angiographic Acquisition",
+        "id":"x-ray-3d-angiographic-acquisition",
+        "description":"<p>\n<a></a>This section describes the X-Ray 3D Angiographic Acquisition Module.</p>"
+    },
+    "enhanced-pet-isotope":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.22-9",
+        "name":"Enhanced PET Isotope",
+        "id":"enhanced-pet-isotope",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains IOD Attributes that describe a PET Isotope.</p>"
+    },
+    "display-shutter":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-17",
+        "name":"Display Shutter",
+        "id":"display-shutter",
+        "description":"<p>\n<a></a>The Display shutter is a geometric mask consisting of one or more combined shapes that may be applied on the image for presentation purposes in order to neutralize the display of any of the pixels located outside of the shutter shape. Geometry of the shutter is specified with respect to a row and column coordinate system where the origin is the upper left hand pixel. This origin is specified by the values 1,1 for row/column. A row coordinate represents a row spacing (vertical) and a column coordinate represents a column spacing (horizontal). Up to three different shutter shapes may be used and superimposed.</p>"
+    },
+    "x-ray-detector":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.19.5-1",
+        "name":"X-Ray Detector",
+        "id":"x-ray-detector",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains IOD Attributes that describe an X-Ray detector.</p>"
+    },
+    "xa-xrf-multi-frame-presentation":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.19.7-1",
+        "name":"XA/XRF Multi-frame Presentation",
+        "id":"xa-xrf-multi-frame-presentation",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes of a XA/XRF Multi-frame Presentation Module.</p>"
+    },
+    "xa-positioner":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-30",
+        "name":"XA Positioner",
+        "id":"xa-positioner",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains IOD Attributes that describe a c-arm positioner typically used in acquiring X-Ray Angiographic Images. The coordinate system used to track the positioner is defined in reference to the patient. The definition of coordinates with respect to the equipment is not supported. Furthermore, this module does not describe the movement of the Patient.</p>"
+    },
+    "mammography-image":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-74",
+        "name":"Mammography Image",
+        "id":"mammography-image",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains IOD Attributes that describe a Digital Mammography X-Ray Image including its acquisition and positioning.</p>"
+    },
+    "unified-procedure-step-scheduled-procedure-information":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.30.2-1",
+        "name":"Unified Procedure Step Scheduled Procedure Information",
+        "id":"unified-procedure-step-scheduled-procedure-information",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe the Unified Procedure Step (UPS) to be performed. The UPS may or may not be scheduled for a specific time or device, or may simply represent a piece of work that is intended to be performed.</p>"
+    },
+    "sr-document-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.17-1",
+        "name":"SR Document Series",
+        "id":"sr-document-series",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the Attributes of the SR Document Series. A Series of SR Documents may contain any number of SR Documents.</p>"
+    },
+    "surface-segmentation":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.23-1",
+        "name":"Surface Segmentation",
+        "id":"surface-segmentation",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the general Attributes of the Surface Segmentation Module.</p>"
+    },
+    "patient":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-1",
+        "name":"Patient",
+        "id":"patient",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes of the Patient that describe and identify the Patient who is the subject of a Study.\n            This Module contains Attributes of the patient that are needed for interpretation of the Composite Instances and are common for all studies performed on the patient. It contains Attributes that are also included in the Patient Modules in <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.2\" target=\"_blank\">Section\u00a0C.2</a>.</p>"
+    },
+    "nm-tomo-acquisition":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-12",
+        "name":"NM Tomo Acquisition",
+        "id":"nm-tomo-acquisition",
+        "description":"<p>\n<a></a>This Module applies to a TOMO Multi-frame Image. This module is present when Image Type (0008,0008) Value 3, is equal to TOMO, GATED TOMO, RECON TOMO, or RECON GATED TOMO. The elements found in this module describe the acquisition of the Image.</p>"
+    },
+    "volume-cropping":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11.24-1",
+        "name":"Volume Cropping",
+        "id":"volume-cropping",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains the attributes of the Volume Cropping Module. This Module limits the spatial extent of inputs in Volumetric Presentation State Input Sequence (0070,1201) that are used.</p>"
+    },
+    "enhanced-us-image":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.24.3-1",
+        "name":"Enhanced US Image",
+        "id":"enhanced-us-image",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe the Enhanced US Image Module. As described in <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_A.1.2.6\" target=\"_blank\">Section\u00a0A.1.2.6</a>, the Attributes in this Module apply to the first frame of a multi-frame image; any or all of this information may be overridden by Attributes in Per-frame Functional Groups.</p>"
+    },
+    "segmentation-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.20-1",
+        "name":"Segmentation Series",
+        "id":"segmentation-series",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the general Attributes of the Segmentation Series Module.</p>"
+    },
+    "raw-data":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.19-1",
+        "name":"Raw Data",
+        "id":"raw-data",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the attributes that describe a raw data stream.</p>"
+    },
+    "mr-spectroscopy-data":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-106",
+        "name":"MR Spectroscopy Data",
+        "id":"mr-spectroscopy-data",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the attributes that describe the Spectroscopy Data.</p>"
+    },
+    "patient-demographic":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.2-3",
+        "name":"Patient Demographic",
+        "id":"patient-demographic",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the Attributes relevant to generally describing a patient at a specific point in time, e.g., at the time of admission.</p>"
+    },
+    "intravascular-oct-acquisition-parameters":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.27.3-1",
+        "name":"Intravascular OCT Acquisition Parameters",
+        "id":"intravascular-oct-acquisition-parameters",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> describes the parameters used to acquire an Intravascular Optical Coherence Tomography image.</p>"
+    },
+    "volumetric-presentation-state-display":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11.27-1",
+        "name":"Volumetric Presentation State Display",
+        "id":"volumetric-presentation-state-display",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the attributes that define the transformations of the processed Volumetric Presentation State inputs into a single VPS display space, as described in the Volumetric Presentation State pipeline in <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part04.html#sect_FF.2.1\" target=\"_blank\">Section FF.2.1 \u201cPlanar MPR Volumetric Transformation Process\u201d in PS3.4</a>.</p>"
+    },
+    "keratometry-measurements":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.25.10-1",
+        "name":"Keratometry Measurements",
+        "id":"keratometry-measurements",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the Attributes used to represent the keratometric measurements by a keratometer of a patient's eyes. Usually both eyes are measured, but sometimes just one.</p>"
+    },
+    "presentation-state-blending":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11.14-1",
+        "name":"Presentation State Blending",
+        "id":"presentation-state-blending",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains Attributes that describe the identification of two sets of grayscale images and the grayscale transformations to be applied to them, for the purpose of blending.</p>"
+    },
+    "general-image":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-9",
+        "name":"General Image",
+        "id":"general-image",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that identify and describe an image within a particular series.</p>"
+    },
+    "sr-document-general":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.17-2",
+        "name":"SR Document General",
+        "id":"sr-document-general",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the general Attributes of an SR Document Instance. These Attributes identify the SR Document and provide context for the entire document.</p>"
+    },
+    "tractography-results":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.33-2",
+        "name":"Tractography Results",
+        "id":"tractography-results",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe the tracks and measurements in the tractography results.</p>"
+    },
+    "nm-detector":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-11",
+        "name":"NM Detector",
+        "id":"nm-detector",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains IOD Attributes that describe Nuclear Medicine Detectors used to produce an image.</p>"
+    },
+    "xa-xrf-presentation-state-presentation":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11.21-1",
+        "name":"XA/XRF Presentation State Presentation",
+        "id":"xa-xrf-presentation-state-presentation",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes of a XA/XRF Presentation State Presentation Module.</p>"
+    },
+    "enhanced-us-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.24.1-1",
+        "name":"Enhanced US Series",
+        "id":"enhanced-us-series",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies attributes for the Enhanced US Series Module, including specialization of attributes in the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.3.1\" target=\"_blank\">General Series Module</a> for use in the Enhanced US Series Module.</p>"
+    },
+    "optical-surface-scanner-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.29-1",
+        "name":"Optical Surface Scanner Series",
+        "id":"optical-surface-scanner-series",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains IOD Attributes that describe an optical surface scan series performed on the patient.</p>"
+    },
+    "image-plane":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-10",
+        "name":"Image Plane",
+        "id":"image-plane",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that define the transmitted pixel array of a two dimensional image plane.</p>"
+    },
+    "approval":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-52",
+        "name":"Approval",
+        "id":"approval",
+        "description":"<p>\n<strong>Table\u00a0C.8-52.\u00a0Approval Module Attributes</strong>\n</p>"
+    },
+    "spatial-transformation":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.10-6",
+        "name":"Spatial Transformation",
+        "id":"spatial-transformation",
+        "description":"<p>\n<a></a>This Module defines a manner of rotating an image by increments of ninety degrees and flipping an image.</p>"
+    },
+    "volumetric-graphic-annotation":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11.28-1",
+        "name":"Volumetric Graphic Annotation",
+        "id":"volumetric-graphic-annotation",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains Attributes that specify graphic annotation placed in the Volumetric Presentation State Reference Coordinate System coordinate space.</p>"
+    },
+    "frame-of-reference":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-6",
+        "name":"Frame of Reference",
+        "id":"frame-of-reference",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes necessary to uniquely identify a frame of reference that ensures the spatial relationship of Images within a Series. It also allows Images across multiple Series to share the same Frame Of Reference. This Frame Of Reference (or coordinate system) shall be constant for all Images related to a specific Frame Of Reference.</p>"
+    },
+    "basic-film-session-relationship":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.13-2",
+        "name":"Basic Film Session Relationship",
+        "id":"basic-film-session-relationship",
+        "description":"<p>\n<strong>Table\u00a0C.13-2.\u00a0Basic Film Session Relationship Module Attributes</strong>\n</p>"
+    },
+    "optical-path":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.12.5-1",
+        "name":"Optical Path",
+        "id":"optical-path",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the attributes of the optical paths used in the VL imaging. Each optical path is a combination of illumination, filters, lenses, and sensors, and each combination is identified for possible reference by attributes in other modules. Additional optical path parameters may be specified in the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.6.14\" target=\"_blank\">Acquisition Context Module</a>.</p>"
+    },
+    "rt-brachy-session-record":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-58",
+        "name":"RT Brachy Session Record",
+        "id":"rt-brachy-session-record",
+        "description":"<p>\n<strong>Table\u00a0C.8-58.\u00a0RT Brachy Session Record Module Attributes</strong>\n</p>"
+    },
+    "ct-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-113",
+        "name":"CT Series",
+        "id":"ct-series",
+        "description":"<p>\n<a></a>The CT IODs use the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.3.1\" target=\"_blank\">General Series Module</a>, specialized by the CT Series Module, to describe the DICOM Series Entity described in <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_A.1.2.3\" target=\"_blank\">Section\u00a0A.1.2.3</a>, and to define what constitutes a Series for the context of CT device.</p>"
+    },
+    "keratometry-measurements-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.25.3-1",
+        "name":"Keratometry Measurements Series",
+        "id":"keratometry-measurements-series",
+        "description":"<p>\n<a></a>The Keratometry Measurements IODs use the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.3.1\" target=\"_blank\">General Series Module</a>, specialized by the Keratometry Measurements Series Module, to describe the DICOM Series Entity described in <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_A.1.2.3\" target=\"_blank\">Section\u00a0A.1.2.3</a>, and to define what constitutes a Series for the context of Ophthalmic device.</p>"
+    },
+    "nm-reconstruction":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-15",
+        "name":"NM Reconstruction",
+        "id":"nm-reconstruction",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains Attributes that describe Nuclear Medicine reconstructed volumes. Reconstructed volumes are created by applying a transformation (reconstruction) process to the acquired TOMO frames. This module is present only when Image Type (0008,0008) Value 3 is equal to RECON TOMO or RECON GATED TOMO.</p>"
+    },
+    "intraocular-lens-calculations-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.25.15-1",
+        "name":"Intraocular Lens Calculations Series",
+        "id":"intraocular-lens-calculations-series",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that identify and describe general information about the Intraocular Lens Calculations Series.</p>"
+    },
+    "instance-availability-notification":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.4.23-1",
+        "name":"Instance Availability Notification",
+        "id":"instance-availability-notification",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes used to describe which Instances are available and their relationships.</p>"
+    },
+    "nm-multi-gated-acquisition":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-13",
+        "name":"NM Multi-Gated Acquisition",
+        "id":"nm-multi-gated-acquisition",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains Attributes that describe a multi-gated acquisition image performed on the patient. This refers to frames acquired while the patient is connected to a gating device.</p>"
+    },
+    "mr-spectroscopy":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-102",
+        "name":"MR Spectroscopy",
+        "id":"mr-spectroscopy",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the attributes of the MR Spectroscopy Module.</p>"
+    },
+    "waveform-identification":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.10-8",
+        "name":"Waveform Identification",
+        "id":"waveform-identification",
+        "description":"<p>\n<a></a>The table in this section contains Attributes that identify a Waveform as a separate information entity.</p>"
+    },
+    "sc-multi-frame-image":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-25b",
+        "name":"SC Multi-frame Image",
+        "id":"sc-multi-frame-image",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains IOD Attributes that describe SC Multi-frame images.</p>"
+    },
+    "pet-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-60",
+        "name":"PET Series",
+        "id":"pet-series",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains IOD Attributes that describe a PET Series.</p>"
+    },
+    "presentation-animation":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11.29-1",
+        "name":"Presentation Animation",
+        "id":"presentation-animation",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains Attributes that describe animation of the presentation.</p>"
+    },
+    "pet-image":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-63",
+        "name":"PET Image",
+        "id":"pet-image",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains IOD Attributes that describe PET images.</p>"
+    },
+    "pet-multi-gated-acquisition":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-62",
+        "name":"PET Multi-Gated Acquisition",
+        "id":"pet-multi-gated-acquisition",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains IOD Attributes that describe a PET Multi-gated Acquisition.</p>"
+    },
+    "content-assessment-results":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.33.1-1",
+        "name":"Content Assessment Results",
+        "id":"content-assessment-results",
+        "description":"<p>\n<a></a>This Module describes the results of the assessment of a SOP Instance.</p>"
+    },
+    "lensometry-measurements-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.25.1-1",
+        "name":"Lensometry Measurements Series",
+        "id":"lensometry-measurements-series",
+        "description":"<p>\n<a></a>The Lensometry Measurements IODs use the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.3.1\" target=\"_blank\">General Series Module</a>, specialized by the Lensometry Measurements Series Module, to describe the DICOM Series Entity described in <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_A.1.2.3\" target=\"_blank\">Section\u00a0A.1.2.3</a>, and to define what constitutes a Series for the context of Ophthalmic device.</p>"
+    },
+    "visit-status":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.3-3",
+        "name":"Visit Status",
+        "id":"visit-status",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the Attributes relevant to the patient's stay with the healthcare provider.</p>"
+    },
+    "x-ray-3d-angiographic-image-contributing-sources":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.21.2.1-1",
+        "name":"X-Ray 3D Angiographic Image Contributing Sources",
+        "id":"x-ray-3d-angiographic-image-contributing-sources",
+        "description":"<p>\n<a></a>This section describes the X-Ray 3D Angiographic Image Contributing Sources Module. The attributes in this Module specify the overall characteristics of one or more sources that were used to create a X-Ray 3D Angiographic Image SOP Class instance. <span href=\"\" target=\"_blank\">This module</span> contains the relevant IOD Attributes that describe X-Ray 3D Angiographic Image Contributing Sources.</p>"
+    },
+    "enhanced-mr-image":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-79",
+        "name":"Enhanced MR Image",
+        "id":"enhanced-mr-image",
+        "description":"<p>\n<a></a>This section describes the Enhanced MR Image Module.</p>"
+    },
+    "spatial-registration":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.20.2-1",
+        "name":"Spatial Registration",
+        "id":"spatial-registration",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the general Attributes of the Spatial Registration Module.</p>"
+    },
+    "ophthalmic-thickness-map-quality-rating":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.28.3-1",
+        "name":"Ophthalmic Thickness Map Quality Rating",
+        "id":"ophthalmic-thickness-map-quality-rating",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe the quality rating for the ophthalmic mapping.</p>"
+    },
+    "bitmap-display-shutter":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7.6.15-1",
+        "name":"Bitmap Display Shutter",
+        "id":"bitmap-display-shutter",
+        "description":"<p>\n<a></a>The Bitmap Display Shutter is a bitmap that defines an arbitrary shape that may be applied on the image for presentation purposes in order to neutralize the display of any of the pixels defined in the bitmap.</p>"
+    },
+    "print-job":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.13-8",
+        "name":"Print Job",
+        "id":"print-job",
+        "description":"<p>\n<strong>Table\u00a0C.13-8.\u00a0Print Job Module Attributes</strong>\n</p>"
+    },
+    "hanging-protocol-environment":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.23.2-1",
+        "name":"Hanging Protocol Environment",
+        "id":"hanging-protocol-environment",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe and identify the best suited display environment for a Hanging Protocol.</p>"
+    },
+    "patient-relationship":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.2-1",
+        "name":"Patient Relationship",
+        "id":"patient-relationship",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the Attributes that reference SOP Instances related to this SOP Class.</p>"
+    },
+    "floating-point-image-pixel":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_PS3.3_C.7.6.24-1",
+        "name":"Floating Point Image Pixel",
+        "id":"floating-point-image-pixel",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> describes the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.6.24\" target=\"_blank\">Floating Point Image Pixel Module</a>. This module differs from the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.6.3\" target=\"_blank\">Section\u00a0C.7.6.3</a>\n<a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.6.3\" target=\"_blank\">Image Pixel Module</a> in that:</p>"
+    },
+    "rt-patient-setup":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-48",
+        "name":"RT Patient Setup",
+        "id":"rt-patient-setup",
+        "description":"<p>\n<a></a>The <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.8.8.12\" target=\"_blank\">RT Patient Setup Module</a> contains information describing the positioning of the patient with respect to the treatment machine, along with any fixation devices used. It also describes the shielding devices applied to the patient. The module contains a sequence of patient setup descriptions, each of which may be referenced by one of more beams or brachy application setups.</p>"
+    },
+    "wide-field-ophthalmic-photography-quality-rating":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.17.13-1",
+        "name":"Wide Field Ophthalmic Photography Quality Rating",
+        "id":"wide-field-ophthalmic-photography-quality-rating",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that evaluate the quality of the projection or mapping used for a wide field ophthalmic photography image.</p>"
+    },
+    "patient-medical":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.2-4",
+        "name":"Patient Medical",
+        "id":"patient-medical",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the Attributes relevant to a patient's medical state or history.</p>"
+    },
+    "multi-frame-dimension":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7.6.17-1",
+        "name":"Multi-frame Dimension",
+        "id":"multi-frame-dimension",
+        "description":"<p>\n<a></a>The <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.6.17\" target=\"_blank\">Multi-frame Dimension Module</a> contains a sequence with items pointing to attributes defining a set of dimensions that are usually known prior to the acquisition commencing. It is up to the generating applications to decide what attributes are important to describe the multi-frame dimensions.</p>"
+    },
+    "image-pixel":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-11a",
+        "name":"Image Pixel",
+        "id":"image-pixel",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> describes the Image Pixel Module.</p>"
+    },
+    "ophthalmic-tomography-parameters":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.17.9-1",
+        "name":"Ophthalmic Tomography Parameters",
+        "id":"ophthalmic-tomography-parameters",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> describes the parameters and characteristics of the acquisition device related to an Ophthalmic Tomography image acquisition.</p>"
+    },
+    "wide-field-ophthalmic-photography-stereographic-projection":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.17.11-1",
+        "name":"Wide Field Ophthalmic Photography Stereographic Projection",
+        "id":"wide-field-ophthalmic-photography-stereographic-projection",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe the Wide Field Photography Stereographic Projection Module.</p>"
+    },
+    "supplemental-palette-color-lookup-table":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7.6.19-1",
+        "name":"Supplemental Palette Color Lookup Table",
+        "id":"supplemental-palette-color-lookup-table",
+        "description":"<p>\n<a></a>This module is used in conjunction with Multi-frame IODs that use RGB color in a number of frames. The value of Pixel Presentation (0008,9205) for such frames equals COLOR.</p>"
+    },
+    "spatial-fiducials-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.21.1-1",
+        "name":"Spatial Fiducials Series",
+        "id":"spatial-fiducials-series",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the general Attributes of the Spatial Fiducials Series Module.</p>"
+    },
+    "rt-prescription":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-46",
+        "name":"RT Prescription",
+        "id":"rt-prescription",
+        "description":"<p>\n<strong>Table\u00a0C.8-46.\u00a0RT Prescription Module Attributes</strong>\n</p>"
+    },
+    "us-image":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-18",
+        "name":"US Image",
+        "id":"us-image",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe ultrasound images.</p>"
+    },
+    "encapsulated-document":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.24-2",
+        "name":"Encapsulated Document",
+        "id":"encapsulated-document",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the Encapsulated Document Attributes.</p>"
+    },
+    "substance-administration-log":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.26-4",
+        "name":"Substance Administration Log",
+        "id":"substance-administration-log",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes used to record the act of administration of a contrast agent, drug, or device to a patient.</p>"
+    },
+    "visual-field-static-perimetry-test-reliability":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.26.3-1",
+        "name":"Visual Field Static Perimetry Test Reliability",
+        "id":"visual-field-static-perimetry-test-reliability",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the Attributes used to represent the test reliability parameters determined during a patient's visual field test.</p>"
+    },
+    "presentation-state-mask":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11.13-1",
+        "name":"Presentation State Mask",
+        "id":"presentation-state-mask",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains Attributes that specialize the use of masks in a Presentation State.</p>"
+    },
+    "calculated-dose-reference-record":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-56",
+        "name":"Calculated Dose Reference Record",
+        "id":"calculated-dose-reference-record",
+        "description":"<p>\n<strong>Table\u00a0C.8-56.\u00a0Calculated Dose Reference Record Module Attributes</strong>\n</p>"
+    },
+    "modality-lut":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11-1",
+        "name":"Modality LUT",
+        "id":"modality-lut",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe the Modality LUT.</p>"
+    },
+    "enhanced-mammography-image":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.31-1",
+        "name":"Enhanced Mammography Image",
+        "id":"enhanced-mammography-image",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that identify and describe general information about the Enhanced Mammography Image Module.</p>"
+    },
+    "intra-oral-image":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-76",
+        "name":"Intra-Oral Image",
+        "id":"intra-oral-image",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains IOD Attributes that describe a Digital Intra-Oral X-Ray Image including its acquisition and positioning.</p>"
+    },
+    "general-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-5a",
+        "name":"General Series",
+        "id":"general-series",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that identify and describe general information about the Series within a Study.</p>"
+    },
+    "imaging-service-request":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.4-12",
+        "name":"Imaging Service Request",
+        "id":"imaging-service-request",
+        "description":"<p>\n<strong>Table\u00a0C.4-12.\u00a0Imaging Service Request Module Attributes</strong>\n</p>"
+    },
+    "subjective-refraction-measurements":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.25.11-1",
+        "name":"Subjective Refraction Measurements",
+        "id":"subjective-refraction-measurements",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the Attributes used to represent the subjective refractive measurements of a patient's eyes. Usually both eyes are measured, but sometimes just one.</p>"
+    },
+    "slide-label":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.12.8-1",
+        "name":"Slide Label",
+        "id":"slide-label",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe the interpretation of a scanned Slide Label.</p>"
+    },
+    "rt-beams-delivery-instruction":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.8.29-1",
+        "name":"RT Beams Delivery Instruction",
+        "id":"rt-beams-delivery-instruction",
+        "description":"<p>\n<a></a>The RT Beams Delivery Instruction Module contains additional information required by a Treatment Delivery System (TDS) when specifying delivery of an external beam radiotherapy treatment. This information is supplied by a Treatment Management System (TMS) when it creates an RT Beams Delivery Instruction SOP Instance, a composite SOP Instance in turn referenced by a Unified Procedure Step (UPS) in the Unified Procedure Step model.</p>"
+    },
+    "intravascular-oct-image":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.27.2-1",
+        "name":"Intravascular OCT Image",
+        "id":"intravascular-oct-image",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe an Image produced by Intravascular OCT imaging modalities.</p>"
+    },
+    "ophthalmic-thickness-map-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.28.1-1",
+        "name":"Ophthalmic Thickness Map Series",
+        "id":"ophthalmic-thickness-map-series",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that identify and describe general information about the Ophthalmic Thickness Map Series.</p>"
+    },
+    "product-characteristics":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.26-1",
+        "name":"Product Characteristics",
+        "id":"product-characteristics",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes used to convey the characteristics or parameters of a contrast agent, drug, or device.</p>"
+    },
+    "presentation-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11.9-1",
+        "name":"Presentation Series",
+        "id":"presentation-series",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains Attributes that identify and describe a Presentation Series.</p>"
+    },
+    "enhanced-pet-acquisition":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.22-2",
+        "name":"Enhanced PET Acquisition",
+        "id":"enhanced-pet-acquisition",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe PET Acquisitions.</p>"
+    },
+    "respiratory-synchronization":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7.6.18-2",
+        "name":"Respiratory Synchronization",
+        "id":"respiratory-synchronization",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the attributes of the Respiratory Synchronization Module.</p>"
+    },
+    "sc-multi-frame-vector":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-25c",
+        "name":"SC Multi-frame Vector",
+        "id":"sc-multi-frame-vector",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains IOD Attributes that may be the target of the Frame Increment Pointer (0028,0009) for SC Multi-frame images.</p>"
+    },
+    "patient-orientation":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7.6.20-1",
+        "name":"Patient Orientation",
+        "id":"patient-orientation",
+        "description":"<p>\n<a></a>This section describes attributes of the Patient Orientation Module by describing the patient orientation related to gravity and equipment. <span href=\"\" target=\"_blank\">This module</span> contains IOD Attributes that describe the Patient Orientation.</p>"
+    },
+    "stereometric-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.18.1-1",
+        "name":"Stereometric Series",
+        "id":"stereometric-series",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe a Stereometric Series produced by Ophthalmic Photography equipment (OP) imaging Modalities.</p>"
+    },
+    "structured-display":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11.16-1",
+        "name":"Structured Display",
+        "id":"structured-display",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> describes the attributes of the Structured Display Module.</p>"
+    },
+    "rt-image":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-38",
+        "name":"RT Image",
+        "id":"rt-image",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains attributes that describe RT-specific characteristics of a projection image. The image described by these attributes must be a radiotherapy image acquired or calculated using a conical imaging geometry.</p>"
+    },
+    "xa-xrf-acquisition":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.19.3-1",
+        "name":"XA/XRF Acquisition",
+        "id":"xa-xrf-acquisition",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the attributes of the XA/XRF Acquisition Module.</p>"
+    },
+    "softcopy-presentation-lut":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11.6-1",
+        "name":"Softcopy Presentation LUT",
+        "id":"softcopy-presentation-lut",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe the Softcopy Presentation LUT.</p>"
+    },
+    "basic-film-session-presentation":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.13-1",
+        "name":"Basic Film Session Presentation",
+        "id":"basic-film-session-presentation",
+        "description":"<p>\n<strong>Table\u00a0C.13-1.\u00a0Basic Film Session Presentation Module Attributes</strong>\n</p>"
+    },
+    "ophthalmic-tomography-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.17.6-1",
+        "name":"Ophthalmic Tomography Series",
+        "id":"ophthalmic-tomography-series",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that identify and describe general information about the Ophthalmic Tomography Series.</p>"
+    },
+    "ophthalmic-thickness-map":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.28.2-1",
+        "name":"Ophthalmic Thickness Map",
+        "id":"ophthalmic-thickness-map",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe an Image produced by ophthalmic thickness mapping devices.</p>"
+    },
+    "ophthalmic-tomography-acquisition-parameters":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.17.8-1",
+        "name":"Ophthalmic Tomography Acquisition Parameters",
+        "id":"ophthalmic-tomography-acquisition-parameters",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> describes patient clinical conditions related to an Ophthalmic Tomography image acquisition.</p>"
+    },
+    "generic-implant-template-2d-drawings":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.29.1.2-1",
+        "name":"Generic Implant Template 2D Drawings",
+        "id":"generic-implant-template-2d-drawings",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the general Attributes of the Generic Implant Template 2D Drawings Module. This module contains all Attributes required for the inclusion of technical 2D drawings in an IOD, e.g., the Implant Template IOD. The module specification contains the definition of a subset of the HPGL plotter language that is used for the graphical definition of the drawings.</p>"
+    },
+    "parametric-map-image":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_PS3.3_C.8.32-2",
+        "name":"Parametric Map Image",
+        "id":"parametric-map-image",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the general Attributes of the Parametric Map Image Module.</p>"
+    },
+    "general-study":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-3",
+        "name":"General Study",
+        "id":"general-study",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe and identify the Study performed upon the Patient.</p>"
+    },
+    "pet-isotope":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-61",
+        "name":"PET Isotope",
+        "id":"pet-isotope",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains IOD Attributes that describe a PET Isotope.</p>"
+    },
+    "x-ray-generation":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-34",
+        "name":"X-Ray Generation",
+        "id":"x-ray-generation",
+        "description":"<p>\n<a></a>This Module describes the attributes related to generation of X-Rays during the acquisition of an X-Ray image.</p>"
+    },
+    "x-ray-3d-craniofacial-image-contributing-sources":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.21.2.2-1",
+        "name":"X-Ray 3D Craniofacial Image Contributing Sources",
+        "id":"x-ray-3d-craniofacial-image-contributing-sources",
+        "description":"<p>\n<a></a>This section describes the X-Ray 3D Craniofacial Image Contributing Sources Module. The attributes in this Module specify the overall characteristics of one or more sources that were used to create a X-Ray 3D Craniofacial Image SOP Class instance. <span href=\"\" target=\"_blank\">This module</span> contains the relevant IOD Attributes that describe X-Ray 3D Craniofacial Image Contributing Sources.</p>"
+    },
+    "breast-tomosynthesis-contributing-sources":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.21.2.3-1",
+        "name":"Breast Tomosynthesis Contributing Sources",
+        "id":"breast-tomosynthesis-contributing-sources",
+        "description":"<p>\n<a></a>This section describes the Breast Tomosynthesis Contributing Sources Module. The attributes in this Module specify the overall characteristics of one or more source images that were used to create a Breast Tomosynthesis Image SOP Class instance. <span href=\"\" target=\"_blank\">This module</span> contains the IOD Attributes that describe Breast Tomosynthesis Contributing Sources.</p>"
+    },
+    "display-system":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.32.1-1",
+        "name":"Display System",
+        "id":"display-system",
+        "description":"<p>\n<a></a>This Module describes the Display System.</p>"
+    },
+    "waveform-annotation":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.10-11",
+        "name":"Waveform Annotation",
+        "id":"waveform-annotation",
+        "description":"<p>\n<a></a>The table in this section contains Attributes that identify annotations to the waveform of the current SOP Instance. Each annotation conceptually forms the equivalent of a overlay on a presentation display of the annotated entity. Annotations may represent a measurement or categorization based on the waveform data, identification of regions of interest or particular features of the waveform, or events during the data collection that may affect diagnostic interpretation (e.g., the time at which the subject coughed).</p>"
+    },
+    "graphic-layer":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.10-7",
+        "name":"Graphic Layer",
+        "id":"graphic-layer",
+        "description":"<p>\n<a></a>This Module defines the characteristics of the layers in which overlays, graphic and text may be rendered.</p>"
+    },
+    "printer":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.13-9",
+        "name":"Printer",
+        "id":"printer",
+        "description":"<p>\n<strong>Table\u00a0C.13-9.\u00a0Printer Module Attributes</strong>\n</p>"
+    },
+    "x-ray-image-intensifier":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.19.4-1",
+        "name":"X-Ray Image Intensifier",
+        "id":"x-ray-image-intensifier",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the attributes of the X-Ray Image Intensifier Module.</p>"
+    },
+    "sc-equipment":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-24",
+        "name":"SC Equipment",
+        "id":"sc-equipment",
+        "description":"<p>\n<a></a>This Module describes equipment used to convert images into a DICOM format.</p>"
+    },
+    "encapsulated-document-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.24-1",
+        "name":"Encapsulated Document Series",
+        "id":"encapsulated-document-series",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the Encapsulated Document Series Attributes.</p>"
+    },
+    "nm-multi-frame":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-7",
+        "name":"NM Multi-frame",
+        "id":"nm-multi-frame",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes of a NM Multi-frame Image. This module is always included in a NM SOP instance, even if there is only one frame in the image.</p>"
+    },
+    "visual-field-static-perimetry-measurements-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.26.1-1",
+        "name":"Visual Field Static Perimetry Measurements Series",
+        "id":"visual-field-static-perimetry-measurements-series",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that identify and describe general information about the Visual Field Static Perimetry Measurements Series.</p>"
+    },
+    "billing-and-material-management-code":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.4-17",
+        "name":"Billing and Material Management Code",
+        "id":"billing-and-material-management-code",
+        "description":"<p>\n<a></a>The Attributes defined in <span href=\"\" target=\"_blank\">This module</span> provide a means to transmit billing and materi\u00adal management codes from a modality to an Information System. It is beyond the scope of this Standard to define all the required coding schemes and the relevant codes.</p>"
+    },
+    "dx-anatomy-imaged":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-69",
+        "name":"DX Anatomy Imaged",
+        "id":"dx-anatomy-imaged",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains IOD Attributes that describe the anatomy contained in a DX IOD.</p>"
+    },
+    "visit-relationship":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.3-1",
+        "name":"Visit Relationship",
+        "id":"visit-relationship",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the Attributes that reference SOP Instances related to this SOP Class.</p>"
+    },
+    "nm-isotope":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-10",
+        "name":"NM Isotope",
+        "id":"nm-isotope",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains Attributes that describe the isotope administered for the acquisition.</p>"
+    },
+    "x-ray-acquisition":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-27",
+        "name":"X-Ray Acquisition",
+        "id":"x-ray-acquisition",
+        "description":"<p>\n<strong>Table\u00a0C.8-27.\u00a0X-Ray Acquisition Module Attributes</strong>\n</p>"
+    },
+    "subjective-refraction-measurements-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.25.4-1",
+        "name":"Subjective Refraction Measurements Series",
+        "id":"subjective-refraction-measurements-series",
+        "description":"<p>\n<a></a>The Subjective Refraction Measurements IODs use the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.3.1\" target=\"_blank\">General Series Module</a>, specialized by the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.8.25.4\" target=\"_blank\">Subjective Refraction Measurements Series Module</a>, to describe the DICOM Series Entity described in <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_A.1.2.3\" target=\"_blank\">Section\u00a0A.1.2.3</a>, and to define what constitutes a Series for the context of Ophthalmic device.</p>"
+    },
+    "x-ray-3d-image":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.21.1-1",
+        "name":"X-Ray 3D Image",
+        "id":"x-ray-3d-image",
+        "description":"<p>\n<a></a>This section describes the X-Ray 3D Image Module. <span href=\"\" target=\"_blank\">This module</span> contains IOD Attributes that describe a X-Ray 3D Image by specializing Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.6.1\" target=\"_blank\">General Image Module</a> and <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.6.3\" target=\"_blank\">Image Pixel Module</a>, and adding additional Attributes.</p>"
+    },
+    "acquisition-context":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7.6.14-1",
+        "name":"Acquisition Context",
+        "id":"acquisition-context",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies Attributes for description of the conditions present during data acquisition.</p>"
+    },
+    "media-creation-management":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.22.1-1",
+        "name":"Media Creation Management",
+        "id":"media-creation-management",
+        "description":"<p>\n<strong>Table\u00a0C.22.1-1.\u00a0Media Creation Management Module Attributes</strong>\n</p>"
+    },
+    "basic-film-box-presentation":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.13-3",
+        "name":"Basic Film Box Presentation",
+        "id":"basic-film-box-presentation",
+        "description":"<p>\n<strong>Table\u00a0C.13-3.\u00a0Basic Film Box Presentation Module Attributes</strong>\n</p>"
+    },
+    "rt-beams-session-record":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-57",
+        "name":"RT Beams Session Record",
+        "id":"rt-beams-session-record",
+        "description":"<p>\n<strong>Table\u00a0C.8-57.\u00a0RT Beams Session Record Module Attributes</strong>\n</p>"
+    },
+    "dx-detector":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-71",
+        "name":"DX Detector",
+        "id":"dx-detector",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains IOD Attributes that describe a DX detector.</p>"
+    },
+    "voi-lut":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11-2",
+        "name":"VOI LUT",
+        "id":"voi-lut",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe the VOI LUT.</p>"
+    },
+    "corneal-topography-map-analysis":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.30.3-1",
+        "name":"Corneal Topography Map Analysis",
+        "id":"corneal-topography-map-analysis",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe the corneal Topography map analysis.</p>"
+    },
+    "key-object-document":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.17.6-2",
+        "name":"Key Object Document",
+        "id":"key-object-document",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the general Attributes of a Key Object Selection Document. These Attributes identify and provide context for the Key Object Selection Document.</p>"
+    },
+    "color-palette-definition":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.28.1-1",
+        "name":"Color Palette Definition",
+        "id":"color-palette-definition",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe and identify a Color Palette.</p>"
+    },
+    "x-ray-3d-reconstruction":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.21.4-1",
+        "name":"X-Ray 3D Reconstruction",
+        "id":"x-ray-3d-reconstruction",
+        "description":"<p>\n<a></a>This section describes the X-Ray 3D Reconstruction Module. <span href=\"\" target=\"_blank\">This module</span> contains IOD Attributes that describe the reconstructions used to create this SOP Instance. A single SOP Instance may contain the result of one or more reconstructions (e.g., a set of volumes). Each item in the X-Ray 3D Reconstruction Sequence specifies the characteristics of such a result.</p>"
+    },
+    "printer-configuration":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.13-13",
+        "name":"Printer Configuration",
+        "id":"printer-configuration",
+        "description":"<p>\n<a></a>This Module describes Printer Configuration Information.</p>"
+    },
+    "overlay-activation":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11.7-1",
+        "name":"Overlay Activation",
+        "id":"overlay-activation",
+        "description":"<p>\n<a></a>This Module defines a manner of controlling whether or not bit-mapped overlay and curve information are displayed.</p>"
+    },
+    "generic-implant-template-description":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.29.1.1-1",
+        "name":"Generic Implant Template Description",
+        "id":"generic-implant-template-description",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the general Attributes of the Generic Implant Template Description Module.</p>"
+    },
+    "ophthalmic-axial-measurements":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.25.14-1",
+        "name":"Ophthalmic Axial Measurements",
+        "id":"ophthalmic-axial-measurements",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the Attributes used to encode axial measurements of the eye made by an axial measurements device. This is typically done for both eyes, but may be for just one.</p>"
+    },
+    "intervention":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-19",
+        "name":"Intervention",
+        "id":"intervention",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> describes the Attributes of therapies (e.g., interventions during an angiographic procedure) that are associated with a study and/or image.</p>"
+    },
+    "visit-identification":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.3-2",
+        "name":"Visit Identification",
+        "id":"visit-identification",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the Attributes relevant to identifying a visit.</p>"
+    },
+    "patient-identification":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.2-2",
+        "name":"Patient Identification",
+        "id":"patient-identification",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the Attributes relevant to identifying a patient.</p>"
+    },
+    "volumetric-presentation-state-identification":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11.22-1",
+        "name":"Volumetric Presentation State Identification",
+        "id":"volumetric-presentation-state-identification",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains Attributes that describe the volume view type of this Presentation State.</p>"
+    },
+    "hanging-protocol-definition":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.23.1-1",
+        "name":"Hanging Protocol Definition",
+        "id":"hanging-protocol-definition",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe and identify the high level definition of a Hanging Protocol, including its overall purpose, and the types of image sets to which it applies. See <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part17.html#chapter_V\" target=\"_blank\">Annex V \u201cHanging Protocols (Informative)\u201d in PS3.17</a> for further explanation.</p>"
+    },
+    "requested-procedure":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.4-11",
+        "name":"Requested Procedure",
+        "id":"requested-procedure",
+        "description":"<p>\n<strong>Table\u00a0C.4-11.\u00a0Requested Procedure Module Attributes</strong>\n</p>"
+    },
+    "image-acquisition-results":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.4-15",
+        "name":"Image Acquisition Results",
+        "id":"image-acquisition-results",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies attributes that describe the acquisition of images during the performance of the Procedure Step and that provide references to the Series, Images and other Composite SOP Instances associated with this Modality Performed Procedure Step.</p>"
+    },
+    "x-ray-tomography-acquisition":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-32",
+        "name":"X-Ray Tomography Acquisition",
+        "id":"x-ray-tomography-acquisition",
+        "description":"<p>\n<a></a>This Module describes the attributes of a Tomography acquisition (translation of X-Ray source during the acquisition of a single-frame image).</p>"
+    },
+    "excluded-intervals":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.24.5-1",
+        "name":"Excluded Intervals",
+        "id":"excluded-intervals",
+        "description":"<p>\n<a></a>The Excluded Intervals Module indicates those periods within Acquisition Duration (0018,9073) during which no volume acquisition takes place. It provides information not available at the frame level or image level, since individual frames of the volume may have been built-up over a time period within which some intervals were excluded from acquisition. Further, it provides information that is not specific to associated waveform objects since the fact that volume acquisition was excluded during these intervals is a characteristic of the volume, not the associated waveform(s), see <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#figure_C.8.24.5-1\" target=\"_blank\">Figure\u00a0C.8.24.5-1</a>. <span href=\"\" target=\"_blank\">This module</span> specifies the attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.8.24.5\" target=\"_blank\">Excluded Intervals Module</a>.</p>"
+    },
+    "bulk-motion-synchronization":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7.6.18-3",
+        "name":"Bulk Motion Synchronization",
+        "id":"bulk-motion-synchronization",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the attributes of the Bulk Motion Synchronization Module.</p>"
+    },
+    "autorefraction-measurements":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.25.9-1",
+        "name":"Autorefraction Measurements",
+        "id":"autorefraction-measurements",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the Attributes used to represent the refractive measurements by an autorefractor of a patient's eyes. Usually both eyes are measured, but sometimes just one.</p>"
+    },
+    "intravascular-oct-processing-parameters":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.27.4-1",
+        "name":"Intravascular OCT Processing Parameters",
+        "id":"intravascular-oct-processing-parameters",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> describes the parameters used for processing an Intravascular Optical Coherence Tomography polar data image.</p>"
+    },
+    "visual-acuity-measurements":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.25.12-1",
+        "name":"Visual Acuity Measurements",
+        "id":"visual-acuity-measurements",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the Attributes used to represent the subjective measurements of a patient's visual acuity. Usually each eye is measured individually, but sometimes only one eye is measured; sometimes the visual acuity of both eyes working together is measured. The visual acuity may be measured uncorrected, or with various refractive corrections, such as best corrected distance, pinhole, habitual near, etc</p>"
+    },
+    "intravascular-oct-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.27.1-1",
+        "name":"Intravascular OCT Series",
+        "id":"intravascular-oct-series",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that identify and describe general information about the Intravascular Optical Coherence Tomography Series.</p>"
+    },
+    "autorefraction-measurements-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.25.2-1",
+        "name":"Autorefraction Measurements Series",
+        "id":"autorefraction-measurements-series",
+        "description":"<p>\n<a></a>The Autorefraction Measurements IODs use the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.3.1\" target=\"_blank\">General Series Module</a>, specialized by the Autorefraction Measurements Series Module, to describe the DICOM Series Entity described in <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_A.1.2.3\" target=\"_blank\">Section\u00a0A.1.2.3</a>, and to define what constitutes a Series for the context of Ophthalmic device.</p>"
+    },
+    "breast-tomosynthesis-acquisition":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.21.3.4-1",
+        "name":"Breast Tomosynthesis Acquisition",
+        "id":"breast-tomosynthesis-acquisition",
+        "description":"<p>\n<a></a>This section describes the Breast Tomosynthesis Acquisition Module.</p>"
+    },
+    "xa-xrf-presentation-state-mask":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11.19-1",
+        "name":"XA/XRF Presentation State Mask",
+        "id":"xa-xrf-presentation-state-mask",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe mask operations for a XA/XRF Multi-frame image.</p>"
+    },
+    "clinical-trial-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-5b",
+        "name":"Clinical Trial Series",
+        "id":"clinical-trial-series",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains attributes that identify a Series in the context of a clinical trial or research.</p>"
+    },
+    "visual-field-static-perimetry-test-parameters":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.26.2-1",
+        "name":"Visual Field Static Perimetry Test Parameters",
+        "id":"visual-field-static-perimetry-test-parameters",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the Attributes used to represent the parameters used during a patient's visual field test.</p>"
+    },
+    "basic-film-box-relationship":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.13-4",
+        "name":"Basic Film Box Relationship",
+        "id":"basic-film-box-relationship",
+        "description":"<p>\n<strong>Table\u00a0C.13-4.\u00a0Basic Film Box Relationship Module Attributes</strong>\n</p>"
+    },
+    "ivus-image":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.24.4-1",
+        "name":"IVUS Image",
+        "id":"ivus-image",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes of an IVUS Module.</p>"
+    },
+    "rt-brachy-application-setups":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-51",
+        "name":"RT Brachy Application Setups",
+        "id":"rt-brachy-application-setups",
+        "description":"<p>\n<a></a>The <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.8.8.15\" target=\"_blank\">RT Brachy Application Setups Module</a> describes the application of a brachytherapy radiotherapy treatment. It contains one or more sources, each associated with one or more Channels. A Channel is a device by which a source is placed in its intended treatment position or positions. A Channel may consist of a Source Applicator plus a Transfer Tube, a Source Applicator alone, a rigid or flexible linear source, or a seed. A number of Channels (for example applicators, sources or seeds) are generally arranged in an Application Setup, which may be considered a \"logical\" device. It is important not to confuse Application Setup with Applicator. The model used here has been primarily built around the concept of remote afterloading, but extended to support other brachytherapy applications such as manual applicators and molds, seeds, and sources. Additional devices that are not Channels are described as Brachy Accessory Devices. Examples of Accessory Devices include shields that modify the dose distribution from all sources in the treatment. However, Channel shields modify the dose only for the source(s) in that Channel.</p>"
+    },
+    "nm-phase":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-14",
+        "name":"NM Phase",
+        "id":"nm-phase",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains Attributes that describe dynamic phases of a dynamic acquisition image performed on the patient. This module is present only when Image Type (0008,0008), Value 3, is equal to DYNAMIC. A phase is defined as a collection of frames in which the acquisition time per frame and the time delay between frames remains constant. A new phase shall be defined whenever there is a change in the time between frames, the acquisition time per frame, or the position of the patient relative to the detector.</p>"
+    },
+    "substance-administration":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.26-3",
+        "name":"Substance Administration",
+        "id":"substance-administration",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes used to describe the act of administration of a contrast agent, drug, or device to a patient.</p>"
+    },
+    "performed-procedure-step-relationship":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.4-13",
+        "name":"Performed Procedure Step Relationship",
+        "id":"performed-procedure-step-relationship",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes used to reference other SOP Classes and other Information Entities of the DICOM real-world model as defined in <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_7.3.1.6\" target=\"_blank\">Section\u00a07.3.1.6</a>.</p>"
+    },
+    "surface-mesh":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.27-1",
+        "name":"Surface Mesh",
+        "id":"surface-mesh",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes of the Surface Mesh Module.</p>"
+    },
+    "x-ray-filtration":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-35",
+        "name":"X-Ray Filtration",
+        "id":"x-ray-filtration",
+        "description":"<p>\n<a></a>This Module describes the attributes related to the filtration of X-Rays during the acquisition of an X-Ray image.</p>"
+    },
+    "target-luminance-characteristics":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.32.2-1",
+        "name":"Target Luminance Characteristics",
+        "id":"target-luminance-characteristics",
+        "description":"<p>\n<a></a>This Module is a library of target luminance characteristics to be achieved in the calibration of specific configurations of specific Display Subsystems.</p>"
+    },
+    "mammography-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-73",
+        "name":"Mammography Series",
+        "id":"mammography-series",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that identify and describe general information about a Digital Mammography Series.</p>"
+    },
+    "overlay-plane":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.9-2",
+        "name":"Overlay Plane",
+        "id":"overlay-plane",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains Attributes that describe characteristics of an Overlay Plane.</p>"
+    },
+    "enhanced-contrast-bolus":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-12b",
+        "name":"Enhanced Contrast/Bolus",
+        "id":"enhanced-contrast-bolus",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe the contrast/bolus used in the acquisition of the Image.</p>"
+    },
+    "waveform":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.10-9",
+        "name":"Waveform",
+        "id":"waveform",
+        "description":"<p>\n<a></a>The table in this section contains Attributes that describe a time-based waveform. A waveform consists of one or more multiplex groups, each encoded into an Item in the Waveform Sequence. All channels within a multiplex group are synchronously digitized at a common sampling frequency.</p>"
+    },
+    "frame-extraction":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.12-9",
+        "name":"Frame Extraction",
+        "id":"frame-extraction",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the Attributes that describe the frames extracted if the SOP Instance was created in response to a Frame-Level retrieve request.</p>"
+    },
+    "presentation-state-relationship":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11.11-1",
+        "name":"Presentation State Relationship",
+        "id":"presentation-state-relationship",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains Attributes that describe the images to which a Presentation State applies.</p>"
+    },
+    "roi-contour":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-42",
+        "name":"ROI Contour",
+        "id":"roi-contour",
+        "description":"<p>\n<a></a>In general, a ROI can be defined by either a sequence of overlays or a sequence of contours. This module, if present, is used to define the ROI as a set of contours. Each ROI contains a sequence of one or more contours, where a contour is either a single point (for a point ROI) or more than one point (representing an open or closed polygon).</p>"
+    },
+    "dx-image":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-70",
+        "name":"DX Image",
+        "id":"dx-image",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains IOD Attributes that describe a DX Image by specializing Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.6.1\" target=\"_blank\">General Image Module</a> and <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.6.3\" target=\"_blank\">Image Pixel Module</a>, and adding additional Attributes.</p>"
+    },
+    "rt-general-plan":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-45",
+        "name":"RT General Plan",
+        "id":"rt-general-plan",
+        "description":"<p>\n<strong>Table\u00a0C.8-45.\u00a0RT General Plan Module Attributes</strong>\n</p>"
+    },
+    "cardiac-synchronization":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7.6.18-1",
+        "name":"Cardiac Synchronization",
+        "id":"cardiac-synchronization",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the attributes of the Cardiac Synchronization Module.</p>"
+    },
+    "volumetric-presentation-state-relationship":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11.23-1",
+        "name":"Volumetric Presentation State Relationship",
+        "id":"volumetric-presentation-state-relationship",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains Attributes that describe sets of inputs to a Presentation State and how each input is to be displayed in the presentation.</p>"
+    },
+    "enhanced-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-5c",
+        "name":"Enhanced Series",
+        "id":"enhanced-series",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> Table specifies the Attributes that identify and describe general information about the Series within a Study.</p>"
+    },
+    "ophthalmic-tomography-image":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.17.7-1",
+        "name":"Ophthalmic Tomography Image",
+        "id":"ophthalmic-tomography-image",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe an Image produced by Ophthalmic Tomography imaging modalities.</p>"
+    },
+    "ultrasound-frame-of-reference":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.24.2-1",
+        "name":"Ultrasound Frame of Reference",
+        "id":"ultrasound-frame-of-reference",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the attributes of the Ultrasound Frame Of Reference Module. See <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.8.24.2.1\" target=\"_blank\">Section\u00a0C.8.24.2.1</a>.</p>"
+    },
+    "intra-oral-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-75",
+        "name":"Intra-Oral Series",
+        "id":"intra-oral-series",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that identify and describe general information about a Digital Intra-Oral X-Ray Series.</p>"
+    },
+    "rt-dose":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-39",
+        "name":"RT Dose",
+        "id":"rt-dose",
+        "description":"<p>\n<a></a>The <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.8.8.3\" target=\"_blank\">RT Dose Module</a> is used to convey 2D or 3D radiation dose data generated from treatment planning systems or similar devices. The attributes defined within the module support dose for a single radiation beam (potentially comprised of multiple segments, as delivered in a dynamic treatment) or a group of beams comprising either a fraction group (see <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.8.8.13\" target=\"_blank\">Section\u00a0C.8.8.13</a>) or a complete treatment plan (potentially the sum of multiple fraction groups).</p>"
+    },
+    "structure-set":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-41",
+        "name":"Structure Set",
+        "id":"structure-set",
+        "description":"<p>\n<a></a>A structure set defines a set of areas of significance. Each area can be associated with a Frame of Reference and zero or more images. Information that can be transferred with each region of interest (ROI) includes geometrical and display parameters, and generation technique.</p>"
+    },
+    "frame-pointers":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-15",
+        "name":"Frame Pointers",
+        "id":"frame-pointers",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the attributes of a Frame Pointer Module.</p>"
+    },
+    "contrast-bolus":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-12",
+        "name":"Contrast/Bolus",
+        "id":"contrast-bolus",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe the contrast /bolus used in the acquisition of the Image.</p>"
+    },
+    "real-world-value-mapping-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.25.1-1",
+        "name":"Real World Value Mapping Series",
+        "id":"real-world-value-mapping-series",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the general Attributes of the Real World Value Mapping Series Module.</p>"
+    },
+    "nm-pet-patient-orientation":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-5",
+        "name":"NM/PET Patient Orientation",
+        "id":"nm-pet-patient-orientation",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe the NM/PET Patient Orientation.</p>"
+    },
+    "key-object-document-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.17.6-1",
+        "name":"Key Object Document Series",
+        "id":"key-object-document-series",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the Attributes of the Key Object Document Series.</p>"
+    },
+    "x-ray-collimator":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-28",
+        "name":"X-Ray Collimator",
+        "id":"x-ray-collimator",
+        "description":"<p>\n<a></a>An X-Ray Collimator is a device placed close to the X-Ray Source to restrict the span of the X-Ray beam. It is often made of lead shutters. <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#figure_C.8-9\" target=\"_blank\">Figure\u00a0C.8-9</a> presents in a graphical form its relationship with the Field Of View Dimensions (0018,1149).</p>"
+    },
+    "mr-image":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-4",
+        "name":"MR Image",
+        "id":"mr-image",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains the Attributes that describe MR images.</p>"
+    },
+    "cr-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-1",
+        "name":"CR Series",
+        "id":"cr-series",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains IOD Attributes that describe a computed radiography series performed on the patient.</p>"
+    },
+    "ophthalmic-patient-clinical-information-and-test-lens-parameters":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.26.6-1",
+        "name":"Ophthalmic Patient Clinical Information and Test Lens Parameters",
+        "id":"ophthalmic-patient-clinical-information-and-test-lens-parameters",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the Attributes used to represent a patient's clinical parameters during an ophthalmic test.</p>"
+    },
+    "rt-fraction-scheme":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-49",
+        "name":"RT Fraction Scheme",
+        "id":"rt-fraction-scheme",
+        "description":"<p>\n<a></a>The <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.8.8.13\" target=\"_blank\">RT Fraction Scheme Module</a> contains attributes that describe a single or multiple scheme of dose descriptions. Each sequence item contains dose specification information, fractionation patterns, and either beam or brachytherapy application setup specifications. The design of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.8.8.13\" target=\"_blank\">RT Fraction Scheme Module</a> allows a beam or brachytherapy application setup to be used in multiple fraction schemes.</p>"
+    },
+    "graphic-annotation":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.10-5",
+        "name":"Graphic Annotation",
+        "id":"graphic-annotation",
+        "description":"<p>\n<a></a>This Module defines Attributes of vector graphics and text annotation that shall be made available by a display device to be applied to an image. The graphics and text are defined in position and size relative to the image pixel coordinates or the Specified Displayed Area space (defined in <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.10.4\" target=\"_blank\">Section\u00a0C.10.4</a>). A Graphic Annotation shall be related to an Image.</p>"
+    },
+    "presentation-state-shutter":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11.12-1",
+        "name":"Presentation State Shutter",
+        "id":"presentation-state-shutter",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains Attributes that specialize Attributes in other Modules included in a Presentation State.</p>"
+    },
+    "unified-procedure-step-performed-procedure-information":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.30.3-1",
+        "name":"Unified Procedure Step Performed Procedure Information",
+        "id":"unified-procedure-step-performed-procedure-information",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe the performance and results of a Unified Procedure Step (UPS).</p>"
+    },
+    "double-floating-point-image-pixel":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_PS3.3_C.7.6.25-1",
+        "name":"Double Floating Point Image Pixel",
+        "id":"double-floating-point-image-pixel",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> describes the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.6.25\" target=\"_blank\">Double Floating Point Image Pixel Module</a>. This module differs from the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.6.3\" target=\"_blank\">Section\u00a0C.7.6.3</a>\n<a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.6.3\" target=\"_blank\">Image Pixel Module</a> in that:</p>"
+    },
+    "structured-display-annotation":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11.18-1",
+        "name":"Structured Display Annotation",
+        "id":"structured-display-annotation",
+        "description":"<p>\n<a></a>This Module defines Attributes of text annotation that shall be applied to a Structured Display. The text is defined in position and size relative to the Display Environment.</p>"
+    },
+    "common-instance-reference":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.12-8",
+        "name":"Common Instance Reference",
+        "id":"common-instance-reference",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the Attributes that describe the hierarchical relationships of any SOP Instances referenced from other Modules within the Instance in which this Module occurs.</p>"
+    },
+    "rt-conventional-machine-verification":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.31-2",
+        "name":"RT Conventional Machine Verification",
+        "id":"rt-conventional-machine-verification",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the attributes used to convey the parameters used in external verification of a conventional radiotherapy (photon or electron) treatment delivery.</p>"
+    },
+    "breast-view":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.21.6-1",
+        "name":"Breast View",
+        "id":"breast-view",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains IOD Attributes that describe the view of a digital breast tomosynthesis image.</p>"
+    },
+    "nm-image":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-9",
+        "name":"NM Image",
+        "id":"nm-image",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains the Attributes that describe Nuclear Medicine Images.</p>"
+    },
+    "visual-field-static-perimetry-test-measurements":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.26.4-1",
+        "name":"Visual Field Static Perimetry Test Measurements",
+        "id":"visual-field-static-perimetry-test-measurements",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the Attributes used to represent the test measurement values determined during a patient's visual field test.</p>"
+    },
+    "segmentation-image":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.20-2",
+        "name":"Segmentation Image",
+        "id":"segmentation-image",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the general Attributes of the Segmentation Image Module.</p>"
+    },
+    "rt-treatment-machine-record":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-54",
+        "name":"RT Treatment Machine Record",
+        "id":"rt-treatment-machine-record",
+        "description":"<p>\n<strong>Table\u00a0C.8-54.\u00a0RT Treatment Machine Record Module Attributes</strong>\n</p>"
+    },
+    "deformable-spatial-registration":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.20.3-1",
+        "name":"Deformable Spatial Registration",
+        "id":"deformable-spatial-registration",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the general Attributes of the Deformable Spatial Registration Module.</p>"
+    },
+    "visit-admission":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.3-4",
+        "name":"Visit Admission",
+        "id":"visit-admission",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the Attributes relevant to admitting a patient during a visit.</p>"
+    },
+    "spatial-fiducials":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.21.2-1",
+        "name":"Spatial Fiducials",
+        "id":"spatial-fiducials",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the general Attributes of the Registration.</p>"
+    },
+    "rt-ion-tolerance-tables":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.8.24-1",
+        "name":"RT Ion Tolerance Tables",
+        "id":"rt-ion-tolerance-tables",
+        "description":"<p>\n<a></a>The RT Ion Tolerance Tables Module contains information describing the maximum allowed differences between the planned and measured attributes for Ion therapy.</p>"
+    },
+    "enhanced-general-equipment":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-8b",
+        "name":"Enhanced General Equipment",
+        "id":"enhanced-general-equipment",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that identify and describe the piece of equipment that produced a Series of Composite Instances.</p>"
+    },
+    "multi-frame-functional-groups":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7.6.16-1",
+        "name":"Multi-frame Functional Groups",
+        "id":"multi-frame-functional-groups",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This module is included in SOP instances even if there is only one frame in the instance.</p>"
+    },
+    "enhanced-pet-image":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.22-3",
+        "name":"Enhanced PET Image",
+        "id":"enhanced-pet-image",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.8.22.3\" target=\"_blank\">Enhanced PET Image Module</a>.</p>"
+    },
+    "palette-color-lookup-table":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-22",
+        "name":"Palette Color Lookup Table",
+        "id":"palette-color-lookup-table",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe the Lookup table data for images with Palette Color photometric interpretation.</p>"
+    },
+    "image-histogram":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11.5-1",
+        "name":"Image Histogram",
+        "id":"image-histogram",
+        "description":"<p>\n<strong>Table\u00a0C.11.5-1.\u00a0Image Histogram Module Attributes</strong>\n</p>"
+    },
+    "parametric-map-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_PS3.3_C.8.32-1",
+        "name":"Parametric Map Series",
+        "id":"parametric-map-series",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the general Attributes of the Parametric Map Series Module.</p>"
+    },
+    "rt-ion-beams":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.8.25-1",
+        "name":"RT Ion Beams",
+        "id":"rt-ion-beams",
+        "description":"<p>\n<a></a>The RT Ion Beams Module contains information defining equipment parameters for delivery of external Ion radiation beams.</p>"
+    },
+    "substance-approval":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.26-2",
+        "name":"Substance Approval",
+        "id":"substance-approval",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes used to approve the administration of a contrast agent, drug, or device to a patient.</p>"
+    },
+    "intravascular-image-acquisition-parameters":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.27.5-1",
+        "name":"Intravascular Image Acquisition Parameters",
+        "id":"intravascular-image-acquisition-parameters",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> describes the parameters and characteristics of an intravascular image acquisition. These parameters are common to both IVUS and IVOCT.</p>"
+    },
+    "clinical-trial-subject":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-2b",
+        "name":"Clinical Trial Subject",
+        "id":"clinical-trial-subject",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains attributes that identify a Patient as a clinical trial or research Subject.</p>"
+    },
+    "clinical-trial-study":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-4b",
+        "name":"Clinical Trial Study",
+        "id":"clinical-trial-study",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains attributes that identify a Study in the context of a clinical trial or research.</p>"
+    },
+    "synchronization":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-7",
+        "name":"Synchronization",
+        "id":"synchronization",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes necessary to uniquely identify a frame of reference that establishes the temporal relationship of SOP Instances. A synchronized environment may be established based on a shared time of day clock, and/or on a shared trigger event or synchronization waveform channel.</p>"
+    },
+    "rt-tolerance-tables":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-47",
+        "name":"RT Tolerance Tables",
+        "id":"rt-tolerance-tables",
+        "description":"<p>\n<strong>Table\u00a0C.8-47.\u00a0RT Tolerance Tables Module Attributes</strong>\n</p>"
+    },
+    "enhanced-pet-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.22-1",
+        "name":"Enhanced PET Series",
+        "id":"enhanced-pet-series",
+        "description":"<p>\n<a></a>The Enhanced PET IODs use the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.3.1\" target=\"_blank\">General Series Module</a>, specialized by the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.8.22.1\" target=\"_blank\">Enhanced PET Series Module</a>, to describe the DICOM Series Entity described in <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_A.1.2.3\" target=\"_blank\">Section\u00a0A.1.2.3</a>, and to define what constitutes a Series for the context of PET device.</p>"
+    },
+    "measured-dose-reference-record":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-55",
+        "name":"Measured Dose Reference Record",
+        "id":"measured-dose-reference-record",
+        "description":"<p>\n<strong>Table\u00a0C.8-55.\u00a0Measured Dose Reference Record Module Attributes</strong>\n</p>"
+    },
+    "cine":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-13",
+        "name":"Cine",
+        "id":"cine",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes of a Multi-frame Cine Image.</p>"
+    },
+    "multi-frame-overlay":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.9-3",
+        "name":"Multi-frame Overlay",
+        "id":"multi-frame-overlay",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes of a Multi-frame overlay.</p>"
+    },
+    "implant-template-group":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.29.3-1",
+        "name":"Implant Template Group",
+        "id":"implant-template-group",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains the Attributes of the Implant Template Group Module.</p>"
+    },
+    "generic-implant-template-3d-models":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.29.1.3-1",
+        "name":"Generic Implant Template 3D Models",
+        "id":"generic-implant-template-3d-models",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the general Attributes of the Generic Implant Template 3D Models Module. This module contains Attributes that add context and scaling information to surfaces specified in the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.27.1\" target=\"_blank\">Surface Mesh Module</a>, for 3D Models in an Implant Template Instance.</p>"
+    },
+    "implant-assembly-template":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.29.2-1",
+        "name":"Implant Assembly Template",
+        "id":"implant-assembly-template",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the general Attributes of the Implant Assembly Template Module.</p>"
+    },
+    "mr-spectroscopy-pulse-sequence":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-103",
+        "name":"MR Spectroscopy Pulse Sequence",
+        "id":"mr-spectroscopy-pulse-sequence",
+        "description":"<p>\n<a></a>The primary purpose of this module is to identify the pulse sequence and variations that were used in creation of the spectroscopic data. Terminology is intended to be neutral, and allow equivalent sequences provided by different vendors to be classified together.</p>"
+    },
+    "sop-common":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.12-1",
+        "name":"SOP Common",
+        "id":"sop-common",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the Attributes that are required for proper functioning and identification of the associated SOP Instances. They do not specify any semantics about the Real-World Object represented by the IOD.</p>"
+    },
+    "tractography-results-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.33-1",
+        "name":"Tractography Results Series",
+        "id":"tractography-results-series",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that identify and describe general information about a Tractography Results Series.</p>"
+    },
+    "rt-dose-roi":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-43",
+        "name":"RT Dose ROI",
+        "id":"rt-dose-roi",
+        "description":"<p>\n<a></a>RT Dose ROI provides ancillary dose-related information to the ROI data defined within the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.8.8.5\" target=\"_blank\">Structure Set Module</a> and <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.8.8.6\" target=\"_blank\">ROI Contour Module</a>, which may be included in the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_A.18\" target=\"_blank\">RT Dose IOD</a> composite object. These modules in combination provide for the definition of dose data in the form of \n          <span>isodose curves</span> or named or unnamed dose points. Isodose curves in radiation oncology are simply contours identifying a set of points with the same dose value.</p>"
+    },
+    "wide-field-ophthalmic-photography-3d-coordinates":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.17.12-1",
+        "name":"Wide Field Ophthalmic Photography 3D Coordinates",
+        "id":"wide-field-ophthalmic-photography-3d-coordinates",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe the Wide Field Ophthalmic Photography 3D Coordinates Module.</p>"
+    },
+    "x-ray-image":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-26",
+        "name":"X-Ray Image",
+        "id":"x-ray-image",
+        "description":"<p>\n<strong>Table\u00a0C.8-26.\u00a0X-Ray Image Module Attributes</strong>\n</p>"
+    },
+    "image---equipment-coordinate-relationship":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7.6.21-1",
+        "name":"Image - Equipment Coordinate Relationship",
+        "id":"image---equipment-coordinate-relationship",
+        "description":"<p>\n<a></a>This section describes the Image - Equipment Coordinate Relationship module. <span href=\"\" target=\"_blank\">This module</span> contains the attributes that specify how the equipment (e.g., gantry) and patient oriented coordinate system (in conjunction with Image Position (Patient) (0020,0032) and Image Orientation (Patient) (0020,0037) attributes) are related.</p>"
+    },
+    "dx-positioning":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-72",
+        "name":"DX Positioning",
+        "id":"dx-positioning",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains IOD Attributes that describe the positioning used in acquiring Digital X-Ray Images.</p>"
+    },
+    "device":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-18",
+        "name":"Device",
+        "id":"device",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> describes the Attributes of devices or calibration objects (e.g., catheters, markers, baskets) that are associated with a study and/or image.</p>"
+    },
+    "stereometric-relationship":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.18.2-1",
+        "name":"Stereometric Relationship",
+        "id":"stereometric-relationship",
+        "description":"<p>\n<a></a>The stereometric relationship module is used to identify pairs of images that may be viewed in stereo. It is possible that the same image or frame may be a member of multiple pairs. The images forming a pair shall be in different SOP Instances. The images forming a pair can be in different Series. All Instances referenced in this Module shall be in the same Study as the Instance in which the Module occurs.</p>"
+    },
+    "rt-general-machine-verification":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.31-1",
+        "name":"RT General Machine Verification",
+        "id":"rt-general-machine-verification",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the attributes used to convey the parameters used in external verification of both conventional radiotherapy (photon or electron) and ion treatment deliveries.</p>"
+    },
+    "image-box-pixel-presentation":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.13-5",
+        "name":"Image Box Pixel Presentation",
+        "id":"image-box-pixel-presentation",
+        "description":"<p>\n<strong>Table\u00a0C.13-5.\u00a0Image Box Pixel Presentation Module Attributes</strong>\n</p>"
+    },
+    "dx-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-68",
+        "name":"DX Series",
+        "id":"dx-series",
+        "description":"<p>\n<a></a>The Digital X-Ray IODs use the General Series module described in <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.3.1\" target=\"_blank\">Section\u00a0C.7.3.1</a>, specialized by the DX Series Module, to describe the DICOM Series Entity described in <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_A.1.2.3\" target=\"_blank\">Section\u00a0A.1.2.3</a>, and to define what constitutes a Series for the context of projection Digital X-Ray.</p>"
+    },
+    "basic-annotation-presentation":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.13-7",
+        "name":"Basic Annotation Presentation",
+        "id":"basic-annotation-presentation",
+        "description":"<p>\n<strong>Table\u00a0C.13-7.\u00a0Basic Annotation Presentation Module Attributes</strong>\n</p>"
+    },
+    "x-ray-grid":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-36",
+        "name":"X-Ray Grid",
+        "id":"x-ray-grid",
+        "description":"<p>\n<a></a>This Module describes the attributes related to the use of a grid to reduce scatter of X-Rays during the acquisition of an X-Ray image.</p>"
+    },
+    "x-ray-acquisition-dose":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-33",
+        "name":"X-Ray Acquisition Dose",
+        "id":"x-ray-acquisition-dose",
+        "description":"<p>\n<a></a>This Module describes the attributes related to dose delivery from an X-Ray source during the acquisition of an X-Ray image.</p>"
+    },
+    "general-equipment":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-8",
+        "name":"General Equipment",
+        "id":"general-equipment",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that identify and describe the piece of equipment that produced a Series of Composite Instances.</p>"
+    },
+    "nm-image-pixel":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-6",
+        "name":"NM Image Pixel",
+        "id":"nm-image-pixel",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe the pixel data of a NM image.</p>"
+    },
+    "enhanced-ct-image":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-114",
+        "name":"Enhanced CT Image",
+        "id":"enhanced-ct-image",
+        "description":"<p>\n<a></a>This section describes the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.8.15.2\" target=\"_blank\">Enhanced CT Image Module</a>. <span href=\"\" target=\"_blank\">This module</span> specifies the attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.8.15.2\" target=\"_blank\">Enhanced CT Image Module</a>.</p>"
+    },
+    "enhanced-mammography-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-76b",
+        "name":"Enhanced Mammography Series",
+        "id":"enhanced-mammography-series",
+        "description":"<p>\n<a></a>The Breast Tomosynthesis Image IOD uses the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.3.1\" target=\"_blank\">General Series Module</a>, specialized by the Enhanced Mammography Series Module, to describe the DICOM Series Entity described in <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_A.1.2.3\" target=\"_blank\">Section\u00a0A.1.2.3</a>, and to define what constitutes a Series for the context of a Breast Tomosynthesis device.</p>"
+    },
+    "mr-pulse-sequence":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-87",
+        "name":"MR Pulse Sequence",
+        "id":"mr-pulse-sequence",
+        "description":"<p>\n<a></a>The primary purpose of this module is to identify the pulse sequence and variations on that, which was used in creation of the image. Terminology is intended to be neutral, and allow equivalent sequences provided by different vendors to be classified the same.</p>"
+    },
+    "x-ray-3d-craniofacial-acquisition":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.21.3.3-1",
+        "name":"X-Ray 3D Craniofacial Acquisition",
+        "id":"x-ray-3d-craniofacial-acquisition",
+        "description":"<p>\n<a></a>This section describes the X-Ray 3D Craniofacial Acquisition Module.</p>"
+    },
+    "enhanced-palette-color-lookup-table":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7.6.23-1",
+        "name":"Enhanced Palette Color Lookup Table",
+        "id":"enhanced-palette-color-lookup-table",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the attributes that define data flow through the Enhanced Blending and Display Pipeline. See <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.6.23.1\" target=\"_blank\">Section\u00a0C.7.6.23.1</a> for an overview of the Enhanced Blending and Display Pipeline.</p>"
+    },
+    "enhanced-pet-corrections":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.22-19",
+        "name":"Enhanced PET Corrections",
+        "id":"enhanced-pet-corrections",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the attributes of the Enhanced PET Corrections Module.</p>"
+    },
+    "visual-acuity-measurements-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.25.5-1",
+        "name":"Visual Acuity Measurements Series",
+        "id":"visual-acuity-measurements-series",
+        "description":"<p>\n<a></a>The Visual Acuity Measurements IODs use the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.3.1\" target=\"_blank\">General Series Module</a>, specialized by the Visual Acuity Measurements Series Module, to describe the DICOM Series Entity described in <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_A.1.2.3\" target=\"_blank\">Section\u00a0A.1.2.3</a>, and to define what constitutes a Series for the context of Ophthalmic device.</p>"
+    },
+    "us-region-calibration":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-17",
+        "name":"US Region Calibration",
+        "id":"us-region-calibration",
+        "description":"<p>\n<a></a>The US Region Calibration Module has been introduced into the ultrasound IOD to provide access to the full range of data that may be present in a single US image. US images often contain multiple regions that have independent data regions, e.g., quad screen loops that may have different calibration information. The data presented in the various regions of a US image can represent a multiplicity of physical parameters, e.g., spatial distance, blood velocity, time, volume, etc., and these are often contained in the value of the pixel itself. It is therefore imperative that physical information be available for the various regions of a single region independent of each other.</p>"
+    },
+    "multi-planar-reconstruction-geometry":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11.26-1",
+        "name":"Multi-Planar Reconstruction Geometry",
+        "id":"multi-planar-reconstruction-geometry",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains Attributes that describe the geometry of this Multi-Planar Reconstruction view.</p>"
+    },
+    "qa-results":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.32.3-1",
+        "name":"QA Results",
+        "id":"qa-results",
+        "description":"<p>\n<a></a>This module records the latest results of QA activities, such as calibration, performed on the Display Subsystems.</p>"
+    },
+    "ophthalmic-photographic-parameters":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.17.3-1",
+        "name":"Ophthalmic Photographic Parameters",
+        "id":"ophthalmic-photographic-parameters",
+        "description":"<p>\n<a></a>This Module describes equipment used to create original images.</p>"
+    },
+    "generic-implant-template-mating-features":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.29.1.4-1",
+        "name":"Generic Implant Template Mating Features",
+        "id":"generic-implant-template-mating-features",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the general Attributes of the Generic Implant Template Mating Features Module. This module adds coordinate systems that can be utilized to geometrically constrain mating of Implant Templates when planning the implantation of a modular implant.</p>"
+    },
+    "unified-procedure-step-relationship":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.30.4-1",
+        "name":"Unified Procedure Step Relationship",
+        "id":"unified-procedure-step-relationship",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe the relationship of a Unified Procedure Step (UPS).</p>"
+    },
+    "visual-field-static-perimetry-test-results":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.26.5-1",
+        "name":"Visual Field Static Perimetry Test Results",
+        "id":"visual-field-static-perimetry-test-results",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the Attributes used to interpret the test results of a patient's visual field test.</p>"
+    },
+    "xa-xrf-presentation-state-shutter":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11.20-1",
+        "name":"XA/XRF Presentation State Shutter",
+        "id":"xa-xrf-presentation-state-shutter",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe shutter operations for a XA/XRF Multi-frame image.</p>"
+    },
+    "multi-resolution-navigation":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.12.7-1",
+        "name":"Multi-Resolution Navigation",
+        "id":"multi-resolution-navigation",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe the Multi-Resolution Navigation Module, used in Whole Slide Microscopy LOCALIZER images.</p>"
+    },
+    "hanging-protocol-display":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.23.3-1",
+        "name":"Hanging Protocol Display",
+        "id":"hanging-protocol-display",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe operations (filter, reformat, sort, presentation intent), layout and interactions for a Hanging Protocol. See <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part17.html#chapter_V\" target=\"_blank\">Annex V \u201cHanging Protocols (Informative)\u201d in PS3.17</a> for further explanation.</p>"
+    },
+    "presentation-view-description":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11.25-1",
+        "name":"Presentation View Description",
+        "id":"presentation-view-description",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains Attributes that describe the view of this presentation in anatomical terms.</p>"
+    },
+    "multi-frame":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-14",
+        "name":"Multi-frame",
+        "id":"multi-frame",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes of a Multi-frame pixel data Image.</p>"
+    },
+    "rt-treatment-summary-record":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-59",
+        "name":"RT Treatment Summary Record",
+        "id":"rt-treatment-summary-record",
+        "description":"<p>\n<strong>Table\u00a0C.8-59.\u00a0RT Treatment Summary Record Module Attributes</strong>\n</p>"
+    },
+    "presentation-state-identification":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11.10-1",
+        "name":"Presentation State Identification",
+        "id":"presentation-state-identification",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> contains Attributes that identify a Presentation State.</p>"
+    },
+    "softcopy-voi-lut":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11.8-1",
+        "name":"Softcopy VOI LUT",
+        "id":"softcopy-voi-lut",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe the Softcopy VOI LUT. These Attributes have the same meaning and behavior as defined in the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.11.2\" target=\"_blank\">Section\u00a0C.11.2 VOI LUT Module</a>.</p>"
+    },
+    "vl-image":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-77",
+        "name":"VL Image",
+        "id":"vl-image",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe a VL Image produced by Endoscopy (ES), General Microscopy (GM), Automated-Stage Microscopy (SM), External-camera Photography (XC), or other VL imaging Modalities.</p>"
+    },
+    "ophthalmic-photography-acquisition-parameters":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.17.4-1",
+        "name":"Ophthalmic Photography Acquisition Parameters",
+        "id":"ophthalmic-photography-acquisition-parameters",
+        "description":"<p>\n<a></a>This Module describes patient clinical conditions related to the image acquisition.</p>"
+    },
+    "ct-image":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-3",
+        "name":"CT Image",
+        "id":"ct-image",
+        "description":"<p>\n<a></a>The table in this Section contains IOD Attributes that describe CT images.</p>"
+    },
+    "specimen":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7.6.22-1",
+        "name":"Specimen",
+        "id":"specimen",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that identify one or more Specimens being imaged.</p>"
+    },
+    "scan-procedure":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.29-2",
+        "name":"Scan Procedure",
+        "id":"scan-procedure",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes of the Scan Procedure Module.</p>"
+    },
+    "rt-ion-beams-session-record":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.8.26-1",
+        "name":"RT Ion Beams Session Record",
+        "id":"rt-ion-beams-session-record",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe the measured and recorded settings acquired during Ion Radiation Treatments.</p>"
+    },
+    "rt-general-treatment-record":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8-53",
+        "name":"RT General Treatment Record",
+        "id":"rt-general-treatment-record",
+        "description":"<p>\n<strong>Table\u00a0C.8-53.\u00a0RT General Treatment Record Module Attributes</strong>\n</p>"
+    },
+    "scheduled-procedure-step":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.4-10",
+        "name":"Scheduled Procedure Step",
+        "id":"scheduled-procedure-step",
+        "description":"<p>\n<strong>Table\u00a0C.4-10.\u00a0Scheduled Procedure Step Module Attributes</strong>\n</p>"
+    },
+    "generic-implant-template-planning-landmarks":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.29.1.5-1",
+        "name":"Generic Implant Template Planning Landmarks",
+        "id":"generic-implant-template-planning-landmarks",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the general Attributes of the Generic Implant Template Planning Landmarks Module. This module adds planning landmarks, i.e., geometric annotations that constrain implant template registration to anatomical features, to the Implant Template IOD.</p>"
+    },
+    "spatial-registration-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.20.1-1",
+        "name":"Spatial Registration Series",
+        "id":"spatial-registration-series",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> defines the general Attributes of the Spatial Registration Series Module.</p>"
+    },
+    "whole-slide-microscopy-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.12.3-1",
+        "name":"Whole Slide Microscopy Series",
+        "id":"whole-slide-microscopy-series",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies attributes for the Whole Slide Microscopy Series Module, including specialization of attributes in the <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.3.1\" target=\"_blank\">General Series Module</a> for use in the Whole Slide Microscopy Series Module.</p>"
+    },
+    "unified-procedure-step-progress-information":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.30.1-1",
+        "name":"Unified Procedure Step Progress Information",
+        "id":"unified-procedure-step-progress-information",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the Attributes that describe the progress of a Unified Procedure Step (UPS).</p>"
+    },
+    "ophthalmic-photography-series":{
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.17.1-1",
+        "name":"Ophthalmic Photography Series",
+        "id":"ophthalmic-photography-series",
+        "description":"<p>\n<a></a>\n<span href=\"\" target=\"_blank\">This module</span> specifies the attributes that describe an Ophthalmic Photography Series.</p>"
+    }
+}
