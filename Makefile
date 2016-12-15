@@ -6,10 +6,7 @@
 PYTEST_BIN=python3 -m pytest
 
 
-all: dist core_tables relationship_tables dist/references.json
-
-dist:
-	mkdir dist
+all: core_tables relationship_tables dist/references.json
 
 core_tables: dist/ciods.json dist/modules.json dist/attributes.json
 
@@ -78,6 +75,5 @@ checkversions:
 
 clean:
 	git clean -fqx dist tmp
-	rm -rf dist
 	find . -type f -name "*.py[co]" -delete
 	find . -type d -name "__pycache__" -delete
