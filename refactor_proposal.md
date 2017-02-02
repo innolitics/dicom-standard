@@ -20,7 +20,7 @@ stages:
 [
     {
         "name":"CIOD Name",
-        "data":[
+        "module":[
             {
                 "informationEntity":"Patient",
                 "module":"Patient",
@@ -97,7 +97,7 @@ This program will extract the content of the module-attribute tables into a
 JSON structure. Each table row is represented by the following structure:
 
 ```json
-"data": {
+{
     "attributeField",
     "description",
     "nestingLevel"
@@ -120,7 +120,7 @@ The entire JSON structure is below:
 [
     {
         "name":"Some Module",
-        "data":[
+        "attributes":[
             {
                 "attributeField": {
                     "name":"Referenced Study Sequence",
@@ -158,7 +158,7 @@ be parsed into the same JSON format as before:
 [
     {
         "name":"Some Macro Table",
-        "data":[
+        "attributes":[
             {
                 "attributeField": {
                     "name":"Referenced Study Sequence",
@@ -223,7 +223,7 @@ new structure detailed above.
 [
     {
         "name":"Some Module",
-        "data":[
+        "attributes":[
             {
                 "name":"Referenced Study Sequence",
                 "tag":"(0008,1110)",
