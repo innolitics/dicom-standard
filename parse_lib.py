@@ -47,11 +47,6 @@ def table_data_from_standard(standard, chapter_name, match_pattern, column_title
 
     return all_table_dicts
 
-
-def get_table_description(tdiv):
-    return str(tdiv.parent.find('p'))
-
-
 def all_tdivs_in_chapter(standard, chapter_name):
     chapter_divs = standard.find_all('div', class_='chapter')
     for chapter in chapter_divs:
@@ -358,9 +353,6 @@ def text_or_href_from_cell(cell_html, column_idx, link_correction, description_c
     else:
         return clean_table_entry(html.get_text())
 
-
-def table_to_dict(table, column_names):
-    return [dict(zip(column_names, row)) for row in table]
 
 
 def clean_table_name(name):

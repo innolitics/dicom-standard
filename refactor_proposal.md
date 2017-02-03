@@ -20,20 +20,18 @@ stages:
 [
     {
         "name":"CIOD Name",
-        "module":[
+        "modules":[
             {
                 "informationEntity":"Patient",
                 "module":"Patient",
+                "reference_fragment": 'sect_C.1.2',
                 "usage":"M",
-                "conditionalStatement":null,
-                "linkToStandard":"link_to_standard_for_module"
             },
             {...},
         ]
         "id":"slugified-ciod-name",
         "description":"<p>HTML description above the CIOD table.</p>",
         "linkToStandard":"link_to_standard_for_CIOD",
-        "order":0,
     },
     {...}
 ]

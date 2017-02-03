@@ -10,3 +10,9 @@ def table_rows(table_div):
 def table_name(table_div):
     return table_div.p.strong.get_text()
 
+def table_id(table_div):
+    return table_div.a.get('id')
+
+def table_description(table_div):
+    return table_div.parent.find('p')
+
