@@ -13,6 +13,12 @@ def table_to_dict(table, row_names):
 def stringify_table(table):
     return [[str(cell) for cell in row] for row in table]
 
+def tdiv_to_table_list(table_div):
+    rows = pr.table_rows(table_div)
+    table = [tr_to_row_list(row) for row in rows]
+    return table
+
+
 def expand_spans(table):
     rowwise_expanded_table = expand_rows(table)
     fully_expanded_table = [expand_columns_in_row(row) for row in rowwise_expanded_table]

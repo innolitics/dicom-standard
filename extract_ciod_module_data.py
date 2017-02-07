@@ -6,13 +6,13 @@ Output the tables in JSON format, one entry per CIOD.
 import sys
 import re
 
-import parse_relations as pr
 import parse_lib as pl
-from table_utils import expand_spans, table_to_dict, stringify_table
+import parse_relations as pr
+from table_utils import expand_spans, table_to_dict, stringify_table, tdiv_to_table_list
 
 CIOD_CHAPTER_ID = 'chapter_A'
 CIOD_TABLE_SUFFIX = re.compile(".*IOD Modules$")
-COLUMN_TITLES = ['informationEntity', 'module', 'reference_fragment', 'usage']
+CIOD_COLUMN_TITLES = ['informationEntity', 'module', 'reference_fragment', 'usage']
 
 URL_PREFIX = "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#"
 
@@ -25,11 +25,6 @@ def get_ciod_tables(standard):
 def is_valid_ciod_table(table_div):
     return CIOD_TABLE_SUFFIX.match(pr.table_name(table_div))
 
-def tdiv_to_table_list(table_div):
-    rows = pr.table_rows(table_div)
-    table = [tr_to_row_list(row) for row in rows]
-    return table
-
 def tr_to_row_list(tr):
     cells = tr.find_all('td')
     return cells
@@ -37,13 +32,12 @@ def tr_to_row_list(tr):
 
 def tables_to_json(tables, tdivs):
     expanded_tables = list(map(expand_spans, tables))
-    # print(expanded_tables)
     stringified_tables = map(stringify_table, expanded_tables)
     table_dicts = map(ciod_table_to_dict, stringified_tables)
     return list(map(get_table_with_metadata, zip(table_dicts, tdivs)))
 
 def ciod_table_to_dict(table):
-    return table_to_dict(table, COLUMN_TITLES)
+    return table_to_dict(table, CIOD_COLUMN_TITLES)
 
 def get_table_with_metadata(table_with_tdiv):
     table, tdiv = table_with_tdiv
