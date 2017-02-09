@@ -49,8 +49,7 @@ stages:
         "id":"some-ciod",
         "description":"<p>HTML description above the CIOD table.</p>",
         "linkToStandard":"link_to_standard_for_CIOD",
-        "name":"Some CIOD",
-        "order":0
+        "name":"Some CIOD"
     },
     "some-other-ciod": {
         ...

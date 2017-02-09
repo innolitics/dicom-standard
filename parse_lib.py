@@ -14,6 +14,7 @@ from bs4 import BeautifulSoup, NavigableString
 FULL_TABLE_COLUMN_NUM = 4
 REFERENCE_COLUMN = 2
 
+BASE_DICOM_URL = "http://dicom.nema.org/medical/dicom/current/output/html/"
 
 def table_data_from_standard(standard, chapter_name, match_pattern, column_titles, column_correction):
     '''
@@ -360,6 +361,18 @@ def clean_table_name(name):
     clean_title, *splits = re.split('(IOD Modules)|(Module Attributes)|(Macro Attributes)|(Module Table)', title)
     return clean_title.strip()
 
+def clean_description(description_html):
+    parsed_html = BeautifulSoup(description_html, 'html.parser')
+    top_level_tag = get_top_level_tag(parsed_html)
+    tag_with_no_extra_attributes = remove_attributes_from_description_html(top_level_tag)
+    tag_with_resolved_hrefs = resolve_hrefs(tag_with_no_extra_attributes, BASE_DICOM_URL)
+    return str(add_targets_to_anchors(tag_with_resolved_hrefs))
+
+def get_top_level_tag(parsed_html):
+    top_level_tag = parsed_html.find('p', recursive=False)
+    if top_level_tag is None:
+        top_level_tag = description_html.find('div', recursive=False)
+    return top_level_tag
 
 def standard_link_from_fragment(fragment):
     url_prefix = "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#"
