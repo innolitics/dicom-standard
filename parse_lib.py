@@ -429,3 +429,7 @@ def add_targets_to_anchors(tag):
         if 'href' in anchor.attrs.keys():
             anchor['target'] = '_blank'
     return tag
+
+def text_from_html_string(html_string):
+    parsed_html = BeautifulSoup(html_string, 'html.parser')
+    return parsed_html.text.strip()
