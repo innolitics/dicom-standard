@@ -88,6 +88,9 @@ colspan = '''
     <td>1</td><td>2</td><td>3</td><td>4</td>
 </tr>
 <tr>
+    <td colspan="3"><a href="somelink">1</a></td><td>4</td>
+</tr>
+<tr>
     <td>1</td><td>2</td><td>3</td><td>4</td>
 </tr>
 </tbody>

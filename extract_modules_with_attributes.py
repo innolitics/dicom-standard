@@ -10,28 +10,21 @@ import parse_lib as pl
 import parse_relations as pr
 from table_utils import expand_spans, table_to_dict, stringify_table, tdiv_to_table_list
 
-MODULE_CHAPTER_ID = 'chapter_C'
-MODULE_TABLE_SUFFIX = re.compile("(.*Module Attributes$)|(.*Module Table$)")
-MODULE_COLUMN_TITLES = ['name', 'tag', 'type', 'description', 'macro_table_id']
+CHAPTER_ID = 'chapter_C'
+TABLE_SUFFIX = re.compile("(.*Module Attributes$)|(.*Module Table$)")
+COLUMN_TITLES_WITH_TYPE = ['name', 'tag', 'type', 'description']
+COLUMN_TITLES_NO_TYPE = ['name', 'tag', 'description']
 
 URL_PREFIX = "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#"
 
-def module_attribute_data_from_standard(standard):
-    chapter_name = "chapter_C"
-    match_pattern = re.compile("(.*Module Attributes$)|(.*Module Table$)")
-    column_titles = ['name', 'tag', 'type', 'description', 'macro_table_id']
-    column_correction = True
-    return pl.table_data_from_standard(standard, chapter_name, match_pattern,
-                                    column_titles, column_correction)
-
 def get_module_tables(standard):
-    chapter_C_table_divs = pl.all_tdivs_in_chapter(standard, MODULE_CHAPTER_ID)
+    chapter_C_table_divs = pl.all_tdivs_in_chapter(standard, CHAPTER_ID)
     module_table_divs = list(filter(is_valid_module_table, chapter_C_table_divs))
     module_table_lists = list(map(tdiv_to_table_list, module_table_divs))
     return (module_table_lists, module_table_divs)
 
 def is_valid_module_table(table_div):
-    return MODULE_TABLE_SUFFIX.match(pr.table_name(table_div))
+    return TABLE_SUFFIX.match(pr.table_name(table_div))
 
 
 def tables_to_json(tables, tdivs):
@@ -41,14 +34,18 @@ def tables_to_json(tables, tdivs):
     return list(map(get_table_with_metadata, zip(table_dicts, tdivs)))
 
 def module_table_to_dict(table):
-    return table_to_dict(table, MODULE_COLUMN_TITLES)
+    has_type_row = len(table[0]) > 3
+    column_titles = COLUMN_TITLES_WITH_TYPE if has_type_row else COLUMN_TITLES_NO_TYPE
+    return table_to_dict(table, column_titles)
 
 def get_table_with_metadata(table_with_tdiv):
     table, tdiv = table_with_tdiv
     clean_name = pl.clean_table_name(pr.table_name(tdiv))
+    print('\n')
+    print(table)
     return {
             'name': clean_name,
-            'attributes': table, # TODO: Update refactor proposal for this.
+            'attributes': table,
             'id': pl.create_slug(clean_name),
             'description': str(pr.table_description(tdiv)),
             'linkToStandard': URL_PREFIX + pr.table_id(tdiv)

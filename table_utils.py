@@ -7,6 +7,8 @@ rowspan expansion.
 '''
 from bs4 import BeautifulSoup as bs
 
+import parse_relations as pr
+
 def table_to_dict(table, row_names):
     return [dict(zip(row_names, row)) for row in table]
 
@@ -17,6 +19,10 @@ def tdiv_to_table_list(table_div):
     rows = pr.table_rows(table_div)
     table = [tr_to_row_list(row) for row in rows]
     return table
+
+def tr_to_row_list(tr):
+    cells = tr.find_all('td')
+    return cells
 
 
 def expand_spans(table):

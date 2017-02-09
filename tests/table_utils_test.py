@@ -45,6 +45,7 @@ def test_expand_colspan():
     expected_table = [
         ['<td colspan="1"><a href="somelink">1</a></td>', 'None', 'None', '<td>4</td>'],
         ['<td>1</td>', '<td>2</td>', '<td>3</td>', '<td>4</td>'],
+        ['<td colspan="1"><a href="somelink">1</a></td>', 'None', 'None', '<td>4</td>'],
         ['<td>1</td>', '<td>2</td>', '<td>3</td>', '<td>4</td>'],
     ]
     assert expanded_table == expected_table

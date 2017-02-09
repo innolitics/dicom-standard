@@ -96,15 +96,17 @@ JSON structure. Each table row is represented by the following structure:
 
 ```json
 {
-    "attributeField",
+    "name",
+    "tag",
+    "type",
     "description",
     "nestingLevel"
 }
 ```
 
-Where `attributeField` is either the `name`, `tag`, and `type` of a particular
-attribute or a link back to a macro. `description` is the contents of the
-description field to the right of the `attributeField` (may be an empty
+The `name`, `tag`, and `type` of a particular attribute contains either the
+module's information or a link back to a macro. `description` is the contents
+of the description field to the right of the `attributeField` (may be an empty
 string), and `nestingLevel` is represented by the number of ">" markers
 preceding the name of the attribute or macro.
 
@@ -120,18 +122,16 @@ The entire JSON structure is below:
         "name":"Some Module",
         "attributes":[
             {
-                "attributeField": {
-                    "name":"Referenced Study Sequence",
-                    "tag":"(0008,1110)",
-                    "type":null,
-                }
+                "name":"Referenced Study Sequence",
+                "tag":"(0008,1110)",
+                "type":null,
                 "description":"<p>Some HTML description of the attribute.</p>",
                 "nestingLevel": 0,
             },
             {
-                "attributeField": {
-                    "macroLink": "someMacroLink",
-                }
+                "name": "someMacroLink",
+                "tag":null,
+                "type":null,
                 "description":"<p>Some HTML description of the attribute.</p>",
                 "nestingLevel": 0,
             },
