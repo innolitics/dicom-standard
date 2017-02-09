@@ -41,8 +41,6 @@ def module_table_to_dict(table):
 def get_table_with_metadata(table_with_tdiv):
     table, tdiv = table_with_tdiv
     clean_name = pl.clean_table_name(pr.table_name(tdiv))
-    print('\n')
-    print(table)
     return {
             'name': clean_name,
             'attributes': table,
