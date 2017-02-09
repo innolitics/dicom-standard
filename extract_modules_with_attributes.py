@@ -34,8 +34,8 @@ def tables_to_json(tables, tdivs):
     return list(map(get_table_with_metadata, zip(table_dicts, tdivs)))
 
 def module_table_to_dict(table):
-    has_type_row = len(table[0]) > 3
-    column_titles = COLUMN_TITLES_WITH_TYPE if has_type_row else COLUMN_TITLES_NO_TYPE
+    has_type_column = len(table[0]) > 3
+    column_titles = COLUMN_TITLES_WITH_TYPE if has_type_column else COLUMN_TITLES_NO_TYPE
     return table_to_dict(table, column_titles)
 
 def get_table_with_metadata(table_with_tdiv):
