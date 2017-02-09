@@ -15,4 +15,3 @@ def table_id(table_div):
 
 def table_description(table_div):
     return table_div.parent.find('p')
-
