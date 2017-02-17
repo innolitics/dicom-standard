@@ -152,8 +152,8 @@ Attributes" substring at the end of each of the table headers. Each table will
 be parsed into the same JSON format as before:
 
 ```json
-[
-    {
+{
+    'table_id': {
         "name":"Some Macro Table",
         "attributes":[
             {
@@ -176,10 +176,10 @@ be parsed into the same JSON format as before:
         ]
         "id":"some-macro",
         "description":"<p>Some HTML description of the macro.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#this_table"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_id"
     },
     ...
-]
+}
 ```
 
 ### `extract_sections.py`

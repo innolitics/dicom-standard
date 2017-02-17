@@ -8,11 +8,11 @@ import re
 
 import parse_lib as pl
 import parse_relations as pr
-from table_utils import tdiv_to_table_list
+from table_utils import expand_spans, table_to_dict, stringify_table, tdiv_to_table_list
 
-# Since macro and module tables have the same form,
-# we can use the same table->JSON conversion for both.
-from extract_modules_with_attributes import tables_to_json
+# Macros and modules require the same metadata and formatting,
+# so they can share these two functions.
+from extract_modules_with_attributes import module_table_to_dict, get_table_with_metadata
 
 TABLE_SUFFIX = re.compile(".*Macro Attributes$")
 
@@ -24,6 +24,21 @@ def get_macro_tables(standard):
 
 def is_valid_macro_table(table_div):
     return TABLE_SUFFIX.match(pr.table_name(table_div))
+
+
+def tables_to_json(tables, tdivs):
+    expanded_tables = list(map(expand_spans, tables))
+    stringified_tables = map(stringify_table, expanded_tables)
+    table_dicts = map(module_table_to_dict, stringified_tables)
+    list_of_tables = list(map(get_table_with_metadata, zip(table_dicts, tdivs)))
+    dict_of_tables = {}
+    for table in list_of_tables:
+        dict_of_tables[get_table_html_id(table)] = table
+    return dict_of_tables
+
+def get_table_html_id(table):
+    url, html_id = table['linkToStandard'].split('#')
+    return html_id
 
 if __name__ == '__main__':
     standard = pl.parse_html_file(sys.argv[1])
