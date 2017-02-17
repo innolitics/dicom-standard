@@ -11,6 +11,7 @@ def enumerate_all_relationships(ciod_module_list):
     all_relationships = []
     for table in ciod_module_list:
         all_relationships.append(list(map(describe_relationship_with(table['name']), table['modules'])))
+    return all_relationships
 
 def describe_relationship_with(ciod_name):
     def enumerate_relationship(module):
@@ -24,22 +25,28 @@ def describe_relationship_with(ciod_name):
                }
     return enumerate_relationship
 
-# TODO: Improve this function (from before refactor). Too long and multifaceted.
-def expand_conditional_statement(usage_field):
-    stripped_usage_field = usage_field.strip()
+def expand_conditional_statement(usage_field_html):
+    usage_field = process_usage_html(usage_field_html)
+    conditional_statement = extract_conditional_statement(usage_field)
+    usage = usage_field[0]
+    return usage, conditional_statement
 
-    if len(stripped_usage_field) == 0:
+def process_usage_html(usage_field_html):
+    usage_field = pl.text_from_html_string(usage_field_html)
+    processed_usage_field = usage_field.strip()
+    if len(processed_usage_field) == 0:
         raise Exception('Empty module usage field')
+    return processed_usage_field
 
-    if stripped_usage_field.startswith('C - '):
-        conditional_statement = stripped_usage_field[4:].strip()
-    elif stripped_usage_field.startswith('C') and len(stripped_usage_field) > 1:
-        conditional_statement = stripped_usage_field[1:].strip()
+def extract_conditional_statement(usage_field):
+    if usage_field.startswith('C - '):
+        conditional_statement = usage_field[4:].strip()
+    elif usage_field.startswith('C') and len(usage_field) > 1:
+        conditional_statement = usage_field[1:].strip()
     else:
         conditional_statement = None
+    return conditional_statement
 
-    usage = stripped_usage_field[0]
-    return usage, conditional_statement
 
 if __name__ == '__main__':
     ciod_module_list = pl.read_json_to_dict(sys.argv[1])
