@@ -16,7 +16,7 @@ def expand_all_macros(module_attr_tables, macros):
                        for table in module_attr_tables]
     return expanded_tables
 
-# def expand_heirarchy(tables):
+# def expand_hierarchy(tables):
 
 
 # def format_table_data(tables):
@@ -26,6 +26,7 @@ if __name__ == '__main__':
     module_attr_tables = pl.read_json_to_dict(sys.argv[1])
     macro_tables = pl.read_json_to_dict(sys.argv[2])
     tables_with_macros = expand_all_macros(module_attr_tables, macro_tables)
-    # tables_with_hierarchy = expand_heirarchy(tables_with_macros)
+    # print(tables_with_macros)
+    # tables_with_hierarchy = expand_hierarchy(tables_with_macros)
     # cleaned_tables = format_table_data(tables_with_hierarchy)
     # pl.write_pretty_json(sys.argv[3], cleaned_tables)
