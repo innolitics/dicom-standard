@@ -8,6 +8,54 @@ stages:
 
 - **Process**: Takes a JSON file in and outputs a more refined JSON file.
 
+## Data Flow Chart
+```
+               +-------+    +-------+
+               | PS3.3 |    | PS3.6 |
+               +---+---+    +----+--+
+                   |             |
+                   |             +------------------------------+
+                   |                                            |
+       +--------------------------+-----------+                 |
+       |           |              |           |                 |
+   +---v-----+  +--v-------+  +---v-----+  +--v-------+  +------v-----+
+   | Extract |  | Extract  |  | Extract |  | Extract  |  |  Extract   |
+   | CIODs/  |  | Modules/ |  | Macros  |  | Sections |  | Attributes |
+   | Modules |  |  Attrs   |  +-+-------+  +--+-------+  +----+-------+
+   +-+------++  +--------+-+    |             |               |
+     |      |            |   +--+             |               |
+     |      |            |   |                |               |
++----v----+ |       +----v---v---+            |               |
+| Process | |       | Preprocess |            |               |
+|  CIODS  | |       |  Modules/  |            |               v
++----+----+ |       | Attributes |            |      attributes.json
+     |      |       +--+--------++            |
+     v      |          |        |             |
+ ciods.json |      +---v-----+  |             |
+            |      | Process |  |         +---+
+    +-------v---+  | Modules |  |         |
+    | Process   |  +-----+---+  +-+       |
+    |  CIOD/    |        |        |       |
+    | Attribute |        v        |       |
+    | Relations |   modules.json  |       |
+    +------+----+                 |       |
+           |                      |       |
+           v                +-----v-----+ |
+     ciod_module_rel.json   |  Process  | |
+                            |  Module   | |
+                            | Attribute | |
+                            | Relations | |
+                            +-----+-----+ |
+                                  |       |
+                           +------v-------v-+
+                           | Post-process   |
+                           | Add References |
+                           +------+---------+
+                                  |
+                                  v
+                           module_attr_rel.json
+```
+
 ## CIOD-Module Parse Chain
 
 ### `extract_ciod_module_data.py`
@@ -157,18 +205,16 @@ be parsed into the same JSON format as before:
         "name":"Some Macro Table",
         "attributes":[
             {
-                "attributeField": {
-                    "name":"Referenced Study Sequence",
-                    "tag":"(0008,1110)",
-                    "type":null,
-                }
+                "name":"Referenced Study Sequence",
+                "tag":"(0008,1110)",
+                "type":null,
                 "description":"<p>Some HTML description of the attribute.</p>",
                 "nestingLevel": 0,
             },
             {
-                "attributeField": {
-                    "macroLink": "someNestedMacroLink",
-                }
+                "name":"someNestedMacroLink",
+                "tag":"None",
+                "type":null,
                 "description":"<p>Some HTML description of the attribute.</p>",
                 "nestingLevel": 0,
             },
