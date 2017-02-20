@@ -5,7 +5,8 @@ attributes in the module-attribute relationship tables
 import re
 
 def get_hierarchy_level(name):
-    preceding_space, *split = re.split('^(>+)', name)
+    clean_name = name.strip()
+    preceding_space, *split = re.split('^(>+)', clean_name)
     if split == []:
         indicator = ''
     else:

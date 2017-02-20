@@ -3,6 +3,7 @@ Utility functions for expanding macros in the module-attribute
 relationship tables.
 '''
 import re
+from copy import deepcopy
 from bs4 import BeautifulSoup as bs
 
 import parse_lib as pl
@@ -36,13 +37,13 @@ def is_macro_row(attribute):
 # Note that this function *recursively expands* macro references using
 # the `expand_macro_rows` function.
 def get_macro_attributes(attribute, macros, table_id):
-    macro_id = get_macro_id(attribute['name'])
-    hierarchy_level = get_level_of_include(attribute['name'])
+    macro_id = referenced_macro_id_from_include_statement(attribute['name'])
+    hierarchy_level = get_include_markers_from_include(attribute['name'])
     if table_id != macro_id:
         return expand_macro_rows(get_macros_by_id(macro_id, macros, hierarchy_level), macros)
     return []
 
-def get_level_of_include(include_html):
+def get_include_markers_from_include(include_html):
     parsed_include = bs(include_html, 'html.parser')
     return get_hierarchy_level(parsed_include.get_text().strip())
 
@@ -50,30 +51,29 @@ def flatten(attribute_insertion_lists):
     return [attribute for insertion_list in attribute_insertion_lists
             for attribute in insertion_list]
 
-def get_macro_id(macro_reference_html):
+def referenced_macro_id_from_include_statement(macro_reference_html):
     parsed_reference = bs(macro_reference_html, 'html.parser')
     id_anchor = parsed_reference.find('a', class_='xref')
     return id_anchor.get('href')[1:] # Remove the first '#' character
 
 def get_macros_by_id(macro_id, macros, hierarchy_level):
-    macro = macros[macro_id]
-    # print(hierarchy_level)
+    # A copy is required so that local modifications to attributes
+    # (i.e. hierarchy marker modifications) don't persist.
+    macro = deepcopy(macros[macro_id])
     macro['attributes'] = update_attribute_hierarchy_levels(macro['attributes'], hierarchy_level)
     return macro
 
 def update_attribute_hierarchy_levels(attributes, level):
-    return [append_level_to_attr(attribute, level) for attribute in attributes]
+    return [add_level_to_attr(attribute, level) for attribute in attributes]
 
-def append_level_to_attr(attribute, level):
-    # print(attribute['name'])
-    parsed_attribute_name = bs(attribute['name'], 'html.parser').find('p')
-    # print(parsed_attribute_name.string)
-    # TODO: Modify the attribute name while retaining integrity of HTML?
-    # Is this actually necessary, or are we done with the HTML information
-    # in the name field?
-    parsed_attribute_name.string = level + parsed_attribute_name.string
-    attribute['name'] = str(parsed_attribute_name)
+def add_level_to_attr(attribute, level):
+    parsed_attribute_name = bs(attribute['name'], 'html.parser').find('td')
+    attribute['name'] = prepend_level_to_attribute_name(parsed_attribute_name, level)
     return attribute
+
+def prepend_level_to_attribute_name(new_attr_to_insert, level):
+    new_attr_to_insert.insert(0, level)
+    return str(new_attr_to_insert)
 
 def get_id_from_link(link):
     url, html_id = link.split('#')
