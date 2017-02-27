@@ -9,7 +9,6 @@ from bs4 import BeautifulSoup as bs
 import parse_lib as pl
 from hierarchy_utilities import get_hierarchy_level
 
-# TODO: add hierarchy markers to newly added macro attributes.
 def expand_macro_rows(table, macros):
     # This variable is used to stop an infinite macro reference
     # loop in the standard at the SR Document Content module.

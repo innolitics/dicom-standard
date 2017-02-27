@@ -34,7 +34,7 @@ def tables_to_json(tables, tdivs):
     list_of_tables = list(map(get_table_with_metadata, zip(table_dicts, tdivs)))
     dict_of_tables = {}
     for table in list_of_tables:
-        dict_of_tables[get_id_from_link(table['link_to_standard'])] = table
+        dict_of_tables[get_id_from_link(table['linkToStandard'])] = table
     return dict_of_tables
 
 if __name__ == '__main__':
