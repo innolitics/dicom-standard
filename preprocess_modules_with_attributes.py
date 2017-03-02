@@ -47,23 +47,27 @@ def record_hierarchy_for_module(table):
     last_id = [table['id']]
     current_level = -1
     for attr in table['attributes']:
-        attr_id = pl.create_slug(clean_field(attr['name']))
-        hier_level = get_hierarchy_level(attr['name'])
-        delta_l = hier_level - current_level
-        assert delta_l <= 1 # Should never skip levels
-        if delta_l == 0:
-            last_id[-1] = attr_id
-        elif delta_l == 1:
-            last_id.append(attr_id)
-            current_level += 1
-        elif delta_l < 0:
-            last_id = last_id[:delta_l]
-            last_id.append(attr_id)
-            current_level += (delta_l + 1)
+        last_id, current_level = update_hierarchy_position(attr, last_id, current_level)
         attr['name'] = clean_field(attr['name'])
         attr['tag'] = clean_field(attr['tag'])
         attr['id'] = ':'.join(last_id)
     return table
+
+def update_hierarchy_position(attr, last_id, current_level):
+    attr_id = pl.create_slug(clean_field(attr['name']))
+    attribute_level = get_hierarchy_level(attr['name'])
+    delta_l = attribute_level - current_level
+    assert delta_l <= 1 # Should never skip levels
+    if delta_l == 0:
+        last_id[-1] = attr_id
+    elif delta_l == 1:
+        last_id.append(attr_id)
+        current_level += 1
+    elif delta_l < 0:
+        last_id = last_id[:delta_l]
+        last_id.append(attr_id)
+        current_level += (delta_l + 1)
+    return last_id, current_level
 
 
 if __name__ == '__main__':
