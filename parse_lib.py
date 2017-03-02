@@ -62,8 +62,8 @@ def clean_table_entry(name):
 
 
 def create_slug(title):
-    first_pass_slugify = title.lower().replace(" ", "-").replace(",", "").replace("/", "-")
-    return re.sub('(\()|(\))', '', first_pass_slugify)
+    first_pass = re.sub(r'[\s/]+', '-', title.lower())
+    return re.sub(r'[\(\),\']+', '', first_pass)
 
 
 def condition_table_data(tdiv, all_tables, column_correction):

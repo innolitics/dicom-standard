@@ -4,11 +4,13 @@ attributes in the module-attribute relationship tables
 '''
 import re
 
-def get_hierarchy_level(name):
+def get_hierarchy_markers(name):
     clean_name = name.strip()
-    preceding_space, *split = re.split('^(>+)', clean_name)
-    if split == []:
-        indicator = ''
-    else:
-        indicator = split[0]
-    return indicator
+    _, *split = re.split('^(>+)', clean_name)
+    return '' if split == [] else split[0]
+
+def get_hierarchy_level(name):
+    return len(get_hierarchy_markers(name))
+
+def clean_field(name):
+    return re.sub(r'[>]', '', name).strip()

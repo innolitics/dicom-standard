@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 
 import parse_lib as pl
 from macro_utilities import expand_macro_rows
-from hierarchy_utilities import get_hierarchy_level
+from hierarchy_utilities import get_hierarchy_markers, get_hierarchy_level, clean_field
 
 def expand_all_macros(module_attr_tables, macros):
     expanded_attribute_lists = [expand_macro_rows(table, macros)
@@ -39,17 +39,31 @@ def remove_html_of_name_and_tag(attr):
     }
     return cleaned_attribute
 
-# def expand_hierarchy(tables):
-
-# TODO: should I extract the text from the HTML by this stage?
-# def record_hierarchy_for_module(table):
-#     parent = table['id']
-#     previous_attr_level = 0
-#     for attr in table['attributes']:
+def expand_hierarchy(tables):
+    return [record_hierarchy_for_module(table) for table in tables]
 
 
-# def format_table_data(tables):
-
+def record_hierarchy_for_module(table):
+    last_id = [table['id']]
+    current_level = -1
+    for attr in table['attributes']:
+        attr_id = pl.create_slug(clean_field(attr['name']))
+        hier_level = get_hierarchy_level(attr['name'])
+        delta_l = hier_level - current_level
+        assert delta_l <= 1 # Should never skip levels
+        if delta_l == 0:
+            last_id[-1] = attr_id
+        elif delta_l == 1:
+            last_id.append(attr_id)
+            current_level += 1
+        elif delta_l < 0:
+            last_id = last_id[:delta_l]
+            last_id.append(attr_id)
+            current_level += (delta_l + 1)
+        attr['name'] = clean_field(attr['name'])
+        attr['tag'] = clean_field(attr['tag'])
+        attr['id'] = ':'.join(last_id)
+    return table
 
 
 if __name__ == '__main__':
@@ -57,7 +71,5 @@ if __name__ == '__main__':
     macro_tables = pl.read_json_to_dict(sys.argv[2])
     tables_with_macros = expand_all_macros(module_attr_tables, macro_tables)
     preprocessed_tables = preprocess_attribute_fields(tables_with_macros)
-    print(list(preprocessed_tables))
-    # tables_with_hierarchy = expand_hierarchy(tables_with_macros)
-    # cleaned_tables = format_table_data(tables_with_hierarchy)
-    # pl.write_pretty_json(sys.argv[3], cleaned_tables)
+    tables_with_hierarchy = expand_hierarchy(preprocessed_tables)
+    pl.write_pretty_json(sys.argv[3], tables_with_hierarchy)

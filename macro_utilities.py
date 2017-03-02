@@ -7,7 +7,7 @@ from copy import deepcopy
 from bs4 import BeautifulSoup as bs
 
 import parse_lib as pl
-from hierarchy_utilities import get_hierarchy_level
+from hierarchy_utilities import get_hierarchy_markers
 
 def expand_macro_rows(table, macros):
     # This variable is used to stop an infinite macro reference
@@ -44,7 +44,7 @@ def get_macro_attributes(attribute, macros, table_id):
 
 def get_include_markers_from_include(include_html):
     parsed_include = bs(include_html, 'html.parser')
-    return get_hierarchy_level(parsed_include.get_text().strip())
+    return get_hierarchy_markers(parsed_include.get_text().strip())
 
 def flatten(attribute_insertion_lists):
     return [attribute for insertion_list in attribute_insertion_lists
