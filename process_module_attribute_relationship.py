@@ -5,14 +5,12 @@ import parse_lib as pl
 def module_attr_relationship_table(module_attr_relationship_list):
     entries = []
     for module in module_attr_relationship_list:
-        for i, attribute in enumerate(module['data']):
+        for attribute in module['attributes']:
             entries.append({
                 'module': module['id'],
                 'moduleDescription': module['description'],
-                'path': (module['id'] + ':' + attribute['id']),
+                'path': attribute['id'],
                 'tag': attribute['tag'],
-                'order': i,
-                'depth': get_depth(attribute['id']),
                 'type': attribute['type'],
                 'linkToStandard': get_standard_link(module, attribute),
                 'description': attribute['description']
@@ -20,13 +18,10 @@ def module_attr_relationship_table(module_attr_relationship_list):
     return entries
 
 def get_standard_link(module, attribute):
-    if attribute['linkToStandard'] is None:
+    if 'linkToStandard' not in attribute.keys():
         return module['linkToStandard']
     else:
         return attribute['linkToStandard']
-
-def get_depth(attribute_id):
-    return len(attribute_id.split(':'))-1
 
 if __name__ == "__main__":
     module_attr_list = pl.read_json_to_dict(sys.argv[1])
