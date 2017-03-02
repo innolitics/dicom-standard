@@ -28,13 +28,15 @@ def preprocess_attribute_fields(tables):
     return [preprocess_single_table(table) for table in tables]
 
 def preprocess_single_table(table):
-    table['attributes'] = list(map(remove_html_of_name_and_tag, table['attributes']))
+    table['attributes'] = list(map(preprocess_attribute, table['attributes']))
     return table
 
-def remove_html_of_name_and_tag(attr):
+def preprocess_attribute(attr):
     cleaned_attribute = {
         'name': BeautifulSoup(attr['name'], 'html.parser').get_text(),
         'tag': BeautifulSoup(attr['tag'], 'html.parser').get_text(),
+        'type': 'None' if 'type' not in attr.keys()
+                else BeautifulSoup(attr['type'], 'html.parser').get_text(),
         'description': attr['description']
     }
     return cleaned_attribute
@@ -48,13 +50,11 @@ def record_hierarchy_for_module(table):
     current_level = -1
     for attr in table['attributes']:
         last_id, current_level = update_hierarchy_position(attr, last_id, current_level)
-        attr['name'] = clean_field(attr['name'])
-        attr['tag'] = clean_field(attr['tag'])
-        attr['id'] = ':'.join(last_id)
+        update_attribute(attr, last_id)
     return table
 
 def update_hierarchy_position(attr, last_id, current_level):
-    attr_id = pl.create_slug(clean_field(attr['name']))
+    attr_id = pl.create_slug(clean_field(attr['tag']))
     attribute_level = get_hierarchy_level(attr['name'])
     delta_l = attribute_level - current_level
     assert delta_l <= 1 # Should never skip levels
@@ -69,6 +69,11 @@ def update_hierarchy_position(attr, last_id, current_level):
         current_level += (delta_l + 1)
     return last_id, current_level
 
+def update_attribute(attr, last_id):
+    attr['name'] = clean_field(attr['name'])
+    attr['tag'] = clean_field(attr['tag'])
+    attr['type'] = clean_field(attr['type'])
+    attr['id'] = ':'.join(last_id)
 
 if __name__ == '__main__':
     module_attr_tables = pl.read_json_to_dict(sys.argv[1])
