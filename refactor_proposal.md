@@ -41,7 +41,7 @@ stages:
     +------+----+                 |       |
            |                      |       |
            v                +-----v-----+ |
-     ciod_module_rel.json   |  Process  | |
+     ciod_to_modules.json   |  Process  | |
                             |  Module   | |
                             | Attribute | |
                             | Relations | |
@@ -53,7 +53,7 @@ stages:
                            +------+---------+
                                   |
                                   v
-                           module_attr_rel.json
+                           module_to_attributes.json
 ```
 
 ## CIOD-Module Parse Chain
@@ -234,10 +234,17 @@ This step extracts each section into its own HTML string tagged by its id.
 While this does produce lots of redundant HTML, it allows us to easily access
 any particular section in the standard without reloading the HTML.
 
+This extraction is done for all sections of the DICOM standard that have
+explicit references in attribute descriptions.
+
 ```json
 {
-    'sect_F.5.30': "<div>some html blob</div>",
-    'sect_F.5.31': "<div>some other html blob</div>",
+    'part03':{
+        'sect_F.5.30': "<div>some html blob</div>",
+        'sect_F.5.31': "<div>some other html blob</div>",
+        ...
+    },
+    'part04': { ... },
     ...
 }
 ```
