@@ -13,45 +13,66 @@ core_tables: dist/ciods.json dist/modules.json dist/attributes.json
 relationship_tables: dist/ciod_to_modules.json dist/module_to_attributes.json
 
 
-# TODO: find a way around doing this
-# module_to_attributes is made as a side effect when making references
-dist/module_to_attributes.json: dist/references.json
+dist/ciods.json: tmp/raw_ciod_module_tables.json
+	python3 process_ciods.py $< $@
 
-dist/references.json: tmp/module_to_attributes_raw_description.json tmp/PS3.3-cleaned.html extract_references.py
-	python3 extract_references.py tmp/references_raw.json dist/module_to_attributes.json $^
-	cat tmp/references_raw.json | sed -e 's/\\u00a0/ /g' > $@
+dist/ciod_to_modules.json: tmp/raw_ciod_module_tables.json
+	python3 process_ciod_module_relationship.py $< $@
 
-dist/ciod_to_modules.json: tmp/ciods_with_modules.json
-	python3 normalize_ciod_module_relationship.py $< $@
+dist/modules.json: tmp/preprocessed_modules_attributes.json
+	python3 process_modules.py $< $@
 
-tmp/module_to_attributes_raw_description.json: tmp/modules_with_attributes.json
-	python3 normalize_module_attr_relationship.py $< $@
+dist/module_to_attributes.json: tmp/modules_attributes_no_references.json tmp/raw_section_tables.json
+	python3 postprocess_add_references.py $^ $@ dist/references.json
 
+dist/attributes.json: tmp/PS3.6-cleaned.html extract_attributes.py
+	python3 extract_attributes.py $< $@
 
-dist/ciods.json: tmp/ciods_with_modules.json
-	python3 normalize_ciods.py $< $@
-
-dist/modules.json: tmp/modules_with_attributes.json
-	python3 normalize_modules.py $< $@
-
-dist/attributes.json: tmp/PS3.6-cleaned.html extract_data_element_registry.py
-	python3 extract_data_element_registry.py $< $@
+dist/references.json: dist/module_to_attributes.json
 
 
-tmp/ciods_with_modules.json: tmp/PS3.3-cleaned.html extract_ciods_with_modules.py
-	python3 extract_ciods_with_modules.py $< $@
 
-tmp/modules_with_attributes.json: tmp/modules_with_raw_attributes.json process_modules_with_attributes.py
-	python3 process_modules_with_attributes.py $< $@
+tmp/modules_attributes_no_references.json: tmp/preprocessed_modules_attributes.json
+	python3 process_module_attribute_relationship.py $< $@
 
-tmp/modules_with_raw_attributes.json: tmp/PS3.3-cleaned.html extract_modules_with_attributes.py
+tmp/preprocessed_modules_attributes.json: tmp/raw_module_attribute_tables.json tmp/raw_macro_tables.json
+	python3 preprocess_modules_with_attributes.py $^ $@
+
+tmp/raw_ciod_module_tables.json: tmp/PS3.3-cleaned.html extract_ciod_module_data.py
+	python3 extract_ciod_module_data.py $< $@
+
+tmp/raw_module_attribute_tables.json: tmp/PS3.3-cleaned.html extract_modules_with_attributes.py
 	python3 extract_modules_with_attributes.py $< $@
+
+tmp/raw_macro_tables.json: tmp/PS3.3-cleaned.html extract_macros.py
+	python3 extract_macros.py $< $@
+
+tmp/raw_section_tables.json: extract_sections.py tmp/PS3.3-cleaned.html tmp/PS3.4-cleaned.html \
+                             tmp/PS3.6-cleaned.html tmp/PS3.15-cleaned.html tmp/PS3.16-cleaned.html \
+                             tmp/PS3.17-cleaned.html tmp/PS3.18-cleaned.html
+	python3 $^ $@
+
 
 
 tmp/PS3.3-cleaned.html: PS3.3.html
 	cat $< | sed -e 's/&nbps;/ /g' > $@
 
+tmp/PS3.4-cleaned.html: PS3.4.html
+	cat $< | sed -e 's/&nbps;/ /g' -e 's/​//g' > $@
+
 tmp/PS3.6-cleaned.html: PS3.6.html
+	cat $< | sed -e 's/&nbps;/ /g' -e 's/​//g' > $@
+
+tmp/PS3.15-cleaned.html: PS3.15.html
+	cat $< | sed -e 's/&nbps;/ /g' -e 's/​//g' > $@
+
+tmp/PS3.16-cleaned.html: PS3.16.html
+	cat $< | sed -e 's/&nbps;/ /g' -e 's/​//g' > $@
+
+tmp/PS3.17-cleaned.html: PS3.17.html
+	cat $< | sed -e 's/&nbps;/ /g' -e 's/​//g' > $@
+
+tmp/PS3.18-cleaned.html: PS3.18.html
 	cat $< | sed -e 's/&nbps;/ /g' -e 's/​//g' > $@
 
 
@@ -68,7 +89,12 @@ updatestandard:
 	if [ ! -d old_standards ]; then mkdir old_standards; fi
 	mv PS3.* old_standards/
 	wget http://dicom.nema.org/medical/dicom/current/output/html/part03.html -O PS3.3.html
+	wget http://dicom.nema.org/medical/dicom/current/output/html/part04.html -O PS3.4.html
 	wget http://dicom.nema.org/medical/dicom/current/output/html/part06.html -O PS3.6.html
+	wget http://dicom.nema.org/medical/dicom/current/output/html/part15.html -O PS3.15.html
+	wget http://dicom.nema.org/medical/dicom/current/output/html/part16.html -O PS3.16.html
+	wget http://dicom.nema.org/medical/dicom/current/output/html/part17.html -O PS3.17.html
+	wget http://dicom.nema.org/medical/dicom/current/output/html/part18.html -O PS3.18.html
 
 checkversions:
 	@python3 --version 2>&1 | grep -q 3.5. || { echo "Need Python 3.5" && exit 1; }
