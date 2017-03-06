@@ -1,6 +1,6 @@
 import pytest
 
-from extract_ciods_with_modules import expand_conditional_statement
+from process_ciod_module_relationship import expand_conditional_statement
 
 
 def test_expand_conditional_statement_normal_cases():
