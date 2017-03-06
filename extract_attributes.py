@@ -26,7 +26,7 @@ def attribute_table_to_list(table_div):
             for row in pr.table_rows(table_div)]
 
 
-def table_to_json(table):
+def attribute_table_to_json(table):
     attribute_dict = {}
     for attr in table:
         attr_slug = pl.create_slug(attr['tag'])
@@ -39,5 +39,5 @@ def table_to_json(table):
 if __name__ == '__main__':
     standard = pl.parse_html_file(sys.argv[1])
     table = get_attribute_table(standard)
-    parsed_table_data = table_to_json(table)
+    parsed_table_data = attribute_table_to_json(table)
     pl.write_pretty_json(sys.argv[2], parsed_table_data)
