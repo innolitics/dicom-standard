@@ -10,19 +10,19 @@ import parse_lib as pl
 def enumerate_all_relationships(ciod_module_list):
     all_relationships = []
     for table in ciod_module_list:
-        all_relationships.append(list(map(describe_relationship_with(table['name']), table['modules'])))
+        all_relationships.extend(list(map(describe_relationship_with(table['name']), table['modules'])))
     return all_relationships
 
 def describe_relationship_with(ciod_name):
     def enumerate_relationship(module):
         usage, conditional_statement = expand_conditional_statement(module['usage'])
-        return { 
-                "ciod": ciod_name,
-                "module": pl.text_from_html_string(module['module']),
-                "usage": usage,
-                "conditionalStatement": conditional_statement, 
-                "informationEntity": pl.text_from_html_string(module['informationEntity'])
-               }
+        return {
+            "ciod": pl.create_slug(ciod_name),
+            "module": pl.create_slug(pl.text_from_html_string(module['module'])),
+            "usage": usage,
+            "conditionalStatement": conditional_statement,
+            "informationEntity": pl.text_from_html_string(module['informationEntity'])
+        }
     return enumerate_relationship
 
 def expand_conditional_statement(usage_field_html):

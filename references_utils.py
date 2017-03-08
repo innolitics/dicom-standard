@@ -11,8 +11,7 @@ def references_in_module_attr_pair(pair):
     standard_locations = list(map(get_ref_standard_location, references))
     reference_urls = list(map(get_source_url_from_section_id, standard_locations))
     list(map(mark_as_recorded, references))
-    if len(reference_urls) > 0:
-        pair['externalReferences'] = reference_urls
+    pair['externalReferences'] = [] if len(reference_urls) < 1 else reference_urls
     return standard_locations
 
 def get_valid_reference_anchors(html):

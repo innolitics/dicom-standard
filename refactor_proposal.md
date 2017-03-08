@@ -10,15 +10,15 @@ stages:
 
 ## Data Flow Chart
 ```
-               +-------+    +-------+
-               | PS3.3 |    | PS3.6 |
-               +---+---+    +----+--+
-                   |             |
-                   |             +------------------------------+
-                   |                                            |
-       +--------------------------+-----------+                 |
-       |           |              |           |                 |
-   +---v-----+  +--v-------+  +---v-----+  +--v-------+  +------v-----+
+               +-------+                  +----------+     +-------+
+               | PS3.3 |                  |  Other   |     | PS3.6 |
+               +---+---+                  |  DICOM   |     +----+--+
+                   |                      | Sections |          |
+                   |                      +-------+--+          |
+                   |                              |             |
+       +--------------------------+-----------+   |             |
+       |           |              |           |   |             |
+   +---v-----+  +--v-------+  +---v-----+  +--v---v---+  +------v-----+
    | Extract |  | Extract  |  | Extract |  | Extract  |  |  Extract   |
    | CIODs/  |  | Modules/ |  | Macros  |  | Sections |  | Attributes |
    | Modules |  |  Attrs   |  +-+-------+  +--+-------+  +----+-------+
@@ -32,28 +32,28 @@ stages:
      |      |       +--+--------++            |
      v      |          |        |             |
  ciods.json |      +---v-----+  |             |
-            |      | Process |  |         +---+
-    +-------v---+  | Modules |  |         |
-    | Process   |  +-----+---+  +-+       |
-    |  CIOD/    |        |        |       |
-    | Attribute |        v        |       |
-    | Relations |   modules.json  |       |
-    +------+----+                 |       |
-           |                      |       |
-           v                +-----v-----+ |
-     ciod_to_modules.json   |  Process  | |
-                            |  Module   | |
-                            | Attribute | |
-                            | Relations | |
-                            +-----+-----+ |
-                                  |       |
-                           +------v-------v-+
-                           | Post-process   |
-                           | Add References |
-                           +------+---------+
-                                  |
-                                  v
-                           module_to_attributes.json
+            |      | Process |  |             |
+    +-------v---+  | Modules |  |             |
+    | Process   |  +-----+---+  +-+           |
+    |  CIOD/    |        |        |           |
+    | Attribute |        v        |           |
+    | Relations |   modules.json  |           |
+    +------+----+                 |           |
+           |                      |           |
+           v                +-----v-----+     |
+     ciod_to_modules.json   |  Process  |     |
+                            |  Module   |     |
+                            | Attribute |     |
+                            | Relations |     |
+                            +-----+-----+     |
+                                  |           |
+                                +-+-----------+--+
+                                | Post+process   |
+                                | Add References |
+                                +--+----------+--+
+                                   |          |
+                                   v          v
+            module_to_attributes.json       references.json
 ```
 
 ## CIOD-Module Parse Chain
@@ -105,6 +105,7 @@ stages:
     ...
 }
 ```
+*Differences from old version: removed the "order" key.*
 
 ### `process_ciod_module_relationship.py`
 
@@ -119,7 +120,6 @@ stages:
         "module":"some-module",
         "usage":"M",
         "conditionalStatement":null,
-        "order":0,
         "informationEntity":"Patient"
     },
     {
@@ -127,12 +127,12 @@ stages:
         "module":"some-other-module",
         "usage":"M",
         "conditionalStatement":null,
-        "order":1,
         "informationEntity":"Patient"
     },
     ...
 ]
 ```
+*Differences from old version: removed "order" key*
 
 ## Module-Attribute Parse Chain
 
@@ -356,11 +356,13 @@ As a result of this, the stage outputs **two** finalized JSON files:
 `references.json`:
 ```json
 {
-    'sect_F.5.30': "<div>some referenced html blob</div>",
-    'sect_F.5.31': "<div>some other referenced html blob</div>",
+    "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_F.5.30": "<div>some referenced html blob</div>",
+    "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_F.5.31": "<div>some other referenced html blob</div>",
     ...
 }
 ```
+*Differences from old version of `references.json`: the value for each URL is
+simply the source HTML, not a dict with "html" and "sourceUrl" keys.*
 
 
 `module_to_attributes.json`:
@@ -375,16 +377,16 @@ As a result of this, the stage outputs **two** finalized JSON files:
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#some-table",
         "description":"<p>Description of attribute.</p>",
         "externalReferences": [
-            {
-                "anchorText": "Section Something",
-                "sourceUrl": "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#some-section",
-            }
+            "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#some-section",
         ]
     },
     ...
 ]
-
 ```
+*Differences from old version: "externalReferences" holds an array of URL
+strings rather than a dict with keys "text" and "sourceUrl". Also, there is no
+"order" or "depth" fields, since they were unnecessary and redundant,
+respectively.*
 
 ## Extracting Attributes
 
