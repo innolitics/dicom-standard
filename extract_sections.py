@@ -3,9 +3,9 @@ import re
 from bs4 import BeautifulSoup
 
 from parse_lib import parse_html_file, write_pretty_json
+from parse_relations import section_div_from_id, figure_div_from_id
 
 referenced_ids = r'(sect.*)|(figure.*)|(biblio.*)|(table.*)|(note.*)'
-BASE_DICOM_URL = "http://dicom.nema.org/medical/dicom/current/output/html/"
 
 def extract_section_ids(standard):
     return {page: html.find_all('a', attrs={'id': re.compile(referenced_ids)})
@@ -13,14 +13,11 @@ def extract_section_ids(standard):
 
 def section_html_from_id_anchor(sect_id_anchor):
     if re.match(r'sect.*', sect_id_anchor['id']):
-        return sect_id_anchor.parent.parent.parent.parent.parent
-    elif re.match(r'(biblio.*)|(table.*)|(note.*)', sect_id_anchor['id']):
-        return sect_id_anchor.parent
-    elif re.match(r'figure.*', sect_id_anchor['id']):
-        return sect_id_anchor.parent
+        return section_div_from_id(sect_id_anchor)
+    elif re.match(r'(biblio.*)|(table.*)|(note.*)|(figure.*)', sect_id_anchor['id']):
+        return figure_div_from_id(sect_id_anchor)
     else:
-        print(sect_id_anchor.parent)
-        raise Exception
+        raise Exception(sect_id_anchor.parent + "didn't match a known pattern.")
 
 
 def normalize_sections(all_sections):

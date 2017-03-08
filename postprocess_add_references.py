@@ -7,13 +7,13 @@ on reference links that are successfully recorded.
 import sys
 
 import parse_lib as pl
+from macro_utils import flatten_one_layer
 from references_utils import (resolve_relative_resource_urls, references_in_module_attr_pair,
-                             get_source_url_from_section_id)
+                              get_source_url_from_section_id)
 
 def add_refs_to_pairs(module_attr_pairs):
-    standard_locations = list(map(references_in_module_attr_pair, module_attr_pairs))
-    references_to_record = set([location for attr_locations in standard_locations
-                                for location in attr_locations])
+    reference_locations = [references_in_module_attr_pair(pair) for pair in module_attr_pairs]
+    references_to_record = set(flatten_one_layer(reference_locations))
     return module_attr_pairs, references_to_record
 
 def record_reference_html(refs_to_record, section_listing):

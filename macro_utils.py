@@ -7,7 +7,7 @@ from copy import deepcopy
 from bs4 import BeautifulSoup as bs
 
 import parse_lib as pl
-from hierarchy_utilities import get_hierarchy_markers
+from hierarchy_utils import get_hierarchy_markers
 
 def expand_macro_rows(table, macros):
     # This variable is used to stop an infinite macro reference
@@ -15,7 +15,9 @@ def expand_macro_rows(table, macros):
     table_id = get_id_from_link(table['linkToStandard'])
     attribute_insertion_lists = [get_attributes_to_insert(attr, macros, table_id)
                                  for attr in table['attributes']]
-    return flatten(attribute_insertion_lists)
+    new_table = flatten_one_layer(attribute_insertion_lists)
+    # Removes divider or stylistic rows
+    return [attribute for attribute in new_table if attribute['tag'] != 'None']
 
 def get_attributes_to_insert(attribute, macros, table_id):
     if is_macro_row(attribute):
@@ -37,18 +39,15 @@ def is_macro_row(attribute):
 # the `expand_macro_rows` function.
 def get_macro_attributes(attribute, macros, table_id):
     macro_id = referenced_macro_id_from_include_statement(attribute['name'])
-    hierarchy_level = get_include_markers_from_include(attribute['name'])
+    parsed_name = bs(attribute['name'], 'html.parser').get_text()
+    hierarchy_level = get_hierarchy_markers(parsed_name)
     if table_id != macro_id:
         return expand_macro_rows(get_macros_by_id(macro_id, macros, hierarchy_level), macros)
     return []
 
-def get_include_markers_from_include(include_html):
-    parsed_include = bs(include_html, 'html.parser')
-    return get_hierarchy_markers(parsed_include.get_text().strip())
-
-def flatten(attribute_insertion_lists):
-    return [attribute for insertion_list in attribute_insertion_lists
-            for attribute in insertion_list]
+def flatten_one_layer(nested_element_list):
+    return [element for element_list in nested_element_list
+            for element in element_list]
 
 def referenced_macro_id_from_include_statement(macro_reference_html):
     parsed_reference = bs(macro_reference_html, 'html.parser')

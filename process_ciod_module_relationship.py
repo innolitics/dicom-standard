@@ -10,7 +10,8 @@ import parse_lib as pl
 def enumerate_all_relationships(ciod_module_list):
     all_relationships = []
     for table in ciod_module_list:
-        all_relationships.extend(list(map(describe_relationship_with(table['name']), table['modules'])))
+        all_relationships.extend(list(map(describe_relationship_with(table['name']),
+                                          table['modules'])))
     return all_relationships
 
 def describe_relationship_with(ciod_name):

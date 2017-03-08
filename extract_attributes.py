@@ -12,16 +12,11 @@ ATTR_TABLE_ID = 'table_6-1'
 
 def get_attribute_table(standard):
     all_tables = standard.find_all('div', class_='table')
-    html_table = pl.find_table_div(all_tables, ATTR_TABLE_ID)
+    html_table = pl.find_tdiv_by_id(all_tables, ATTR_TABLE_ID)
     list_table = attribute_table_to_list(html_table)
     return table_to_dict(list_table, COLUMN_TITLES)
 
 def attribute_table_to_list(table_div):
-    '''
-    Unlike other extract steps, attributes do not have a processing
-    stage. Therefore, the HTML does not have to be preserved and the
-    text can be directly parsed with `cell.text.strip()`.
-    '''
     return [[cell.text.strip() for cell in row.find_all('td')]
             for row in pr.table_rows(table_div)]
 
@@ -32,7 +27,7 @@ def attribute_table_to_json(table):
         attr_slug = pl.create_slug(attr['tag'])
         attribute_dict[attr_slug] = attr
         attribute_dict[attr_slug]['tag'] = attr['tag'].upper()
-        attribute_dict[attr_slug]['retired'] = False if attr['retired'] == '' else True
+        attribute_dict[attr_slug]['retired'] = True if attr['retired'] == 'RET' else False
     return attribute_dict
 
 
