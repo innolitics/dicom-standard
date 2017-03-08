@@ -1,10 +1,8 @@
 '''
 Functions for low-level manipulation of standard tables,
 represented by a list-of-lists.
-
-TODO: Figure out duplicated and concatenated row bugs in the 
-rowspan expansion.
 '''
+from copy import copy
 from bs4 import BeautifulSoup as bs
 
 import parse_relations as pr
@@ -17,17 +15,12 @@ def stringify_table(table):
 
 def tdiv_to_table_list(table_div):
     rows = pr.table_rows(table_div)
-    table = [tr_to_row_list(row) for row in rows]
+    table = [row.find_all('td') for row in rows]
     return table
-
-def tr_to_row_list(tr):
-    cells = tr.find_all('td')
-    return cells
-
 
 def expand_spans(table):
     rowwise_expanded_table = expand_rows(table)
-    fully_expanded_table = [expand_columns_in_row(row) for row in rowwise_expanded_table]
+    fully_expanded_table = list(map(expand_columns_in_row, rowwise_expanded_table))
     return fully_expanded_table
 
 
@@ -81,11 +74,15 @@ def decrement_rowspan_counter(cell):
         cell['rowspan'] = int(cell['rowspan']) - 1
     return cell
 
+def clear_rowspan_counter(cell):
+    cell['rowspan'] = 1
+
 def update_row_expansion_counter(row, row_expansion):
     row_expansion = remove_completed_rowspans(row_expansion)
     for idx, cell in enumerate(row):
         if is_new_rowspan_cell(cell, idx, row_expansion):
-            row_expansion.append((cell, idx))
+            row_expansion.append((copy(cell), idx))
+            clear_rowspan_counter(cell)
     return row_expansion
 
 def is_new_rowspan_cell(cell, idx, row_expansion):
@@ -100,9 +97,6 @@ def has_rowspans_to_expand(cell):
     rowspan_attr = cell.get('rowspan')
     return int(cell.get('rowspan')) > 1 if rowspan_attr is not None else None
 
-
-def expand_columns(table):
-    return [expand_columns_in_row(row) for row in table]
 
 def expand_columns_in_row(row):
     expanded_cells = map(expand_cell_colspan, row)
