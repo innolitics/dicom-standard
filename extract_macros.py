@@ -15,7 +15,6 @@ from macro_utils import get_id_from_link
 # so they can share these two functions.
 from extract_modules_with_attributes import module_table_to_dict, get_table_with_metadata
 
-# TODO: change regex syntax to r'' instead of re.compile()?
 TABLE_SUFFIX = re.compile("(.*Macro Attributes$)|(.*Macro Attributes Description$)")
 
 def get_macro_tables(standard):
