@@ -22,11 +22,22 @@ def record_reference_html(refs_to_record, section_listing):
                   for page, sect_id in refs_to_record}
     return references
 
+def mark_canonical_attributes(module_attr_with_refs):
+    canonical_pairs = {}
+    for pair in module_attr_with_refs:
+        attr_id = pair['path'].split(':')[-1]
+        if attr_id not in canonical_pairs:
+            canonical_pairs[attr_id] = pair
+            pair['canonical'] = True
+        else:
+            pair['canonical'] = False
+    return module_attr_with_refs
 
 if __name__ == '__main__':
     module_attr_pairs = pl.read_json_to_dict(sys.argv[1])
     section_listing = pl.read_json_to_dict(sys.argv[2])
     module_attr_with_refs, refs_to_record = add_refs_to_pairs(module_attr_pairs)
     references = record_reference_html(refs_to_record, section_listing)
-    pl.write_pretty_json(sys.argv[3], module_attr_with_refs)
+    modules_with_canonical = mark_canonical_attributes(module_attr_with_refs)
+    pl.write_pretty_json(sys.argv[3], modules_with_canonical)
     pl.write_pretty_json(sys.argv[4], references)

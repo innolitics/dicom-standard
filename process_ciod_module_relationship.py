@@ -48,8 +48,18 @@ def extract_conditional_statement(usage_field):
         conditional_statement = None
     return conditional_statement
 
+def mark_canonical_modules(ciod_module_relationships):
+    canonical_pairs = {}
+    for pair in ciod_module_relationships:
+        if pair['module'] not in canonical_pairs:
+            canonical_pairs[pair['module']] = pair
+            pair['canonical'] = True
+        else:
+            pair['canonical'] = False
+    return ciod_module_relationships
 
 if __name__ == '__main__':
     ciod_module_list = pl.read_json_to_dict(sys.argv[1])
     ciod_module_relationships = enumerate_all_relationships(ciod_module_list)
+    ciods_modules_with_canonicals = mark_canonical_modules(ciod_module_relationships)
     pl.write_pretty_json(sys.argv[2], ciod_module_relationships)
