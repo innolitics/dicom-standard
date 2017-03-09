@@ -51,11 +51,9 @@ def extract_conditional_statement(usage_field):
 def mark_canonical_modules(ciod_module_relationships):
     canonical_pairs = {}
     for pair in ciod_module_relationships:
-        if pair['module'] not in canonical_pairs:
+        pair['canonical'] = pair['module'] not in canonical_pairs
+        if pair['canonical']:
             canonical_pairs[pair['module']] = pair
-            pair['canonical'] = True
-        else:
-            pair['canonical'] = False
     return ciod_module_relationships
 
 if __name__ == '__main__':

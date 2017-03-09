@@ -26,11 +26,9 @@ def mark_canonical_attributes(module_attr_with_refs):
     canonical_pairs = {}
     for pair in module_attr_with_refs:
         attr_id = pair['path'].split(':')[-1]
-        if attr_id not in canonical_pairs:
+        pair['canonical'] = attr_id not in canonical_pairs
+        if pair['canonical']:
             canonical_pairs[attr_id] = pair
-            pair['canonical'] = True
-        else:
-            pair['canonical'] = False
     return module_attr_with_refs
 
 if __name__ == '__main__':
