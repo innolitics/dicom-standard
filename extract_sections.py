@@ -22,7 +22,7 @@ def section_html_from_id_anchor(sect_id_anchor):
     elif re.match(r'(biblio.*)|(table.*)|(note.*)|(figure.*)', sect_id_anchor['id']):
         return figure_div_from_id(sect_id_anchor)
     else:
-        raise Exception(sect_id_anchor.parent + "didn't match a known pattern.")
+        raise Exception(sect_id_anchor.parent + " didn't match a known pattern.")
 
 
 def normalize_sections(all_sections):
