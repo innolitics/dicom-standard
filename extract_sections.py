@@ -5,12 +5,16 @@ from bs4 import BeautifulSoup
 from parse_lib import parse_html_file, write_pretty_json
 from parse_relations import section_div_from_id, figure_div_from_id
 
-referenced_ids = r'(sect.*)|(figure.*)|(biblio.*)|(table.*)|(note.*)'
-referenced_ids_re = re.compile(referenced_ids)
+REFERENCED_IDS_RE = re.compile(r'(sect.*)|(figure.*)|(biblio.*)|(table.*)|(note.*)')
+
 
 def extract_section_ids(standard):
-    return {page: html.find_all('a', attrs={'id': referenced_ids_re})
-            for page, html in standard.items()}
+    return {page: referenced_id_anchors(html) for page, html in standard.items()}
+
+
+def referenced_id_anchors(html):
+    return html.find_all('a', attrs={'id': REFERENCED_IDS_RE})
+
 
 def section_html_from_id_anchor(sect_id_anchor):
     if re.match(r'sect.*', sect_id_anchor['id']):

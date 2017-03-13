@@ -15,7 +15,8 @@ from macro_utils import get_id_from_link
 # so they can share these two functions.
 from extract_modules_with_attributes import module_table_to_dict, get_table_with_metadata
 
-TABLE_SUFFIX = re.compile("(.*Macro Attributes$)|(.*Macro Attributes Description$)")
+TABLE_SUFFIX_RE = re.compile("(.*Macro Attributes$)|(.*Macro Attributes Description$)")
+
 
 def get_macro_tables(standard):
     all_table_divs = standard.find_all('div', class_='table')
@@ -23,8 +24,9 @@ def get_macro_tables(standard):
     macro_table_lists = list(map(tdiv_to_table_list, macro_table_divs))
     return (macro_table_lists, macro_table_divs)
 
+
 def is_valid_macro_table(table_div):
-    return TABLE_SUFFIX.match(pr.table_name(table_div))
+    return TABLE_SUFFIX_RE.match(pr.table_name(table_div))
 
 
 def tables_to_json(tables, tdivs):
@@ -33,6 +35,7 @@ def tables_to_json(tables, tdivs):
     table_dicts = map(module_table_to_dict, stringified_tables)
     list_of_tables = list(map(get_table_with_metadata, zip(table_dicts, tdivs)))
     return key_tables_by_id(list_of_tables)
+
 
 def key_tables_by_id(list_of_tables):
     dict_of_tables = {}
