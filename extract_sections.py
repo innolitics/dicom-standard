@@ -6,9 +6,10 @@ from parse_lib import parse_html_file, write_pretty_json
 from parse_relations import section_div_from_id, figure_div_from_id
 
 referenced_ids = r'(sect.*)|(figure.*)|(biblio.*)|(table.*)|(note.*)'
+referenced_ids_re = re.compile(referenced_ids)
 
 def extract_section_ids(standard):
-    return {page: html.find_all('a', attrs={'id': re.compile(referenced_ids)})
+    return {page: html.find_all('a', attrs={'id': referenced_ids_re})
             for page, html in standard.items()}
 
 def section_html_from_id_anchor(sect_id_anchor):
