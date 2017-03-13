@@ -1,7 +1,6 @@
 .SUFFIXES:
 
-.PHONY:
-	clean tests unittest endtoendtest updatestandard checkversions
+.PHONY: clean tests unittest endtoendtest updatestandard checkversions
 
 PYTEST_BIN=python3 -m pytest
 
