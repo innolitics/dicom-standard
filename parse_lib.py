@@ -29,6 +29,7 @@ def write_pretty_json(*args):
             json.dump(data, json_file, sort_keys=False, indent=4, separators=(',', ':'))
 
     elif len(args) == 1:
+        data = args[0]
         json.dump(data, sys.stdout, sort_keys=False, indent=4, separators=(',', ':'))
 
 
