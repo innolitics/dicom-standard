@@ -1,9 +1,9 @@
 import sys
 import re
+import os
 from bs4 import BeautifulSoup
 
 from parse_lib import parse_html_file, write_pretty_json
-from parse_relations import section_div_from_id, figure_div_from_id
 
 REFERENCED_IDS_RE = re.compile(r'(sect.*)|(figure.*)|(biblio.*)|(table.*)|(note.*)')
 
@@ -27,6 +27,17 @@ def section_html_from_id_anchor(sect_id_anchor):
 
 def normalize_sections(all_sections):
     return {section['id']: str(section_html_from_id_anchor(section)) for section in all_sections}
+
+
+def figure_div_from_id(id_div):
+    # TODO: put example from the standard here
+    return id_div.parent
+
+
+def section_div_from_id(id_div):
+    # TODO: put example from the standard here
+    return id_div.parent.parent.parent.parent.parent
+
 
 if __name__ == '__main__':
     # TODO: figure out a way to speed up the parsing; since we only need a

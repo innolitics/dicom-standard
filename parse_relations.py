@@ -16,8 +16,3 @@ def table_id(table_div):
 def table_description(table_div):
     return table_div.parent.find('p')
 
-def section_div_from_id(id_div):
-    return id_div.parent.parent.parent.parent.parent
-
-def figure_div_from_id(id_div):
-    return id_div.parent
