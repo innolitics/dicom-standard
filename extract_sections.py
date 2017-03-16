@@ -29,15 +29,11 @@ def normalize_sections(all_sections):
     return {section['id']: str(section_html_from_id_anchor(section)) for section in all_sections}
 
 if __name__ == '__main__':
-    standard = {
-        'part03.html': parse_html_file(sys.argv[1]),
-        'part04.html': parse_html_file(sys.argv[2]),
-        'part06.html': parse_html_file(sys.argv[3]),
-        'part15.html': parse_html_file(sys.argv[4]),
-        'part16.html': parse_html_file(sys.argv[5]),
-        'part17.html': parse_html_file(sys.argv[6]),
-        'part18.html': parse_html_file(sys.argv[7]),
-    }
+    # TODO: figure out a way to speed up the parsing; since we only need a
+    # small portion of the parse tree, we may be able to use:
+    # https://docs.python.org/3/library/html.parser.html to avoid building the
+    # full parse tree.
+    standard = {os.path.basename(f): parse_html_file(f) for f in sys.argv[1:]}
     section_ids = extract_section_ids(standard)
     sections = {page: normalize_sections(html) for page, html in section_ids.items()}
-    write_pretty_json(sys.argv[8], sections)
+    write_pretty_json(sections)
