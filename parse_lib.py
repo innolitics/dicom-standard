@@ -18,10 +18,8 @@ def parse_html_file(filepath):
         return BeautifulSoup(html_file, 'html.parser')
 
 
-def write_pretty_json(filepath, data, prefix=None):
+def write_pretty_json(filepath, data):
     with open(filepath, 'w') as json_file:
-        if prefix is not None:
-            json_file.write(prefix)
         json.dump(data, json_file, sort_keys=False, indent=4, separators=(',', ':'))
 
 
