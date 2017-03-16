@@ -5,6 +5,7 @@ DICOM standard HTML file.
 
 import json
 import re
+import sys
 from bs4.element import Tag
 
 from bs4 import BeautifulSoup
@@ -13,14 +14,22 @@ import parse_relations as pr
 
 BASE_DICOM_URL = "http://dicom.nema.org/medical/dicom/current/output/html/"
 
+
 def parse_html_file(filepath):
     with open(filepath, 'r') as html_file:
         return BeautifulSoup(html_file, 'html.parser')
 
 
-def write_pretty_json(filepath, data):
-    with open(filepath, 'w') as json_file:
-        json.dump(data, json_file, sort_keys=False, indent=4, separators=(',', ':'))
+def write_pretty_json(*args):
+    if len(args) == 2:
+        # TODO: once we have replaced all uses of this function that write to
+        # files, remove this branch
+        filepath, data = args
+        with open(filepath, 'w') as json_file:
+            json.dump(data, json_file, sort_keys=False, indent=4, separators=(',', ':'))
+
+    elif len(args) == 1:
+        json.dump(data, sys.stdout, sort_keys=False, indent=4, separators=(',', ':'))
 
 
 def read_json_to_dict(filepath):
