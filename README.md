@@ -19,5 +19,5 @@ to install and compile everything.
 
 - Each step in the parsing process is classified as either an "extract" stage, or a "process" stage.
 - Stages are python scripts that take one or more files as inputs, and write their output to standard out.
-- "Extract" stages takes a single HTML input file and print out JSON.
+- "Extract" stages takes one more more HTML input files and print out JSON.
 - "Process" stages take one or more JSON files as inputs and print out JSON.
