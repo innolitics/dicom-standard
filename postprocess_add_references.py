@@ -1,6 +1,9 @@
 '''
 Find external references in attribute descriptions. When a reference is found,
-add its source URL to the JSON file and record the referenced HTML in the `references.json` file, keyed by the source URL. Remove any anchor tag attributes on reference links that are successfully recorded.  '''
+add its source URL to the JSON file and record the referenced HTML in the
+`references.json` file, keyed by the source URL. Remove any anchor tag
+attributes on reference links that are successfully recorded.
+'''
 import sys
 import re
 from functools import partial
