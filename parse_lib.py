@@ -9,11 +9,12 @@ import sys
 from bs4.element import Tag
 
 from bs4 import BeautifulSoup
+from bs4 import NavigableString
 
 import parse_relations as pr
 
 BASE_DICOM_URL = "http://dicom.nema.org/medical/dicom/current/output/html/"
-
+allowed_attributes = ["href", "src", "type", "data", "colspan", "rowspan"]
 
 def parse_html_file(filepath):
     with open(filepath, 'r') as html_file:
@@ -64,45 +65,31 @@ def clean_table_name(name):
     return clean_title.strip()
 
 
-def clean_description(description_html):
-    parsed_html = BeautifulSoup(description_html, 'html.parser')
+def clean_html(html):
+    parsed_html = BeautifulSoup(html, 'html.parser')
     top_level_tag = get_top_level_tag(parsed_html)
-    tag_with_no_extra_attributes = remove_attributes_from_description_html(top_level_tag)
-    tag_with_resolved_hrefs = resolve_hrefs(tag_with_no_extra_attributes)
-    return str(tag_with_resolved_hrefs)
+    remove_attributes_from_html_tags(top_level_tag)
+    remove_empty_children(top_level_tag)
+    return str(top_level_tag)
 
 def get_top_level_tag(parsed_html):
-    top_level_tag = parsed_html.find('p', recursive=False)
-    if top_level_tag is None:
-        top_level_tag = parsed_html.find('div', recursive=False)
-    return top_level_tag
+    return next(parsed_html.descendants)
 
 
-def remove_attributes_from_description_html(top_level_tag):
-    top_level_tag.attrs = clean_tag_attributes(top_level_tag)
+def remove_attributes_from_html_tags(top_level_tag):
+    clean_tag_attributes(top_level_tag)
     for child in top_level_tag.descendants:
-        if isinstance(child, Tag):
-            child.attrs = clean_tag_attributes(child)
-    return top_level_tag
+        clean_tag_attributes(child)
 
-def clean_tag_attributes(tag, ignored_attributes=None):
-    if ignored_attributes is None:
-        ignored_attributes = ['href']
-    if tag.attrs != {}:
-        return {a: v for a, v in tag.attrs.items() if a in ignored_attributes}
-    else:
-        return tag.attrs
+def clean_tag_attributes(tag):
+    if not isinstance(tag, NavigableString):
+        tag.attrs = {k: v for k, v in tag.attrs.items() if k in allowed_attributes}
 
-def resolve_hrefs(tag):
-    anchors = tag.find_all('a', href=True)
-    list(map(resolve_anchor_href, anchors))
-    return tag
+def remove_empty_children(top_level_tag):
+    empty_anchor_tags = top_level_tag.find_all('a', text='')
+    for anchor in empty_anchor_tags:
+        anchor.decompose()
 
-def resolve_anchor_href(anchor):
-    page, fragment_id = anchor['href'].split('#')
-    resolved_page = 'part03.html' if page == '' else page
-    anchor['href'] = BASE_DICOM_URL + resolved_page + '#' + fragment_id
-    anchor['target'] = '_blank'
 
 def text_from_html_string(html_string):
     parsed_html = BeautifulSoup(html_string, 'html.parser')

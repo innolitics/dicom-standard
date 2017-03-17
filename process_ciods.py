@@ -11,7 +11,7 @@ def ciods_from_extracted_list(ciod_module_list):
     for ciod in ciod_module_list:
         ciods[ciod['id']] = {
             'id': ciod['id'],
-            'description': pl.clean_description(ciod['description']),
+            'description': pl.clean_html(ciod['description']),
             'linkToStandard': ciod['linkToStandard'],
             'name': ciod['name']
         }
