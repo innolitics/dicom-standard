@@ -1,3 +1,7 @@
+'''
+Find and mark references to external sections in attribute descriptions.
+Each reference is keyed by its source URL.
+'''
 import sys
 import re
 

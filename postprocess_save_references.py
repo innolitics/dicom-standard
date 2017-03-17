@@ -1,4 +1,5 @@
 '''
+Save reference HTML into a separate JSON file.
 '''
 import sys
 import re
