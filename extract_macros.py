@@ -48,4 +48,4 @@ if __name__ == '__main__':
     standard = pl.parse_html_file(sys.argv[1])
     tables, tdivs = get_macro_tables(standard)
     parsed_table_data = tables_to_json(tables, tdivs)
-    pl.write_pretty_json(sys.argv[2], parsed_table_data)
+    pl.write_pretty_json(parsed_table_data)

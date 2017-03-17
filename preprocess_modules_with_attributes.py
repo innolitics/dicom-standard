@@ -52,4 +52,4 @@ if __name__ == '__main__':
     tables_with_macros = expand_all_macros(module_attr_tables, macro_tables)
     preprocessed_tables = preprocess_attribute_fields(tables_with_macros)
     tables_with_hierarchy = expand_hierarchy(preprocessed_tables)
-    pl.write_pretty_json(sys.argv[3], tables_with_hierarchy)
+    pl.write_pretty_json(tables_with_hierarchy)

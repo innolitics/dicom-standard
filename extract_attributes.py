@@ -35,4 +35,4 @@ if __name__ == '__main__':
     standard = pl.parse_html_file(sys.argv[1])
     table = get_attribute_table(standard)
     parsed_table_data = attribute_table_to_json(table)
-    pl.write_pretty_json(sys.argv[2], parsed_table_data)
+    pl.write_pretty_json(parsed_table_data)

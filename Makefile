@@ -16,37 +16,38 @@ relationship_tables: dist/ciod_to_modules.json dist/module_to_attributes.json
 
 
 dist/ciods.json: tmp/raw_ciod_module_tables.json
-	python3 process_ciods.py $< $@
+	python3 process_ciods.py $< > $@
 
 dist/ciod_to_modules.json: tmp/raw_ciod_module_tables.json
-	python3 process_ciod_module_relationship.py $< $@
+	python3 process_ciod_module_relationship.py $< > $@
 
 dist/modules.json: tmp/preprocessed_modules_attributes.json
-	python3 process_modules.py $< $@
+	python3 process_modules.py $< > $@
 
-dist/module_to_attributes.json: tmp/modules_attributes_no_references.json tmp/raw_section_tables.json
-	python3 postprocess_add_references.py $^ $@ dist/references.json
+dist/module_to_attributes.json: tmp/modules_attributes_no_references.json
+	python3 postprocess_mark_references.py $< > $@
 
 dist/attributes.json: tmp/part06.html extract_attributes.py
-	python3 extract_attributes.py $< $@
+	python3 extract_attributes.py $< > $@
 
-dist/references.json: dist/module_to_attributes.json
+dist/references.json: dist/module_to_attributes.json tmp/raw_section_tables.json
+	python3 postprocess_save_references.py $^ > $@
 
 
 tmp/modules_attributes_no_references.json: tmp/preprocessed_modules_attributes.json
-	python3 process_module_attribute_relationship.py $< $@
+	python3 process_module_attribute_relationship.py $< > $@
 
 tmp/preprocessed_modules_attributes.json: tmp/raw_module_attribute_tables.json tmp/raw_macro_tables.json
-	python3 preprocess_modules_with_attributes.py $^ $@
+	python3 preprocess_modules_with_attributes.py $^ > $@
 
 tmp/raw_ciod_module_tables.json: tmp/part03.html extract_ciod_module_data.py
-	python3 extract_ciod_module_data.py $< $@
+	python3 extract_ciod_module_data.py $< > $@
 
 tmp/raw_module_attribute_tables.json: tmp/part03.html extract_modules_with_attributes.py
-	python3 extract_modules_with_attributes.py $< $@
+	python3 extract_modules_with_attributes.py $< > $@
 
 tmp/raw_macro_tables.json: tmp/part03.html extract_macros.py
-	python3 extract_macros.py $< $@
+	python3 extract_macros.py $< > $@
 
 tmp/raw_section_tables.json: extract_sections.py $(cleaned_dicom_html)
 	python3 $^ > $@
