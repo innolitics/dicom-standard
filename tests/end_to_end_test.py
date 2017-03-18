@@ -43,7 +43,7 @@ def test_total_number_ciods(ciods):
 
 @pytest.mark.endtoend
 def test_total_number_attributes(attributes):
-    defined_valid_attributes = 4171
+    defined_valid_attributes = 4175
     assert len(attributes) == defined_valid_attributes
 
 
@@ -65,7 +65,7 @@ def test_valid_foreign_keys_module_attribute(module_attribute_relationship, modu
 def test_vertical_samples_from_standard(ciods, modules, attributes):
     test_ciod = {
         "us-multi-frame-image": {
-            "description": '<p>\n<a></a>\n<a href="http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_A.7-1" target="_blank">Table\xa0A.7-1</a> specifies the Modules of the US Multi-frame Image IOD.</p>',
+            "description": '<p>\n<a href="http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_A.7-1" target="_blank">Table\xa0A.7-1</a> specifies the Modules of the US Multi-frame Image IOD.</p>',
             "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_A.7-1",
             "name": "US Multi-frame Image",
             "id": "us-multi-frame-image",
@@ -169,7 +169,7 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship,
     ]
     ciod = {
         "cr-image": {
-            "description":"<p>\n<a></a>\n<a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_A.2-1\" target=\"_blank\">Table\u00a0A.2-1</a> specifies the Modules of the CR Image IOD.</p>",
+            "description":"<p>\n<a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_A.2-1\" target=\"_blank\">Table\u00a0A.2-1</a> specifies the Modules of the CR Image IOD.</p>",
             "name":"CR Image",
             "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_A.2-1",
             "id": "cr-image",
@@ -192,7 +192,7 @@ def test_number_of_attribute_appearances(module_attribute_relationship, attribut
             "tag":"(0010,0213)",
             "type":"None",
             "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.2-3",
-            "description":"<td align=\"left\" colspan=\"1\" rowspan=\"1\">\n<p>\n<a id=\"para_eb1a8550-fedf-4e1c-81bd-eeb6325f04b2\" shape=\"rect\"></a>The nomenclature used for Strain Description (0010,0212). See <a class=\"xref\" href=\"#sect_C.7.1.1.1.4\" shape=\"rect\" title=\"C.7.1.1.1.4\u00a0Patient Strain\">Section\u00a0C.7.1.1.1.4</a>.</p>\n</td>",
+            "description":"<td align=\"left\" colspan=\"1\" rowspan=\"1\">\n<p>\n<a id=\"para_eb1a8550-fedf-4e1c-81bd-eeb6325f04b2\" shape=\"rect\"></a>The nomenclature used for Strain Description (0010,0212). See <a class=\"xref\" href=\"#sect_C.7.1.1.1.4\" shape=\"rect\" title=\"C.7.1.1.1.4\u00a0Patient Strain and Genetic Modifications\">Section\u00a0C.7.1.1.1.4</a>.</p>\n</td>",
             "externalReferences":[
                 "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.1.1.1.4"
             ]
@@ -204,7 +204,7 @@ def test_number_of_attribute_appearances(module_attribute_relationship, attribut
             "tag":"(0010,0213)",
             "type":"3",
             "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-1",
-            "description":"<td align=\"left\" colspan=\"1\" rowspan=\"1\">\n<p>\n<a id=\"para_ea1c4023-3354-45aa-b770-e942796f32f3\" shape=\"rect\"></a>The nomenclature used for Strain Description (0010,0212). See <a class=\"xref\" href=\"#sect_C.7.1.1.1.4\" shape=\"rect\" title=\"C.7.1.1.1.4\u00a0Patient Strain\">Section\u00a0C.7.1.1.1.4</a>.</p>\n</td>",
+            "description":"<td align=\"left\" colspan=\"1\" rowspan=\"1\">\n<p>\n<a id=\"para_ea1c4023-3354-45aa-b770-e942796f32f3\" shape=\"rect\"></a>The nomenclature used for Strain Description (0010,0212). See <a class=\"xref\" href=\"#sect_C.7.1.1.1.4\" shape=\"rect\" title=\"C.7.1.1.1.4\u00a0Patient Strain and Genetic Modifications\">Section\u00a0C.7.1.1.1.4</a>.</p>\n</td>",
             "externalReferences":[
                 "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.1.1.1.4"
             ]

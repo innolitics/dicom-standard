@@ -6,7 +6,7 @@ DICOM standard HTML file.
 import json
 import re
 import sys
-from bs4.element import Tag
+from functools import partial
 
 from bs4 import BeautifulSoup
 from bs4 import NavigableString
@@ -70,7 +70,7 @@ def clean_html(html):
     top_level_tag = get_top_level_tag(parsed_html)
     remove_attributes_from_html_tags(top_level_tag)
     remove_empty_children(top_level_tag)
-    return str(top_level_tag)
+    return resolve_relative_resource_urls(str(top_level_tag))
 
 def get_top_level_tag(parsed_html):
     return next(parsed_html.descendants)
@@ -86,10 +86,38 @@ def clean_tag_attributes(tag):
         tag.attrs = {k: v for k, v in tag.attrs.items() if k in allowed_attributes}
 
 def remove_empty_children(top_level_tag):
-    empty_anchor_tags = top_level_tag.find_all('a', text='')
+    empty_anchor_tags = filter((lambda a: a.text == ''), top_level_tag.find_all('a'))
     for anchor in empty_anchor_tags:
         anchor.decompose()
 
+def resolve_relative_resource_urls(html_string):
+    html = BeautifulSoup(html_string, 'html.parser')
+    anchors = html.find_all('a', href=True)
+    imgs = html.find_all("img", src=True)
+    equations = html.find_all("object", data=True)
+    list(map(resolve_anchor_href, anchors))
+    list(map(partial(resolve_resource, 'src'), imgs))
+    list(map(partial(resolve_resource, 'data'), equations))
+    return str(html)
+
+def resolve_anchor_href(anchor):
+    if not has_protocol_prefix(anchor):
+        try:
+            page, fragment_id = anchor['href'].split('#')
+            resolved_page = 'part03.html' if page == '' else page
+            anchor['href'] = resolved_page + '#' + fragment_id
+        except ValueError:
+            pass
+        anchor['href'] = BASE_DICOM_URL + anchor['href']
+        anchor['target'] = '_blank'
+
+
+def has_protocol_prefix(anchor):
+    return re.match(r'(http)|(ftp)', anchor['href'])
+
+
+def resolve_resource(url_attribute, resource):
+    resource[url_attribute] = BASE_DICOM_URL + resource[url_attribute]
 
 def text_from_html_string(html_string):
     parsed_html = BeautifulSoup(html_string, 'html.parser')
