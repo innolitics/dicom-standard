@@ -21,17 +21,8 @@ def parse_html_file(filepath):
         return BeautifulSoup(html_file, 'html.parser')
 
 
-def write_pretty_json(*args):
-    if len(args) == 2:
-        # TODO: once we have replaced all uses of this function that write to
-        # files, remove this branch
-        filepath, data = args
-        with open(filepath, 'w') as json_file:
-            json.dump(data, json_file, sort_keys=False, indent=4, separators=(',', ':'))
-
-    elif len(args) == 1:
-        data = args[0]
-        json.dump(data, sys.stdout, sort_keys=False, indent=4, separators=(',', ':'))
+def write_pretty_json(data):
+    json.dump(data, sys.stdout, sort_keys=False, indent=4, separators=(',', ':'))
 
 
 def read_json_to_dict(filepath):
