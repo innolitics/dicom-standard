@@ -5,6 +5,9 @@ Output the tables in JSON format, one entry per CIOD.
 '''
 import sys
 import re
+from typing import Tuple, List
+
+from bs4.element import PageElement
 
 import parse_lib as pl
 import parse_relations as pr
@@ -16,26 +19,26 @@ COLUMN_TITLES = ['informationEntity', 'module', 'reference_fragment', 'usage']
 
 URL_PREFIX = "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#"
 
-def get_ciod_tables(standard):
+def get_ciod_tables(standard: PageElement) -> Tuple[List[PageElement], List[List[PageElement]]]:
     chapter_A_table_divs = pl.all_tdivs_in_chapter(standard, CHAPTER_ID)
     ciod_table_divs = list(filter(is_valid_ciod_table, chapter_A_table_divs))
     ciod_table_lists = list(map(tdiv_to_table_list, ciod_table_divs))
     return (ciod_table_lists, ciod_table_divs)
 
-def is_valid_ciod_table(table_div):
+def is_valid_ciod_table(table_div: PageElement) -> bool:
     return TABLE_SUFFIX.match(pr.table_name(table_div))
 
 
-def tables_to_json(tables, tdivs):
+def tables_to_json(tables: List[List[List[PageElement]]], tdivs: List[PageElement]) -> List[dict]:
     expanded_tables = list(map(expand_spans, tables))
     stringified_tables = map(stringify_table, expanded_tables)
     table_dicts = map(ciod_table_to_dict, stringified_tables)
     return list(map(get_table_with_metadata, zip(table_dicts, tdivs)))
 
-def ciod_table_to_dict(table):
+def ciod_table_to_dict(table: List[List[str]]) -> List[dict]:
     return table_to_dict(table, COLUMN_TITLES)
 
-def get_table_with_metadata(table_with_tdiv):
+def get_table_with_metadata(table_with_tdiv: Tuple[List[dict], PageElement]) -> dict:
     table, tdiv = table_with_tdiv
     clean_name = pl.clean_table_name(pr.table_name(tdiv))
     return {

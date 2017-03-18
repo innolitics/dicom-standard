@@ -1,22 +1,24 @@
 import sys
 import re
 import os
-from bs4 import BeautifulSoup
+from typing import Dict, List
+
+from bs4.element import PageElement
 
 from parse_lib import parse_html_file, write_pretty_json
 
 REFERENCED_IDS_RE = re.compile(r'(sect.*)|(figure.*)|(biblio.*)|(table.*)|(note.*)')
 
 
-def extract_section_ids(standard):
+def extract_section_ids(standard: PageElement) -> Dict[str, List[PageElement]]:
     return {page: referenced_id_anchors(html) for page, html in standard.items()}
 
 
-def referenced_id_anchors(html):
+def referenced_id_anchors(html: PageElement) -> List[PageElement]:
     return html.find_all('a', attrs={'id': REFERENCED_IDS_RE})
 
 
-def section_html_from_id_anchor(sect_id_anchor):
+def section_html_from_id_anchor(sect_id_anchor: PageElement) -> PageElement:
     if re.match(r'sect.*', sect_id_anchor['id']):
         return section_div_from_id(sect_id_anchor)
     elif re.match(r'(biblio.*)|(table.*)|(note.*)|(figure.*)', sect_id_anchor['id']):
@@ -25,16 +27,16 @@ def section_html_from_id_anchor(sect_id_anchor):
         raise Exception(sect_id_anchor.parent + " didn't match a known pattern.")
 
 
-def normalize_sections(all_sections):
+def normalize_sections(all_sections: List[PageElement]) -> Dict[str, str]:
     return {section['id']: str(section_html_from_id_anchor(section)) for section in all_sections}
 
 
-def figure_div_from_id(id_div):
+def figure_div_from_id(id_div: PageElement) -> PageElement:
     # TODO: put example from the standard here
     return id_div.parent
 
 
-def section_div_from_id(id_div):
+def section_div_from_id(id_div: PageElement) -> PageElement:
     # TODO: put example from the standard here
     return id_div.parent.parent.parent.parent.parent
 

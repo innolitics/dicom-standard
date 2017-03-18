@@ -5,6 +5,9 @@ are used to expand macro references in Annex C.
 '''
 import sys
 import re
+from typing import List, Tuple
+
+from bs4.element import PageElement
 
 import parse_lib as pl
 import parse_relations as pr
@@ -18,18 +21,18 @@ from extract_modules_with_attributes import module_table_to_dict, get_table_with
 TABLE_SUFFIX_RE = re.compile("(.*Macro Attributes$)|(.*Macro Attributes Description$)")
 
 
-def get_macro_tables(standard):
+def get_macro_tables(standard: PageElement) -> Tuple[List[PageElement], List[PageElement]]:
     all_table_divs = standard.find_all('div', class_='table')
     macro_table_divs = list(filter(is_valid_macro_table, all_table_divs))
     macro_table_lists = list(map(tdiv_to_table_list, macro_table_divs))
     return (macro_table_lists, macro_table_divs)
 
 
-def is_valid_macro_table(table_div):
+def is_valid_macro_table(table_div: PageElement) -> bool:
     return TABLE_SUFFIX_RE.match(pr.table_name(table_div))
 
 
-def tables_to_json(tables, tdivs):
+def tables_to_json(tables: List[List[PageElement]], tdivs: List[PageElement]) -> dict:
     expanded_tables = list(map(expand_spans, tables))
     stringified_tables = map(stringify_table, expanded_tables)
     table_dicts = map(module_table_to_dict, stringified_tables)
@@ -37,7 +40,7 @@ def tables_to_json(tables, tdivs):
     return key_tables_by_id(list_of_tables)
 
 
-def key_tables_by_id(list_of_tables):
+def key_tables_by_id(list_of_tables: List[List[List[PageElement]]]) -> dict:
     dict_of_tables = {}
     for table in list_of_tables:
         dict_of_tables[get_id_from_link(table['linkToStandard'])] = table

@@ -3,18 +3,20 @@ Takes the extracted CIOD-Module table information to build a list of all
 CIOD-Module relationships enumerated in the DICOM Standard.
 '''
 import sys
+from typing import List, Callable, Tuple
+
 from bs4 import BeautifulSoup as bs
 
 import parse_lib as pl
 
-def enumerate_all_relationships(ciod_module_list):
+def enumerate_all_relationships(ciod_module_list: List[dict]) -> List[dict]:
     all_relationships = []
     for table in ciod_module_list:
         all_relationships.extend(list(map(describe_relationship_with(table['name']),
                                           table['modules'])))
     return all_relationships
 
-def describe_relationship_with(ciod_name):
+def describe_relationship_with(ciod_name: str) -> Callable[[dict], dict]:
     def enumerate_relationship(module):
         usage, conditional_statement = expand_conditional_statement(module['usage'])
         return {
@@ -26,20 +28,20 @@ def describe_relationship_with(ciod_name):
         }
     return enumerate_relationship
 
-def expand_conditional_statement(usage_field_html):
+def expand_conditional_statement(usage_field_html: str) -> Tuple[str, str]:
     usage_field = process_usage_html(usage_field_html)
     conditional_statement = extract_conditional_statement(usage_field)
     usage = usage_field[0]
     return usage, conditional_statement
 
-def process_usage_html(usage_field_html):
+def process_usage_html(usage_field_html: str) -> str:
     usage_field = pl.text_from_html_string(usage_field_html)
     processed_usage_field = usage_field.strip()
     if len(processed_usage_field) == 0:
         raise Exception('Empty module usage field')
     return processed_usage_field
 
-def extract_conditional_statement(usage_field):
+def extract_conditional_statement(usage_field: str) -> str:
     if usage_field.startswith('C - '):
         conditional_statement = usage_field[4:].strip()
     elif usage_field.startswith('C') and len(usage_field) > 1:

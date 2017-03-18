@@ -3,10 +3,11 @@ Convert the processed module-attribute JSON data into a
 normalized listing of all modules in the DICOM Standard.
 '''
 import sys
+from typing import List, Dict
 
 import parse_lib as pl
 
-def modules_from_tables(tables):
+def modules_from_tables(tables: List[Dict[str,str]]) -> Dict[str, Dict[str, str]]:
     modules = {}
     for module in tables:
         modules[module['id']] = {

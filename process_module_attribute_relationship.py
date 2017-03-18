@@ -1,8 +1,9 @@
 import sys
+from typing import List, Dict
 
 import parse_lib as pl
 
-def module_attr_relationship_table(module_attr_relationship_list):
+def module_attr_relationship_table(module_attr_relationship_list: List[Dict[str, str]]) -> List[Dict[str, str]]:
     entries = []
     for module in module_attr_relationship_list:
         for attribute in module['attributes']:
@@ -17,7 +18,7 @@ def module_attr_relationship_table(module_attr_relationship_list):
             })
     return entries
 
-def get_standard_link(module, attribute):
+def get_standard_link(module: Dict[str, str], attribute: Dict[str, str]) -> str:
     if 'linkToStandard' not in attribute.keys():
         return module['linkToStandard']
     else:

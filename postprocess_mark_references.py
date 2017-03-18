@@ -4,47 +4,49 @@ Each reference is keyed by its source URL.
 '''
 import sys
 import re
+from typing import List, Tuple
 
 from bs4 import BeautifulSoup
+from bs4.element import PageElement
 
 import parse_lib as pl
 
 IGNORED_REFERENCES_RE = re.compile(r'(.*ftp.*)|(.*http.*)|(.*part05.*)|(.*chapter.*)|(.*PS3.*)|(.*DCM.*)|(.*glossentry.*)')
 
 
-def get_reference_requests_from_pairs(module_attr_pairs):
+def get_reference_requests_from_pairs(module_attr_pairs: List[dict]) -> List[List[Tuple[str, str]]]:
     return [references_from_module_attr_pair(pair) for pair in module_attr_pairs]
 
-def references_from_module_attr_pair(pair):
+def references_from_module_attr_pair(pair: dict) -> List[Tuple[str, str]]:
     references = get_valid_reference_anchors(pair['description'])
     return list(map(get_ref_standard_location, references))
 
-def get_valid_reference_anchors(html):
+def get_valid_reference_anchors(html: str) -> List[PageElement]:
     anchor_tags = BeautifulSoup(html, 'html.parser').find_all('a', href=True)
     return [a for a in anchor_tags if not re.match(IGNORED_REFERENCES_RE, a['href'])]
 
-def get_ref_standard_location(reference_anchor_tag):
+def get_ref_standard_location(reference_anchor_tag: PageElement) -> Tuple[str, str]:
     relative_link = reference_anchor_tag.get('href')
     standard_page, section_id = relative_link.split('#')
     standard_page = 'part03.html' if standard_page == '' else standard_page
     return standard_page, section_id
 
-def record_references_inside_pairs(module_attr_pairs, refs_to_record):
+def record_references_inside_pairs(module_attr_pairs: List[dict], refs_to_record: List[Tuple[str, str]]) -> List[dict]:
     updated_pairs = [record_reference_in_pair(pair, refs)
                      for pair, refs in zip(module_attr_pairs, refs_to_record)]
     return updated_pairs
 
-def record_reference_in_pair(pair, refs):
+def record_reference_in_pair(pair: dict, refs: List[Tuple[str, str]]) -> dict:
     references = get_valid_reference_anchors(pair['description'])
     reference_urls = list(map(get_reference_url_from_standard_location, refs))
     list(map(mark_as_recorded, references))
     pair['externalReferences'] = [] if len(reference_urls) < 1 else reference_urls
     return pair
 
-def get_reference_url_from_standard_location(standard_location):
+def get_reference_url_from_standard_location(standard_location: Tuple[str, str]) -> str:
     return pl.BASE_DICOM_URL + '#'.join(standard_location)
 
-def mark_as_recorded(anchor):
+def mark_as_recorded(anchor: PageElement) -> None:
     anchor['href'] = ''
     anchor.name = 'span'
 

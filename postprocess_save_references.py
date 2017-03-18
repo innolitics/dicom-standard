@@ -3,6 +3,7 @@ Save reference HTML into a separate JSON file.
 '''
 import sys
 import re
+from typing import List, Tuple, Dict
 
 from bs4 import BeautifulSoup
 
@@ -12,7 +13,7 @@ from postprocess_mark_references import (get_reference_requests_from_pairs,
                                          get_reference_url_from_standard_location)
 
 
-def find_reference_html_in_sections(refs_from_pairs, section_listing):
+def find_reference_html_in_sections(refs_from_pairs: List[List[Tuple[str, str]]], section_listing: Dict[str, dict]) -> Dict[str, str]:
     refs_to_record = set(flatten_one_layer(refs_from_pairs))
     references = {get_reference_url_from_standard_location((page, sect_id)):
                   section_listing[page][sect_id]

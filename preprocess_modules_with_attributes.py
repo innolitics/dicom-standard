@@ -7,32 +7,34 @@ Specific processing steps are:
     3. Clean up and format data fields
 '''
 import sys
+from typing import List, Dict, Tuple
 
 from bs4 import BeautifulSoup
+from bs4.element import PageElement
 
 import parse_lib as pl
-from macro_utils import expand_macro_rows
+from macro_utils import expand_macro_rows, MacroTableType
 from hierarchy_utils import record_hierarchy_for_module
 
-def expand_all_macros(module_attr_tables, macros):
+def expand_all_macros(module_attr_tables: List[dict], macros: MacroTableType) -> List[dict]:
     expanded_attribute_lists = [expand_macro_rows(table, macros)
                                 for table in module_attr_tables]
     return map(add_expanded_attributes_to_tables, zip(module_attr_tables, expanded_attribute_lists))
 
-def add_expanded_attributes_to_tables(table_with_attributes):
+def add_expanded_attributes_to_tables(table_with_attributes: Tuple[dict, List[dict]]) -> dict:
     table, attributes = table_with_attributes
     table['attributes'] = attributes
     return table
 
 
-def preprocess_attribute_fields(tables):
+def preprocess_attribute_fields(tables: List[dict]) -> List[dict]:
     return [preprocess_single_table(table) for table in tables]
 
-def preprocess_single_table(table):
+def preprocess_single_table(table: dict) -> dict:
     table['attributes'] = list(map(preprocess_attribute, table['attributes']))
     return table
 
-def preprocess_attribute(attr):
+def preprocess_attribute(attr: dict) -> dict:
     cleaned_attribute = {
         'name': pl.text_from_html_string(attr['name']),
         'tag': pl.text_from_html_string(attr['tag']),
@@ -43,7 +45,7 @@ def preprocess_attribute(attr):
     return cleaned_attribute
 
 
-def expand_hierarchy(tables):
+def expand_hierarchy(tables: List[dict]) -> List[dict]:
     return [record_hierarchy_for_module(table) for table in tables]
 
 if __name__ == '__main__':

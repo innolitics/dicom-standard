@@ -2,6 +2,9 @@
 Extract the listing of all attributes given in PS3.6 of the DICOM Standard.
 '''
 import sys
+from typing import List
+
+from bs4.element import PageElement
 
 import parse_lib as pl
 import parse_relations as pr
@@ -10,18 +13,18 @@ from table_utils import table_to_dict
 COLUMN_TITLES = ['tag', 'name', 'keyword', 'valueRepresentation', 'valueMultiplicity', 'retired']
 ATTR_TABLE_ID = 'table_6-1'
 
-def get_attribute_table(standard):
+def get_attribute_table(standard: PageElement) -> List[dict]:
     all_tables = standard.find_all('div', class_='table')
     html_table = pl.find_tdiv_by_id(all_tables, ATTR_TABLE_ID)
     list_table = attribute_table_to_list(html_table)
     return table_to_dict(list_table, COLUMN_TITLES)
 
-def attribute_table_to_list(table_div):
+def attribute_table_to_list(table_div: PageElement) -> List[List[str]]:
     return [[cell.text.strip() for cell in row.find_all('td')]
             for row in pr.table_rows(table_div)]
 
 
-def attribute_table_to_json(table):
+def attribute_table_to_json(table: List[dict]) -> dict:
     attribute_dict = {}
     for attr in table:
         attr_slug = pl.create_slug(attr['tag'])

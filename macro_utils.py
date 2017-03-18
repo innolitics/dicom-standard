@@ -4,12 +4,17 @@ relationship tables.
 '''
 import re
 from copy import deepcopy
+from typing import Dict, List
+
 from bs4 import BeautifulSoup as bs
+from bs4.element import PageElement
 
 import parse_lib as pl
 from hierarchy_utils import get_hierarchy_markers
 
-def expand_macro_rows(table, macros):
+MacroTableType = Dict[str, dict]
+
+def expand_macro_rows(table: dict, macros: MacroTableType) -> List[dict]:
     # This variable is used to stop an infinite macro reference
     # loop in the standard at the SR Document Content module.
     table_id = get_id_from_link(table['linkToStandard'])
@@ -19,14 +24,14 @@ def expand_macro_rows(table, macros):
     # Removes divider or stylistic rows
     return [attribute for attribute in new_table if attribute['tag'] != 'None']
 
-def get_attributes_to_insert(attribute, macros, table_id):
+def get_attributes_to_insert(attribute: dict, macros: MacroTableType, table_id: str) -> List[dict]:
     if is_macro_row(attribute):
         new_attributes = get_macro_attributes(attribute, macros, table_id)
         return new_attributes if new_attributes is not None else []
     else:
         return [attribute]
 
-def is_macro_row(attribute):
+def is_macro_row(attribute: dict) -> bool:
     is_abnormal_row = attribute['tag'] == 'None'
     reference_anchor_tag = bs(attribute['name'], 'html.parser').find('a', class_='xref')
     contains_link = reference_anchor_tag is not None
@@ -37,7 +42,7 @@ def is_macro_row(attribute):
 
 # Note that this function *recursively expands* macro references using
 # the `expand_macro_rows` function.
-def get_macro_attributes(attribute, macros, table_id):
+def get_macro_attributes(attribute: dict, macros: MacroTableType, table_id: str) -> List[dict]:
     macro_id = referenced_macro_id_from_include_statement(attribute['name'])
     parsed_name = bs(attribute['name'], 'html.parser').get_text()
     hierarchy_level = get_hierarchy_markers(parsed_name)
@@ -45,34 +50,34 @@ def get_macro_attributes(attribute, macros, table_id):
         return expand_macro_rows(get_macros_by_id(macro_id, macros, hierarchy_level), macros)
     return []
 
-def flatten_one_layer(nested_element_list):
+def flatten_one_layer(nested_element_list: List[List[dict]]) -> List[dict]:
     return [element for element_list in nested_element_list
             for element in element_list]
 
-def referenced_macro_id_from_include_statement(macro_reference_html):
+def referenced_macro_id_from_include_statement(macro_reference_html: str) -> str:
     parsed_reference = bs(macro_reference_html, 'html.parser')
     id_anchor = parsed_reference.find('a', class_='xref')
     return id_anchor.get('href')[1:] # Remove the first '#' character
 
-def get_macros_by_id(macro_id, macros, hierarchy_level):
+def get_macros_by_id(macro_id: str, macros: MacroTableType, hierarchy_level: str) -> dict:
     # A copy is required so that local modifications to attributes
     # (i.e. hierarchy marker modifications) don't persist.
     macro = deepcopy(macros[macro_id])
     macro['attributes'] = update_attribute_hierarchy_levels(macro['attributes'], hierarchy_level)
     return macro
 
-def update_attribute_hierarchy_levels(attributes, level):
+def update_attribute_hierarchy_levels(attributes: List[dict], level: str) -> List[dict]:
     return [add_level_to_attr(attribute, level) for attribute in attributes]
 
-def add_level_to_attr(attribute, level):
+def add_level_to_attr(attribute: dict, level: str) -> dict:
     parsed_attribute_name = bs(attribute['name'], 'html.parser').find('td')
     attribute['name'] = prepend_level_to_attribute_name(parsed_attribute_name, level)
     return attribute
 
-def prepend_level_to_attribute_name(new_attr_to_insert, level):
+def prepend_level_to_attribute_name(new_attr_to_insert: PageElement, level: str) -> str:
     new_attr_to_insert.insert(0, level)
     return str(new_attr_to_insert)
 
-def get_id_from_link(link):
+def get_id_from_link(link: str) -> str:
     url, html_id = link.split('#')
     return html_id

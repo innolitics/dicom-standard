@@ -3,10 +3,11 @@ Takes the extracted CIOD information and processes it to produce a
 dictionary of all CIODs in the DICOM Standard.
 '''
 import sys
+from typing import List, Dict
 
 import parse_lib as pl
 
-def ciods_from_extracted_list(ciod_module_list):
+def ciods_from_extracted_list(ciod_module_list: List[dict]) -> Dict[str, Dict[str, str]]:
     ciods = {}
     for ciod in ciod_module_list:
         ciods[ciod['id']] = {
