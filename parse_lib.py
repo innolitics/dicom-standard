@@ -6,8 +6,7 @@ DICOM standard HTML file.
 import json
 import re
 import sys
-from typing import List
-from functools import partial
+from typing import List, Callable
 
 from bs4 import BeautifulSoup, NavigableString
 from bs4.element import PageElement
@@ -33,12 +32,13 @@ def read_json_to_dict(filepath: str) -> dict:
         return json_dict
 
 
-def all_tdivs_in_chapter(standard: dict, chapter_name: str) -> List[PageElement]:
+def all_tdivs_in_chapter(standard: PageElement, chapter_name: str) -> List[PageElement]:
     chapter_divs = standard.find_all('div', class_='chapter')
     for chapter in chapter_divs:
         if chapter.div.div.div.h1.a.get('id') == chapter_name:
             table_divs = chapter.find_all('div', class_='table')
             return table_divs
+    return None
 
 def create_slug(title: str) -> str:
     first_pass = re.sub(r'[\s/]+', '-', title.lower())
@@ -53,7 +53,7 @@ def find_tdiv_by_id(all_tables: List[PageElement], table_id: str) -> PageElement
 def clean_table_name(name: str) -> str:
     _, _, title = re.split('\u00a0', name)
     possible_table_suffixes = r'(IOD Modules)|(Module Attributes)|(Macro Attributes)|(Module Table)'
-    clean_title, *_ = re.split(possible_table_suffixes, title)
+    clean_title, *suffixes = re.split(possible_table_suffixes, title)
     return clean_title.strip()
 
 
@@ -68,16 +68,16 @@ def get_top_level_tag(parsed_html: PageElement) -> PageElement:
     return next(parsed_html.descendants)
 
 
-def remove_attributes_from_html_tags(top_level_tag: PageElement):
+def remove_attributes_from_html_tags(top_level_tag: PageElement) -> None:
     clean_tag_attributes(top_level_tag)
     for child in top_level_tag.descendants:
         clean_tag_attributes(child)
 
-def clean_tag_attributes(tag):
+def clean_tag_attributes(tag: PageElement) -> None:
     if not isinstance(tag, NavigableString):
         tag.attrs = {k: v for k, v in tag.attrs.items() if k in allowed_attributes}
 
-def remove_empty_children(top_level_tag: PageElement):
+def remove_empty_children(top_level_tag: PageElement) -> None:
     empty_anchor_tags = filter((lambda a: a.text == ''), top_level_tag.find_all('a'))
     for anchor in empty_anchor_tags:
         anchor.decompose()
@@ -88,11 +88,11 @@ def resolve_relative_resource_urls(html_string: str) -> str:
     imgs = html.find_all("img", src=True)
     equations = html.find_all("object", data=True)
     list(map(resolve_anchor_href, anchors))
-    list(map(partial(resolve_resource, 'src'), imgs))
-    list(map(partial(resolve_resource, 'data'), equations))
+    list(map(resolve_resource('src'), imgs))
+    list(map(resolve_resource('data'), equations))
     return str(html)
 
-def resolve_anchor_href(anchor: PageElement):
+def resolve_anchor_href(anchor: PageElement) -> None:
     if not has_protocol_prefix(anchor):
         try:
             page, fragment_id = anchor['href'].split('#')
@@ -105,11 +105,13 @@ def resolve_anchor_href(anchor: PageElement):
 
 
 def has_protocol_prefix(anchor: PageElement) -> bool:
-    return re.match(r'(http)|(ftp)', anchor['href'])
+    return bool(re.match(r'(http)|(ftp)', anchor['href']))
 
 
-def resolve_resource(url_attribute: str, resource: PageElement):
-    resource[url_attribute] = BASE_DICOM_URL + resource[url_attribute]
+def resolve_resource(url_attribute: str) -> Callable[[PageElement], None]:
+    def resolve_specific_resource(resource: PageElement) -> None:
+        resource[url_attribute] = BASE_DICOM_URL + resource[url_attribute]
+    return resolve_specific_resource
 
 def text_from_html_string(html_string: str) -> str:
     parsed_html = BeautifulSoup(html_string, 'html.parser')
