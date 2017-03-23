@@ -13,6 +13,7 @@ def parsed_html_table(string_table):
     parsed_table = [list(row.find_all('td')) for row in all_rows]
     return parsed_table
 
+
 def test_slide_at_start():
     row = [1., 2.]
     start_idx = 0
@@ -21,6 +22,7 @@ def test_slide_at_start():
     expected_row = [None, None, 1., 2.]
     assert row == expected_row
 
+
 def test_slide_mid_row():
     row = [1., 2., 3.]
     start_idx = 1
@@ -28,6 +30,7 @@ def test_slide_mid_row():
     row = t.slide_down(start_idx, row, num_slides)
     expected_row = [1., None, None, None, 2., 3.]
     assert row == expected_row
+
 
 def test_tdiv_to_list_simple():
     table = bs(tables.flat, 'html.parser')
@@ -39,6 +42,7 @@ def test_tdiv_to_list_simple():
     ]
     assert t.stringify_table(table_list) == expected_table_list
 
+
 def test_tdiv_to_list_with_cell_content():
     table = bs(tables.with_links, 'html.parser')
     table_list = t.tdiv_to_table_list(table)
@@ -48,6 +52,7 @@ def test_tdiv_to_list_with_cell_content():
         ['<td><a href="somelink">1</a></td>', '<td>2</td>', '<td>3</td>', '<td>4</td>']
     ]
     assert t.stringify_table(table_list) == expected_table_list
+
 
 def test_expand_rowspan():
     rowspan_table = parsed_html_table(tables.rowspan)
@@ -59,6 +64,7 @@ def test_expand_rowspan():
     ]
     assert expanded_table == expected_table
 
+
 def test_expand_colspan():
     colspan_table = parsed_html_table(tables.colspan)
     expanded_table = t.stringify_table(t.expand_spans(colspan_table))
@@ -69,6 +75,7 @@ def test_expand_colspan():
         ['<td>1</td>', '<td>2</td>', '<td>3</td>', '<td>4</td>'],
     ]
     assert expanded_table == expected_table
+
 
 def test_expand_both():
     table = bs(tables.bothspan, 'html.parser')

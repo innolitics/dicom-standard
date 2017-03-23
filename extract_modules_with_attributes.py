@@ -23,6 +23,7 @@ def get_module_tables(standard):
     module_table_lists = list(map(tdiv_to_table_list, module_table_divs))
     return (module_table_lists, module_table_divs)
 
+
 def is_valid_module_table(table_div):
     return TABLE_SUFFIX.match(pr.table_name(table_div))
 
@@ -33,10 +34,12 @@ def tables_to_json(tables, tdivs):
     table_dicts = map(module_table_to_dict, stringified_tables)
     return list(map(get_table_with_metadata, zip(table_dicts, tdivs)))
 
+
 def module_table_to_dict(table):
     has_type_column = len(table[0]) > 3
     column_titles = COLUMN_TITLES_WITH_TYPE if has_type_column else COLUMN_TITLES_NO_TYPE
     return table_to_dict(table, column_titles)
+
 
 def get_table_with_metadata(table_with_tdiv):
     table, tdiv = table_with_tdiv
@@ -48,6 +51,7 @@ def get_table_with_metadata(table_with_tdiv):
             'description': str(pr.table_description(tdiv)),
             'linkToStandard': URL_PREFIX + pr.table_id(tdiv)
     }
+
 
 if __name__ == '__main__':
     standard = pl.parse_html_file(sys.argv[1])

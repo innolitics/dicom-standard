@@ -39,6 +39,7 @@ def all_tdivs_in_chapter(standard, chapter_name):
             table_divs = chapter.find_all('div', class_='table')
             return table_divs
 
+
 def create_slug(title):
     first_pass = re.sub(r'[\s/]+', '-', title.lower())
     return re.sub(r'[\(\),\']+', '', first_pass)
@@ -63,6 +64,7 @@ def clean_html(html):
     remove_empty_children(top_level_tag)
     return resolve_relative_resource_urls(str(top_level_tag))
 
+
 def get_top_level_tag(parsed_html):
     return next(parsed_html.descendants)
 
@@ -72,14 +74,17 @@ def remove_attributes_from_html_tags(top_level_tag):
     for child in top_level_tag.descendants:
         clean_tag_attributes(child)
 
+
 def clean_tag_attributes(tag):
     if not isinstance(tag, NavigableString):
         tag.attrs = {k: v for k, v in tag.attrs.items() if k in allowed_attributes}
+
 
 def remove_empty_children(top_level_tag):
     empty_anchor_tags = filter((lambda a: a.text == ''), top_level_tag.find_all('a'))
     for anchor in empty_anchor_tags:
         anchor.decompose()
+
 
 def resolve_relative_resource_urls(html_string):
     html = BeautifulSoup(html_string, 'html.parser')
@@ -90,6 +95,7 @@ def resolve_relative_resource_urls(html_string):
     list(map(partial(resolve_resource, 'src'), imgs))
     list(map(partial(resolve_resource, 'data'), equations))
     return str(html)
+
 
 def resolve_anchor_href(anchor):
     if not has_protocol_prefix(anchor):
@@ -109,6 +115,7 @@ def has_protocol_prefix(anchor):
 
 def resolve_resource(url_attribute, resource):
     resource[url_attribute] = BASE_DICOM_URL + resource[url_attribute]
+
 
 def text_from_html_string(html_string):
     parsed_html = BeautifulSoup(html_string, 'html.parser')

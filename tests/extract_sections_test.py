@@ -5,8 +5,10 @@ from extract_sections import extract_section_ids
 def create_mock_standard(mock_standard_str):
     return {k: bs(v, 'html.parser') for k, v in mock_standard_str.items()}
 
+
 def stringify_mock_standard(mock_standard):
     return {k: [str(tag) for tag in v] for k, v in mock_standard.items()}
+
 
 def test_extract_section_ids():
     mock_standard_str = {

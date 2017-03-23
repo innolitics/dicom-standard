@@ -11,11 +11,14 @@ def get_hierarchy_markers(name):
     _, *split = re.split('^(>+)', clean_name)
     return '' if split == [] else split[0]
 
+
 def get_hierarchy_level(name):
     return len(get_hierarchy_markers(name))
 
+
 def clean_field(name):
     return re.sub(r'[>]', '', name).strip()
+
 
 def record_hierarchy_for_module(table):
     last_id = [table['id']]
@@ -24,6 +27,7 @@ def record_hierarchy_for_module(table):
         last_id, current_level = update_hierarchy_position(attr, last_id, current_level)
         format_attribute_fields(attr, last_id)
     return table
+
 
 def update_hierarchy_position(attr, last_id, current_level):
     attr_id = pl.create_slug(clean_field(attr['tag']))
@@ -49,6 +53,7 @@ def update_hierarchy_position(attr, last_id, current_level):
         last_id[-1] = attr_id
         current_level += (delta_l)
     return last_id, current_level
+
 
 def format_attribute_fields(attr, last_id):
     attr['name'] = clean_field(attr['name'])

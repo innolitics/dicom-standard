@@ -111,6 +111,7 @@ def test_vertical_samples_from_standard(ciods, modules, attributes):
     assert test_attribute["00080034"] == attributes["00080034"]
     assert test_attribute["00080108"] == attributes["00080108"]
 
+
 @pytest.mark.endtoend
 def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship,
         modules, module_attribute_relationship, attributes):
@@ -188,6 +189,7 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship,
     assert ciod_module[0] in ciod_module_relationship
     assert ciod['cr-image'] == ciods['cr-image']
 
+
 @pytest.mark.endtoend
 def test_number_of_attribute_appearances(module_attribute_relationship, attributes):
     module_attr = [
@@ -239,6 +241,7 @@ def test_number_of_attribute_appearances(module_attribute_relationship, attribut
     all_attribute_appearances = [rel for rel in module_attribute_relationship
                                  if rel['tag'] == '(0010,0213)']
     assert len(all_attribute_appearances) == 2
+
 
 @pytest.mark.endtoend
 def test_number_of_module_appearances(ciods, ciod_module_relationship, modules):

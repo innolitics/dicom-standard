@@ -19,6 +19,7 @@ def expand_all_macros(module_attr_tables, macros):
                                 for table in module_attr_tables]
     return map(add_expanded_attributes_to_tables, zip(module_attr_tables, expanded_attribute_lists))
 
+
 def add_expanded_attributes_to_tables(table_with_attributes):
     table, attributes = table_with_attributes
     table['attributes'] = attributes
@@ -28,9 +29,11 @@ def add_expanded_attributes_to_tables(table_with_attributes):
 def preprocess_attribute_fields(tables):
     return [preprocess_single_table(table) for table in tables]
 
+
 def preprocess_single_table(table):
     table['attributes'] = list(map(preprocess_attribute, table['attributes']))
     return table
+
 
 def preprocess_attribute(attr):
     cleaned_attribute = {
@@ -43,8 +46,10 @@ def preprocess_attribute(attr):
     return cleaned_attribute
 
 
+
 def expand_hierarchy(tables):
     return [record_hierarchy_for_module(table) for table in tables]
+
 
 if __name__ == '__main__':
     module_attr_tables = pl.read_json_to_dict(sys.argv[1])

@@ -14,6 +14,7 @@ def enumerate_all_relationships(ciod_module_list):
                                           table['modules'])))
     return all_relationships
 
+
 def describe_relationship_with(ciod_name):
     def enumerate_relationship(module):
         usage, conditional_statement = expand_conditional_statement(module['usage'])
@@ -26,11 +27,13 @@ def describe_relationship_with(ciod_name):
         }
     return enumerate_relationship
 
+
 def expand_conditional_statement(usage_field_html):
     usage_field = process_usage_html(usage_field_html)
     conditional_statement = extract_conditional_statement(usage_field)
     usage = usage_field[0]
     return usage, conditional_statement
+
 
 def process_usage_html(usage_field_html):
     usage_field = pl.text_from_html_string(usage_field_html)
@@ -38,6 +41,7 @@ def process_usage_html(usage_field_html):
     if len(processed_usage_field) == 0:
         raise Exception('Empty module usage field')
     return processed_usage_field
+
 
 def extract_conditional_statement(usage_field):
     if usage_field.startswith('C - '):

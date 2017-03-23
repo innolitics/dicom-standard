@@ -22,6 +22,7 @@ def get_ciod_tables(standard):
     ciod_table_lists = list(map(tdiv_to_table_list, ciod_table_divs))
     return (ciod_table_lists, ciod_table_divs)
 
+
 def is_valid_ciod_table(table_div):
     return TABLE_SUFFIX.match(pr.table_name(table_div))
 
@@ -32,8 +33,10 @@ def tables_to_json(tables, tdivs):
     table_dicts = map(ciod_table_to_dict, stringified_tables)
     return list(map(get_table_with_metadata, zip(table_dicts, tdivs)))
 
+
 def ciod_table_to_dict(table):
     return table_to_dict(table, COLUMN_TITLES)
+
 
 def get_table_with_metadata(table_with_tdiv):
     table, tdiv = table_with_tdiv
@@ -45,6 +48,7 @@ def get_table_with_metadata(table_with_tdiv):
         'description': str(pr.table_description(tdiv)),
         'linkToStandard': URL_PREFIX + pr.table_id(tdiv)
     }
+
 
 if __name__ == "__main__":
     standard = pl.parse_html_file(sys.argv[1])

@@ -16,6 +16,7 @@ def get_attribute_table(standard):
     list_table = attribute_table_to_list(html_table)
     return table_to_dict(list_table, COLUMN_TITLES)
 
+
 def attribute_table_to_list(table_div):
     return [[cell.text.strip() for cell in row.find_all('td')]
             for row in pr.table_rows(table_div)]

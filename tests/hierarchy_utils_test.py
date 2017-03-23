@@ -8,11 +8,13 @@ def test_get_hierarchy_markers():
     results = list(map(h.get_hierarchy_markers, test_names))
     assert results == expected_result
 
+
 def test_clean_field():
     expected_result = ['name1', 'space in front', 'strange whitespace',
                        'Long marker run', 'No markers']
     results = list(map(h.clean_field, test_names))
     assert results == expected_result
+
 
 def test_add_attribute_parent_ids():
     test_table = {

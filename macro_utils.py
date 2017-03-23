@@ -19,12 +19,14 @@ def expand_macro_rows(table, macros):
     # Removes divider or stylistic rows
     return [attribute for attribute in new_table if attribute['tag'] != 'None']
 
+
 def get_attributes_to_insert(attribute, macros, table_id):
     if is_macro_row(attribute):
         new_attributes = get_macro_attributes(attribute, macros, table_id)
         return new_attributes if new_attributes is not None else []
     else:
         return [attribute]
+
 
 def is_macro_row(attribute):
     is_abnormal_row = attribute['tag'] == 'None'
@@ -34,6 +36,7 @@ def is_macro_row(attribute):
     # where a link actually points to prose instead of a table.
     is_table = re.match("Table.*", reference_anchor_tag.get_text()) if contains_link else False
     return is_abnormal_row and contains_link and is_table
+
 
 # Note that this function *recursively expands* macro references using
 # the `expand_macro_rows` function.
@@ -45,14 +48,17 @@ def get_macro_attributes(attribute, macros, table_id):
         return expand_macro_rows(get_macros_by_id(macro_id, macros, hierarchy_level), macros)
     return []
 
+
 def flatten_one_layer(nested_element_list):
     return [element for element_list in nested_element_list
             for element in element_list]
+
 
 def referenced_macro_id_from_include_statement(macro_reference_html):
     parsed_reference = bs(macro_reference_html, 'html.parser')
     id_anchor = parsed_reference.find('a', class_='xref')
     return id_anchor.get('href')[1:] # Remove the first '#' character
+
 
 def get_macros_by_id(macro_id, macros, hierarchy_level):
     # A copy is required so that local modifications to attributes
@@ -61,17 +67,21 @@ def get_macros_by_id(macro_id, macros, hierarchy_level):
     macro['attributes'] = update_attribute_hierarchy_levels(macro['attributes'], hierarchy_level)
     return macro
 
+
 def update_attribute_hierarchy_levels(attributes, level):
     return [add_level_to_attr(attribute, level) for attribute in attributes]
+
 
 def add_level_to_attr(attribute, level):
     parsed_attribute_name = bs(attribute['name'], 'html.parser').find('td')
     attribute['name'] = prepend_level_to_attribute_name(parsed_attribute_name, level)
     return attribute
 
+
 def prepend_level_to_attribute_name(new_attr_to_insert, level):
     new_attr_to_insert.insert(0, level)
     return str(new_attr_to_insert)
+
 
 def get_id_from_link(link):
     url, html_id = link.split('#')

@@ -16,12 +16,15 @@ def test_is_macro_row():
     assert m.is_macro_row(example_macro_row)
     assert not m.is_macro_row(example_normal_row)
 
+
 def test_flatten_one_layer():
     a = [[1, 2, 3], [4, 5, 6]]
     assert m.flatten_one_layer(a) == [1, 2, 3, 4, 5, 6]
 
+
 def test_referenced_macro_id_from_include_statement():
     assert m.referenced_macro_id_from_include_statement(example_include_statement) == 'somemacro'
+
 
 def test_update_attribute_hierarchy_levels():
     example_attributes = [

@@ -17,11 +17,13 @@ def module_attr_relationship_table(module_attr_relationship_list):
             })
     return entries
 
+
 def get_standard_link(module, attribute):
     if 'linkToStandard' not in attribute.keys():
         return module['linkToStandard']
     else:
         return attribute['linkToStandard']
+
 
 if __name__ == "__main__":
     module_attr_list = pl.read_json_to_dict(sys.argv[1])
