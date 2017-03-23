@@ -16,41 +16,44 @@ def get_reference_requests_from_pairs(module_attr_pairs):
     return [references_from_module_attr_pair(pair) for pair in module_attr_pairs]
 
 def references_from_module_attr_pair(pair):
-    references = get_valid_reference_anchors(pair['description'])
-    return list(map(get_ref_standard_location, references))
+    references = get_valid_reference_anchors(BeautifulSoup(pair['description'], 'html.parser'))
+    return list(map(get_resolved_reference_href, references))
 
-def get_valid_reference_anchors(html):
-    anchor_tags = BeautifulSoup(html, 'html.parser').find_all('a', href=True)
+def get_valid_reference_anchors(parsed_html):
+    anchor_tags = parsed_html.find_all('a', href=True)
     return [a for a in anchor_tags if not re.match(IGNORED_REFERENCES_RE, a['href'])]
 
-def get_ref_standard_location(reference_anchor_tag):
+def get_resolved_reference_href(reference_anchor_tag):
     relative_link = reference_anchor_tag.get('href')
     standard_page, section_id = relative_link.split('#')
     standard_page = 'part03.html' if standard_page == '' else standard_page
-    return standard_page, section_id
+    return standard_page + '#' + section_id
 
-def record_references_inside_pairs(module_attr_pairs, refs_to_record):
-    updated_pairs = [record_reference_in_pair(pair, refs)
-                     for pair, refs in zip(module_attr_pairs, refs_to_record)]
+def record_references_inside_pairs(module_attr_pairs):
+    updated_pairs = [record_reference_in_pair(pair) for pair in module_attr_pairs]
     return updated_pairs
 
-def record_reference_in_pair(pair, refs):
-    references = get_valid_reference_anchors(pair['description'])
-    reference_urls = list(map(get_reference_url_from_standard_location, refs))
+
+def record_reference_in_pair(pair):
+    parsed_description = BeautifulSoup(pair['description'], 'html.parser')
+    references = get_valid_reference_anchors(parsed_description)
+    external_references = list(map(reference_structure_from_anchor, references))
     list(map(mark_as_recorded, references))
-    pair['externalReferences'] = [] if len(reference_urls) < 1 else reference_urls
+    pair['externalReferences'] = [] if len(external_references) < 1 else external_references
+    pair['description'] = str(parsed_description)
     return pair
 
-def get_reference_url_from_standard_location(standard_location):
-    return pl.BASE_DICOM_URL + '#'.join(standard_location)
+def reference_structure_from_anchor(reference):
+    return {
+        "sourceUrl": pl.BASE_DICOM_URL + get_resolved_reference_href(reference),
+        "title": reference.get_text()
+    }
 
 def mark_as_recorded(anchor):
     anchor['href'] = ''
     anchor.name = 'span'
 
-
 if __name__ == '__main__':
     module_attr_pairs = pl.read_json_to_dict(sys.argv[1])
-    refs_to_record = get_reference_requests_from_pairs(module_attr_pairs)
-    updated_pairs = record_references_inside_pairs(module_attr_pairs, refs_to_record)
+    updated_pairs = record_references_inside_pairs(module_attr_pairs)
     pl.write_pretty_json(updated_pairs)
