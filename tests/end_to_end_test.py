@@ -132,9 +132,12 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship,
             "tag":"(0008,0121)",
             "type":"3",
             "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-4a",
-            "description":"<td align=\"left\" colspan=\"1\" rowspan=\"1\">\n<p>\n<a id=\"para_c32b3ab1-f6a7-4c45-8594-14bcfea070f3\" shape=\"rect\"></a>Codes that are considered equivalent by the creating system.</p>\n<p>\n<a id=\"para_8d511d7c-f177-4d12-80c0-7f0d32653fdd\" shape=\"rect\"></a>One or more Items are permitted in this Sequence.</p>\n<p>\n<a id=\"para_4556c2fe-e657-43c7-8c66-b4603431e788\" shape=\"rect\"></a>See <a class=\"xref\" href=\"#sect_8.9\" shape=\"rect\" title=\"8.9\u00a0Equivalent Code Sequence\">Section\u00a08.9</a>.</p>\n</td>",
+            "description":"<td align=\"left\" colspan=\"1\" rowspan=\"1\">\n<p>\n<a id=\"para_c32b3ab1-f6a7-4c45-8594-14bcfea070f3\" shape=\"rect\"></a>Codes that are considered equivalent by the creating system.</p>\n<p>\n<a id=\"para_8d511d7c-f177-4d12-80c0-7f0d32653fdd\" shape=\"rect\"></a>One or more Items are permitted in this Sequence.</p>\n<p>\n<a id=\"para_4556c2fe-e657-43c7-8c66-b4603431e788\" shape=\"rect\"></a>See <span class=\"xref\" href=\"\" shape=\"rect\" title=\"8.9\u00a0Equivalent Code Sequence\">Section\u00a08.9</span>.</p>\n</td>",
             "externalReferences":[
-                "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_8.9"
+                {
+                    "sourceUrl": "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_8.9",
+                    "title": "Section\u00a08.9"
+                },
             ]
         },
         {
@@ -144,9 +147,12 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship,
             "tag":"(0008,0121)",
             "type":"3",
             "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-4a",
-            "description":"<td align=\"left\" colspan=\"1\" rowspan=\"1\">\n<p>\n<a id=\"para_c32b3ab1-f6a7-4c45-8594-14bcfea070f3\" shape=\"rect\"></a>Codes that are considered equivalent by the creating system.</p>\n<p>\n<a id=\"para_8d511d7c-f177-4d12-80c0-7f0d32653fdd\" shape=\"rect\"></a>One or more Items are permitted in this Sequence.</p>\n<p>\n<a id=\"para_4556c2fe-e657-43c7-8c66-b4603431e788\" shape=\"rect\"></a>See <a class=\"xref\" href=\"#sect_8.9\" shape=\"rect\" title=\"8.9\u00a0Equivalent Code Sequence\">Section\u00a08.9</a>.</p>\n</td>",
+            "description":"<td align=\"left\" colspan=\"1\" rowspan=\"1\">\n<p>\n<a id=\"para_c32b3ab1-f6a7-4c45-8594-14bcfea070f3\" shape=\"rect\"></a>Codes that are considered equivalent by the creating system.</p>\n<p>\n<a id=\"para_8d511d7c-f177-4d12-80c0-7f0d32653fdd\" shape=\"rect\"></a>One or more Items are permitted in this Sequence.</p>\n<p>\n<a id=\"para_4556c2fe-e657-43c7-8c66-b4603431e788\" shape=\"rect\"></a>See <span class=\"xref\" href=\"\" shape=\"rect\" title=\"8.9\u00a0Equivalent Code Sequence\">Section\u00a08.9</span>.</p>\n</td>",
             "externalReferences":[
-                "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_8.9"
+                {
+                    "sourceUrl": "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_8.9",
+                    "title": "Section\u00a08.9"
+                },
             ]
         },
     ]
@@ -192,9 +198,12 @@ def test_number_of_attribute_appearances(module_attribute_relationship, attribut
             "tag":"(0010,0213)",
             "type":"None",
             "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.2-3",
-            "description":"<td align=\"left\" colspan=\"1\" rowspan=\"1\">\n<p>\n<a id=\"para_eb1a8550-fedf-4e1c-81bd-eeb6325f04b2\" shape=\"rect\"></a>The nomenclature used for Strain Description (0010,0212). See <a class=\"xref\" href=\"#sect_C.7.1.1.1.4\" shape=\"rect\" title=\"C.7.1.1.1.4\u00a0Patient Strain and Genetic Modifications\">Section\u00a0C.7.1.1.1.4</a>.</p>\n</td>",
+            "description":"<td align=\"left\" colspan=\"1\" rowspan=\"1\">\n<p>\n<a id=\"para_eb1a8550-fedf-4e1c-81bd-eeb6325f04b2\" shape=\"rect\"></a>The nomenclature used for Strain Description (0010,0212). See <span class=\"xref\" href=\"\" shape=\"rect\" title=\"C.7.1.1.1.4\u00a0Patient Strain and Genetic Modifications\">Section\u00a0C.7.1.1.1.4</span>.</p>\n</td>",
             "externalReferences":[
-                "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.1.1.1.4"
+                {
+                    "sourceUrl": "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.1.1.1.4",
+                    "title": "Section\u00a0C.7.1.1.1.4"
+                },
             ]
         },
         {
@@ -204,9 +213,12 @@ def test_number_of_attribute_appearances(module_attribute_relationship, attribut
             "tag":"(0010,0213)",
             "type":"3",
             "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-1",
-            "description":"<td align=\"left\" colspan=\"1\" rowspan=\"1\">\n<p>\n<a id=\"para_ea1c4023-3354-45aa-b770-e942796f32f3\" shape=\"rect\"></a>The nomenclature used for Strain Description (0010,0212). See <a class=\"xref\" href=\"#sect_C.7.1.1.1.4\" shape=\"rect\" title=\"C.7.1.1.1.4\u00a0Patient Strain and Genetic Modifications\">Section\u00a0C.7.1.1.1.4</a>.</p>\n</td>",
+            "description":"<td align=\"left\" colspan=\"1\" rowspan=\"1\">\n<p>\n<a id=\"para_ea1c4023-3354-45aa-b770-e942796f32f3\" shape=\"rect\"></a>The nomenclature used for Strain Description (0010,0212). See <span class=\"xref\" href=\"\" shape=\"rect\" title=\"C.7.1.1.1.4\u00a0Patient Strain and Genetic Modifications\">Section\u00a0C.7.1.1.1.4</span>.</p>\n</td>",
             "externalReferences":[
-                "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.1.1.1.4"
+                {
+                    "sourceUrl": "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.1.1.1.4",
+                    "title": "Section\u00a0C.7.1.1.1.4"
+                },
             ]
         },
     ]
