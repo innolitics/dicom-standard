@@ -41,14 +41,22 @@ def ciod_table_to_dict(table):
 def get_table_with_metadata(table_with_tdiv):
     table, tdiv = table_with_tdiv
     clean_name = pl.clean_table_name(pr.table_name(tdiv))
+    table_description = get_ciod_description(tdiv)
     return {
         'name': clean_name,
         'modules': table,
         'id': pl.create_slug(clean_name),
-        'description': str(pr.table_description(tdiv)),
+        'description': str(table_description),
         'linkToStandard': URL_PREFIX + pr.table_id(tdiv)
     }
 
+def get_ciod_description(tdiv):
+    section = tdiv.parent.parent
+    description_title = section.find('h3', class_='title')
+    try:
+        return description_title.parent.parent.parent.parent.p
+    except AttributeError:
+        return None
 
 if __name__ == "__main__":
     standard = pl.parse_html_file(sys.argv[1])

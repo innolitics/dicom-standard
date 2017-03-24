@@ -44,14 +44,22 @@ def module_table_to_dict(table):
 def get_table_with_metadata(table_with_tdiv):
     table, tdiv = table_with_tdiv
     clean_name = pl.clean_table_name(pr.table_name(tdiv))
+    table_description = pr.table_description(tdiv)
     return {
             'name': clean_name,
             'attributes': table,
             'id': pl.create_slug(clean_name),
-            'description': str(pr.table_description(tdiv)),
+            'description': str(clean_table_description(table_description)),
             'linkToStandard': URL_PREFIX + pr.table_id(tdiv)
     }
 
+def clean_table_description(description):
+    table_link = description.find('a', class_='xref')
+    if table_link is not None:
+        table_link.href = ''
+        table_link.name = 'span'
+        table_link.string = 'This module '
+    return description
 
 if __name__ == '__main__':
     standard = pl.parse_html_file(sys.argv[1])
