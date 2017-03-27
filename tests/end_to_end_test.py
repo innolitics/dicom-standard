@@ -65,7 +65,7 @@ def test_valid_foreign_keys_module_attribute(module_attribute_relationship, modu
 def test_vertical_samples_from_standard(ciods, modules, attributes):
     test_ciod = {
         "us-multi-frame-image": {
-            "description": '<p>\n<a href="http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_A.7-1" target="_blank">Table\xa0A.7-1</a> specifies the Modules of the US Multi-frame Image IOD.</p>',
+            "description":"<p>\nThe Ultrasound (US) Multi-frame Image Information Object Definition specifies a Multi-frame image that has been created by an ultrasound imaging device.</p>",
             "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_A.7-1",
             "name": "US Multi-frame Image",
             "id": "us-multi-frame-image",
@@ -76,7 +76,7 @@ def test_vertical_samples_from_standard(ciods, modules, attributes):
             "name": "Patient",
             "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-1",
             "id": "patient",
-            "description":"<p>\n<a id=\"para_9dee1267-98f7-4fb1-bc67-aff85bef41a8\" shape=\"rect\"></a>\n<a class=\"xref\" href=\"#table_C.7-1\" shape=\"rect\" title=\"Table\u00a0C.7-1.\u00a0Patient Module Attributes\">Table\u00a0C.7-1</a> specifies the Attributes of the Patient that describe and identify the Patient who is the subject of a Study.\n            This Module contains Attributes of the patient that are needed for interpretation of the Composite Instances and are common for all studies performed on the patient. It contains Attributes that are also included in the Patient Modules in <a class=\"xref\" href=\"#sect_C.2\" shape=\"rect\" title=\"C.2\u00a0Patient Modules\">Section\u00a0C.2</a>.</p>"
+            "description":"<p>\n<span href=\"#table_C.7-1\">This module </span> specifies the Attributes of the Patient that describe and identify the Patient who is the subject of a Study.\n            This Module contains Attributes of the patient that are needed for interpretation of the Composite Instances and are common for all studies performed on the patient. It contains Attributes that are also included in the Patient Modules in <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.2\" target=\"_blank\">Section\u00a0C.2</a>.</p>",
         }
     }
     test_attribute = {
@@ -128,12 +128,12 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship,
     module_attr = [
         {
             "module":"patient-study",
-            "moduleDescription":"<p>\n<a id=\"para_9f0f6d2b-ece1-469b-bd8e-ed3e08db0e9b\" shape=\"rect\"></a>\n<a class=\"xref\" href=\"#table_C.7-4a\" shape=\"rect\" title=\"Table\u00a0C.7-4a.\u00a0Patient Study Module Attributes\">Table\u00a0C.7-4a</a> defines Attributes that provide information about the Patient at the time the Study started.</p>",
+            "moduleDescription":"<p>\n<span href=\"#table_C.7-4a\">This module </span> defines Attributes that provide information about the Patient at the time the Study started.</p>",
             "path":"patient-study:00081084:00080121",
             "tag":"(0008,0121)",
             "type":"3",
             "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-4a",
-            "description":"<td align=\"left\" colspan=\"1\" rowspan=\"1\">\n<p>\n<a id=\"para_c32b3ab1-f6a7-4c45-8594-14bcfea070f3\" shape=\"rect\"></a>Codes that are considered equivalent by the creating system.</p>\n<p>\n<a id=\"para_8d511d7c-f177-4d12-80c0-7f0d32653fdd\" shape=\"rect\"></a>One or more Items are permitted in this Sequence.</p>\n<p>\n<a id=\"para_4556c2fe-e657-43c7-8c66-b4603431e788\" shape=\"rect\"></a>See <span class=\"xref\" href=\"\" shape=\"rect\" title=\"8.9\u00a0Equivalent Code Sequence\">Section\u00a08.9</span>.</p>\n</td>",
+            "description":"<td colspan=\"1\" rowspan=\"1\">\n<p>\nCodes that are considered equivalent by the creating system.</p>\n<p>\nOne or more Items are permitted in this Sequence.</p>\n<p>\nSee <span href=\"\">Section\u00a08.9</span>.</p>\n</td>",
             "externalReferences":[
                 {
                     "sourceUrl": "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_8.9",
@@ -143,12 +143,12 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship,
         },
         {
             "module":"patient-study",
-            "moduleDescription":"<p>\n<a id=\"para_9f0f6d2b-ece1-469b-bd8e-ed3e08db0e9b\" shape=\"rect\"></a>\n<a class=\"xref\" href=\"#table_C.7-4a\" shape=\"rect\" title=\"Table\u00a0C.7-4a.\u00a0Patient Study Module Attributes\">Table\u00a0C.7-4a</a> defines Attributes that provide information about the Patient at the time the Study started.</p>",
+            "moduleDescription":"<p>\n<span href=\"#table_C.7-4a\">This module </span> defines Attributes that provide information about the Patient at the time the Study started.</p>",
             "path":"patient-study:00101021:00080121",
             "tag":"(0008,0121)",
             "type":"3",
             "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-4a",
-            "description":"<td align=\"left\" colspan=\"1\" rowspan=\"1\">\n<p>\n<a id=\"para_c32b3ab1-f6a7-4c45-8594-14bcfea070f3\" shape=\"rect\"></a>Codes that are considered equivalent by the creating system.</p>\n<p>\n<a id=\"para_8d511d7c-f177-4d12-80c0-7f0d32653fdd\" shape=\"rect\"></a>One or more Items are permitted in this Sequence.</p>\n<p>\n<a id=\"para_4556c2fe-e657-43c7-8c66-b4603431e788\" shape=\"rect\"></a>See <span class=\"xref\" href=\"\" shape=\"rect\" title=\"8.9\u00a0Equivalent Code Sequence\">Section\u00a08.9</span>.</p>\n</td>",
+            "description":"<td colspan=\"1\" rowspan=\"1\">\n<p>\nCodes that are considered equivalent by the creating system.</p>\n<p>\nOne or more Items are permitted in this Sequence.</p>\n<p>\nSee <span href=\"\">Section\u00a08.9</span>.</p>\n</td>",
             "externalReferences":[
                 {
                     "sourceUrl": "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_8.9",
@@ -161,7 +161,7 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship,
         "patient-study":{
             "id":"patient-study",
             "name":"Patient Study",
-            "description":"<p>\n<a id=\"para_9f0f6d2b-ece1-469b-bd8e-ed3e08db0e9b\" shape=\"rect\"></a>\n<a class=\"xref\" href=\"#table_C.7-4a\" shape=\"rect\" title=\"Table\u00a0C.7-4a.\u00a0Patient Study Module Attributes\">Table\u00a0C.7-4a</a> defines Attributes that provide information about the Patient at the time the Study started.</p>",
+            "description":"<p>\n<span href=\"#table_C.7-4a\">This module </span> defines Attributes that provide information about the Patient at the time the Study started.</p>",
             "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-4a"
         },
     }
@@ -176,7 +176,7 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship,
     ]
     ciod = {
         "cr-image": {
-            "description":"<p>\n<a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_A.2-1\" target=\"_blank\">Table\u00a0A.2-1</a> specifies the Modules of the CR Image IOD.</p>",
+            "description":"<p>\nThe Computed Radiography (CR) Image Information Object Definition specifies an image that has been created by a computed radiography imaging device.</p>",
             "name":"CR Image",
             "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_A.2-1",
             "id": "cr-image",
@@ -195,12 +195,12 @@ def test_number_of_attribute_appearances(module_attribute_relationship, attribut
     module_attr = [
         {
             "module":"patient-demographic",
-            "moduleDescription":"<p>\n<a id=\"para_4a7adeab-f0e4-4bdb-a9b0-0c41212d1894\" shape=\"rect\"></a>\n<a class=\"xref\" href=\"#table_C.2-3\" shape=\"rect\" title=\"Table\u00a0C.2-3.\u00a0Patient Demographic Module Attributes\">Table\u00a0C.2-3</a> defines the Attributes relevant to generally describing a patient at a specific point in time, e.g., at the time of admission.</p>",
+            "moduleDescription":"<p>\n<span href=\"#table_C.2-3\">This module </span> defines the Attributes relevant to generally describing a patient at a specific point in time, e.g., at the time of admission.</p>",
             "path":"patient-demographic:00100213",
             "tag":"(0010,0213)",
             "type":"None",
             "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.2-3",
-            "description":"<td align=\"left\" colspan=\"1\" rowspan=\"1\">\n<p>\n<a id=\"para_eb1a8550-fedf-4e1c-81bd-eeb6325f04b2\" shape=\"rect\"></a>The nomenclature used for Strain Description (0010,0212). See <span class=\"xref\" href=\"\" shape=\"rect\" title=\"C.7.1.1.1.4\u00a0Patient Strain and Genetic Modifications\">Section\u00a0C.7.1.1.1.4</span>.</p>\n</td>",
+            "description":"<td colspan=\"1\" rowspan=\"1\">\n<p>\nThe nomenclature used for Strain Description (0010,0212). See <span href=\"\">Section\u00a0C.7.1.1.1.4</span>.</p>\n</td>",
             "externalReferences":[
                 {
                     "sourceUrl": "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.1.1.1.4",
@@ -210,12 +210,12 @@ def test_number_of_attribute_appearances(module_attribute_relationship, attribut
         },
         {
             "module":"patient",
-            "moduleDescription":"<p>\n<a id=\"para_9dee1267-98f7-4fb1-bc67-aff85bef41a8\" shape=\"rect\"></a>\n<a class=\"xref\" href=\"#table_C.7-1\" shape=\"rect\" title=\"Table\u00a0C.7-1.\u00a0Patient Module Attributes\">Table\u00a0C.7-1</a> specifies the Attributes of the Patient that describe and identify the Patient who is the subject of a Study.\n            This Module contains Attributes of the patient that are needed for interpretation of the Composite Instances and are common for all studies performed on the patient. It contains Attributes that are also included in the Patient Modules in <a class=\"xref\" href=\"#sect_C.2\" shape=\"rect\" title=\"C.2\u00a0Patient Modules\">Section\u00a0C.2</a>.</p>",
+            "moduleDescription":"<p>\n<span href=\"#table_C.7-1\">This module </span> specifies the Attributes of the Patient that describe and identify the Patient who is the subject of a Study.\n            This Module contains Attributes of the patient that are needed for interpretation of the Composite Instances and are common for all studies performed on the patient. It contains Attributes that are also included in the Patient Modules in <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.2\" target=\"_blank\">Section\u00a0C.2</a>.</p>",
             "path":"patient:00100213",
             "tag":"(0010,0213)",
             "type":"3",
             "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.7-1",
-            "description":"<td align=\"left\" colspan=\"1\" rowspan=\"1\">\n<p>\n<a id=\"para_ea1c4023-3354-45aa-b770-e942796f32f3\" shape=\"rect\"></a>The nomenclature used for Strain Description (0010,0212). See <span class=\"xref\" href=\"\" shape=\"rect\" title=\"C.7.1.1.1.4\u00a0Patient Strain and Genetic Modifications\">Section\u00a0C.7.1.1.1.4</span>.</p>\n</td>",
+            "description":"<td colspan=\"1\" rowspan=\"1\">\n<p>\nThe nomenclature used for Strain Description (0010,0212). See <span href=\"\">Section\u00a0C.7.1.1.1.4</span>.</p>\n</td>",
             "externalReferences":[
                 {
                     "sourceUrl": "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_C.7.1.1.1.4",
@@ -249,7 +249,7 @@ def test_number_of_module_appearances(ciods, ciod_module_relationship, modules):
         "volume-cropping": {
             "name":"Volume Cropping",
             "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.11.24-1",
-            "description":"<p>\n<a id=\"para_d9ae2959-d5cd-42dc-98d0-32b2a41d1fef\" shape=\"rect\"></a>\n<a class=\"xref\" href=\"#table_C.11.24-1\" shape=\"rect\" title=\"Table\u00a0C.11.24-1.\u00a0Volume Cropping Module Attributes\">Table\u00a0C.11.24-1</a> contains the attributes of the Volume Cropping Module. This Module limits the spatial extent of inputs in Volumetric Presentation State Input Sequence (0070,1201) that are used.</p>",
+            "description":"<p>\n<span href=\"#table_C.11.24-1\">This module </span> contains the attributes of the Volume Cropping Module. This Module limits the spatial extent of inputs in Volumetric Presentation State Input Sequence (0070,1201) that are used.</p>",
             "id": "volume-cropping"
         }
     }

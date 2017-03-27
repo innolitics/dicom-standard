@@ -12,7 +12,7 @@ def modules_from_tables(tables):
         modules[module['id']] = {
             'id': module['id'],
             'name': module['name'],
-            'description': module['description'],
+            'description': pl.clean_html(module['description']),
             'linkToStandard': module['linkToStandard']
         }
     return modules

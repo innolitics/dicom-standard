@@ -45,8 +45,13 @@ def record_reference_in_pair(pair):
     list(map(mark_as_recorded, references))
     pair['externalReferences'] = [] if len(external_references) < 1 else external_references
     pair['description'] = str(parsed_description)
+    finalize_descriptions(pair)
     return pair
 
+
+def finalize_descriptions(pair):
+    pair['description'] = pl.clean_html(pair['description'])
+    pair['moduleDescription'] = pl.clean_html(pair['moduleDescription'])
 
 def reference_structure_from_anchor(reference):
     return {
