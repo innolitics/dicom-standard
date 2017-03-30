@@ -7,7 +7,7 @@ import re
 import parse_lib as pl
 
 def get_hierarchy_markers(name):
-    clean_name = name.strip()
+    clean_name = name.strip().replace('(\n)|( )', '')
     _, *split = re.split('^(>+)', clean_name)
     return '' if split == [] else split[0]
 
