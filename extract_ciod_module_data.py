@@ -14,7 +14,7 @@ CHAPTER_ID = 'chapter_A'
 TABLE_SUFFIX = re.compile(".*IOD Modules$")
 COLUMN_TITLES = ['informationEntity', 'module', 'reference_fragment', 'usage']
 
-URL_PREFIX = "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#"
+URL_PREFIX = "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/"
 
 def get_ciod_tables(standard):
     chapter_A_table_divs = pl.all_tdivs_in_chapter(standard, CHAPTER_ID)
@@ -47,7 +47,7 @@ def get_table_with_metadata(table_with_tdiv):
         'modules': table,
         'id': pl.create_slug(clean_name),
         'description': str(table_description),
-        'linkToStandard': URL_PREFIX + pr.table_id(tdiv)
+        'linkToStandard': URL_PREFIX + pr.table_parent_section(tdiv) + '.html#' + pr.table_id(tdiv)
     }
 
 def get_ciod_description(tdiv):

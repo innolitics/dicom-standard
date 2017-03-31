@@ -16,5 +16,9 @@ def table_id(table_div):
     return table_div.a.get('id')
 
 
+def table_parent_section(table_div):
+    return table_div.parent.div.div.div.find('a').get('id')
+
+
 def table_description(table_div):
     return table_div.parent.find('p')
