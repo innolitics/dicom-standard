@@ -98,7 +98,7 @@ def resolve_relative_resource_urls(html_string):
 
 
 def resolve_anchor_href(anchor):
-    if not has_protocol_prefix(anchor):
+    if not has_protocol_prefix(anchor, 'href'):
         try:
             page, fragment_id = anchor['href'].split('#')
             resolved_page = 'part03.html' if page == '' else page
@@ -109,12 +109,13 @@ def resolve_anchor_href(anchor):
         anchor['target'] = '_blank'
 
 
-def has_protocol_prefix(anchor):
-    return re.match(r'(http)|(ftp)', anchor['href'])
+def has_protocol_prefix(resource, url_attribute):
+    return re.match(r'(http)|(ftp)', resource[url_attribute])
 
 
 def resolve_resource(url_attribute, resource):
-    resource[url_attribute] = BASE_DICOM_URL + resource[url_attribute]
+    if not has_protocol_prefix(resource, url_attribute):
+        resource[url_attribute] = BASE_DICOM_URL + resource[url_attribute]
 
 
 def text_from_html_string(html_string):
