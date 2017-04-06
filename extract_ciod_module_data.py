@@ -35,15 +35,6 @@ def tables_to_json(tables, tdivs):
 def ciod_table_to_dict(table):
     return table_to_dict(table, COLUMN_TITLES)
 
-def table_parent_page(table_div):
-    parent_section_id = table_div.parent.div.div.div.find('a').get('id')
-    sections = parent_section_id.split('.')
-    try:
-        cutoff_index = sections.index('1')
-        return '.'.join(sections[0:cutoff_index])
-    except ValueError:
-        return parent_section_id
-
 
 def get_table_with_metadata(table_with_tdiv):
     table, tdiv = table_with_tdiv
@@ -54,8 +45,13 @@ def get_table_with_metadata(table_with_tdiv):
         'modules': table,
         'id': pl.create_slug(clean_name),
         'description': str(table_description),
-        'linkToStandard': pl.SMALL_DICOM_URL_PREFIX + table_parent_page(tdiv) + '.html#' + pr.table_id(tdiv)
+        'linkToStandard': get_short_standard_link(tdiv)
     }
+
+
+def get_short_standard_link(tdiv):
+    return pl.SHORT_DICOM_URL_PREFIX + pl.table_parent_page(tdiv) + '.html#' + pr.table_id(tdiv)
+
 
 def get_ciod_description(tdiv):
     section = tdiv.parent.parent

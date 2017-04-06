@@ -10,11 +10,10 @@ import parse_lib as pl
 from macro_utils import flatten_one_layer
 from postprocess_mark_references import references_from_module_attr_pair
 
-BASE_SHORT_DICOM_SECTION_URL = "http://dicom.nema.org/medical/dicom/current/output/chtml/"
 
 def find_reference_html_in_sections(pairs, section_listing):
     refs_to_record = get_refs_from_pairs(pairs)
-    references = {BASE_SHORT_DICOM_SECTION_URL + chapter + '/' + page_and_section:
+    references = {pl.BASE_SHORT_DICOM_SECTION_URL + chapter + '/' + page_and_section:
                   section_listing[chapter + '.html'][page_and_section.split('#')[-1]]
                   for chapter, page_and_section in refs_to_record}
     refs_with_resolved_resource_urls = {k: pl.resolve_relative_resource_urls(v)
@@ -42,7 +41,7 @@ def get_refs_from_pairs(pairs):
 
 
 def get_location_from_ref(ref):
-    _, standard_location = ref['sourceUrl'].split(BASE_SHORT_DICOM_SECTION_URL)
+    _, standard_location = ref['sourceUrl'].split(pl.BASE_SHORT_DICOM_SECTION_URL)
     chapter, page_and_section = standard_location.split('/')
     return chapter, page_and_section
 

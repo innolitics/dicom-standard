@@ -11,7 +11,6 @@ import parse_lib as pl
 
 IGNORED_REFERENCES_RE = re.compile(r'(.*ftp.*)|(.*http.*)|(.*part05.*)|(.*chapter.*)|(.*PS3.*)|(.*DCM.*)|(.*glossentry.*)')
 
-BASE_SHORT_DICOM_SECTION_URL = "http://dicom.nema.org/medical/dicom/current/output/chtml/"
 
 def get_reference_requests_from_pairs(module_attr_pairs):
     return [references_from_module_attr_pair(pair) for pair in module_attr_pairs]
@@ -66,7 +65,7 @@ def finalize_descriptions(pair):
 
 def reference_structure_from_anchor(reference):
     return {
-        "sourceUrl": BASE_SHORT_DICOM_SECTION_URL + get_resolved_reference_href(reference),
+        "sourceUrl": pl.BASE_SHORT_DICOM_SECTION_URL + get_resolved_reference_href(reference),
         "title": reference.get_text()
     }
 
