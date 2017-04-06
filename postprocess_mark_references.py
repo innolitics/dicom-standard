@@ -11,6 +11,7 @@ import parse_lib as pl
 
 IGNORED_REFERENCES_RE = re.compile(r'(.*ftp.*)|(.*http.*)|(.*part05.*)|(.*chapter.*)|(.*PS3.*)|(.*DCM.*)|(.*glossentry.*)')
 
+BASE_SHORT_DICOM_SECTION_URL = "http://dicom.nema.org/medical/dicom/current/output/chtml/"
 
 def get_reference_requests_from_pairs(module_attr_pairs):
     return [references_from_module_attr_pair(pair) for pair in module_attr_pairs]
@@ -29,8 +30,18 @@ def get_valid_reference_anchors(parsed_html):
 def get_resolved_reference_href(reference_anchor_tag):
     relative_link = reference_anchor_tag.get('href')
     standard_page, section_id = relative_link.split('#')
-    standard_page = 'part03.html' if standard_page == '' else standard_page
-    return standard_page + '#' + section_id
+    chapter_with_extension = 'part03.html' if standard_page == '' else standard_page
+    chapter, _ = chapter_with_extension.split('.html')
+    return chapter + '/' + get_standard_page(section_id) + '.html#' + section_id
+
+
+def get_standard_page(sect_id):
+    sections = sect_id.split('.')
+    try:
+        cutoff_index = sections.index('1')
+        return '.'.join(sections[0:cutoff_index])
+    except ValueError:
+        return sect_id
 
 
 def record_references_inside_pairs(module_attr_pairs):
@@ -55,7 +66,7 @@ def finalize_descriptions(pair):
 
 def reference_structure_from_anchor(reference):
     return {
-        "sourceUrl": pl.BASE_DICOM_URL + get_resolved_reference_href(reference),
+        "sourceUrl": BASE_SHORT_DICOM_SECTION_URL + get_resolved_reference_href(reference),
         "title": reference.get_text()
     }
 
