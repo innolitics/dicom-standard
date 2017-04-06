@@ -15,8 +15,6 @@ TABLE_SUFFIX = re.compile("(.*Module Attributes$)|(.*Module Table$)")
 COLUMN_TITLES_WITH_TYPE = ['name', 'tag', 'type', 'description']
 COLUMN_TITLES_NO_TYPE = ['name', 'tag', 'description']
 
-URL_PREFIX = "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#"
-
 def get_module_tables(standard):
     chapter_C_table_divs = pl.all_tdivs_in_chapter(standard, CHAPTER_ID)
     module_table_divs = list(filter(is_valid_module_table, chapter_C_table_divs))
@@ -41,16 +39,26 @@ def module_table_to_dict(table):
     return table_to_dict(table, column_titles)
 
 
+def table_parent_page(table_div):
+    parent_section_id = table_div.parent.div.div.div.find('a').get('id')
+    sections = parent_section_id.split('.')
+    try:
+        cutoff_index = sections.index('1')
+        return '.'.join(sections[0:cutoff_index])
+    except ValueError:
+        return parent_section_id
+
+
 def get_table_with_metadata(table_with_tdiv):
     table, tdiv = table_with_tdiv
     clean_name = pl.clean_table_name(pr.table_name(tdiv))
     table_description = pr.table_description(tdiv)
     return {
-            'name': clean_name,
-            'attributes': table,
-            'id': pl.create_slug(clean_name),
-            'description': str(clean_table_description(table_description)),
-            'linkToStandard': URL_PREFIX + pr.table_id(tdiv)
+        'name': clean_name,
+        'attributes': table,
+        'id': pl.create_slug(clean_name),
+        'description': str(clean_table_description(table_description)),
+        'linkToStandard': pl.SMALL_DICOM_URL_PREFIX + table_parent_page(tdiv) + '.html#' + pr.table_id(tdiv)
     }
 
 def clean_table_description(description):

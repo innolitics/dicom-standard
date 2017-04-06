@@ -14,6 +14,8 @@ from bs4 import NavigableString
 import parse_relations as pr
 
 BASE_DICOM_URL = "http://dicom.nema.org/medical/dicom/current/output/html/"
+SMALL_DICOM_URL_PREFIX = "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/"
+
 allowed_attributes = ["href", "src", "type", "data", "colspan", "rowspan"]
 
 def parse_html_file(filepath):
