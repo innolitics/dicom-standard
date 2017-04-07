@@ -12,35 +12,9 @@ import parse_lib as pl
 IGNORED_REFERENCES_RE = re.compile(r'(.*ftp.*)|(.*http.*)|(.*part05.*)|(.*chapter.*)|(.*PS3.*)|(.*DCM.*)|(.*glossentry.*)')
 
 
-def get_reference_requests_from_pairs(module_attr_pairs):
-    return [references_from_module_attr_pair(pair) for pair in module_attr_pairs]
-
-
-def references_from_module_attr_pair(pair):
-    references = get_valid_reference_anchors(BeautifulSoup(pair['description'], 'html.parser'))
-    return list(map(get_resolved_reference_href, references))
-
-
 def get_valid_reference_anchors(parsed_html):
     anchor_tags = parsed_html.find_all('a', href=True)
     return [a for a in anchor_tags if not re.match(IGNORED_REFERENCES_RE, a['href'])]
-
-
-def get_resolved_reference_href(reference_anchor_tag):
-    relative_link = reference_anchor_tag.get('href')
-    standard_page, section_id = relative_link.split('#')
-    chapter_with_extension = 'part03.html' if standard_page == '' else standard_page
-    chapter, _ = chapter_with_extension.split('.html')
-    return chapter + '/' + get_standard_page(section_id) + '.html#' + section_id
-
-
-def get_standard_page(sect_id):
-    sections = sect_id.split('.')
-    try:
-        cutoff_index = sections.index('1')
-        return '.'.join(sections[0:cutoff_index])
-    except ValueError:
-        return sect_id
 
 
 def record_references_inside_pairs(module_attr_pairs):
@@ -65,7 +39,7 @@ def finalize_descriptions(pair):
 
 def reference_structure_from_anchor(reference):
     return {
-        "sourceUrl": pl.BASE_SHORT_DICOM_SECTION_URL + get_resolved_reference_href(reference),
+        "sourceUrl": reference.get('href'),
         "title": reference.get_text()
     }
 
