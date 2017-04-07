@@ -26,15 +26,10 @@ def find_reference_html_in_sections(pairs, section_listing):
     cleaned_references = {k: pl.clean_html(v) for k, v in refs_with_resolved_resource_urls.items()}
     return cleaned_references
 
+
 def reference_content_from_id(ref_id):
     if re.match(r'sect.*', ref_id['id']):
         return ref_id.parent.parent.parent.parent.parent
-    elif re.match(r'biblio.*', ref_id['id']):
-        return ref_id.parent
-    elif re.match(r'table.*', ref_id['id']):
-        return ref_id.parent
-    elif re.match(r'note.*', ref_id['id']):
-        return ref_id.parent
     else:
         return ref_id.parent
 
