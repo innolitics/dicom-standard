@@ -24,15 +24,18 @@ dist/ciod_to_modules.json: tmp/raw_ciod_module_tables.json
 dist/modules.json: tmp/preprocessed_modules_attributes.json
 	python3 process_modules.py $< > $@
 
-dist/module_to_attributes.json: tmp/modules_attributes_no_references.json
-	python3 postprocess_mark_references.py $< > $@
+dist/module_to_attributes.json: tmp/modules_attributes_partial_references.json dist/references.json
+	python3 postprocess_update_reference_links.py $^ > $@
 
 dist/attributes.json: tmp/part06.html extract_attributes.py
 	python3 extract_attributes.py $< > $@
 
-dist/references.json: dist/module_to_attributes.json tmp/raw_section_tables.json
+dist/references.json: tmp/modules_attributes_partial_references.json tmp/raw_section_tables.json
 	python3 postprocess_save_references.py $^ > $@
 
+
+tmp/modules_attributes_partial_references.json: tmp/modules_attributes_no_references.json
+	python3 postprocess_mark_references.py $< > $@
 
 tmp/modules_attributes_no_references.json: tmp/preprocessed_modules_attributes.json
 	python3 process_module_attribute_relationship.py $< > $@

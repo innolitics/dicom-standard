@@ -16,27 +16,29 @@ def referenced_id_anchors(html):
     return html.find_all('a', attrs={'id': REFERENCED_IDS_RE})
 
 
-def section_html_from_id_anchor(sect_id_anchor):
-    if re.match(r'sect.*', sect_id_anchor['id']):
-        return section_div_from_id(sect_id_anchor)
-    elif re.match(r'(biblio.*)|(table.*)|(note.*)|(figure.*)', sect_id_anchor['id']):
-        return figure_div_from_id(sect_id_anchor)
+def section_html_from_id_anchor(reference_id_anchor):
+    if re.match(r'(sect.*)|(biblio.*)|(table.*)|(note.*)|(figure.*)', reference_id_anchor['id']):
+        return enclosing_section_from_id(reference_id_anchor)
     else:
-        raise Exception(sect_id_anchor.parent + " didn't match a known pattern.")
+        raise Exception(reference_id_anchor.parent + " didn't match a known pattern.")
 
 
 def normalize_sections(all_sections):
     return {section['id']: str(section_html_from_id_anchor(section)) for section in all_sections}
 
 
-def figure_div_from_id(id_div):
+def enclosing_section_from_id(id_div):
     # TODO: put example from the standard here
-    return id_div.parent
-
-
-def section_div_from_id(id_div):
-    # TODO: put example from the standard here
-    return id_div.parent.parent.parent.parent.parent
+    if re.match(r'sect.*', id_div['id']):
+        return id_div.parent.parent.parent.parent.parent
+    elif re.match(r'biblio.*', id_div['id']):
+        return id_div.parent.parent.parent
+    elif re.match(r'table.*', id_div['id']):
+        return id_div.parent.parent
+    elif re.match(r'note.*', id_div['id']):
+        return id_div.parent.parent.parent.parent.parent.parent
+    else:
+        return id_div.parent.parent
 
 
 if __name__ == '__main__':

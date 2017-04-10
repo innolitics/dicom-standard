@@ -14,6 +14,9 @@ from bs4 import NavigableString
 import parse_relations as pr
 
 BASE_DICOM_URL = "http://dicom.nema.org/medical/dicom/current/output/html/"
+BASE_SHORT_DICOM_SECTION_URL = "http://dicom.nema.org/medical/dicom/current/output/chtml/"
+SHORT_DICOM_URL_PREFIX = "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/"
+
 allowed_attributes = ["href", "src", "type", "data", "colspan", "rowspan"]
 
 def parse_html_file(filepath):
@@ -121,3 +124,15 @@ def resolve_resource(url_attribute, resource):
 def text_from_html_string(html_string):
     parsed_html = BeautifulSoup(html_string, 'html.parser')
     return parsed_html.text.strip()
+
+
+def table_parent_page(table_div):
+    parent_section_id = table_div.parent.div.div.div.find('a').get('id')
+    sections = parent_section_id.split('.')
+    try:
+        cutoff_index = sections.index('1')
+        return '.'.join(sections[0:cutoff_index])
+    except ValueError:
+        return parent_section_id
+
+
