@@ -18,7 +18,7 @@ def find_reference_html_in_sections(pairs, section_listing):
         section_with_context = BeautifulSoup(section_listing[chapter + '.html'][reference_id], 'html.parser')
         enclosing_section = section_with_context.find('div').find('a', id=True)['id']
         short_dicom_url = (pl.BASE_SHORT_DICOM_SECTION_URL + chapter + '/' +
-                           get_standard_page(enclosing_section) + '.html#' + reference_id)
+                           pl.get_standard_page(enclosing_section) + '.html#' + reference_id)
         reference_html = section_with_context.find('a', id=reference_id)
         references[short_dicom_url] = str(reference_content_from_id(reference_html))
     refs_with_resolved_resource_urls = {k: pl.resolve_relative_resource_urls(v)
@@ -44,22 +44,6 @@ def section_parent_page(sect_div):
         return parent_section_id
 
 
-def get_resolved_reference_href(reference_link):
-    standard_page, section_id = reference_link.split('#')
-    chapter_with_extension = 'part03.html' if standard_page == '' else standard_page
-    chapter, _ = chapter_with_extension.split('.html')
-    return chapter + '/' + get_standard_page(section_id) + '.html#' + section_id
-
-
-def get_standard_page(sect_id):
-    sections = sect_id.split('.')
-    try:
-        cutoff_index = sections.index('1')
-        return '.'.join(sections[0:cutoff_index])
-    except ValueError:
-        return sect_id
-
-
 def get_refs_from_pairs(pairs):
     refs_to_record = set()
     for pair in pairs:
@@ -70,7 +54,7 @@ def get_refs_from_pairs(pairs):
 
 
 def get_location_from_ref(ref):
-    return tuple(get_resolved_reference_href(ref['sourceUrl']).split('/'))
+    return tuple(pl.get_resolved_reference_href(ref['sourceUrl']).split('/'))
 
 
 if __name__ == '__main__':

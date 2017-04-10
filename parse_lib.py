@@ -102,18 +102,32 @@ def resolve_relative_resource_urls(html_string):
 
 def resolve_anchor_href(anchor):
     if not has_protocol_prefix(anchor, 'href'):
-        try:
-            page, fragment_id = anchor['href'].split('#')
-            resolved_page = 'part03.html' if page == '' else page
-            anchor['href'] = resolved_page + '#' + fragment_id
-        except ValueError:
-            pass
-        anchor['href'] = BASE_DICOM_URL + anchor['href']
+        anchor['href'] = BASE_SHORT_DICOM_SECTION_URL + get_resolved_reference_href(anchor['href'])
         anchor['target'] = '_blank'
 
 
 def has_protocol_prefix(resource, url_attribute):
     return re.match(r'(http)|(ftp)', resource[url_attribute])
+
+
+def get_resolved_reference_href(reference_link):
+    standard_page, section_id = reference_link.split('#')
+    chapter_with_extension = 'part03.html' if standard_page == '' else standard_page
+    chapter, _ = chapter_with_extension.split('.html')
+    return chapter + '/' + get_standard_page(section_id) + '.html#' + section_id
+
+
+def get_standard_page(sect_id):
+    sections = sect_id.split('.')
+    try:
+        cutoff_index = sections.index('1')
+        cropped_section = sections[0:cutoff_index]
+        section_page = '.'.join(sections[0:cutoff_index])
+        if len(cropped_section) == 1:
+            section_page = section_page.replace('sect_', 'chapter_')
+        return section_page
+    except ValueError:
+        return sect_id
 
 
 def resolve_resource(url_attribute, resource):
