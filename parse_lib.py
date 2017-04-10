@@ -94,15 +94,15 @@ def resolve_relative_resource_urls(html_string):
     anchors = html.find_all('a', href=True)
     imgs = html.find_all("img", src=True)
     equations = html.find_all("object", data=True)
-    list(map(resolve_anchor_href, anchors))
+    list(map(update_anchor_href, anchors))
     list(map(partial(resolve_resource, 'src'), imgs))
     list(map(partial(resolve_resource, 'data'), equations))
     return str(html)
 
 
-def resolve_anchor_href(anchor):
+def update_anchor_href(anchor):
     if not has_protocol_prefix(anchor, 'href'):
-        anchor['href'] = BASE_SHORT_DICOM_SECTION_URL + get_resolved_reference_href(anchor['href'])
+        anchor['href'] = resolve_href_url(anchor['href'])
         anchor['target'] = '_blank'
 
 
@@ -110,7 +110,14 @@ def has_protocol_prefix(resource, url_attribute):
     return re.match(r'(http)|(ftp)', resource[url_attribute])
 
 
-def get_resolved_reference_href(reference_link):
+def resolve_href_url(href):
+    if re.match(r'(.*sect_.*)|(.*chapter.*)', href):
+        return BASE_SHORT_DICOM_SECTION_URL + get_short_html_location(href)
+    else:
+        return BASE_DICOM_URL + get_long_html_location(href)
+
+
+def get_short_html_location(reference_link):
     standard_page, section_id = reference_link.split('#')
     chapter_with_extension = 'part03.html' if standard_page == '' else standard_page
     chapter, _ = chapter_with_extension.split('.html')
@@ -129,6 +136,11 @@ def get_standard_page(sect_id):
     except ValueError:
         return sect_id
 
+
+def get_long_html_location(reference_link):
+    standard_page, section_id = reference_link.split('#')
+    chapter_with_extension = 'part03.html' if standard_page == '' else standard_page
+    return chapter_with_extension + '#' + section_id
 
 def resolve_resource(url_attribute, resource):
     if not has_protocol_prefix(resource, url_attribute):

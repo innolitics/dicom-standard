@@ -54,7 +54,7 @@ def get_refs_from_pairs(pairs):
 
 
 def get_location_from_ref(ref):
-    return tuple(pl.get_resolved_reference_href(ref['sourceUrl']).split('/'))
+    return tuple(pl.get_short_html_location(ref['sourceUrl']).split('/'))
 
 
 if __name__ == '__main__':
