@@ -35,7 +35,6 @@ def record_reference_in_pair(pair):
 
 def finalize_descriptions(pair):
     pair['description'] = pl.clean_html(pair['description'])
-    pair['moduleDescription'] = pl.clean_html(pair['moduleDescription'])
 
 def reference_structure_from_anchor(reference):
     return {

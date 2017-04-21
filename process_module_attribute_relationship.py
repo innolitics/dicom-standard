@@ -8,7 +8,6 @@ def module_attr_relationship_table(module_attr_relationship_list):
         for attribute in module['attributes']:
             entries.append({
                 'module': module['id'],
-                'moduleDescription': module['description'],
                 'path': attribute['id'],
                 'tag': attribute['tag'],
                 'type': attribute['type'],
