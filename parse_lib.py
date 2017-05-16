@@ -8,8 +8,7 @@ import re
 import sys
 from functools import partial
 
-from bs4 import BeautifulSoup
-from bs4 import NavigableString
+from bs4 import BeautifulSoup, NavigableString, Tag
 
 import parse_relations as pr
 
@@ -95,8 +94,9 @@ def resolve_relative_resource_urls(html_string):
     imgs = html.find_all("img", src=True)
     equations = html.find_all("object", data=True)
     list(map(update_anchor_href, anchors))
+    equations_as_imgs = list(map(partial(convert_to_img, html), equations))
+    imgs.extend(equations_as_imgs)
     list(map(partial(resolve_resource, 'src'), imgs))
-    list(map(partial(resolve_resource, 'data'), equations))
     return str(html)
 
 
@@ -104,6 +104,12 @@ def update_anchor_href(anchor):
     if not has_protocol_prefix(anchor, 'href'):
         anchor['href'] = resolve_href_url(anchor['href'])
         anchor['target'] = '_blank'
+
+
+def convert_to_img(html, equation):
+    img_tag = html.new_tag('img', src=equation['data'])
+    equation.replaceWith(img_tag)
+    return img_tag
 
 
 def has_protocol_prefix(resource, url_attribute):
