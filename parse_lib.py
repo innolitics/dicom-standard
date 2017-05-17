@@ -3,13 +3,13 @@ Common functions for extracting information from the
 DICOM standard HTML file.
 '''
 
+from typing import Dict, List, Any
 import json
 import re
 import sys
 from functools import partial
 
-from bs4 import BeautifulSoup
-from bs4 import NavigableString
+from bs4 import BeautifulSoup, NavigableString, Tag
 
 import parse_relations as pr
 
@@ -19,7 +19,7 @@ SHORT_DICOM_URL_PREFIX = "http://dicom.nema.org/medical/dicom/current/output/cht
 
 allowed_attributes = ["href", "src", "type", "data", "colspan", "rowspan"]
 
-def parse_html_file(filepath):
+def parse_html_file(filepath: str) -> BeautifulSoup:
     with open(filepath, 'r') as html_file:
         return BeautifulSoup(html_file, 'html.parser')
 
@@ -28,39 +28,40 @@ def write_pretty_json(data):
     json.dump(data, sys.stdout, sort_keys=False, indent=4, separators=(',', ':'))
 
 
-def read_json_to_dict(filepath):
+def read_json_to_dict(filepath: str) -> Dict[Any, Any]:
     with open(filepath, 'r') as json_file:
         json_string = json_file.read()
         json_dict = json.loads(json_string)
         return json_dict
 
 
-def all_tdivs_in_chapter(standard, chapter_name):
+def all_tdivs_in_chapter(standard: BeautifulSoup, chapter_name: str) -> List[Tag]:
     chapter_divs = standard.find_all('div', class_='chapter')
     for chapter in chapter_divs:
         if chapter.div.div.div.h1.a.get('id') == chapter_name:
             table_divs = chapter.find_all('div', class_='table')
             return table_divs
+    return None
 
 
-def create_slug(title):
+def create_slug(title: str) -> str:
     first_pass = re.sub(r'[\s/]+', '-', title.lower())
     return re.sub(r'[\(\),\']+', '', first_pass)
 
 
-def find_tdiv_by_id(all_tables, table_id):
+def find_tdiv_by_id(all_tables: List[Tag], table_id: str) -> Tag:
     table_with_id = [table for table in all_tables if pr.table_id(table) == table_id]
     return None if table_with_id == [] else table_with_id[0]
 
 
-def clean_table_name(name):
+def clean_table_name(name: str) -> str:
     _, _, title = re.split('\u00a0', name)
     possible_table_suffixes = r'(IOD Modules)|(Module Attributes)|(Macro Attributes)|(Module Table)'
     clean_title, *_ = re.split(possible_table_suffixes, title)
     return clean_title.strip()
 
 
-def clean_html(html):
+def clean_html(html: str) -> str:
     parsed_html = BeautifulSoup(html, 'html.parser')
     top_level_tag = get_top_level_tag(parsed_html)
     remove_attributes_from_html_tags(top_level_tag)
@@ -68,28 +69,28 @@ def clean_html(html):
     return resolve_relative_resource_urls(str(top_level_tag))
 
 
-def get_top_level_tag(parsed_html):
+def get_top_level_tag(parsed_html: BeautifulSoup) -> Tag:
     return next(parsed_html.descendants)
 
 
-def remove_attributes_from_html_tags(top_level_tag):
+def remove_attributes_from_html_tags(top_level_tag: Tag) -> None:
     clean_tag_attributes(top_level_tag)
     for child in top_level_tag.descendants:
         clean_tag_attributes(child)
 
 
-def clean_tag_attributes(tag):
+def clean_tag_attributes(tag: Tag) -> None:
     if not isinstance(tag, NavigableString):
         tag.attrs = {k: v for k, v in tag.attrs.items() if k in allowed_attributes}
 
 
-def remove_empty_children(top_level_tag):
+def remove_empty_children(top_level_tag: Tag) -> None:
     empty_anchor_tags = filter((lambda a: a.text == ''), top_level_tag.find_all('a'))
     for anchor in empty_anchor_tags:
         anchor.decompose()
 
 
-def resolve_relative_resource_urls(html_string):
+def resolve_relative_resource_urls(html_string: str) -> str:
     html = BeautifulSoup(html_string, 'html.parser')
     anchors = html.find_all('a', href=True)
     imgs = html.find_all("img", src=True)
@@ -100,31 +101,31 @@ def resolve_relative_resource_urls(html_string):
     return str(html)
 
 
-def update_anchor_href(anchor):
+def update_anchor_href(anchor: Tag) -> None:
     if not has_protocol_prefix(anchor, 'href'):
         anchor['href'] = resolve_href_url(anchor['href'])
         anchor['target'] = '_blank'
 
 
-def has_protocol_prefix(resource, url_attribute):
-    return re.match(r'(http)|(ftp)', resource[url_attribute])
+def has_protocol_prefix(resource: Tag, url_attribute: str) -> bool:
+    return bool(re.match(r'(http)|(ftp)', resource[url_attribute]))
 
 
-def resolve_href_url(href):
+def resolve_href_url(href: str) -> str:
     if re.match(r'(.*sect_.*)|(.*chapter.*)', href):
         return BASE_SHORT_DICOM_SECTION_URL + get_short_html_location(href)
     else:
         return BASE_DICOM_URL + get_long_html_location(href)
 
 
-def get_short_html_location(reference_link):
+def get_short_html_location(reference_link: str) -> str:
     standard_page, section_id = reference_link.split('#')
     chapter_with_extension = 'part03.html' if standard_page == '' else standard_page
     chapter, _ = chapter_with_extension.split('.html')
     return chapter + '/' + get_standard_page(section_id) + '.html#' + section_id
 
 
-def get_standard_page(sect_id):
+def get_standard_page(sect_id: str) -> str:
     sections = sect_id.split('.')
     try:
         cutoff_index = sections.index('1')
@@ -137,22 +138,22 @@ def get_standard_page(sect_id):
         return sect_id
 
 
-def get_long_html_location(reference_link):
+def get_long_html_location(reference_link: str) -> str:
     standard_page, section_id = reference_link.split('#')
     chapter_with_extension = 'part03.html' if standard_page == '' else standard_page
     return chapter_with_extension + '#' + section_id
 
-def resolve_resource(url_attribute, resource):
+def resolve_resource(url_attribute: str, resource: Tag) -> None:
     if not has_protocol_prefix(resource, url_attribute):
         resource[url_attribute] = BASE_DICOM_URL + resource[url_attribute]
 
 
-def text_from_html_string(html_string):
+def text_from_html_string(html_string: str) -> str:
     parsed_html = BeautifulSoup(html_string, 'html.parser')
     return parsed_html.text.strip()
 
 
-def table_parent_page(table_div):
+def table_parent_page(table_div: Tag) -> str:
     parent_section_id = table_div.parent.div.div.div.find('a').get('id')
     sections = parent_section_id.split('.')
     try:
