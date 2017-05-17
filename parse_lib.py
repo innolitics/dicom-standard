@@ -8,8 +8,7 @@ import re
 import sys
 from functools import partial
 
-from bs4 import BeautifulSoup
-from bs4 import NavigableString
+from bs4 import BeautifulSoup, NavigableString, Tag
 
 import parse_relations as pr
 
@@ -36,6 +35,9 @@ def read_json_to_dict(filepath):
 
 
 def all_tdivs_in_chapter(standard, chapter_name):
+    '''
+    Find all HTML tables in a given chapter of the DICOM Standard.
+    '''
     chapter_divs = standard.find_all('div', class_='chapter')
     for chapter in chapter_divs:
         if chapter.div.div.div.h1.a.get('id') == chapter_name:
@@ -49,11 +51,21 @@ def create_slug(title):
 
 
 def find_tdiv_by_id(all_tables, table_id):
-    table_with_id = [table for table in all_tables if pr.table_id(table) == table_id]
+    '''
+    Find a given table tag by its HTML ID
+    '''
+    matching_table = (lambda table: pr.table_id(table) == table_id)
+    table_with_id = list(filter(matching_table, all_tables))
     return None if table_with_id == [] else table_with_id[0]
 
 
 def clean_table_name(name):
+    '''
+    Remove table name prefixes and suffixes.
+
+    Example:
+        Table C.7-5b. Clinical Trial Series Module Attributes --> Clinical Trial Series
+    '''
     _, _, title = re.split('\u00a0', name)
     possible_table_suffixes = r'(IOD Modules)|(Module Attributes)|(Macro Attributes)|(Module Table)'
     clean_title, *_ = re.split(possible_table_suffixes, title)
@@ -61,6 +73,11 @@ def clean_table_name(name):
 
 
 def clean_html(html):
+    '''
+    Removes unused attributes and empty tags from
+    the HTML. Also updates relative resource URLs
+    to absolute URLs.
+    '''
     parsed_html = BeautifulSoup(html, 'html.parser')
     top_level_tag = get_top_level_tag(parsed_html)
     remove_attributes_from_html_tags(top_level_tag)
@@ -92,11 +109,16 @@ def remove_empty_children(top_level_tag):
 def resolve_relative_resource_urls(html_string):
     html = BeautifulSoup(html_string, 'html.parser')
     anchors = html.find_all('a', href=True)
+    for a in anchors:
+        update_anchor_href(a)
     imgs = html.find_all("img", src=True)
-    equations = html.find_all("object", data=True)
-    list(map(update_anchor_href, anchors))
-    list(map(partial(resolve_resource, 'src'), imgs))
-    list(map(partial(resolve_resource, 'data'), equations))
+    svg_objects = html.find_all("object", data=True, type="image/svg+xml")
+    svgs_as_imgs = [convert_svg_obj_to_img(html, s) for s in svg_objects]
+    for obj, img in zip(svg_objects, svgs_as_imgs):
+        obj.replaceWith(img)
+    imgs.extend(svgs_as_imgs)
+    for img in imgs:
+        resolve_img_src(img)
     return str(html)
 
 
@@ -104,6 +126,17 @@ def update_anchor_href(anchor):
     if not has_protocol_prefix(anchor, 'href'):
         anchor['href'] = resolve_href_url(anchor['href'])
         anchor['target'] = '_blank'
+
+
+def convert_svg_obj_to_img(html, equation):
+    '''
+    Since the DICOM standard represents SVG images as `object` tags,
+    they can be converted to standard `img` tags by copying the object
+    `data` field into `src`. This removes some complex SVG metadata HTML
+    included by the standard.
+    '''
+    img_tag = html.new_tag('img', src=equation['data'])
+    return img_tag
 
 
 def has_protocol_prefix(resource, url_attribute):
@@ -118,6 +151,10 @@ def resolve_href_url(href):
 
 
 def get_short_html_location(reference_link):
+    '''
+    For a given relative URL, generate the link to the short HTML version
+    of the DICOM standard.
+    '''
     standard_page, section_id = reference_link.split('#')
     chapter_with_extension = 'part03.html' if standard_page == '' else standard_page
     chapter, _ = chapter_with_extension.split('.html')
@@ -125,6 +162,9 @@ def get_short_html_location(reference_link):
 
 
 def get_standard_page(sect_id):
+    '''
+    Returns the short HTML page name of the DICOM standard containing `sect_id`.
+    '''
     sections = sect_id.split('.')
     try:
         cutoff_index = sections.index('1')
@@ -142,9 +182,10 @@ def get_long_html_location(reference_link):
     chapter_with_extension = 'part03.html' if standard_page == '' else standard_page
     return chapter_with_extension + '#' + section_id
 
-def resolve_resource(url_attribute, resource):
-    if not has_protocol_prefix(resource, url_attribute):
-        resource[url_attribute] = BASE_DICOM_URL + resource[url_attribute]
+
+def resolve_img_src(resource):
+    if not has_protocol_prefix(resource, 'src'):
+        resource['src'] = BASE_DICOM_URL + resource['src']
 
 
 def text_from_html_string(html_string):
@@ -153,6 +194,10 @@ def text_from_html_string(html_string):
 
 
 def table_parent_page(table_div):
+    '''
+    Return the short HTML  page name of the DICOM standard containing
+    the specified `table_div`.
+    '''
     parent_section_id = table_div.parent.div.div.div.find('a').get('id')
     sections = parent_section_id.split('.')
     try:
@@ -160,5 +205,3 @@ def table_parent_page(table_div):
         return '.'.join(sections[0:cutoff_index])
     except ValueError:
         return parent_section_id
-
-
