@@ -2,14 +2,19 @@
 Utility functions for expanding macros in the module-attribute
 relationship tables.
 '''
+from typing import List, Dict, Any
 import re
 from copy import deepcopy
-from bs4 import BeautifulSoup as bs
+
+from bs4 import BeautifulSoup, Tag
 
 import parse_lib as pl
 from hierarchy_utils import get_hierarchy_markers
+from extract_macros import MetadataTableType
 
-def expand_macro_rows(table, macros):
+MacrosType = Dict[str, MetadataTableType]
+
+def expand_macro_rows(table: Tag, macros: MacrosType) -> List[Dict[str, str]]:
     # This variable is used to stop an infinite macro reference
     # loop in the standard at the SR Document Content module.
     table_id = get_id_from_link(table['linkToStandard'])
@@ -20,7 +25,7 @@ def expand_macro_rows(table, macros):
     return [attribute for attribute in new_table if attribute['tag'] != 'None']
 
 
-def get_attributes_to_insert(attribute, macros, table_id):
+def get_attributes_to_insert(attribute: Dict[str, str], macros: MacrosType, table_id: str) -> List[Dict[str, str]]:
     if is_macro_row(attribute):
         new_attributes = get_macro_attributes(attribute, macros, table_id)
         return new_attributes if new_attributes is not None else []
@@ -28,61 +33,61 @@ def get_attributes_to_insert(attribute, macros, table_id):
         return [attribute]
 
 
-def is_macro_row(attribute):
+def is_macro_row(attribute: Dict[str, str]) -> bool:
     is_abnormal_row = attribute['tag'] == 'None'
-    reference_anchor_tag = bs(attribute['name'], 'html.parser').find('a', class_='xref')
+    reference_anchor_tag = BeautifulSoup(attribute['name'], 'html.parser').find('a', class_='xref')
     contains_link = reference_anchor_tag is not None
     # This line guards against a one-off reference in the standard
     # where a link actually points to prose instead of a table.
     is_table = re.match("Table.*", reference_anchor_tag.get_text()) if contains_link else False
-    return is_abnormal_row and contains_link and is_table
+    return bool(is_abnormal_row and contains_link and is_table)
 
 
 # Note that this function *recursively expands* macro references using
 # the `expand_macro_rows` function.
-def get_macro_attributes(attribute, macros, table_id):
+def get_macro_attributes(attribute: Dict[str, str], macros: MacrosType, table_id: str) -> List[Dict[str, str]]:
     macro_id = referenced_macro_id_from_include_statement(attribute['name'])
-    parsed_name = bs(attribute['name'], 'html.parser').get_text()
-    hierarchy_level = get_hierarchy_markers(parsed_name)
+    parsed_name = BeautifulSoup(attribute['name'], 'html.parser').get_text()
+    hierarchy_marker = get_hierarchy_markers(parsed_name)
     if table_id != macro_id:
-        return expand_macro_rows(get_macros_by_id(macro_id, macros, hierarchy_level), macros)
+        return expand_macro_rows(get_macros_by_id(macro_id, macros, hierarchy_marker), macros)
     return []
 
 
-def flatten_one_layer(nested_element_list):
+def flatten_one_layer(nested_element_list: List[List[Any]]) -> List[Any]:
     return [element for element_list in nested_element_list
             for element in element_list]
 
 
-def referenced_macro_id_from_include_statement(macro_reference_html):
-    parsed_reference = bs(macro_reference_html, 'html.parser')
+def referenced_macro_id_from_include_statement(macro_reference_html: str) -> str:
+    parsed_reference = BeautifulSoup(macro_reference_html, 'html.parser')
     id_anchor = parsed_reference.find('a', class_='xref')
     return id_anchor.get('href')[1:] # Remove the first '#' character
 
 
-def get_macros_by_id(macro_id, macros, hierarchy_level):
+def get_macros_by_id(macro_id: str, macros: MacrosType, hierarchy_marker: str) -> MetadataTableType:
     # A copy is required so that local modifications to attributes
     # (i.e. hierarchy marker modifications) don't persist.
     macro = deepcopy(macros[macro_id])
-    macro['attributes'] = update_attribute_hierarchy_levels(macro['attributes'], hierarchy_level)
+    macro['attributes'] = update_attribute_hierarchy_markers(macro['attributes'], hierarchy_marker)
     return macro
 
 
-def update_attribute_hierarchy_levels(attributes, level):
-    return [add_level_to_attr(attribute, level) for attribute in attributes]
+def update_attribute_hierarchy_markers(attributes: List[Dict[str, str]], marker: str) -> List[Dict[str, str]]:
+    return [add_marker_to_attr(attribute, marker) for attribute in attributes]
 
 
-def add_level_to_attr(attribute, level):
-    parsed_attribute_name = bs(attribute['name'], 'html.parser').find('td')
-    attribute['name'] = prepend_level_to_attribute_name(parsed_attribute_name, level)
+def add_marker_to_attr(attribute: Dict[str, str], marker: str) -> Dict[str, str]:
+    parsed_attribute_name = BeautifulSoup(attribute['name'], 'html.parser').find('td')
+    attribute['name'] = prepend_marker_to_attribute_name(parsed_attribute_name, marker)
     return attribute
 
 
-def prepend_level_to_attribute_name(new_attr_to_insert, level):
-    new_attr_to_insert.insert(0, level)
+def prepend_marker_to_attribute_name(new_attr_to_insert: Tag, marker: str) -> str:
+    new_attr_to_insert.insert(0, marker)
     return str(new_attr_to_insert)
 
 
-def get_id_from_link(link):
-    url, html_id = link.split('#')
+def get_id_from_link(link: str) -> str:
+    _, html_id = link.split('#')
     return html_id

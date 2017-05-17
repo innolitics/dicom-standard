@@ -23,7 +23,7 @@ def parse_html_file(filepath: str) -> BeautifulSoup:
         return BeautifulSoup(html_file, 'html.parser')
 
 
-def write_pretty_json(data):
+def write_pretty_json(data: Any) -> None:
     json.dump(data, sys.stdout, sort_keys=False, indent=4, separators=(',', ':'))
 
 
@@ -129,14 +129,14 @@ def update_anchor_href(anchor: Tag) -> None:
         anchor['target'] = '_blank'
 
 
-def convert_svg_obj_to_img(html, equation):
+def convert_svg_obj_to_img(html: BeautifulSoup, svg: Tag):
     '''
     Since the DICOM standard represents SVG images as `object` tags,
     they can be converted to standard `img` tags by copying the object
     `data` field into `src`. This removes some complex SVG metadata HTML
     included by the standard.
     '''
-    img_tag = html.new_tag('img', src=equation['data'])
+    img_tag = html.new_tag('img', src=svg['data'])
     return img_tag
 
 
@@ -184,7 +184,7 @@ def get_long_html_location(reference_link: str) -> str:
     return chapter_with_extension + '#' + section_id
 
 
-def resolve_img_src(resource: Tag):
+def resolve_img_src(resource: Tag) -> None:
     if not has_protocol_prefix(resource, 'src'):
         resource['src'] = BASE_DICOM_URL + resource['src']
 
