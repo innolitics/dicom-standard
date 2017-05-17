@@ -48,7 +48,8 @@ def create_slug(title):
 
 
 def find_tdiv_by_id(all_tables, table_id):
-    table_with_id = [table for table in all_tables if pr.table_id(table) == table_id]
+    matching_table = (lambda table: pr.table_id(table) == table_id)
+    table_with_id = list(filter(matching_table, all_tables))
     return None if table_with_id == [] else table_with_id[0]
 
 
@@ -91,12 +92,16 @@ def remove_empty_children(top_level_tag):
 def resolve_relative_resource_urls(html_string):
     html = BeautifulSoup(html_string, 'html.parser')
     anchors = html.find_all('a', href=True)
+    for a in anchors:
+        update_anchor_href(a)
     imgs = html.find_all("img", src=True)
-    equations = html.find_all("object", data=True)
-    list(map(update_anchor_href, anchors))
-    equations_as_imgs = list(map(partial(convert_to_img, html), equations))
-    imgs.extend(equations_as_imgs)
-    list(map(partial(resolve_resource, 'src'), imgs))
+    svg_objects = html.find_all("object", data=True, type="image/svg+xml")
+    svgs_as_imgs = [convert_svg_obj_to_img(html, s) for s in svg_objects]
+    for obj, img in zip(svg_objects, svgs_as_imgs):
+        obj.replaceWith(img)
+    imgs.extend(svgs_as_imgs)
+    for img in imgs:
+        resolve_img_src(img)
     return str(html)
 
 
@@ -106,9 +111,14 @@ def update_anchor_href(anchor):
         anchor['target'] = '_blank'
 
 
-def convert_to_img(html, equation):
+def convert_svg_obj_to_img(html, equation):
+    '''
+    Since the DICOM standard represents SVG images as `object` tags,
+    they can be converted to standard `img` tags by copying the object
+    `data` field into `src`. This removes some complex SVG metadata HTML
+    included by the standard.
+    '''
     img_tag = html.new_tag('img', src=equation['data'])
-    equation.replaceWith(img_tag)
     return img_tag
 
 
@@ -148,9 +158,10 @@ def get_long_html_location(reference_link):
     chapter_with_extension = 'part03.html' if standard_page == '' else standard_page
     return chapter_with_extension + '#' + section_id
 
-def resolve_resource(url_attribute, resource):
-    if not has_protocol_prefix(resource, url_attribute):
-        resource[url_attribute] = BASE_DICOM_URL + resource[url_attribute]
+
+def resolve_img_src(resource):
+    if not has_protocol_prefix(resource, 'src'):
+        resource['src'] = BASE_DICOM_URL + resource['src']
 
 
 def text_from_html_string(html_string):
@@ -166,5 +177,3 @@ def table_parent_page(table_div):
         return '.'.join(sections[0:cutoff_index])
     except ValueError:
         return parent_section_id
-
-

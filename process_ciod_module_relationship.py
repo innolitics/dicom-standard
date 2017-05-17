@@ -1,31 +1,29 @@
 '''
 Takes the extracted CIOD-Module table information to build a list of all
-CIOD-Module relationships enumerated in the DICOM Standard.
+CIOD-Module relationships defined in the DICOM Standard.
 '''
 import sys
-from bs4 import BeautifulSoup as bs
 
 import parse_lib as pl
 
-def enumerate_all_relationships(ciod_module_list):
+def define_all_relationships(ciod_module_list):
     all_relationships = []
     for table in ciod_module_list:
-        all_relationships.extend(list(map(describe_relationship_with(table['name']),
-                                          table['modules'])))
+        ciod = table['name']
+        modules = table['modules']
+        all_relationships.extend([define_ciod_module_relationship(ciod, module) for module in modules])
     return all_relationships
 
 
-def describe_relationship_with(ciod_name):
-    def enumerate_relationship(module):
-        usage, conditional_statement = expand_conditional_statement(module['usage'])
-        return {
-            "ciod": pl.create_slug(ciod_name),
-            "module": pl.create_slug(pl.text_from_html_string(module['module'])),
-            "usage": usage,
-            "conditionalStatement": conditional_statement,
-            "informationEntity": pl.text_from_html_string(module['informationEntity'])
-        }
-    return enumerate_relationship
+def define_ciod_module_relationship(ciod, module):
+    usage, conditional_statement = expand_conditional_statement(module['usage'])
+    return {
+        "ciod": pl.create_slug(ciod),
+        "module": pl.create_slug(pl.text_from_html_string(module['module'])),
+        "usage": usage,
+        "conditionalStatement": conditional_statement,
+        "informationEntity": pl.text_from_html_string(module['informationEntity'])
+    }
 
 
 def expand_conditional_statement(usage_field_html):
@@ -55,5 +53,5 @@ def extract_conditional_statement(usage_field):
 
 if __name__ == '__main__':
     ciod_module_list = pl.read_json_to_dict(sys.argv[1])
-    ciod_module_relationships = enumerate_all_relationships(ciod_module_list)
+    ciod_module_relationships = define_all_relationships(ciod_module_list)
     pl.write_pretty_json(ciod_module_relationships)

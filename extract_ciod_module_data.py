@@ -26,7 +26,7 @@ def is_valid_ciod_table(table_div):
 
 
 def tables_to_json(tables, tdivs):
-    expanded_tables = list(map(expand_spans, tables))
+    expanded_tables = map(expand_spans, tables)
     stringified_tables = map(stringify_table, expanded_tables)
     table_dicts = map(ciod_table_to_dict, stringified_tables)
     return list(map(get_table_with_metadata, zip(table_dicts, tdivs)))
