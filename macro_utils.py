@@ -10,8 +10,8 @@ from bs4 import BeautifulSoup, Tag
 
 import parse_lib as pl
 from hierarchy_utils import get_hierarchy_markers
-from extract_macros import MetadataTableType
 
+MetadataTableType = Dict[str, Any]
 MacrosType = Dict[str, MetadataTableType]
 
 def expand_macro_rows(table: Tag, macros: MacrosType) -> List[Dict[str, str]]:

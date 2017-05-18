@@ -3,7 +3,7 @@ Load the macro tables specified throughout PS3.3 in the DICOM Standard.
 These tables are of the same form as the module-attribute tables and
 are used to expand macro references in Annex C.
 '''
-from typing import Tuple, List, Dict, Any, Iterator
+from typing import Tuple, List, Dict, Iterator
 import sys
 import re
 
@@ -11,8 +11,8 @@ from bs4 import BeautifulSoup, Tag
 
 import parse_lib as pl
 import parse_relations as pr
-from table_utils import expand_spans, stringify_table, tdiv_to_table_list
-from macro_utils import get_id_from_link
+from table_utils import expand_spans, stringify_table, tdiv_to_table_list, TableListType
+from macro_utils import get_id_from_link, MetadataTableType
 
 # Macros and modules require the same metadata and formatting,
 # so they can share these two functions.
@@ -20,8 +20,6 @@ from extract_modules_with_attributes import module_table_to_dict, get_table_with
 
 TABLE_SUFFIX_RE = re.compile("(.*Macro Attributes$)|(.*Macro Attributes Description$)")
 
-TableListType = List[List[Tag]]
-MetadataTableType = Dict[str, Any]
 
 def get_macro_tables(standard: BeautifulSoup) -> Tuple[List[TableListType], List[Tag]]:
     all_table_divs = standard.find_all('div', class_='table')

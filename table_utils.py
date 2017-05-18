@@ -7,7 +7,8 @@ from copy import copy
 from bs4 import Tag
 
 import parse_relations as pr
-from extract_macros import TableListType
+
+TableListType = List[List[Tag]]
 
 def table_to_dict(table: TableListType, row_names: List[str]) -> List[Dict[str, List[Tag]]]:
     return [dict(zip(row_names, row)) for row in table]
