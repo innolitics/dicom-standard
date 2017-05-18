@@ -60,7 +60,7 @@ tmp/%.html: standard/%.html
 	cat $< | sed -e 's/&nbps;/ /g' -e 's/​//g' > $@
 
 
-tests: unittest endtoendtest 
+tests: unittest endtoendtest
 
 unittest:
 	$(PYTEST_BIN) -m 'not endtoend'
