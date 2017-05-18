@@ -26,7 +26,7 @@ def test_referenced_macro_id_from_include_statement():
     assert m.referenced_macro_id_from_include_statement(example_include_statement) == 'somemacro'
 
 
-def test_update_attribute_hierarchy_levels():
+def test_update_attribute_hierarchy_markers():
     example_attributes = [
         {'name': '<td>name1</td>'},
         {'name': '<td>&gt;name2</td>'},
@@ -37,7 +37,7 @@ def test_update_attribute_hierarchy_levels():
         {'name': '<td>&gt;&gt;&gt;name2</td>'},
         {'name': '<td>&gt;&gt;&gt;&gt;name3</td>'},
     ]
-    assert m.update_attribute_hierarchy_levels(example_attributes, '>>') == expected_attributes
+    assert m.update_attribute_hierarchy_markers(example_attributes, '>>') == expected_attributes
 
 def test_insert_nested_macro():
     mock_table = {
