@@ -52,8 +52,9 @@ Processed for references:
 
 ## Development Setup
 
-To run this program and generate the JSON files, you will need the following
-system level dependencies:
+The python scripts used to generate the JSON files are designed to be as
+extensible as possible. If you want to run the code yourself or configure your
+own custom parsing stage, you'll need the following system-level dependencies:
 
 - Python 3.5.x
 - Make + Unix tools
@@ -76,7 +77,13 @@ run the following commands:
     $ make updatestandard
     $ make
 
-## Design Philosophy
+## Using the Library
+
+Parsing stages are indicated by prefixed names (i.e. `extract_xxx.py` or
+`process_xxx.py`) and use a variety of utility functions from `parse_lib.py`
+and other `*_utils.py` modules.
+
+### Design Philosophy
 
 The overall data flow of this program takes the following form:
 
