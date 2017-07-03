@@ -62,6 +62,110 @@ During this process, the following invariants are maintained:
 In this way, raw HTML is not touched by any stage other than `extract_*.py`,
 and successive processing steps use increasingly refined JSON.
 
+### JSON Structure
+
+#### CIODs
+
+```json
+{
+    "some-ciod":{
+        "id":"some-ciod",
+        "description":"<p>HTML description above the CIOD table.</p>",
+        "linkToStandard":"link_to_standard_for_CIOD",
+        "name":"Some CIOD"
+    },
+    "some-other-ciod": {
+        ...
+    },
+    ...
+}
+```
+
+#### CIOD-Module
+
+```json
+[
+    {
+        "ciod":"some-ciod",
+        "module":"some-module",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"some-ciod",
+        "module":"some-other-module",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    ...
+]
+```
+
+#### Module
+
+```json
+{
+    "some-module": {
+        "id": "some-module",
+        "name": "Some Module",
+        "description": "<p>Some HTML description of the module.</p>",
+        "linkToStandard": somelink
+    },
+    "some-other-module": {
+        ...
+    },
+    ...
+}
+```
+
+#### Module-Attribute
+
+```json
+[
+    {
+        "module":"some-module",
+        "moduleDescription":"<p>Description of module.</p>",
+        "path":"some-module:00081110",
+        "tag":"(0008,1110)",
+        "type":null,
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#some-table",
+        "description":"<p>Description of attribute.</p>",
+        "externalReferences": [
+            "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#some-section",
+        ]
+    },
+    ...
+]
+```
+
+#### Attributes
+
+```json
+{
+    "00080001":{
+        "keyword":"LengthToEnd",
+        "valueRepresentation":"UL",
+        "valueMultiplicity":"1",
+        "name":"Length to End",
+        "tag":"(0008,0001)",
+        "retired":true
+    },
+    ...
+}
+```
+
+#### References
+
+```json
+{
+    "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_F.5.30": "<div>some referenced html blob</div>",
+    "http://dicom.nema.org/medical/dicom/current/output/html/part03.html#sect_F.5.31": "<div>some other referenced html blob</div>",
+    ...
+}
+```
+
 ### Parser Stages
 
 A map of all extraction and processing pathways is shown below:
