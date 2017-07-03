@@ -7,5 +7,5 @@ using a collection of extensible python scripts.
 - View the `JSON here
   <https://www.github.com/innolitics/dicom-standard/standard>`_.
 
-- View the `documentation
-  <https://www.github.com/innolitics/dicom-standard/docs/index.md> here`_.
+- View the `documentation here
+  <https://www.github.com/innolitics/dicom-standard/docs/index.md>`_.
