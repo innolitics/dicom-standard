@@ -6,8 +6,7 @@ import re
 
 from bs4 import BeautifulSoup
 
-import parse_lib as pl
-from macro_utils import flatten_one_layer
+from . import parse_lib as pl
 
 
 def find_reference_html_in_sections(pairs, section_listing):

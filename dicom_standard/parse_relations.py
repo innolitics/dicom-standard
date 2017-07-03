@@ -6,6 +6,7 @@ but they are consistent relations across the HTML source.
 from typing import List
 from bs4 import Tag
 
+
 def table_rows(table_div: Tag) -> List[Tag]:
     return table_div.find('tbody').find_all('tr')
 

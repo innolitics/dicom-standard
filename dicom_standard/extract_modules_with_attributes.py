@@ -6,14 +6,15 @@ format, one entry per attribute.
 import sys
 import re
 
-import parse_lib as pl
-import parse_relations as pr
+from . import parse_lib as pl
+from . import parse_relations as pr
 from table_utils import expand_spans, table_to_dict, stringify_table, tdiv_to_table_list
 
 CHAPTER_ID = 'chapter_C'
 TABLE_SUFFIX = re.compile("(.*Module Attributes$)|(.*Module Table$)")
 COLUMN_TITLES_WITH_TYPE = ['name', 'tag', 'type', 'description']
 COLUMN_TITLES_NO_TYPE = ['name', 'tag', 'description']
+
 
 def get_module_tables(standard):
     chapter_C_table_divs = pl.all_tdivs_in_chapter(standard, CHAPTER_ID)
@@ -63,6 +64,7 @@ def clean_table_description(description):
         table_link.name = 'span'
         table_link.string = 'This module '
     return description
+
 
 if __name__ == '__main__':
     standard = pl.parse_html_file(sys.argv[1])

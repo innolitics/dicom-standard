@@ -3,12 +3,13 @@ Extract the listing of all attributes given in PS3.6 of the DICOM Standard.
 '''
 import sys
 
-import parse_lib as pl
-import parse_relations as pr
-from table_utils import table_to_dict
+from . import parse_lib as pl
+from . import parse_relations as pr
+from .table_utils import table_to_dict
 
 COLUMN_TITLES = ['tag', 'name', 'keyword', 'valueRepresentation', 'valueMultiplicity', 'retired']
 ATTR_TABLE_ID = 'table_6-1'
+
 
 def get_attribute_table(standard):
     all_tables = standard.find_all('div', class_='table')

@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup as bs
 
-from extract_sections import extract_section_ids
+from dicom_standard.extract_sections import extract_section_ids
+
 
 def create_mock_standard(mock_standard_str):
     return {k: bs(v, 'html.parser') for k, v in mock_standard_str.items()}

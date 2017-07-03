@@ -10,13 +10,14 @@ import sys
 
 from bs4 import BeautifulSoup, NavigableString, Tag
 
-import parse_relations as pr
+from . import parse_relations as pr
 
 BASE_DICOM_URL = "http://dicom.nema.org/medical/dicom/current/output/html/"
 BASE_SHORT_DICOM_SECTION_URL = "http://dicom.nema.org/medical/dicom/current/output/chtml/"
 SHORT_DICOM_URL_PREFIX = "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/"
 
 allowed_attributes = ["href", "src", "type", "data", "colspan", "rowspan"]
+
 
 def parse_html_file(filepath: str) -> BeautifulSoup:
     with open(filepath, 'r') as html_file:

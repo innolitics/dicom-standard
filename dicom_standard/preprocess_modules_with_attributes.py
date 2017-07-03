@@ -8,11 +8,10 @@ Specific processing steps are:
 '''
 import sys
 
-from bs4 import BeautifulSoup
+from . import parse_lib as pl
+from .macro_utils import expand_macro_rows
+from .hierarchy_utils import record_hierarchy_for_module
 
-import parse_lib as pl
-from macro_utils import expand_macro_rows
-from hierarchy_utils import record_hierarchy_for_module
 
 def expand_all_macros(module_attr_tables, macros):
     expanded_attribute_lists = [expand_macro_rows(table, macros)
@@ -44,7 +43,6 @@ def preprocess_attribute(attr):
         'description': attr['description']
     }
     return cleaned_attribute
-
 
 
 def expand_hierarchy(tables):

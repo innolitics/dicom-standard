@@ -1,6 +1,7 @@
 import sys
 
-import parse_lib as pl
+from . import parse_lib as pl
+
 
 def module_attr_relationship_table(module_attr_relationship_list):
     entries = []

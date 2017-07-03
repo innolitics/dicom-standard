@@ -4,14 +4,16 @@ CIOD-Module relationships defined in the DICOM Standard.
 '''
 import sys
 
-import parse_lib as pl
+from . import parse_lib as pl
+
 
 def define_all_relationships(ciod_module_list):
     all_relationships = []
     for table in ciod_module_list:
         ciod = table['name']
         modules = table['modules']
-        all_relationships.extend([define_ciod_module_relationship(ciod, module) for module in modules])
+        all_relationships.extend([define_ciod_module_relationship(ciod, module)
+                                  for module in modules])
     return all_relationships
 
 

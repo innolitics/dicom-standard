@@ -1,6 +1,7 @@
 import sys
 
-import parse_lib as pl
+from . import parse_lib as pl
+
 
 def update_sourceurls(module_attr_pairs, references):
     for pair in module_attr_pairs:

@@ -6,13 +6,14 @@ Output the tables in JSON format, one entry per CIOD.
 import sys
 import re
 
-import parse_lib as pl
-import parse_relations as pr
-from table_utils import expand_spans, table_to_dict, stringify_table, tdiv_to_table_list
+from . import parse_lib as pl
+from . import parse_relations as pr
+from .table_utils import expand_spans, table_to_dict, stringify_table, tdiv_to_table_list
 
 CHAPTER_ID = 'chapter_A'
 TABLE_SUFFIX = re.compile(".*IOD Modules$")
 COLUMN_TITLES = ['informationEntity', 'module', 'reference_fragment', 'usage']
+
 
 def get_ciod_tables(standard):
     chapter_A_table_divs = pl.all_tdivs_in_chapter(standard, CHAPTER_ID)
@@ -60,6 +61,7 @@ def get_ciod_description(tdiv):
         return description_title.parent.parent.parent.parent.p
     except AttributeError:
         return None
+
 
 if __name__ == "__main__":
     standard = pl.parse_html_file(sys.argv[1])

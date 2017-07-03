@@ -4,7 +4,8 @@ dictionary of all CIODs in the DICOM Standard.
 '''
 import sys
 
-import parse_lib as pl
+from . import parse_lib as pl
+
 
 def ciods_from_extracted_list(ciod_module_list):
     ciods = {}

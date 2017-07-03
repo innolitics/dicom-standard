@@ -4,7 +4,8 @@ normalized listing of all modules in the DICOM Standard.
 '''
 import sys
 
-import parse_lib as pl
+from . import parse_lib as pl
+
 
 def modules_from_tables(tables):
     modules = {}

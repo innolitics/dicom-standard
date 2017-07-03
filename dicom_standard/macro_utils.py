@@ -8,11 +8,11 @@ from copy import deepcopy
 
 from bs4 import BeautifulSoup, Tag
 
-import parse_lib as pl
-from hierarchy_utils import get_hierarchy_markers
+from .hierarchy_utils import get_hierarchy_markers
 
 MetadataTableType = Dict[str, Any]
 MacrosType = Dict[str, MetadataTableType]
+
 
 def expand_macro_rows(table: Tag, macros: MacrosType) -> List[Dict[str, str]]:
     # This variable is used to stop an infinite macro reference
@@ -62,7 +62,7 @@ def flatten_one_layer(nested_element_list: List[List[Any]]) -> List[Any]:
 def referenced_macro_id_from_include_statement(macro_reference_html: str) -> str:
     parsed_reference = BeautifulSoup(macro_reference_html, 'html.parser')
     id_anchor = parsed_reference.find('a', class_='xref')
-    return id_anchor.get('href')[1:] # Remove the first '#' character
+    return id_anchor.get('href')[1:]  # Remove the first '#' character
 
 
 def get_macros_by_id(macro_id: str, macros: MacrosType, hierarchy_marker: str) -> MetadataTableType:

@@ -7,7 +7,8 @@ import re
 
 from bs4 import Tag
 
-import parse_lib as pl
+from . import parse_lib as pl
+
 
 def get_hierarchy_markers(name: str) -> str:
     clean_name = name.strip().replace('\n', '')

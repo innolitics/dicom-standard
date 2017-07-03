@@ -9,10 +9,10 @@ import re
 
 from bs4 import BeautifulSoup, Tag
 
-import parse_lib as pl
-import parse_relations as pr
-from table_utils import expand_spans, stringify_table, tdiv_to_table_list, TableListType
-from macro_utils import get_id_from_link, MetadataTableType
+from . import parse_lib as pl
+from . import parse_relations as pr
+from .table_utils import expand_spans, stringify_table, tdiv_to_table_list, TableListType
+from .macro_utils import get_id_from_link, MetadataTableType
 
 # Macros and modules require the same metadata and formatting,
 # so they can share these two functions.

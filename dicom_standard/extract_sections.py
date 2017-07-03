@@ -1,9 +1,8 @@
 import sys
 import re
 import os
-from bs4 import BeautifulSoup
 
-from parse_lib import parse_html_file, write_pretty_json
+from .parse_lib import parse_html_file, write_pretty_json
 
 REFERENCED_IDS_RE = re.compile(r'(sect.*)|(figure.*)|(biblio.*)|(table.*)|(note.*)')
 

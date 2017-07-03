@@ -43,7 +43,7 @@ setup(
     ],
 
     extras_require={
-        'dev': [],
+        'dev': ['check-manifest'],
         'test': ['pytest'],
     },
 

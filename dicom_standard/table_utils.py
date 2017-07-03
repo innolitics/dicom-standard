@@ -6,9 +6,10 @@ from typing import List, Tuple, Dict
 from copy import copy
 from bs4 import Tag
 
-import parse_relations as pr
+from . import parse_relations as pr
 
 TableListType = List[List[Tag]]
+
 
 def table_to_dict(table: TableListType, row_names: List[str]) -> List[Dict[str, List[Tag]]]:
     return [dict(zip(row_names, row)) for row in table]
@@ -37,7 +38,7 @@ def expand_rows(table: TableListType) -> TableListType:
     communicated between each row (the rowspan information).
     '''
     extended_table = []
-    row_expansion = [] # Format: [(bs_html_object, row_index)]
+    row_expansion = []  # Format: [(bs_html_object, row_index)]
     for row in table:
         expanded_row, row_expansion = expand_rowspans(row, row_expansion)
         extended_table.append(expanded_row)
@@ -71,7 +72,7 @@ def slide_down(start_idx: int, row: List[Tag], num_slides: int = 1) -> List[Tag]
     '''
     try:
         sliding_rows = row[start_idx:len(row)]
-        new_row = row[0:len(row)-len(sliding_rows)]
+        new_row = row[0:len(row) - len(sliding_rows)]
         for i in range(num_slides):
             new_row.append(None)
         new_row.extend(sliding_rows)
@@ -105,7 +106,7 @@ def is_new_rowspan_cell(cell: Tag, idx: int, row_expansion: List[Tuple[Tag, int]
 
 
 def remove_completed_rowspans(row_expansion: List[Tuple[Tag, int]]) -> List[Tuple[Tag, int]]:
-    return [(cell,idx) for (cell, idx) in row_expansion
+    return [(cell, idx) for (cell, idx) in row_expansion
             if has_rowspans_to_expand(cell)]
 
 
@@ -126,6 +127,6 @@ def expand_cell_colspan(cell: Tag) -> Tag:
     if colspan_count is not None:
         colspans = int(colspan_count)
         cell['colspan'] = 1
-        for i in range(colspans-1):
+        for i in range(colspans - 1):
             expanded_cell.append(None)
     return expanded_cell

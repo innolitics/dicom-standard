@@ -1,6 +1,5 @@
-from bs4 import BeautifulSoup as bs
+import dicom_standard.parse_lib as pl
 
-import parse_lib as pl
 
 def test_create_slug():
     test_titles = [
