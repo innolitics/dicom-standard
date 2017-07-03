@@ -12,7 +12,30 @@ and machine-friendly JSON files. The purpose of these JSON files is twofold:
 The finalized JSON output of this program is in the `standard` directory at the
 top level of this project.
 
+These JSON files are used to make the [DICOM Standard Browser][standard-browser].
+
 [nema]: http://dicom.nema.org/
+[standard-browser]: https://dicom.innolitics.com
+
+## Current Status
+
+This program currently parses the DICOM Standard sections related to
+Information Object Definitions, modules, and attributes, as well as
+cross-referenced sections in other parts of the standard. This translates to
+the following sections:
+
+Completely processed:
+
+- PS3.3
+- PS3.6
+
+Processed for references:
+
+- PS3.4
+- PS3.15
+- PS3.16
+- PS3.17
+- PS3.18
 
 ## Setup
 

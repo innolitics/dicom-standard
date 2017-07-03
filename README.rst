@@ -1,4 +1,4 @@
 DICOM Standard Parser
 =====================
 
-See the documentation in `docs`!
+See documentation in `docs`.
