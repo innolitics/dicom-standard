@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 
-import extract_attributes as ea
+import dicom_standard.extract_attributes as ea
 
 example_table = '''
 <tbody>
@@ -8,6 +8,7 @@ example_table = '''
     <tr><td>should</td><td>be</td><td>a</td><td>list</td></tr>
 </tbody
 '''
+
 
 def test_attribute_table_to_list():
     table = BeautifulSoup(example_table, 'html.parser')

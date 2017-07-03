@@ -1,7 +1,8 @@
-import hierarchy_utils as h
+import dicom_standard.hierarchy_utils as h
 
 test_names = ['>>>name1', ' >space in front', '>>  \nstrange whitespace',
               '>>>>>>>>>>>>>>>>>>>> Long marker run', 'No markers']
+
 
 def test_get_hierarchy_markers():
     expected_result = ['>>>', '>', '>>', '>>>>>>>>>>>>>>>>>>>>', '']

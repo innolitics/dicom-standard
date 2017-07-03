@@ -3,8 +3,9 @@ Unit tests covering functions in `table_utils.py`.
 '''
 from bs4 import BeautifulSoup as bs
 
-import table_utils as t
+import dicom_standard.table_utils as t
 import tests.html_snippets as tables
+
 
 def parsed_html_table(string_table):
     parsed_html = bs(string_table, 'html.parser')
