@@ -26,9 +26,19 @@ You will probably also want to setup a "virtual environment" (e.g. using Conda,
 or Pyenv + Virtualenv) to install the project dependencies into.  Once you are
 in your "virtual environment", you can run:
 
-    make
+    $ make
 
-to install and compile everything.
+to install and compile everything. Add the `-j` flag to speed this process up
+significantly.
+
+### Updating the Standard
+
+To download and parse the most up-to-date web version of the DICOM Standard,
+run the following commands:
+
+    $ make clean
+    $ make updatestandard
+    $ make
 
 ## Design Philosophy
 
@@ -48,6 +58,9 @@ During this process, the following invariants are maintained:
   their output to standard out.
 - "Extract" stages takes one more more HTML input files and print out JSON.
 - "Process" stages take one or more JSON files as inputs and print out JSON.
+
+In this way, raw HTML is not touched by any stage other than `extract_*.py`,
+and successive processing steps use increasingly refined JSON.
 
 ### Parser Stages
 
@@ -99,3 +112,11 @@ A map of all extraction and processing pathways is shown below:
                                    v          v
             module_to_attributes.json       references.json
 ```
+
+## Contact
+
+Find a bug? JSON files missing a piece of information? [We welcome pull
+requests!][gh_link] Feel free to make a PR or make a GitHub issue for any bugs
+you may find.
+
+[gh_link]: https://www.github.com/innolitics/dicom-standard
