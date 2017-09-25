@@ -83,12 +83,6 @@
         "description":"<p>\n<span href=\"#table_C.4-15\">This module </span> specifies attributes that describe the acquisition of images during the performance of the Procedure Step and that provide references to the Series, Images and other Composite SOP Instances associated with this Modality Performed Procedure Step.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.4.15.html#table_C.4-15"
     },
-    "radiation-dose":{
-        "id":"radiation-dose",
-        "name":"Radiation Dose",
-        "description":"<p>\n<span href=\"#table_C.4-16\">This module </span> defines the Attributes that may be used to communicate information related to radiation dose values. The attributes are intended to enable the Information System to store Patient exposure to ionizing radiation for legal purposes. Though these attributes are not intended to be used to accurately calculate volume dose distribution, they may serve for some quality control purposes.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.4.16.html#table_C.4-16"
-    },
     "billing-and-material-management-code":{
         "id":"billing-and-material-management-code",
         "name":"Billing and Material Management Code",
@@ -890,7 +884,7 @@
     "ocular-region-imaged":{
         "id":"ocular-region-imaged",
         "name":"Ocular Region Imaged",
-        "description":"<p>\n<span href=\"#table_C.8.17.5-1\">This module </span> contains IOD Attributes that describe the anatomy contained in an Ophthalmic Photography or Ophthalmic Tomography IOD.</p>",
+        "description":"<p>\n<span href=\"#table_C.8.17.5-1\">This module </span> contains IOD Attributes that describe the anatomy imaged in an Ophthalmic Photography or Ophthalmic Tomography Image Storage SOP Instance.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.17.5.html#table_C.8.17.5-1"
     },
     "ophthalmic-tomography-series":{
@@ -934,6 +928,24 @@
         "name":"Wide Field Ophthalmic Photography Quality Rating",
         "description":"<p>\n<span href=\"#table_C.8.17.13-1\">This module </span> specifies the Attributes that evaluate the quality of the projection or mapping used for a wide field ophthalmic photography image.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.17.13.html#table_C.8.17.13-1"
+    },
+    "ophthalmic-optical-coherence-tomography-en-face-image":{
+        "id":"ophthalmic-optical-coherence-tomography-en-face-image",
+        "name":"Ophthalmic Optical Coherence Tomography En Face Image",
+        "description":"<p>\n<span href=\"#table_C.8.17.14-1\">This module </span> specifies the Attributes that describe the Ophthalmic Optical Coherence Tomography En Face Image Module.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.17.14.html#table_C.8.17.14-1"
+    },
+    "ophthalmic-optical-coherence-tomography-en-face-image-quality-rating":{
+        "id":"ophthalmic-optical-coherence-tomography-en-face-image-quality-rating",
+        "name":"Ophthalmic Optical Coherence Tomography En Face Image Quality Rating",
+        "description":"<p>\n<span href=\"#table_C.8.17.15-1\">This module </span> specifies the Attributes for evaluating the quality of the derived en face image.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.17.15.html#table_C.8.17.15-1"
+    },
+    "ophthalmic-optical-coherence-tomography-b-scan-volume-analysis-image":{
+        "id":"ophthalmic-optical-coherence-tomography-b-scan-volume-analysis-image",
+        "name":"Ophthalmic Optical Coherence Tomography B-scan Volume Analysis Image",
+        "description":"<p>\n<span href=\"#table_C.8.17.16-1\">This module </span> specifies the Attributes that describe the Ophthalmic Optical Coherence Tomography B-scan Volume Analysis Image Module.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.17.16.html#table_C.8.17.16-1"
     },
     "stereometric-series":{
         "id":"stereometric-series",
@@ -1559,10 +1571,10 @@
         "description":"<p>\n<span href=\"#table_C.11.26-1\">This module </span> contains Attributes that describe the geometry of this Multi-Planar Reconstruction view.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.26.html#table_C.11.26-1"
     },
-    "volumetric-presentation-state-display":{
-        "id":"volumetric-presentation-state-display",
-        "name":"Volumetric Presentation State Display",
-        "description":"<p>\n<span href=\"#table_C.11.27-1\">This module </span> specifies the attributes that define the transformations of the processed Volumetric Presentation State inputs into a single VPS display space, as described in the Volumetric Presentation State pipeline in <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_FF.2.html#sect_FF.2.1\" target=\"_blank\">Section FF.2.1 \u201cPlanar MPR Volumetric Transformation Process\u201d in PS3.4</a>.</p>",
+    "mpr-volumetric-presentation-state-display":{
+        "id":"mpr-volumetric-presentation-state-display",
+        "name":"MPR Volumetric Presentation State Display",
+        "description":"<p>\n<span href=\"#table_C.11.27-1\">This module </span> specifies the attributes that define the transformations of the processed MPR Volumetric Presentation State inputs into a single VPS display space, as described in the Volumetric Presentation State pipeline in <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_FF.2.html#sect_FF.2.1\" target=\"_blank\">Section FF.2.1 \u201cVolumetric Transformations\u201d in PS3.4</a>.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.27.html#table_C.11.27-1"
     },
     "volumetric-graphic-annotation":{
@@ -1576,6 +1588,36 @@
         "name":"Presentation Animation",
         "description":"<p>\n<span href=\"#table_C.11.29-1\">This module </span> contains Attributes that describe animation of the presentation.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.29.html#table_C.11.29-1"
+    },
+    "volume-render-geometry":{
+        "id":"volume-render-geometry",
+        "name":"Volume Render Geometry",
+        "description":"<p>\n<span href=\"#table_C.11.30-1\">This module </span> contains Attributes that describe the geometry of the volume rendered view.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.30.html#table_C.11.30-1"
+    },
+    "render-shading":{
+        "id":"render-shading",
+        "name":"Render Shading",
+        "description":"<p>\nShading enhances the visual perception of a volume by adding reflection characteristics.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.31.html#table_C.11.31-1"
+    },
+    "render-display":{
+        "id":"render-display",
+        "name":"Render Display",
+        "description":"<p>\n<span href=\"#table_C.11.32-1\">This module </span> specifies the attributes that define the transformations of the processed Volumetric Presentation State inputs into a single VPS display space, as described in the Volumetric Presentation State pipelines in <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_FF.2.2.html#sect_FF.2.2\" target=\"_blank\">Section FF.2.2 \u201cVolumetric Inputs, Registration and Cropping\u201d in PS3.4</a>.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.32.html#table_C.11.32-1"
+    },
+    "advanced-blending-presentation-state":{
+        "id":"advanced-blending-presentation-state",
+        "name":"Advanced Blending Presentation State",
+        "description":"<p>\n<span href=\"#table_C.11.33-1\">This module </span> contains Attributes that describe one or more inputs optionally one or more sets of registration objects, and the color and thresholds to be applied to them, for the purpose of blending.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.33.html#table_C.11.33-1"
+    },
+    "advanced-blending-presentation-state-display":{
+        "id":"advanced-blending-presentation-state-display",
+        "name":"Advanced Blending Presentation State Display",
+        "description":"<p>\nThe Advanced Blending Presentation State Display Module specifies the input and the method used for each blending step.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.34.html#table_C.11.34.1-1"
     },
     "sop-common":{
         "id":"sop-common",
@@ -2020,5 +2062,11 @@
         "name":"Performed Storage",
         "description":"<p>\nThis Module contains storage parameter values for a performed imaging procedure.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.34.14.html#table_C.34.14-1"
+    },
+    "protocol-approval":{
+        "id":"protocol-approval",
+        "name":"Protocol Approval",
+        "description":"<p>\nThe Protocol Approval Module records approvals of the content of one or more SOP Instances containing protocols by a person or device.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.34.15.html#table_C.34.15-1"
     }
 }

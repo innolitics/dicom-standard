@@ -227,6 +227,12 @@
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.33.6.3.html#table_A.33.6-1",
         "name":"XA/XRF Grayscale Softcopy Presentation State"
     },
+    "advanced-blending-presentation-state":{
+        "id":"advanced-blending-presentation-state",
+        "description":"<p>\nThe Advanced Blending Presentation State Information Object Definition (IOD) specifies information that may be used to blend two or more sets of images that are referenced from within the IOD for the purpose of presentation (display).</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.33.7.3.html#table_A.33.7-1",
+        "name":"Advanced Blending Presentation State"
+    },
     "basic-voice-audio":{
         "id":"basic-voice-audio",
         "description":"<p>\nThe Basic Voice Audio IOD is the specification of a digitized sound that has been acquired or created by an audio modality or by an audio acquisition function within an imaging modality. A typical use is report dictation.</p>",
@@ -382,6 +388,12 @@
         "description":"<p>\nThe Simplified Adult Echo SR IOD is used to convey measurements collected in association with an adult echocardiography procedure.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.35.17.3.html#table_A.35.17-1",
         "name":"Simplified Adult Echo SR"
+    },
+    "patient-radiation-dose-structured-report":{
+        "id":"patient-radiation-dose-structured-report",
+        "description":"<p>\nThe Patient Radiation Dose Structured Report IOD is used to convey the information used in the calculations for estimating the radiation dose to an individual patient. The complexity of the calculations and the precision of the resulting dose estimate will vary depending on the need.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.35.18.3.html#table_A.35.18-1",
+        "name":"Patient Radiation Dose Structured Report"
     },
     "enhanced-mr-image":{
         "id":"enhanced-mr-image",
@@ -713,6 +725,12 @@
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.80.html#table_A.80.1-1",
         "name":"Planar MPR Volumetric Presentation State"
     },
+    "volume-rendering-volumetric-presentation-state":{
+        "id":"volume-rendering-volumetric-presentation-state",
+        "description":"<p>\nThe Volume Rendering Volumetric Presentation State Information Object Definition (IOD) specifies information that defines a Volume Rendering presentation from volume datasets that are referenced from within the IOD.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.80.2.3.html#table_A.80.2.3-1",
+        "name":"Volume Rendering Volumetric Presentation State"
+    },
     "content-assessment-results":{
         "id":"content-assessment-results",
         "description":"<p>\nThis IOD represents the results of an assessment of the content of one or more SOP Instance(s). The assessment may be performed automatically without human intervention. There is no provision for encoding verification or approval by a human, although a human may be involved in determining whether the contents meet certain criteria. This IOD is not intended to communicate approval to proceed with the clinical workflow.</p>",
@@ -730,5 +748,23 @@
         "description":"<p>\nThe CT Defined Procedure Protocol IOD describes acquisition protocol parameters and related details for a defined CT procedure.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.82.2.3.html#table_A.82.2.3-1",
         "name":"CT Defined Procedure Protocol"
+    },
+    "protocol-approval":{
+        "id":"protocol-approval",
+        "description":"None",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.82.3.html#table_A.82.3.1.3-1",
+        "name":"Protocol Approval"
+    },
+    "ophthalmic-optical-coherence-tomography-en-face-image":{
+        "id":"ophthalmic-optical-coherence-tomography-en-face-image",
+        "description":"<p>\nThe Ophthalmic Optical Coherence Tomography En Face Image IOD specifies a single-frame image derived from images obtained using OCT technology. This IOD encodes a single derived en face image.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.83.3.html#table_A.83-1",
+        "name":"Ophthalmic Optical Coherence Tomography En Face Image"
+    },
+    "ophthalmic-optical-coherence-tomography-b-scan-volume-analysis":{
+        "id":"ophthalmic-optical-coherence-tomography-b-scan-volume-analysis",
+        "description":"<p>\nThe Ophthalmic Optical Coherence Tomography B-scan Volume Analysis IOD specifies a multi-frame image conveying ophthalmic optical coherence tomography volumetric B-scan volume analysis information (e.g., angiographic (blood flow) volume information).</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.84.3.html#table_A.84-1",
+        "name":"Ophthalmic Optical Coherence Tomography B-scan Volume Analysis"
     }
 }

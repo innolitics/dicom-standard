@@ -319,6 +319,14 @@
         "valueMultiplicity":"1-n",
         "retired":false
     },
+    "00080063":{
+        "tag":"(0008,0063)",
+        "name":"Anatomic Regions in Study Code Sequence",
+        "keyword":"AnatomicRegionsInStudyCodeSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
     "00080064":{
         "tag":"(0008,0064)",
         "name":"Conversion Type",
@@ -487,6 +495,22 @@
         "valueMultiplicity":"1",
         "retired":false
     },
+    "00080109":{
+        "tag":"(0008,0109)",
+        "name":"Coding Scheme Resources Sequence",
+        "keyword":"CodingSchemeResourcesSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "0008010a":{
+        "tag":"(0008,010A)",
+        "name":"Coding Scheme URL Type",
+        "keyword":"CodingSchemeURLType",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
     "0008010b":{
         "tag":"(0008,010B)",
         "name":"Context Group Extension Flag",
@@ -508,6 +532,14 @@
         "name":"Context Group Extension Creator UID",
         "keyword":"ContextGroupExtensionCreatorUID",
         "valueRepresentation":"UI",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "0008010e":{
+        "tag":"(0008,010E)",
+        "name":"Coding Scheme URL",
+        "keyword":"CodingSchemeURL",
+        "valueRepresentation":"UR",
         "valueMultiplicity":"1",
         "retired":false
     },
@@ -1381,7 +1413,7 @@
         "keyword":"AnatomicStructureSpaceOrRegionSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false
+        "retired":true
     },
     "00082230":{
         "tag":"(0008,2230)",
@@ -1925,7 +1957,7 @@
         "keyword":"OtherPatientIDs",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1-n",
-        "retired":false
+        "retired":true
     },
     "00101001":{
         "tag":"(0010,1001)",
@@ -2053,7 +2085,7 @@
         "keyword":"MedicalRecordLocator",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false
+        "retired":true
     },
     "00101100":{
         "tag":"(0010,1100)",
@@ -2348,6 +2380,22 @@
         "name":"Clinical Trial Time Point Description",
         "keyword":"ClinicalTrialTimePointDescription",
         "valueRepresentation":"ST",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00120052":{
+        "tag":"(0012,0052)",
+        "name":"Longitudinal Temporal Offset from Event",
+        "keyword":"LongitudinalTemporalOffsetFromEvent",
+        "valueRepresentation":"FD",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00120053":{
+        "tag":"(0012,0053)",
+        "name":"Longitudinal Temporal Event Type",
+        "keyword":"LongitudinalTemporalEventType",
+        "valueRepresentation":"CS",
         "valueMultiplicity":"1",
         "retired":false
     },
@@ -5335,11 +5383,27 @@
         "valueMultiplicity":"1",
         "retired":false
     },
+    "001811a3":{
+        "tag":"(0018,11A3)",
+        "name":"Compression Pressure",
+        "keyword":"CompressionPressure",
+        "valueRepresentation":"DS",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
     "001811a4":{
         "tag":"(0018,11A4)",
         "name":"Paddle Description",
         "keyword":"PaddleDescription",
         "valueRepresentation":"LO",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "001811a5":{
+        "tag":"(0018,11A5)",
+        "name":"Compression Contact Area",
+        "keyword":"CompressionContactArea",
+        "valueRepresentation":"DS",
         "valueMultiplicity":"1",
         "retired":false
     },
@@ -12559,6 +12623,158 @@
         "valueMultiplicity":"1",
         "retired":false
     },
+    "00221612":{
+        "tag":"(0022,1612)",
+        "name":"Derivation Algorithm Sequence",
+        "keyword":"DerivationAlgorithmSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00221615":{
+        "tag":"(0022,1615)",
+        "name":"Ophthalmic Image Type Code Sequence",
+        "keyword":"OphthalmicImageTypeCodeSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00221616":{
+        "tag":"(0022,1616)",
+        "name":"Ophthalmic Image Type Description",
+        "keyword":"OphthalmicImageTypeDescription",
+        "valueRepresentation":"LO",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00221618":{
+        "tag":"(0022,1618)",
+        "name":"Scan Pattern Type Code Sequence",
+        "keyword":"ScanPatternTypeCodeSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00221620":{
+        "tag":"(0022,1620)",
+        "name":"Referenced Surface Mesh Identification Sequence",
+        "keyword":"ReferencedSurfaceMeshIdentificationSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00221622":{
+        "tag":"(0022,1622)",
+        "name":"Ophthalmic Volumetric Properties Flag",
+        "keyword":"OphthalmicVolumetricPropertiesFlag",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00221624":{
+        "tag":"(0022,1624)",
+        "name":"Ophthalmic Anatomic Reference Point X-Coordinate",
+        "keyword":"OphthalmicAnatomicReferencePointXCoordinate",
+        "valueRepresentation":"FL",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00221626":{
+        "tag":"(0022,1626)",
+        "name":"Ophthalmic Anatomic Reference Point Y-Coordinate",
+        "keyword":"OphthalmicAnatomicReferencePointYCoordinate",
+        "valueRepresentation":"FL",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00221628":{
+        "tag":"(0022,1628)",
+        "name":"Ophthalmic En Face Image Quality Rating Sequence",
+        "keyword":"OphthalmicEnFaceImageQualityRatingSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00221630":{
+        "tag":"(0022,1630)",
+        "name":"Quality Threshold",
+        "keyword":"QualityThreshold",
+        "valueRepresentation":"DS",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00221640":{
+        "tag":"(0022,1640)",
+        "name":"OCT B-scan Analysis Acquisition Parameters Sequence",
+        "keyword":"OCTBscanAnalysisAcquisitionParametersSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00221642":{
+        "tag":"(0022,1642)",
+        "name":"Number of B-scans Per Frame",
+        "keyword":"NumberofBscansPerFrame",
+        "valueRepresentation":"UL",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00221643":{
+        "tag":"(0022,1643)",
+        "name":"B-scan Slab Thickness",
+        "keyword":"BscanSlabThickness",
+        "valueRepresentation":"FL",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00221644":{
+        "tag":"(0022,1644)",
+        "name":"Distance Between B-scan Slabs",
+        "keyword":"DistanceBetweenBscanSlabs",
+        "valueRepresentation":"FL",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00221645":{
+        "tag":"(0022,1645)",
+        "name":"B-scan Cycle Time",
+        "keyword":"BscanCycleTime",
+        "valueRepresentation":"FL",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00221646":{
+        "tag":"(0022,1646)",
+        "name":"B-scan Cycle Time Vector",
+        "keyword":"BscanCycleTimeVector",
+        "valueRepresentation":"FL",
+        "valueMultiplicity":"1-n",
+        "retired":false
+    },
+    "00221649":{
+        "tag":"(0022,1649)",
+        "name":"A-scan Rate",
+        "keyword":"AscanRate",
+        "valueRepresentation":"FL",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00221650":{
+        "tag":"(0022,1650)",
+        "name":"B-scan Rate",
+        "keyword":"BscanRate",
+        "valueRepresentation":"FL",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00221658":{
+        "tag":"(0022,1658)",
+        "name":"Surface Mesh Z-Pixel Offset",
+        "keyword":"SurfaceMeshZPixelOffset",
+        "valueRepresentation":"UL",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
     "00240010":{
         "tag":"(0024,0010)",
         "name":"Visual Field Horizontal Extent",
@@ -16485,7 +16701,7 @@
         "keyword":"TotalTimeOfFluoroscopy",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false
+        "retired":true
     },
     "00400301":{
         "tag":"(0040,0301)",
@@ -16493,7 +16709,7 @@
         "keyword":"TotalNumberOfExposures",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false
+        "retired":true
     },
     "00400302":{
         "tag":"(0040,0302)",
@@ -16533,7 +16749,7 @@
         "keyword":"ExposureDoseSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false
+        "retired":true
     },
     "00400310":{
         "tag":"(0040,0310)",
@@ -17269,7 +17485,7 @@
         "keyword":"InputAvailabilityFlag",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false
+        "retired":true
     },
     "00404021":{
         "tag":"(0040,4021)",
@@ -17484,6 +17700,14 @@
         "name":"Entrance Dose in mGy",
         "keyword":"EntranceDoseInmGy",
         "valueRepresentation":"DS",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00408303":{
+        "tag":"(0040,8303)",
+        "name":"Entrance Dose Derivation",
+        "keyword":"EntranceDoseDerivation",
+        "valueRepresentation":"CS",
         "valueMultiplicity":"1",
         "retired":false
     },
@@ -18779,6 +19003,94 @@
         "tag":"(0044,0019)",
         "name":"Substance Administration Parameter Sequence",
         "keyword":"SubstanceAdministrationParameterSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00440100":{
+        "tag":"(0044,0100)",
+        "name":"Approval Sequence",
+        "keyword":"ApprovalSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00440101":{
+        "tag":"(0044,0101)",
+        "name":"Assertion Code Sequence",
+        "keyword":"AssertionCodeSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00440102":{
+        "tag":"(0044,0102)",
+        "name":"Assertion UID",
+        "keyword":"AssertionUID",
+        "valueRepresentation":"UI",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00440103":{
+        "tag":"(0044,0103)",
+        "name":"Asserter Identification Sequence",
+        "keyword":"AsserterIdentificationSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00440104":{
+        "tag":"(0044,0104)",
+        "name":"Assertion DateTime",
+        "keyword":"AssertionDateTime",
+        "valueRepresentation":"DT",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00440105":{
+        "tag":"(0044,0105)",
+        "name":"Assertion Expiration DateTime",
+        "keyword":"AssertionExpirationDateTime",
+        "valueRepresentation":"DT",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00440106":{
+        "tag":"(0044,0106)",
+        "name":"Assertion Comments",
+        "keyword":"AssertionComments",
+        "valueRepresentation":"UT",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00440107":{
+        "tag":"(0044,0107)",
+        "name":"Related Assertion Sequence",
+        "keyword":"RelatedAssertionSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00440108":{
+        "tag":"(0044,0108)",
+        "name":"Referenced Assertion UID",
+        "keyword":"ReferencedAssertionUID",
+        "valueRepresentation":"UI",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00440109":{
+        "tag":"(0044,0109)",
+        "name":"Approval Subject Sequence",
+        "keyword":"ApprovalSubjectSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "0044010a":{
+        "tag":"(0044,010A)",
+        "name":"Organizational Role Code Sequence",
+        "keyword":"OrganizationalRoleCodeSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
         "retired":false
@@ -22965,7 +23277,7 @@
         "keyword":"CompositingMethod",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false
+        "retired":true
     },
     "00701207":{
         "tag":"(0070,1207)",
@@ -22979,6 +23291,46 @@
         "tag":"(0070,1208)",
         "name":"Image Volume Geometry",
         "keyword":"ImageVolumeGeometry",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00701209":{
+        "tag":"(0070,1209)",
+        "name":"Volumetric Presentation Input Set UID",
+        "keyword":"VolumetricPresentationInputSetUID",
+        "valueRepresentation":"UI",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "0070120a":{
+        "tag":"(0070,120A)",
+        "name":"Volumetric Presentation Input Set Sequence",
+        "keyword":"VolumetricPresentationInputSetSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "0070120b":{
+        "tag":"(0070,120B)",
+        "name":"Global Crop",
+        "keyword":"GlobalCrop",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "0070120c":{
+        "tag":"(0070,120C)",
+        "name":"Global Cropping Specification Index",
+        "keyword":"GlobalCroppingSpecificationIndex",
+        "valueRepresentation":"US",
+        "valueMultiplicity":"1-n",
+        "retired":false
+    },
+    "0070120d":{
+        "tag":"(0070,120D)",
+        "name":"Rendering Method",
+        "keyword":"RenderingMethod",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
         "retired":false
@@ -23119,6 +23471,102 @@
         "valueMultiplicity":"1",
         "retired":false
     },
+    "00701602":{
+        "tag":"(0070,1602)",
+        "name":"Render Projection",
+        "keyword":"RenderProjection",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00701603":{
+        "tag":"(0070,1603)",
+        "name":"Viewpoint Position",
+        "keyword":"ViewpointPosition",
+        "valueRepresentation":"FD",
+        "valueMultiplicity":"3",
+        "retired":false
+    },
+    "00701604":{
+        "tag":"(0070,1604)",
+        "name":"Viewpoint LookAt Point",
+        "keyword":"ViewpointLookAtPoint",
+        "valueRepresentation":"FD",
+        "valueMultiplicity":"3",
+        "retired":false
+    },
+    "00701605":{
+        "tag":"(0070,1605)",
+        "name":"Viewpoint Up Direction",
+        "keyword":"ViewpointUpDirection",
+        "valueRepresentation":"FD",
+        "valueMultiplicity":"3",
+        "retired":false
+    },
+    "00701606":{
+        "tag":"(0070,1606)",
+        "name":"Render Field of View",
+        "keyword":"RenderFieldOfView",
+        "valueRepresentation":"FD",
+        "valueMultiplicity":"6",
+        "retired":false
+    },
+    "00701607":{
+        "tag":"(0070,1607)",
+        "name":"Sampling Step Size",
+        "keyword":"SamplingStepSize",
+        "valueRepresentation":"FD",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00701701":{
+        "tag":"(0070,1701)",
+        "name":"Shading Style",
+        "keyword":"ShadingStyle",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00701702":{
+        "tag":"(0070,1702)",
+        "name":"Ambient Reflection Intensity",
+        "keyword":"AmbientReflectionIntensity",
+        "valueRepresentation":"FD",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00701703":{
+        "tag":"(0070,1703)",
+        "name":"Light Direction",
+        "keyword":"LightDirection",
+        "valueRepresentation":"FD",
+        "valueMultiplicity":"3",
+        "retired":false
+    },
+    "00701704":{
+        "tag":"(0070,1704)",
+        "name":"Diffuse Reflection Intensity",
+        "keyword":"DiffuseReflectionIntensity",
+        "valueRepresentation":"FD",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00701705":{
+        "tag":"(0070,1705)",
+        "name":"Specular Reflection Intensity",
+        "keyword":"SpecularReflectionIntensity",
+        "valueRepresentation":"FD",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00701706":{
+        "tag":"(0070,1706)",
+        "name":"Shininess",
+        "keyword":"Shininess",
+        "valueRepresentation":"FD",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
     "00701801":{
         "tag":"(0070,1801)",
         "name":"Presentation State Classification Component Sequence",
@@ -23251,6 +23699,126 @@
         "tag":"(0070,1A05)",
         "name":"Animation Step Size",
         "keyword":"AnimationStepSize",
+        "valueRepresentation":"FD",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00701a06":{
+        "tag":"(0070,1A06)",
+        "name":"Swivel Range",
+        "keyword":"SwivelRange",
+        "valueRepresentation":"FD",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00701a07":{
+        "tag":"(0070,1A07)",
+        "name":"Volumetric Curve Up Directions",
+        "keyword":"VolumetricCurveUpDirections",
+        "valueRepresentation":"OD",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00701a08":{
+        "tag":"(0070,1A08)",
+        "name":"Volume Stream Sequence",
+        "keyword":"VolumeStreamSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00701a09":{
+        "tag":"(0070,1A09)",
+        "name":"RGBA Transfer Function Description",
+        "keyword":"RGBATransferFunctionDescription",
+        "valueRepresentation":"LO",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00701b01":{
+        "tag":"(0070,1B01)",
+        "name":"Advanced Blending Sequence",
+        "keyword":"AdvancedBlendingSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00701b02":{
+        "tag":"(0070,1B02)",
+        "name":"Blending Input Number",
+        "keyword":"BlendingInputNumber",
+        "valueRepresentation":"US",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00701b03":{
+        "tag":"(0070,1B03)",
+        "name":"Blending Display Input Sequence",
+        "keyword":"BlendingDisplayInputSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00701b04":{
+        "tag":"(0070,1B04)",
+        "name":"Blending Display Sequence",
+        "keyword":"BlendingDisplaySequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00701b06":{
+        "tag":"(0070,1B06)",
+        "name":"Blending Mode",
+        "keyword":"BlendingMode",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00701b07":{
+        "tag":"(0070,1B07)",
+        "name":"Time Series Blending",
+        "keyword":"TimeSeriesBlending",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00701b08":{
+        "tag":"(0070,1B08)",
+        "name":"Geometry for Display",
+        "keyword":"GeometryForDisplay",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00701b11":{
+        "tag":"(0070,1B11)",
+        "name":"Threshold Sequence",
+        "keyword":"ThresholdSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00701b12":{
+        "tag":"(0070,1B12)",
+        "name":"Threshold Value Sequence",
+        "keyword":"ThresholdValueSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00701b13":{
+        "tag":"(0070,1B13)",
+        "name":"Threshold Type",
+        "keyword":"ThresholdType",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00701b14":{
+        "tag":"(0070,1B14)",
+        "name":"Threshold Value",
+        "keyword":"ThresholdValue",
         "valueRepresentation":"FD",
         "valueMultiplicity":"1",
         "retired":false
@@ -24268,6 +24836,14 @@
         "name":"Procedure Step Progress Description",
         "keyword":"ProcedureStepProgressDescription",
         "valueRepresentation":"ST",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00741007":{
+        "tag":"(0074,1007)",
+        "name":"Procedure Step Progress Parameters Sequence",
+        "keyword":"ProcedureStepProgressParametersSequence",
+        "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
         "retired":false
     },
@@ -25306,7 +25882,7 @@
     "0082000c":{
         "tag":"(0082,000C)",
         "name":"Structured Constraint Observation Sequence",
-        "keyword":"StructuredContraintObservationSequence",
+        "keyword":"StructuredConstraintObservationSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
         "retired":false
@@ -28711,6 +29287,14 @@
         "valueMultiplicity":"3",
         "retired":false
     },
+    "300a0083":{
+        "tag":"(300A,0083)",
+        "name":"Referenced Dose Reference UID",
+        "keyword":"ReferencedDoseReferenceUID",
+        "valueRepresentation":"UI",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
     "300a0084":{
         "tag":"(300A,0084)",
         "name":"Beam Dose",
@@ -28733,7 +29317,7 @@
         "keyword":"BeamDosePointDepth",
         "valueRepresentation":"FL",
         "valueMultiplicity":"1",
-        "retired":true
+        "retired":false
     },
     "300a0089":{
         "tag":"(300A,0089)",
@@ -28741,7 +29325,7 @@
         "keyword":"BeamDosePointEquivalentDepth",
         "valueRepresentation":"FL",
         "valueMultiplicity":"1",
-        "retired":true
+        "retired":false
     },
     "300a008a":{
         "tag":"(300A,008A)",
@@ -28749,7 +29333,7 @@
         "keyword":"BeamDosePointSSD",
         "valueRepresentation":"FL",
         "valueMultiplicity":"1",
-        "retired":true
+        "retired":false
     },
     "300a008b":{
         "tag":"(300A,008B)",
@@ -28773,7 +29357,7 @@
         "keyword":"AverageBeamDosePointDepth",
         "valueRepresentation":"FL",
         "valueMultiplicity":"1",
-        "retired":false
+        "retired":true
     },
     "300a008e":{
         "tag":"(300A,008E)",
@@ -28781,7 +29365,7 @@
         "keyword":"AverageBeamDosePointEquivalentDepth",
         "valueRepresentation":"FL",
         "valueMultiplicity":"1",
-        "retired":false
+        "retired":true
     },
     "300a008f":{
         "tag":"(300A,008F)",
@@ -28789,7 +29373,7 @@
         "keyword":"AverageBeamDosePointSSD",
         "valueRepresentation":"FL",
         "valueMultiplicity":"1",
-        "retired":false
+        "retired":true
     },
     "300a0090":{
         "tag":"(300A,0090)",
@@ -28811,6 +29395,14 @@
         "tag":"(300A,0092)",
         "name":"Alternate Beam Dose Type",
         "keyword":"AlternateBeamDoseType",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "300a0093":{
+        "tag":"(300A,0093)",
+        "name":"Depth Value Averaging Flag",
+        "keyword":"DepthValueAveragingFlag",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
         "retired":false
@@ -30275,6 +30867,38 @@
         "tag":"(300A,026C)",
         "name":"Brachy Accessory Device Nominal Transmission",
         "keyword":"BrachyAccessoryDeviceNominalTransmission",
+        "valueRepresentation":"DS",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "300a0271":{
+        "tag":"(300A,0271)",
+        "name":"Channel Effective Length",
+        "keyword":"ChannelEffectiveLength",
+        "valueRepresentation":"DS",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "300a0272":{
+        "tag":"(300A,0272)",
+        "name":"Channel Inner Length",
+        "keyword":"ChannelInnerLength",
+        "valueRepresentation":"DS",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "300a0273":{
+        "tag":"(300A,0273)",
+        "name":"Afterloader Channel ID",
+        "keyword":"AfterloaderChannelID",
+        "valueRepresentation":"SH",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "300a0274":{
+        "tag":"(300A,0274)",
+        "name":"Source Applicator Tip Length",
+        "keyword":"SourceApplicatorTipLength",
         "valueRepresentation":"DS",
         "valueMultiplicity":"1",
         "retired":false

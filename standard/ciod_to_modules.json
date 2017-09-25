@@ -6412,6 +6412,160 @@
         "informationEntity":"Presentation State"
     },
     {
+        "ciod":"advanced-blending-presentation-state",
+        "module":"patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"advanced-blending-presentation-state",
+        "module":"clinical-trial-subject",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"advanced-blending-presentation-state",
+        "module":"general-study",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"advanced-blending-presentation-state",
+        "module":"patient-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"advanced-blending-presentation-state",
+        "module":"clinical-trial-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"advanced-blending-presentation-state",
+        "module":"general-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"advanced-blending-presentation-state",
+        "module":"presentation-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"advanced-blending-presentation-state",
+        "module":"clinical-trial-series",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"advanced-blending-presentation-state",
+        "module":"frame-of-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciod":"advanced-blending-presentation-state",
+        "module":"general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"advanced-blending-presentation-state",
+        "module":"enhanced-general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"advanced-blending-presentation-state",
+        "module":"presentation-state-identification",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciod":"advanced-blending-presentation-state",
+        "module":"advanced-blending-presentation-state",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciod":"advanced-blending-presentation-state",
+        "module":"advanced-blending-presentation-state-display",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciod":"advanced-blending-presentation-state",
+        "module":"displayed-area",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciod":"advanced-blending-presentation-state",
+        "module":"graphic-annotation",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciod":"advanced-blending-presentation-state",
+        "module":"spatial-transformation",
+        "usage":"C",
+        "conditionalStatement":"Required if rotation or flipping are to be applied",
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciod":"advanced-blending-presentation-state",
+        "module":"graphic-layer",
+        "usage":"C",
+        "conditionalStatement":"Required if Graphic Annotation Module is present",
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciod":"advanced-blending-presentation-state",
+        "module":"graphic-group",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciod":"advanced-blending-presentation-state",
+        "module":"icc-profile",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciod":"advanced-blending-presentation-state",
+        "module":"common-instance-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciod":"advanced-blending-presentation-state",
+        "module":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
         "ciod":"basic-voice-audio",
         "module":"patient",
         "usage":"M",
@@ -8751,6 +8905,97 @@
     },
     {
         "ciod":"simplified-adult-echo-sr",
+        "module":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Document"
+    },
+    {
+        "ciod":"patient-radiation-dose-structured-report",
+        "module":"patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"patient-radiation-dose-structured-report",
+        "module":"clinical-trial-subject",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"patient-radiation-dose-structured-report",
+        "module":"general-study",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"patient-radiation-dose-structured-report",
+        "module":"patient-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"patient-radiation-dose-structured-report",
+        "module":"clinical-trial-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"patient-radiation-dose-structured-report",
+        "module":"sr-document-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"patient-radiation-dose-structured-report",
+        "module":"clinical-trial-series",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"patient-radiation-dose-structured-report",
+        "module":"synchronization",
+        "usage":"C",
+        "conditionalStatement":"shall be present if system time is synchronized to an external reference. May be present otherwise.",
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciod":"patient-radiation-dose-structured-report",
+        "module":"general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"patient-radiation-dose-structured-report",
+        "module":"enhanced-general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"patient-radiation-dose-structured-report",
+        "module":"sr-document-general",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Document"
+    },
+    {
+        "ciod":"patient-radiation-dose-structured-report",
+        "module":"sr-document-content",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Document"
+    },
+    {
+        "ciod":"patient-radiation-dose-structured-report",
         "module":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
@@ -11567,7 +11812,7 @@
         "ciod":"ophthalmic-tomography-image",
         "module":"frame-of-reference",
         "usage":"C",
-        "conditionalStatement":"Required if Ophthalmic Photography Reference Image available",
+        "conditionalStatement":"Required if Ophthalmic Photography Reference Image available or if Ophthalmic Volumetric Properties Flag (0022,1622) is YES. May be present otherwise.",
         "informationEntity":"Frame of Reference"
     },
     {
@@ -16074,8 +16319,8 @@
     {
         "ciod":"planar-mpr-volumetric-presentation-state",
         "module":"volume-cropping",
-        "usage":"U",
-        "conditionalStatement":null,
+        "usage":"C",
+        "conditionalStatement":"Required if Global Crop (0070,120B) or any value of Crop (0070,1204) is YES",
         "informationEntity":"Presentation State"
     },
     {
@@ -16094,7 +16339,7 @@
     },
     {
         "ciod":"planar-mpr-volumetric-presentation-state",
-        "module":"volumetric-presentation-state-display",
+        "module":"mpr-volumetric-presentation-state-display",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Presentation State"
@@ -16117,7 +16362,7 @@
         "ciod":"planar-mpr-volumetric-presentation-state",
         "module":"graphic-layer",
         "usage":"C",
-        "conditionalStatement":"Required if Graphic Layer (0070,0002) is present in Volumetric Presentation State Relationship Module, Volumetric Graphic Annotation, or Graphic Annotation Module",
+        "conditionalStatement":"Required if Graphic Layer (0070,0002) is present in the Volumetric Graphic Annotation Module or the Graphic Annotation Module",
         "informationEntity":"Presentation State"
     },
     {
@@ -16143,6 +16388,181 @@
     },
     {
         "ciod":"planar-mpr-volumetric-presentation-state",
+        "module":"common-instance-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciod":"volume-rendering-volumetric-presentation-state",
+        "module":"patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"volume-rendering-volumetric-presentation-state",
+        "module":"clinical-trial-subject",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"volume-rendering-volumetric-presentation-state",
+        "module":"general-study",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"volume-rendering-volumetric-presentation-state",
+        "module":"patient-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"volume-rendering-volumetric-presentation-state",
+        "module":"clinical-trial-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"volume-rendering-volumetric-presentation-state",
+        "module":"general-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"volume-rendering-volumetric-presentation-state",
+        "module":"clinical-trial-series",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"volume-rendering-volumetric-presentation-state",
+        "module":"presentation-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"volume-rendering-volumetric-presentation-state",
+        "module":"frame-of-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciod":"volume-rendering-volumetric-presentation-state",
+        "module":"general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"volume-rendering-volumetric-presentation-state",
+        "module":"enhanced-general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"volume-rendering-volumetric-presentation-state",
+        "module":"volumetric-presentation-state-identification",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciod":"volume-rendering-volumetric-presentation-state",
+        "module":"volumetric-presentation-state-relationship",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciod":"volume-rendering-volumetric-presentation-state",
+        "module":"volume-cropping",
+        "usage":"C",
+        "conditionalStatement":"Required if Global Crop (0070,120B) or any value of Crop (0070,1204) is YES",
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciod":"volume-rendering-volumetric-presentation-state",
+        "module":"presentation-view-description",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciod":"volume-rendering-volumetric-presentation-state",
+        "module":"volume-render-geometry",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciod":"volume-rendering-volumetric-presentation-state",
+        "module":"render-shading",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciod":"volume-rendering-volumetric-presentation-state",
+        "module":"render-display",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciod":"volume-rendering-volumetric-presentation-state",
+        "module":"volumetric-graphic-annotation",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciod":"volume-rendering-volumetric-presentation-state",
+        "module":"graphic-annotation",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciod":"volume-rendering-volumetric-presentation-state",
+        "module":"graphic-layer",
+        "usage":"C",
+        "conditionalStatement":"Required if Graphic Layer (0070,0002) is present in the Volumetric Graphic Annotation Module or Graphic Annotation Module",
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciod":"volume-rendering-volumetric-presentation-state",
+        "module":"graphic-group",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciod":"volume-rendering-volumetric-presentation-state",
+        "module":"presentation-animation",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciod":"volume-rendering-volumetric-presentation-state",
+        "module":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciod":"volume-rendering-volumetric-presentation-state",
         "module":"common-instance-reference",
         "usage":"M",
         "conditionalStatement":null,
@@ -16455,5 +16875,299 @@
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Procedure Protocol"
+    },
+    {
+        "ciod":"protocol-approval",
+        "module":"general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"protocol-approval",
+        "module":"enhanced-general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"protocol-approval",
+        "module":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Approval"
+    },
+    {
+        "ciod":"protocol-approval",
+        "module":"protocol-approval",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Approval"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-en-face-image",
+        "module":"patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-en-face-image",
+        "module":"clinical-trial-subject",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-en-face-image",
+        "module":"general-study",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-en-face-image",
+        "module":"patient-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-en-face-image",
+        "module":"clinical-trial-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-en-face-image",
+        "module":"general-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-en-face-image",
+        "module":"ophthalmic-tomography-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-en-face-image",
+        "module":"clinical-trial-series",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-en-face-image",
+        "module":"frame-of-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-en-face-image",
+        "module":"general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-en-face-image",
+        "module":"enhanced-general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-en-face-image",
+        "module":"general-image",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-en-face-image",
+        "module":"image-pixel",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-en-face-image",
+        "module":"palette-color-lookup-table",
+        "usage":"C",
+        "conditionalStatement":"Required if Photometric Interpretation (0028,0004) has a value of PALETTE COLOR",
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-en-face-image",
+        "module":"ophthalmic-optical-coherence-tomography-en-face-image",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-en-face-image",
+        "module":"ocular-region-imaged",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-en-face-image",
+        "module":"ophthalmic-optical-coherence-tomography-en-face-image-quality-rating",
+        "usage":"C",
+        "conditionalStatement":"Required if device calculates quality rating",
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-en-face-image",
+        "module":"icc-profile",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-en-face-image",
+        "module":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-en-face-image",
+        "module":"common-instance-reference",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-b-scan-volume-analysis",
+        "module":"patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-b-scan-volume-analysis",
+        "module":"clinical-trial-subject",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-b-scan-volume-analysis",
+        "module":"general-study",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-b-scan-volume-analysis",
+        "module":"patient-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-b-scan-volume-analysis",
+        "module":"clinical-trial-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-b-scan-volume-analysis",
+        "module":"general-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-b-scan-volume-analysis",
+        "module":"ophthalmic-tomography-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-b-scan-volume-analysis",
+        "module":"clinical-trial-series",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-b-scan-volume-analysis",
+        "module":"frame-of-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-b-scan-volume-analysis",
+        "module":"general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-b-scan-volume-analysis",
+        "module":"enhanced-general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-b-scan-volume-analysis",
+        "module":"image-pixel",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-b-scan-volume-analysis",
+        "module":"ophthalmic-optical-coherence-tomography-b-scan-volume-analysis-image",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-b-scan-volume-analysis",
+        "module":"multi-frame-functional-groups",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-b-scan-volume-analysis",
+        "module":"multi-frame-dimension",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-b-scan-volume-analysis",
+        "module":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-b-scan-volume-analysis",
+        "module":"common-instance-reference",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"ophthalmic-optical-coherence-tomography-b-scan-volume-analysis",
+        "module":"frame-extraction",
+        "usage":"C",
+        "conditionalStatement":"Required if the SOP Instance was created in response to a Frame-Level retrieve request",
+        "informationEntity":"Image"
     }
 ]
