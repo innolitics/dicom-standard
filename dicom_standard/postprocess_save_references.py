@@ -6,7 +6,7 @@ import re
 
 from bs4 import BeautifulSoup
 
-from . import parse_lib as pl
+from dicom_standard import parse_lib as pl
 
 
 def find_reference_html_in_sections(pairs, section_listing):

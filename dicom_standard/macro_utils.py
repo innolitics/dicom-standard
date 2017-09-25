@@ -8,7 +8,7 @@ from copy import deepcopy
 
 from bs4 import BeautifulSoup, Tag
 
-from .hierarchy_utils import get_hierarchy_markers
+from dicom_standard.hierarchy_utils import get_hierarchy_markers
 
 MetadataTableType = Dict[str, Any]
 MacrosType = Dict[str, MetadataTableType]

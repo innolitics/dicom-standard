@@ -8,9 +8,9 @@ Specific processing steps are:
 '''
 import sys
 
-from . import parse_lib as pl
-from .macro_utils import expand_macro_rows
-from .hierarchy_utils import record_hierarchy_for_module
+from dicom_standard import parse_lib as pl
+from dicom_standard.macro_utils import expand_macro_rows
+from dicom_standard.hierarchy_utils import record_hierarchy_for_module
 
 
 def expand_all_macros(module_attr_tables, macros):

@@ -1,6 +1,6 @@
 import sys
 
-from . import parse_lib as pl
+from dicom_standard import parse_lib as pl
 
 
 def update_sourceurls(module_attr_pairs, references):

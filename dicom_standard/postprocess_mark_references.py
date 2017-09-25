@@ -7,7 +7,7 @@ import re
 
 from bs4 import BeautifulSoup
 
-from . import parse_lib as pl
+from dicom_standard import parse_lib as pl
 
 IGNORED_REFS_RE = re.compile(r'(.*ftp.*)|(.*http.*)|(.*part05.*)|(.*chapter.*)|(.*PS3.*)|(.*DCM.*)|(.*glossentry.*)')
 

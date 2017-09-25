@@ -6,9 +6,9 @@ Output the tables in JSON format, one entry per CIOD.
 import sys
 import re
 
-from . import parse_lib as pl
-from . import parse_relations as pr
-from .table_utils import expand_spans, table_to_dict, stringify_table, tdiv_to_table_list
+from dicom_standard import parse_lib as pl
+from dicom_standard import parse_relations as pr
+from dicom_standard.table_utils import expand_spans, table_to_dict, stringify_table, tdiv_to_table_list
 
 CHAPTER_ID = 'chapter_A'
 TABLE_SUFFIX = re.compile(".*IOD Modules$")

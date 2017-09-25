@@ -3,9 +3,9 @@ Extract the listing of all attributes given in PS3.6 of the DICOM Standard.
 '''
 import sys
 
-from . import parse_lib as pl
-from . import parse_relations as pr
-from .table_utils import table_to_dict
+from dicom_standard import parse_lib as pl
+from dicom_standard import parse_relations as pr
+from dicom_standard.table_utils import table_to_dict
 
 COLUMN_TITLES = ['tag', 'name', 'keyword', 'valueRepresentation', 'valueMultiplicity', 'retired']
 ATTR_TABLE_ID = 'table_6-1'

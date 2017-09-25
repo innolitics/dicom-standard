@@ -10,7 +10,7 @@ import sys
 
 from bs4 import BeautifulSoup, NavigableString, Tag
 
-from . import parse_relations as pr
+from dicom_standard import parse_relations as pr
 
 BASE_DICOM_URL = "http://dicom.nema.org/medical/dicom/current/output/html/"
 BASE_SHORT_DICOM_SECTION_URL = "http://dicom.nema.org/medical/dicom/current/output/chtml/"
@@ -82,9 +82,12 @@ def clean_html(html: str) -> str:
     '''
     parsed_html = BeautifulSoup(html, 'html.parser')
     top_level_tag = get_top_level_tag(parsed_html)
-    remove_attributes_from_html_tags(top_level_tag)
-    remove_empty_children(top_level_tag)
-    return resolve_relative_resource_urls(str(top_level_tag))
+    if isinstance(top_level_tag, NavigableString):
+        return str(top_level_tag)
+    else:
+        remove_attributes_from_html_tags(top_level_tag)
+        remove_empty_children(top_level_tag)
+        return resolve_relative_resource_urls(str(top_level_tag))
 
 
 def get_top_level_tag(parsed_html: BeautifulSoup) -> Tag:

@@ -4,7 +4,7 @@ CIOD-Module relationships defined in the DICOM Standard.
 '''
 import sys
 
-from . import parse_lib as pl
+from dicom_standard import parse_lib as pl
 
 
 def define_all_relationships(ciod_module_list):

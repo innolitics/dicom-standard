@@ -7,7 +7,7 @@ import re
 
 from bs4 import Tag
 
-from . import parse_lib as pl
+from dicom_standard import parse_lib as pl
 
 
 def get_hierarchy_markers(name: str) -> str:

@@ -6,7 +6,7 @@ from typing import List, Tuple, Dict
 from copy import copy
 from bs4 import Tag
 
-from . import parse_relations as pr
+from dicom_standard import parse_relations as pr
 
 TableListType = List[List[Tag]]
 
