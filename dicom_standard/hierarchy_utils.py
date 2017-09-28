@@ -20,8 +20,8 @@ def get_hierarchy_level(name: str) -> int:
     return len(get_hierarchy_markers(name))
 
 
-def clean_field(name: str) -> str:
-    return re.sub(r'[>]', '', name).strip()
+def clean_attribute_field(name: str) -> str:
+    return re.sub(r'[>\s]', '', name).strip()
 
 
 def record_hierarchy_for_module(table: Tag) -> Tag:
@@ -34,7 +34,7 @@ def record_hierarchy_for_module(table: Tag) -> Tag:
 
 
 def update_hierarchy_position(attr: Dict[str, str], last_id: List[str], current_level: int) -> Tuple[List[str], int]:
-    attr_id = pl.create_slug(clean_field(attr['tag']))
+    attr_id = pl.create_slug(clean_attribute_field(attr['tag']))
     attribute_level = get_hierarchy_level(attr['name'])
     delta_l = attribute_level - current_level
     if attr_id == 'none':
@@ -60,7 +60,7 @@ def update_hierarchy_position(attr: Dict[str, str], last_id: List[str], current_
 
 
 def format_attribute_fields(attr: Dict[str, str], last_id: List[str]) -> None:
-    attr['name'] = clean_field(attr['name'])
-    attr['tag'] = clean_field(attr['tag'])
-    attr['type'] = clean_field(attr['type'])
+    attr['name'] = clean_attribute_field(attr['name'])
+    attr['tag'] = clean_attribute_field(attr['tag'])
+    attr['type'] = clean_attribute_field(attr['type'])
     attr['id'] = ':'.join(last_id)
