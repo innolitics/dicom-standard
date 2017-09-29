@@ -239,15 +239,23 @@ def test_number_of_module_appearances(ciods, ciod_module_relationship, modules):
     }
     ciod_module = [
         {
-            "informationEntity": "Presentation State",
-            "module": "volume-cropping",
-            "usage": "U",
-            "conditionalStatement": None,
             "ciod": "planar-mpr-volumetric-presentation-state",
-        }
+            "module": "volume-cropping",
+            "usage": "C",
+            "conditionalStatement": "Required if Global Crop (0070,120B) or any value of Crop (0070,1204) is YES",
+            "informationEntity": "Presentation State"
+        },
+        {
+            "ciod": "volume-rendering-volumetric-presentation-state",
+            "module": "volume-cropping",
+            "usage": "C",
+            "conditionalStatement": "Required if Global Crop (0070,120B) or any value of Crop (0070,1204) is YES",
+            "informationEntity": "Presentation State"
+        },
     ]
     assert module['volume-cropping'] == modules['volume-cropping']
-    assert ciod_module[0] in ciod_module_relationship
+    for ciod_module_pair in ciod_module:
+        assert ciod_module_pair in ciod_module_relationship
     all_module_appearances = [rel for rel in ciod_module_relationship
                               if rel['module'] == 'volume-cropping']
-    assert len(all_module_appearances) == 1
+    assert len(all_module_appearances) == 2

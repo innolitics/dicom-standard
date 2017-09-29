@@ -10,10 +10,10 @@ def test_get_hierarchy_markers():
     assert results == expected_result
 
 
-def test_clean_field():
-    expected_result = ['name1', 'space in front', 'strange whitespace',
-                       'Long marker run', 'No markers']
-    results = list(map(h.clean_field, test_names))
+def test_clean_attribute_field():
+    expected_result = ['name1', 'spaceinfront', 'strangewhitespace',
+                       'Longmarkerrun', 'Nomarkers']
+    results = list(map(h.clean_attribute_field, test_names))
     assert results == expected_result
 
 
