@@ -78,7 +78,10 @@ def update_attribute_hierarchy_markers(attributes: List[Dict[str, str]], marker:
 
 
 def add_marker_to_attr(attribute: Dict[str, str], marker: str) -> Dict[str, str]:
-    parsed_attribute_name = BeautifulSoup(attribute['name'], 'html.parser').find('td')
+    name_html = BeautifulSoup(attribute['name'], 'html.parser')
+    parsed_attribute_name = name_html.find('td')
+    if parsed_attribute_name is None:
+        parsed_attribute_name = name_html.find('th')
     attribute['name'] = prepend_marker_to_attribute_name(parsed_attribute_name, marker)
     return attribute
 

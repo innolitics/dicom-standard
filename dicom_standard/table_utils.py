@@ -21,8 +21,11 @@ def stringify_table(table: TableListType) -> List[List[str]]:
 
 def tdiv_to_table_list(table_div: Tag) -> List[List[Tag]]:
     rows = pr.table_rows(table_div)
-    table = [row.find_all('td') for row in rows]
-    return table
+    table_cells = [row.find_all('td') for row in rows if row.find_all('td')]
+    # We must also include `th` elements during table parsing to compensate
+    # for HTML errors in the DICOM standard.
+    table_headers = [row.find_all('th') for row in rows if row.find_all('th')]
+    return table_cells + table_headers
 
 
 def expand_spans(table: TableListType) -> TableListType:
