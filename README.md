@@ -60,7 +60,7 @@ The python scripts used to generate the JSON files are designed to be as
 extensible as possible. If you want to run the code yourself or configure your
 own custom parsing stage, you'll need the following system-level dependencies:
 
-- Python 3.5.x
+- Python 3.7
 - Make + Unix tools
 
 You will probably also want to setup a "virtual environment" (e.g. using Conda,
