@@ -85,6 +85,6 @@ checkversions:
 	@python3 --version 2>&1 | grep -q 3.5. || { echo "Need Python 3.5" && exit 1; }
 
 clean:
-	git clean -fqx dist tmp .
+	git clean -fqx dist tmp
 	find . -type f -name "*.py[co]" -delete
 	find . -type d -name "__pycache__" -delete

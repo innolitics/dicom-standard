@@ -7,3 +7,4 @@ old_standards
 tags
 .tox/
 *.egg-info/
+.python-version
