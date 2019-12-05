@@ -1,5 +1,5 @@
-<a href="https://travis-ci.org/innolitics/dicom-numpy">
-   <img src="https://travis-ci.org/innolitics/dicom-numpy.svg?branch=master">
+<a href="https://travis-ci.org/innolitics/dicom-standard">
+   <img src="https://travis-ci.org/innolitics/dicom-standard.svg?branch=master">
 </a>
 
 # DICOM Standard Parser
