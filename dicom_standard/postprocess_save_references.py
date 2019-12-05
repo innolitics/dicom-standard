@@ -3,6 +3,7 @@ Save reference HTML into a separate JSON file.
 '''
 import sys
 import re
+from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
 
@@ -16,8 +17,10 @@ def find_reference_html_in_sections(pairs, section_listing):
         reference_id = page_and_fragment.split('#')[-1]
         section_with_context = BeautifulSoup(section_listing[chapter + '.html'][reference_id], 'html.parser')
         enclosing_section = section_with_context.find('div').find('a', id=True)['id']
-        short_dicom_url = (pl.BASE_SHORT_DICOM_SECTION_URL + chapter + '/' +
-                           pl.get_standard_page(enclosing_section) + '.html#' + reference_id)
+        short_dicom_url = urljoin(
+            pl.BASE_SHORT_DICOM_SECTION_URL,
+            chapter + '/' + pl.get_standard_page(enclosing_section) + '.html#' + reference_id,
+        )
         reference_html = section_with_context.find('a', id=reference_id)
         references[short_dicom_url] = str(reference_content_from_id(reference_html))
     refs_with_resolved_resource_urls = {k: pl.resolve_relative_resource_urls(v)
