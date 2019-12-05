@@ -3,6 +3,7 @@ Load the macro tables specified throughout PS3.3 in the DICOM Standard.
 These tables are of the same form as the module-attribute tables and
 are used to expand macro references in Annex C.
 '''
+import sys
 from typing import Tuple, List, Dict, Iterator
 import sys
 import re
@@ -19,6 +20,7 @@ from dicom_standard.macro_utils import get_id_from_link, MetadataTableType
 from extract_modules_with_attributes import module_table_to_dict, get_table_with_metadata
 
 TABLE_SUFFIX_RE = re.compile("(.*Macro Attributes$)|(.*Macro Attributes Description$)")
+EXPLICIT_MACRO_TABLE_TITLES = ['Table C.8.15.3.13-1. Multi-energy CT Processing Attributes']
 
 
 def get_macro_tables(standard: BeautifulSoup) -> Tuple[List[TableListType], List[Tag]]:
@@ -29,7 +31,8 @@ def get_macro_tables(standard: BeautifulSoup) -> Tuple[List[TableListType], List
 
 
 def is_valid_macro_table(table_div: Tag) -> bool:
-    return bool(TABLE_SUFFIX_RE.match(pr.table_name(table_div)))
+    print(pr.table_name(table_div), file=sys.stderr)
+    return bool(TABLE_SUFFIX_RE.match(pr.table_name(table_div))) or pr.table_name(table_div) in EXPLICIT_MACRO_TABLE_TITLES
 
 
 def tables_to_json(tables: List[TableListType], tdivs: List[Tag]) -> Dict[str, MetadataTableType]:
