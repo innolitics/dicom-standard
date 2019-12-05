@@ -274,6 +274,13 @@
     },
     {
         "ciod":"ct-image",
+        "module":"multi-energy-ct-image",
+        "usage":"C",
+        "conditionalStatement":"Required if Multi-energy CT Acquisition (0018,9361) is YES.",
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"ct-image",
         "module":"overlay-plane",
         "usage":"U",
         "conditionalStatement":null,
@@ -4754,6 +4761,13 @@
     },
     {
         "ciod":"vl-photographic-image",
+        "module":"vl-photographic-equipment",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"vl-photographic-image",
         "module":"general-image",
         "usage":"M",
         "conditionalStatement":null,
@@ -4798,6 +4812,20 @@
         "ciod":"vl-photographic-image",
         "module":"vl-image",
         "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"vl-photographic-image",
+        "module":"vl-photographic-acquisition",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"vl-photographic-image",
+        "module":"vl-photographic-geolocation",
+        "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
@@ -5446,6 +5474,328 @@
         "informationEntity":"Image"
     },
     {
+        "ciod":"real-time-video-endoscopic-image",
+        "module":"patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"real-time-video-endoscopic-image",
+        "module":"clinical-trial-subject",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"real-time-video-endoscopic-image",
+        "module":"general-study",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"real-time-video-endoscopic-image",
+        "module":"patient-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"real-time-video-endoscopic-image",
+        "module":"clinical-trial-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"real-time-video-endoscopic-image",
+        "module":"general-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"real-time-video-endoscopic-image",
+        "module":"clinical-trial-series",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"real-time-video-endoscopic-image",
+        "module":"general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"real-time-video-endoscopic-image",
+        "module":"enhanced-general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"real-time-video-endoscopic-image",
+        "module":"frame-of-reference",
+        "usage":"C",
+        "conditionalStatement":"Required if multiple instances are spatially related or if the Camera Position Functional Group Macro is present in the Current Frame Functional Groups Module",
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciod":"real-time-video-endoscopic-image",
+        "module":"synchronization",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciod":"real-time-video-endoscopic-image",
+        "module":"general-image",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"real-time-video-endoscopic-image",
+        "module":"general-reference",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"real-time-video-endoscopic-image",
+        "module":"real-time-bulk-data-flow",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"real-time-video-endoscopic-image",
+        "module":"acquisition-context",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"real-time-video-endoscopic-image",
+        "module":"device",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"real-time-video-endoscopic-image",
+        "module":"specimen",
+        "usage":"C",
+        "conditionalStatement":"Required if the Imaging Subject is a Specimen",
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"real-time-video-endoscopic-image",
+        "module":"vl-image",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"real-time-video-endoscopic-image",
+        "module":"icc-profile",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"real-time-video-endoscopic-image",
+        "module":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"real-time-video-endoscopic-image",
+        "module":"common-instance-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"real-time-video-endoscopic-image",
+        "module":"real-time-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"real-time-video-endoscopic-image",
+        "module":"current-frame-functional-groups",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"real-time-video-photographic-image",
+        "module":"patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"real-time-video-photographic-image",
+        "module":"clinical-trial-subject",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"real-time-video-photographic-image",
+        "module":"general-study",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"real-time-video-photographic-image",
+        "module":"patient-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"real-time-video-photographic-image",
+        "module":"clinical-trial-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"real-time-video-photographic-image",
+        "module":"general-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"real-time-video-photographic-image",
+        "module":"clinical-trial-series",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"real-time-video-photographic-image",
+        "module":"general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"real-time-video-photographic-image",
+        "module":"enhanced-general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"real-time-video-photographic-image",
+        "module":"frame-of-reference",
+        "usage":"C",
+        "conditionalStatement":"Required if multiple instances are spatially related or if the Camera Position Functional Group Module is present in the Current Frame Functional Groups Module",
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciod":"real-time-video-photographic-image",
+        "module":"synchronization",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciod":"real-time-video-photographic-image",
+        "module":"general-image",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"real-time-video-photographic-image",
+        "module":"general-reference",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"real-time-video-photographic-image",
+        "module":"real-time-bulk-data-flow",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"real-time-video-photographic-image",
+        "module":"acquisition-context",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"real-time-video-photographic-image",
+        "module":"device",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"real-time-video-photographic-image",
+        "module":"specimen",
+        "usage":"C",
+        "conditionalStatement":"Required if the Imaging Subject is a Specimen",
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"real-time-video-photographic-image",
+        "module":"vl-image",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"real-time-video-photographic-image",
+        "module":"icc-profile",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"real-time-video-photographic-image",
+        "module":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"real-time-video-photographic-image",
+        "module":"common-instance-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"real-time-video-photographic-image",
+        "module":"real-time-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":""
+    },
+    {
+        "ciod":"real-time-video-photographic-image",
+        "module":"current-frame-functional-groups",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":""
+    },
+    {
         "ciod":"grayscale-softcopy-presentation-state",
         "module":"patient",
         "usage":"M",
@@ -5561,7 +5911,7 @@
         "ciod":"grayscale-softcopy-presentation-state",
         "module":"overlay-plane",
         "usage":"C",
-        "conditionalStatement":"Required if Overlay is to be applied to referenced image(s) or the Bitmap Display Shutter Module is present",
+        "conditionalStatement":"Required if Overlay is to be applied to referenced image(s) or the Bitmap Display Shutter Module is present.",
         "informationEntity":"Presentation State"
     },
     {
@@ -5736,7 +6086,7 @@
         "ciod":"color-softcopy-presentation-state",
         "module":"overlay-plane",
         "usage":"C",
-        "conditionalStatement":"Required if Overlay is to be applied to referenced image(s) or the Bitmap Display Shutter Module is present",
+        "conditionalStatement":"Required if Overlay is to be applied to referenced image(s) or the Bitmap Display Shutter Module is present.",
         "informationEntity":"Presentation State"
     },
     {
@@ -5911,7 +6261,7 @@
         "ciod":"pseudo-color-softcopy-presentation-state",
         "module":"overlay-plane",
         "usage":"C",
-        "conditionalStatement":"Required if Overlay is to be applied to referenced image(s) or the Bitmap Display Shutter Module is present",
+        "conditionalStatement":"Required if Overlay is to be applied to referenced image(s) or the Bitmap Display Shutter Module is present.",
         "informationEntity":"Presentation State"
     },
     {
@@ -6093,7 +6443,7 @@
         "ciod":"blending-softcopy-presentation-state",
         "module":"graphic-layer",
         "usage":"C",
-        "conditionalStatement":"Required if Graphic Annotation Module is present",
+        "conditionalStatement":"Required if Graphic Annotation Module is present.",
         "informationEntity":"Presentation State"
     },
     {
@@ -6331,7 +6681,7 @@
         "ciod":"xa-xrf-grayscale-softcopy-presentation-state",
         "module":"overlay-plane",
         "usage":"C",
-        "conditionalStatement":"Required if Overlay is to be applied to referenced image(s) or the Bitmap Display Shutter Module is present",
+        "conditionalStatement":"Required if Overlay is to be applied to referenced image(s) or the Bitmap Display Shutter Module is present.",
         "informationEntity":"Presentation State"
     },
     {
@@ -6534,7 +6884,7 @@
         "ciod":"advanced-blending-presentation-state",
         "module":"graphic-layer",
         "usage":"C",
-        "conditionalStatement":"Required if Graphic Annotation Module is present",
+        "conditionalStatement":"Required if Graphic Annotation Module is present.",
         "informationEntity":"Presentation State"
     },
     {
@@ -6751,7 +7101,7 @@
         "ciod":"12-lead-ecg",
         "module":"waveform-annotation",
         "usage":"C",
-        "conditionalStatement":"Required if annotation is present",
+        "conditionalStatement":"Required if annotation is present.",
         "informationEntity":"Waveform"
     },
     {
@@ -6849,7 +7199,7 @@
         "ciod":"general-ecg",
         "module":"waveform-annotation",
         "usage":"C",
-        "conditionalStatement":"Required if annotation is present",
+        "conditionalStatement":"Required if annotation is present.",
         "informationEntity":"Waveform"
     },
     {
@@ -6947,7 +7297,7 @@
         "ciod":"ambulatory-ecg",
         "module":"waveform-annotation",
         "usage":"C",
-        "conditionalStatement":"Required if annotation is present",
+        "conditionalStatement":"Required if annotation is present.",
         "informationEntity":"Waveform"
     },
     {
@@ -7045,7 +7395,7 @@
         "ciod":"hemodynamic",
         "module":"waveform-annotation",
         "usage":"C",
-        "conditionalStatement":"Required if annotation is present",
+        "conditionalStatement":"Required if annotation is present.",
         "informationEntity":"Waveform"
     },
     {
@@ -7143,7 +7493,7 @@
         "ciod":"basic-cardiac-ep",
         "module":"waveform-annotation",
         "usage":"C",
-        "conditionalStatement":"Required if annotation is present",
+        "conditionalStatement":"Required if annotation is present.",
         "informationEntity":"Waveform"
     },
     {
@@ -7248,7 +7598,7 @@
         "ciod":"arterial-pulse-waveform",
         "module":"waveform-annotation",
         "usage":"C",
-        "conditionalStatement":"Required if annotation is present",
+        "conditionalStatement":"Required if annotation is present.",
         "informationEntity":"Waveform"
     },
     {
@@ -7353,7 +7703,7 @@
         "ciod":"respiratory-waveform",
         "module":"waveform-annotation",
         "usage":"C",
-        "conditionalStatement":"Required if annotation is present",
+        "conditionalStatement":"Required if annotation is present.",
         "informationEntity":"Waveform"
     },
     {
@@ -7458,12 +7808,117 @@
         "ciod":"general-audio-waveform",
         "module":"waveform-annotation",
         "usage":"C",
-        "conditionalStatement":"Required if annotation is present",
+        "conditionalStatement":"Required if annotation is present.",
         "informationEntity":"Waveform"
     },
     {
         "ciod":"general-audio-waveform",
         "module":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Waveform"
+    },
+    {
+        "ciod":"real-time-audio-waveform",
+        "module":"patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"real-time-audio-waveform",
+        "module":"clinical-trial-subject",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"real-time-audio-waveform",
+        "module":"general-study",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"real-time-audio-waveform",
+        "module":"patient-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"real-time-audio-waveform",
+        "module":"clinical-trial-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"real-time-audio-waveform",
+        "module":"general-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"real-time-audio-waveform",
+        "module":"clinical-trial-series",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"real-time-audio-waveform",
+        "module":"general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"real-time-audio-waveform",
+        "module":"enhanced-general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"real-time-audio-waveform",
+        "module":"synchronization",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciod":"real-time-audio-waveform",
+        "module":"waveform-identification",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Waveform"
+    },
+    {
+        "ciod":"real-time-audio-waveform",
+        "module":"real-time-bulk-data-flow",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Waveform"
+    },
+    {
+        "ciod":"real-time-audio-waveform",
+        "module":"acquisition-context",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Waveform"
+    },
+    {
+        "ciod":"real-time-audio-waveform",
+        "module":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Waveform"
+    },
+    {
+        "ciod":"real-time-audio-waveform",
+        "module":"current-frame-functional-groups",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Waveform"
@@ -9002,6 +9457,188 @@
         "informationEntity":"Document"
     },
     {
+        "ciod":"performed-imaging-agent-administration-sr",
+        "module":"patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"performed-imaging-agent-administration-sr",
+        "module":"clinical-trial-subject",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"performed-imaging-agent-administration-sr",
+        "module":"general-study",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"performed-imaging-agent-administration-sr",
+        "module":"patient-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"performed-imaging-agent-administration-sr",
+        "module":"clinical-trial-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"performed-imaging-agent-administration-sr",
+        "module":"sr-document-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"performed-imaging-agent-administration-sr",
+        "module":"clinical-trial-series",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"performed-imaging-agent-administration-sr",
+        "module":"synchronization",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciod":"performed-imaging-agent-administration-sr",
+        "module":"general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"performed-imaging-agent-administration-sr",
+        "module":"enhanced-general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"performed-imaging-agent-administration-sr",
+        "module":"sr-document-general",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Document"
+    },
+    {
+        "ciod":"performed-imaging-agent-administration-sr",
+        "module":"sr-document-content",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Document"
+    },
+    {
+        "ciod":"performed-imaging-agent-administration-sr",
+        "module":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Document"
+    },
+    {
+        "ciod":"rendition-selection-document",
+        "module":"patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"rendition-selection-document",
+        "module":"clinical-trial-subject",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"rendition-selection-document",
+        "module":"general-study",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"rendition-selection-document",
+        "module":"patient-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"rendition-selection-document",
+        "module":"clinical-trial-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"rendition-selection-document",
+        "module":"key-object-document-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"rendition-selection-document",
+        "module":"clinical-trial-series",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"rendition-selection-document",
+        "module":"general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"rendition-selection-document",
+        "module":"enhanced-general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"rendition-selection-document",
+        "module":"synchronization",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Frame Of Reference"
+    },
+    {
+        "ciod":"rendition-selection-document",
+        "module":"key-object-document",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Document"
+    },
+    {
+        "ciod":"rendition-selection-document",
+        "module":"sr-document-content",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Document"
+    },
+    {
+        "ciod":"rendition-selection-document",
+        "module":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Document"
+    },
+    {
         "ciod":"enhanced-mr-image",
         "module":"patient",
         "usage":"M",
@@ -9839,6 +10476,13 @@
         "module":"enhanced-ct-image",
         "usage":"M",
         "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciod":"enhanced-ct-image",
+        "module":"enhanced-multi-energy-ct-acquisition",
+        "usage":"C",
+        "conditionalStatement":"Required if Multi-energy CT Acquisition (0018,9361) is YES.",
         "informationEntity":"Image"
     },
     {
@@ -11987,6 +12631,13 @@
         "ciod":"x-ray-3d-angiographic-image",
         "module":"frame-of-reference",
         "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciod":"x-ray-3d-angiographic-image",
+        "module":"synchronization",
+        "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Frame of Reference"
     },
@@ -15485,6 +16136,13 @@
     },
     {
         "ciod":"parametric-map",
+        "module":"synchronization",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciod":"parametric-map",
         "module":"general-equipment",
         "usage":"M",
         "conditionalStatement":null,
@@ -16038,13 +16696,6 @@
     },
     {
         "ciod":"tractography-results",
-        "module":"specimen",
-        "usage":"U",
-        "conditionalStatement":null,
-        "informationEntity":"Patient"
-    },
-    {
-        "ciod":"tractography-results",
         "module":"clinical-trial-subject",
         "usage":"U",
         "conditionalStatement":null,
@@ -16117,6 +16768,13 @@
         "ciod":"tractography-results",
         "module":"tractography-results",
         "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Tractography Results"
+    },
+    {
+        "ciod":"tractography-results",
+        "module":"specimen",
+        "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Tractography Results"
     },
@@ -16948,7 +17606,7 @@
     },
     {
         "ciod":"ophthalmic-optical-coherence-tomography-en-face-image",
-        "module":"ophthalmic-tomography-series",
+        "module":"ophthalmic-tomography-en-face-series",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Series"
@@ -17088,7 +17746,7 @@
     },
     {
         "ciod":"ophthalmic-optical-coherence-tomography-b-scan-volume-analysis",
-        "module":"ophthalmic-tomography-series",
+        "module":"ophthalmic-tomography-b-scan-volume-analysis-series",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Series"
@@ -17169,5 +17827,579 @@
         "usage":"C",
         "conditionalStatement":"Required if the SOP Instance was created in response to a Frame-Level retrieve request",
         "informationEntity":"Image"
+    },
+    {
+        "ciod":"encapsulated-stl",
+        "module":"patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"encapsulated-stl",
+        "module":"clinical-trial-subject",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"encapsulated-stl",
+        "module":"general-study",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"encapsulated-stl",
+        "module":"patient-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"encapsulated-stl",
+        "module":"clinical-trial-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"encapsulated-stl",
+        "module":"encapsulated-document-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"encapsulated-stl",
+        "module":"clinical-trial-series",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"encapsulated-stl",
+        "module":"frame-of-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciod":"encapsulated-stl",
+        "module":"general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"encapsulated-stl",
+        "module":"enhanced-general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"encapsulated-stl",
+        "module":"encapsulated-document",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Encapsulated Document"
+    },
+    {
+        "ciod":"encapsulated-stl",
+        "module":"manufacturing-3d-model",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Encapsulated Document"
+    },
+    {
+        "ciod":"encapsulated-stl",
+        "module":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Encapsulated Document"
+    },
+    {
+        "ciod":"encapsulated-stl",
+        "module":"common-instance-reference",
+        "usage":"C",
+        "conditionalStatement":"Required if other instances are referenced",
+        "informationEntity":"Encapsulated Document"
+    },
+    {
+        "ciod":"rt-physician-intent",
+        "module":"patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"rt-physician-intent",
+        "module":"clinical-trial-subject",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"rt-physician-intent",
+        "module":"general-study",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"rt-physician-intent",
+        "module":"patient-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"rt-physician-intent",
+        "module":"clinical-trial-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"rt-physician-intent",
+        "module":"general-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"rt-physician-intent",
+        "module":"clinical-trial-series",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"rt-physician-intent",
+        "module":"enhanced-rt-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"rt-physician-intent",
+        "module":"general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"rt-physician-intent",
+        "module":"enhanced-general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"rt-physician-intent",
+        "module":"general-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"RT Physician Intent"
+    },
+    {
+        "ciod":"rt-physician-intent",
+        "module":"rt-physician-intent",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"RT Physician Intent"
+    },
+    {
+        "ciod":"rt-physician-intent",
+        "module":"rt-enhanced-prescription",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"RT Physician Intent"
+    },
+    {
+        "ciod":"rt-physician-intent",
+        "module":"rt-treatment-phase-intent",
+        "usage":"C",
+        "conditionalStatement":"Required if RT Treatment Phase Intent Presence Flag (3010,0045) equals YES.",
+        "informationEntity":"RT Physician Intent"
+    },
+    {
+        "ciod":"rt-physician-intent",
+        "module":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"RT Physician Intent"
+    },
+    {
+        "ciod":"rt-physician-intent",
+        "module":"common-instance-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"RT Physician Intent"
+    },
+    {
+        "ciod":"rt-physician-intent",
+        "module":"radiotherapy-common-instance",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"RT Physician Intent"
+    },
+    {
+        "ciod":"rt-segment-annotation",
+        "module":"patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"rt-segment-annotation",
+        "module":"clinical-trial-subject",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"rt-segment-annotation",
+        "module":"general-study",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"rt-segment-annotation",
+        "module":"patient-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"rt-segment-annotation",
+        "module":"clinical-trial-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"rt-segment-annotation",
+        "module":"general-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"rt-segment-annotation",
+        "module":"clinical-trial-series",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"rt-segment-annotation",
+        "module":"enhanced-rt-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"rt-segment-annotation",
+        "module":"general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"rt-segment-annotation",
+        "module":"enhanced-general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"rt-segment-annotation",
+        "module":"rt-segment-annotation",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"RT Segment Annotation"
+    },
+    {
+        "ciod":"rt-segment-annotation",
+        "module":"segment-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"RT Segment Annotation"
+    },
+    {
+        "ciod":"rt-segment-annotation",
+        "module":"general-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"RT Segment Annotation"
+    },
+    {
+        "ciod":"rt-segment-annotation",
+        "module":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"RT Segment Annotation"
+    },
+    {
+        "ciod":"rt-segment-annotation",
+        "module":"common-instance-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"RT Segment Annotation"
+    },
+    {
+        "ciod":"rt-segment-annotation",
+        "module":"radiotherapy-common-instance",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"RT Segment Annotation"
+    },
+    {
+        "ciod":"rt-radiation-set",
+        "module":"patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"rt-radiation-set",
+        "module":"clinical-trial-subject",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"rt-radiation-set",
+        "module":"general-study",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"rt-radiation-set",
+        "module":"patient-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"rt-radiation-set",
+        "module":"clinical-trial-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"rt-radiation-set",
+        "module":"general-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"rt-radiation-set",
+        "module":"clinical-trial-series",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"rt-radiation-set",
+        "module":"enhanced-rt-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"rt-radiation-set",
+        "module":"general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"rt-radiation-set",
+        "module":"enhanced-general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"rt-radiation-set",
+        "module":"general-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"RT Radiation Set"
+    },
+    {
+        "ciod":"rt-radiation-set",
+        "module":"rt-radiation-set",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"RT Radiation Set"
+    },
+    {
+        "ciod":"rt-radiation-set",
+        "module":"rt-dose-contribution",
+        "usage":"C",
+        "conditionalStatement":"Required if the dose delivered is tracked.",
+        "informationEntity":"RT Radiation Set"
+    },
+    {
+        "ciod":"rt-radiation-set",
+        "module":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"RT Radiation Set"
+    },
+    {
+        "ciod":"rt-radiation-set",
+        "module":"common-instance-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"RT Radiation Set"
+    },
+    {
+        "ciod":"rt-radiation-set",
+        "module":"radiotherapy-common-instance",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"RT Radiation Set"
+    },
+    {
+        "ciod":"c-arm-photon-electron-radiation",
+        "module":"patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"c-arm-photon-electron-radiation",
+        "module":"clinical-trial-subject",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciod":"c-arm-photon-electron-radiation",
+        "module":"general-study",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"c-arm-photon-electron-radiation",
+        "module":"patient-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"c-arm-photon-electron-radiation",
+        "module":"clinical-trial-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciod":"c-arm-photon-electron-radiation",
+        "module":"general-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"c-arm-photon-electron-radiation",
+        "module":"clinical-trial-series",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"c-arm-photon-electron-radiation",
+        "module":"enhanced-rt-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciod":"c-arm-photon-electron-radiation",
+        "module":"general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"c-arm-photon-electron-radiation",
+        "module":"enhanced-general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciod":"c-arm-photon-electron-radiation",
+        "module":"frame-of-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciod":"c-arm-photon-electron-radiation",
+        "module":"general-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"RT Radiation"
+    },
+    {
+        "ciod":"c-arm-photon-electron-radiation",
+        "module":"rt-delivery-device-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"RT Radiation"
+    },
+    {
+        "ciod":"c-arm-photon-electron-radiation",
+        "module":"rt-radiation-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"RT Radiation"
+    },
+    {
+        "ciod":"c-arm-photon-electron-radiation",
+        "module":"c-arm-photon-electron-delivery-device",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"RT Radiation"
+    },
+    {
+        "ciod":"c-arm-photon-electron-radiation",
+        "module":"c-arm-photon-electron-beam",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"RT Radiation"
+    },
+    {
+        "ciod":"c-arm-photon-electron-radiation",
+        "module":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"RT Radiation"
+    },
+    {
+        "ciod":"c-arm-photon-electron-radiation",
+        "module":"common-instance-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"RT Radiation"
+    },
+    {
+        "ciod":"c-arm-photon-electron-radiation",
+        "module":"radiotherapy-common-instance",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"RT Radiation"
     }
 ]

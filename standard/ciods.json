@@ -67,13 +67,13 @@
     },
     "x-ray-angiographic-image":{
         "id":"x-ray-angiographic-image",
-        "description":"<p>\nThis Section defines the Information Object for single plane X-Ray Angiographic Imaging that includes those data elements and information objects necessary for the interchange of digital X-Ray Angiographic data. This includes images of the heart and all blood vessels.</p>",
+        "description":"<p>\nThis Section defines the Information Object for single plane X-Ray Angiographic Imaging that includes those Attributes and Information Objects necessary for the interchange of digital X-Ray Angiographic data. This includes images of the heart and all blood vessels.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.14.3.html#table_A.14-1",
         "name":"X-Ray Angiographic Image"
     },
     "xrf-image":{
         "id":"xrf-image",
-        "description":"<p>\nThe focus for this X-Ray RF Image IOD (XRF IOD) is to address the requirements for image transfer found in general Radiofluoroscopic applications performed on a table with a column. For applications performed on X-Ray RF acquisition systems that support a patient based coordinate system with cranial/caudal, LAO/RAO angles, etc. the XA Image IOD may be used.</p>",
+        "description":"<p>\nThe focus for this X-Ray RF Image IOD (XRF IOD) is to address the requirements for image transfer found in general Radiofluoroscopic applications performed on a table with a column. For applications performed on X-Ray RF acquisition systems that support a Patient-Based Coordinate System with cranial/caudal, LAO/RAO angles, etc. the XA Image IOD may be used.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.16.3.html#table_A.16-1",
         "name":"XRF Image"
     },
@@ -85,13 +85,13 @@
     },
     "rt-dose":{
         "id":"rt-dose",
-        "description":"<p>\nThe focus for this Radiotherapy Dose IOD (RT Dose IOD) is to address the requirements for transfer of dose distributions calculated by radiotherapy treatment planning systems. These distributions may be represented as 2D or 3D grids, as isodose curves, or as named or unnamed dose points scattered throughout the volume. This IOD may also contain dose-volume histogram data, single or multi-frame overlays and application-defined lookup tables. This IOD does not provide for definition of doses in beam or other coordinate systems. The application is responsible for transforming data in other, non-patient based coordinate systems to the patient based coordinate system described in <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.2.html#sect_C.7.6.2.1.1\" target=\"_blank\">Section\u00a0C.7.6.2.1.1</a>.</p>",
+        "description":"<p>\nThe focus for this Radiotherapy Dose IOD (RT Dose IOD) is to address the requirements for transfer of dose distributions calculated by radiotherapy treatment planning systems. These distributions may be represented as 2D or 3D grids, as isodose curves, or as named or unnamed dose points scattered throughout the volume. This IOD may also contain dose-volume histogram data, single or multi-frame overlays and application-defined lookup tables. This IOD does not provide for definition of doses in beam or other coordinate systems. The application is responsible for transforming data in other, Non-Patient-Based Coordinate Systems to the Patient-Based Coordinate System described in <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.2.html#sect_C.7.6.2.1.1\" target=\"_blank\">Section\u00a0C.7.6.2.1.1</a>.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.18.3.html#table_A.18.3-1",
         "name":"RT Dose"
     },
     "rt-structure-set":{
         "id":"rt-structure-set",
-        "description":"<p>\nThe focus for this Radiotherapy Structure Set IOD (RT Structure Set IOD) is to address the requirements for transfer of patient structures and related data defined on CT scanners, virtual simulation workstations, treatment planning systems and similar devices.</p>",
+        "description":"<p>\nThe focus for this Radiotherapy Structure Set IOD (RT Structure Set IOD) is to address the requirements for transfer of Patient structures and related data defined on CT scanners, virtual simulation workstations, treatment planning systems and similar devices.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.19.3.html#table_A.19.3-1",
         "name":"RT Structure Set"
     },
@@ -151,7 +151,7 @@
     },
     "vl-microscopic-image":{
         "id":"vl-microscopic-image",
-        "description":"<p>\nThe VL Microscopic Image IOD specifies the Attributes of Single-frame VL Microscopic Images, including both imaging of specimens and direct microscopic imaging of the patient (e.g., perioperative microscopy). Microscopic Images with Slide Coordinates shall not be encoded with this IOD.</p>",
+        "description":"<p>\nThe VL Microscopic Image IOD specifies the Attributes of Single-frame VL Microscopic Images, including both imaging of specimens and direct microscopic imaging of the Patient (e.g., perioperative microscopy). Microscopic Images with Slide Coordinates shall not be encoded with this IOD.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.2.2.html#table_A.32.1-2",
         "name":"VL Microscopic Image"
     },
@@ -163,7 +163,7 @@
     },
     "vl-photographic-image":{
         "id":"vl-photographic-image",
-        "description":"<p>\nThe VL Photographic Image IOD specifies the attributes of VL Single-frame photographic Images.</p>",
+        "description":"<p>\nThe VL Photographic Image IOD specifies the Attributes of VL Single-frame photographic Images.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.4.2.html#table_A.32.4-1",
         "name":"VL Photographic Image"
     },
@@ -175,13 +175,13 @@
     },
     "video-microscopic-image":{
         "id":"video-microscopic-image",
-        "description":"<p>\nThe Video Microscopic Image IOD specifies the Attributes of Video Microscopic Images, including both imaging of specimens and direct microscopic imaging of the patient (e.g., perioperative microscopy). Microscopic Images with Slide Coordinates shall not be encoded with this IOD.</p>",
+        "description":"<p>\nThe Video Microscopic Image IOD specifies the Attributes of Video Microscopic Images, including both imaging of specimens and direct microscopic imaging of the Patient (e.g., perioperative microscopy). Microscopic Images with Slide Coordinates shall not be encoded with this IOD.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.6.2.html#table_A.32.6-1",
         "name":"Video Microscopic Image"
     },
     "video-photographic-image":{
         "id":"video-photographic-image",
-        "description":"<p>\nThe Video Photographic Image IOD specifies the attributes of VL Multi-frame photographic Images.</p>",
+        "description":"<p>\nThe Video Photographic Image IOD specifies the Attributes of VL Multi-frame photographic Images.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.7.2.html#table_A.32.7-1",
         "name":"Video Photographic Image"
     },
@@ -190,6 +190,18 @@
         "description":"<p>\nThe VL Whole Slide Microscopy Image IOD specifies the Attributes of a multi-frame visible light whole slide microscopy image encoded as a tiled decomposition. Each frame encodes a single tile within a three-dimensional imaged volume at a uniform resolution.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.8.3.html#table_A.32.8-1",
         "name":"VL Whole Slide Microscopy Image"
+    },
+    "real-time-video-endoscopic-image":{
+        "id":"real-time-video-endoscopic-image",
+        "description":"<p>\nThe Real-Time Video Endoscopic Image IOD specifies the Attributes of Multi-frame Video Endoscopic Images transmitted in real-time.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.9.2.html#table_A.32.9-1",
+        "name":"Real-Time Video Endoscopic Image"
+    },
+    "real-time-video-photographic-image":{
+        "id":"real-time-video-photographic-image",
+        "description":"<p>\nThe Real-Time Video Photographic Image IOD specifies Multi-frame photographic Images, transmitted in real-time.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.10.2.html#table_A.32.10-1",
+        "name":"Real-Time Video Photographic Image"
     },
     "grayscale-softcopy-presentation-state":{
         "id":"grayscale-softcopy-presentation-state",
@@ -217,7 +229,7 @@
     },
     "basic-structured-display":{
         "id":"basic-structured-display",
-        "description":"<p>\nThe Basic Structured Display Information Object Definition (IOD) specifies an instance of a single screen structured display that has been created for a patient. It references specific image or other composite SOP instances from one or more studies for that patient, or for other patients for comparison, arranged in a specific presentation layout. Presentation of images within the structured display may be controlled by referenced Softcopy Presentation State instances. The structured display may include text annotations.</p>",
+        "description":"<p>\nThe Basic Structured Display Information Object Definition (IOD) specifies an instance of a single screen structured display that has been created for a Patient. It references specific image or other composite SOP instances from one or more Studies for that Patient, or for other Patients for comparison, arranged in a specific presentation layout. Presentation of images within the structured display may be controlled by referenced Softcopy Presentation State instances. The structured display may include text annotations.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.33.5.3.html#table_A.33.5.1-1",
         "name":"Basic Structured Display"
     },
@@ -287,6 +299,12 @@
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.34.10.3.html#table_A.34.10-1",
         "name":"General Audio Waveform"
     },
+    "real-time-audio-waveform":{
+        "id":"real-time-audio-waveform",
+        "description":"<p>\nThe Real-Time Audio Waveform IOD specifies one-channel or two-channel digitized audio signals, transmitted in real-time.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.34.11.3.html#table_A.34.11-1",
+        "name":"Real-Time Audio Waveform"
+    },
     "basic-text-sr":{
         "id":"basic-text-sr",
         "description":"<p>\nThe Basic Text Structured Report (SR) IOD is intended for the representation of reports with minimal usage of coded entries (typically used in Document Title and headings) and a hierarchical tree of headings under which may appear text and subheadings. Reference to SOP Instances (e.g., images or waveforms or other SR Documents) is restricted to appear at the level of the leaves of this primarily textual tree. This structure simplifies the encoding of conventional textual reports as SR Documents, as well as their rendering.</p>",
@@ -337,7 +355,7 @@
     },
     "spectacle-prescription-report":{
         "id":"spectacle-prescription-report",
-        "description":"<p>\nThe Spectacle Prescription Report IOD is used to represent the spectacle prescription for a patient.</p>",
+        "description":"<p>\nThe Spectacle Prescription Report IOD is used to represent the spectacle prescription for a Patient.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.35.9.3.html#table_A.35.9-1",
         "name":"Spectacle Prescription Report"
     },
@@ -355,7 +373,7 @@
     },
     "implantation-plan-sr-document":{
         "id":"implantation-plan-sr-document",
-        "description":"<p>\nThe Implantation Plan SR Document IOD contains the results of a planning process for an individual patient, wherein specific implant templates are selected and positioned using images of the patient. The Implantation Plan SR Document references the implant templates, the images, and the registration SOP instances that are used in the planning.</p>",
+        "description":"<p>\nThe Implantation Plan SR Document IOD contains the results of a planning process for an individual Patient, wherein specific implant templates are selected and positioned using images of the Patient. The Implantation Plan SR Document references the implant templates, the images, and the registration SOP instances that are used in the planning.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.35.12.3.html#table_A.35.12-1",
         "name":"Implantation Plan SR Document"
     },
@@ -373,7 +391,7 @@
     },
     "extensible-sr":{
         "id":"extensible-sr",
-        "description":"<p>\nThe Extensible SR IOD specifies support for all SR content item and relationship types currently defined and that may be added in the future.</p>",
+        "description":"<p>\nThe Extensible SR IOD specifies support for all SR Content Item and relationship types currently defined and that may be added in the future.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.35.15.3.html#table_A.35.15-1",
         "name":"Extensible SR"
     },
@@ -391,9 +409,21 @@
     },
     "patient-radiation-dose-structured-report":{
         "id":"patient-radiation-dose-structured-report",
-        "description":"<p>\nThe Patient Radiation Dose Structured Report IOD is used to convey the information used in the calculations for estimating the radiation dose to an individual patient. The complexity of the calculations and the precision of the resulting dose estimate will vary depending on the need.</p>",
+        "description":"<p>\nThe Patient Radiation Dose Structured Report IOD is used to convey the information used in the calculations for estimating the radiation dose to an individual Patient. The complexity of the calculations and the precision of the resulting dose estimate will vary depending on the need.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.35.18.3.html#table_A.35.18-1",
         "name":"Patient Radiation Dose Structured Report"
+    },
+    "performed-imaging-agent-administration-sr":{
+        "id":"performed-imaging-agent-administration-sr",
+        "description":"<p>\nThe Performed Imaging Agent Administration SR IOD describes the imaging agent delivery whether manual methods or automated power-injector devices were used. It includes a reference to the Planned Imaging Agent Administration Procedure SR SOP instance if based on a plan.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.35.20.3.html#table_A.35.20-1",
+        "name":"Performed Imaging Agent Administration SR"
+    },
+    "rendition-selection-document":{
+        "id":"rendition-selection-document",
+        "description":"<p>\nThe Rendition Selection Document IOD associates a group of time-synchronized Flows produced for a simultaneous presentation, transported using DICOM-RTV.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.35.21.3.html#table_A.35.21-1",
+        "name":"Rendition Selection Document"
     },
     "enhanced-mr-image":{
         "id":"enhanced-mr-image",
@@ -463,19 +493,19 @@
     },
     "hanging-protocol":{
         "id":"hanging-protocol",
-        "description":"<p>\nA Hanging Protocol entity specifies the viewing preferences of a specific user or group, for a specific type of study (Modality, Anatomy, Laterality combination, and optionally Procedure, and/or Reason), that may be exchanged between connecting devices that claim conformance to the DICOM Standard. The Hanging Protocol contains information about the Hanging Protocol, the creator, the type of study it addresses, the type of image sets to display, the intended display environment, and the intended layout for the screen(s).</p>",
+        "description":"<p>\nA Hanging Protocol entity specifies the viewing preferences of a specific user or group, for a specific type of Study (Modality, Anatomy, Laterality combination, and optionally Procedure, and/or Reason), that may be exchanged between connecting devices that claim conformance to the DICOM Standard. The Hanging Protocol contains information about the Hanging Protocol, the creator, the type of Study it addresses, the type of image sets to display, the intended display environment, and the intended layout for the screen(s).</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.44.3.html#table_A.44.3-1",
         "name":"Hanging Protocol"
     },
     "encapsulated-pdf":{
         "id":"encapsulated-pdf",
-        "description":"<p>\nThe Encapsulated PDF Information Object Definition (IOD) describes a PDF document that has been encapsulated within a DICOM information object.</p>",
+        "description":"<p>\nThe Encapsulated PDF Information Object Definition (IOD) describes a PDF document that has been encapsulated within a DICOM Information Object.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.45.html#table_A.45.1-1",
         "name":"Encapsulated PDF"
     },
     "encapsulated-cda":{
         "id":"encapsulated-cda",
-        "description":"<p>\nThe Encapsulated CDA Information Object Definition (IOD) describes an HL7 Clinical Document Architecture (CDA) document that has been encapsulated within a DICOM information object.</p>",
+        "description":"<p>\nThe Encapsulated CDA Information Object Definition (IOD) describes an HL7 Clinical Document Architecture (CDA) document that has been encapsulated within a DICOM Information Object.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.45.2.3.html#table_A.45.2-1",
         "name":"Encapsulated CDA"
     },
@@ -487,13 +517,13 @@
     },
     "enhanced-x-ray-angiographic-image":{
         "id":"enhanced-x-ray-angiographic-image",
-        "description":"<p>\nThis Section defines the enhanced Information Object for single plane X-Ray Angiographic Imaging that includes those data elements and information objects necessary for the interchange of digital X-Ray Angiographic data. This includes images of the heart and all blood vessels.</p>",
+        "description":"<p>\nThis Section defines the enhanced Information Object for single plane X-Ray Angiographic Imaging that includes those Attributes and Information Objects necessary for the interchange of digital X-Ray Angiographic data. This includes images of the heart and all blood vessels.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.47.3.html#table_A.47-1",
         "name":"Enhanced X-Ray Angiographic Image"
     },
     "enhanced-x-ray-rf-image":{
         "id":"enhanced-x-ray-rf-image",
-        "description":"<p>\nThe focus for this enhanced X-Ray RF Image IOD (XRF IOD) is to address the requirements for image transfer found in general Radiofluoroscopic applications performed on a table with a column. For applications performed on X-Ray RF acquisition systems that support a patient based coordinate system with cranial/caudal, LAO/RAO angles, etc. the enhanced XA Image IOD may be used.</p>",
+        "description":"<p>\nThe focus for this enhanced X-Ray RF Image IOD (XRF IOD) is to address the requirements for image transfer found in general Radiofluoroscopic applications performed on a table with a column. For applications performed on X-Ray RF acquisition systems that support a Patient-Based Coordinate System with cranial/caudal, LAO/RAO angles, etc. the enhanced XA Image IOD may be used.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.48.3.html#table_A.48-1",
         "name":"Enhanced X-Ray RF Image"
     },
@@ -511,7 +541,7 @@
     },
     "segmentation":{
         "id":"segmentation",
-        "description":"<p>\nThe Segmentation Information Object Definition (IOD) specifies a multi-frame image representing a classification of pixels in one or more referenced images. Segmentations are either binary or fractional. If the referenced images have a defined frame of reference, the segmentation instance shall have the same frame of reference and is not required to have the same spatial sampling or extent as the referenced images. If the referenced image does not have a defined frame of reference, the segmentation instance shall have the same spatial sampling and extent as the referenced image.</p>",
+        "description":"<p>\nThe Segmentation Information Object Definition (IOD) specifies a multi-frame image representing a classification of pixels in one or more referenced images. Segmentations are either binary or fractional. If the referenced images have a defined Frame of Reference, the segmentation instance shall have the same Frame of Reference and is not required to have the same spatial sampling or extent as the referenced images. If the referenced image does not have a defined Frame of Reference, the segmentation instance shall have the same spatial sampling and extent as the referenced image.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.51.3.html#table_A.51-1",
         "name":"Segmentation"
     },
@@ -523,19 +553,19 @@
     },
     "x-ray-3d-angiographic-image":{
         "id":"x-ray-3d-angiographic-image",
-        "description":"<p>\nThis Section defines the Information Object for multi-dimensional reconstructed cone beam X-Ray Angiographic Images and includes those data elements and information objects necessary for the interchange of Multi-dimensional X-Ray volumes.</p>",
+        "description":"<p>\nThis Section defines the Information Object for multi-dimensional reconstructed cone beam X-Ray Angiographic Images and includes those Attributes and Information Objects necessary for the interchange of Multi-dimensional X-Ray volumes.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.53.3.html#table_A.53-1",
         "name":"X-Ray 3D Angiographic Image"
     },
     "x-ray-3d-craniofacial-image":{
         "id":"x-ray-3d-craniofacial-image",
-        "description":"<p>\nThis Section defines the Information Object for multi-dimensional reconstructed cone beam X-Ray Craniofacial Images and includes those data elements and information objects necessary for the interchange of Multi-dimensional X-Ray volumes.</p>",
+        "description":"<p>\nThis Section defines the Information Object for multi-dimensional reconstructed cone beam X-Ray Craniofacial Images and includes those Attributes and Information Objects necessary for the interchange of Multi-dimensional X-Ray volumes.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.54.3.html#table_A.54-1",
         "name":"X-Ray 3D Craniofacial Image"
     },
     "breast-tomosynthesis-image":{
         "id":"breast-tomosynthesis-image",
-        "description":"<p>\nThis Section defines the Information Object for multi-dimensional reconstructed breast tomosynthesis X-Ray Images that includes those data elements and information objects necessary for the interchange of multi-dimensional breast tomosynthesis X-Ray volumes.</p>",
+        "description":"<p>\nThis Section defines the Information Object for multi-dimensional reconstructed breast tomosynthesis X-Ray Images that includes those Attributes and Information Objects necessary for the interchange of multi-dimensional breast tomosynthesis X-Ray volumes.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.55.3.html#table_A.55-1",
         "name":"Breast Tomosynthesis Image"
     },
@@ -559,7 +589,7 @@
     },
     "enhanced-us-volume":{
         "id":"enhanced-us-volume",
-        "description":"<p>\nImage objects of different types may be created from a 3D Ultrasound image acquisition, illustrated in <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#figure_A.59-1\" target=\"_blank\">Figure\u00a0A.59-1</a>. It can be seen that there are two different types of data related to 3D image acquisition: 3D volume data sets and several kinds of 2D image derived from the volume data set.</p>",
+        "description":"<p>\nImage objects of different types may be created from a 3D Ultrasound image acquisition, illustrated in <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#figure_A.59-1\" target=\"_blank\">Figure\u00a0A.59-1</a>.\n            It can be seen that there are two different types of data related to 3D image acquisition: 3D volume data and several kinds of 2D image derived from the volume data.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.59.3.html#table_A.59-1",
         "name":"Enhanced US Volume"
     },
@@ -571,13 +601,13 @@
     },
     "autorefraction-measurements":{
         "id":"autorefraction-measurements",
-        "description":"<p>\nThe Autorefraction Measurements IOD is used to encode the results of a modality (autorefractor) that automatically determines, without patient input, what a patient's refractive correction should be.</p>",
+        "description":"<p>\nThe Autorefraction Measurements IOD is used to encode the results of a modality (autorefractor) that automatically determines, without Patient input, what a Patient's refractive correction should be.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.60.2.3.html#table_A.60.2-1",
         "name":"Autorefraction Measurements"
     },
     "keratometry-measurements":{
         "id":"keratometry-measurements",
-        "description":"<p>\nThe Keratometry Measurements IOD is used to encode the measurements of a modality (keratometer) that measures the curvature, and thus the refractive power, of a patient's cornea.</p>",
+        "description":"<p>\nThe Keratometry Measurements IOD is used to encode the measurements of a modality (keratometer) that measures the curvature, and thus the refractive power, of a Patient's cornea.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.60.3.3.html#table_A.60.3-1",
         "name":"Keratometry Measurements"
     },
@@ -589,7 +619,7 @@
     },
     "visual-acuity-measurements":{
         "id":"visual-acuity-measurements",
-        "description":"<p>\nThe Visual Acuity Measurements IOD is used to capture a patient's visual acuity relative to that of a reference standard patient under given viewing conditions (distance, lighting, etc.).</p>",
+        "description":"<p>\nThe Visual Acuity Measurements IOD is used to capture a Patient's visual acuity relative to that of a reference standard Patient under given viewing conditions (distance, lighting, etc.).</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.60.5.3.html#table_A.60.5-1",
         "name":"Visual Acuity Measurements"
     },
@@ -655,7 +685,7 @@
     },
     "surface-scan-point-cloud":{
         "id":"surface-scan-point-cloud",
-        "description":"<p>\nThe Surface Scan Point Cloud IOD specifies a point cloud generated by an optical surface scanner. Multiple Point Clouds within the same series shall be from the same anatomical region, but they do not need to be in the same coordinate system.</p>",
+        "description":"<p>\nThe Surface Scan Point Cloud IOD specifies a point cloud generated by an optical surface scanner. Multiple Point Clouds within the same Series shall be from the same anatomical region, but they do not need to be in the same coordinate system.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.69.3.html#table_A.69-1",
         "name":"Surface Scan Point Cloud"
     },
@@ -709,7 +739,7 @@
     },
     "tractography-results":{
         "id":"tractography-results",
-        "description":"<p>\nThe Tractography Results IOD encodes tractography results into a collection of track sets. A track set collects a set of tracks containing the set of x, y and z coordinates of each point making up the track.Additional quantities like Fractional Anisotropy values, color, descriptive statistical values, etc. may be associated with track set, track or point.</p>",
+        "description":"<p>\nThe Tractography Results IOD encodes tractography results into a collection of track sets. A track set collects a set of tracks containing the set of x, y and z coordinates of each point making up the track. Additional quantities like Fractional Anisotropy values, color, descriptive statistical values, etc. may be associated with track set, track or point.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.78.3.html#table_A.78-1",
         "name":"Tractography Results"
     },
@@ -766,5 +796,35 @@
         "description":"<p>\nThe Ophthalmic Optical Coherence Tomography B-scan Volume Analysis IOD specifies a multi-frame image conveying ophthalmic optical coherence tomography volumetric B-scan volume analysis information (e.g., angiographic (blood flow) volume information).</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.84.3.html#table_A.84-1",
         "name":"Ophthalmic Optical Coherence Tomography B-scan Volume Analysis"
+    },
+    "encapsulated-stl":{
+        "id":"encapsulated-stl",
+        "description":"<p>\n The Encapsulated STL Information Object Definition (IOD) describes a 3D model in Stereolithography (STL) format that has been encapsulated within a DICOM Information Object.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.85.html#table_A.85.1-1",
+        "name":"Encapsulated STL"
+    },
+    "rt-physician-intent":{
+        "id":"rt-physician-intent",
+        "description":"None",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.86.html#table_A.86.1.2-1",
+        "name":"RT Physician Intent"
+    },
+    "rt-segment-annotation":{
+        "id":"rt-segment-annotation",
+        "description":"None",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.86.html#table_A.86.1.3-1",
+        "name":"RT Segment Annotation"
+    },
+    "rt-radiation-set":{
+        "id":"rt-radiation-set",
+        "description":"None",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.86.html#table_A.86.1.4-1",
+        "name":"RT Radiation Set"
+    },
+    "c-arm-photon-electron-radiation":{
+        "id":"c-arm-photon-electron-radiation",
+        "description":"None",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.86.html#table_A.86.1.5-1",
+        "name":"C-Arm Photon-Electron Radiation"
     }
 }
