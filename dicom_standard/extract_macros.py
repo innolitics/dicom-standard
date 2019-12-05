@@ -3,7 +3,6 @@ Load the macro tables specified throughout PS3.3 in the DICOM Standard.
 These tables are of the same form as the module-attribute tables and
 are used to expand macro references in Annex C.
 '''
-import sys
 from typing import Tuple, List, Dict, Iterator
 import sys
 import re
