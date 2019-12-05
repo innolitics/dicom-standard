@@ -5,3 +5,5 @@ venv
 env
 old_standards
 tags
+.tox/
+*.egg-info/

@@ -1,3 +1,7 @@
+<a href="https://travis-ci.org/innolitics/dicom-numpy">
+   <img src="https://travis-ci.org/innolitics/dicom-numpy.svg?branch=master">
+</a>
+
 # DICOM Standard Parser
 
 This program parses the web version of the [DICOM Standard][nema] into human
