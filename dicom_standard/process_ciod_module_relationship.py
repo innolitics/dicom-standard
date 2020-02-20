@@ -18,7 +18,19 @@ def define_all_relationships(ciod_module_list):
 
 
 def define_ciod_module_relationship(ciod, module):
-    usage, conditional_statement = expand_conditional_statement(module['usage'])
+    try:
+        usage, conditional_statement = expand_conditional_statement(module['usage'])
+    except KeyError as e:
+        # TODO: Remove try/except block once missing IE column in Table A.85.1-1 is fixed
+        if 'Common Instance Reference' in module['informationEntity']:
+            # Shift every column right by one and replace missing IE column
+            module['usage'] = module['reference_fragment']
+            module['reference_fragment'] = module['module']
+            module['module'] = module['informationEntity']
+            module['informationEntity'] = "<td align=\"left\" colspan=\"1\" rowspan=\"1\">\n<p>\n<a id=\"para_040bd3bd-9a9f-4066-8431-ea1ded2a909e\" shape=\"rect\"></a>Encapsulated Document</p>\n</td>"
+            usage, conditional_statement = expand_conditional_statement(module['usage'])
+        else:
+            raise e
     return {
         "ciod": pl.create_slug(ciod),
         "module": pl.create_slug(pl.text_from_html_string(module['module'])),
