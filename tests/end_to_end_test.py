@@ -63,7 +63,7 @@ def test_vertical_samples_from_standard(ciods, modules, attributes):
         "patient": {
             "name": "Patient",
             "id": "patient",
-            "description": "<p>\n<span href=\"#table_C.7-1\">This module </span> specifies the Attributes of the Patient that describe and identify the Patient who is the subject of a Study.\n            This Module contains Attributes of the patient that are needed for interpretation of the Composite Instances and are common for all studies performed on the patient. It contains Attributes that are also included in the Patient Modules in <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.2.html#sect_C.2\" target=\"_blank\">Section\u00a0C.2</a>.</p>",
+            "description": "<p>\n<span href=\"#table_C.7-1\">This module </span> specifies the Attributes of the Patient that describe and identify the Patient who is the subject of a Study.\n            This Module contains Attributes of the Patient that are needed for interpretation of the Composite Instances and are common for all Studies performed on the Patient. It contains Attributes that are also included in the Patient Modules in <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.2.html#sect_C.2\" target=\"_blank\">Section\u00a0C.2</a>.</p>",
             "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.html#table_C.7-1"
         }
     }
@@ -78,7 +78,7 @@ def test_vertical_samples_from_standard(ciods, modules, attributes):
         },
         "00080034": {
             "tag": "(0008,0034)",
-            "retired": True,
+            "retired": False,
             "keyword": "OverlayTime",
             "name": "Overlay Time",
             "valueMultiplicity": "1",
@@ -233,7 +233,7 @@ def test_number_of_module_appearances(ciods, ciod_module_relationship, modules):
         "volume-cropping": {
             "name": "Volume Cropping",
             "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.24.html#table_C.11.24-1",
-            "description": "<p>\n<span href=\"#table_C.11.24-1\">This module </span> contains the attributes of the Volume Cropping Module. This Module limits the spatial extent of inputs in Volumetric Presentation State Input Sequence (0070,1201) that are used.</p>",
+            "description": "<p>\n<span href=\"#table_C.11.24-1\">This module </span> contains the Attributes of the Volume Cropping Module. This Module limits the spatial extent of inputs in Volumetric Presentation State Input Sequence (0070,1201) that are used.</p>",
             "id": "volume-cropping"
         }
     }
