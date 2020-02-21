@@ -21,7 +21,7 @@ def define_ciod_module_relationship(ciod, module):
     try:
         usage, conditional_statement = expand_conditional_statement(module['usage'])
     except KeyError as e:
-        # TODO: Remove try/except block once missing IE column in Table A.85.1-1 is fixed
+        # TODO: Remove try/except block once missing IE column in Table A.85.1-1 is fixed (Related to Issue #17)
         if 'Common Instance Reference' in module['informationEntity']:
             # Shift every column right by one and replace missing IE column
             module['usage'] = module['reference_fragment']
@@ -31,12 +31,19 @@ def define_ciod_module_relationship(ciod, module):
             usage, conditional_statement = expand_conditional_statement(module['usage'])
         else:
             raise e
+    informationEntity = pl.text_from_html_string(module['informationEntity'])
+    # TODO: Remove if block once missing IE column in Table A.32.10-1 is fixed (Issue #17)
+    if (not informationEntity and
+        ciod == 'Real-Time Video Photographic Image' and
+        any(mod in module['module'] for mod in ['Real-Time Acquisition', 'Current Frame Functional Groups'])):
+        # Manually input missing field
+        informationEntity = 'Image'
     return {
         "ciod": pl.create_slug(ciod),
         "module": pl.create_slug(pl.text_from_html_string(module['module'])),
         "usage": usage,
         "conditionalStatement": conditional_statement,
-        "informationEntity": pl.text_from_html_string(module['informationEntity'])
+        "informationEntity": informationEntity
     }
 
 
