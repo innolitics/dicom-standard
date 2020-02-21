@@ -63,7 +63,7 @@ def test_vertical_samples_from_standard(ciods, modules, attributes):
         "patient": {
             "name": "Patient",
             "id": "patient",
-            "description": "<p>\n<span href=\"#table_C.7-1\">This module </span> specifies the Attributes of the Patient that describe and identify the Patient who is the subject of a Study.\n            This Module contains Attributes of the Patient that are needed for interpretation of the Composite Instances and are common for all Studies performed on the Patient. It contains Attributes that are also included in the Patient Modules in <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.2.html#sect_C.2\" target=\"_blank\">Section\u00a0C.2</a>.</p>",
+            "description": "<p>\n<span href=\"#table_C.7-1\">This module </span> specifies the Attributes of the Patient that describe and identify the Patient who is the subject of a Study. This Module contains Attributes of the Patient that are needed for interpretation of the Composite Instances and are common for all Studies performed on the Patient. It contains Attributes that are also included in the Patient Modules in <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.2.html#sect_C.2\" target=\"_blank\">Section\u00a0C.2</a>.</p>",
             "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.html#table_C.7-1"
         }
     }

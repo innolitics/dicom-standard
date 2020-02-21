@@ -98,7 +98,7 @@
     "patient":{
         "id":"patient",
         "name":"Patient",
-        "description":"<p>\n<span href=\"#table_C.7-1\">This module </span> specifies the Attributes of the Patient that describe and identify the Patient who is the subject of a Study.\n            This Module contains Attributes of the Patient that are needed for interpretation of the Composite Instances and are common for all Studies performed on the Patient. It contains Attributes that are also included in the Patient Modules in <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.2.html#sect_C.2\" target=\"_blank\">Section\u00a0C.2</a>.</p>",
+        "description":"<p>\n<span href=\"#table_C.7-1\">This module </span> specifies the Attributes of the Patient that describe and identify the Patient who is the subject of a Study. This Module contains Attributes of the Patient that are needed for interpretation of the Composite Instances and are common for all Studies performed on the Patient. It contains Attributes that are also included in the Patient Modules in <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.2.html#sect_C.2\" target=\"_blank\">Section\u00a0C.2</a>.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.html#table_C.7-1"
     },
     "clinical-trial-subject":{
@@ -578,7 +578,7 @@
     "rt-dose-roi":{
         "id":"rt-dose-roi",
         "name":"RT Dose ROI",
-        "description":"<p>\nRT Dose ROI provides ancillary dose-related information to the ROI data defined within the <span href=\"#sect_C.8.8.5\">This module </span> and <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.6.html#sect_C.8.8.6\" target=\"_blank\">ROI Contour Module</a>, which may be included in the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.18.html#sect_A.18\" target=\"_blank\">RT Dose IOD</a> composite object. These Modules in combination provide for the definition of dose data in the form of \n          <span>isodose curves</span> or named or unnamed dose points. Isodose curves in radiation oncology are simply contours identifying a set of points with the same dose value.</p>",
+        "description":"<p>\nRT Dose ROI provides ancillary dose-related information to the ROI data defined within the <span href=\"#sect_C.8.8.5\">This module </span> and <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.6.html#sect_C.8.8.6\" target=\"_blank\">ROI Contour Module</a>, which may be included in the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.18.html#sect_A.18\" target=\"_blank\">RT Dose IOD</a> composite object. These Modules in combination provide for the definition of dose data in the form of <span>isodose curves</span> or named or unnamed dose points. Isodose curves in radiation oncology are simply contours identifying a set of points with the same dose value.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.7.html#table_C.8-43"
     },
     "rt-roi-observations":{
@@ -626,7 +626,7 @@
     "rt-brachy-application-setups":{
         "id":"rt-brachy-application-setups",
         "name":"RT Brachy Application Setups",
-        "description":"<p>\nThe <span href=\"#sect_C.8.8.15\">This module </span> describes the application of a brachytherapy radiotherapy treatment. It contains one or more sources, each associated with one or more Channels. A Channel is a device by which a source is placed in its intended treatment position or positions. A Channel may consist of a Source Applicator plus a Transfer Tube, a Source Applicator alone, a rigid or flexible linear source, or a seed. A number of Channels (for example applicators, sources or seeds) are generally arranged in an Application Setup, which may be considered a \"logical\" device. It is important not to confuse Application Setup with Applicator. The model used here has been primarily built around the concept of remote afterloading, but extended to support other brachytherapy applications such as manual applicators and molds, seeds, and sources. Additional devices that are not Channels are described as Brachy Accessory Devices. Examples of Accessory Devices include shields that modify the dose distribution from all sources in the treatment. However, Channel shields modify the dose only for the source(s) in that Channel.</p>",
+        "description":"<p>\nThe <span href=\"#sect_C.8.8.15\">This module </span> describes the application of a brachytherapy radiotherapy treatment. It contains one or more sources, each associated with one or more Channels. A Channel is a device by which a source is placed in its intended treatment position or positions. A Channel may consist of a Source Applicator plus a Transfer Tube, a Source Applicator alone, a rigid or flexible linear source, or a seed. A number of Channels (for example applicators, sources or seeds) are generally arranged in an Application Setup, which may be considered a \"logical\" device. It is important not to confuse Application Setup with Applicator. The model used here has been primarily built around the concept of remote afterloading, but extended to support other brachytherapy applications such as manual applicators and molds, seeds, and sources. Additional devices that are not Channels are\n                        described as Brachy Accessory Devices. Examples of Accessory Devices include shields that modify the dose distribution from all sources in the treatment. However, Channel shields modify the dose only for the source(s) in that Channel.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.15.html#table_C.8-51"
     },
     "approval":{
@@ -2138,7 +2138,7 @@
     "enhanced-rt-series":{
         "id":"enhanced-rt-series",
         "name":"Enhanced RT Series",
-        "description":"<p>\nThe RT Second Generation IODs use the General Series Module described in <span href=\"#sect_C.7.3.1\">This module </span>,\n        specialized by the Enhanced RT Series Module.</p>",
+        "description":"<p>\nThe RT Second Generation IODs use the General Series Module described in <span href=\"#sect_C.7.3.1\">This module </span>, specialized by the Enhanced RT Series Module.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.3.html#table_C.36.3-1"
     },
     "radiotherapy-common-instance":{
@@ -2150,7 +2150,7 @@
     "rt-physician-intent":{
         "id":"rt-physician-intent",
         "name":"RT Physician Intent",
-        "description":"<p>\nThe RT Physician Intent Module contains information about the overall intent of the treatment.\n      The content is mostly descriptive text and allows for the presence of unstructured advice by the physician along the established nomenclature of the actual institution.</p>",
+        "description":"<p>\nThe RT Physician Intent Module contains information about the overall intent of the treatment. The content is mostly descriptive text and allows for the presence of unstructured advice by the physician along the established nomenclature of the actual institution.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.5.html#table_C.36.5-1"
     },
     "rt-enhanced-prescription":{
@@ -2168,19 +2168,19 @@
     "rt-segment-annotation":{
         "id":"rt-segment-annotation",
         "name":"RT Segment Annotation",
-        "description":"<p>\nThe RT Segment Annotation Module references segments and provides radiotherapy-specific annotations for them.\n      The geometry of each segment is defined by a referenced Segmentation, Surface Segmentation,\n      RT Structure Set or any other general-purpose Instance that represents geometric information.</p>",
+        "description":"<p>\nThe RT Segment Annotation Module references segments and provides radiotherapy-specific annotations for them. The geometry of each segment is defined by a referenced Segmentation, Surface Segmentation, RT Structure Set or any other general-purpose Instance that represents geometric information.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.8.html#table_C.36.8-1"
     },
     "segment-reference":{
         "id":"segment-reference",
         "name":"Segment Reference",
-        "description":"<p>\nThe Segment Reference Module references geometrical representations, such as regions of interest, surfaces, lines, or points,\n      which have been associated with a Conceptual Volume.</p>",
+        "description":"<p>\nThe Segment Reference Module references geometrical representations, such as regions of interest, surfaces, lines, or points, which have been associated with a Conceptual Volume.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.9.html#table_C.36.9-1"
     },
     "rt-radiation-set":{
         "id":"rt-radiation-set",
         "name":"RT Radiation Set",
-        "description":"<p>\nThe RT Radiation Set Module describes treatment fractions that contain a set of beams or brachytherapy setups used within a treatment session to help achieve the dosimetric requirements of a given Treatment Phase.\n                    The Module references a set of RT Radiation instances that describe the geometric and physical parameters that define the delivery of dose for a single fraction.\n                    In addition, the overall number of treatment fractions is defined, as well as possibly the fractionation scheme according to which, fractions will be delivered.</p>",
+        "description":"<p>\nThe RT Radiation Set Module describes treatment fractions that contain a set of beams or brachytherapy setups used within a treatment session to help achieve the dosimetric requirements of a given Treatment Phase. The Module references a set of RT Radiation instances that describe the geometric and physical parameters that define the delivery of dose for a single fraction. In addition, the overall number of treatment fractions is defined, as well as possibly the fractionation scheme according to which, fractions will be delivered.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.10.html#table_C.36.10-1"
     },
     "rt-dose-contribution":{
@@ -2204,7 +2204,7 @@
     "c-arm-photon-electron-delivery-device":{
         "id":"c-arm-photon-electron-delivery-device",
         "name":"C-Arm Photon-Electron Delivery Device",
-        "description":"<p>\nThe C-Arm Photon-Electron Delivery Device Module defines constant C-Arm-specific parameters pertaining to the physical device used to deliver photon and electron treatments, including geometrical parameters of the collimation system.</p>",
+        "description":"<p>\nThe C-Arm Photon-Electron Delivery Device Module contains C-Arm-specific parameters pertaining to the physical device. These parameters are used to specify or record photon and electron treatments, including geometrical parameters of the collimation system.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.14.html#table_C.36.14-1"
     },
     "c-arm-photon-electron-beam":{
@@ -2212,5 +2212,29 @@
         "name":"C-Arm Photon-Electron Beam",
         "description":"<p>\nThe C-Arm Photon-Electron Beam Module specifies how a C-Arm photon or electron treatment beam is to be delivered.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.15.html#table_C.36.15-1"
+    },
+    "tomotherapeutic-delivery-device":{
+        "id":"tomotherapeutic-delivery-device",
+        "name":"Tomotherapeutic Delivery Device",
+        "description":"<p>\nThe Tomotherapeutic Delivery Device Module contains tomotherapy-specific information pertaining to the physical device. These parameters are used to specify or record the treatment, including geometrical parameters of the collimation system.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.16.html#table_C.36.16-1"
+    },
+    "tomotherapeutic-beam":{
+        "id":"tomotherapeutic-beam",
+        "name":"Tomotherapeutic Beam",
+        "description":"<p>\nThe Tomotherapeutic Beam Module specifies or records how a tomotherapeutic treatment is to be or was delivered.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.17.html#table_C.36.17-1"
+    },
+    "robotic-arm-delivery-device":{
+        "id":"robotic-arm-delivery-device",
+        "name":"Robotic-Arm Delivery Device",
+        "description":"<p>\nThe Robotic-Arm Delivery Device Module contains robot-specific information pertaining to the physical device. These parameters are used to specify or record the treatment, including geometric parameters of the collimation system.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.18.html#table_C.36.18-1"
+    },
+    "robotic-arm-path":{
+        "id":"robotic-arm-path",
+        "name":"Robotic-Arm Path",
+        "description":"<p>\nThe Robotic-Arm Path Module specifies or records how a Robotic Path treatment is to be delivered. Multiple paths are encoded as separate RT Radiation instances referred to in the RT Radiation Set IOD.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.19.html#table_C.36.19-1"
     }
 }

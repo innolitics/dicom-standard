@@ -35,11 +35,11 @@
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.7.4.html#table_A.7-1",
         "name":"US Multi-frame Image"
     },
-    "sc-image":{
-        "id":"sc-image",
-        "description":"<p>\nThe Secondary Capture (SC) Image Information Object Definition (IOD) specifies single-frame images that are converted from a non-DICOM format to a modality independent DICOM format, without any constraints on pixel data format.</p>",
+    "secondary-capture-image":{
+        "id":"secondary-capture-image",
+        "description":"<p>\nThe Secondary Capture Image IOD specifies single-frame images that are converted from a non-DICOM format to a modality independent DICOM format, without any constraints on pixel data format.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.8.html#table_A.8-1",
-        "name":"SC Image"
+        "name":"Secondary Capture Image"
     },
     "multi-frame-single-bit-sc-image":{
         "id":"multi-frame-single-bit-sc-image",
@@ -71,11 +71,11 @@
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.14.3.html#table_A.14-1",
         "name":"X-Ray Angiographic Image"
     },
-    "xrf-image":{
-        "id":"xrf-image",
-        "description":"<p>\nThe focus for this X-Ray RF Image IOD (XRF IOD) is to address the requirements for image transfer found in general Radiofluoroscopic applications performed on a table with a column. For applications performed on X-Ray RF acquisition systems that support a Patient-Based Coordinate System with cranial/caudal, LAO/RAO angles, etc. the XA Image IOD may be used.</p>",
+    "x-ray-radiofluoroscopic-image":{
+        "id":"x-ray-radiofluoroscopic-image",
+        "description":"<p>\nThe focus for this X-Ray Radiofluoroscopic IOD is to address the requirements for image transfer found in general Radiofluoroscopic applications performed on a table with a column. For applications performed on X-Ray RF acquisition systems that support a Patient-Based Coordinate System with cranial/caudal, LAO/RAO angles, etc. the XA Image IOD may be used.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.16.3.html#table_A.16-1",
-        "name":"XRF Image"
+        "name":"X-Ray Radiofluoroscopic Image"
     },
     "rt-image":{
         "id":"rt-image",
@@ -103,7 +103,7 @@
     },
     "pet-image":{
         "id":"pet-image",
-        "description":"<p>\nThe Positron Emission Tomography (PET) Image Information Object Definition specifies an image that has been created by a Positron Tomograph imaging device, including dedicated PET cameras and Nuclear Medicine imaging devices operating in coincidence mode. This includes data created by external detection devices that create images of the distribution of administered radioactive materials, specifically positron emitters, in the body. Depending on the specific radiopharmaceuticals administered and the particular imaging procedure performed, problems involving changes in metabolism, function, or physiology can be investigated and various region pathologies can be studied. For these problems, quantitation of image data in absolute activity and physiological units is important. In addition, the PET Image IOD specifies attenuation (transmission) images used for correction and anatomical reference of emission images.</p>",
+        "description":"<p>\nThe Positron Emission Tomography (PET) Image Information Object Definition specifies an image that has been created by a Positron Tomograph imaging device, including dedicated PET cameras and Nuclear Medicine imaging devices operating in coincidence mode. This includes data created by external detection devices that create images of the distribution of administered radioactive materials, specifically positron emitters, in the body. Depending on the specific radiopharmaceuticals administered and the particular imaging procedure performed, problems involving changes in metabolism, function, or physiology can be investigated and various region pathologies can be studied. For these problems, quantitation of image data in absolute activity and physiological units is important. In addition, the PET Image IOD specifies attenuation (transmission) images used for correction and anatomical reference of emission\n                    images.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.21.3.html#table_A.21.3-1",
         "name":"PET Image"
     },
@@ -245,41 +245,41 @@
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.33.7.3.html#table_A.33.7-1",
         "name":"Advanced Blending Presentation State"
     },
-    "basic-voice-audio":{
-        "id":"basic-voice-audio",
-        "description":"<p>\nThe Basic Voice Audio IOD is the specification of a digitized sound that has been acquired or created by an audio modality or by an audio acquisition function within an imaging modality. A typical use is report dictation.</p>",
+    "basic-voice-audio-waveform":{
+        "id":"basic-voice-audio-waveform",
+        "description":"<p>\nThe Basic Voice Audio Waveform IOD is the specification of a digitized sound that has been acquired or created by an audio modality or by an audio acquisition function within an imaging modality. A typical use is report dictation.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.34.2.3.html#table_A.34.2-1",
-        "name":"Basic Voice Audio"
+        "name":"Basic Voice Audio Waveform"
     },
     "12-lead-ecg":{
         "id":"12-lead-ecg",
-        "description":"<p>\nThe 12-Lead Electrocardiogram (12-Lead ECG) IOD is the specification of digitized electrical signals from the patient cardiac conduction system collected on the body surface, which has been acquired by an ECG modality or by an ECG acquisition function within an imaging modality.</p>",
+        "description":"<p>\nThe 12-Lead ECG IOD is the specification of digitized electrical signals from the patient cardiac conduction system collected on the body surface, which has been acquired by an ECG modality or by an ECG acquisition function within an imaging modality.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.34.3.3.html#table_A.34.3-1",
         "name":"12-Lead ECG"
     },
     "general-ecg":{
         "id":"general-ecg",
-        "description":"<p>\nThe General Electrocardiogram (ECG) IOD is the specification of digitized electrical signals from the patient cardiac conduction system collected on the body surface, which has been acquired by an ECG modality or by an ECG acquisition function within an imaging modality.</p>",
+        "description":"<p>\nThe General ECG IOD is the specification of digitized electrical signals from the patient cardiac conduction system collected on the body surface, which has been acquired by an ECG modality or by an ECG acquisition function within an imaging modality.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.34.4.3.html#table_A.34.4-1",
         "name":"General ECG"
     },
     "ambulatory-ecg":{
         "id":"ambulatory-ecg",
-        "description":"<p>\nThe Ambulatory Electrocardiogram (ECG) IOD is the specification of digitized electrical signals from the patient cardiac conduction system collected on the body surface, which has been acquired by an ambulatory electrocardiography (Holter) device.</p>",
+        "description":"<p>\nThe Ambulatory ECG IOD is the specification of digitized electrical signals from the patient cardiac conduction system collected on the body surface, which has been acquired by an ambulatory electrocardiography (Holter) device.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.34.5.3.html#table_A.34.5-1",
         "name":"Ambulatory ECG"
     },
-    "hemodynamic":{
-        "id":"hemodynamic",
-        "description":"<p>\nThe Hemodynamic IOD is the specification of digitized pressure, electrical, and other signals from the patient circulatory system, which has been acquired by a hemodynamic modality.</p>",
+    "hemodynamic-waveform":{
+        "id":"hemodynamic-waveform",
+        "description":"<p>\nThe Hemodynamic Waveform IOD is the specification of digitized pressure, electrical, and other signals from the patient circulatory system, which has been acquired by a hemodynamic modality.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.34.6.3.html#table_A.34.6-1",
-        "name":"Hemodynamic"
+        "name":"Hemodynamic Waveform"
     },
-    "basic-cardiac-ep":{
-        "id":"basic-cardiac-ep",
-        "description":"<p>\nThe Basic Cardiac Electrophysiology IOD is the specification of digitized electrical signals from the patient cardiac conduction system collected in the heart, which has been acquired by an EP modality.</p>",
+    "basic-cardiac-electrophysiology-waveform":{
+        "id":"basic-cardiac-electrophysiology-waveform",
+        "description":"<p>\nThe Basic Cardiac Electrophysiology Waveform IOD is the specification of digitized electrical signals from the patient cardiac conduction system collected in the heart, which has been acquired by an EP modality.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.34.7.3.html#table_A.34.7-1",
-        "name":"Basic Cardiac EP"
+        "name":"Basic Cardiac Electrophysiology Waveform"
     },
     "arterial-pulse-waveform":{
         "id":"arterial-pulse-waveform",
@@ -515,17 +515,17 @@
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.46.3.html#table_A.46-1",
         "name":"Real World Value Mapping"
     },
-    "enhanced-x-ray-angiographic-image":{
-        "id":"enhanced-x-ray-angiographic-image",
+    "enhanced-xa-image":{
+        "id":"enhanced-xa-image",
         "description":"<p>\nThis Section defines the enhanced Information Object for single plane X-Ray Angiographic Imaging that includes those Attributes and Information Objects necessary for the interchange of digital X-Ray Angiographic data. This includes images of the heart and all blood vessels.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.47.3.html#table_A.47-1",
-        "name":"Enhanced X-Ray Angiographic Image"
+        "name":"Enhanced XA Image"
     },
-    "enhanced-x-ray-rf-image":{
-        "id":"enhanced-x-ray-rf-image",
-        "description":"<p>\nThe focus for this enhanced X-Ray RF Image IOD (XRF IOD) is to address the requirements for image transfer found in general Radiofluoroscopic applications performed on a table with a column. For applications performed on X-Ray RF acquisition systems that support a Patient-Based Coordinate System with cranial/caudal, LAO/RAO angles, etc. the enhanced XA Image IOD may be used.</p>",
+    "enhanced-xrf-image":{
+        "id":"enhanced-xrf-image",
+        "description":"<p>\nThe focus for this Enhanced XRF IOD is to address the requirements for image transfer found in general Radiofluoroscopic applications performed on a table with a column. For applications performed on X-Ray RF acquisition systems that support a Patient-Based Coordinate System with cranial/caudal, LAO/RAO angles, etc. the enhanced XA Image IOD may be used.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.48.3.html#table_A.48-1",
-        "name":"Enhanced X-Ray RF Image"
+        "name":"Enhanced XRF Image"
     },
     "rt-ion-plan":{
         "id":"rt-ion-plan",
@@ -589,7 +589,7 @@
     },
     "enhanced-us-volume":{
         "id":"enhanced-us-volume",
-        "description":"<p>\nImage objects of different types may be created from a 3D Ultrasound image acquisition, illustrated in <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#figure_A.59-1\" target=\"_blank\">Figure\u00a0A.59-1</a>.\n            It can be seen that there are two different types of data related to 3D image acquisition: 3D volume data and several kinds of 2D image derived from the volume data.</p>",
+        "description":"<p>\nImage objects of different types may be created from a 3D Ultrasound image acquisition, illustrated in <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#figure_A.59-1\" target=\"_blank\">Figure\u00a0A.59-1</a>. It can be seen that there are two different types of data related to 3D image acquisition: 3D volume data and several kinds of 2D image derived from the volume data.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.59.3.html#table_A.59-1",
         "name":"Enhanced US Volume"
     },
@@ -665,11 +665,11 @@
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.65.3.html#table_A.65.3-1",
         "name":"Ophthalmic Visual Field Static Perimetry Measurements"
     },
-    "intravascular-oct-image":{
-        "id":"intravascular-oct-image",
+    "intravascular-optical-coherence-tomography-image":{
+        "id":"intravascular-optical-coherence-tomography-image",
         "description":"<p>\nThe Intravascular Optical Coherence Tomography Image IOD specifies a multi-frame image acquired on an Intravascular Optical Coherence Tomography modality.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.66.3.html#table_A.66.3-1",
-        "name":"Intravascular OCT Image"
+        "name":"Intravascular Optical Coherence Tomography Image"
     },
     "ophthalmic-thickness-map":{
         "id":"ophthalmic-thickness-map",
@@ -803,6 +803,18 @@
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.85.html#table_A.85.1-1",
         "name":"Encapsulated STL"
     },
+    "encapsulated-obj":{
+        "id":"encapsulated-obj",
+        "description":"<p>\nThe Encapsulated OBJ Information Object Definition (IOD) describes a 3D model in OBJ format.\n                        Any supporting material library file (MTL) and supporting 2D texture map image files are addressed in other distinct IODs\n                        (see <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.85.3.html#sect_A.85.3.1\" target=\"_blank\">Section\u00a0A.85.3.1</a> and <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.8.5.4.html#sect_A.8.5.4\" target=\"_blank\">Section\u00a0A.8.5.4</a>).</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.85.2.3.html#table_A.85.2-1",
+        "name":"Encapsulated OBJ"
+    },
+    "encapsulated-mtl":{
+        "id":"encapsulated-mtl",
+        "description":"<p>\n\tThe Encapsulated MTL Information Object Definition (IOD) describes in MTL format a materials library used by an Encapsulated OBJ 3D model \n                        (see <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.85.2.html#sect_A.85.2.1\" target=\"_blank\">Section\u00a0A.85.2.1</a>).</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.85.3.3.html#table_A.85.3-1",
+        "name":"Encapsulated MTL"
+    },
     "rt-physician-intent":{
         "id":"rt-physician-intent",
         "description":"None",
@@ -826,5 +838,17 @@
         "description":"None",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.86.html#table_A.86.1.5-1",
         "name":"C-Arm Photon-Electron Radiation"
+    },
+    "tomotherapeutic-radiation":{
+        "id":"tomotherapeutic-radiation",
+        "description":"None",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.86.html#table_A.86.1.6-1",
+        "name":"Tomotherapeutic Radiation"
+    },
+    "robotic-arm-radiation":{
+        "id":"robotic-arm-radiation",
+        "description":"None",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.86.html#table_A.86.1.7-1",
+        "name":"Robotic-Arm Radiation"
     }
 }

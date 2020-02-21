@@ -23927,6 +23927,22 @@
         "valueMultiplicity":"1",
         "retired":false
     },
+    "00687004":{
+        "tag":"(0068,7004)",
+        "name":"Model Group UID",
+        "keyword":"ModelGroupUID",
+        "valueRepresentation":"UI",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00687005":{
+        "tag":"(0068,7005)",
+        "name":"Relative URI Reference Within Encapsulated Document",
+        "keyword":"RelativeURIReferenceWithinEncapsulatedDocument",
+        "valueRepresentation":"UR",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
     "00700001":{
         "tag":"(0070,0001)",
         "name":"Graphic Annotation Sequence",
@@ -36207,6 +36223,94 @@
         "valueMultiplicity":"1",
         "retired":false
     },
+    "30100090":{
+        "tag":"(3010,0090)",
+        "name":"Robotic Base Location Indicator",
+        "keyword":"RoboticBaseLocationIndicator",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "30100091":{
+        "tag":"(3010,0091)",
+        "name":"Robotic Path Node Set Code Sequence",
+        "keyword":"RoboticPathNodeSetCodeSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "30100092":{
+        "tag":"(3010,0092)",
+        "name":"Robotic Node Identifier",
+        "keyword":"RoboticNodeIdentifier",
+        "valueRepresentation":"UL",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "30100093":{
+        "tag":"(3010,0093)",
+        "name":"RT Treatment Source Coordinates",
+        "keyword":"RTTreatmentSourceCoordinates",
+        "valueRepresentation":"FD",
+        "valueMultiplicity":"3",
+        "retired":false
+    },
+    "30100094":{
+        "tag":"(3010,0094)",
+        "name":"Radiation Source Coordinate SystemYaw Angle",
+        "keyword":"RadiationSourceCoordinateSystemYawAngle",
+        "valueRepresentation":"FD",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "30100095":{
+        "tag":"(3010,0095)",
+        "name":"Radiation Source Coordinate SystemRoll Angle",
+        "keyword":"RadiationSourceCoordinateSystemRollAngle",
+        "valueRepresentation":"FD",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "30100096":{
+        "tag":"(3010,0096)",
+        "name":"Radiation Source Coordinate SystemPitch Angle",
+        "keyword":"RadiationSourceCoordinateSystemPitchAngle",
+        "valueRepresentation":"FD",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "30100097":{
+        "tag":"(3010,0097)",
+        "name":"Robotic Path Control Point Sequence",
+        "keyword":"RoboticPathControlPointSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "30100098":{
+        "tag":"(3010,0098)",
+        "name":"Tomotherapeutic Control Point Sequence",
+        "keyword":"TomotherapeuticControlPointSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "30100099":{
+        "tag":"(3010,0099)",
+        "name":"Tomotherapeutic Leaf Open Durations",
+        "keyword":"TomotherapeuticLeafOpenDurations",
+        "valueRepresentation":"FD",
+        "valueMultiplicity":"1-n",
+        "retired":false
+    },
+    "3010009a":{
+        "tag":"(3010,009A)",
+        "name":"Tomotherapeutic Leaf Initial Closed Durations",
+        "keyword":"TomotherapeuticLeafInitialClosedDurations",
+        "valueRepresentation":"FD",
+        "valueMultiplicity":"1-n",
+        "retired":false
+    },
     "40000010":{
         "tag":"(4000,0010)",
         "name":"Arbitrary",
@@ -37900,6 +38004,342 @@
         "name":"Sequence Delimitation Item",
         "keyword":"SequenceDelimitationItem",
         "valueRepresentation":"See Note 2",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00020000":{
+        "tag":"(0002,0000)",
+        "name":"File Meta Information Group Length",
+        "keyword":"FileMetaInformationGroupLength",
+        "valueRepresentation":"UL",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00020001":{
+        "tag":"(0002,0001)",
+        "name":"File Meta Information Version",
+        "keyword":"FileMetaInformationVersion",
+        "valueRepresentation":"OB",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00020002":{
+        "tag":"(0002,0002)",
+        "name":"Media Storage SOP Class UID",
+        "keyword":"MediaStorageSOPClassUID",
+        "valueRepresentation":"UI",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00020003":{
+        "tag":"(0002,0003)",
+        "name":"Media Storage SOP Instance UID",
+        "keyword":"MediaStorageSOPInstanceUID",
+        "valueRepresentation":"UI",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00020010":{
+        "tag":"(0002,0010)",
+        "name":"Transfer Syntax UID",
+        "keyword":"TransferSyntaxUID",
+        "valueRepresentation":"UI",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00020012":{
+        "tag":"(0002,0012)",
+        "name":"Implementation Class UID",
+        "keyword":"ImplementationClassUID",
+        "valueRepresentation":"UI",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00020013":{
+        "tag":"(0002,0013)",
+        "name":"Implementation Version Name",
+        "keyword":"ImplementationVersionName",
+        "valueRepresentation":"SH",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00020016":{
+        "tag":"(0002,0016)",
+        "name":"Source Application Entity Title",
+        "keyword":"SourceApplicationEntityTitle",
+        "valueRepresentation":"AE",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00020017":{
+        "tag":"(0002,0017)",
+        "name":"Sending Application Entity Title",
+        "keyword":"SendingApplicationEntityTitle",
+        "valueRepresentation":"AE",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00020018":{
+        "tag":"(0002,0018)",
+        "name":"Receiving Application Entity Title",
+        "keyword":"ReceivingApplicationEntityTitle",
+        "valueRepresentation":"AE",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00020026":{
+        "tag":"(0002,0026)",
+        "name":"Source Presentation Address",
+        "keyword":"SourcePresentationAddress",
+        "valueRepresentation":"UR",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00020027":{
+        "tag":"(0002,0027)",
+        "name":"Sending Presentation Address",
+        "keyword":"SendingPresentationAddress",
+        "valueRepresentation":"UR",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00020028":{
+        "tag":"(0002,0028)",
+        "name":"Receiving Presentation Address",
+        "keyword":"ReceivingPresentationAddress",
+        "valueRepresentation":"UR",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00020031":{
+        "tag":"(0002,0031)",
+        "name":"RTV Meta Information Version",
+        "keyword":"RTVMetaInformationVersion",
+        "valueRepresentation":"OB",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00020032":{
+        "tag":"(0002,0032)",
+        "name":"RTV Communication SOP Class UID",
+        "keyword":"RTVCommunicationSOPClassUID",
+        "valueRepresentation":"UI",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00020033":{
+        "tag":"(0002,0033)",
+        "name":"RTV Communication SOP Instance UID",
+        "keyword":"RTVCommunicationSOPInstanceUID",
+        "valueRepresentation":"UI",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00020035":{
+        "tag":"(0002,0035)",
+        "name":"RTV Source Identifier",
+        "keyword":"RTVSourceIdentifier",
+        "valueRepresentation":"OB",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00020036":{
+        "tag":"(0002,0036)",
+        "name":"RTV Flow Identifier",
+        "keyword":"RTVFlowIdentifier",
+        "valueRepresentation":"OB",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00020037":{
+        "tag":"(0002,0037)",
+        "name":"RTV Flow RTP Sampling Rate",
+        "keyword":"RTVFlowRTPSamplingRate",
+        "valueRepresentation":"UL",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00020038":{
+        "tag":"(0002,0038)",
+        "name":"RTV Flow Actual Frame Duration",
+        "keyword":"RTVFlowActualFrameDuration",
+        "valueRepresentation":"FD",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00020100":{
+        "tag":"(0002,0100)",
+        "name":"Private Information Creator UID",
+        "keyword":"PrivateInformationCreatorUID",
+        "valueRepresentation":"UI",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00020102":{
+        "tag":"(0002,0102)",
+        "name":"Private Information",
+        "keyword":"PrivateInformation",
+        "valueRepresentation":"OB",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00041130":{
+        "tag":"(0004,1130)",
+        "name":"File-set ID",
+        "keyword":"FileSetID",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00041141":{
+        "tag":"(0004,1141)",
+        "name":"File-set Descriptor File ID",
+        "keyword":"FileSetDescriptorFileID",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1-8",
+        "retired":false
+    },
+    "00041142":{
+        "tag":"(0004,1142)",
+        "name":"Specific Character Set of File-set Descriptor File",
+        "keyword":"SpecificCharacterSetOfFileSetDescriptorFile",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00041200":{
+        "tag":"(0004,1200)",
+        "name":"Offset of the First Directory Record of the Root Directory Entity",
+        "keyword":"OffsetOfTheFirstDirectoryRecordOfTheRootDirectoryEntity",
+        "valueRepresentation":"UL",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00041202":{
+        "tag":"(0004,1202)",
+        "name":"Offset of the Last Directory Record of the Root Directory Entity",
+        "keyword":"OffsetOfTheLastDirectoryRecordOfTheRootDirectoryEntity",
+        "valueRepresentation":"UL",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00041212":{
+        "tag":"(0004,1212)",
+        "name":"File-set Consistency Flag",
+        "keyword":"FileSetConsistencyFlag",
+        "valueRepresentation":"US",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00041220":{
+        "tag":"(0004,1220)",
+        "name":"Directory Record Sequence",
+        "keyword":"DirectoryRecordSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00041400":{
+        "tag":"(0004,1400)",
+        "name":"Offset of the Next Directory Record",
+        "keyword":"OffsetOfTheNextDirectoryRecord",
+        "valueRepresentation":"UL",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00041410":{
+        "tag":"(0004,1410)",
+        "name":"Record In-use Flag",
+        "keyword":"RecordInUseFlag",
+        "valueRepresentation":"US",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00041420":{
+        "tag":"(0004,1420)",
+        "name":"Offset of Referenced Lower-Level Directory Entity",
+        "keyword":"OffsetOfReferencedLowerLevelDirectoryEntity",
+        "valueRepresentation":"UL",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00041430":{
+        "tag":"(0004,1430)",
+        "name":"Directory Record Type",
+        "keyword":"DirectoryRecordType",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00041432":{
+        "tag":"(0004,1432)",
+        "name":"Private Record UID",
+        "keyword":"PrivateRecordUID",
+        "valueRepresentation":"UI",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00041500":{
+        "tag":"(0004,1500)",
+        "name":"Referenced File ID",
+        "keyword":"ReferencedFileID",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1-8",
+        "retired":false
+    },
+    "00041504":{
+        "tag":"(0004,1504)",
+        "name":"MRDR Directory Record Offset",
+        "keyword":"MRDRDirectoryRecordOffset",
+        "valueRepresentation":"UL",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00041510":{
+        "tag":"(0004,1510)",
+        "name":"Referenced SOP Class UID in File",
+        "keyword":"ReferencedSOPClassUIDInFile",
+        "valueRepresentation":"UI",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00041511":{
+        "tag":"(0004,1511)",
+        "name":"Referenced SOP Instance UID in File",
+        "keyword":"ReferencedSOPInstanceUIDInFile",
+        "valueRepresentation":"UI",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00041512":{
+        "tag":"(0004,1512)",
+        "name":"Referenced Transfer Syntax UID in File",
+        "keyword":"ReferencedTransferSyntaxUIDInFile",
+        "valueRepresentation":"UI",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "0004151a":{
+        "tag":"(0004,151A)",
+        "name":"Referenced Related General SOP Class UID in File",
+        "keyword":"ReferencedRelatedGeneralSOPClassUIDInFile",
+        "valueRepresentation":"UI",
+        "valueMultiplicity":"1-n",
+        "retired":false
+    },
+    "00041600":{
+        "tag":"(0004,1600)",
+        "name":"Number of References",
+        "keyword":"NumberOfReferences",
+        "valueRepresentation":"UL",
+        "valueMultiplicity":"1",
+        "retired":false
+    },
+    "00060001":{
+        "tag":"(0006,0001)",
+        "name":"Current Frame Functional Groups Sequence",
+        "keyword":"CurrentFrameFunctionalGroupsSequence",
+        "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
         "retired":false
     }
