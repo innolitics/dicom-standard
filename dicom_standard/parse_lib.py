@@ -71,6 +71,11 @@ def clean_table_name(name: str) -> str:
     _, _, title = re.split('\u00a0', name)
     possible_table_suffixes = r'(IOD Modules)|(Module Attributes)|(Macro Attributes)|(Module Table)'
     clean_title, *_ = re.split(possible_table_suffixes, title)
+    # TODO: Remove following two lines of code once title of Table A.82.1.3-1 is fixed (Issue #18)
+    # http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.82.html#table_A.82.1.3-1
+    # Remove extra "Table" in beginning of table title (should be "CT Performed Procedure Protocol", not "Table CT Performed ...")
+    if 'Table CT Performed Procedure Protocol' in clean_title:
+        clean_title = 'Table CT Performed Procedure Protocol'
     return clean_title.strip()
 
 
