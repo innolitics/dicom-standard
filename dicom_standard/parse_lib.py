@@ -14,6 +14,7 @@ from dicom_standard import parse_relations as pr
 
 BASE_DICOM_URL = "http://dicom.nema.org/medical/dicom/current/output/html/"
 BASE_SHORT_DICOM_SECTION_URL = "http://dicom.nema.org/medical/dicom/current/output/chtml/"
+NONSTANDARD_SECTION_ID = 'sect_C.7.6.16.2'
 SHORT_DICOM_URL_PREFIX = "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/"
 
 allowed_attributes = ["href", "src", "type", "data", "colspan", "rowspan"]
@@ -177,6 +178,11 @@ def get_standard_page(sect_id: str) -> str:
     '''
     sections = sect_id.split('.')
     try:
+        # TODO: Remove if block (and constant) once URL once links for C.7.6.16.2 subsections exist  (Issue #10)
+        if NONSTANDARD_SECTION_ID in sect_id:
+            # For some reason, all subsections within C.7.16.2 are located within "sect_C.7.6.16.2.html", so return only the valid part
+            # Ex: C.7.16.2.5.1 should be within C.7.16.2.5, but "sect_C.7.16.2.5.html" is invalid
+            return NONSTANDARD_SECTION_ID
         cutoff_index = sections.index('1')
         cropped_section = sections[0:cutoff_index]
         section_page = '.'.join(sections[0:cutoff_index])
