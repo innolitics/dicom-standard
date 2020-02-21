@@ -33,9 +33,9 @@ def define_ciod_module_relationship(ciod, module):
             raise e
     informationEntity = pl.text_from_html_string(module['informationEntity'])
     # TODO: Remove if block once missing IE column in Table A.32.10-1 is fixed (Issue #17)
-    if (not informationEntity and
-        ciod == 'Real-Time Video Photographic Image' and
-        any(mod in module['module'] for mod in ['Real-Time Acquisition', 'Current Frame Functional Groups'])):
+    if (not informationEntity
+            and ciod == 'Real-Time Video Photographic Image'
+            and any(mod in module['module'] for mod in ['Real-Time Acquisition', 'Current Frame Functional Groups'])):
         # Manually input missing field
         informationEntity = 'Image'
     return {

@@ -10,6 +10,7 @@ from dicom_standard.table_utils import table_to_dict
 COLUMN_TITLES = ['tag', 'name', 'keyword', 'valueRepresentation', 'valueMultiplicity', 'retired']
 ATTR_TABLE_IDS = ['table_6-1', 'table_7-1', 'table_8-1', 'table_9-1']
 
+
 def get_attribute_table(standard):
     attr_dict_list = []
     all_tables = standard.find_all('div', class_='table')
