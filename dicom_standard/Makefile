@@ -11,7 +11,7 @@ cleaned_dicom_html=$(patsubst standard/%.html,tmp/%.html,$(wildcard standard/*.h
 
 all: core_tables relationship_tables dist/references.json
 
-core_tables: dist/ciods.json dist/modules.json dist/attributes.json
+core_tables: dist/ciods.json dist/modules.json dist/attributes.json dist/confidentiality_profile_attributes
 
 relationship_tables: dist/ciod_to_modules.json dist/module_to_attributes.json
 
@@ -30,6 +30,9 @@ dist/module_to_attributes.json: tmp/modules_attributes_partial_references.json d
 
 dist/attributes.json: tmp/part06.html extract_attributes.py
 	$(PYTHONPATH_PREFIX) python3 extract_attributes.py $< > $@
+
+dist/confidentiality_profile_attributes.json: tmp/part15.html extract_conf_profile_attributes.py
+	$(PYTHONPATH_PREFIX) python3 extract_conf_profile_attributes.py $< > $@
 
 dist/references.json: tmp/modules_attributes_partial_references.json tmp/raw_section_tables.json
 	$(PYTHONPATH_PREFIX) python3 postprocess_save_references.py $^ > $@
