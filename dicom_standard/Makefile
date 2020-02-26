@@ -16,8 +16,8 @@ core_tables: dist/ciods.json dist/modules.json dist/attributes.json dist/confide
 relationship_tables: dist/ciod_to_modules.json dist/module_to_attributes.json
 
 
-dist/ciods.json: tmp/raw_ciod_module_tables.json
-	$(PYTHONPATH_PREFIX) python3 process_ciods.py $< > $@
+dist/ciods.json: tmp/raw_ciod_module_tables.json tmp/ciod_to_uid.json
+	$(PYTHONPATH_PREFIX) python3 process_ciods.py $^ > $@
 
 dist/ciod_to_modules.json: tmp/raw_ciod_module_tables.json
 	$(PYTHONPATH_PREFIX) python3 process_ciod_module_relationship.py $< > $@
@@ -46,6 +46,9 @@ tmp/modules_attributes_no_references.json: tmp/preprocessed_modules_attributes.j
 
 tmp/preprocessed_modules_attributes.json: tmp/raw_module_attribute_tables.json tmp/raw_macro_tables.json
 	$(PYTHONPATH_PREFIX) python3 preprocess_modules_with_attributes.py $^ > $@
+
+tmp/ciod_to_uid.json: tmp/part04.html tmp/part03.html
+	$(PYTHONPATH_PREFIX) python3 extract_ciod_uids.py $^ > $@
 
 tmp/raw_ciod_module_tables.json: tmp/part03.html extract_ciod_module_data.py
 	$(PYTHONPATH_PREFIX) python3 extract_ciod_module_data.py $< > $@
