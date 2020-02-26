@@ -9,6 +9,7 @@ from bs4 import Tag
 from dicom_standard import parse_relations as pr
 
 TableListType = List[List[Tag]]
+AttributeDictType = Dict[str, str]
 
 
 def table_to_dict(table: TableListType, row_names: List[str], omit_empty: bool = False) -> List[Dict[str, List[Tag]]]:

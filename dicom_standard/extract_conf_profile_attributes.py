@@ -1,15 +1,14 @@
 '''
 Extract the listing of all attributes given in table E.1-1 from part 15 of the DICOM Standard.
 '''
-from typing import Tuple, List, Dict
+from typing import List, Dict
 import sys
 
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
 
 from dicom_standard import parse_lib as pl
 from dicom_standard.extract_attributes import attribute_table_to_list
-from dicom_standard.macro_utils import MetadataTableType
-from dicom_standard.table_utils import TableListType, table_to_dict
+from dicom_standard.table_utils import AttributeDictType, table_to_dict
 
 COLUMN_TITLES = [
     'attributeName', 'tag', 'retired', 'stdCompIOD', 'basicProfile', 'rtnSafePrivOpt',
@@ -19,15 +18,14 @@ COLUMN_TITLES = [
 TABLE_ID = 'table_E.1-1'
 
 
-def get_conf_profile_table(standard: BeautifulSoup) -> Tuple[List[TableListType], List[Tag]]:
+def get_conf_profile_table(standard: BeautifulSoup) -> List[AttributeDictType]:
     all_tables = standard.find_all('div', class_='table')
     html_table = pl.find_tdiv_by_id(all_tables, TABLE_ID)
     list_table = attribute_table_to_list(html_table)
-    table_dict_list = table_to_dict(list_table, COLUMN_TITLES, omit_empty=True)
-    return table_dict_list
+    return table_to_dict(list_table, COLUMN_TITLES, omit_empty=True)
 
 
-def table_to_json(table: Tuple[List[TableListType], List[Tag]]) -> Dict[str, MetadataTableType]:
+def table_to_json(table: List[AttributeDictType]) -> Dict[str, AttributeDictType]:
     attribute_dict = {}
     for attr in table:
         attr_slug = pl.create_slug(attr['tag'])
