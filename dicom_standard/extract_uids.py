@@ -14,6 +14,18 @@ TABLE_ID = 'table_B.5-1'
 IOD_ABBREVIATIONS = {
     'computed radiography': 'cr',
     'computed tomography': 'ct',
+    'magnetic resonance': 'mr',
+    'nuclear medicine': 'nm',
+    'ultrasound': 'us',
+    'secondary capture': 'sc',
+    'x-ray radiofluoroscopic': 'xrf',
+    'radiotherapy': 'rt',
+    'positron emission tomography': 'pet',
+    'electrocardiogram': 'ecg',
+    'electrophysiology': 'ep',
+    'oct': 'oct image',
+    'enhanced x-ray rf image': 'enhanced xrf image',
+    'x-ray rf': 'xrf',
 }
 ID_PATTERN = re.compile(r'\b(' + '|'.join(IOD_ABBREVIATIONS.keys()) + r')\b')
 
