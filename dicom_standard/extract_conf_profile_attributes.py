@@ -11,7 +11,7 @@ from dicom_standard.extract_attributes import attribute_table_to_list
 from dicom_standard.table_utils import AttributeDictType, table_to_dict
 
 COLUMN_TITLES = [
-    'attributeName', 'tag', 'retired', 'stdCompIOD', 'basicProfile', 'rtnSafePrivOpt',
+    'name', 'tag', 'retired', 'stdCompIOD', 'basicProfile', 'rtnSafePrivOpt',
     'rtnUIDsOpt', 'rtnDevIdOpt', 'rtnInstIdOpt', 'rtnPatCharsOpt', 'rtnLongFullDatesOpt',
     'rtnLongModifDatesOpt', 'cleanDescOpt', 'cleanStructContOpt', 'cleanGraphOpt',
 ]
@@ -25,14 +25,13 @@ def get_conf_profile_table(standard: BeautifulSoup) -> List[AttributeDictType]:
     return table_to_dict(list_table, COLUMN_TITLES, omit_empty=True)
 
 
-def table_to_json(table: List[AttributeDictType]) -> Dict[str, AttributeDictType]:
-    attribute_dict = {}
+def table_to_json(table: List[AttributeDictType]) -> List[AttributeDictType]:
+    attributes = []
     for attr in table:
-        attr_slug = pl.create_slug(attr['tag'])
-        attribute_dict[attr_slug] = attr
-        attribute_dict[attr_slug]['id'] = attr_slug
-        attribute_dict[attr_slug]['tag'] = attr['tag'].upper()
-    return attribute_dict
+        attr['id'] = pl.create_slug(attr['tag'])
+        attr['tag'] = attr['tag'].upper()
+        attributes.append(attr)
+    return attributes
 
 
 if __name__ == '__main__':

@@ -11,13 +11,13 @@ cleaned_dicom_html=$(patsubst standard/%.html,tmp/%.html,$(wildcard standard/*.h
 
 all: core_tables relationship_tables dist/references.json
 
-core_tables: dist/ciods.json dist/modules.json dist/attributes.json dist/confidentiality_profile_attributes
+core_tables: dist/ciods.json dist/modules.json dist/attributes.json dist/uids.json dist/confidentiality_profile_attributes.json
 
 relationship_tables: dist/ciod_to_modules.json dist/module_to_attributes.json
 
 
-dist/ciods.json: tmp/raw_ciod_module_tables.json tmp/ciod_to_uid.json
-	$(PYTHONPATH_PREFIX) python3 process_ciods.py $^ > $@
+dist/ciods.json: tmp/raw_ciod_module_tables.json
+	$(PYTHONPATH_PREFIX) python3 process_ciods.py $< > $@
 
 dist/ciod_to_modules.json: tmp/raw_ciod_module_tables.json
 	$(PYTHONPATH_PREFIX) python3 process_ciod_module_relationship.py $< > $@
@@ -28,10 +28,13 @@ dist/modules.json: tmp/preprocessed_modules_attributes.json
 dist/module_to_attributes.json: tmp/modules_attributes_partial_references.json dist/references.json
 	$(PYTHONPATH_PREFIX) python3 postprocess_update_reference_links.py $^ > $@
 
-dist/attributes.json: tmp/part06.html extract_attributes.py
+dist/attributes.json: tmp/part06.html
 	$(PYTHONPATH_PREFIX) python3 extract_attributes.py $< > $@
 
-dist/confidentiality_profile_attributes.json: tmp/part15.html extract_conf_profile_attributes.py
+dist/uids.json: tmp/part04.html
+	$(PYTHONPATH_PREFIX) python3 extract_uids.py $< > $@
+
+dist/confidentiality_profile_attributes.json: tmp/part15.html
 	$(PYTHONPATH_PREFIX) python3 extract_conf_profile_attributes.py $< > $@
 
 dist/references.json: tmp/modules_attributes_partial_references.json tmp/raw_section_tables.json
@@ -47,16 +50,13 @@ tmp/modules_attributes_no_references.json: tmp/preprocessed_modules_attributes.j
 tmp/preprocessed_modules_attributes.json: tmp/raw_module_attribute_tables.json tmp/raw_macro_tables.json
 	$(PYTHONPATH_PREFIX) python3 preprocess_modules_with_attributes.py $^ > $@
 
-tmp/ciod_to_uid.json: tmp/part04.html tmp/part03.html
-	$(PYTHONPATH_PREFIX) python3 extract_ciod_uids.py $^ > $@
-
-tmp/raw_ciod_module_tables.json: tmp/part03.html extract_ciod_module_data.py
+tmp/raw_ciod_module_tables.json: tmp/part03.html
 	$(PYTHONPATH_PREFIX) python3 extract_ciod_module_data.py $< > $@
 
-tmp/raw_module_attribute_tables.json: tmp/part03.html extract_modules_with_attributes.py
+tmp/raw_module_attribute_tables.json: tmp/part03.html
 	$(PYTHONPATH_PREFIX) python3 extract_modules_with_attributes.py $< > $@
 
-tmp/raw_macro_tables.json: tmp/part03.html extract_macros.py
+tmp/raw_macro_tables.json: tmp/part03.html
 	$(PYTHONPATH_PREFIX) python3 extract_macros.py $< > $@
 
 tmp/raw_section_tables.json: extract_sections.py $(cleaned_dicom_html)
