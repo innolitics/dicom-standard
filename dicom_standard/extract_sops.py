@@ -5,7 +5,6 @@ import sys
 from bs4 import BeautifulSoup, Tag
 
 from dicom_standard import parse_lib as pl
-from dicom_standard import parse_relations as pr
 from dicom_standard.extract_attributes import attribute_table_to_list
 from dicom_standard.table_utils import AttributeDictType, table_to_dict
 
@@ -40,7 +39,6 @@ def get_table_and_tdiv(standard: BeautifulSoup) -> Tuple[List[AttributeDictType]
 def generate_ciod_id(name: str) -> str:
     cleaned_name = name.split('Storage')[0].strip()
     return cleaned_name
-    #return ID_PATTERN.sub(lambda x: IOD_ABBREVIATIONS[x.group()], cleaned_name)
 
 
 def table_to_json(table: List[AttributeDictType], tdiv: Tag) -> List[AttributeDictType]:

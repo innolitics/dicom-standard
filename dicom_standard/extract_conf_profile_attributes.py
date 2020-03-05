@@ -1,7 +1,7 @@
 '''
 Extract the listing of all attributes given in table E.1-1 from part 15 of the DICOM Standard.
 '''
-from typing import List, Dict
+from typing import List
 import sys
 
 from bs4 import BeautifulSoup
