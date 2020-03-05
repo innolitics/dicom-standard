@@ -12,20 +12,19 @@ from dicom_standard.table_utils import AttributeDictType, table_to_dict
 COLUMN_TITLES = ['name', 'id', 'iod']
 TABLE_ID = 'table_B.5-1'
 IOD_ABBREVIATIONS = {
-    'computed radiography': 'cr',
-    'computed tomography': 'ct',
-    'magnetic resonance': 'mr',
-    'nuclear medicine': 'nm',
-    'ultrasound': 'us',
-    'secondary capture': 'sc',
-    'x-ray radiofluoroscopic': 'xrf',
-    'radiotherapy': 'rt',
-    'positron emission tomography': 'pet',
-    'electrocardiogram': 'ecg',
-    'electrophysiology': 'ep',
-    'oct': 'oct image',
-    'enhanced x-ray rf image': 'enhanced xrf image',
-    'x-ray rf': 'xrf',
+    'Computed Radiography': 'CR',
+    'Computed Tomography': 'CT',
+    'Magnetic Resonance': 'MR',
+    'Nuclear Medicine': 'NM',
+    'Ultrasound': 'US',
+    'Secondary Capture': 'SC',
+    'Radiotherapy': 'RT',
+    'Positron Emission Tomography': 'PET',
+    'Electrocardiogram': 'ECG',
+    'Electrophysiology': 'EP',
+    'OCT': 'OCT Image',
+    'Enhanced X-Ray RF Image': 'Enhanced XRF Image',
+    'X-Ray Radiofluoroscopic': 'XRF',
 }
 ID_PATTERN = re.compile(r'\b(' + '|'.join(IOD_ABBREVIATIONS.keys()) + r')\b')
 
@@ -40,14 +39,15 @@ def get_table_and_tdiv(standard: BeautifulSoup) -> Tuple[List[AttributeDictType]
 
 def generate_ciod_id(name: str) -> str:
     cleaned_name = name.split('Storage')[0].strip()
-    return ID_PATTERN.sub(lambda x: IOD_ABBREVIATIONS[x.group()], cleaned_name.lower())
+    return cleaned_name
+    #return ID_PATTERN.sub(lambda x: IOD_ABBREVIATIONS[x.group()], cleaned_name)
 
 
 def table_to_json(table: List[AttributeDictType], tdiv: Tag) -> List[AttributeDictType]:
     attributes = []
     for row in table:
-        ciodId = pl.create_slug(generate_ciod_id(row['name']))
-        row['ciodId'] = ciodId
+        ciod = generate_ciod_id(row['name'])
+        row['ciod'] = ciod
         row.pop('iod', None)
         attributes.append(row)
     return attributes
