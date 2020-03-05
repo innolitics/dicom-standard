@@ -10,7 +10,7 @@ from dicom_standard import parse_lib as pl
 def ciods_from_extracted_list(ciod_module_list):
     ciods = []
     for ciod in ciod_module_list:
-        ciod['description']: pl.clean_html(ciod['description'])
+        ciod['description'] = pl.clean_html(ciod['description'])
         ciod.pop('modules', None)
         ciods.append(ciod)
     return ciods

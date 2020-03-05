@@ -10,7 +10,7 @@ from dicom_standard import parse_lib as pl
 def modules_from_tables(tables):
     modules = []
     for module in tables:
-        module['description']: pl.clean_html(module['description'])
+        module['description'] = pl.clean_html(module['description'])
         module.pop('attributes', None)
         modules.append(module)
     return modules
