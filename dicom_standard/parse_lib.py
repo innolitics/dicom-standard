@@ -14,6 +14,7 @@ from dicom_standard import parse_relations as pr
 
 BASE_DICOM_URL = "http://dicom.nema.org/medical/dicom/current/output/html/"
 BASE_SHORT_DICOM_SECTION_URL = "http://dicom.nema.org/medical/dicom/current/output/chtml/"
+NONSTANDARD_SECTION_ID = 'sect_C.7.6.16.2'
 SHORT_DICOM_URL_PREFIX = "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/"
 
 allowed_attributes = ["href", "src", "type", "data", "colspan", "rowspan"]
@@ -71,6 +72,11 @@ def clean_table_name(name: str) -> str:
     _, _, title = re.split('\u00a0', name)
     possible_table_suffixes = r'(IOD Modules)|(Module Attributes)|(Macro Attributes)|(Module Table)'
     clean_title, *_ = re.split(possible_table_suffixes, title)
+    # TODO: Remove following two lines of code once title of Table A.82.1.3-1 is fixed (Issue #18)
+    # http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.82.html#table_A.82.1.3-1
+    # Remove extra "Table" in beginning of table title (should be "CT Performed Procedure Protocol", not "Table CT Performed ...")
+    if 'Table CT Performed Procedure Protocol' in clean_title:
+        clean_title = 'Table CT Performed Procedure Protocol'
     return clean_title.strip()
 
 
@@ -172,6 +178,11 @@ def get_standard_page(sect_id: str) -> str:
     '''
     sections = sect_id.split('.')
     try:
+        # TODO: Remove if block (and constant) once URL once links for C.7.6.16.2 subsections exist  (Issue #10)
+        if NONSTANDARD_SECTION_ID in sect_id:
+            # For some reason, all subsections within C.7.16.2 are located within "sect_C.7.6.16.2.html", so return only the valid part
+            # Ex: C.7.16.2.5.1 should be within C.7.16.2.5, but "sect_C.7.16.2.5.html" is invalid
+            return NONSTANDARD_SECTION_ID
         cutoff_index = sections.index('1')
         cropped_section = sections[0:cutoff_index]
         section_page = '.'.join(sections[0:cutoff_index])

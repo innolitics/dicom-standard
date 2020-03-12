@@ -8,14 +8,11 @@ from dicom_standard import parse_lib as pl
 
 
 def modules_from_tables(tables):
-    modules = {}
+    modules = []
     for module in tables:
-        modules[module['id']] = {
-            'id': module['id'],
-            'name': module['name'],
-            'description': pl.clean_html(module['description']),
-            'linkToStandard': module['linkToStandard']
-        }
+        module['description'] = pl.clean_html(module['description'])
+        module.pop('attributes', None)
+        modules.append(module)
     return modules
 
 
