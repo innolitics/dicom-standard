@@ -38,14 +38,14 @@ def module_attribute_relationship(make_standard):
 @pytest.mark.endtoend
 def test_valid_foreign_keys_ciod_module(ciod_module_relationship, ciods, modules):
     for pair in ciod_module_relationship:
-        assert any(d['id'] == pair['ciod'] for d in ciods)
-        assert any(d['id'] == pair['module'] for d in modules)
+        assert any(d['id'] == pair['ciodId'] for d in ciods)
+        assert any(d['id'] == pair['moduleId'] for d in modules)
 
 
 @pytest.mark.endtoend
 def test_valid_foreign_keys_module_attribute(module_attribute_relationship, modules, attributes):
     for pair in module_attribute_relationship:
-        assert any(d['id'] == pair['module'] for d in modules)
+        assert any(d['id'] == pair['moduleId'] for d in modules)
         assert any(d['id'] == pair['path'].split(':')[-1] for d in attributes)
 
 
@@ -111,7 +111,7 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship, modules,
     }
     module_attr = [
         {
-            "module": "patient-study",
+            "moduleId": "patient-study",
             "path": "patient-study:00081084:00080121",
             "tag": "(0008,0121)",
             "type": "3",
@@ -125,7 +125,7 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship, modules,
             ]
         },
         {
-            "module": "patient-study",
+            "moduleId": "patient-study",
             "path": "patient-study:00101021:00080121",
             "tag": "(0008,0121)",
             "type": "3",
@@ -146,8 +146,8 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship, modules,
         "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.2.2.html#table_C.7-4a"
     }
     ciod_module = {
-        "ciod": "cr-image",
-        "module": "patient-study",
+        "ciodId": "cr-image",
+        "moduleId": "patient-study",
         "usage": "U",
         "conditionalStatement": None,
         "informationEntity": "Study"
@@ -168,9 +168,18 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship, modules,
 
 @pytest.mark.endtoend
 def test_number_of_attribute_appearances(module_attribute_relationship, attributes):
+    attr = {
+        "name": "Strain Nomenclature",
+        "retired": False,
+        "valueMultiplicity": "1",
+        "keyword": "StrainNomenclature",
+        "valueRepresentation": "LO",
+        "tag": "(0010,0213)",
+        "id": "00100213"
+    }
     module_attr = [
         {
-            "module": "patient-demographic",
+            "moduleId": "patient-demographic",
             "path": "patient-demographic:00100213",
             "tag": "(0010,0213)",
             "type": "None",
@@ -184,7 +193,7 @@ def test_number_of_attribute_appearances(module_attribute_relationship, attribut
             ]
         },
         {
-            "module": "patient",
+            "moduleId": "patient",
             "path": "patient:00100213",
             "tag": "(0010,0213)",
             "type": "3",
@@ -198,21 +207,11 @@ def test_number_of_attribute_appearances(module_attribute_relationship, attribut
             ]
         },
     ]
-
-    attrs = {
-        "name": "Strain Nomenclature",
-        "retired": False,
-        "valueMultiplicity": "1",
-        "keyword": "StrainNomenclature",
-        "valueRepresentation": "LO",
-        "tag": "(0010,0213)",
-        "id": "00100213"
-    }
-    assert attrs in attributes
+    assert attr in attributes
     assert module_attr[0] in module_attribute_relationship
     assert module_attr[1] in module_attribute_relationship
     all_attribute_appearances = [rel for rel in module_attribute_relationship
-                                 if rel['tag'] == '(0010,0213)']
+                                 if rel['tag'] == attr['tag']]
     assert len(all_attribute_appearances) == 2
 
 
@@ -226,15 +225,15 @@ def test_number_of_module_appearances(ciods, ciod_module_relationship, modules):
     }
     ciod_module = [
         {
-            "ciod": "planar-mpr-volumetric-presentation-state",
-            "module": "volume-cropping",
+            "ciodId": "planar-mpr-volumetric-presentation-state",
+            "moduleId": "volume-cropping",
             "usage": "C",
             "conditionalStatement": "Required if Global Crop (0070,120B) or any value of Crop (0070,1204) is YES",
             "informationEntity": "Presentation State"
         },
         {
-            "ciod": "volume-rendering-volumetric-presentation-state",
-            "module": "volume-cropping",
+            "ciodId": "volume-rendering-volumetric-presentation-state",
+            "moduleId": "volume-cropping",
             "usage": "C",
             "conditionalStatement": "Required if Global Crop (0070,120B) or any value of Crop (0070,1204) is YES",
             "informationEntity": "Presentation State"
@@ -244,5 +243,5 @@ def test_number_of_module_appearances(ciods, ciod_module_relationship, modules):
     for ciod_module_pair in ciod_module:
         assert ciod_module_pair in ciod_module_relationship
     all_module_appearances = [rel for rel in ciod_module_relationship
-                              if rel['module'] == 'volume-cropping']
+                              if rel['moduleId'] == module['id']]
     assert len(all_module_appearances) == 2

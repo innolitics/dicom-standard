@@ -39,8 +39,8 @@ def define_ciod_module_relationship(ciod, module):
         # Manually input missing field
         informationEntity = 'Image'
     return {
-        "ciod": pl.create_slug(ciod),
-        "module": pl.create_slug(pl.text_from_html_string(module['module'])),
+        "ciodId": pl.create_slug(ciod),
+        "moduleId": pl.create_slug(pl.text_from_html_string(module['module'])),
         "usage": usage,
         "conditionalStatement": conditional_statement,
         "informationEntity": informationEntity
