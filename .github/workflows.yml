@@ -1,0 +1,20 @@
+name: make-master
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '@monthly'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+        with:
+          fetch-depth: 1
+      - name: Run Makefile
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: make clean && make all
