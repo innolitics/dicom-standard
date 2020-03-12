@@ -34,6 +34,17 @@ The JSON files can be viewed [here][json_link].
 
 [json_link]: https://github.com/innolitics/dicom-standard/tree/master/standard
 
+## JSON Data Format
+
+The generated JSON files conform to these formatting rules:
+
+- JSON files representing tables are lists of objects, each object containing a unique `id` field
+- JSON files containing relational data between tables contain "foreign keys" to the relevant table JSON file. These field names end with `Id` (e.g. `ciodId` and `moduleId`)
+
+Occasionally, files may deviate from this format when there is a very compelling reason. For example, `references.json` should be a list of reference objects where the href is the `id` for each object. However, since almost every use case for `references.json` will use the `href` as a lookup, it makes more sense for the file to be set up as an object containing href to HTML pairs.
+
+Applications that use the JSON files from this repository may need to re-organize data. A separate script must be written to join data from multiple tables into one file or prune out unnecessary fields.
+
 ## Current Status
 
 This program currently parses the DICOM Standard sections related to
@@ -114,45 +125,45 @@ and successive processing steps use increasingly refined JSON.
 A map of all extraction and processing pathways is shown below:
 
 ```
-               +-------+                  +----------+     +-------+
-               | PS3.3 |                  |  Other   |     | PS3.6 |
-               +---+---+                  |  DICOM   |     +----+--+
-                   |                      | Sections |          |
-                   |                      +-------+--+          |
-                   |                              |             |
-       +--------------------------+-----------+   |             |
-       |           |              |           |   |             |
-   +---v-----+  +--v-------+  +---v-----+  +--v---v---+  +------v-----+
-   | Extract |  | Extract  |  | Extract |  | Extract  |  |  Extract   |
-   | CIODs/  |  | Modules/ |  | Macros  |  | Sections |  | Attributes |
-   | Modules |  |  Attrs   |  +-+-------+  +--+-------+  +----+-------+
-   +-+------++  +--------+-+    |             |               |
-     |      |            |   +--+             |               |
-     |      |            |   |                |               |
-+----v----+ |       +----v---v---+            |               |
-| Process | |       | Preprocess |            |               |
-|  CIODS  | |       |  Modules/  |            |               v
-+----+----+ |       | Attributes |            |      attributes.json
+               +-------+                  +----------+    +-------+     +-------+
+               | PS3.3 |                  |  Other   |    | PS3.4 |     | PS3.6 |
+               +---+---+                  |  DICOM   |    +---+---+     +---+---+
+                   |                      | Sections |        |             |
+                   |                      +-------+--+        |             |
+                   |                              |           |             |
+       +-----------+--------------+-----------+   |           |             |
+       |           |              |           |   |           |             |
+   +---v-----+  +--v-------+  +---v-----+  +--v---v---+  +----v----+  +-----v------+
+   | Extract |  | Extract  |  | Extract |  | Extract  |  | Extract |  | Extract    |
+   | CIODs/  |  | Modules/ |  | Macros  |  | Sections |  | SOPs    |  | Attributes |
+   | Modules |  | Attrs    |  +-+-------+  +--+-------+  +----+----+  +------+-----+
+   +-+------++  +--------+-+    |             |               |             |
+     |      |            |   +--+             |               |             |
+     |      |            |   |                |               |             |
++----v----+ |       +----v---v---+            |               |             |
+| Process | |       | Preprocess |            |               |             |
+|  CIODS  | |       | Modules/   |            |               v             v
++----+----+ |       | Attributes |            |           sops.json   attributes.json
      |      |       +--+--------++            |
      v      |          |        |             |
  ciods.json |      +---v-----+  |             |
             |      | Process |  |             |
     +-------v---+  | Modules |  |             |
     | Process   |  +-----+---+  +-+           |
-    |  CIOD/    |        |        |           |
+    | CIOD/     |        |        |           |
     | Attribute |        v        |           |
     | Relations |   modules.json  |           |
     +------+----+                 |           |
            |                      |           |
            v                +-----v-----+     |
-     ciod_to_modules.json   |  Process  |     |
-                            |  Module   |     |
+     ciod_to_modules.json   | Process   |     |
+                            | Module    |     |
                             | Attribute |     |
                             | Relations |     |
                             +-----+-----+     |
                                   |           |
                                 +-+-----------+--+
-                                | Post+process   |
+                                | Post-process   |
                                 | Add References |
                                 +--+----------+--+
                                    |          |
