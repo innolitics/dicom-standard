@@ -17,4 +17,7 @@ jobs:
       - name: Run Makefile
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: make clean && make all
+        run: |
+          make clean -C dicom_standard
+          make updatestandard -C dicom_standard
+          make -C dicom_standard
