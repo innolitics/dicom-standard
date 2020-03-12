@@ -2,8 +2,8 @@ name: make-master
 
 on:
   push:
-    branches:
-      - master
+    paths:
+    - 'dicom_standard/*.py'
   schedule:
     - cron: '@monthly'
 
@@ -11,7 +11,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
         with:
           fetch-depth: 1
       - name: Run Makefile
