@@ -75,7 +75,7 @@ def test_vertical_samples_from_standard(ciods, modules, attributes):
         },
         {
             "tag": "(0008,0034)",
-            "retired": False,
+            "retired": True,
             "keyword": "OverlayTime",
             "name": "Overlay Time",
             "valueMultiplicity": "1",

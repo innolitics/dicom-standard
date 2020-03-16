@@ -41,11 +41,11 @@ def verify_table_integrity(parsed_table_data: List[AttributeDictType], attribute
         attr_name = attr['name']
         retired = attr['retired'] == 'Y'
         if retired and attr['name'] not in retired_attrs:
-            errors.append(f'Attribute "{attr_name}" {attr["tag"]} is retired in Table ' \
-            'E.1-1 but not in Table 6-1.')
+            errors.append(f'Attribute "{attr_name}" {attr["tag"]} is retired in Table '
+                          'E.1-1 but not in Table 6-1.')
         if not retired and attr['name'] in retired_attrs:
-            errors.append(f'Attribute "{attr_name}" {attr["tag"]} is retired in Table ' \
-            '6-1 but not in Table E.1-1.')
+            errors.append(f'Attribute "{attr_name}" {attr["tag"]} is retired in Table '
+                          '6-1 but not in Table E.1-1.')
     if errors:
         errors.insert(0, 'One or more attributes in tables 6-1 and E.1-1 have inconsistent properties between tables:')
         error_msg = '\n'.join(errors)
