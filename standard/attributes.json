@@ -158,7 +158,7 @@
         "keyword":"OverlayDate",
         "valueRepresentation":"DA",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00080024"
     },
     {
@@ -167,7 +167,7 @@
         "keyword":"CurveDate",
         "valueRepresentation":"DA",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00080025"
     },
     {
@@ -221,7 +221,7 @@
         "keyword":"OverlayTime",
         "valueRepresentation":"TM",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00080034"
     },
     {
@@ -239,7 +239,7 @@
         "keyword":"DataSetType",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00080040"
     },
     {
@@ -248,7 +248,7 @@
         "keyword":"DataSetSubtype",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00080041"
     },
     {
@@ -257,7 +257,7 @@
         "keyword":"NuclearMedicineSeriesType",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00080042"
     },
     {
@@ -1103,7 +1103,7 @@
         "keyword":"ReferencedResultsSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00081100"
     },
     {
@@ -1157,7 +1157,7 @@
         "keyword":"ReferencedOverlaySequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00081130"
     },
     {
@@ -1193,7 +1193,7 @@
         "keyword":"ReferencedCurveSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00081145"
     },
     {
@@ -1391,7 +1391,7 @@
         "keyword":"LossyImageCompressionRetired",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00082110"
     },
     {
@@ -1553,7 +1553,7 @@
         "keyword":"TransducerPosition",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00082200"
     },
     {
@@ -1562,7 +1562,7 @@
         "keyword":"TransducerOrientation",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00082204"
     },
     {
@@ -1571,7 +1571,7 @@
         "keyword":"AnatomicStructure",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00082208"
     },
     {
@@ -1607,7 +1607,7 @@
         "keyword":"AnatomicStructureSpaceOrRegionSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00082229"
     },
     {
@@ -1625,7 +1625,7 @@
         "keyword":"TransducerPositionSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00082240"
     },
     {
@@ -1634,7 +1634,7 @@
         "keyword":"TransducerPositionModifierSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00082242"
     },
     {
@@ -1643,7 +1643,7 @@
         "keyword":"TransducerOrientationSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00082244"
     },
     {
@@ -1652,7 +1652,7 @@
         "keyword":"TransducerOrientationModifierSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00082246"
     },
     {
@@ -1661,7 +1661,7 @@
         "keyword":"AnatomicStructureSpaceOrRegionCodeSequenceTrial",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00082251"
     },
     {
@@ -1670,7 +1670,7 @@
         "keyword":"AnatomicPortalOfEntranceCodeSequenceTrial",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00082253"
     },
     {
@@ -1679,7 +1679,7 @@
         "keyword":"AnatomicApproachDirectionCodeSequenceTrial",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00082255"
     },
     {
@@ -1688,7 +1688,7 @@
         "keyword":"AnatomicPerspectiveDescriptionTrial",
         "valueRepresentation":"ST",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00082256"
     },
     {
@@ -1697,7 +1697,7 @@
         "keyword":"AnatomicPerspectiveCodeSequenceTrial",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00082257"
     },
     {
@@ -1706,7 +1706,7 @@
         "keyword":"AnatomicLocationOfExaminingInstrumentDescriptionTrial",
         "valueRepresentation":"ST",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00082258"
     },
     {
@@ -1715,7 +1715,7 @@
         "keyword":"AnatomicLocationOfExaminingInstrumentCodeSequenceTrial",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00082259"
     },
     {
@@ -1724,7 +1724,7 @@
         "keyword":"AnatomicStructureSpaceOrRegionModifierCodeSequenceTrial",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0008225a"
     },
     {
@@ -1733,7 +1733,7 @@
         "keyword":"OnAxisBackgroundAnatomicStructureCodeSequenceTrial",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0008225c"
     },
     {
@@ -2228,7 +2228,7 @@
         "keyword":"OtherPatientIDs",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"00101000"
     },
     {
@@ -2372,7 +2372,7 @@
         "keyword":"MedicalRecordLocator",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00101090"
     },
     {
@@ -2849,7 +2849,7 @@
         "keyword":"CADFileFormat",
         "valueRepresentation":"ST",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00140023"
     },
     {
@@ -2858,7 +2858,7 @@
         "keyword":"ComponentReferenceSystem",
         "valueRepresentation":"ST",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00140024"
     },
     {
@@ -2930,7 +2930,7 @@
         "keyword":"MaterialPropertiesFileFormatRetired",
         "valueRepresentation":"ST",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00140045"
     },
     {
@@ -5666,7 +5666,7 @@
         "keyword":"Radionuclide",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"00180030"
     },
     {
@@ -5684,7 +5684,7 @@
         "keyword":"EnergyWindowCenterline",
         "valueRepresentation":"DS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00180032"
     },
     {
@@ -5693,7 +5693,7 @@
         "keyword":"EnergyWindowTotalWidth",
         "valueRepresentation":"DS",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"00180033"
     },
     {
@@ -5729,7 +5729,7 @@
         "keyword":"TherapyType",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00180037"
     },
     {
@@ -5747,7 +5747,7 @@
         "keyword":"TherapyDescription",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00180039"
     },
     {
@@ -5801,7 +5801,7 @@
         "keyword":"",
         "valueRepresentation":"DS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00180061"
     },
     {
@@ -6107,7 +6107,7 @@
         "keyword":"HardcopyCreationDeviceID",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00181011"
     },
     {
@@ -6143,7 +6143,7 @@
         "keyword":"HardcopyDeviceManufacturer",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00181017"
     },
     {
@@ -6170,7 +6170,7 @@
         "keyword":"HardcopyDeviceSoftwareVersion",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"0018101a"
     },
     {
@@ -6179,7 +6179,7 @@
         "keyword":"HardcopyDeviceManufacturerModelName",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0018101b"
     },
     {
@@ -6755,7 +6755,7 @@
         "keyword":"AngularPosition",
         "valueRepresentation":"DS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00181141"
     },
     {
@@ -6800,7 +6800,7 @@
         "keyword":"RotationOffset",
         "valueRepresentation":"DS",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"00181146"
     },
     {
@@ -8024,7 +8024,7 @@
         "keyword":"PostprocessingFunction",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00185021"
     },
     {
@@ -8141,7 +8141,7 @@
         "keyword":"ImageTransformationMatrix",
         "valueRepresentation":"DS",
         "valueMultiplicity":"6",
-        "retired":false,
+        "retired":true,
         "id":"00185210"
     },
     {
@@ -8150,7 +8150,7 @@
         "keyword":"ImageTranslationVector",
         "valueRepresentation":"DS",
         "valueMultiplicity":"3",
-        "retired":false,
+        "retired":true,
         "id":"00185212"
     },
     {
@@ -8357,7 +8357,7 @@
         "keyword":"DopplerSampleVolumeXPositionRetired",
         "valueRepresentation":"UL",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00186038"
     },
     {
@@ -8375,7 +8375,7 @@
         "keyword":"DopplerSampleVolumeYPositionRetired",
         "valueRepresentation":"UL",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0018603a"
     },
     {
@@ -8393,7 +8393,7 @@
         "keyword":"TMLinePositionX0Retired",
         "valueRepresentation":"UL",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0018603c"
     },
     {
@@ -8411,7 +8411,7 @@
         "keyword":"TMLinePositionY0Retired",
         "valueRepresentation":"UL",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0018603e"
     },
     {
@@ -8429,7 +8429,7 @@
         "keyword":"TMLinePositionX1Retired",
         "valueRepresentation":"UL",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00186040"
     },
     {
@@ -8447,7 +8447,7 @@
         "keyword":"TMLinePositionY1Retired",
         "valueRepresentation":"UL",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00186042"
     },
     {
@@ -9680,7 +9680,7 @@
         "keyword":"ParallelReductionFactorInPlaneRetired",
         "valueRepresentation":"FD",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00189096"
     },
     {
@@ -9887,7 +9887,7 @@
         "keyword":"BulkMotionStatus",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00189166"
     },
     {
@@ -10067,7 +10067,7 @@
         "keyword":"ChemicalShiftMinimumIntegrationLimitInHz",
         "valueRepresentation":"FD",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00189195"
     },
     {
@@ -10076,7 +10076,7 @@
         "keyword":"ChemicalShiftMaximumIntegrationLimitInHz",
         "valueRepresentation":"FD",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00189196"
     },
     {
@@ -11453,7 +11453,7 @@
         "keyword":"",
         "valueRepresentation":"",
         "valueMultiplicity":"",
-        "retired":false,
+        "retired":true,
         "id":"00189445"
     },
     {
@@ -13253,7 +13253,7 @@
         "keyword":"IsotopeNumber",
         "valueRepresentation":"IS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00200014"
     },
     {
@@ -13262,7 +13262,7 @@
         "keyword":"PhaseNumber",
         "valueRepresentation":"IS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00200015"
     },
     {
@@ -13271,7 +13271,7 @@
         "keyword":"IntervalNumber",
         "valueRepresentation":"IS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00200016"
     },
     {
@@ -13280,7 +13280,7 @@
         "keyword":"TimeSlotNumber",
         "valueRepresentation":"IS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00200017"
     },
     {
@@ -13289,7 +13289,7 @@
         "keyword":"AngleNumber",
         "valueRepresentation":"IS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00200018"
     },
     {
@@ -13316,7 +13316,7 @@
         "keyword":"OverlayNumber",
         "valueRepresentation":"IS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00200022"
     },
     {
@@ -13325,7 +13325,7 @@
         "keyword":"CurveNumber",
         "valueRepresentation":"IS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00200024"
     },
     {
@@ -13334,7 +13334,7 @@
         "keyword":"LUTNumber",
         "valueRepresentation":"IS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00200026"
     },
     {
@@ -13433,7 +13433,7 @@
         "keyword":"ReportNumber",
         "valueRepresentation":"IS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"002000aa"
     },
     {
@@ -13487,7 +13487,7 @@
         "keyword":"SeriesInStudy",
         "valueRepresentation":"IS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00201000"
     },
     {
@@ -13514,7 +13514,7 @@
         "keyword":"ImagesInSeries",
         "valueRepresentation":"IS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00201003"
     },
     {
@@ -13523,7 +13523,7 @@
         "keyword":"AcquisitionsInStudy",
         "valueRepresentation":"IS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00201004"
     },
     {
@@ -13532,7 +13532,7 @@
         "keyword":"ImagesInStudy",
         "valueRepresentation":"IS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00201005"
     },
     {
@@ -13577,7 +13577,7 @@
         "keyword":"OtherStudyNumbers",
         "valueRepresentation":"IS",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"00201070"
     },
     {
@@ -15044,7 +15044,7 @@
         "keyword":"LensConstantDescription",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00221094"
     },
     {
@@ -15251,7 +15251,7 @@
         "keyword":"OphthalmicAxialLengthAcquisitionMethodCodeSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00221153"
     },
     {
@@ -15386,7 +15386,7 @@
         "keyword":"OphthalmicAxialLengthQualityMetricTypeDescription",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00221273"
     },
     {
@@ -16862,7 +16862,7 @@
         "keyword":"Planes",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00280012"
     },
     {
@@ -16880,7 +16880,7 @@
         "keyword":"",
         "valueRepresentation":"",
         "valueMultiplicity":"",
-        "retired":false,
+        "retired":true,
         "id":"00280020"
     },
     {
@@ -16952,7 +16952,7 @@
         "keyword":"CompressionRecognitionCode",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0028005f"
     },
     {
@@ -16970,7 +16970,7 @@
         "keyword":"CompressionOriginator",
         "valueRepresentation":"SH",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00280061"
     },
     {
@@ -16979,7 +16979,7 @@
         "keyword":"CompressionLabel",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00280062"
     },
     {
@@ -16988,7 +16988,7 @@
         "keyword":"CompressionDescription",
         "valueRepresentation":"SH",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00280063"
     },
     {
@@ -16997,7 +16997,7 @@
         "keyword":"CompressionSequence",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"00280065"
     },
     {
@@ -17006,7 +17006,7 @@
         "keyword":"CompressionStepPointers",
         "valueRepresentation":"AT",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"00280066"
     },
     {
@@ -17015,7 +17015,7 @@
         "keyword":"RepeatInterval",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00280068"
     },
     {
@@ -17024,7 +17024,7 @@
         "keyword":"BitsGrouped",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00280069"
     },
     {
@@ -17033,7 +17033,7 @@
         "keyword":"PerimeterTable",
         "valueRepresentation":"US",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"00280070"
     },
     {
@@ -17042,7 +17042,7 @@
         "keyword":"PerimeterValue",
         "valueRepresentation":"US or SS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00280071"
     },
     {
@@ -17051,7 +17051,7 @@
         "keyword":"PredictorRows",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00280080"
     },
     {
@@ -17060,7 +17060,7 @@
         "keyword":"PredictorColumns",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00280081"
     },
     {
@@ -17069,7 +17069,7 @@
         "keyword":"PredictorConstants",
         "valueRepresentation":"US",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"00280082"
     },
     {
@@ -17078,7 +17078,7 @@
         "keyword":"BlockedPixels",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00280090"
     },
     {
@@ -17087,7 +17087,7 @@
         "keyword":"BlockRows",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00280091"
     },
     {
@@ -17096,7 +17096,7 @@
         "keyword":"BlockColumns",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00280092"
     },
     {
@@ -17105,7 +17105,7 @@
         "keyword":"RowOverlap",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00280093"
     },
     {
@@ -17114,7 +17114,7 @@
         "keyword":"ColumnOverlap",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00280094"
     },
     {
@@ -17213,7 +17213,7 @@
         "keyword":"SmallestImagePixelValueInPlane",
         "valueRepresentation":"US or SS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00280110"
     },
     {
@@ -17222,7 +17222,7 @@
         "keyword":"LargestImagePixelValueInPlane",
         "valueRepresentation":"US or SS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00280111"
     },
     {
@@ -17339,7 +17339,7 @@
         "keyword":"TransformLabel",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00280400"
     },
     {
@@ -17348,7 +17348,7 @@
         "keyword":"TransformVersionNumber",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00280401"
     },
     {
@@ -17357,7 +17357,7 @@
         "keyword":"NumberOfTransformSteps",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00280402"
     },
     {
@@ -17366,7 +17366,7 @@
         "keyword":"SequenceOfCompressedData",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"00280403"
     },
     {
@@ -17375,7 +17375,7 @@
         "keyword":"DetailsOfCoefficients",
         "valueRepresentation":"AT",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"00280404"
     },
     {
@@ -17384,7 +17384,7 @@
         "keyword":"RowsForNthOrderCoefficients",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"002804x0"
     },
     {
@@ -17393,7 +17393,7 @@
         "keyword":"ColumnsForNthOrderCoefficients",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"002804x1"
     },
     {
@@ -17402,7 +17402,7 @@
         "keyword":"CoefficientCoding",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"002804x2"
     },
     {
@@ -17411,7 +17411,7 @@
         "keyword":"CoefficientCodingPointers",
         "valueRepresentation":"AT",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"002804x3"
     },
     {
@@ -17420,7 +17420,7 @@
         "keyword":"DCTLabel",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00280700"
     },
     {
@@ -17429,7 +17429,7 @@
         "keyword":"DataBlockDescription",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"00280701"
     },
     {
@@ -17438,7 +17438,7 @@
         "keyword":"DataBlock",
         "valueRepresentation":"AT",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"00280702"
     },
     {
@@ -17447,7 +17447,7 @@
         "keyword":"NormalizationFactorFormat",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00280710"
     },
     {
@@ -17456,7 +17456,7 @@
         "keyword":"ZonalMapNumberFormat",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00280720"
     },
     {
@@ -17465,7 +17465,7 @@
         "keyword":"ZonalMapLocation",
         "valueRepresentation":"AT",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"00280721"
     },
     {
@@ -17474,7 +17474,7 @@
         "keyword":"ZonalMapFormat",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00280722"
     },
     {
@@ -17483,7 +17483,7 @@
         "keyword":"AdaptiveMapFormat",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00280730"
     },
     {
@@ -17492,7 +17492,7 @@
         "keyword":"CodeNumberFormat",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00280740"
     },
     {
@@ -17501,7 +17501,7 @@
         "keyword":"CodeLabel",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"002808x0"
     },
     {
@@ -17510,7 +17510,7 @@
         "keyword":"NumberOfTables",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"002808x2"
     },
     {
@@ -17519,7 +17519,7 @@
         "keyword":"CodeTableLocation",
         "valueRepresentation":"AT",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"002808x3"
     },
     {
@@ -17528,7 +17528,7 @@
         "keyword":"BitsForCodeWord",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"002808x4"
     },
     {
@@ -17537,7 +17537,7 @@
         "keyword":"ImageDataLocation",
         "valueRepresentation":"AT",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"002808x8"
     },
     {
@@ -17708,7 +17708,7 @@
         "keyword":"LargeRedPaletteColorLookupTableDescriptor",
         "valueRepresentation":"US or SS",
         "valueMultiplicity":"4",
-        "retired":false,
+        "retired":true,
         "id":"00281111"
     },
     {
@@ -17717,7 +17717,7 @@
         "keyword":"LargeGreenPaletteColorLookupTableDescriptor",
         "valueRepresentation":"US or SS",
         "valueMultiplicity":"4",
-        "retired":false,
+        "retired":true,
         "id":"00281112"
     },
     {
@@ -17726,7 +17726,7 @@
         "keyword":"LargeBluePaletteColorLookupTableDescriptor",
         "valueRepresentation":"US or SS",
         "valueMultiplicity":"4",
-        "retired":false,
+        "retired":true,
         "id":"00281113"
     },
     {
@@ -17789,7 +17789,7 @@
         "keyword":"LargeRedPaletteColorLookupTableData",
         "valueRepresentation":"OW",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00281211"
     },
     {
@@ -17798,7 +17798,7 @@
         "keyword":"LargeGreenPaletteColorLookupTableData",
         "valueRepresentation":"OW",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00281212"
     },
     {
@@ -17807,7 +17807,7 @@
         "keyword":"LargeBluePaletteColorLookupTableData",
         "valueRepresentation":"OW",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00281213"
     },
     {
@@ -17816,7 +17816,7 @@
         "keyword":"LargePaletteColorLookupTableUID",
         "valueRepresentation":"UI",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00281214"
     },
     {
@@ -18176,7 +18176,7 @@
         "keyword":"BiPlaneAcquisitionSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00285000"
     },
     {
@@ -18221,7 +18221,7 @@
         "keyword":"MaskPointers",
         "valueRepresentation":"US",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"00286030"
     },
     {
@@ -18770,7 +18770,7 @@
         "keyword":"LargestMonochromePixelValue",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00289099"
     },
     {
@@ -18995,7 +18995,7 @@
         "keyword":"StudyStatusID",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0032000a"
     },
     {
@@ -19004,7 +19004,7 @@
         "keyword":"StudyPriorityID",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0032000c"
     },
     {
@@ -19013,7 +19013,7 @@
         "keyword":"StudyIDIssuer",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00320012"
     },
     {
@@ -19022,7 +19022,7 @@
         "keyword":"StudyVerifiedDate",
         "valueRepresentation":"DA",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00320032"
     },
     {
@@ -19031,7 +19031,7 @@
         "keyword":"StudyVerifiedTime",
         "valueRepresentation":"TM",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00320033"
     },
     {
@@ -19040,7 +19040,7 @@
         "keyword":"StudyReadDate",
         "valueRepresentation":"DA",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00320034"
     },
     {
@@ -19049,7 +19049,7 @@
         "keyword":"StudyReadTime",
         "valueRepresentation":"TM",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00320035"
     },
     {
@@ -19058,7 +19058,7 @@
         "keyword":"ScheduledStudyStartDate",
         "valueRepresentation":"DA",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00321000"
     },
     {
@@ -19067,7 +19067,7 @@
         "keyword":"ScheduledStudyStartTime",
         "valueRepresentation":"TM",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00321001"
     },
     {
@@ -19076,7 +19076,7 @@
         "keyword":"ScheduledStudyStopDate",
         "valueRepresentation":"DA",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00321010"
     },
     {
@@ -19085,7 +19085,7 @@
         "keyword":"ScheduledStudyStopTime",
         "valueRepresentation":"TM",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00321011"
     },
     {
@@ -19094,7 +19094,7 @@
         "keyword":"ScheduledStudyLocation",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00321020"
     },
     {
@@ -19103,7 +19103,7 @@
         "keyword":"ScheduledStudyLocationAETitle",
         "valueRepresentation":"AE",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"00321021"
     },
     {
@@ -19112,7 +19112,7 @@
         "keyword":"ReasonForStudy",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00321030"
     },
     {
@@ -19157,7 +19157,7 @@
         "keyword":"StudyArrivalDate",
         "valueRepresentation":"DA",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00321040"
     },
     {
@@ -19166,7 +19166,7 @@
         "keyword":"StudyArrivalTime",
         "valueRepresentation":"TM",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00321041"
     },
     {
@@ -19175,7 +19175,7 @@
         "keyword":"StudyCompletionDate",
         "valueRepresentation":"DA",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00321050"
     },
     {
@@ -19184,7 +19184,7 @@
         "keyword":"StudyCompletionTime",
         "valueRepresentation":"TM",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00321051"
     },
     {
@@ -19193,7 +19193,7 @@
         "keyword":"StudyComponentStatusID",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00321055"
     },
     {
@@ -19247,7 +19247,7 @@
         "keyword":"StudyComments",
         "valueRepresentation":"LT",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00324000"
     },
     {
@@ -19391,7 +19391,7 @@
         "keyword":"IssuerOfAdmissionID",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00380011"
     },
     {
@@ -19418,7 +19418,7 @@
         "keyword":"ScheduledAdmissionDate",
         "valueRepresentation":"DA",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0038001a"
     },
     {
@@ -19427,7 +19427,7 @@
         "keyword":"ScheduledAdmissionTime",
         "valueRepresentation":"TM",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0038001b"
     },
     {
@@ -19436,7 +19436,7 @@
         "keyword":"ScheduledDischargeDate",
         "valueRepresentation":"DA",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0038001c"
     },
     {
@@ -19445,7 +19445,7 @@
         "keyword":"ScheduledDischargeTime",
         "valueRepresentation":"TM",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0038001d"
     },
     {
@@ -19454,7 +19454,7 @@
         "keyword":"ScheduledPatientInstitutionResidence",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0038001e"
     },
     {
@@ -19481,7 +19481,7 @@
         "keyword":"DischargeDate",
         "valueRepresentation":"DA",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00380030"
     },
     {
@@ -19490,7 +19490,7 @@
         "keyword":"DischargeTime",
         "valueRepresentation":"TM",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00380032"
     },
     {
@@ -19499,7 +19499,7 @@
         "keyword":"DischargeDiagnosisDescription",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00380040"
     },
     {
@@ -19508,7 +19508,7 @@
         "keyword":"DischargeDiagnosisCodeSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00380044"
     },
     {
@@ -19535,7 +19535,7 @@
         "keyword":"IssuerOfServiceEpisodeID",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00380061"
     },
     {
@@ -20399,7 +20399,7 @@
         "keyword":"TotalTimeOfFluoroscopy",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00400300"
     },
     {
@@ -20408,7 +20408,7 @@
         "keyword":"TotalNumberOfExposures",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00400301"
     },
     {
@@ -20444,7 +20444,7 @@
         "keyword":"DistanceSourceToSupport",
         "valueRepresentation":"DS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00400307"
     },
     {
@@ -20453,7 +20453,7 @@
         "keyword":"ExposureDoseSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040030e"
     },
     {
@@ -20534,7 +20534,7 @@
         "keyword":"ReferencedProcedureStepSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00400330"
     },
     {
@@ -20588,7 +20588,7 @@
         "keyword":"SpecimenAccessionNumber",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040050a"
     },
     {
@@ -20651,7 +20651,7 @@
         "keyword":"SpecimenSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00400550"
     },
     {
@@ -20669,7 +20669,7 @@
         "keyword":"SpecimenDescriptionSequenceTrial",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00400552"
     },
     {
@@ -20678,7 +20678,7 @@
         "keyword":"SpecimenDescriptionTrial",
         "valueRepresentation":"ST",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00400553"
     },
     {
@@ -20786,7 +20786,7 @@
         "keyword":"SlideIdentifier",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"004006fa"
     },
     {
@@ -20840,7 +20840,7 @@
         "keyword":"PixelSpacingSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"004008d8"
     },
     {
@@ -20849,7 +20849,7 @@
         "keyword":"CoordinateSystemAxisCodeSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"004008da"
     },
     {
@@ -20867,7 +20867,7 @@
         "keyword":"VitalStainCodeSequenceTrial",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"004009f8"
     },
     {
@@ -20921,7 +20921,7 @@
         "keyword":"PlacerOrderNumberProcedure",
         "valueRepresentation":"SH",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00401006"
     },
     {
@@ -20930,7 +20930,7 @@
         "keyword":"FillerOrderNumberProcedure",
         "valueRepresentation":"SH",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00401007"
     },
     {
@@ -20993,7 +20993,7 @@
         "keyword":"RequestedProcedureDescriptionTrial",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00401060"
     },
     {
@@ -21047,7 +21047,7 @@
         "keyword":"ReasonForTheImagingServiceRequest",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00402001"
     },
     {
@@ -21074,7 +21074,7 @@
         "keyword":"PlacerOrderNumberImagingServiceRequestRetired",
         "valueRepresentation":"SH",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00402006"
     },
     {
@@ -21083,7 +21083,7 @@
         "keyword":"FillerOrderNumberImagingServiceRequestRetired",
         "valueRepresentation":"SH",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00402007"
     },
     {
@@ -21164,7 +21164,7 @@
         "keyword":"GeneralPurposeScheduledProcedureStepStatus",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00404001"
     },
     {
@@ -21173,7 +21173,7 @@
         "keyword":"GeneralPurposePerformedProcedureStepStatus",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00404002"
     },
     {
@@ -21182,7 +21182,7 @@
         "keyword":"GeneralPurposeScheduledProcedureStepPriority",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00404003"
     },
     {
@@ -21191,7 +21191,7 @@
         "keyword":"ScheduledProcessingApplicationsCodeSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00404004"
     },
     {
@@ -21209,7 +21209,7 @@
         "keyword":"MultipleCopiesFlag",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00404006"
     },
     {
@@ -21218,7 +21218,7 @@
         "keyword":"PerformedProcessingApplicationsCodeSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00404007"
     },
     {
@@ -21263,7 +21263,7 @@
         "keyword":"ResultingGeneralPurposePerformedProcedureStepsSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00404015"
     },
     {
@@ -21272,7 +21272,7 @@
         "keyword":"ReferencedGeneralPurposeScheduledProcedureStepSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00404016"
     },
     {
@@ -21299,7 +21299,7 @@
         "keyword":"InputAvailabilityFlag",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00404020"
     },
     {
@@ -21317,7 +21317,7 @@
         "keyword":"RelevantInformationSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00404022"
     },
     {
@@ -21326,7 +21326,7 @@
         "keyword":"ReferencedGeneralPurposeScheduledProcedureStepTransactionUID",
         "valueRepresentation":"UI",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00404023"
     },
     {
@@ -21389,7 +21389,7 @@
         "keyword":"RequestedSubsequentWorkitemCodeSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00404031"
     },
     {
@@ -21398,7 +21398,7 @@
         "keyword":"NonDICOMOutputCodeSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00404032"
     },
     {
@@ -21677,7 +21677,7 @@
         "keyword":"FindingsFlagTrial",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a007"
     },
     {
@@ -21695,7 +21695,7 @@
         "keyword":"FindingsSequenceTrial",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a020"
     },
     {
@@ -21704,7 +21704,7 @@
         "keyword":"FindingsGroupUIDTrial",
         "valueRepresentation":"UI",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a021"
     },
     {
@@ -21713,7 +21713,7 @@
         "keyword":"ReferencedFindingsGroupUIDTrial",
         "valueRepresentation":"UI",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a022"
     },
     {
@@ -21722,7 +21722,7 @@
         "keyword":"FindingsGroupRecordingDateTrial",
         "valueRepresentation":"DA",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a023"
     },
     {
@@ -21731,7 +21731,7 @@
         "keyword":"FindingsGroupRecordingTimeTrial",
         "valueRepresentation":"TM",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a024"
     },
     {
@@ -21740,7 +21740,7 @@
         "keyword":"FindingsSourceCategoryCodeSequenceTrial",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a026"
     },
     {
@@ -21758,7 +21758,7 @@
         "keyword":"DocumentingOrganizationIdentifierCodeSequenceTrial",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a028"
     },
     {
@@ -21803,7 +21803,7 @@
         "keyword":"MeasurementPrecisionDescriptionTrial",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a047"
     },
     {
@@ -21821,7 +21821,7 @@
         "keyword":"UrgencyOrPriorityAlertsTrial",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"0040a057"
     },
     {
@@ -21830,7 +21830,7 @@
         "keyword":"SequencingIndicatorTrial",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a060"
     },
     {
@@ -21839,7 +21839,7 @@
         "keyword":"DocumentIdentifierCodeSequenceTrial",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a066"
     },
     {
@@ -21848,7 +21848,7 @@
         "keyword":"DocumentAuthorTrial",
         "valueRepresentation":"PN",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a067"
     },
     {
@@ -21857,7 +21857,7 @@
         "keyword":"DocumentAuthorIdentifierCodeSequenceTrial",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a068"
     },
     {
@@ -21866,7 +21866,7 @@
         "keyword":"IdentifierCodeSequenceTrial",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a070"
     },
     {
@@ -21884,7 +21884,7 @@
         "keyword":"ObjectBinaryIdentifierTrial",
         "valueRepresentation":"OB",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a074"
     },
     {
@@ -21902,7 +21902,7 @@
         "keyword":"DocumentingObserverIdentifierCodeSequenceTrial",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a076"
     },
     {
@@ -21965,7 +21965,7 @@
         "keyword":"ProcedureIdentifierCodeSequenceTrial",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a085"
     },
     {
@@ -21983,7 +21983,7 @@
         "keyword":"ObjectDirectoryBinaryIdentifierTrial",
         "valueRepresentation":"OB",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a089"
     },
     {
@@ -21992,7 +21992,7 @@
         "keyword":"EquivalentCDADocumentSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a090"
     },
     {
@@ -22010,7 +22010,7 @@
         "keyword":"DateOfDocumentOrVerbalTransactionTrial",
         "valueRepresentation":"DA",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a110"
     },
     {
@@ -22019,7 +22019,7 @@
         "keyword":"TimeOfDocumentCreationOrVerbalTransactionTrial",
         "valueRepresentation":"TM",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a112"
     },
     {
@@ -22073,7 +22073,7 @@
         "keyword":"ReportStatusIDTrial",
         "valueRepresentation":"CS",
         "valueMultiplicity":"2",
-        "retired":false,
+        "retired":true,
         "id":"0040a125"
     },
     {
@@ -22100,7 +22100,7 @@
         "keyword":"ReferencedFrameNumbers",
         "valueRepresentation":"US",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"0040a136"
     },
     {
@@ -22163,7 +22163,7 @@
         "keyword":"ObservationCategoryCodeSequenceTrial",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a167"
     },
     {
@@ -22181,7 +22181,7 @@
         "keyword":"BibliographicCitationTrial",
         "valueRepresentation":"ST",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a16a"
     },
     {
@@ -22208,7 +22208,7 @@
         "keyword":"ReferencedObservationUIDTrial",
         "valueRepresentation":"UI",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a172"
     },
     {
@@ -22217,7 +22217,7 @@
         "keyword":"ReferencedObservationClassTrial",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a173"
     },
     {
@@ -22226,7 +22226,7 @@
         "keyword":"ReferencedObjectObservationClassTrial",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a174"
     },
     {
@@ -22244,7 +22244,7 @@
         "keyword":"ObservationDateTrial",
         "valueRepresentation":"DA",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a192"
     },
     {
@@ -22253,7 +22253,7 @@
         "keyword":"ObservationTimeTrial",
         "valueRepresentation":"TM",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a193"
     },
     {
@@ -22262,7 +22262,7 @@
         "keyword":"MeasurementAutomationTrial",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a194"
     },
     {
@@ -22280,7 +22280,7 @@
         "keyword":"IdentificationDescriptionTrial",
         "valueRepresentation":"ST",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a224"
     },
     {
@@ -22289,7 +22289,7 @@
         "keyword":"CoordinatesSetGeometricTypeTrial",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a290"
     },
     {
@@ -22298,7 +22298,7 @@
         "keyword":"AlgorithmCodeSequenceTrial",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a296"
     },
     {
@@ -22307,7 +22307,7 @@
         "keyword":"AlgorithmDescriptionTrial",
         "valueRepresentation":"ST",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a297"
     },
     {
@@ -22316,7 +22316,7 @@
         "keyword":"PixelCoordinatesSetTrial",
         "valueRepresentation":"SL",
         "valueMultiplicity":"2-2n",
-        "retired":false,
+        "retired":true,
         "id":"0040a29a"
     },
     {
@@ -22343,7 +22343,7 @@
         "keyword":"CurrentObserverTrial",
         "valueRepresentation":"PN",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a307"
     },
     {
@@ -22361,7 +22361,7 @@
         "keyword":"ReferencedAccessionSequenceTrial",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a313"
     },
     {
@@ -22370,7 +22370,7 @@
         "keyword":"ReportStatusCommentTrial",
         "valueRepresentation":"ST",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a33a"
     },
     {
@@ -22379,7 +22379,7 @@
         "keyword":"ProcedureContextSequenceTrial",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a340"
     },
     {
@@ -22388,7 +22388,7 @@
         "keyword":"VerbalSourceTrial",
         "valueRepresentation":"PN",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a352"
     },
     {
@@ -22397,7 +22397,7 @@
         "keyword":"AddressTrial",
         "valueRepresentation":"ST",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a353"
     },
     {
@@ -22406,7 +22406,7 @@
         "keyword":"TelephoneNumberTrial",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a354"
     },
     {
@@ -22415,7 +22415,7 @@
         "keyword":"VerbalSourceIdentifierCodeSequenceTrial",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a358"
     },
     {
@@ -22460,7 +22460,7 @@
         "keyword":"ReportDetailSequenceTrial",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a380"
     },
     {
@@ -22487,7 +22487,7 @@
         "keyword":"ObservationSubjectUIDTrial",
         "valueRepresentation":"UI",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a402"
     },
     {
@@ -22496,7 +22496,7 @@
         "keyword":"ObservationSubjectClassTrial",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a403"
     },
     {
@@ -22505,7 +22505,7 @@
         "keyword":"ObservationSubjectTypeCodeSequenceTrial",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a404"
     },
     {
@@ -22577,7 +22577,7 @@
         "keyword":"ObservationSubjectContextFlagTrial",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a600"
     },
     {
@@ -22586,7 +22586,7 @@
         "keyword":"ObserverContextFlagTrial",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a601"
     },
     {
@@ -22595,7 +22595,7 @@
         "keyword":"ProcedureContextFlagTrial",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a603"
     },
     {
@@ -22613,7 +22613,7 @@
         "keyword":"RelationshipSequenceTrial",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a731"
     },
     {
@@ -22622,7 +22622,7 @@
         "keyword":"RelationshipTypeCodeSequenceTrial",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a732"
     },
     {
@@ -22631,7 +22631,7 @@
         "keyword":"LanguageCodeSequenceTrial",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a744"
     },
     {
@@ -22640,7 +22640,7 @@
         "keyword":"UniformResourceLocatorTrial",
         "valueRepresentation":"ST",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040a992"
     },
     {
@@ -22667,7 +22667,7 @@
         "keyword":"TemplateVersion",
         "valueRepresentation":"DT",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040db06"
     },
     {
@@ -22676,7 +22676,7 @@
         "keyword":"TemplateLocalVersion",
         "valueRepresentation":"DT",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040db07"
     },
     {
@@ -22685,7 +22685,7 @@
         "keyword":"TemplateExtensionFlag",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040db0b"
     },
     {
@@ -22694,7 +22694,7 @@
         "keyword":"TemplateExtensionOrganizationUID",
         "valueRepresentation":"UI",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040db0c"
     },
     {
@@ -22703,7 +22703,7 @@
         "keyword":"TemplateExtensionCreatorUID",
         "valueRepresentation":"UI",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"0040db0d"
     },
     {
@@ -25322,7 +25322,7 @@
         "keyword":"CountsIncluded",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"00541400"
     },
     {
@@ -25331,7 +25331,7 @@
         "keyword":"DeadTimeCorrectionFlag",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00541401"
     },
     {
@@ -25898,7 +25898,7 @@
         "keyword":"TrianglePointIndexList",
         "valueRepresentation":"OW",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00660023"
     },
     {
@@ -25907,7 +25907,7 @@
         "keyword":"EdgePointIndexList",
         "valueRepresentation":"OW",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00660024"
     },
     {
@@ -25916,7 +25916,7 @@
         "keyword":"VertexPointIndexList",
         "valueRepresentation":"OW",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00660025"
     },
     {
@@ -25952,7 +25952,7 @@
         "keyword":"PrimitivePointIndexList",
         "valueRepresentation":"OW",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00660029"
     },
     {
@@ -27104,7 +27104,7 @@
         "keyword":"ImageRotationRetired",
         "valueRepresentation":"IS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00700040"
     },
     {
@@ -27131,7 +27131,7 @@
         "keyword":"DisplayedAreaTopLeftHandCornerTrial",
         "valueRepresentation":"US",
         "valueMultiplicity":"2",
-        "retired":false,
+        "retired":true,
         "id":"00700050"
     },
     {
@@ -27140,7 +27140,7 @@
         "keyword":"DisplayedAreaBottomRightHandCornerTrial",
         "valueRepresentation":"US",
         "valueMultiplicity":"2",
-        "retired":false,
+        "retired":true,
         "id":"00700051"
     },
     {
@@ -27203,7 +27203,7 @@
         "keyword":"GraphicLayerRecommendedDisplayRGBValue",
         "valueRepresentation":"US",
         "valueMultiplicity":"3",
-        "retired":false,
+        "retired":true,
         "id":"00700067"
     },
     {
@@ -28004,7 +28004,7 @@
         "keyword":"CompositingMethod",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00701206"
     },
     {
@@ -29831,7 +29831,7 @@
         "keyword":"BeamOrderIndexTrial",
         "valueRepresentation":"IS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00741024"
     },
     {
@@ -29948,7 +29948,7 @@
         "keyword":"DoubleExposureMetersetTrial",
         "valueRepresentation":"DS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00741038"
     },
     {
@@ -29957,7 +29957,7 @@
         "keyword":"DoubleExposureFieldDeltaTrial",
         "valueRepresentation":"DS",
         "valueMultiplicity":"4",
-        "retired":false,
+        "retired":true,
         "id":"0074103a"
     },
     {
@@ -30137,7 +30137,7 @@
         "keyword":"RelatedProcedureStepSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00741220"
     },
     {
@@ -30146,7 +30146,7 @@
         "keyword":"ProcedureStepRelationshipType",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00741222"
     },
     {
@@ -31109,7 +31109,7 @@
         "keyword":"TopicTitle",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00880904"
     },
     {
@@ -31118,7 +31118,7 @@
         "keyword":"TopicSubject",
         "valueRepresentation":"ST",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00880906"
     },
     {
@@ -31127,7 +31127,7 @@
         "keyword":"TopicAuthor",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00880910"
     },
     {
@@ -31136,7 +31136,7 @@
         "keyword":"TopicKeywords",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1-32",
-        "retired":false,
+        "retired":true,
         "id":"00880912"
     },
     {
@@ -31280,7 +31280,7 @@
         "keyword":"",
         "valueRepresentation":"FL",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"04000315"
     },
     {
@@ -31433,7 +31433,7 @@
         "keyword":"EscapeTriplet",
         "valueRepresentation":"US",
         "valueMultiplicity":"3",
-        "retired":false,
+        "retired":true,
         "id":"1000xxx0"
     },
     {
@@ -31442,7 +31442,7 @@
         "keyword":"RunLengthTriplet",
         "valueRepresentation":"US",
         "valueMultiplicity":"3",
-        "retired":false,
+        "retired":true,
         "id":"1000xxx1"
     },
     {
@@ -31451,7 +31451,7 @@
         "keyword":"HuffmanTableSize",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"1000xxx2"
     },
     {
@@ -31460,7 +31460,7 @@
         "keyword":"HuffmanTableTriplet",
         "valueRepresentation":"US",
         "valueMultiplicity":"3",
-        "retired":false,
+        "retired":true,
         "id":"1000xxx3"
     },
     {
@@ -31469,7 +31469,7 @@
         "keyword":"ShiftTableSize",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"1000xxx4"
     },
     {
@@ -31478,7 +31478,7 @@
         "keyword":"ShiftTableTriplet",
         "valueRepresentation":"US",
         "valueMultiplicity":"3",
-        "retired":false,
+        "retired":true,
         "id":"1000xxx5"
     },
     {
@@ -31487,7 +31487,7 @@
         "keyword":"ZonalMap",
         "valueRepresentation":"US",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"1010xxxx"
     },
     {
@@ -31568,7 +31568,7 @@
         "keyword":"ColorImagePrintingFlag",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"20000062"
     },
     {
@@ -31577,7 +31577,7 @@
         "keyword":"CollationFlag",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"20000063"
     },
     {
@@ -31586,7 +31586,7 @@
         "keyword":"AnnotationFlag",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"20000065"
     },
     {
@@ -31595,7 +31595,7 @@
         "keyword":"ImageOverlayFlag",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"20000067"
     },
     {
@@ -31604,7 +31604,7 @@
         "keyword":"PresentationLUTFlag",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"20000069"
     },
     {
@@ -31613,7 +31613,7 @@
         "keyword":"ImageBoxPresentationLUTFlag",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"2000006a"
     },
     {
@@ -31676,7 +31676,7 @@
         "keyword":"ReferencedStoredPrintSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"20000510"
     },
     {
@@ -32000,7 +32000,7 @@
         "keyword":"ReferencedImageOverlayBoxSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"20200130"
     },
     {
@@ -32009,7 +32009,7 @@
         "keyword":"ReferencedVOILUTBoxSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"20200140"
     },
     {
@@ -32036,7 +32036,7 @@
         "keyword":"ReferencedOverlayPlaneSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"20400010"
     },
     {
@@ -32045,7 +32045,7 @@
         "keyword":"ReferencedOverlayPlaneGroups",
         "valueRepresentation":"US",
         "valueMultiplicity":"1-99",
-        "retired":false,
+        "retired":true,
         "id":"20400011"
     },
     {
@@ -32054,7 +32054,7 @@
         "keyword":"OverlayPixelDataSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"20400020"
     },
     {
@@ -32063,7 +32063,7 @@
         "keyword":"OverlayMagnificationType",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"20400060"
     },
     {
@@ -32072,7 +32072,7 @@
         "keyword":"OverlaySmoothingType",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"20400070"
     },
     {
@@ -32081,7 +32081,7 @@
         "keyword":"OverlayOrImageMagnification",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"20400072"
     },
     {
@@ -32090,7 +32090,7 @@
         "keyword":"MagnifyToNumberOfColumns",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"20400074"
     },
     {
@@ -32099,7 +32099,7 @@
         "keyword":"OverlayForegroundDensity",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"20400080"
     },
     {
@@ -32108,7 +32108,7 @@
         "keyword":"OverlayBackgroundDensity",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"20400082"
     },
     {
@@ -32117,7 +32117,7 @@
         "keyword":"OverlayMode",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"20400090"
     },
     {
@@ -32126,7 +32126,7 @@
         "keyword":"ThresholdDensity",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"20400100"
     },
     {
@@ -32135,7 +32135,7 @@
         "keyword":"ReferencedImageBoxSequenceRetired",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"20400500"
     },
     {
@@ -32171,7 +32171,7 @@
         "keyword":"PrintJobID",
         "valueRepresentation":"SH",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"21000010"
     },
     {
@@ -32252,7 +32252,7 @@
         "keyword":"ReferencedPrintJobSequencePullStoredPrint",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"21000500"
     },
     {
@@ -32288,7 +32288,7 @@
         "keyword":"PrintQueueID",
         "valueRepresentation":"SH",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"21100099"
     },
     {
@@ -32297,7 +32297,7 @@
         "keyword":"QueueStatus",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"21200010"
     },
     {
@@ -32306,7 +32306,7 @@
         "keyword":"PrintJobDescriptionSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"21200050"
     },
     {
@@ -32315,7 +32315,7 @@
         "keyword":"ReferencedPrintJobSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"21200070"
     },
     {
@@ -32324,7 +32324,7 @@
         "keyword":"PrintManagementCapabilitiesSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"21300010"
     },
     {
@@ -32333,7 +32333,7 @@
         "keyword":"PrinterCharacteristicsSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"21300015"
     },
     {
@@ -32342,7 +32342,7 @@
         "keyword":"FilmBoxContentSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"21300030"
     },
     {
@@ -32351,7 +32351,7 @@
         "keyword":"ImageBoxContentSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"21300040"
     },
     {
@@ -32360,7 +32360,7 @@
         "keyword":"AnnotationContentSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"21300050"
     },
     {
@@ -32369,7 +32369,7 @@
         "keyword":"ImageOverlayBoxContentSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"21300060"
     },
     {
@@ -32378,7 +32378,7 @@
         "keyword":"PresentationLUTContentSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"21300080"
     },
     {
@@ -32387,7 +32387,7 @@
         "keyword":"ProposedStudySequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"213000a0"
     },
     {
@@ -32396,7 +32396,7 @@
         "keyword":"OriginalImageSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"213000c0"
     },
     {
@@ -33404,7 +33404,7 @@
         "keyword":"AdditionalRTROIIdentificationCodeSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"300600b9"
     },
     {
@@ -33413,7 +33413,7 @@
         "keyword":"FrameOfReferenceRelationshipSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"300600c0"
     },
     {
@@ -33422,7 +33422,7 @@
         "keyword":"RelatedFrameOfReferenceUID",
         "valueRepresentation":"UI",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"300600c2"
     },
     {
@@ -33431,7 +33431,7 @@
         "keyword":"FrameOfReferenceTransformationType",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"300600c4"
     },
     {
@@ -34826,7 +34826,7 @@
         "keyword":"BeamDoseSpecificationPoint",
         "valueRepresentation":"DS",
         "valueMultiplicity":"3",
-        "retired":false,
+        "retired":true,
         "id":"300a0082"
     },
     {
@@ -34907,7 +34907,7 @@
         "keyword":"AverageBeamDosePointDepth",
         "valueRepresentation":"FL",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"300a008d"
     },
     {
@@ -34916,7 +34916,7 @@
         "keyword":"AverageBeamDosePointEquivalentDepth",
         "valueRepresentation":"FL",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"300a008e"
     },
     {
@@ -34925,7 +34925,7 @@
         "keyword":"AverageBeamDosePointSSD",
         "valueRepresentation":"FL",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"300a008f"
     },
     {
@@ -40874,7 +40874,7 @@
         "keyword":"ResultsID",
         "valueRepresentation":"SH",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"40080040"
     },
     {
@@ -40883,7 +40883,7 @@
         "keyword":"ResultsIDIssuer",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"40080042"
     },
     {
@@ -40892,7 +40892,7 @@
         "keyword":"ReferencedInterpretationSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"40080050"
     },
     {
@@ -40901,7 +40901,7 @@
         "keyword":"ReportProductionStatusTrial",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"400800ff"
     },
     {
@@ -40910,7 +40910,7 @@
         "keyword":"InterpretationRecordedDate",
         "valueRepresentation":"DA",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"40080100"
     },
     {
@@ -40919,7 +40919,7 @@
         "keyword":"InterpretationRecordedTime",
         "valueRepresentation":"TM",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"40080101"
     },
     {
@@ -40928,7 +40928,7 @@
         "keyword":"InterpretationRecorder",
         "valueRepresentation":"PN",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"40080102"
     },
     {
@@ -40937,7 +40937,7 @@
         "keyword":"ReferenceToRecordedSound",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"40080103"
     },
     {
@@ -40946,7 +40946,7 @@
         "keyword":"InterpretationTranscriptionDate",
         "valueRepresentation":"DA",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"40080108"
     },
     {
@@ -40955,7 +40955,7 @@
         "keyword":"InterpretationTranscriptionTime",
         "valueRepresentation":"TM",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"40080109"
     },
     {
@@ -40964,7 +40964,7 @@
         "keyword":"InterpretationTranscriber",
         "valueRepresentation":"PN",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"4008010a"
     },
     {
@@ -40973,7 +40973,7 @@
         "keyword":"InterpretationText",
         "valueRepresentation":"ST",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"4008010b"
     },
     {
@@ -40982,7 +40982,7 @@
         "keyword":"InterpretationAuthor",
         "valueRepresentation":"PN",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"4008010c"
     },
     {
@@ -40991,7 +40991,7 @@
         "keyword":"InterpretationApproverSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"40080111"
     },
     {
@@ -41000,7 +41000,7 @@
         "keyword":"InterpretationApprovalDate",
         "valueRepresentation":"DA",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"40080112"
     },
     {
@@ -41009,7 +41009,7 @@
         "keyword":"InterpretationApprovalTime",
         "valueRepresentation":"TM",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"40080113"
     },
     {
@@ -41018,7 +41018,7 @@
         "keyword":"PhysicianApprovingInterpretation",
         "valueRepresentation":"PN",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"40080114"
     },
     {
@@ -41027,7 +41027,7 @@
         "keyword":"InterpretationDiagnosisDescription",
         "valueRepresentation":"LT",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"40080115"
     },
     {
@@ -41036,7 +41036,7 @@
         "keyword":"InterpretationDiagnosisCodeSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"40080117"
     },
     {
@@ -41045,7 +41045,7 @@
         "keyword":"ResultsDistributionListSequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"40080118"
     },
     {
@@ -41054,7 +41054,7 @@
         "keyword":"DistributionName",
         "valueRepresentation":"PN",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"40080119"
     },
     {
@@ -41063,7 +41063,7 @@
         "keyword":"DistributionAddress",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"4008011a"
     },
     {
@@ -41072,7 +41072,7 @@
         "keyword":"InterpretationID",
         "valueRepresentation":"SH",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"40080200"
     },
     {
@@ -41081,7 +41081,7 @@
         "keyword":"InterpretationIDIssuer",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"40080202"
     },
     {
@@ -41090,7 +41090,7 @@
         "keyword":"InterpretationTypeID",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"40080210"
     },
     {
@@ -41099,7 +41099,7 @@
         "keyword":"InterpretationStatusID",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"40080212"
     },
     {
@@ -41108,7 +41108,7 @@
         "keyword":"Impressions",
         "valueRepresentation":"ST",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"40080300"
     },
     {
@@ -41117,7 +41117,7 @@
         "keyword":"ResultsComments",
         "valueRepresentation":"ST",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"40084000"
     },
     {
@@ -41909,7 +41909,7 @@
         "keyword":"CurveDimensions",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"50xx0005"
     },
     {
@@ -41918,7 +41918,7 @@
         "keyword":"NumberOfPoints",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"50xx0010"
     },
     {
@@ -41927,7 +41927,7 @@
         "keyword":"TypeOfData",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"50xx0020"
     },
     {
@@ -41936,7 +41936,7 @@
         "keyword":"CurveDescription",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"50xx0022"
     },
     {
@@ -41945,7 +41945,7 @@
         "keyword":"AxisUnits",
         "valueRepresentation":"SH",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"50xx0030"
     },
     {
@@ -41954,7 +41954,7 @@
         "keyword":"AxisLabels",
         "valueRepresentation":"SH",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"50xx0040"
     },
     {
@@ -41963,7 +41963,7 @@
         "keyword":"DataValueRepresentation",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"50xx0103"
     },
     {
@@ -41972,7 +41972,7 @@
         "keyword":"MinimumCoordinateValue",
         "valueRepresentation":"US",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"50xx0104"
     },
     {
@@ -41981,7 +41981,7 @@
         "keyword":"MaximumCoordinateValue",
         "valueRepresentation":"US",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"50xx0105"
     },
     {
@@ -41990,7 +41990,7 @@
         "keyword":"CurveRange",
         "valueRepresentation":"SH",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"50xx0106"
     },
     {
@@ -41999,7 +41999,7 @@
         "keyword":"CurveDataDescriptor",
         "valueRepresentation":"US",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"50xx0110"
     },
     {
@@ -42008,7 +42008,7 @@
         "keyword":"CoordinateStartValue",
         "valueRepresentation":"US",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"50xx0112"
     },
     {
@@ -42017,7 +42017,7 @@
         "keyword":"CoordinateStepValue",
         "valueRepresentation":"US",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"50xx0114"
     },
     {
@@ -42026,7 +42026,7 @@
         "keyword":"CurveActivationLayer",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"50xx1001"
     },
     {
@@ -42035,7 +42035,7 @@
         "keyword":"AudioType",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"50xx2000"
     },
     {
@@ -42044,7 +42044,7 @@
         "keyword":"AudioSampleFormat",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"50xx2002"
     },
     {
@@ -42053,7 +42053,7 @@
         "keyword":"NumberOfChannels",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"50xx2004"
     },
     {
@@ -42062,7 +42062,7 @@
         "keyword":"NumberOfSamples",
         "valueRepresentation":"UL",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"50xx2006"
     },
     {
@@ -42071,7 +42071,7 @@
         "keyword":"SampleRate",
         "valueRepresentation":"UL",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"50xx2008"
     },
     {
@@ -42080,7 +42080,7 @@
         "keyword":"TotalTime",
         "valueRepresentation":"UL",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"50xx200a"
     },
     {
@@ -42089,7 +42089,7 @@
         "keyword":"AudioSampleData",
         "valueRepresentation":"OB or OW",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"50xx200c"
     },
     {
@@ -42098,7 +42098,7 @@
         "keyword":"AudioComments",
         "valueRepresentation":"LT",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"50xx200e"
     },
     {
@@ -42107,7 +42107,7 @@
         "keyword":"CurveLabel",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"50xx2500"
     },
     {
@@ -42116,7 +42116,7 @@
         "keyword":"CurveReferencedOverlaySequence",
         "valueRepresentation":"SQ",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"50xx2600"
     },
     {
@@ -42125,7 +42125,7 @@
         "keyword":"CurveReferencedOverlayGroup",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"50xx2610"
     },
     {
@@ -42134,7 +42134,7 @@
         "keyword":"CurveData",
         "valueRepresentation":"OB or OW",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"50xx3000"
     },
     {
@@ -42260,7 +42260,7 @@
         "keyword":"OverlayPlanes",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"60xx0012"
     },
     {
@@ -42323,7 +42323,7 @@
         "keyword":"OverlayPlaneOrigin",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"60xx0052"
     },
     {
@@ -42341,7 +42341,7 @@
         "keyword":"OverlayCompressionOriginator",
         "valueRepresentation":"SH",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"60xx0061"
     },
     {
@@ -42350,7 +42350,7 @@
         "keyword":"OverlayCompressionLabel",
         "valueRepresentation":"SH",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"60xx0062"
     },
     {
@@ -42359,7 +42359,7 @@
         "keyword":"OverlayCompressionDescription",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"60xx0063"
     },
     {
@@ -42368,7 +42368,7 @@
         "keyword":"OverlayCompressionStepPointers",
         "valueRepresentation":"AT",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"60xx0066"
     },
     {
@@ -42377,7 +42377,7 @@
         "keyword":"OverlayRepeatInterval",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"60xx0068"
     },
     {
@@ -42386,7 +42386,7 @@
         "keyword":"OverlayBitsGrouped",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"60xx0069"
     },
     {
@@ -42431,7 +42431,7 @@
         "keyword":"OverlayCodeLabel",
         "valueRepresentation":"CS",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"60xx0800"
     },
     {
@@ -42440,7 +42440,7 @@
         "keyword":"OverlayNumberOfTables",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"60xx0802"
     },
     {
@@ -42449,7 +42449,7 @@
         "keyword":"OverlayCodeTableLocation",
         "valueRepresentation":"AT",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"60xx0803"
     },
     {
@@ -42458,7 +42458,7 @@
         "keyword":"OverlayBitsForCodeWord",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"60xx0804"
     },
     {
@@ -42476,7 +42476,7 @@
         "keyword":"OverlayDescriptorGray",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"60xx1100"
     },
     {
@@ -42485,7 +42485,7 @@
         "keyword":"OverlayDescriptorRed",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"60xx1101"
     },
     {
@@ -42494,7 +42494,7 @@
         "keyword":"OverlayDescriptorGreen",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"60xx1102"
     },
     {
@@ -42503,7 +42503,7 @@
         "keyword":"OverlayDescriptorBlue",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"60xx1103"
     },
     {
@@ -42512,7 +42512,7 @@
         "keyword":"OverlaysGray",
         "valueRepresentation":"US",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"60xx1200"
     },
     {
@@ -42521,7 +42521,7 @@
         "keyword":"OverlaysRed",
         "valueRepresentation":"US",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"60xx1201"
     },
     {
@@ -42530,7 +42530,7 @@
         "keyword":"OverlaysGreen",
         "valueRepresentation":"US",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"60xx1202"
     },
     {
@@ -42539,7 +42539,7 @@
         "keyword":"OverlaysBlue",
         "valueRepresentation":"US",
         "valueMultiplicity":"1-n",
-        "retired":false,
+        "retired":true,
         "id":"60xx1203"
     },
     {
@@ -42647,7 +42647,7 @@
         "keyword":"CoefficientsSDVN",
         "valueRepresentation":"OW",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"7fe00020"
     },
     {
@@ -42656,7 +42656,7 @@
         "keyword":"CoefficientsSDHN",
         "valueRepresentation":"OW",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"7fe00030"
     },
     {
@@ -42665,7 +42665,7 @@
         "keyword":"CoefficientsSDDN",
         "valueRepresentation":"OW",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"7fe00040"
     },
     {
@@ -42674,7 +42674,7 @@
         "keyword":"VariablePixelData",
         "valueRepresentation":"OB or OW",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"7fxx0010"
     },
     {
@@ -42683,7 +42683,7 @@
         "keyword":"VariableNextDataGroup",
         "valueRepresentation":"US",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"7fxx0011"
     },
     {
@@ -42692,7 +42692,7 @@
         "keyword":"VariableCoefficientsSDVN",
         "valueRepresentation":"OW",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"7fxx0020"
     },
     {
@@ -42701,7 +42701,7 @@
         "keyword":"VariableCoefficientsSDHN",
         "valueRepresentation":"OW",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"7fxx0030"
     },
     {
@@ -42710,7 +42710,7 @@
         "keyword":"VariableCoefficientsSDDN",
         "valueRepresentation":"OW",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"7fxx0040"
     },
     {
@@ -43079,7 +43079,7 @@
         "keyword":"MRDRDirectoryRecordOffset",
         "valueRepresentation":"UL",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00041504"
     },
     {
@@ -43124,7 +43124,7 @@
         "keyword":"NumberOfReferences",
         "valueRepresentation":"UL",
         "valueMultiplicity":"1",
-        "retired":false,
+        "retired":true,
         "id":"00041600"
     },
     {

@@ -32,7 +32,7 @@ def attribute_table_to_json(table):
     for attr in table:
         attr['id'] = pl.create_slug(attr['tag'])
         attr['tag'] = attr['tag'].upper()
-        attr['retired'] = True if attr['retired'] == 'RET' else False
+        attr['retired'] = True if 'RET' in attr['retired'] else False
         attributes.append(attr)
     return attributes
 
