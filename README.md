@@ -2,8 +2,8 @@
    <img src="https://travis-ci.org/innolitics/dicom-standard.svg?branch=master">
 </a>
 
-<a href="https://github.com/russellkan/dicom-standard/actions?query=workflow%3Aupdate-standard">
-   <img src="https://github.com/russellkan/dicom-standard/workflows/update-standard/badge.svg">
+<a href="https://github.com/innolitics/dicom-standard/actions?query=workflow%3Abuild-and-update">
+   <img src="https://github.com/innolitics/dicom-standard/workflows/build-and-update/badge.svg">
 </a>
 
 # DICOM Standard Parser
