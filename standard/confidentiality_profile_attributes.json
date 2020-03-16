@@ -2,7 +2,6 @@
     {
         "name":"Accession Number",
         "tag":"(0008,0050)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "id":"00080050"
@@ -10,7 +9,6 @@
     {
         "name":"Acquisition Comments",
         "tag":"(0018,4000)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -19,7 +17,6 @@
     {
         "name":"Acquisition Context Sequence",
         "tag":"(0040,0555)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/Z",
         "cleanStructContOpt":"C",
@@ -28,7 +25,6 @@
     {
         "name":"Acquisition Date",
         "tag":"(0008,0022)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/Z",
         "rtnLongFullDatesOpt":"K",
@@ -38,7 +34,6 @@
     {
         "name":"Acquisition DateTime",
         "tag":"(0008,002A)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/Z/D",
         "rtnLongFullDatesOpt":"K",
@@ -48,7 +43,6 @@
     {
         "name":"Acquisition Device Processing Description",
         "tag":"(0018,1400)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/D",
         "cleanDescOpt":"C",
@@ -57,7 +51,6 @@
     {
         "name":"Acquisition Protocol Description",
         "tag":"(0018,9424)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -66,7 +59,6 @@
     {
         "name":"Acquisition Time",
         "tag":"(0008,0032)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/Z",
         "rtnLongFullDatesOpt":"K",
@@ -76,7 +68,6 @@
     {
         "name":"Actual Human Performers Sequence",
         "tag":"(0040,4035)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00404035"
@@ -84,7 +75,6 @@
     {
         "name":"Additional Patient History",
         "tag":"(0010,21B0)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -93,7 +83,6 @@
     {
         "name":"Address (Trial)",
         "tag":"(0040,A353)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"0040a353"
@@ -101,7 +90,6 @@
     {
         "name":"Admission ID",
         "tag":"(0038,0010)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00380010"
@@ -109,7 +97,6 @@
     {
         "name":"Admitting Date",
         "tag":"(0038,0020)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnLongFullDatesOpt":"K",
@@ -119,7 +106,6 @@
     {
         "name":"Admitting Diagnoses Code Sequence",
         "tag":"(0008,1084)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -128,7 +114,6 @@
     {
         "name":"Admitting Diagnoses Description",
         "tag":"(0008,1080)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -137,7 +122,6 @@
     {
         "name":"Admitting Time",
         "tag":"(0038,0021)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnLongFullDatesOpt":"K",
@@ -147,7 +131,6 @@
     {
         "name":"Affected SOP Instance UID",
         "tag":"(0000,1000)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnUIDsOpt":"K",
@@ -156,7 +139,6 @@
     {
         "name":"Allergies",
         "tag":"(0010,2110)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnPatCharsOpt":"C",
@@ -166,7 +148,6 @@
     {
         "name":"Arbitrary",
         "tag":"(4000,0010)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"40000010"
@@ -174,7 +155,6 @@
     {
         "name":"Author Observer Sequence",
         "tag":"(0040,A078)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"0040a078"
@@ -182,7 +162,6 @@
     {
         "name":"Barcode Value",
         "tag":"(2200,0005)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/Z",
         "id":"22000005"
@@ -190,7 +169,6 @@
     {
         "name":"Beam Description",
         "tag":"(300A,00C3)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -199,7 +177,6 @@
     {
         "name":"Bolus Description",
         "tag":"(300A,00DD)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -208,7 +185,6 @@
     {
         "name":"Branch of Service",
         "tag":"(0010,1081)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00101081"
@@ -216,7 +192,6 @@
     {
         "name":"Camera Owner Name",
         "tag":"(0016,004D)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"0016004d"
@@ -224,7 +199,6 @@
     {
         "name":"Cassette ID",
         "tag":"(0018,1007)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnDevIdOpt":"K",
@@ -233,7 +207,6 @@
     {
         "name":"Clinical Trial Coordinating Center Name",
         "tag":"(0012,0060)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "rtnInstIdOpt":"K",
@@ -242,7 +215,6 @@
     {
         "name":"Clinical Trial Protocol Ethics Committee Approval Number",
         "tag":"(0012,0082)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00120082"
@@ -250,7 +222,6 @@
     {
         "name":"Clinical Trial Protocol Ethics Committee Name",
         "tag":"(0012,0081)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "rtnInstIdOpt":"K",
@@ -259,7 +230,6 @@
     {
         "name":"Clinical Trial Protocol ID",
         "tag":"(0012,0020)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "id":"00120020"
@@ -267,7 +237,6 @@
     {
         "name":"Clinical Trial Protocol Name",
         "tag":"(0012,0021)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "id":"00120021"
@@ -275,7 +244,6 @@
     {
         "name":"Clinical Trial Series Description",
         "tag":"(0012,0072)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -284,7 +252,6 @@
     {
         "name":"Clinical Trial Series ID",
         "tag":"(0012,0071)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00120071"
@@ -292,7 +259,6 @@
     {
         "name":"Clinical Trial Site ID",
         "tag":"(0012,0030)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "rtnInstIdOpt":"K",
@@ -301,7 +267,6 @@
     {
         "name":"Clinical Trial Site Name",
         "tag":"(0012,0031)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "rtnInstIdOpt":"K",
@@ -310,7 +275,6 @@
     {
         "name":"Clinical Trial Sponsor Name",
         "tag":"(0012,0010)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "id":"00120010"
@@ -318,7 +282,6 @@
     {
         "name":"Clinical Trial Subject ID",
         "tag":"(0012,0040)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "id":"00120040"
@@ -326,7 +289,6 @@
     {
         "name":"Clinical Trial Subject Reading ID",
         "tag":"(0012,0042)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "id":"00120042"
@@ -334,7 +296,6 @@
     {
         "name":"Clinical Trial Time Point Description",
         "tag":"(0012,0051)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -343,7 +304,6 @@
     {
         "name":"Clinical Trial Time Point ID",
         "tag":"(0012,0050)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "id":"00120050"
@@ -351,7 +311,6 @@
     {
         "name":"Comments on the Performed Procedure Step",
         "tag":"(0040,0280)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -360,7 +319,6 @@
     {
         "name":"Compensator Description",
         "tag":"(300A,02EB)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -369,7 +327,6 @@
     {
         "name":"Concatenation UID",
         "tag":"(0020,9161)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -378,7 +335,6 @@
     {
         "name":"Conceptual Volume Combination Description",
         "tag":"(3010,000F)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "cleanDescOpt":"C",
@@ -387,7 +343,6 @@
     {
         "name":"Conceptual Volume Description",
         "tag":"(3010,0017)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "cleanDescOpt":"C",
@@ -396,7 +351,6 @@
     {
         "name":"Conceptual Volume UID",
         "tag":"(3010,0006)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -405,7 +359,6 @@
     {
         "name":"Confidentiality Constraint on Patient Data Description",
         "tag":"(0040,3001)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00403001"
@@ -413,7 +366,6 @@
     {
         "name":"Constituent Conceptual Volume UID",
         "tag":"(3010,0013)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -422,7 +374,6 @@
     {
         "name":"Consulting Physician's Name",
         "tag":"(0008,009C)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "id":"0008009c"
@@ -430,7 +381,6 @@
     {
         "name":"Consulting Physician Identification Sequence",
         "tag":"(0008,009D)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"0008009d"
@@ -438,7 +388,6 @@
     {
         "name":"Container Component ID",
         "tag":"(0050,001B)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"0050001b"
@@ -446,7 +395,6 @@
     {
         "name":"Container Description",
         "tag":"(0040,051A)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -455,7 +403,6 @@
     {
         "name":"Container Identifier",
         "tag":"(0040,0512)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "id":"00400512"
@@ -463,7 +410,6 @@
     {
         "name":"Content Creator's Identification Code Sequence",
         "tag":"(0070,0086)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00700086"
@@ -471,7 +417,6 @@
     {
         "name":"Content Creator's Name",
         "tag":"(0070,0084)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z/D",
         "id":"00700084"
@@ -479,7 +424,6 @@
     {
         "name":"Content Date",
         "tag":"(0008,0023)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z/D",
         "rtnLongFullDatesOpt":"K",
@@ -489,7 +433,6 @@
     {
         "name":"Content Sequence",
         "tag":"(0040,A730)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "cleanStructContOpt":"C",
@@ -498,7 +441,6 @@
     {
         "name":"Content Time",
         "tag":"(0008,0033)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z/D",
         "rtnLongFullDatesOpt":"K",
@@ -508,7 +450,6 @@
     {
         "name":"Contrast/Bolus Agent",
         "tag":"(0018,0010)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z/D",
         "cleanDescOpt":"C",
@@ -517,7 +458,6 @@
     {
         "name":"Contribution Description",
         "tag":"(0018,A003)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -526,7 +466,6 @@
     {
         "name":"Country of Residence",
         "tag":"(0010,2150)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00102150"
@@ -534,7 +473,6 @@
     {
         "name":"Current Observer (Trial)",
         "tag":"(0040,A307)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"0040a307"
@@ -542,7 +480,6 @@
     {
         "name":"Current Patient Location",
         "tag":"(0038,0300)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00380300"
@@ -550,7 +487,6 @@
     {
         "name":"Curve Data",
         "tag":"(50XX,XXXX)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "cleanGraphOpt":"C",
@@ -559,7 +495,6 @@
     {
         "name":"Curve Date",
         "tag":"(0008,0025)",
-        "retired":"Y",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnLongFullDatesOpt":"K",
@@ -569,7 +504,6 @@
     {
         "name":"Curve Time",
         "tag":"(0008,0035)",
-        "retired":"Y",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnLongFullDatesOpt":"K",
@@ -579,7 +513,6 @@
     {
         "name":"Custodial Organization Sequence",
         "tag":"(0040,A07C)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"0040a07c"
@@ -587,7 +520,6 @@
     {
         "name":"Data Set Trailing Padding",
         "tag":"(FFFC,FFFC)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"fffcfffc"
@@ -595,7 +527,6 @@
     {
         "name":"Decomposition Description",
         "tag":"(0018,937F)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -604,7 +535,6 @@
     {
         "name":"Derivation Description",
         "tag":"(0008,2111)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -613,7 +543,6 @@
     {
         "name":"Detector ID",
         "tag":"(0018,700A)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/D",
         "rtnDevIdOpt":"K",
@@ -622,7 +551,6 @@
     {
         "name":"Device Alternate Identifier",
         "tag":"(3010,001B)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "id":"3010001b"
@@ -630,7 +558,6 @@
     {
         "name":"Device Description",
         "tag":"(0050,0020)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnDevIdOpt":"K",
@@ -639,7 +566,6 @@
     {
         "name":"Device Label",
         "tag":"(3010,002D)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "rtnDevIdOpt":"K",
@@ -648,7 +574,6 @@
     {
         "name":"Device Serial Number",
         "tag":"(0018,1000)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/Z/D",
         "rtnDevIdOpt":"K",
@@ -657,7 +582,6 @@
     {
         "name":"Device Setting Description",
         "tag":"(0016,004B)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -666,7 +590,6 @@
     {
         "name":"Device UID",
         "tag":"(0018,1002)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -676,7 +599,6 @@
     {
         "name":"Digital Signatures Sequence",
         "tag":"(FFFA,FFFA)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"fffafffa"
@@ -684,7 +606,6 @@
     {
         "name":"Digital Signature UID",
         "tag":"(0400,0100)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "id":"04000100"
@@ -692,7 +613,6 @@
     {
         "name":"Dimension Organization UID",
         "tag":"(0020,9164)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -701,7 +621,6 @@
     {
         "name":"Discharge Diagnosis Description",
         "tag":"(0038,0040)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -710,7 +629,6 @@
     {
         "name":"Distribution Address",
         "tag":"(4008,011A)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"4008011a"
@@ -718,7 +636,6 @@
     {
         "name":"Distribution Name",
         "tag":"(4008,0119)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"40080119"
@@ -726,7 +643,6 @@
     {
         "name":"Dose Reference Description",
         "tag":"(300A,0016)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -735,7 +651,6 @@
     {
         "name":"Dose Reference UID",
         "tag":"(300A,0013)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -744,7 +659,6 @@
     {
         "name":"Dosimetric Objective UID",
         "tag":"(3010,006E)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -753,7 +667,6 @@
     {
         "name":"End Acquisition DateTime",
         "tag":"(0018,9517)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/D",
         "rtnLongFullDatesOpt":"K",
@@ -763,7 +676,6 @@
     {
         "name":"Entity Description",
         "tag":"(3010,0037)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -772,7 +684,6 @@
     {
         "name":"Entity Label",
         "tag":"(3010,0035)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "cleanDescOpt":"C",
@@ -781,7 +692,6 @@
     {
         "name":"Entity Long Label",
         "tag":"(3010,0038)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "cleanDescOpt":"C",
@@ -790,7 +700,6 @@
     {
         "name":"Entity Name",
         "tag":"(3010,0036)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -799,7 +708,6 @@
     {
         "name":"Equipment Frame of Reference Description",
         "tag":"(300A,0676)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -808,7 +716,6 @@
     {
         "name":"Ethnic Group",
         "tag":"(0010,2160)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnPatCharsOpt":"K",
@@ -817,7 +724,6 @@
     {
         "name":"Expected Completion DateTime",
         "tag":"(0040,4011)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnLongFullDatesOpt":"K",
@@ -827,7 +733,6 @@
     {
         "name":"Failed SOP Instance UID List",
         "tag":"(0008,0058)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -836,7 +741,6 @@
     {
         "name":"Fiducial UID",
         "tag":"(0070,031A)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -845,7 +749,6 @@
     {
         "name":"Filler Order Number / Imaging Service Request",
         "tag":"(0040,2017)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "id":"00402017"
@@ -853,7 +756,6 @@
     {
         "name":"First Treatment Date",
         "tag":"(3008,0054)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/D",
         "rtnLongFullDatesOpt":"K",
@@ -863,7 +765,6 @@
     {
         "name":"Fixation Device Description",
         "tag":"(300A,0196)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -872,7 +773,6 @@
     {
         "name":"Flow Identifier",
         "tag":"(0034,0002)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "id":"00340002"
@@ -880,7 +780,6 @@
     {
         "name":"Flow Identifier Sequence",
         "tag":"(0034,0001)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "id":"00340001"
@@ -888,7 +787,6 @@
     {
         "name":"Fractionation Notes",
         "tag":"(3010,007F)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "cleanDescOpt":"C",
@@ -897,7 +795,6 @@
     {
         "name":"Fraction Group Description",
         "tag":"(300A,0072)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -906,7 +803,6 @@
     {
         "name":"Frame Comments",
         "tag":"(0020,9158)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -915,7 +811,6 @@
     {
         "name":"Frame of Reference UID",
         "tag":"(0020,0052)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -924,7 +819,6 @@
     {
         "name":"Frame Origin Timestamp",
         "tag":"(0034,0007)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "rtnLongFullDatesOpt":"K",
@@ -934,7 +828,6 @@
     {
         "name":"Gantry ID",
         "tag":"(0018,1008)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnDevIdOpt":"K",
@@ -943,7 +836,6 @@
     {
         "name":"Generator ID",
         "tag":"(0018,1005)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnDevIdOpt":"K",
@@ -952,7 +844,6 @@
     {
         "name":"GPS Altitude",
         "tag":"(0016,0076)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00160076"
@@ -960,7 +851,6 @@
     {
         "name":"GPS Altitude Ref",
         "tag":"(0016,0075)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00160075"
@@ -968,7 +858,6 @@
     {
         "name":"GPS Area Information",
         "tag":"(0016,008C)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"0016008c"
@@ -976,7 +865,6 @@
     {
         "name":"GPS Date Stamp",
         "tag":"(0016,008D)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnLongFullDatesOpt":"K",
@@ -986,7 +874,6 @@
     {
         "name":"GPS Dest Bearing",
         "tag":"(0016,0088)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00160088"
@@ -994,7 +881,6 @@
     {
         "name":"GPS Dest Bearing Ref",
         "tag":"(0016,0087)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00160087"
@@ -1002,7 +888,6 @@
     {
         "name":"GPS Dest Distance",
         "tag":"(0016,008A)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"0016008a"
@@ -1010,7 +895,6 @@
     {
         "name":"GPS Dest Distance Ref",
         "tag":"(0016,0089)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00160089"
@@ -1018,7 +902,6 @@
     {
         "name":"GPS Dest Latitude",
         "tag":"(0016,0084)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00160084"
@@ -1026,7 +909,6 @@
     {
         "name":"GPS Dest Latitude Ref",
         "tag":"(0016,0083)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00160083"
@@ -1034,7 +916,6 @@
     {
         "name":"GPS Dest Longitude",
         "tag":"(0016,0086)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00160086"
@@ -1042,7 +923,6 @@
     {
         "name":"GPS Dest Longitude Ref",
         "tag":"(0016,0085)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00160085"
@@ -1050,7 +930,6 @@
     {
         "name":"GPS Differential",
         "tag":"(0016,008E)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"0016008e"
@@ -1058,7 +937,6 @@
     {
         "name":"GPS DOP",
         "tag":"(0016,007B)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"0016007b"
@@ -1066,7 +944,6 @@
     {
         "name":"GPS Img Direction",
         "tag":"(0016,0081)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00160081"
@@ -1074,7 +951,6 @@
     {
         "name":"GPS Img Direction Ref",
         "tag":"(0016,0080)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00160080"
@@ -1082,7 +958,6 @@
     {
         "name":"GPS Latitude",
         "tag":"(0016,0072)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00160072"
@@ -1090,7 +965,6 @@
     {
         "name":"GPS Latitude Ref",
         "tag":"(0016,0071)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00160071"
@@ -1098,7 +972,6 @@
     {
         "name":"GPS Longitude",
         "tag":"(0016,0074)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00160074"
@@ -1106,7 +979,6 @@
     {
         "name":"GPS Longitude Ref",
         "tag":"(0016,0073)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00160073"
@@ -1114,7 +986,6 @@
     {
         "name":"GPS Map Datum",
         "tag":"(0016,0082)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00160082"
@@ -1122,7 +993,6 @@
     {
         "name":"GPS Measure Mode",
         "tag":"(0016,007A)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"0016007a"
@@ -1130,7 +1000,6 @@
     {
         "name":"GPS Processing Method",
         "tag":"(0016,008B)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"0016008b"
@@ -1138,7 +1007,6 @@
     {
         "name":"GPS Satellites",
         "tag":"(0016,0078)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00160078"
@@ -1146,7 +1014,6 @@
     {
         "name":"GPS Speed",
         "tag":"(0016,007D)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"0016007d"
@@ -1154,7 +1021,6 @@
     {
         "name":"GPS Speed Ref",
         "tag":"(0016,007C)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"0016007c"
@@ -1162,7 +1028,6 @@
     {
         "name":"GPS Status",
         "tag":"(0016,0079)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00160079"
@@ -1170,7 +1035,6 @@
     {
         "name":"GPS Time Stamp",
         "tag":"(0016,0077)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00160077"
@@ -1178,7 +1042,6 @@
     {
         "name":"GPS Track",
         "tag":"(0016,007F)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"0016007f"
@@ -1186,7 +1049,6 @@
     {
         "name":"GPS Track Ref",
         "tag":"(0016,007E)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"0016007e"
@@ -1194,7 +1056,6 @@
     {
         "name":"GPS Version ID",
         "tag":"(0016,0070)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00160070"
@@ -1202,7 +1063,6 @@
     {
         "name":"Graphic Annotation Sequence",
         "tag":"(0070,0001)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "cleanGraphOpt":"C",
@@ -1211,7 +1071,6 @@
     {
         "name":"Human Performer's Name",
         "tag":"(0040,4037)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00404037"
@@ -1219,7 +1078,6 @@
     {
         "name":"Human Performer's Organization",
         "tag":"(0040,4036)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00404036"
@@ -1227,7 +1085,6 @@
     {
         "name":"Icon Image Sequence\n\n(see Note 12)",
         "tag":"(0088,0200)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00880200"
@@ -1235,7 +1092,6 @@
     {
         "name":"Identifying Comments",
         "tag":"(0008,4000)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -1244,7 +1100,6 @@
     {
         "name":"Image Comments",
         "tag":"(0020,4000)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -1253,7 +1108,6 @@
     {
         "name":"Image Presentation Comments",
         "tag":"(0028,4000)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00284000"
@@ -1261,7 +1115,6 @@
     {
         "name":"Imaging Service Request Comments",
         "tag":"(0040,2400)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -1270,7 +1123,6 @@
     {
         "name":"Impressions",
         "tag":"(4008,0300)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -1279,7 +1131,6 @@
     {
         "name":"Instance Coercion DateTime",
         "tag":"(0008,0015)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnLongFullDatesOpt":"K",
@@ -1289,7 +1140,6 @@
     {
         "name":"Instance Creator UID",
         "tag":"(0008,0014)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -1298,7 +1148,6 @@
     {
         "name":"Instance Origin Status",
         "tag":"(0400,0600)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"04000600"
@@ -1306,7 +1155,6 @@
     {
         "name":"Institution Address",
         "tag":"(0008,0081)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnInstIdOpt":"K",
@@ -1315,7 +1163,6 @@
     {
         "name":"Institutional Department Name",
         "tag":"(0008,1040)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnInstIdOpt":"K",
@@ -1324,7 +1171,6 @@
     {
         "name":"Institutional Department Type Code Sequence",
         "tag":"(0008,1041)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnInstIdOpt":"K",
@@ -1333,7 +1179,6 @@
     {
         "name":"Institution Code Sequence",
         "tag":"(0008,0082)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/Z/D",
         "rtnInstIdOpt":"K",
@@ -1342,7 +1187,6 @@
     {
         "name":"Institution Name",
         "tag":"(0008,0080)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/Z/D",
         "rtnInstIdOpt":"K",
@@ -1351,7 +1195,6 @@
     {
         "name":"Insurance Plan Identification",
         "tag":"(0010,1050)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00101050"
@@ -1359,7 +1202,6 @@
     {
         "name":"Intended Phase End Date",
         "tag":"(3010,004D)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/D",
         "rtnLongFullDatesOpt":"K",
@@ -1369,7 +1211,6 @@
     {
         "name":"Intended Phase Start Date",
         "tag":"(3010,004C)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/D",
         "rtnLongFullDatesOpt":"K",
@@ -1379,7 +1220,6 @@
     {
         "name":"Intended Recipients of Results Identification Sequence",
         "tag":"(0040,1011)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00401011"
@@ -1387,7 +1227,6 @@
     {
         "name":"Interpretation Approver Sequence",
         "tag":"(4008,0111)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"40080111"
@@ -1395,7 +1234,6 @@
     {
         "name":"Interpretation Author",
         "tag":"(4008,010C)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"4008010c"
@@ -1403,7 +1241,6 @@
     {
         "name":"Interpretation Diagnosis Description",
         "tag":"(4008,0115)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -1412,7 +1249,6 @@
     {
         "name":"Interpretation ID Issuer",
         "tag":"(4008,0202)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"40080202"
@@ -1420,7 +1256,6 @@
     {
         "name":"Interpretation Recorder",
         "tag":"(4008,0102)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"40080102"
@@ -1428,7 +1263,6 @@
     {
         "name":"Interpretation Text",
         "tag":"(4008,010B)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -1437,7 +1271,6 @@
     {
         "name":"Interpretation Transcriber",
         "tag":"(4008,010A)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"4008010a"
@@ -1445,7 +1278,6 @@
     {
         "name":"Irradiation Event UID",
         "tag":"(0008,3010)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -1454,7 +1286,6 @@
     {
         "name":"Issuer of Admission ID",
         "tag":"(0038,0011)",
-        "retired":"Y",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00380011"
@@ -1462,7 +1293,6 @@
     {
         "name":"Issuer of Admission ID Sequence",
         "tag":"(0038,0014)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00380014"
@@ -1470,7 +1300,6 @@
     {
         "name":"Issuer of Patient ID",
         "tag":"(0010,0021)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00100021"
@@ -1478,7 +1307,6 @@
     {
         "name":"Issuer of Service Episode ID",
         "tag":"(0038,0061)",
-        "retired":"Y",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00380061"
@@ -1486,7 +1314,6 @@
     {
         "name":"Issuer of Service Episode ID Sequence",
         "tag":"(0038,0064)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00380064"
@@ -1494,7 +1321,6 @@
     {
         "name":"Issuer of the Container Identifier Sequence",
         "tag":"(0040,0513)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "id":"00400513"
@@ -1502,7 +1328,6 @@
     {
         "name":"Issuer of the Specimen Identifier Sequence",
         "tag":"(0040,0562)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "id":"00400562"
@@ -1510,7 +1335,6 @@
     {
         "name":"Label Text",
         "tag":"(2200,0002)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/Z",
         "cleanDescOpt":"C",
@@ -1519,7 +1343,6 @@
     {
         "name":"Large Palette Color Lookup Table UID",
         "tag":"(0028,1214)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -1528,7 +1351,6 @@
     {
         "name":"Last Menstrual Date",
         "tag":"(0010,21D0)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnLongFullDatesOpt":"K",
@@ -1538,7 +1360,6 @@
     {
         "name":"Lens Make",
         "tag":"(0016,004F)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnDevIdOpt":"K",
@@ -1547,7 +1368,6 @@
     {
         "name":"Lens Model",
         "tag":"(0016,0050)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnDevIdOpt":"K",
@@ -1556,7 +1376,6 @@
     {
         "name":"Lens Serial Number",
         "tag":"(0016,0051)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnDevIdOpt":"K",
@@ -1565,7 +1384,6 @@
     {
         "name":"Lens Specification",
         "tag":"(0016,004E)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnDevIdOpt":"K",
@@ -1574,7 +1392,6 @@
     {
         "name":"Long Device Description",
         "tag":"(0050,0021)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -1583,7 +1400,6 @@
     {
         "name":"MAC",
         "tag":"(0400,0404)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"04000404"
@@ -1591,7 +1407,6 @@
     {
         "name":"Maker Note",
         "tag":"(0016,002B)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -1600,7 +1415,6 @@
     {
         "name":"Manufacturer's Device Class UID",
         "tag":"(0018,100B)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -1610,7 +1424,6 @@
     {
         "name":"Manufacturer's Device Identifier",
         "tag":"(3010,0043)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "rtnDevIdOpt":"K",
@@ -1619,7 +1432,6 @@
     {
         "name":"Media Storage SOP Instance UID",
         "tag":"(0002,0003)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -1628,7 +1440,6 @@
     {
         "name":"Medical Alerts",
         "tag":"(0010,2000)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -1637,7 +1448,6 @@
     {
         "name":"Medical Record Locator",
         "tag":"(0010,1090)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00101090"
@@ -1645,7 +1455,6 @@
     {
         "name":"Military Rank",
         "tag":"(0010,1080)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00101080"
@@ -1653,7 +1462,6 @@
     {
         "name":"Modified Attributes Sequence",
         "tag":"(0400,0550)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"04000550"
@@ -1661,7 +1469,6 @@
     {
         "name":"Modified Image Description",
         "tag":"(0020,3406)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00203406"
@@ -1669,7 +1476,6 @@
     {
         "name":"Modifying Device ID",
         "tag":"(0020,3401)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00203401"
@@ -1677,7 +1483,6 @@
     {
         "name":"Most Recent Treatment Date",
         "tag":"(3008,0056)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/D",
         "rtnLongFullDatesOpt":"K",
@@ -1687,7 +1492,6 @@
     {
         "name":"Multi-energy Acquisition Description",
         "tag":"(0018,937B)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -1696,7 +1500,6 @@
     {
         "name":"Name of Physician(s) Reading Study",
         "tag":"(0008,1060)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00081060"
@@ -1704,7 +1507,6 @@
     {
         "name":"Names of Intended Recipients of Results",
         "tag":"(0040,1010)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00401010"
@@ -1712,7 +1514,6 @@
     {
         "name":"Observation Date (Trial)",
         "tag":"(0040,A192)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnLongFullDatesOpt":"K",
@@ -1722,7 +1523,6 @@
     {
         "name":"Observation Subject UID (Trial)",
         "tag":"(0040,A402)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -1731,7 +1531,6 @@
     {
         "name":"Observation Time (Trial)",
         "tag":"(0040,A193)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnLongFullDatesOpt":"K",
@@ -1741,7 +1540,6 @@
     {
         "name":"Observation UID",
         "tag":"(0040,A171)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -1750,7 +1548,6 @@
     {
         "name":"Occupation",
         "tag":"(0010,2180)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -1759,7 +1556,6 @@
     {
         "name":"Operator Identification Sequence",
         "tag":"(0008,1072)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/D",
         "id":"00081072"
@@ -1767,7 +1563,6 @@
     {
         "name":"Operators' Name",
         "tag":"(0008,1070)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/Z/D",
         "id":"00081070"
@@ -1775,7 +1570,6 @@
     {
         "name":"Order Callback Phone Number",
         "tag":"(0040,2010)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00402010"
@@ -1783,7 +1577,6 @@
     {
         "name":"Order Callback Telecom Information",
         "tag":"(0040,2011)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00402011"
@@ -1791,7 +1584,6 @@
     {
         "name":"Order Entered By",
         "tag":"(0040,2008)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00402008"
@@ -1799,7 +1591,6 @@
     {
         "name":"Order Enterer's Location",
         "tag":"(0040,2009)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00402009"
@@ -1807,7 +1598,6 @@
     {
         "name":"Original Attributes Sequence",
         "tag":"(0400,0561)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"04000561"
@@ -1815,7 +1605,6 @@
     {
         "name":"Other Patient IDs",
         "tag":"(0010,1000)",
-        "retired":"Y",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00101000"
@@ -1823,7 +1612,6 @@
     {
         "name":"Other Patient IDs Sequence",
         "tag":"(0010,1002)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00101002"
@@ -1831,7 +1619,6 @@
     {
         "name":"Other Patient Names",
         "tag":"(0010,1001)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00101001"
@@ -1839,7 +1626,6 @@
     {
         "name":"Overlay Comments",
         "tag":"(60XX,4000)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "cleanGraphOpt":"C",
@@ -1848,7 +1634,6 @@
     {
         "name":"Overlay Data",
         "tag":"(60XX,3000)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanGraphOpt":"C",
@@ -1857,7 +1642,6 @@
     {
         "name":"Overlay Date",
         "tag":"(0008,0024)",
-        "retired":"Y",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnLongFullDatesOpt":"K",
@@ -1867,7 +1651,6 @@
     {
         "name":"Overlay Time",
         "tag":"(0008,0034)",
-        "retired":"Y",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnLongFullDatesOpt":"K",
@@ -1877,7 +1660,6 @@
     {
         "name":"Palette Color Lookup Table UID",
         "tag":"(0028,1199)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -1886,7 +1668,6 @@
     {
         "name":"Participant Sequence",
         "tag":"(0040,A07A)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"0040a07a"
@@ -1894,7 +1675,6 @@
     {
         "name":"Patient's Address",
         "tag":"(0010,1040)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00101040"
@@ -1902,7 +1682,6 @@
     {
         "name":"Patient's Age",
         "tag":"(0010,1010)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnPatCharsOpt":"K",
@@ -1911,7 +1690,6 @@
     {
         "name":"Patient's Birth Date",
         "tag":"(0010,0030)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "id":"00100030"
@@ -1919,7 +1697,6 @@
     {
         "name":"Patient's Birth Name",
         "tag":"(0010,1005)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00101005"
@@ -1927,7 +1704,6 @@
     {
         "name":"Patient's Birth Time",
         "tag":"(0010,0032)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00100032"
@@ -1935,7 +1711,6 @@
     {
         "name":"Patient's Institution Residence",
         "tag":"(0038,0400)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00380400"
@@ -1943,7 +1718,6 @@
     {
         "name":"Patient's Insurance Plan Code Sequence",
         "tag":"(0010,0050)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00100050"
@@ -1951,7 +1725,6 @@
     {
         "name":"Patient's Mother's Birth Name",
         "tag":"(0010,1060)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00101060"
@@ -1959,7 +1732,6 @@
     {
         "name":"Patient's Name",
         "tag":"(0010,0010)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "id":"00100010"
@@ -1967,7 +1739,6 @@
     {
         "name":"Patient's Primary Language Code Sequence",
         "tag":"(0010,0101)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00100101"
@@ -1975,7 +1746,6 @@
     {
         "name":"Patient's Primary Language Modifier Code Sequence",
         "tag":"(0010,0102)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00100102"
@@ -1983,7 +1753,6 @@
     {
         "name":"Patient's Religious Preference",
         "tag":"(0010,21F0)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"001021f0"
@@ -1991,7 +1760,6 @@
     {
         "name":"Patient's Sex",
         "tag":"(0010,0040)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "rtnPatCharsOpt":"K",
@@ -2000,7 +1768,6 @@
     {
         "name":"Patient's Sex Neutered",
         "tag":"(0010,2203)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/Z",
         "rtnPatCharsOpt":"K",
@@ -2009,7 +1776,6 @@
     {
         "name":"Patient's Size",
         "tag":"(0010,1020)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnPatCharsOpt":"K",
@@ -2018,7 +1784,6 @@
     {
         "name":"Patient's Telecom Information",
         "tag":"(0010,2155)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00102155"
@@ -2026,7 +1791,6 @@
     {
         "name":"Patient's Telephone Numbers",
         "tag":"(0010,2154)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00102154"
@@ -2034,7 +1798,6 @@
     {
         "name":"Patient's Weight",
         "tag":"(0010,1030)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnPatCharsOpt":"K",
@@ -2043,7 +1806,6 @@
     {
         "name":"Patient Comments",
         "tag":"(0010,4000)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -2052,7 +1814,6 @@
     {
         "name":"Patient ID",
         "tag":"(0010,0020)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "id":"00100020"
@@ -2060,7 +1821,6 @@
     {
         "name":"Patient Setup UID",
         "tag":"(300A,0650)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -2069,7 +1829,6 @@
     {
         "name":"Patient State",
         "tag":"(0038,0500)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnPatCharsOpt":"C",
@@ -2079,7 +1838,6 @@
     {
         "name":"Patient Transport Arrangements",
         "tag":"(0040,1004)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00401004"
@@ -2087,7 +1845,6 @@
     {
         "name":"Performed Location",
         "tag":"(0040,0243)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00400243"
@@ -2095,7 +1852,6 @@
     {
         "name":"Performed Procedure Step Description",
         "tag":"(0040,0254)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -2104,7 +1860,6 @@
     {
         "name":"Performed Procedure Step End Date",
         "tag":"(0040,0250)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnLongFullDatesOpt":"K",
@@ -2114,7 +1869,6 @@
     {
         "name":"Performed Procedure Step End DateTime",
         "tag":"(0040,4051)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnLongFullDatesOpt":"K",
@@ -2124,7 +1878,6 @@
     {
         "name":"Performed Procedure Step End Time",
         "tag":"(0040,0251)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnLongFullDatesOpt":"K",
@@ -2134,7 +1887,6 @@
     {
         "name":"Performed Procedure Step ID",
         "tag":"(0040,0253)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00400253"
@@ -2142,7 +1894,6 @@
     {
         "name":"Performed Procedure Step Start Date",
         "tag":"(0040,0244)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnLongFullDatesOpt":"K",
@@ -2152,7 +1903,6 @@
     {
         "name":"Performed Procedure Step Start DateTime",
         "tag":"(0040,4050)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnLongFullDatesOpt":"K",
@@ -2162,7 +1912,6 @@
     {
         "name":"Performed Procedure Step Start Time",
         "tag":"(0040,0245)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnLongFullDatesOpt":"K",
@@ -2172,7 +1921,6 @@
     {
         "name":"Performed Station AE Title",
         "tag":"(0040,0241)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnDevIdOpt":"K",
@@ -2181,7 +1929,6 @@
     {
         "name":"Performed Station Geographic Location Code Sequence",
         "tag":"(0040,4030)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnDevIdOpt":"K",
@@ -2190,7 +1937,6 @@
     {
         "name":"Performed Station Name",
         "tag":"(0040,0242)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnDevIdOpt":"K",
@@ -2199,7 +1945,6 @@
     {
         "name":"Performed Station Name Code Sequence",
         "tag":"(0040,4028)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnDevIdOpt":"K",
@@ -2208,7 +1953,6 @@
     {
         "name":"Performing Physician's Name",
         "tag":"(0008,1050)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00081050"
@@ -2216,7 +1960,6 @@
     {
         "name":"Performing Physician Identification Sequence",
         "tag":"(0008,1052)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00081052"
@@ -2224,7 +1967,6 @@
     {
         "name":"Person's Address",
         "tag":"(0040,1102)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00401102"
@@ -2232,7 +1974,6 @@
     {
         "name":"Person's Telecom Information",
         "tag":"(0040,1104)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00401104"
@@ -2240,7 +1981,6 @@
     {
         "name":"Person's Telephone Numbers",
         "tag":"(0040,1103)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00401103"
@@ -2248,7 +1988,6 @@
     {
         "name":"Person Identification Code Sequence",
         "tag":"(0040,1101)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "id":"00401101"
@@ -2256,7 +1995,6 @@
     {
         "name":"Person Name",
         "tag":"(0040,A123)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "id":"0040a123"
@@ -2264,7 +2002,6 @@
     {
         "name":"Physician(s) of Record",
         "tag":"(0008,1048)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00081048"
@@ -2272,7 +2009,6 @@
     {
         "name":"Physician(s) of Record Identification Sequence",
         "tag":"(0008,1049)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00081049"
@@ -2280,7 +2016,6 @@
     {
         "name":"Physician(s) Reading Study Identification Sequence",
         "tag":"(0008,1062)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00081062"
@@ -2288,7 +2023,6 @@
     {
         "name":"Physician Approving Interpretation",
         "tag":"(4008,0114)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"40080114"
@@ -2296,7 +2030,6 @@
     {
         "name":"Placer Order Number / Imaging Service Request",
         "tag":"(0040,2016)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "id":"00402016"
@@ -2304,7 +2037,6 @@
     {
         "name":"Plate ID",
         "tag":"(0018,1004)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnDevIdOpt":"K",
@@ -2313,7 +2045,6 @@
     {
         "name":"Pregnancy Status",
         "tag":"(0010,21C0)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnPatCharsOpt":"K",
@@ -2322,7 +2053,6 @@
     {
         "name":"Pre-Medication",
         "tag":"(0040,0012)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnPatCharsOpt":"C",
@@ -2331,7 +2061,6 @@
     {
         "name":"Prescription Description",
         "tag":"(300A,000E)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -2340,7 +2069,6 @@
     {
         "name":"Prescription Notes",
         "tag":"(3010,007B)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "cleanDescOpt":"C",
@@ -2349,7 +2077,6 @@
     {
         "name":"Prescription Notes Sequence",
         "tag":"(3010,0081)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "cleanDescOpt":"C",
@@ -2358,7 +2085,6 @@
     {
         "name":"Presentation Display Collection UID",
         "tag":"(0070,1101)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -2367,7 +2093,6 @@
     {
         "name":"Presentation Sequence Collection UID",
         "tag":"(0070,1102)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -2376,7 +2101,6 @@
     {
         "name":"Prior Treatment Dose Description",
         "tag":"(3010,0061)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -2385,7 +2109,6 @@
     {
         "name":"Private attributes",
         "tag":"(GGGG,EEEE) WHERE GGGG IS ODD",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnSafePrivOpt":"C",
@@ -2394,7 +2117,6 @@
     {
         "name":"Procedure Step Cancellation DateTime",
         "tag":"(0040,4052)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnLongFullDatesOpt":"K",
@@ -2404,7 +2126,6 @@
     {
         "name":"Protocol Name",
         "tag":"(0018,1030)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/D",
         "cleanDescOpt":"C",
@@ -2413,7 +2134,6 @@
     {
         "name":"Radiation Dose Identification Label",
         "tag":"(300A,0619)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "cleanDescOpt":"C",
@@ -2422,7 +2142,6 @@
     {
         "name":"Radiation Dose In-Vivo Measurement Label",
         "tag":"(300A,0623)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "cleanDescOpt":"C",
@@ -2431,7 +2150,6 @@
     {
         "name":"Radiation Generation Mode Description",
         "tag":"(300A,067D)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "cleanDescOpt":"C",
@@ -2440,7 +2158,6 @@
     {
         "name":"Radiation Generation Mode Label",
         "tag":"(300A,067C)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "cleanDescOpt":"C",
@@ -2449,7 +2166,6 @@
     {
         "name":"Reason for Omission Description",
         "tag":"(300C,0113)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -2458,7 +2174,6 @@
     {
         "name":"Reason for Requested Procedure Code Sequence",
         "tag":"(0040,100A)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -2467,7 +2182,6 @@
     {
         "name":"Reason for Study",
         "tag":"(0032,1030)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -2476,7 +2190,6 @@
     {
         "name":"Reason for Superseding",
         "tag":"(3010,005C)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "cleanDescOpt":"C",
@@ -2485,7 +2198,6 @@
     {
         "name":"Reason for the Imaging Service Request",
         "tag":"(0040,2001)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -2494,7 +2206,6 @@
     {
         "name":"Reason for the Requested Procedure",
         "tag":"(0040,1002)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -2503,7 +2214,6 @@
     {
         "name":"Reason for Visit",
         "tag":"(0032,1066)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -2512,7 +2222,6 @@
     {
         "name":"Reason for Visit Code Sequence",
         "tag":"(0032,1067)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -2521,7 +2230,6 @@
     {
         "name":"Referenced Conceptual Volume UID",
         "tag":"(3010,000B)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -2530,7 +2238,6 @@
     {
         "name":"Referenced Digital Signature Sequence",
         "tag":"(0400,0402)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"04000402"
@@ -2538,7 +2245,6 @@
     {
         "name":"Referenced Dose Reference UID",
         "tag":"(300A,0083)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -2547,7 +2253,6 @@
     {
         "name":"Referenced Dosimetric Objective UID",
         "tag":"(3010,006F)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -2556,7 +2261,6 @@
     {
         "name":"Referenced Fiducials UID",
         "tag":"(3010,0031)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -2565,7 +2269,6 @@
     {
         "name":"Referenced Frame of Reference UID",
         "tag":"(3006,0024)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -2574,7 +2277,6 @@
     {
         "name":"Referenced General Purpose Scheduled Procedure Step Transaction UID",
         "tag":"(0040,4023)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -2583,7 +2285,6 @@
     {
         "name":"Referenced Image Sequence",
         "tag":"(0008,1140)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/Z/U*",
         "rtnUIDsOpt":"K",
@@ -2592,7 +2293,6 @@
     {
         "name":"Referenced Observation UID (Trial)",
         "tag":"(0040,A172)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -2601,7 +2301,6 @@
     {
         "name":"Referenced Patient Alias Sequence",
         "tag":"(0038,0004)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00380004"
@@ -2609,7 +2308,6 @@
     {
         "name":"Referenced Patient Photo Sequence",
         "tag":"(0010,1100)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00101100"
@@ -2617,7 +2315,6 @@
     {
         "name":"Referenced Patient Sequence",
         "tag":"(0008,1120)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnUIDsOpt":"X",
@@ -2626,7 +2323,6 @@
     {
         "name":"Referenced Performed Procedure Step Sequence",
         "tag":"(0008,1111)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/Z/D",
         "rtnUIDsOpt":"K",
@@ -2635,7 +2331,6 @@
     {
         "name":"Referenced SOP Instance MAC Sequence",
         "tag":"(0400,0403)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"04000403"
@@ -2643,7 +2338,6 @@
     {
         "name":"Referenced SOP Instance UID",
         "tag":"(0008,1155)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -2652,7 +2346,6 @@
     {
         "name":"Referenced SOP Instance UID in File",
         "tag":"(0004,1511)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -2661,7 +2354,6 @@
     {
         "name":"Referenced Study Sequence",
         "tag":"(0008,1110)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/Z",
         "rtnUIDsOpt":"K",
@@ -2670,7 +2362,6 @@
     {
         "name":"Referring Physician's Address",
         "tag":"(0008,0092)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00080092"
@@ -2678,7 +2369,6 @@
     {
         "name":"Referring Physician's Name",
         "tag":"(0008,0090)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "id":"00080090"
@@ -2686,7 +2376,6 @@
     {
         "name":"Referring Physician's Telephone Numbers",
         "tag":"(0008,0094)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00080094"
@@ -2694,7 +2383,6 @@
     {
         "name":"Referring Physician Identification Sequence",
         "tag":"(0008,0096)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00080096"
@@ -2702,7 +2390,6 @@
     {
         "name":"Region of Residence",
         "tag":"(0010,2152)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00102152"
@@ -2710,7 +2397,6 @@
     {
         "name":"Related Frame of Reference UID",
         "tag":"(3006,00C2)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -2719,7 +2405,6 @@
     {
         "name":"Request Attributes Sequence",
         "tag":"(0040,0275)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -2728,7 +2413,6 @@
     {
         "name":"Requested Contrast Agent",
         "tag":"(0032,1070)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -2737,7 +2421,6 @@
     {
         "name":"Requested Procedure Comments",
         "tag":"(0040,1400)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -2746,7 +2429,6 @@
     {
         "name":"Requested Procedure Description",
         "tag":"(0032,1060)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/Z",
         "cleanDescOpt":"C",
@@ -2755,7 +2437,6 @@
     {
         "name":"Requested Procedure ID",
         "tag":"(0040,1001)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00401001"
@@ -2763,7 +2444,6 @@
     {
         "name":"Requested Procedure Location",
         "tag":"(0040,1005)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00401005"
@@ -2771,7 +2451,6 @@
     {
         "name":"Requested SOP Instance UID",
         "tag":"(0000,1001)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -2780,7 +2459,6 @@
     {
         "name":"Requesting Physician",
         "tag":"(0032,1032)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00321032"
@@ -2788,7 +2466,6 @@
     {
         "name":"Requesting Service",
         "tag":"(0032,1033)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00321033"
@@ -2796,7 +2473,6 @@
     {
         "name":"Respiratory Motion Compensation Technique Description",
         "tag":"(0018,9185)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -2805,7 +2481,6 @@
     {
         "name":"Responsible Organization",
         "tag":"(0010,2299)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00102299"
@@ -2813,7 +2488,6 @@
     {
         "name":"Responsible Person",
         "tag":"(0010,2297)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00102297"
@@ -2821,7 +2495,6 @@
     {
         "name":"Results Comments",
         "tag":"(4008,4000)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -2830,7 +2503,6 @@
     {
         "name":"Results Distribution List Sequence",
         "tag":"(4008,0118)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"40080118"
@@ -2838,7 +2510,6 @@
     {
         "name":"Results ID Issuer",
         "tag":"(4008,0042)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"40080042"
@@ -2846,7 +2517,6 @@
     {
         "name":"Reviewer Name",
         "tag":"(300E,0008)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/Z",
         "id":"300e0008"
@@ -2854,7 +2524,6 @@
     {
         "name":"RT Accessory Device Slot ID",
         "tag":"(300A,0615)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "id":"300a0615"
@@ -2862,7 +2531,6 @@
     {
         "name":"RT Accessory Holder Slot ID",
         "tag":"(300A,0611)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "id":"300a0611"
@@ -2870,7 +2538,6 @@
     {
         "name":"RT Physician Intent Narrative",
         "tag":"(3010,005A)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "cleanDescOpt":"C",
@@ -2879,7 +2546,6 @@
     {
         "name":"RT Plan Date",
         "tag":"(300A,0006)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/D",
         "rtnLongFullDatesOpt":"K",
@@ -2889,7 +2555,6 @@
     {
         "name":"RT Plan Description",
         "tag":"(300A,0004)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -2898,7 +2563,6 @@
     {
         "name":"RT Plan Label",
         "tag":"(300A,0002)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "cleanDescOpt":"C",
@@ -2907,7 +2571,6 @@
     {
         "name":"RT Plan Name",
         "tag":"(300A,0003)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -2916,7 +2579,6 @@
     {
         "name":"RT Plan Time",
         "tag":"(300A,0007)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/D",
         "rtnLongFullDatesOpt":"K",
@@ -2926,7 +2588,6 @@
     {
         "name":"RT Prescription Label",
         "tag":"(3010,0054)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "cleanDescOpt":"C",
@@ -2935,7 +2596,6 @@
     {
         "name":"RT Tolerance Set Label",
         "tag":"(300A,062A)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "cleanDescOpt":"C",
@@ -2944,7 +2604,6 @@
     {
         "name":"RT Treatment Approach Label",
         "tag":"(3010,0056)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/D",
         "cleanDescOpt":"C",
@@ -2953,7 +2612,6 @@
     {
         "name":"RT Treatment Phase UID",
         "tag":"(3010,003B)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -2962,7 +2620,6 @@
     {
         "name":"Scheduled Human Performers Sequence",
         "tag":"(0040,4034)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00404034"
@@ -2970,7 +2627,6 @@
     {
         "name":"Scheduled Patient Institution Residence",
         "tag":"(0038,001E)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"0038001e"
@@ -2978,7 +2634,6 @@
     {
         "name":"Scheduled Performing Physician's Name",
         "tag":"(0040,0006)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00400006"
@@ -2986,7 +2641,6 @@
     {
         "name":"Scheduled Performing Physician Identification Sequence",
         "tag":"(0040,000B)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"0040000b"
@@ -2994,7 +2648,6 @@
     {
         "name":"Scheduled Procedure Step Description",
         "tag":"(0040,0007)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -3003,7 +2656,6 @@
     {
         "name":"Scheduled Procedure Step End Date",
         "tag":"(0040,0004)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnLongFullDatesOpt":"K",
@@ -3013,7 +2665,6 @@
     {
         "name":"Scheduled Procedure Step End Time",
         "tag":"(0040,0005)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnLongFullDatesOpt":"K",
@@ -3023,7 +2674,6 @@
     {
         "name":"Scheduled Procedure Step Expiration DateTime",
         "tag":"(0040,4008)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnLongFullDatesOpt":"K",
@@ -3033,7 +2683,6 @@
     {
         "name":"Scheduled Procedure Step Location",
         "tag":"(0040,0011)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnDevIdOpt":"K",
@@ -3042,7 +2691,6 @@
     {
         "name":"Scheduled Procedure Step Modification DateTime",
         "tag":"(0040,4010)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnLongFullDatesOpt":"K",
@@ -3052,7 +2700,6 @@
     {
         "name":"Scheduled Procedure Step Start Date",
         "tag":"(0040,0002)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnLongFullDatesOpt":"K",
@@ -3062,7 +2709,6 @@
     {
         "name":"Scheduled Procedure Step Start DateTime",
         "tag":"(0040,4005)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnLongFullDatesOpt":"K",
@@ -3072,7 +2718,6 @@
     {
         "name":"Scheduled Procedure Step Start Time",
         "tag":"(0040,0003)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnLongFullDatesOpt":"K",
@@ -3082,7 +2727,6 @@
     {
         "name":"Scheduled Station AE Title",
         "tag":"(0040,0001)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnDevIdOpt":"K",
@@ -3091,7 +2735,6 @@
     {
         "name":"Scheduled Station Geographic Location Code Sequence",
         "tag":"(0040,4027)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnDevIdOpt":"K",
@@ -3100,7 +2743,6 @@
     {
         "name":"Scheduled Station Name",
         "tag":"(0040,0010)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnDevIdOpt":"K",
@@ -3109,7 +2751,6 @@
     {
         "name":"Scheduled Station Name Code Sequence",
         "tag":"(0040,4025)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnDevIdOpt":"K",
@@ -3118,7 +2759,6 @@
     {
         "name":"Scheduled Study Location",
         "tag":"(0032,1020)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnDevIdOpt":"K",
@@ -3127,7 +2767,6 @@
     {
         "name":"Scheduled Study Location AE Title",
         "tag":"(0032,1021)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnDevIdOpt":"K",
@@ -3136,7 +2775,6 @@
     {
         "name":"Series Date",
         "tag":"(0008,0021)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/D",
         "rtnLongFullDatesOpt":"K",
@@ -3146,7 +2784,6 @@
     {
         "name":"Series Description",
         "tag":"(0008,103E)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -3155,7 +2792,6 @@
     {
         "name":"Series Instance UID",
         "tag":"(0020,000E)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -3164,7 +2800,6 @@
     {
         "name":"Series Time",
         "tag":"(0008,0031)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/D",
         "rtnLongFullDatesOpt":"K",
@@ -3174,7 +2809,6 @@
     {
         "name":"Service Episode Description",
         "tag":"(0038,0062)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -3183,7 +2817,6 @@
     {
         "name":"Service Episode ID",
         "tag":"(0038,0060)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"00380060"
@@ -3191,7 +2824,6 @@
     {
         "name":"Setup Technique Description",
         "tag":"(300A,01B2)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -3200,7 +2832,6 @@
     {
         "name":"Shielding Device Description",
         "tag":"(300A,01A6)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -3209,7 +2840,6 @@
     {
         "name":"Slide Identifier",
         "tag":"(0040,06FA)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"004006fa"
@@ -3217,7 +2847,6 @@
     {
         "name":"Smoking Status",
         "tag":"(0010,21A0)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnPatCharsOpt":"K",
@@ -3226,7 +2855,6 @@
     {
         "name":"SOP Instance UID",
         "tag":"(0008,0018)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -3235,7 +2863,6 @@
     {
         "name":"Source Conceptual Volume UID",
         "tag":"(3010,0015)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -3244,7 +2871,6 @@
     {
         "name":"Source End DateTime",
         "tag":"(0018,936A)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "rtnLongFullDatesOpt":"K",
@@ -3254,7 +2880,6 @@
     {
         "name":"Source Identifier",
         "tag":"(0034,0005)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "id":"00340005"
@@ -3262,7 +2887,6 @@
     {
         "name":"Source Image Sequence",
         "tag":"(0008,2112)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/Z/U*",
         "rtnUIDsOpt":"K",
@@ -3271,7 +2895,6 @@
     {
         "name":"Source Manufacturer",
         "tag":"(300A,0216)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnDevIdOpt":"K",
@@ -3280,7 +2903,6 @@
     {
         "name":"Source Serial Number",
         "tag":"(3008,0105)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/Z",
         "rtnDevIdOpt":"K",
@@ -3289,7 +2911,6 @@
     {
         "name":"Source Serial Number",
         "tag":"(3008,0105)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnDevIdOpt":"K",
@@ -3298,7 +2919,6 @@
     {
         "name":"Source Start DateTime",
         "tag":"(0018,9369)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "rtnLongFullDatesOpt":"K",
@@ -3308,7 +2928,6 @@
     {
         "name":"Special Needs",
         "tag":"(0038,0050)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "rtnPatCharsOpt":"C",
@@ -3317,7 +2936,6 @@
     {
         "name":"Specimen Accession Number",
         "tag":"(0040,050A)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"0040050a"
@@ -3325,7 +2943,6 @@
     {
         "name":"Specimen Detailed Description",
         "tag":"(0040,0602)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -3334,7 +2951,6 @@
     {
         "name":"Specimen Identifier",
         "tag":"(0040,0551)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "id":"00400551"
@@ -3342,7 +2958,6 @@
     {
         "name":"Specimen Preparation Sequence",
         "tag":"(0040,0610)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "cleanStructContOpt":"C",
@@ -3351,7 +2966,6 @@
     {
         "name":"Specimen Short Description",
         "tag":"(0040,0600)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -3360,7 +2974,6 @@
     {
         "name":"Specimen UID",
         "tag":"(0040,0554)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -3369,7 +2982,6 @@
     {
         "name":"Start Acquisition DateTime",
         "tag":"(0018,9516)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/D",
         "rtnLongFullDatesOpt":"K",
@@ -3379,7 +2991,6 @@
     {
         "name":"Station Name",
         "tag":"(0008,1010)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/Z/D",
         "rtnDevIdOpt":"K",
@@ -3388,7 +2999,6 @@
     {
         "name":"Storage Media File-set UID",
         "tag":"(0088,0140)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -3397,7 +3007,6 @@
     {
         "name":"Study Comments",
         "tag":"(0032,4000)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -3406,7 +3015,6 @@
     {
         "name":"Study Date",
         "tag":"(0008,0020)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "rtnLongFullDatesOpt":"K",
@@ -3416,7 +3024,6 @@
     {
         "name":"Study Description",
         "tag":"(0008,1030)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -3425,7 +3032,6 @@
     {
         "name":"Study ID",
         "tag":"(0020,0010)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "id":"00200010"
@@ -3433,7 +3039,6 @@
     {
         "name":"Study ID Issuer",
         "tag":"(0032,0012)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00320012"
@@ -3441,7 +3046,6 @@
     {
         "name":"Study Instance UID",
         "tag":"(0020,000D)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -3450,7 +3054,6 @@
     {
         "name":"Study Time",
         "tag":"(0008,0030)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "rtnLongFullDatesOpt":"K",
@@ -3460,7 +3063,6 @@
     {
         "name":"Synchronization Frame of Reference UID",
         "tag":"(0020,0200)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -3469,7 +3071,6 @@
     {
         "name":"Target UID",
         "tag":"(0018,2042)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -3478,7 +3079,6 @@
     {
         "name":"Telephone Number (Trial)",
         "tag":"(0040,A354)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"0040a354"
@@ -3486,7 +3086,6 @@
     {
         "name":"Template Extension Creator UID",
         "tag":"(0040,DB0D)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -3495,7 +3094,6 @@
     {
         "name":"Template Extension Organization UID",
         "tag":"(0040,DB0C)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -3504,7 +3102,6 @@
     {
         "name":"Text Comments",
         "tag":"(4000,4000)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"40004000"
@@ -3512,7 +3109,6 @@
     {
         "name":"Text String",
         "tag":"(2030,0020)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"20300020"
@@ -3520,7 +3116,6 @@
     {
         "name":"Timezone Offset From UTC",
         "tag":"(0008,0201)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnLongFullDatesOpt":"K",
@@ -3530,7 +3125,6 @@
     {
         "name":"Topic Author",
         "tag":"(0088,0910)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00880910"
@@ -3538,7 +3132,6 @@
     {
         "name":"Topic Keywords",
         "tag":"(0088,0912)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00880912"
@@ -3546,7 +3139,6 @@
     {
         "name":"Topic Subject",
         "tag":"(0088,0906)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00880906"
@@ -3554,7 +3146,6 @@
     {
         "name":"Topic Title",
         "tag":"(0088,0904)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00880904"
@@ -3562,7 +3153,6 @@
     {
         "name":"Tracking UID",
         "tag":"(0062,0021)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -3571,7 +3161,6 @@
     {
         "name":"Transaction UID",
         "tag":"(0008,1195)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -3580,7 +3169,6 @@
     {
         "name":"Treatment Date",
         "tag":"(3008,0250)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/D",
         "rtnLongFullDatesOpt":"K",
@@ -3590,7 +3178,6 @@
     {
         "name":"Treatment Machine Name",
         "tag":"(300A,00B2)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnDevIdOpt":"K",
@@ -3599,7 +3186,6 @@
     {
         "name":"Treatment Position Group Label",
         "tag":"(300A,0608)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "cleanDescOpt":"C",
@@ -3608,7 +3194,6 @@
     {
         "name":"Treatment Position Group UID",
         "tag":"(300A,0609)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
@@ -3617,7 +3202,6 @@
     {
         "name":"Treatment Site",
         "tag":"(3010,0077)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "cleanDescOpt":"C",
@@ -3626,7 +3210,6 @@
     {
         "name":"Treatment Technique Notes",
         "tag":"(3010,007A)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "cleanDescOpt":"C",
@@ -3635,7 +3218,6 @@
     {
         "name":"Treatment Time",
         "tag":"(3008,0251)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X/D",
         "rtnLongFullDatesOpt":"K",
@@ -3645,7 +3227,6 @@
     {
         "name":"UDI Sequence",
         "tag":"(0018,100A)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnDevIdOpt":"K",
@@ -3654,7 +3235,6 @@
     {
         "name":"UID",
         "tag":"(0040,A124)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "id":"0040a124"
@@ -3662,7 +3242,6 @@
     {
         "name":"Unique Device Identifier",
         "tag":"(0018,1009)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnDevIdOpt":"K",
@@ -3671,7 +3250,6 @@
     {
         "name":"User Content Label",
         "tag":"(3010,0033)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "cleanDescOpt":"C",
@@ -3680,7 +3258,6 @@
     {
         "name":"User Content Long Label",
         "tag":"(3010,0034)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "cleanDescOpt":"C",
@@ -3689,7 +3266,6 @@
     {
         "name":"Verbal Source (Trial)",
         "tag":"(0040,A352)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"0040a352"
@@ -3697,7 +3273,6 @@
     {
         "name":"Verbal Source Identifier Code Sequence (Trial)",
         "tag":"(0040,A358)",
-        "retired":"Y",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"0040a358"
@@ -3705,7 +3280,6 @@
     {
         "name":"Verifying Observer Identification Code Sequence",
         "tag":"(0040,A088)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "id":"0040a088"
@@ -3713,7 +3287,6 @@
     {
         "name":"Verifying Observer Name",
         "tag":"(0040,A075)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "id":"0040a075"
@@ -3721,7 +3294,6 @@
     {
         "name":"Verifying Observer Sequence",
         "tag":"(0040,A073)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "id":"0040a073"
@@ -3729,7 +3301,6 @@
     {
         "name":"Verifying Organization",
         "tag":"(0040,A027)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "id":"0040a027"
@@ -3737,7 +3308,6 @@
     {
         "name":"Visit Comments",
         "tag":"(0038,4000)",
-        "retired":"N",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "cleanDescOpt":"C",
@@ -3746,7 +3316,6 @@
     {
         "name":"X-Ray Detector ID",
         "tag":"(0018,9371)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "rtnDevIdOpt":"K",
@@ -3755,7 +3324,6 @@
     {
         "name":"X-Ray Detector Label",
         "tag":"(0018,9373)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnDevIdOpt":"K",
@@ -3764,7 +3332,6 @@
     {
         "name":"X-Ray Source ID",
         "tag":"(0018,9367)",
-        "retired":"N",
         "stdCompIOD":"Y",
         "basicProfile":"D",
         "rtnDevIdOpt":"K",

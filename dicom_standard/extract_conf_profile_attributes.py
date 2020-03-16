@@ -34,8 +34,30 @@ def table_to_json(table: List[AttributeDictType]) -> List[AttributeDictType]:
     return attributes
 
 
+def verify_table_integrity(parsed_table_data: List[AttributeDictType], attributes: List[AttributeDictType]):
+    retired_attrs = [d['name'] for d in attributes if d['retired']]
+    errors = []
+    for attr in parsed_table_data:
+        attr_name = attr['name']
+        retired = attr['retired'] == 'Y'
+        if retired and attr['name'] not in retired_attrs:
+            errors.append(f'Attribute "{attr_name}" {attr["tag"]} is retired in Table ' \
+            'E.1-1 but not in Table 6-1.')
+        if not retired and attr['name'] in retired_attrs:
+            errors.append(f'Attribute "{attr_name}" {attr["tag"]} is retired in Table ' \
+            '6-1 but not in Table E.1-1.')
+    if errors:
+        errors.insert(0, 'One or more attributes in tables 6-1 and E.1-1 have inconsistent properties between tables:')
+        error_msg = '\n'.join(errors)
+        raise Exception(error_msg)
+
+
 if __name__ == '__main__':
     standard = pl.parse_html_file(sys.argv[1])
+    attributes = pl.read_json_to_dict(sys.argv[2])
     table = get_conf_profile_table(standard)
     parsed_table_data = table_to_json(table)
+    verify_table_integrity(parsed_table_data, attributes)
+    for attr in parsed_table_data:
+        del attr['retired']
     pl.write_pretty_json(parsed_table_data)
