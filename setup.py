@@ -46,12 +46,14 @@ setup(
 
     package_data={
         'standard': [
-            'ciods.json',
+            'attributes.json',
             'ciod_to_modules.json',
+            'ciods.json',
+            'confidentiality_profile_attributes.json',
             'modules.json',
             'module_to_attributes.json',
-            'attributes.json',
             'references.json',
+            'sops.json',
         ],
     },
 
