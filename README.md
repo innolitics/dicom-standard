@@ -2,6 +2,10 @@
    <img src="https://travis-ci.org/innolitics/dicom-standard.svg?branch=master">
 </a>
 
+<a href="https://github.com/innolitics/dicom-standard/actions?query=workflow%3Abuild-and-update">
+   <img src="https://github.com/innolitics/dicom-standard/workflows/build-and-update/badge.svg">
+</a>
+
 # DICOM Standard Parser
 
 This program parses the web version of the [DICOM Standard][nema] into human
