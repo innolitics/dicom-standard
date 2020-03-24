@@ -21,11 +21,11 @@ def get_chapter_tables(standard: BeautifulSoup, chapter_id: str, validity_func: 
 
 
 def tables_to_json(
-        tables: List[TableListType],
-        tdivs: List[Tag],
-        table_to_dict_func: Callable[[TableListType], List[Dict[str, List[Tag]]]],
-        get_table_with_metadata: Callable[[Tuple[TableListType, Tag]], Dict[str, Any]]
-    ) -> List[Dict[str, Any]]:
+    tables: List[TableListType],
+    tdivs: List[Tag],
+    table_to_dict_func: Callable[[TableListType], List[Dict[str, List[Tag]]]],
+    get_table_with_metadata: Callable[[Tuple[TableListType, Tag]], Dict[str, Any]]
+) -> List[Dict[str, Any]]:
     expanded_tables = map(expand_spans, tables)
     stringified_tables = map(stringify_table, expanded_tables)
     table_dicts = map(table_to_dict_func, stringified_tables)

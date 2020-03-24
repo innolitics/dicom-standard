@@ -7,7 +7,7 @@ import sys
 from dicom_standard import parse_lib as pl
 
 from process_ciod_module_relationship import expand_conditional_statement
-                                              
+
 
 def define_all_relationships(ciod_macro_list):
     all_relationships = []

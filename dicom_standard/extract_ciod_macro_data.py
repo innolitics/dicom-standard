@@ -1,10 +1,20 @@
+'''
+Load the CIOD macro tables from DICOM Standard PS3.3, Annex A.
+All CIOD tables are defined in chapter A of the DICOM Standard.
+Output the tables in JSON format, one entry per CIOD.
+'''
 import sys
 import re
 
 from dicom_standard import parse_lib as pl
 from dicom_standard import parse_relations as pr
-from dicom_standard.table_utils import (get_chapter_tables, tables_to_json,
-    get_short_standard_link, get_table_description, table_to_dict)
+from dicom_standard.table_utils import (
+    get_chapter_tables,
+    tables_to_json,
+    get_short_standard_link,
+    get_table_description,
+    table_to_dict,
+)
 
 CHAPTER_ID = 'chapter_A'
 # Include optional "s" at end of "Functional Group" to catch Table A.32.9-2

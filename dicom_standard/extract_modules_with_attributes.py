@@ -7,8 +7,12 @@ import re
 
 from dicom_standard import parse_lib as pl
 from dicom_standard import parse_relations as pr
-from dicom_standard.table_utils import (get_chapter_tables, tables_to_json,
-    get_short_standard_link, table_to_dict)
+from dicom_standard.table_utils import (
+    get_chapter_tables,
+    tables_to_json,
+    get_short_standard_link,
+    table_to_dict
+)
 
 CHAPTER_ID = 'chapter_C'
 TABLE_SUFFIX = re.compile("(.*Module Attributes$)|(.*Module Table$)")

@@ -8,8 +8,13 @@ import re
 
 from dicom_standard import parse_lib as pl
 from dicom_standard import parse_relations as pr
-from dicom_standard.table_utils import (get_chapter_tables, tables_to_json,
-    get_short_standard_link, get_table_description, table_to_dict)
+from dicom_standard.table_utils import (
+    get_chapter_tables,
+    tables_to_json,
+    get_short_standard_link,
+    get_table_description,
+    table_to_dict,
+)
 
 CHAPTER_ID = 'chapter_A'
 TABLE_SUFFIX = re.compile(".*IOD Modules$")
