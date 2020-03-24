@@ -47,7 +47,7 @@ tmp/modules_attributes_partial_references.json: tmp/modules_attributes_no_refere
 tmp/modules_attributes_no_references.json: tmp/preprocessed_modules_attributes.json
 	$(PYTHONPATH_PREFIX) python3 process_module_attribute_relationship.py $< > $@
 
-tmp/preprocessed_modules_attributes.json: tmp/raw_module_attribute_tables.json tmp/raw_macro_tables.json
+tmp/preprocessed_modules_attributes.json: tmp/raw_module_attribute_tables.json tmp/raw_macro_attribute_tables.json
 	$(PYTHONPATH_PREFIX) python3 preprocess_modules_with_attributes.py $^ > $@
 
 tmp/raw_ciod_module_tables.json: tmp/part03.html
@@ -56,8 +56,8 @@ tmp/raw_ciod_module_tables.json: tmp/part03.html
 tmp/raw_module_attribute_tables.json: tmp/part03.html
 	$(PYTHONPATH_PREFIX) python3 extract_modules_with_attributes.py $< > $@
 
-tmp/raw_macro_tables.json: tmp/part03.html
-	$(PYTHONPATH_PREFIX) python3 extract_macros.py $< > $@
+tmp/raw_macro_attribute_tables.json: tmp/part03.html
+	$(PYTHONPATH_PREFIX) python3 extract_macros_with_attributes.py $< > $@
 
 tmp/raw_section_tables.json: extract_sections.py $(cleaned_dicom_html)
 	$(PYTHONPATH_PREFIX) python3 $^ > $@

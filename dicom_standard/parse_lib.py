@@ -70,7 +70,8 @@ def clean_table_name(name: str) -> str:
         Table C.7-5b. Clinical Trial Series Module Attributes --> Clinical Trial Series
     '''
     _, _, title = re.split('\u00a0', name)
-    possible_table_suffixes = r'(IOD Modules)|(Module Attributes)|(Macro Attributes)|(Module Table)'
+    # Include optional "s" at end of "Functional Group" to catch Table A.32.9-2
+    possible_table_suffixes = r'(IOD Modules)|(Module Attributes)|(Macro Attributes)|(Module Table)|(Functional Groups? Macros)'
     clean_title, *_ = re.split(possible_table_suffixes, title)
     # TODO: Remove following two lines of code once title of Table A.82.1.3-1 is fixed (Issue #18)
     # http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.82.html#table_A.82.1.3-1

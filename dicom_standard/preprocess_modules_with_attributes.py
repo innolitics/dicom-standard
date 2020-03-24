@@ -6,10 +6,11 @@ Specific processing steps are:
     2. Expand out hierarchy markers and embed order in the attribute ID
     3. Clean up and format data fields
 '''
+from typing import Iterator, Dict
 import sys
 
 from dicom_standard import parse_lib as pl
-from dicom_standard.macro_utils import expand_macro_rows
+from dicom_standard.macro_utils import expand_macro_rows, get_id_from_link, MetadataTableType
 from dicom_standard.hierarchy_utils import record_hierarchy_for_module
 
 
@@ -49,9 +50,17 @@ def expand_hierarchy(tables):
     return [record_hierarchy_for_module(table) for table in tables]
 
 
+def key_tables_by_id(list_of_tables: Iterator[MetadataTableType]) -> Dict[str, MetadataTableType]:
+    dict_of_tables = {}
+    for table in list_of_tables:
+        dict_of_tables[get_id_from_link(table['linkToStandard'])] = table
+    return dict_of_tables
+
+
 if __name__ == '__main__':
     module_attr_tables = pl.read_json_to_dict(sys.argv[1])
-    macro_tables = pl.read_json_to_dict(sys.argv[2])
+    macro_attr_tables = pl.read_json_to_dict(sys.argv[2])
+    macro_tables = key_tables_by_id(macro_attr_tables)
     tables_with_macros = expand_all_macros(module_attr_tables, macro_tables)
     preprocessed_tables = preprocess_attribute_fields(tables_with_macros)
     tables_with_hierarchy = expand_hierarchy(preprocessed_tables)

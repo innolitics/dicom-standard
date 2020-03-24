@@ -135,21 +135,21 @@ A map of all extraction and processing pathways is shown below:
        |           |              |           |   |           |             |
    +---v-----+  +--v-------+  +---v-----+  +--v---v---+  +----v----+  +-----v------+
    | Extract |  | Extract  |  | Extract |  | Extract  |  | Extract |  | Extract    |
-   | CIODs/  |  | Modules/ |  | Macros  |  | Sections |  | SOPs    |  | Attributes |
-   | Modules |  | Attrs    |  +-+-------+  +--+-------+  +----+----+  +------+-----+
-   +-+------++  +--------+-+    |             |               |             |
-     |      |            |   +--+             |               |             |
-     |      |            |   |                |               |             |
-+----v----+ |       +----v---v---+            |               |             |
-| Process | |       | Preprocess |            |               |             |
-|  CIODS  | |       | Modules/   |            |               v             v
-+----+----+ |       | Attributes |            |           sops.json   attributes.json
-     |      |       +--+--------++            |
-     v      |          |        |             |
- ciods.json |      +---v-----+  |             |
-            |      | Process |  |             |
-    +-------v---+  | Modules |  |             |
-    | Process   |  +-----+---+  +-+           |
+   | CIODs/  |  | Modules/ |  | Macros/ |  | Sections |  | SOPs    |  | Attributes |
+   | Modules |  | Attrs    |  | Attrs   |  +--+-------+  +----+----+  +------+-----+
+   +-+------++  +--------+-+  +---+-----+     |               |             |
+     |      |            |        |           |               |             |
+     |      |            |        |           |               |             |
++----v----+ |          +-v--------v-+         |               |             |
+| Process | |          | Preprocess |         |               |             |
+|  CIODS  | |          | Modules/   |         |               v             v
++----+----+ |          | Attributes |         |           sops.json   attributes.json
+     |      |          +-+--------+-+         |
+     v      |            |        |           |
+ ciods.json |       +----v----+   |           |
+            |       | Process |   |           |
+    +-------v---+   | Modules |   |           |
+    | Process   |   +----+----+   |           |
     | CIOD/     |        |        |           |
     | Attribute |        v        |           |
     | Relations |   modules.json  |           |
