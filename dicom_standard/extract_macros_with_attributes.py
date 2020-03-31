@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup, Tag
 
 from dicom_standard import parse_lib as pl
 from dicom_standard import parse_relations as pr
-from dicom_standard.table_utils import tdiv_to_table_list, tables_to_json, TableListType
+from dicom_standard.table_utils import TableListType, tdiv_to_table_list, tables_to_json
 
 from extract_modules_with_attributes import module_table_to_dict, get_table_with_metadata
 

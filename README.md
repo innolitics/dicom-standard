@@ -125,44 +125,44 @@ and successive processing steps use increasingly refined JSON.
 A map of all extraction and processing pathways is shown below:
 
 ```
-                            +-------+                  +----------+    +-------+     +-------+
-                            | PS3.3 |                  |  Other   |    | PS3.4 |     | PS3.6 |
-                            +---+---+                  |  DICOM   |    +---+---+     +---+---+
-                                |                      | Sections |        |             |
-                                |                      +-------+--+        |             |
-                                |                              |           |             |
-        +-----------+-----------+--------------+-----------+   |           |             |
-        |           |           |              |           |   |           |             |
-   +----v----+  +---v-----+  +--v-------+  +---v-----+  +--v---v---+  +----v----+  +-----v------+
-   | Extract |  | Extract |  | Extract  |  | Extract |  | Extract  |  | Extract |  | Extract    |
-   | CIODs/  |  | CIODs/  |  | Modules/ |  | Macros/ |  | Sections |  | SOPs    |  | Attributes |
-   | Macros  |  | Modules |  | Attrs    |  | Attrs   |  +--+-------+  +----+----+  +-----+------+
-   +----v----+  +--+---+--+  +--------+-+  +---+-----+     |               |             |
-        |          |   |              |        |           |               |             |
-        |          |   +---+          |        |           |               |             |
-        |     +----v----+  |        +-v--------v-+         |               |             |
-        |     | Process |  |        | Preprocess |         |               |             |
-        |     |  CIODS  |  |        | Modules/   |         |               v             v
-        |     +----+----+  |        | Attributes |         |           sops.json   attributes.json
-        |          |       |        +--+-------+-+         |
-        |          v       |           |       |           |
-        |      ciods.json  |      +----v----+  |           |
-        |                  |      | Process |  |           |
-  +-----v-----+    +-------v---+  | Modules |  |           |
-  | Process   |    | Process   |  +----+----+  |           |
-  | CIOD/     |    | CIOD/     |       |       |           |
-  | Macro     |    | Module    |       v       |           |
-  | Relations |    | Relations |  modules.json |           |
-  +-----v-----+    +-----+-----+               |           |
-        |                |                     |           |
-        |                v               +-----v-----+     |
-        |        ciod_to_modules.json    | Process   |     |
-        |                                | Module    |     |
-        v                                | Attribute |     |
-  ciod_to_macros.json                    | Relations |     |
-                                         +-----+-----+     |
-                                               |           |
-                                            +--+-----------+-+
+                            +-------+             +----------+  +-------+     +-------+
+                            | PS3.3 |             |  Other   |  | PS3.4 |     | PS3.6 |
+                            +---+---+             |  DICOM   |  +---+---+     +---+---+
+                                |                 | Sections |      |             |
+                                |                 +-----+----+      |             |
+                                |                       |           |             |
+           +-----------+--------+-------+-----------+   |           |             |
+           |           |                |           |   |           |             |
+      +----v----+  +---v-----+     +----v-----+  +--v---v---+  +----v----+  +-----v------+
+      | Extract |  | Extract |     | Extract  |  | Extract  |  | Extract |  | Extract    |
+      | CIODs/  |  | CIODs/  |     | Modules/ |  | Sections |  | SOPs    |  | Attributes |
+      | Macros  |  | Modules |     | Attrs    |  +-----+----+  +----+----+  +-----+------+
+      +----+----+  +--+---+--+     +----+-----+        |            |             |
+           |          |   |             |              |            |             |
+           |          |   +---+         |              |            |             |
+           |     +----v----+  |   +-----v------+       |            |             |
+           |     | Process |  |   | Preprocess |       |            |             |
+           |     |  CIODS  |  |   | Modules/   |       |            v             v
+           |     +----+----+  |   | Attributes |       |        sops.json   attributes.json
+           |          |       |   +------+---+-+       |
+           |          v       |          |   |         +---+
+           |      ciods.json  |          |   +----+        |
+           |                  |      +---v-----+  |        |
+     +-----v-----+    +-------v---+  | Process |  |        |
+     | Process   |    | Process   |  | Modules |  |        |
+     | CIOD/     |    | CIOD/     |  +----+----+  |        |
+     | Macro     |    | Module    |       |       |        |
+     | Relations |    | Relations |       v       |        |
+     +-----+-----+    +-----+-----+  modules.json |        |
+           |                |                     |        |
+           |                v               +-----v-----+  |
+           |        ciod_to_modules.json    | Process   |  |
+           |                                | Module    |  |
+           v                                | Attribute |  |
+     ciod_to_macros.json                    | Relations |  |
+                                            +-----+-----+  |
+                                                  |        |
+                                            +-----v--------v-+
                                             | Post-process   |
                                             | Add References |
                                             +--+-----------+-+
