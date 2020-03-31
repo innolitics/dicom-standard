@@ -2236,5 +2236,17 @@
         "id":"robotic-arm-path",
         "description":"<p>\nThe Robotic-Arm Path Module specifies or records how a Robotic Path treatment is to be delivered. Multiple paths are encoded as separate RT Radiation instances referred to in the RT Radiation Set IOD.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.19.html#table_C.36.19-1"
+    },
+    {
+        "name":"File-Set Identification",
+        "id":"file-set-identification",
+        "description":"<p>\n<strong>Table\u00a0F.3-2.\u00a0File-Set Identification Module Attributes</strong>\n</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_F.3.2.html#table_F.3-2"
+    },
+    {
+        "name":"Directory Information",
+        "id":"directory-information",
+        "description":"<p>\nThis Module contains a Sequence of Directory Records forming one or more Directory Entities. This Module defines at least one Directory Entity, the Root Directory Entity (which may be empty). Each Directory Record is composed of Directory Elements (marked by a \"&gt;\"). They include:</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_F.3.2.2.html#table_F.3-3"
     }
 ]
