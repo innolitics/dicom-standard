@@ -12,9 +12,7 @@ def modules_from_tables(tables):
     for module in tables:
         module['description'] = pl.clean_html(module['description'])
         module.pop('attributes', None)
-        # Exclude macros
-        if not module.pop('isMacro', None):
-            modules.append(module)
+        modules.append(module)
     return modules
 
 

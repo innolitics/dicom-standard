@@ -38,7 +38,8 @@ def preprocess_attribute_fields(tables):
 
 
 def preprocess_single_table(table):
-    table['attributes'] = list(map(preprocess_attribute, table['attributes']))
+    # Used in conjunction with lines 55-56 to catch exception
+    table['attributes'] = [attr for attr in list(map(preprocess_attribute, table['attributes'])) if attr]
     return table
 
 
@@ -50,6 +51,9 @@ def preprocess_attribute(attr):
                 else pl.text_from_html_string(attr['type']),
         'description': attr['description']
     }
+    # Return empty dict if tag is invalid (exception in table F.3-3)
+    if cleaned_attribute['tag'] == 'See F.5':
+        return {}
     return cleaned_attribute
 
 
