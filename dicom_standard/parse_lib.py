@@ -14,7 +14,19 @@ from dicom_standard import parse_relations as pr
 
 BASE_DICOM_URL = "http://dicom.nema.org/medical/dicom/current/output/html/"
 BASE_SHORT_DICOM_SECTION_URL = "http://dicom.nema.org/medical/dicom/current/output/chtml/"
-NONSTANDARD_SECTION_ID = 'sect_C.7.6.16.2'
+NONSTANDARD_SECTION_IDS = [
+    'sect_10.32',
+    'sect_C.7.6.16.2',
+    'sect_C.8.27.4',
+    'sect_C.8.8.2.6',
+    'sect_C.8.8.3.4',
+    'sect_C.8.8.15.16',
+    'sect_C.8.8.25.6',
+    'sect_C.8.13.5.14',
+    'sect_C.8.19.6.9',
+    'sect_C.8.27.6.3',
+]
+ID_PATTERN = re.compile(r'\b(' + '|'.join(NONSTANDARD_SECTION_IDS) + r').+\b')
 SHORT_DICOM_URL_PREFIX = "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/"
 
 allowed_attributes = ["href", "src", "type", "data", "colspan", "rowspan"]
@@ -177,13 +189,17 @@ def get_standard_page(sect_id: str) -> str:
     '''
     Returns the short HTML page name of the DICOM standard containing `sect_id`.
     '''
-    sections = sect_id.split('.')
     try:
-        # TODO: Remove if block (and constant) once URL once links for C.7.6.16.2 subsections exist  (Issue #10)
-        if NONSTANDARD_SECTION_ID in sect_id:
-            # For some reason, all subsections within C.7.16.2 are located within "sect_C.7.6.16.2.html", so return only the valid part
+        # TODO: Remove if block (and constant) once URL once links for subsections exist (Issue #10 and related sections)
+        invalid_sect_id_match = re.match(ID_PATTERN, sect_id)
+        if invalid_sect_id_match:
+            # For some reason, certain subsections are located within the base section, so return only the valid part
             # Ex: C.7.16.2.5.1 should be within C.7.16.2.5, but "sect_C.7.16.2.5.html" is invalid
-            return NONSTANDARD_SECTION_ID
+            return invalid_sect_id_match.group(1)
+        # Fix broken link produced by inconsistent URL pattern: http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1004
+        if sect_id == 'sect_TID_1004':
+            return 'chapter_A'
+        sections = sect_id.split('.')
         cutoff_index = sections.index('1')
         cropped_section = sections[0:cutoff_index]
         section_page = '.'.join(sections[0:cutoff_index])
