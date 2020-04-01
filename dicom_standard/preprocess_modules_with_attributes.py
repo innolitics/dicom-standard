@@ -38,7 +38,7 @@ def preprocess_attribute_fields(tables):
 
 
 def preprocess_single_table(table):
-    # Used in conjunction with lines 55-56 to catch exception
+    # Catch exception in Table F.3-3 where an attribute has an invalid tag: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_F.3.2.2.html#table_F.3-3
     table['attributes'] = [attr for attr in list(map(preprocess_attribute, table['attributes'])) if attr]
     return table
 
@@ -51,7 +51,7 @@ def preprocess_attribute(attr):
                 else pl.text_from_html_string(attr['type']),
         'description': attr['description']
     }
-    # Return empty dict if tag is invalid (exception in table F.3-3)
+    # Return empty dict if tag is invalid (exception in Table F.3-3)
     if cleaned_attribute['tag'] == 'See F.5':
         return {}
     return cleaned_attribute

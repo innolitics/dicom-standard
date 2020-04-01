@@ -77,7 +77,7 @@ def clean_table_name(name: str) -> str:
     # http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.82.html#table_A.82.1.3-1
     # Remove extra "Table" in beginning of table title (should be "CT Performed Procedure Protocol", not "Table CT Performed ...")
     if 'Table CT Performed Procedure Protocol' in clean_title:
-        clean_title = 'Table CT Performed Procedure Protocol'
+        clean_title = 'CT Performed Procedure Protocol'
     return clean_title.strip()
 
 
