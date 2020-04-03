@@ -36,8 +36,8 @@ def sops(make_standard):
 
 
 @pytest.fixture(scope='module')
-def ciod_macro_relationship(make_standard):
-    return pl.read_json_to_dict('standard/ciod_to_macros.json')
+def ciod_fg_macro_relationship(make_standard):
+    return pl.read_json_to_dict('standard/ciod_to_fg_macros.json')
 
 
 @pytest.fixture(scope='module')
@@ -56,8 +56,8 @@ def module_attribute_relationship(make_standard):
 
 
 @pytest.mark.endtoend
-def test_valid_foreign_keys_ciod_macro(ciod_macro_relationship, ciods, macros):
-    for pair in ciod_macro_relationship:
+def test_valid_foreign_keys_ciod_macro(ciod_fg_macro_relationship, ciods, macros):
+    for pair in ciod_fg_macro_relationship:
         assert any(d['id'] == pair['ciodId'] for d in ciods)
         assert any(d['id'] == pair['macroId'] for d in macros)
 

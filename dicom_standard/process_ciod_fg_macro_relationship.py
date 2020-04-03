@@ -1,6 +1,6 @@
 '''
-Takes the extracted CIOD-Macro table information to build a list of all
-CIOD-Macro relationships defined in the DICOM Standard.
+Takes the extracted CIOD-Functional Group Macro table information to build a list of all
+CIOD-Functional Group Macro relationships defined in the DICOM Standard.
 '''
 import re
 import sys

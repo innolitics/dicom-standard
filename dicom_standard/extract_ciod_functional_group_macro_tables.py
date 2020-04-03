@@ -1,7 +1,6 @@
 '''
-Load the CIOD macro tables from DICOM Standard PS3.3, Annex A.
-All CIOD tables are defined in chapter A of the DICOM Standard.
-Output the tables in JSON format, one entry per CIOD.
+Load the CIOD to functional group macro tables from DICOM Standard PS3.3, Annex A.
+Output the data from the tables in JSON format, one entry per CIOD.
 '''
 import sys
 import re
