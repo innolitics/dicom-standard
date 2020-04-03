@@ -84,6 +84,12 @@ def test_valid_foreign_keys_module_attribute(module_attribute_relationship, modu
 
 
 @pytest.mark.endtoend
+def test_valid_ciod_names(sops, ciods):
+    for pair in sops:
+        assert any(d['name'] == pair['ciod'] for d in ciods)
+
+
+@pytest.mark.endtoend
 def test_vertical_samples_from_standard(ciods, modules, attributes):
     test_ciod = {
         "name": "US Multi-frame Image",

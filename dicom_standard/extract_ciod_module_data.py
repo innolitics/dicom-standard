@@ -17,7 +17,9 @@ from dicom_standard.table_utils import (
 )
 
 CHAPTER_ID = 'chapter_A'
-TABLE_SUFFIX = re.compile(".*IOD Modules$")
+# Include upper case "S" to catch typo in Table A.39.19-1
+# http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.35.19.3.html
+TABLE_SUFFIX = re.compile(".*IOD Module[sS]$")
 COLUMN_TITLES = ['informationEntity', 'module', 'reference_fragment', 'usage']
 
 

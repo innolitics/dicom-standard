@@ -9457,6 +9457,90 @@
         "informationEntity":"Document"
     },
     {
+        "ciodId":"planned-imaging-agent-administration-sr",
+        "moduleId":"patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciodId":"planned-imaging-agent-administration-sr",
+        "moduleId":"clinical-trial-subject",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciodId":"planned-imaging-agent-administration-sr",
+        "moduleId":"general-study",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"planned-imaging-agent-administration-sr",
+        "moduleId":"patient-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"planned-imaging-agent-administration-sr",
+        "moduleId":"clinical-trial-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"planned-imaging-agent-administration-sr",
+        "moduleId":"sr-document-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"planned-imaging-agent-administration-sr",
+        "moduleId":"clinical-trial-series",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"planned-imaging-agent-administration-sr",
+        "moduleId":"general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"planned-imaging-agent-administration-sr",
+        "moduleId":"enhanced-general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"planned-imaging-agent-administration-sr",
+        "moduleId":"sr-document-general",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Document"
+    },
+    {
+        "ciodId":"planned-imaging-agent-administration-sr",
+        "moduleId":"sr-document-content",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Document"
+    },
+    {
+        "ciodId":"planned-imaging-agent-administration-sr",
+        "moduleId":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Document"
+    },
+    {
         "ciodId":"performed-imaging-agent-administration-sr",
         "moduleId":"patient",
         "usage":"M",
@@ -17311,140 +17395,140 @@
         "informationEntity":"Content Assessment Results"
     },
     {
-        "ciodId":"table-ct-performed-procedure-protocol",
+        "ciodId":"ct-performed-procedure-protocol",
         "moduleId":"patient",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Patient"
     },
     {
-        "ciodId":"table-ct-performed-procedure-protocol",
+        "ciodId":"ct-performed-procedure-protocol",
         "moduleId":"clinical-trial-subject",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Patient"
     },
     {
-        "ciodId":"table-ct-performed-procedure-protocol",
+        "ciodId":"ct-performed-procedure-protocol",
         "moduleId":"general-study",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"table-ct-performed-procedure-protocol",
+        "ciodId":"ct-performed-procedure-protocol",
         "moduleId":"patient-study",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"table-ct-performed-procedure-protocol",
+        "ciodId":"ct-performed-procedure-protocol",
         "moduleId":"clinical-trial-study",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"table-ct-performed-procedure-protocol",
+        "ciodId":"ct-performed-procedure-protocol",
         "moduleId":"general-series",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"table-ct-performed-procedure-protocol",
+        "ciodId":"ct-performed-procedure-protocol",
         "moduleId":"clinical-trial-series",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"table-ct-performed-procedure-protocol",
+        "ciodId":"ct-performed-procedure-protocol",
         "moduleId":"enhanced-series",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"table-ct-performed-procedure-protocol",
+        "ciodId":"ct-performed-procedure-protocol",
         "moduleId":"ct-protocol-series",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"table-ct-performed-procedure-protocol",
+        "ciodId":"ct-performed-procedure-protocol",
         "moduleId":"frame-of-reference",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Frame of Reference"
     },
     {
-        "ciodId":"table-ct-performed-procedure-protocol",
+        "ciodId":"ct-performed-procedure-protocol",
         "moduleId":"general-equipment",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
     },
     {
-        "ciodId":"table-ct-performed-procedure-protocol",
+        "ciodId":"ct-performed-procedure-protocol",
         "moduleId":"enhanced-general-equipment",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
     },
     {
-        "ciodId":"table-ct-performed-procedure-protocol",
+        "ciodId":"ct-performed-procedure-protocol",
         "moduleId":"protocol-context",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Procedure Protocol"
     },
     {
-        "ciodId":"table-ct-performed-procedure-protocol",
+        "ciodId":"ct-performed-procedure-protocol",
         "moduleId":"patient-protocol-context",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Procedure Protocol"
     },
     {
-        "ciodId":"table-ct-performed-procedure-protocol",
+        "ciodId":"ct-performed-procedure-protocol",
         "moduleId":"instructions",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Procedure Protocol"
     },
     {
-        "ciodId":"table-ct-performed-procedure-protocol",
+        "ciodId":"ct-performed-procedure-protocol",
         "moduleId":"patient-positioning",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Procedure Protocol"
     },
     {
-        "ciodId":"table-ct-performed-procedure-protocol",
+        "ciodId":"ct-performed-procedure-protocol",
         "moduleId":"performed-ct-acquisition",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Procedure Protocol"
     },
     {
-        "ciodId":"table-ct-performed-procedure-protocol",
+        "ciodId":"ct-performed-procedure-protocol",
         "moduleId":"performed-ct-reconstruction",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Procedure Protocol"
     },
     {
-        "ciodId":"table-ct-performed-procedure-protocol",
+        "ciodId":"ct-performed-procedure-protocol",
         "moduleId":"performed-storage",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Procedure Protocol"
     },
     {
-        "ciodId":"table-ct-performed-procedure-protocol",
+        "ciodId":"ct-performed-procedure-protocol",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,

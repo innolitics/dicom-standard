@@ -1,5 +1,4 @@
 from typing import Tuple, List
-import re
 import sys
 
 from bs4 import BeautifulSoup, Tag
@@ -8,24 +7,22 @@ from dicom_standard import parse_lib as pl
 from dicom_standard.extract_attributes import attribute_table_to_list
 from dicom_standard.table_utils import AttributeDictType, table_to_dict
 
-COLUMN_TITLES = ['name', 'id', 'iod']
+COLUMN_TITLES = ['name', 'id', 'ciod']
 TABLE_ID = 'table_B.5-1'
 IOD_ABBREVIATIONS = {
-    'Computed Radiography': 'CR',
-    'Computed Tomography': 'CT',
-    'Magnetic Resonance': 'MR',
-    'Nuclear Medicine': 'NM',
-    'Ultrasound': 'US',
-    'Secondary Capture': 'SC',
-    'Radiotherapy': 'RT',
-    'Positron Emission Tomography': 'PET',
-    'Electrocardiogram': 'ECG',
-    'Electrophysiology': 'EP',
-    'OCT': 'OCT Image',
-    'Enhanced X-Ray RF Image': 'Enhanced XRF Image',
-    'X-Ray Radiofluoroscopic': 'XRF',
+    'Computed Radiography Image': 'CR Image',
+    'Ultrasound Multi-frame Image': 'US Multi-frame Image',
+    'Ultrasound Image': 'US Image',
+    'Multi-frame Single Bit Secondary Capture Image': 'Multi-frame Single Bit SC Image',
+    'Multi-frame Grayscale Byte Secondary Capture Image': 'Multi-frame Grayscale Byte SC Image',
+    'Multi-frame Grayscale Word Secondary Capture Image': 'Multi-frame Grayscale Word SC Image',
+    'Multi-frame True Color Secondary Capture Image': 'Multi-frame True Color SC Image',
+    'Pseudo-color Softcopy Presentation State': 'Pseudo-Color Softcopy Presentation State',
+    'Intravascular Optical Coherence Tomography': 'Intravascular Optical Coherence Tomography Image',  # Inconsistent name: http://dicom.nema.org/medical/Dicom/current/output/chtml/part03/sect_A.66.html
+    'Nuclear Medicine Image': 'NM Image',
+    'Patient Radiation Dose SR': 'Patient Radiation Dose Structured Report',
+    'Positron Emission Tomography Image': 'PET Image',
 }
-ID_PATTERN = re.compile(r'\b(' + '|'.join(IOD_ABBREVIATIONS.keys()) + r')\b')
 
 
 def get_table_and_tdiv(standard: BeautifulSoup) -> Tuple[List[AttributeDictType], Tag]:
@@ -37,16 +34,14 @@ def get_table_and_tdiv(standard: BeautifulSoup) -> Tuple[List[AttributeDictType]
 
 
 def generate_ciod_id(name: str) -> str:
-    cleaned_name = name.split('Storage')[0].strip()
-    return cleaned_name
+    cleaned_name = name.split('IOD')[0].strip()
+    return IOD_ABBREVIATIONS.get(cleaned_name, cleaned_name)
 
 
 def table_to_json(table: List[AttributeDictType], tdiv: Tag) -> List[AttributeDictType]:
     attributes = []
     for row in table:
-        ciod = generate_ciod_id(row['name'])
-        row['ciod'] = ciod
-        row.pop('iod', None)
+        row['ciod'] = generate_ciod_id(row['ciod'])
         attributes.append(row)
     return attributes
 

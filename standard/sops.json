@@ -2,7 +2,7 @@
     {
         "name":"Computed Radiography Image Storage",
         "id":"1.2.840.10008.5.1.4.1.1.1",
-        "ciod":"Computed Radiography Image"
+        "ciod":"CR Image"
     },
     {
         "name":"Digital X-Ray Image Storage - For Presentation",
@@ -52,7 +52,7 @@
     {
         "name":"Ultrasound Multi-frame Image Storage",
         "id":"1.2.840.10008.5.1.4.1.1.3.1",
-        "ciod":"Ultrasound Multi-frame Image"
+        "ciod":"US Multi-frame Image"
     },
     {
         "name":"MR Image Storage",
@@ -82,7 +82,7 @@
     {
         "name":"Ultrasound Image Storage",
         "id":"1.2.840.10008.5.1.4.1.1.6.1",
-        "ciod":"Ultrasound Image"
+        "ciod":"US Image"
     },
     {
         "name":"Enhanced US Volume Storage",
@@ -97,37 +97,37 @@
     {
         "name":"Multi-frame Single Bit Secondary Capture Image Storage",
         "id":"1.2.840.10008.5.1.4.1.1.7.1",
-        "ciod":"Multi-frame Single Bit Secondary Capture Image"
+        "ciod":"Multi-frame Single Bit SC Image"
     },
     {
         "name":"Multi-frame Grayscale Byte Secondary Capture Image Storage",
         "id":"1.2.840.10008.5.1.4.1.1.7.2",
-        "ciod":"Multi-frame Grayscale Byte Secondary Capture Image"
+        "ciod":"Multi-frame Grayscale Byte SC Image"
     },
     {
         "name":"Multi-frame Grayscale Word Secondary Capture Image Storage",
         "id":"1.2.840.10008.5.1.4.1.1.7.3",
-        "ciod":"Multi-frame Grayscale Word Secondary Capture Image"
+        "ciod":"Multi-frame Grayscale Word SC Image"
     },
     {
         "name":"Multi-frame True Color Secondary Capture Image Storage",
         "id":"1.2.840.10008.5.1.4.1.1.7.4",
-        "ciod":"Multi-frame True Color Secondary Capture Image"
+        "ciod":"Multi-frame True Color SC Image"
     },
     {
         "name":"12-lead ECG Waveform Storage",
         "id":"1.2.840.10008.5.1.4.1.1.9.1.1",
-        "ciod":"12-lead ECG Waveform"
+        "ciod":"12-Lead ECG"
     },
     {
         "name":"General ECG Waveform Storage",
         "id":"1.2.840.10008.5.1.4.1.1.9.1.2",
-        "ciod":"General ECG Waveform"
+        "ciod":"General ECG"
     },
     {
         "name":"Ambulatory ECG Waveform Storage",
         "id":"1.2.840.10008.5.1.4.1.1.9.1.3",
-        "ciod":"Ambulatory ECG Waveform"
+        "ciod":"Ambulatory ECG"
     },
     {
         "name":"Hemodynamic Waveform Storage",
@@ -137,7 +137,7 @@
     {
         "name":"Cardiac Electrophysiology Waveform Storage",
         "id":"1.2.840.10008.5.1.4.1.1.9.3.1",
-        "ciod":"Cardiac Electrophysiology Waveform"
+        "ciod":"Basic Cardiac Electrophysiology Waveform"
     },
     {
         "name":"Basic Voice Audio Waveform Storage",
@@ -187,12 +187,12 @@
     {
         "name":"Grayscale Planar MPR Volumetric Presentation State Storage",
         "id":"1.2.840.10008.5.1.4.1.1.11.6",
-        "ciod":"Grayscale Planar MPR Volumetric Presentation State"
+        "ciod":"Planar MPR Volumetric Presentation State"
     },
     {
         "name":"Compositing Planar MPR Volumetric Presentation State Storage",
         "id":"1.2.840.10008.5.1.4.1.1.11.7",
-        "ciod":"Compositing Planar MPR Volumetric Presentation State"
+        "ciod":"Planar MPR Volumetric Presentation State"
     },
     {
         "name":"Advanced Blending Presentation State Storage",
@@ -207,12 +207,12 @@
     {
         "name":"Segmented Volume Rendering Volumetric Presentation State Storage",
         "id":"1.2.840.10008.5.1.4.1.1.11.10",
-        "ciod":"Segmented Volume Rendering Volumetric Presentation State"
+        "ciod":"Volume Rendering Volumetric Presentation State"
     },
     {
         "name":"Multiple Volume Rendering Volumetric Presentation State Storage",
         "id":"1.2.840.10008.5.1.4.1.1.11.11",
-        "ciod":"Multiple Volume Rendering Volumetric Presentation State"
+        "ciod":"Volume Rendering Volumetric Presentation State"
     },
     {
         "name":"X-Ray Angiographic Image Storage",
@@ -272,7 +272,7 @@
     {
         "name":"Nuclear Medicine Image Storage",
         "id":"1.2.840.10008.5.1.4.1.1.20",
-        "ciod":"Nuclear Medicine Image"
+        "ciod":"NM Image"
     },
     {
         "name":"Parametric Map Storage",
@@ -507,7 +507,7 @@
     {
         "name":"Key Object Selection Storage",
         "id":"1.2.840.10008.5.1.4.1.1.88.59",
-        "ciod":"Key Object Selection"
+        "ciod":"Key Object Selection Document"
     },
     {
         "name":"Chest CAD SR Storage",
@@ -547,7 +547,7 @@
     {
         "name":"Patient Radiation Dose SR Storage",
         "id":"1.2.840.10008.5.1.4.1.1.88.73",
-        "ciod":"Patient Radiation Dose SR"
+        "ciod":"Patient Radiation Dose Structured Report"
     },
     {
         "name":"Planned Imaging Agent Administration SR Storage",
@@ -592,7 +592,7 @@
     {
         "name":"Positron Emission Tomography Image Storage",
         "id":"1.2.840.10008.5.1.4.1.1.128",
-        "ciod":"Positron Emission Tomography Image"
+        "ciod":"PET Image"
     },
     {
         "name":"Enhanced PET Image Storage",
