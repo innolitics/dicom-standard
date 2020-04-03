@@ -83,13 +83,17 @@ def clean_table_name(name: str) -> str:
     '''
     _, _, title = re.split('\u00a0', name)
     # Include optional "s" at end of "Functional Group" to catch Table A.32.9-2
-    possible_table_suffixes = r'(IOD Modules)|(Module Attributes)|(Macro Attributes)|(Module Table)|(Functional Groups? Macros)'
+    # http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.9.3.4.html#table_A.32.9-2
+    possible_table_suffixes = r'(IOD Modules)|(Module Attributes)|((Functional Group)? Macro Attributes)|(Module Table)|(Functional Groups? Macros)'
     clean_title, *_ = re.split(possible_table_suffixes, title)
-    # TODO: Remove following two lines of code once title of Table A.82.1.3-1 is fixed (Issue #18)
+    # Remove extra "Table" from table title (should be "CT Performed Procedure Protocol", not "Table CT Performed ...")
     # http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.82.html#table_A.82.1.3-1
-    # Remove extra "Table" in beginning of table title (should be "CT Performed Procedure Protocol", not "Table CT Performed ...")
-    if 'Table CT Performed Procedure Protocol' in clean_title:
+    if clean_title == 'Table CT Performed Procedure Protocol':
         clean_title = 'CT Performed Procedure Protocol'
+    # Remove extra "Sequence" from table title (should be "CT X-Ray Details", not "CT X-Ray Details Sequence")
+    # http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.15.3.9.html#table_C.8-125
+    if clean_title == 'CT X-Ray Details Sequence':
+        clean_title = 'CT X-Ray Details'
     return clean_title.strip()
 
 

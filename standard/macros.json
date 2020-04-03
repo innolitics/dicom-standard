@@ -1,0 +1,1562 @@
+[
+    {
+        "name":"Basic Code Sequence",
+        "id":"basic-code-sequence",
+        "description":"<p>\n<span href=\"#table_8.8-1\">This macro </span> specifies the default set of Attributes encapsulated in the Items of Code Sequence Attributes. These Attributes comprise the Code Sequence Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_8.8.html#table_8.8-1a"
+    },
+    {
+        "name":"Enhanced Code Sequence",
+        "id":"enhanced-code-sequence",
+        "description":"<p>\n<span href=\"#table_8.8-1\">This macro </span> specifies the default set of Attributes encapsulated in the Items of Code Sequence Attributes. These Attributes comprise the Code Sequence Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_8.8.html#table_8.8-1b"
+    },
+    {
+        "name":"Code Sequence",
+        "id":"code-sequence",
+        "description":"<p>\n<span href=\"#table_8.8-1\">This macro </span> specifies the default set of Attributes encapsulated in the Items of Code Sequence Attributes. These Attributes comprise the Code Sequence Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_8.8.html#table_8.8-1"
+    },
+    {
+        "name":"Person Identification",
+        "id":"person-identification",
+        "description":"<p>\nThis Macro may be invoked to specify a coded representation of a person such as a healthcare worker, and the organization to which they are responsible.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.html#table_10-1"
+    },
+    {
+        "name":"Content Item",
+        "id":"content-item",
+        "description":"<p>\nA Content Item is a flexible means of encoding attribute identifiers and attribute values using the Code Sequence Macro (see <span href=\"#chapter_8\">This macro </span>) for coded terminology defined by a coding scheme. The Content Item provides a name-value pair, i.e., a Concept Name, encoded as a Code Sequence, and a Concept Value. The Concept Value may be encoded by any of a set of generic Attributes, as specified by a Value Type, including text, personal name, numeric, and coded concept (Code Sequence) values.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.2.html#table_10-2"
+    },
+    {
+        "name":"Content Item with Modifiers",
+        "id":"content-item-with-modifiers",
+        "description":"<p>\nContent Item with Modifiers is a means of describing structured content which needs a Content Item with single optional level of modifiers,\n                i.e. a two-level structure of Content Items.\n                An invocation of the Content Item with Modifiers Macro will usually specify the allowed values using a Protocol Context Template in <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part16.html#PS3.16\" target=\"_blank\">PS3.16</a>,\n                which allows a single Nesting Level (see in <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_6.html#sect_6.1.2\" target=\"_blank\">Section\u00a06.1.2 \u201cNesting Level (NL)\u201d in <span>PS3.16</span>\n</a>).\n                Constraints on the use of this Macro may be specified in <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_C.html#chapter_C\" target=\"_blank\">PS3.16 Annex C</a>, which may be invoked in IODs in <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#PS3.3\" target=\"_blank\">PS3.3</a>.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.2.html#table_10.2.1-1"
+    },
+    {
+        "name":"Image SOP Instance Reference",
+        "id":"image-sop-instance-reference",
+        "description":"<p>\n<strong>Table\u00a010-3.\u00a0Image SOP Instance Reference Macro Attributes</strong>\n</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.3.html#table_10-3"
+    },
+    {
+        "name":"Referenced Instances and Access",
+        "id":"referenced-instances-and-access",
+        "description":"<p>\n<strong>Table\u00a010-3.\u00a0Image SOP Instance Reference Macro Attributes</strong>\n</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.3.html#table_10-3b"
+    },
+    {
+        "name":"Storage",
+        "id":"storage",
+        "description":"<p>\n<strong>Table\u00a010-3.\u00a0Image SOP Instance Reference Macro Attributes</strong>\n</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.3.html#table_10-3c"
+    },
+    {
+        "name":"Series and Instance Reference",
+        "id":"series-and-instance-reference",
+        "description":"<p>\n<span href=\"#table_10-4\">This macro </span> defines the Attributes that list Series and SOP Instances within those Series.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.4.html#table_10-4"
+    },
+    {
+        "name":"General Anatomy Mandatory",
+        "id":"general-anatomy-mandatory",
+        "description":"<p>\n<span href=\"#table_10-5\">This macro </span>, <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_10-6\" target=\"_blank\">Table\u00a010-6</a>, <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_10-7\" target=\"_blank\">Table\u00a010-7</a> and <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_10-7b\" target=\"_blank\">Table\u00a010-7b</a> describe the Attributes for identifying the general region of the Patient anatomy examined using coded terminology, as well as the principal structure(s) within that region that is the target of the current SOP Instance.\n        The only differences between the Macros are the Type and Number of Items of the Anatomic Region Sequence (0008,2218) Attribute. <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_10-8\" target=\"_blank\">Table\u00a010-8</a> describe the Attributes for the coding of the principal structure only.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.5.html#table_10-5"
+    },
+    {
+        "name":"General Anatomy Required",
+        "id":"general-anatomy-required",
+        "description":"<p>\n<span href=\"#table_10-5\">This macro </span>, <span href=\"#table_10-6\">This macro </span>, <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_10-7\" target=\"_blank\">Table\u00a010-7</a> and <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_10-7b\" target=\"_blank\">Table\u00a010-7b</a> describe the Attributes for identifying the general region of the Patient anatomy examined using coded terminology, as well as the principal structure(s) within that region that is the target of the current SOP Instance.\n        The only differences between the Macros are the Type and Number of Items of the Anatomic Region Sequence (0008,2218) Attribute. <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_10-8\" target=\"_blank\">Table\u00a010-8</a> describe the Attributes for the coding of the principal structure only.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.5.html#table_10-6"
+    },
+    {
+        "name":"General Anatomy Optional",
+        "id":"general-anatomy-optional",
+        "description":"<p>\n<span href=\"#table_10-5\">This macro </span>, <span href=\"#table_10-6\">This macro </span>, <span href=\"#table_10-7\">This macro </span> and <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_10-7b\" target=\"_blank\">Table\u00a010-7b</a> describe the Attributes for identifying the general region of the Patient anatomy examined using coded terminology, as well as the principal structure(s) within that region that is the target of the current SOP Instance.\n        The only differences between the Macros are the Type and Number of Items of the Anatomic Region Sequence (0008,2218) Attribute. <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_10-8\" target=\"_blank\">Table\u00a010-8</a> describe the Attributes for the coding of the principal structure only.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.5.html#table_10-7"
+    },
+    {
+        "name":"Multiple Site General Anatomy Optional",
+        "id":"multiple-site-general-anatomy-optional",
+        "description":"<p>\n<span href=\"#table_10-5\">This macro </span>, <span href=\"#table_10-6\">This macro </span>, <span href=\"#table_10-7\">This macro </span> and <span href=\"#table_10-7b\">This macro </span> describe the Attributes for identifying the general region of the Patient anatomy examined using coded terminology, as well as the principal structure(s) within that region that is the target of the current SOP Instance.\n        The only differences between the Macros are the Type and Number of Items of the Anatomic Region Sequence (0008,2218) Attribute. <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_10-8\" target=\"_blank\">Table\u00a010-8</a> describe the Attributes for the coding of the principal structure only.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.5.html#table_10-7b"
+    },
+    {
+        "name":"Primary Anatomic Structure",
+        "id":"primary-anatomic-structure",
+        "description":"<p>\n<span href=\"#table_10-5\">This macro </span>, <span href=\"#table_10-6\">This macro </span>, <span href=\"#table_10-7\">This macro </span> and <span href=\"#table_10-7b\">This macro </span> describe the Attributes for identifying the general region of the Patient anatomy examined using coded terminology, as well as the principal structure(s) within that region that is the target of the current SOP Instance.\n        The only differences between the Macros are the Type and Number of Items of the Anatomic Region Sequence (0008,2218) Attribute. <span href=\"#table_10-8\">This macro </span> describe the Attributes for the coding of the principal structure only.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.5.html#table_10-8"
+    },
+    {
+        "name":"Request Attributes",
+        "id":"request-attributes",
+        "description":"<p>\n<strong>Table\u00a010-9.\u00a0Request Attributes Macro Attributes</strong>\n</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.6.html#table_10-9"
+    },
+    {
+        "name":"Basic Pixel Spacing Calibration",
+        "id":"basic-pixel-spacing-calibration",
+        "description":"<p>\n<span href=\"#table_10-10\">This macro </span> defines the Attributes for the Basic Pixel Spacing Calibration Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.7.html#table_10-10"
+    },
+    {
+        "name":"SOP Instance Reference",
+        "id":"sop-instance-reference",
+        "description":"<p>\n<span href=\"#table_10-11\">This macro </span> specifies the Attributes that reference an SOP instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.8.html#table_10-11"
+    },
+    {
+        "name":"Content Identification",
+        "id":"content-identification",
+        "description":"<p>\n<span href=\"#table_10-12\">This macro </span> describe the Attributes for identifying a SOP Instance potentially created by a human user interacting with an application.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.9.html#table_10-12"
+    },
+    {
+        "name":"Enhanced Content Identification",
+        "id":"enhanced-content-identification",
+        "description":"<p>\nThe Enhanced Content Identification Macro identifies content using a label supporting lower case characters and specified character sets.\n                If a Code String is required, see <span href=\"#sect_10.9\">This macro </span>.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.9.html#table_10.9.1-1"
+    },
+    {
+        "name":"Extended Content Identification",
+        "id":"extended-content-identification",
+        "description":"<p>\nThe Extended Content Identification Macro identifies content using a label supporting lower case characters and specified character sets.\n                If a Code String is required, see <span href=\"#sect_10.9\">This macro </span>.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.9.2.html#table_10.9.2-1"
+    },
+    {
+        "name":"General Contributing Sources",
+        "id":"general-contributing-sources",
+        "description":"<p>\n<span href=\"#table_10-13\">This macro </span> contains IOD Attributes that describe the general characteristics of the contributing sources used to create a new SOP Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.10.html#table_10-13"
+    },
+    {
+        "name":"Contributing Image Sources",
+        "id":"contributing-image-sources",
+        "description":"<p>\n<span href=\"#table_10-14\">This macro </span> contains IOD Attributes that describe the image related characteristics of the contributing image sources used to create a new SOP Instance (e.g., a volume SOP Instance).</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.11.html#table_10-14"
+    },
+    {
+        "name":"Patient Orientation",
+        "id":"patient-orientation",
+        "description":"<p>\nThis section describes Attributes of the Patient Orientation Macro by specifying the Patient orientation related to gravity and equipment. <span href=\"#table_10-15\">This macro </span> contains IOD Attributes that describe the Patient Orientation related to gravity and equipment.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.12.html#table_10-15"
+    },
+    {
+        "name":"Performed Procedure Step Summary",
+        "id":"performed-procedure-step-summary",
+        "description":"<p>\n<strong>Table\u00a010-16.\u00a0Performed Procedure Step Summary Macro Attributes</strong>\n</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.13.html#table_10-16"
+    },
+    {
+        "name":"HL7v2 Hierarchic Designator",
+        "id":"hl7v2-hierarchic-designator",
+        "description":"<p>\n<span href=\"#table_10-17\">This macro </span> describes the Attributes for identifying an entity (system, organization, agency, or department) that has responsibility for managing or assigning a defined set of instance identifiers (such as placer or filler number, Patient identifiers, provider identifiers, etc.). This entity could be a particular health care application such as a registration system that assigns Patient identifiers, a governmental entity such as a licensing authority that assigns professional identifiers or drivers' license numbers, or a facility where such identifiers are assigned.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.14.html#table_10-17"
+    },
+    {
+        "name":"Issuer of Patient ID",
+        "id":"issuer-of-patient-id",
+        "description":"<p>\n<span href=\"#table_10-18\">This macro </span> describes the Attributes for identifying the source of Patient ID (0010,0020).</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.15.html#table_10-18"
+    },
+    {
+        "name":"Algorithm Identification",
+        "id":"algorithm-identification",
+        "description":"<p>\n<span href=\"#table_10-19\">This macro </span> describes the Attributes for encoding the algorithm used to create or derive a SOP Instance contents. An algorithm is described by the Algorithm Family, a specific Algorithm Name, and an Algorithm Version. A character string containing parameters that were used in the algorithm can be included.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.16.html#table_10-19"
+    },
+    {
+        "name":"Selector Attribute",
+        "id":"selector-attribute",
+        "description":"<p>\n<span href=\"#table_10-20\">This macro </span> specifies the Attributes that identify either a particular value of an Attribute, all values of an Attribute, a specific Item in a Sequence, or all Items in a Sequence. The Attribute or Item may be nested within one or more Sequences, and/or a Private Attribute.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.17.html#table_10-20"
+    },
+    {
+        "name":"Extended Selector Attribute",
+        "id":"extended-selector-attribute",
+        "description":"<p>\n<span href=\"#table_10-20\">This macro </span> specifies the Attributes that identify either a particular value of an Attribute, all values of an Attribute, a specific Item in a Sequence, or all Items in a Sequence. The Attribute or Item may be nested within one or more Sequences, and/or a Private Attribute.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.17.html#table_10-20a"
+    },
+    {
+        "name":"Externally-Sourced Data Set Identification",
+        "id":"externally-sourced-data-set-identification",
+        "description":"<p>\n<span href=\"#table_10-22\">This macro </span> describes the Attributes for the identification of an Externally-Sourced Data Set.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.18.html#table_10-22"
+    },
+    {
+        "name":"Exposure Index",
+        "id":"exposure-index",
+        "description":"<p>\n<span href=\"#table_10-23\">This macro </span> describes the Attributes for describing the Exposure Index for single projection X-Ray images, as described by IEC 62494-1 and the report of AAPM Task Group 116.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.19.html#table_10-23"
+    },
+    {
+        "name":"Mandatory View and Slice Progression Direction",
+        "id":"mandatory-view-and-slice-progression-direction",
+        "description":"<p>\n<span href=\"#table_10-24\">This macro </span> specifies the Attributes that describe the view, and in the case of cardiac views, the direction of the slices relative to the cardiac anatomy.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.20.html#table_10-24"
+    },
+    {
+        "name":"Optional View and Slice Progression Direction",
+        "id":"optional-view-and-slice-progression-direction",
+        "description":"<p>\n<span href=\"#table_10-25\">This macro </span> specifies the Attributes that describe the view, and in the case of cardiac views, the direction of the slices relative to the cardiac anatomy.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.21.html#table_10-25"
+    },
+    {
+        "name":"Numeric Value",
+        "id":"numeric-value",
+        "description":"<p>\n<span href=\"#table_10-26\">This macro </span> describes the Attributes used to relate and convey a numeric value to a coded concept.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.22.html#table_10-26"
+    },
+    {
+        "name":"RT Equipment Correlation",
+        "id":"rt-equipment-correlation",
+        "description":"<p>\n<strong>Table\u00a010-27.\u00a0RT Equipment Correlation Macro Attributes Description</strong>\n</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.23.html#table_10-27"
+    },
+    {
+        "name":"Device Motion Control",
+        "id":"device-motion-control",
+        "description":"<p>\n<span href=\"#table_10-28\">This macro </span> specifies the Attributes that describe requirements on performing the movement of a device from an actual to a desired position.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.24.html#table_10-28"
+    },
+    {
+        "name":"Attribute Value Constraint",
+        "id":"attribute-value-constraint",
+        "description":"<p>\n<span href=\"#table_10.25-1\">This macro </span> allows an Attribute to be identified and to have constraints placed on acceptable values for that Attribute. An Attribute being constrained is refered to in the Macro as a Selector Attribute.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.25.html#table_10.25-1"
+    },
+    {
+        "name":"Attribute Value",
+        "id":"attribute-value",
+        "description":"<p>\n<span href=\"#table_10.26-1\">This macro </span> includes an Attribute to store a value of a specified VR.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.26.html#table_10.26-1"
+    },
+    {
+        "name":"Reference Location",
+        "id":"reference-location",
+        "description":"<p>\nThis Macro allows a reference location in the context of a Patient or scan to be identified and described. E.g., the Macro may describe an anatomically defined location along the axis of a CT scan to prescribe the extent of a scan or reconstruction. The location might be internal to the Patient (and appear on a localizer image) or might be an external landmark (on which a laser is aligned).</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.27.html#table_10.27-1"
+    },
+    {
+        "name":"Protocol Element Identification",
+        "id":"protocol-element-identification",
+        "description":"<p>\nThis Macro identifies and describes an element in a protocol such as an acquisition protocol, a reconstruction protocol or a storage protocol.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.28.html#table_10.28-1"
+    },
+    {
+        "name":"UDI",
+        "id":"udi",
+        "description":"<p>\nThis Macro records details associated with a Unique Device Identifier (UDI).</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.29.html#table_10.29-1"
+    },
+    {
+        "name":"Assertion",
+        "id":"assertion",
+        "description":"<p>\nThis Macro is used to record Assertions made by a person or device about the content of a SOP Instance. The nature of the Assertion is defined by the Assertion Code.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.30.html#table_10.30-1"
+    },
+    {
+        "name":"Entity Labeling",
+        "id":"entity-labeling",
+        "description":"<p>\nThe Entity Labeling Macro provides identification of an entity to a user.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.31.html#table_10.31-1"
+    },
+    {
+        "name":"Entity Long Labeling",
+        "id":"entity-long-labeling",
+        "description":"<p>\nThe Entity Long Labeling Macro provides identification of an entity to a user.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.32.html#table_10.32-1"
+    },
+    {
+        "name":"Conceptual Volume",
+        "id":"conceptual-volume",
+        "description":"<p>\nA Conceptual Volume is an abstract entity used to identify an anatomic region (such as a planning target volume or a combination of multiple anatomic volumes) or non-anatomic volumes such as a bolus or a marker.\n      A Conceptual Volume can be established without necessarily defining its spatial extent (for example a Conceptual Volume for a tumor can be established prior to segmenting it).\n      The spatial extent of a Conceptual Volume may change over time (for example as treatment proceeds the tumor volume corresponding to the Conceptual Volume will change).</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.33.html#table_10.33-1"
+    },
+    {
+        "name":"Conceptual Volume Segmentation Reference And Combination",
+        "id":"conceptual-volume-segmentation-reference-and-combination",
+        "description":"<p>\nThis Macro allows the combination of Conceptual Volumes as constituents of a combined volume.\n      A representative example is to have the Left Lung and the Right Lung segmented,\n      and then to declare the Lungs as a combined Conceptual Volume, for which prescription constraints can be defined.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.34.html#table_10.34-1"
+    },
+    {
+        "name":"Device Model",
+        "id":"device-model",
+        "description":"<p>\nThe Device Model Macro contains general Attributes needed to specify a device model other than the device creating the SOP Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.35.html#table_10.35-1"
+    },
+    {
+        "name":"Device Identification",
+        "id":"device-identification",
+        "description":"<p>\nThe Device Identification Macro identifies a (physical or virtual) device.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.36.html#table_10.36-1"
+    },
+    {
+        "name":"Related Information Entities",
+        "id":"related-information-entities",
+        "description":"<p>\nThis Macro defines references to entities and their purpose of reference. References can be made at the Study level, Series level, Instance level or Frame Level.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.37.html#table_10.37-1"
+    },
+    {
+        "name":"Outline Definition",
+        "id":"outline-definition",
+        "description":"<p>\nThe Outline Definition Macro describes a 2D outline in a given coordinate system.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.38.html#table_10.38-1"
+    },
+    {
+        "name":"Patient to Equipment Relationship",
+        "id":"patient-to-equipment-relationship",
+        "description":"<p>\nThe Patient to Equipment Relationship Macro describes a position of the patient with respect to a device. The position is defined by means of a transformation matrix between a Patient Frame of Reference and an Equipment Frame of Reference.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.39.html#table_10.39-1"
+    },
+    {
+        "name":"Patient Support Position",
+        "id":"patient-support-position",
+        "description":"<p>\nThis Macro provides the device-specific geometric settings for the Patient Support device.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.40.html#table_10.40-1"
+    },
+    {
+        "name":"Patient Group",
+        "id":"patient-group",
+        "description":"<p>\n<span href=\"#table_C.7.1.4-1\">This macro </span> specifies the Attributes of the Patient Group Macro that describe multiple imaging subjects (such as small animals for pre-clinical research) imaged at the same time as a group. This Macro may be included in the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.2.2.html#sect_C.2.2\" target=\"_blank\">Section\u00a0C.2.2 Patient Identification Module</a> and the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.html#sect_C.7.1.1\" target=\"_blank\">Section\u00a0C.7.1.1 Patient Module</a>.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.html#table_C.7.1.4-1"
+    },
+    {
+        "name":"Image Pixel",
+        "id":"image-pixel",
+        "description":"<p>\n<span href=\"#table_C.7-11a\">This module </span> describes the Image Pixel Module.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.3.html#table_C.7-11b"
+    },
+    {
+        "name":"Image Pixel Description",
+        "id":"image-pixel-description",
+        "description":"<p>\n<span href=\"#table_C.7-11a\">This module </span> describes the Image Pixel Module.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.3.html#table_C.7-11c"
+    },
+    {
+        "name":"Display Shutter",
+        "id":"display-shutter",
+        "description":"<p>\nThe Display shutter is a geometric mask consisting of one or more combined shapes that may be applied on the image for presentation purposes in order to neutralize the display of any of the pixels located outside of the shutter shape. Geometry of the shutter is specified with respect to a row and column coordinate system where the origin is the upper left hand pixel. This origin is specified by the values 1,1 for row/column. A row coordinate represents a row spacing (vertical) and a column coordinate represents a column spacing (horizontal). Up to three different shutter shapes may be used and superimposed.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.11.html#table_C.7-17a"
+    },
+    {
+        "name":"Pixel Measures",
+        "id":"pixel-measures",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-2\">This macro </span> specifies the Attributes of the Pixel Measures Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16-2"
+    },
+    {
+        "name":"Frame Content",
+        "id":"frame-content",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-3\">This macro </span> specifies the Attributes of the Frame Content Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.2.html#table_C.7.6.16-3"
+    },
+    {
+        "name":"Plane Position (Patient)",
+        "id":"plane-position-patient",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-4\">This macro </span> specifies the Attributes of the Plane Position (Patient) Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.3.html#table_C.7.6.16-4"
+    },
+    {
+        "name":"Plane Orientation (Patient)",
+        "id":"plane-orientation-patient",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-5\">This macro </span> specifies the Attributes of the Plane Orientation (Patient) Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.4.html#table_C.7.6.16-5"
+    },
+    {
+        "name":"Referenced Image",
+        "id":"referenced-image",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-6\">This macro </span> specifies the Attributes of the Referenced Image Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.5.html#table_C.7.6.16-6"
+    },
+    {
+        "name":"Derivation Image",
+        "id":"derivation-image",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-7\">This macro </span> specifies the Attributes of the Derivation Image Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.6.html#table_C.7.6.16-7"
+    },
+    {
+        "name":"Cardiac Synchronization",
+        "id":"cardiac-synchronization",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-8\">This macro </span> specifies the Attributes of the Cardiac Synchronization Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.7.html#table_C.7.6.16-8"
+    },
+    {
+        "name":"Frame Anatomy",
+        "id":"frame-anatomy",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-9\">This macro </span> specifies the Attributes of the Frame Anatomy Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.8.html#table_C.7.6.16-9"
+    },
+    {
+        "name":"Pixel Value Transformation",
+        "id":"pixel-value-transformation",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-10\">This macro </span> specifies the Attributes of the Pixel Value Transformation Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.9.html#table_C.7.6.16-10"
+    },
+    {
+        "name":"Identity Pixel Value Transformation",
+        "id":"identity-pixel-value-transformation",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-10b\">This macro </span> specifies the Attributes of the Identity Pixel Value Transformation Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.9b.html#table_C.7.6.16-10b"
+    },
+    {
+        "name":"Frame VOI LUT",
+        "id":"frame-voi-lut",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-11\">This macro </span> specifies the Attributes of the Frame VOI LUT Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.10.html#table_C.7.6.16-11"
+    },
+    {
+        "name":"Frame VOI LUT with LUT",
+        "id":"frame-voi-lut-with-lut",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-11b\">This macro </span> specifies the Attributes of the Frame VOI LUT With LUT Functional Group Macro. This Macro contains one or more sets of linear or sigmoid window values and/or one or more sets of lookup tables.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.10b.html#table_C.7.6.16-11b"
+    },
+    {
+        "name":"Real World Value Mapping",
+        "id":"real-world-value-mapping",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-12\">This macro </span> specifies the Attributes of the Real World Value Mapping Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.11.html#table_C.7.6.16-12"
+    },
+    {
+        "name":"Real World Value Mapping Item",
+        "id":"real-world-value-mapping-item",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-12\">This macro </span> specifies the Attributes of the Real World Value Mapping Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.11.html#table_C.7.6.16-12b"
+    },
+    {
+        "name":"Contrast/Bolus Usage",
+        "id":"contrast-bolus-usage",
+        "description":"<p>\n<span href=\"#table_C.7.16-13\">This macro </span> specifies the Attributes of the Contrast/Bolus Usage Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.12.html#table_C.7.16-13"
+    },
+    {
+        "name":"Pixel Intensity Relationship LUT",
+        "id":"pixel-intensity-relationship-lut",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-14\">This macro </span> specifies the Attributes of the Pixel Intensity Relationship LUT Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.13.html#table_C.7.6.16-14"
+    },
+    {
+        "name":"Frame Pixel Shift",
+        "id":"frame-pixel-shift",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-15\">This macro </span> specifies the Attributes of the Frame Pixel Shift Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.14.html#table_C.7.6.16-15"
+    },
+    {
+        "name":"Patient Orientation in Frame",
+        "id":"patient-orientation-in-frame",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-16\">This macro </span> specifies the Attributes of the Patient Orientation in Frame Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.15.html#table_C.7.6.16-16"
+    },
+    {
+        "name":"Frame Display Shutter",
+        "id":"frame-display-shutter",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-17\">This macro </span> specifies the Attributes of the Frame Display Shutter Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.16.html#table_C.7.6.16-17"
+    },
+    {
+        "name":"Respiratory Synchronization",
+        "id":"respiratory-synchronization",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-18\">This macro </span> specifies the Attributes of the Respiratory Synchronization Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.17.html#table_C.7.6.16-18"
+    },
+    {
+        "name":"Irradiation Event Identification",
+        "id":"irradiation-event-identification",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-19\">This macro </span> specifies the Attributes containing the Irradiation Event Identification Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.18.html#table_C.7.6.16-19"
+    },
+    {
+        "name":"Radiopharmaceutical Usage",
+        "id":"radiopharmaceutical-usage",
+        "description":"<p>\n<span href=\"#table_C.7.6.16.2-20\">This macro </span> specifies the Attributes of the Radiopharmaceutical Usage Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.19.html#table_C.7.6.16.2-20"
+    },
+    {
+        "name":"Patient Physiological State",
+        "id":"patient-physiological-state",
+        "description":"<p>\n<span href=\"#table_C.7.6.16.2-21\">This macro </span> specifies the Attributes of the Patient Physiological State Functional Group Macro, which describes the physiological state of the patient.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.20.html#table_C.7.6.16.2-21"
+    },
+    {
+        "name":"Plane Position (Volume)",
+        "id":"plane-position-volume",
+        "description":"<p>\n<span href=\"#table_C.7.6.16.2.21-1\">This macro </span> specifies the Attributes of the Plane Position (Volume) Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.21.html#table_C.7.6.16.2.21-1"
+    },
+    {
+        "name":"Plane Orientation (Volume)",
+        "id":"plane-orientation-volume",
+        "description":"<p>\n<span href=\"#table_C.7.6.16.2.22-1\">This macro </span> specifies the Attributes of the Plane Orientation (Volume) Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.22.html#table_C.7.6.16.2.22-1"
+    },
+    {
+        "name":"Temporal Position",
+        "id":"temporal-position",
+        "description":"<p>\n<span href=\"#table_C.7.6.16.2.23-1\">This macro </span> specifies the Attributes of the Temporal Position Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.23.html#table_C.7.6.16.2.23-1"
+    },
+    {
+        "name":"Image Data Type",
+        "id":"image-data-type",
+        "description":"<p>\n<span href=\"#table_C.7.6.16.2.24-1\">This macro </span> specifies the Attributes of the Image Data Type Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.24.html#table_C.7.6.16.2.24-1"
+    },
+    {
+        "name":"Unassigned Shared Converted Attributes",
+        "id":"unassigned-shared-converted-attributes",
+        "description":"<p>\n<span href=\"#table_C.7.6.16.2.25.1-1\">This macro </span> specifies the Attributes of the Unassigned Shared Converted Attributes Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.25.html#table_C.7.6.16.2.25.1-1"
+    },
+    {
+        "name":"Unassigned Per-Frame Converted Attributes",
+        "id":"unassigned-per-frame-converted-attributes",
+        "description":"<p>\n<span href=\"#table_C.7.6.16.2.25.2-1\">This macro </span> specifies the Attributes of the Unassigned Per-Frame Converted Attributes Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.25.2.html#table_C.7.6.16.2.25.2-1"
+    },
+    {
+        "name":"Image Frame Conversion Source",
+        "id":"image-frame-conversion-source",
+        "description":"<p>\n<span href=\"#table_C.7.6.16.2.25.2-1\">This macro </span> specifies the Attributes of the Image Frame Conversion Source Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.25.3.html#table_C.7.6.16.2.25.3-1"
+    },
+    {
+        "name":"Stored Value Color Range",
+        "id":"stored-value-color-range",
+        "description":"<p>\n<span href=\"#table_C.7.6.16.2.26-1\">This macro </span> defines the Attributes of the Stored Value Color Range Functional Group Macro</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.26.html#table_C.7.6.16.2.26-1"
+    },
+    {
+        "name":"Frame Usefulness",
+        "id":"frame-usefulness",
+        "description":"<p>\n<span href=\"#table_C.7.6.16.2.27-1\">This macro </span> specifies the Attributes of the Frame Usefulness Functional Group Macro, related to the clinical usefulness of the current frame.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.27.html#table_C.7.6.16.2.27-1"
+    },
+    {
+        "name":"Camera Position",
+        "id":"camera-position",
+        "description":"<p>\n<span href=\"#table_C.7.6.16.2.28-1\">This macro </span> specifies the Attributes of the Camera Position Functional Group Macro, related to the position of the camera or the acquisition device for the current frame, with regards to the patient.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.28.html#table_C.7.6.16.2.28-1"
+    },
+    {
+        "name":"Time of Frame",
+        "id":"time-of-frame",
+        "description":"<p>\n<span href=\"#table_C.7.6.16.2.29-1\">This macro </span> specifies the Attributes of the Time of Frame Functional Group Macro, related to the time of frame.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.29.html#table_C.7.6.16.2.29-1"
+    },
+    {
+        "name":"Specimen",
+        "id":"specimen",
+        "description":"<p>\n<span href=\"#table_C.7.6.22-1\">This module </span> specifies the Attributes that identify one or more Specimens being imaged.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.22.html#table_C.7.6.22-2"
+    },
+    {
+        "name":"Palette Color Lookup Table",
+        "id":"palette-color-lookup-table",
+        "description":"<p>\n<span href=\"#table_C.7-22\">This module </span> specifies the Attributes that describe the Lookup table data for images with Palette Color photometric interpretation.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.9.html#table_C.7-22a"
+    },
+    {
+        "name":"Multi-energy CT X-Ray Source",
+        "id":"multi-energy-ct-x-ray-source",
+        "description":"<p>\nAttributes for the CT X-Ray Source(s).</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.2.2.html#table_C.8.2.2-2"
+    },
+    {
+        "name":"Multi-energy CT X-Ray Detector",
+        "id":"multi-energy-ct-x-ray-detector",
+        "description":"<p>\nAttributes for the CT X-Ray Detector(s).</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.2.2.2.html#table_C.8.2.2-3"
+    },
+    {
+        "name":"Multi-energy CT Path",
+        "id":"multi-energy-ct-path",
+        "description":"<p>\nA Multi-energy CTPath is an X-Ray source paired with a corresponding X-Ray detector for a particular energy level.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.2.2.3.html#table_C.8.2.2-4"
+    },
+    {
+        "name":"X-Ray Collimator Dimensions",
+        "id":"x-ray-collimator-dimensions",
+        "description":"<p>\nAn X-Ray Collimator is a device placed close to the X-Ray Source to restrict the span of the X-Ray beam. It is often made of lead shutters. <span href=\"#figure_C.8-9\">This module </span> presents in a graphical form its relationship with the Field Of View Dimensions (0018,1149).</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.7.3.html#table_C.8-28b"
+    },
+    {
+        "name":"X-Ray Filtration",
+        "id":"x-ray-filtration",
+        "description":"<p>\nThis Module describes the Attributes related to the filtration of X-Rays during the acquisition of an X-Ray image.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.7.10.html#table_C.8-35a"
+    },
+    {
+        "name":"X-Ray Grid Description",
+        "id":"x-ray-grid-description",
+        "description":"<p>\nThis Module describes the Attributes related to the use of a grid to reduce scatter of X-Rays during the acquisition of an X-Ray image.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.7.11.html#table_C.8-36b"
+    },
+    {
+        "name":"Beam Limiting Device Position",
+        "id":"beam-limiting-device-position",
+        "description":"<p>\n<span href=\"#table_C.8.8.27-1\">This macro </span> specifies the Attributes that specify the Beam Limiting Device Sequence.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.27.html#table_C.8.8.27-1"
+    },
+    {
+        "name":"Patient Support Identification",
+        "id":"patient-support-identification",
+        "description":"<p>\n<span href=\"#table_C.8.8.28-1\">This macro </span> specifies the Attributes that identify the Patient Support System.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.28.html#table_C.8.8.28-1"
+    },
+    {
+        "name":"Digital X-Ray Detector",
+        "id":"digital-x-ray-detector",
+        "description":"<p>\n<span href=\"#table_C.8-71\">This module </span> contains IOD Attributes that describe a DX detector.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.11.4.html#table_C.8-71b"
+    },
+    {
+        "name":"Plane Position (Slide)",
+        "id":"plane-position-slide",
+        "description":"<p>\n<span href=\"#table_C.8.12.6.1-1\">This macro </span> specifies the Attributes of the Plane Position (Slide) Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.12.6.html#table_C.8.12.6.1-1"
+    },
+    {
+        "name":"Optical Path Identification",
+        "id":"optical-path-identification",
+        "description":"<p>\n<span href=\"#table_C.8.12.6.2-1\">This macro </span> specifies the Attributes of the Optical Path Identification Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.12.6.2.html#table_C.8.12.6.2-1"
+    },
+    {
+        "name":"Specimen Reference",
+        "id":"specimen-reference",
+        "description":"<p>\n<span href=\"#table_C.8.12.6.3-1\">This macro </span> specifies the Attributes of the Specimen Reference Functional Group Macro. This allows association of the frame with specific specimens imaged on the same slide (e.g., tissue micro-arrays).</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.12.6.3.html#table_C.8.12.6.3-1"
+    },
+    {
+        "name":"Whole Slide Microscopy Image Frame Type",
+        "id":"whole-slide-microscopy-image-frame-type",
+        "description":"<p>\n<span href=\"#table_C.8.12.9-1\">This macro </span> specifies the Attributes of the Whole Slide Microscopy Image Frame Type Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.12.9.html#table_C.8.12.9-1"
+    },
+    {
+        "name":"MR Image and Spectroscopy Instance",
+        "id":"mr-image-and-spectroscopy-instance",
+        "description":"<p>\n<span href=\"#table_C.8-83\">This macro </span> specifies the common Attributes <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.13.html#sect_C.8.13.1\" target=\"_blank\">Enhanced MR Image Module</a> and <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.14.html#sect_C.8.14.1\" target=\"_blank\">MR Spectroscopy Module</a>.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.13.2.html#table_C.8-83"
+    },
+    {
+        "name":"MR Image Description",
+        "id":"mr-image-description",
+        "description":"<p>\nThis section describes the MR Image Description Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.13.3.html#table_C.8-84"
+    },
+    {
+        "name":"MR Image Frame Type",
+        "id":"mr-image-frame-type",
+        "description":"<p>\n<span href=\"#table_C.8-88\">This macro </span> specifies the Attributes of the MR Image Frame Type Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.13.5.html#table_C.8-88"
+    },
+    {
+        "name":"MR Timing and Related Parameters",
+        "id":"mr-timing-and-related-parameters",
+        "description":"<p>\n<span href=\"#table_C.8-89\">This macro </span> specifies the Attributes of the MR Timing and Related Parameters Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.13.5.2.html#table_C.8-89"
+    },
+    {
+        "name":"MR FOV/Geometry",
+        "id":"mr-fov-geometry",
+        "description":"<p>\n<span href=\"#table_C.8-90\">This macro </span> specifies the Attributes of the MR FOV/Geometry Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.13.5.3.html#table_C.8-90"
+    },
+    {
+        "name":"MR Echo",
+        "id":"mr-echo",
+        "description":"<p>\n<span href=\"#table_C.8-91\">This macro </span> specifies the Attributes of the MR Echo Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.13.5.4.html#table_C.8-91"
+    },
+    {
+        "name":"MR Modifier",
+        "id":"mr-modifier",
+        "description":"<p>\n<span href=\"#table_C.8-92\">This macro </span> specifies the Attributes of the MR Modifier Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.13.5.5.html#table_C.8-92"
+    },
+    {
+        "name":"MR Imaging Modifier",
+        "id":"mr-imaging-modifier",
+        "description":"<p>\n<span href=\"#table_C.8-93\">This macro </span> specifies the Attributes of the MR Imaging Modifier Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.13.5.6.html#table_C.8-93"
+    },
+    {
+        "name":"MR Receive Coil",
+        "id":"mr-receive-coil",
+        "description":"<p>\n<span href=\"#table_C.8-94\">This macro </span> specifies the Attributes of the MR Receive Coil Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.13.5.7.html#table_C.8-94"
+    },
+    {
+        "name":"MR Transmit Coil",
+        "id":"mr-transmit-coil",
+        "description":"<p>\n<span href=\"#table_C.8-95\">This macro </span> specifies the Attributes of the MR Transmit Coil Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.13.5.8.html#table_C.8-95"
+    },
+    {
+        "name":"MR Diffusion",
+        "id":"mr-diffusion",
+        "description":"<p>\n<span href=\"#table_C.8-96\">This macro </span> specifies the Attributes of the MR Diffusion Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.13.5.9.html#table_C.8-96"
+    },
+    {
+        "name":"MR Averages",
+        "id":"mr-averages",
+        "description":"<p>\n<span href=\"#table_C.8-97\">This macro </span> specifies the Attributes of the MR Averages Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.13.5.10.html#table_C.8-97"
+    },
+    {
+        "name":"MR Spatial Saturation",
+        "id":"mr-spatial-saturation",
+        "description":"<p>\n<span href=\"#table_C.8-98\">This macro </span> specifies the Attributes of the MR Spatial Saturation Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.13.5.11.html#table_C.8-98"
+    },
+    {
+        "name":"MR Metabolite Map",
+        "id":"mr-metabolite-map",
+        "description":"<p>\n<span href=\"#table_C.8-99\">This macro </span> specifies the Attributes of the MR Metabolite Map Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.13.5.12.html#table_C.8-99"
+    },
+    {
+        "name":"MR Velocity Encoding",
+        "id":"mr-velocity-encoding",
+        "description":"<p>\n<span href=\"#table_C.8-100\">This macro </span> specifies the Attributes of the MR Velocity Encoding Functional Group Macro. This Functional Group contains the velocity encoding values as valid for the reconstructed Images, rather than for their acquisition. The velocity encoding directions for acquisition are described in the Velocity Encoding Acquisition Sequence (0018,9092) defined in the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.13.4.html#sect_C.8.13.4\" target=\"_blank\">MR Pulse Sequence Module</a>.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.13.5.13.html#table_C.8-100"
+    },
+    {
+        "name":"MR Arterial Spin Labeling",
+        "id":"mr-arterial-spin-labeling",
+        "description":"<p>\n<span href=\"#table_C.8-100b\">This macro </span> specifies the Attributes of the MR Arterial Spin Labeling Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.13.5.14.html#table_C.8-100b"
+    },
+    {
+        "name":"Functional MR",
+        "id":"functional-mr",
+        "description":"<p>\nTable C.8-100c specifies the Attributes of the Functional MR Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.13.5.15.html#table_C.8-100c"
+    },
+    {
+        "name":"MR Spectroscopy Frame Type",
+        "id":"mr-spectroscopy-frame-type",
+        "description":"<p>\n<span href=\"#table_C.8-104\">This macro </span> specifies the Attributes of the MR Spectroscopy Frame Type Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.14.3.html#table_C.8-104"
+    },
+    {
+        "name":"MR Spectroscopy FOV/Geometry",
+        "id":"mr-spectroscopy-fov-geometry",
+        "description":"<p>\n<span href=\"#table_C.8-105\">This macro </span> specifies the Attributes of the MR Spectroscopy FOV/Geometry Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.14.3.2.html#table_C.8-105"
+    },
+    {
+        "name":"MR Spectroscopy Description",
+        "id":"mr-spectroscopy-description",
+        "description":"<p>\n<span href=\"#table_C.8-107\">This macro </span> specifies the Attributes that describe the Spectroscopy.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.14.5.html#table_C.8-107"
+    },
+    {
+        "name":"CT Image Frame Type",
+        "id":"ct-image-frame-type",
+        "description":"<p>\n<span href=\"#table_C.8-117\">This macro </span> specifies the Attributes of the CT Image Frame Type Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.15.3.html#table_C.8-117"
+    },
+    {
+        "name":"CT Acquisition Type",
+        "id":"ct-acquisition-type",
+        "description":"<p>\n<span href=\"#table_C.8-118\">This macro </span> specifies the Attributes of the CT Acquisition Type Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.15.3.2.html#table_C.8-118"
+    },
+    {
+        "name":"CT Acquisition Details",
+        "id":"ct-acquisition-details",
+        "description":"<p>\n<span href=\"#table_C.8-119\">This macro </span> specifies the Attributes of the CT Acquisition Details Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.15.3.3.html#table_C.8-119"
+    },
+    {
+        "name":"CT Table Dynamics",
+        "id":"ct-table-dynamics",
+        "description":"<p>\n<span href=\"#table_C.8-120\">This macro </span> specifies the Attributes of the CT Table Dynamics Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.15.3.4.html#table_C.8-120"
+    },
+    {
+        "name":"CT Position",
+        "id":"ct-position",
+        "description":"<p>\n<span href=\"#table_C.8-121\">This macro </span> specifies the Attributes of the CT Position Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.15.3.5.html#table_C.8-121"
+    },
+    {
+        "name":"CT Geometry",
+        "id":"ct-geometry",
+        "description":"<p>\n<span href=\"#table_C.8-122\">This macro </span> specifies the Attributes of the CT Geometry Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.15.3.6.html#table_C.8-122"
+    },
+    {
+        "name":"CT Reconstruction",
+        "id":"ct-reconstruction",
+        "description":"<p>\n<span href=\"#table_C.8-123\">This macro </span> specifies the Attributes of the CT Reconstruction Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.15.3.7.html#table_C.8-123"
+    },
+    {
+        "name":"CT Exposure",
+        "id":"ct-exposure",
+        "description":"<p>\n<span href=\"#table_C.8-124\">This macro </span> specifies the Attributes of the CT Exposure Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.15.3.8.html#table_C.8-124"
+    },
+    {
+        "name":"CT X-Ray Details",
+        "id":"ct-x-ray-details",
+        "description":"<p>\n<span href=\"#table_C.8-125\">This macro </span> specifies the Attributes of the CT X-Ray Details Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.15.3.9.html#table_C.8-125"
+    },
+    {
+        "name":"CT Pixel Value Transformation",
+        "id":"ct-pixel-value-transformation",
+        "description":"<p>\n<span href=\"#table_C.8-126\">This macro </span> specifies the Attributes of the CT Pixel Value Transformation Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.15.3.10.html#table_C.8-126"
+    },
+    {
+        "name":"CT Additional X-Ray Source",
+        "id":"ct-additional-x-ray-source",
+        "description":"<p>\n<span href=\"#table_C.8-126b\">This macro </span> specifies the Attributes of the CT Additional X-Ray Source Macro. This Sequence may be multi-valued, depending on the number of additional active X-Ray sources. It defines the X-Ray source parameters beyond the basic system.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.15.3.11.html#table_C.8-126b"
+    },
+    {
+        "name":"Multi-energy CT Characteristics",
+        "id":"multi-energy-ct-characteristics",
+        "description":"<p>\nThis Macro specifies the Attributes for CT Image Characteristics.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.15.3.12.html#table_C.8.15.3.12-1"
+    },
+    {
+        "name":"Multi-energy CT Processing",
+        "id":"multi-energy-ct-processing",
+        "description":"<p>\nThis Macro defines the Attributes for Multi-energy CT processing.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.15.3.13.html#table_C.8.15.3.13-1"
+    },
+    {
+        "name":"Common CT/MR Image Description",
+        "id":"common-ct-mr-image-description",
+        "description":"<p>\nThis section describes the Common CT/MR Image Description Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.16.2.html#table_C.8-131"
+    },
+    {
+        "name":"Ophthalmic Acquisition Parameters",
+        "id":"ophthalmic-acquisition-parameters",
+        "description":"<p>\n<span href=\"#table_C.8.17.8-1\">This module </span> describes patient clinical conditions related to an Ophthalmic Tomography image acquisition.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.17.8.html#table_C.8.17.8-2"
+    },
+    {
+        "name":"Ophthalmic Frame Location",
+        "id":"ophthalmic-frame-location",
+        "description":"<p>\n<span href=\"#table_C.8.17.10-1\">This macro </span> specifies the Attributes of the Ophthalmic Frame Location Functional Group Macro. This is used to provide a frame location relative to one or more referenced images. This Macro describes a frame perpendicular or parallel to the reference image; it describes column locations for frames that are scanned either uniformly along a line segment, or with a non-uniform spacing along any trajectory in the reference image.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.17.10.html#table_C.8.17.10-1"
+    },
+    {
+        "name":"X-Ray Frame Characteristics",
+        "id":"x-ray-frame-characteristics",
+        "description":"<p>\n<span href=\"#table_C.8.19.6-1\">This macro </span> specifies the Attributes of the XA/XRF Frame Characteristics Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.19.6.html#table_C.8.19.6-1"
+    },
+    {
+        "name":"X-Ray Field of View",
+        "id":"x-ray-field-of-view",
+        "description":"<p>\n<span href=\"#table_C.8.19.6-2\">This macro </span> specifies the Attributes of the X-Ray Field of View Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.19.6.2.html#table_C.8.19.6-2"
+    },
+    {
+        "name":"X-Ray Exposure Control Sensing Regions",
+        "id":"x-ray-exposure-control-sensing-regions",
+        "description":"<p>\n<span href=\"#table_C.8.19.6-3\">This macro </span> specifies the Attributes that describe the region targeted as area where the X-Ray dose value is estimated.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.19.6.3.html#table_C.8.19.6-3"
+    },
+    {
+        "name":"X-Ray Frame Pixel Data Properties",
+        "id":"x-ray-frame-pixel-data-properties",
+        "description":"<p>\n<span href=\"#table_C.8.19.6-4\">This macro </span> specifies the Attributes of the X-Ray Frame Pixel Data Properties Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.19.6.4.html#table_C.8.19.6-4"
+    },
+    {
+        "name":"X-Ray Frame Detector Parameters",
+        "id":"x-ray-frame-detector-parameters",
+        "description":"<p>\n<span href=\"#table_C.8.19.6-5\">This macro </span> specifies the Attributes containing the X-Ray Frame Detector Parameters Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.19.6.5.html#table_C.8.19.6-5"
+    },
+    {
+        "name":"X-Ray Calibration Device Usage",
+        "id":"x-ray-calibration-device-usage",
+        "description":"<p>\n<span href=\"#table_C.8.19.6-6\">This macro </span> specifies the Attributes containing the X-Ray Calibration Device Usage Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.19.6.6.html#table_C.8.19.6-6"
+    },
+    {
+        "name":"X-Ray Object Thickness",
+        "id":"x-ray-object-thickness",
+        "description":"<p>\n<span href=\"#table_C.8.19.6-7\">This macro </span> specifies the Attributes containing the X-Ray Object Thickness Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.19.6.7.html#table_C.8.19.6-7"
+    },
+    {
+        "name":"X-Ray Frame Acquisition",
+        "id":"x-ray-frame-acquisition",
+        "description":"<p>\n<span href=\"#table_C.8.19.6-8\">This macro </span> specifies the Attributes containing the X-Ray Frame Acquisition Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.19.6.8.html#table_C.8.19.6-8"
+    },
+    {
+        "name":"X-Ray Projection Pixel Calibration",
+        "id":"x-ray-projection-pixel-calibration",
+        "description":"<p>\n<span href=\"#table_C.8.19.6-9\">This macro </span> specifies the Attributes of the X-Ray Projection Pixel Calibration Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.19.6.9.html#table_C.8.19.6-9"
+    },
+    {
+        "name":"X-Ray Positioner",
+        "id":"x-ray-positioner",
+        "description":"<p>\n<span href=\"#table_C.8.19.6-10\">This macro </span> specifies the Attributes of the X-Ray Positioner Functional Group Macro. If included into the Shared Functional Groups Sequence (5200,9229) no DYNAMIC motion was performed during acquisition. If included in the Per-frame Functional Groups Sequence (5200,9230) the indication of a DYNAMIC motion is given.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.19.6.10.html#table_C.8.19.6-10"
+    },
+    {
+        "name":"X-Ray Table Position",
+        "id":"x-ray-table-position",
+        "description":"<p>\n<span href=\"#table_C.8.19.6-11\">This macro </span> specifies the Attributes of the X-Ray Table Position Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.19.6.11.html#table_C.8.19.6-11"
+    },
+    {
+        "name":"X-Ray Collimator",
+        "id":"x-ray-collimator",
+        "description":"<p>\n<span href=\"#table_C.8.19.6-12\">This macro </span> specifies the Attributes of the X-Ray Collimator Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.19.6.12.html#table_C.8.19.6-12"
+    },
+    {
+        "name":"X-Ray Isocenter Reference System",
+        "id":"x-ray-isocenter-reference-system",
+        "description":"<p>\n<span href=\"#table_C.8.19.6-13\">This macro </span> specifies the Attributes of the X-Ray Isocenter Reference System Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.19.6.13.html#table_C.8.19.6-13"
+    },
+    {
+        "name":"X-Ray Geometry",
+        "id":"x-ray-geometry",
+        "description":"<p>\n<span href=\"#table_C.8.19.6-14\">This macro </span> specifies the Attributes containing the X-Ray Geometry Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.19.6.14.html#table_C.8.19.6-14"
+    },
+    {
+        "name":"Segmentation",
+        "id":"segmentation",
+        "description":"<p>\n<span href=\"#table_C.8.20-3\">This macro </span> specifies the Attributes of the Segmentation Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.20.3.html#table_C.8.20-3"
+    },
+    {
+        "name":"Segment Description",
+        "id":"segment-description",
+        "description":"<p>\n<span href=\"#table_C.8.20-4\">This macro </span> specifies the Attributes of the Segment Description Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.20.4.html#table_C.8.20-4"
+    },
+    {
+        "name":"X-Ray 3D General Shared Acquisition",
+        "id":"x-ray-3d-general-shared-acquisition",
+        "description":"<p>\n<span href=\"#table_C.8.21.3.1.1-1\">This macro </span> describes the X-Ray 3D General Shared Acquisition Macro that specifies the Attributes that are applicable for all the projection images belonging to this acquisition context.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.21.3.html#table_C.8.21.3.1.1-1"
+    },
+    {
+        "name":"X-Ray 3D General Per Projection Acquisition",
+        "id":"x-ray-3d-general-per-projection-acquisition",
+        "description":"<p>\n<span href=\"#table_C.8.21.3.1.2-1\">This macro </span> describes the X-Ray 3D General Per Projection Acquisition Macro that specifies the Attributes that are applicable for a single projection belonging to this acquisition context.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.21.3.html#table_C.8.21.3.1.2-1"
+    },
+    {
+        "name":"X-Ray 3D General Positioner Movement",
+        "id":"x-ray-3d-general-positioner-movement",
+        "description":"<p>\n<span href=\"#table_C.8.21.3.1.3-1\">This macro </span> describes the X-Ray 3D General Positioner Movement Macro that specifies the Attributes that describe the movement of a positioner during the acquisition of more than one projection.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.21.3.html#table_C.8.21.3.1.3-1"
+    },
+    {
+        "name":"X-Ray 3D Frame Type",
+        "id":"x-ray-3d-frame-type",
+        "description":"<p>\n<span href=\"#table_C.8.21.5.1-1\">This macro </span> specifies the Attributes of the X-Ray 3D Frame Type Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.21.5.html#table_C.8.21.5.1-1"
+    },
+    {
+        "name":"Breast Biopsy Target",
+        "id":"breast-biopsy-target",
+        "description":"<p>\n<span href=\"#table_C.8.21.5.2-1\">This macro </span> specifies the Attributes of the Breast Biopsy Target Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.21.5.2.html#table_C.8.21.5.2-1"
+    },
+    {
+        "name":"PET Frame Type",
+        "id":"pet-frame-type",
+        "description":"<p>\n<span href=\"#table_C.8.22-10\">This macro </span> specifies the Attributes of the PET Frame Type Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.22.5.html#table_C.8.22-10"
+    },
+    {
+        "name":"PET Frame Acquisition",
+        "id":"pet-frame-acquisition",
+        "description":"<p>\n<span href=\"#table_C.8.22-11\">This macro </span> specifies the Attributes of the PET Frame Acquisition Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.22.5.2.html#table_C.8.22-11"
+    },
+    {
+        "name":"PET Detector Motion Details",
+        "id":"pet-detector-motion-details",
+        "description":"<p>\n<span href=\"#table_C.8.22-12\">This macro </span> specifies the Attributes of the PET Detector Motion Details Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.22.5.3.html#table_C.8.22-12"
+    },
+    {
+        "name":"PET Position",
+        "id":"pet-position",
+        "description":"<p>\n<span href=\"#table_C.8.22-14\">This macro </span> specifies the Attributes of the PET Position Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.22.5.4.html#table_C.8.22-14"
+    },
+    {
+        "name":"PET Frame Correction Factors",
+        "id":"pet-frame-correction-factors",
+        "description":"<p>\n<span href=\"#table_C.8.22-15\">This macro </span> specifies the Attributes of the PET Frame Correction Factors Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.22.5.5.html#table_C.8.22-15"
+    },
+    {
+        "name":"PET Reconstruction",
+        "id":"pet-reconstruction",
+        "description":"<p>\n<span href=\"#table_C.8.22-17\">This macro </span> specifies the Attributes of the PET Reconstruction Functional Group Macro, which describe the method used to reconstruct this image.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.22.5.6.html#table_C.8.22-17"
+    },
+    {
+        "name":"PET Table Dynamics",
+        "id":"pet-table-dynamics",
+        "description":"<p>\n<span href=\"#table_C.8.22-18\">This macro </span> specifies the Attributes of the PET Table Dynamics Functional Group Macro, which describes the table motion during acquisition of the data.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.22.5.7.html#table_C.8.22-18"
+    },
+    {
+        "name":"US Image Description",
+        "id":"us-image-description",
+        "description":"<p>\n<span href=\"#table_C.8.24.6.1-1\">This macro </span> specifies the Attributes of the US Image Description Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.24.6.html#table_C.8.24.6.1-1"
+    },
+    {
+        "name":"Cylinder Sequence",
+        "id":"cylinder-sequence",
+        "description":"<p>\n<span href=\"#table_C.8.25.6.1-1\">This macro </span> describes the Attributes for the Cylinder Sequence Macro</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.6.html#table_C.8.25.6.1-1"
+    },
+    {
+        "name":"Prism Sequence",
+        "id":"prism-sequence",
+        "description":"<p>\n<span href=\"#table_C.8.25.6.2-1\">This macro </span> describes the Attributes for the Prism Sequence Macro</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.6.2.html#table_C.8.25.6.2-1"
+    },
+    {
+        "name":"Lensometry Measurements",
+        "id":"lensometry-measurements",
+        "description":"<p>\n<span href=\"#table_C.8.25.8-1\">This module </span> defines the Attributes used to capture the refractive measurements by a lensometer for spectacles. This is typically for a pair of lenses, but sometimes for just one. Sometimes a single lens is measured with an unknown laterality.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.8.html#table_C.8.25.8-2"
+    },
+    {
+        "name":"Keratometric Measurements",
+        "id":"keratometric-measurements",
+        "description":"<p>\n<span href=\"#table_C.8.25.10-1\">This module </span> defines the Attributes used to represent the keratometric measurements by a keratometer of a patient's eyes. Usually both eyes are measured, but sometimes just one.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.10.html#table_C.8.25.10-2"
+    },
+    {
+        "name":"Subjective Refraction Measurements",
+        "id":"subjective-refraction-measurements",
+        "description":"<p>\n<span href=\"#table_C.8.25.11-1\">This module </span> defines the Attributes used to represent the subjective refractive measurements of a patient's eyes. Usually both eyes are measured, but sometimes just one.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.11.html#table_C.8.25.11-2"
+    },
+    {
+        "name":"Visual Acuity Measurements",
+        "id":"visual-acuity-measurements",
+        "description":"<p>\n<span href=\"#table_C.8.25.12-1\">This module </span> defines the Attributes used to represent the subjective measurements of a patient's visual acuity. Usually each eye is measured individually, but sometimes only one eye is measured; sometimes the visual acuity of both eyes working together is measured. The visual acuity may be measured uncorrected, or with various refractive corrections, such as best corrected distance, pinhole, habitual near, etc</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.12.html#table_C.8.25.12-2"
+    },
+    {
+        "name":"Ophthalmic Axial Measurements",
+        "id":"ophthalmic-axial-measurements",
+        "description":"<p>\n<span href=\"#table_C.8.25.14-2\">This macro </span> describes the Attributes for the Ophthalmic Axial Measurements Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.14.html#table_C.8.25.14-2"
+    },
+    {
+        "name":"Ophthalmic Axial Length Segmental Measurements",
+        "id":"ophthalmic-axial-length-segmental-measurements",
+        "description":"<p>\n<span href=\"#table_C.8.25.14-3\">This macro </span> describes the Attributes for the Ophthalmic Axial Length Segmental Measurements Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.14.2.html#table_C.8.25.14-3"
+    },
+    {
+        "name":"Ophthalmic Axial Measurements Related Information",
+        "id":"ophthalmic-axial-measurements-related-information",
+        "description":"<p>\n<span href=\"#table_C.8.25.14-4\">This macro </span> describes the Attributes for the Ophthalmic Axial Measurements Related Information Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.14.3.html#table_C.8.25.14-4"
+    },
+    {
+        "name":"Ophthalmic Axial Measurements Selected",
+        "id":"ophthalmic-axial-measurements-selected",
+        "description":"<p>\n<span href=\"#table_C.8.25.14-5\">This macro </span> describes the Attributes for the Ophthalmic Axial Measurements Selected Macro. These are the Attributes of the Ophthalmic Axial Length (0022,1019) selected for use in IOL calculations.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.14.4.html#table_C.8.25.14-5"
+    },
+    {
+        "name":"Ophthalmic Axial Length Quality Metric",
+        "id":"ophthalmic-axial-length-quality-metric",
+        "description":"<p>\n<span href=\"#table_C.8.25.14-6\">This macro </span> describes the Attributes for the Ophthalmic Axial Length Quality Metric Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.14.5.html#table_C.8.25.14-6"
+    },
+    {
+        "name":"Intraocular Lens Calculations",
+        "id":"intraocular-lens-calculations",
+        "description":"<p>\n<span href=\"#table_C.8.25.16-2\">This macro </span> describes the Attributes for the Intraocular Lens Calculations Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.16.2.html#table_C.8.25.16-2"
+    },
+    {
+        "name":"Keratometry",
+        "id":"keratometry",
+        "description":"<p>\n<span href=\"#table_C.8.25.16-3\">This macro </span> describes the Attributes for the Keratometry Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.16.3.html#table_C.8.25.16-3"
+    },
+    {
+        "name":"IOL Ophthalmic Axial Length",
+        "id":"iol-ophthalmic-axial-length",
+        "description":"<p>\n<span href=\"#table_C.8.25.16-4\">This macro </span> describes the Attributes for the IOL Ophthalmic Axial Length Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.16.4.html#table_C.8.25.16-4"
+    },
+    {
+        "name":"Calculated IOL",
+        "id":"calculated-iol",
+        "description":"<p>\n<span href=\"#table_C.8.25.16-5\">This macro </span> describes the Attributes for the Calculated IOL Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.16.5.html#table_C.8.25.16-5"
+    },
+    {
+        "name":"Ophthalmic Axial Measurements Quality Image SOP Instance Reference",
+        "id":"ophthalmic-axial-measurements-quality-image-sop-instance-reference",
+        "description":"<p>\n<span href=\"#table_C.8.25.16-6\">This macro </span> describes the Attributes for the Ophthalmic Axial Measurements Quality Image SOP Instance Reference Macro</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.16.6.html#table_C.8.25.16-6"
+    },
+    {
+        "name":"Calculated Toric Power",
+        "id":"calculated-toric-power",
+        "description":"<p>\n<span href=\"#table_C.8.25.16-7\">This macro </span> specifies and describes the attributes that identify the toric amount of calculated refractive power used in IOL calculation.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.16.7.html#table_C.8.25.16-7"
+    },
+    {
+        "name":"Cornea Measurement",
+        "id":"cornea-measurement",
+        "description":"<p>\n<span href=\"#table_C.8.25.16-8\">This macro </span> specifies and describes the attributes for the Cornea Measurement Macro used in IOL calculation.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.16.8.html#table_C.8.25.16-8"
+    },
+    {
+        "name":"Ophthalmic Visual Field Global Index",
+        "id":"ophthalmic-visual-field-global-index",
+        "description":"<p>\n<span href=\"#table_C.8.26.3-2\">This macro </span> describes the Attributes for the Ophthalmic Visual Field Global Index Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.26.3.html#table_C.8.26.3-2"
+    },
+    {
+        "name":"Ophthalmic Patient Clinical Information and Test Lens Parameters",
+        "id":"ophthalmic-patient-clinical-information-and-test-lens-parameters",
+        "description":"<p>\n<span href=\"#table_C.8.26.6-2\">This macro </span> describes the Attributes for the Ophthalmic Patient Clinical and Test Lens Parameters Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.26.6.html#table_C.8.26.6-2"
+    },
+    {
+        "name":"Intravascular OCT Frame Type",
+        "id":"intravascular-oct-frame-type",
+        "description":"<p>\n<span href=\"#table_C.8.27.6.1-1\">This macro </span> specifies the Attributes of the Intravascular OCT Frame Type Functional Group.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.27.6.html#table_C.8.27.6.1-1"
+    },
+    {
+        "name":"Intravascular Frame Content",
+        "id":"intravascular-frame-content",
+        "description":"<p>\n<span href=\"#table_C.8.27.6.2-1\">This macro </span> specifies the Attributes of the Intravascular Frame Content Functional Group.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.27.6.2.html#table_C.8.27.6.2-1"
+    },
+    {
+        "name":"Intravascular OCT Frame Content",
+        "id":"intravascular-oct-frame-content",
+        "description":"<p>\n<span href=\"#table_C.8.27.6.3-1\">This macro </span> specifies the Attributes of the Intravascular OCT Frame Content Functional Group.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.27.6.3.html#table_C.8.27.6.3-1"
+    },
+    {
+        "name":"Breast X-Ray Positioner",
+        "id":"breast-x-ray-positioner",
+        "description":"<p>\n<span href=\"#table_C.8.31.2-1\">This macro </span> specifies the Attributes of the Breast X-Ray Positioner Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.31.2.html#table_C.8.31.2-1"
+    },
+    {
+        "name":"Breast X-Ray Detector",
+        "id":"breast-x-ray-detector",
+        "description":"<p>\n<span href=\"#table_C.8.31.3-1\">This macro </span> specifies the Attributes of the Breast X-Ray Detector Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.31.3.html#table_C.8.31.3-1"
+    },
+    {
+        "name":"Breast X-Ray Geometry",
+        "id":"breast-x-ray-geometry",
+        "description":"<p>\n<span href=\"#table_C.8.31.4-1\">This macro </span> specifies the Attributes of the Breast X-Ray Geometry Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.31.4.html#table_C.8.31.4-1"
+    },
+    {
+        "name":"Breast X-Ray Acquisition Dose",
+        "id":"breast-x-ray-acquisition-dose",
+        "description":"<p>\n<span href=\"#table_C.8.31.5-1\">This macro </span> specifies the Attributes of the X-Ray Acquisition Dose Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.31.5.html#table_C.8.31.5-1"
+    },
+    {
+        "name":"Breast X-Ray Isocenter Reference System",
+        "id":"breast-x-ray-isocenter-reference-system",
+        "description":"<p>\n<span href=\"#table_C.8.31.6-1\">This macro </span> specifies the Attributes of the Breast X-Ray Isocenter Reference System Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.31.6.html#table_C.8.31.6-1"
+    },
+    {
+        "name":"X-Ray Grid",
+        "id":"x-ray-grid",
+        "description":"<p>\n<span href=\"#table_C.8.31.7-1\">This macro </span> specifies the Attributes of the X-Ray Grid Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.31.7.html#table_C.8.31.7-1"
+    },
+    {
+        "name":"X-Ray Filter",
+        "id":"x-ray-filter",
+        "description":"<p>\n<span href=\"#table_C.8.31.8-1\">This macro </span> specifies the Attributes of the X-Ray Filter Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.31.8.html#table_C.8.31.8-1"
+    },
+    {
+        "name":"Parametric Map Frame Type",
+        "id":"parametric-map-frame-type",
+        "description":"<p>\n<span href=\"#table_PS3.3_C.8.32-3\">This macro </span> specifies the Attributes of the Parametric Map Frame Type Functional Group Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.32.3.html#table_PS3.3_C.8.32-3"
+    },
+    {
+        "name":"Table Summary Statistics",
+        "id":"table-summary-statistics",
+        "description":"<p>\nThis Macro encodes summary statistics derived from a set of values.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.33.3.html#table_C.8.33-3"
+    },
+    {
+        "name":"Text Style Sequence",
+        "id":"text-style-sequence",
+        "description":"<p>\nText Style Sequence (0070,0231) contains the text style for each text object. This Attribute gives recommendations on how the annotation text should be rendered at the display.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.10.5.html#table_C.10-5a"
+    },
+    {
+        "name":"Line Style Sequence",
+        "id":"line-style-sequence",
+        "description":"<p>\n<span href=\"#table_C.10-5b\">This macro </span> specifies the Attributes that describe Line Style Sequence Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.10.5.html#table_C.10-5b"
+    },
+    {
+        "name":"Fill Style Sequence",
+        "id":"fill-style-sequence",
+        "description":"<p>\n<span href=\"#table_C.10-5c\">This macro </span> specifies the Attributes that describe Fill Style Sequence Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.10.5.html#table_C.10-5c"
+    },
+    {
+        "name":"Modality LUT",
+        "id":"modality-lut",
+        "description":"<p>\n<span href=\"#table_C.11-1\">This module </span> specifies the Attributes that describe the Modality LUT.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.html#table_C.11-1b"
+    },
+    {
+        "name":"VOI LUT",
+        "id":"voi-lut",
+        "description":"<p>\n<span href=\"#table_C.11-2\">This module </span> specifies the Attributes that describe the VOI LUT.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.2.html#table_C.11-2b"
+    },
+    {
+        "name":"Presentation State Relationship",
+        "id":"presentation-state-relationship",
+        "description":"<p>\n<span href=\"#table_C.11.11-1\">This module </span> contains Attributes that describe the images to which a Presentation State applies.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.11.html#table_C.11.11-1b"
+    },
+    {
+        "name":"Threshold Sequence",
+        "id":"threshold-sequence",
+        "description":"<p>\nThe Threshold Sequence is defining the values of the image that are used or ignored.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.33.html#table_C.11.33.1-1"
+    },
+    {
+        "name":"Digital Signatures",
+        "id":"digital-signatures",
+        "description":"<p>\nThis Macro allows Digital Signatures to be included in a DICOM Data Set for the purpose of insuring the integrity of the Data Set, and to authenticate the sources of the Data Set. <span href=\"#table_C.12-6\">This macro </span> defines the Attributes needed to embed a Digital Signature in a Data Set. This Macro may appear in individual Sequence Items as well as in the top level Data Set of the SOP Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.12.html#table_C.12-6"
+    },
+    {
+        "name":"Hierarchical SOP Instance Reference",
+        "id":"hierarchical-sop-instance-reference",
+        "description":"<p>\n<span href=\"#table_C.17-3\">This macro </span> specifies the Attributes that reference a list of SOP Instances.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.17.2.html#table_C.17-3"
+    },
+    {
+        "name":"Hierarchical Series Reference",
+        "id":"hierarchical-series-reference",
+        "description":"<p>\n<span href=\"#table_C.17-3\">This macro </span> specifies the Attributes that reference a list of SOP Instances.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.17.2.html#table_C.17-3a"
+    },
+    {
+        "name":"Identified Person or Device",
+        "id":"identified-person-or-device",
+        "description":"<p>\n<span href=\"#table_C.17-3b\">This macro </span> defines the Attributes that identify a person or a device. This Macro contains content equivalent to TID 1002 (see <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part16.html#PS3.16\" target=\"_blank\">PS3.16</a>).</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.17.2.4.html#table_C.17-3b"
+    },
+    {
+        "name":"Document Content",
+        "id":"document-content",
+        "description":"<p>\nThis section specifies the Attributes contained in the <span href=\"#sect_C.17.3\">This module </span>. The Attributes in this Module convey the content of an SR Document.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.17.3.html#table_C.17-5"
+    },
+    {
+        "name":"Document Relationship",
+        "id":"document-relationship",
+        "description":"<p>\nThis section specifies the Attributes contained in the <span href=\"#sect_C.17.3\">This module </span>. The Attributes in this Module convey the content of an SR Document.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.17.3.html#table_C.17-6"
+    },
+    {
+        "name":"Numeric Measurement",
+        "id":"numeric-measurement",
+        "description":"<p>\n<span href=\"#table_C.18.1-1\">This macro </span> specifies the Attributes that convey a NUM (numeric measurement) value.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.18.html#table_C.18.1-1"
+    },
+    {
+        "name":"Code",
+        "id":"code",
+        "description":"<p>\n<span href=\"#table_C.18.2-1\">This macro </span> specifies the Attributes that convey a CODE value.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.18.2.html#table_C.18.2-1"
+    },
+    {
+        "name":"Composite Object Reference",
+        "id":"composite-object-reference",
+        "description":"<p>\n<span href=\"#table_C.18.3-1\">This macro </span> specifies the Attributes that convey a reference to a DICOM Composite Object that is not a DICOM Image or Waveform (such as an SR Document), or to an HL7 Structured Document.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.18.3.html#table_C.18.3-1"
+    },
+    {
+        "name":"Image Reference",
+        "id":"image-reference",
+        "description":"<p>\n<span href=\"#table_C.18.4-1\">This macro </span> specifies the Attributes that convey a reference to a DICOM image.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.18.4.html#table_C.18.4-1"
+    },
+    {
+        "name":"Waveform Reference",
+        "id":"waveform-reference",
+        "description":"<p>\n<span href=\"#table_C.18.5-1\">This macro </span> specifies the Attributes that convey a reference to a DICOM waveform.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.18.5.html#table_C.18.5-1"
+    },
+    {
+        "name":"Spatial Coordinates",
+        "id":"spatial-coordinates",
+        "description":"<p>\n<span href=\"#table_C.18.6-1\">This macro </span> specifies the Attributes that convey Spatial Coordinates in an SCOORD Content Item. An SCOORD Content Item shall always be the Source Content Item of one or more SELECTED FROM Relationships with IMAGE Target Content Items. Each IMAGE Target Content Item shall contain a reference to one single-frame or multi-frame Image.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.18.6.html#table_C.18.6-1"
+    },
+    {
+        "name":"Temporal Coordinates",
+        "id":"temporal-coordinates",
+        "description":"<p>\n<span href=\"#table_C.18.7-1\">This macro </span> specifies the Attributes that convey TCOORD Content Items. A TCOORD Content Item shall be the Source Content Item of one or more SELECTED FROM relationships with one or more SCOORD Content Items, one or more IMAGE Content Items, or one or more WAVEFORM Content Items.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.18.7.html#table_C.18.7-1"
+    },
+    {
+        "name":"Container",
+        "id":"container",
+        "description":"<p>\n<span href=\"#table_C.18.8-1\">This macro </span> specifies the Attributes that convey a CONTAINER Content Item.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.18.8.html#table_C.18.8-1"
+    },
+    {
+        "name":"3D Spatial Coordinates",
+        "id":"3d-spatial-coordinates",
+        "description":"<p>\n<span href=\"#table_C.18.9-1\">This macro </span> specifies the Attributes that convey 3D Spatial Coordinates in an SCOORD3D Content Item.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.18.9.html#table_C.18.9-1"
+    },
+    {
+        "name":"Screen Specifications",
+        "id":"screen-specifications",
+        "description":"<p>\n<span href=\"#table_C.23.2-1\">This module </span> specifies the Attributes that describe and identify the best suited display environment for a Hanging Protocol.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.23.2.html#table_C.23.2-2"
+    },
+    {
+        "name":"Hanging Protocol Selector Attribute Context",
+        "id":"hanging-protocol-selector-attribute-context",
+        "description":"<p>\n<span href=\"#table_C.23.4-1\">This macro </span> specifies the Attributes that identify the context for a Data Element Tag that is used as a Selector Attribute (0072,0026) in Image Set Selector Sequence (0072,0022), Filter Operations Sequence (0072,0400), or Sorting Operations Sequence (0072,0600). The Attribute may be an Attribute nested within a Sequence or Functional Group Sequence, and/or a Private Attribute.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.23.4.html#table_C.23.4-1"
+    },
+    {
+        "name":"Hanging Protocol Selector Attribute Value",
+        "id":"hanging-protocol-selector-attribute-value",
+        "description":"<p>\n<span href=\"#table_C.23.4-2\">This macro </span> specifies the Attributes that identify the value(s) for a Data Element Tag that is used as a Selector Attribute (0072,0026) in the Image Set Selector Sequence (0072,0022) or Filter Operations Sequence (0072,0400).</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.23.4.2.html#table_C.23.4-2"
+    },
+    {
+        "name":"Points",
+        "id":"points",
+        "description":"<p>\n<span href=\"#table_C.27-2\">This macro </span> specifies the Attributes of the Points Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.27.2.html#table_C.27-2"
+    },
+    {
+        "name":"Vectors",
+        "id":"vectors",
+        "description":"<p>\n<span href=\"#table_C.27-3\">This macro </span> specifies the Attributes of the Vectors Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.27.3.html#table_C.27-3"
+    },
+    {
+        "name":"Surface Mesh Primitives",
+        "id":"surface-mesh-primitives",
+        "description":"<p>\n<span href=\"#table_C.27-4\">This macro </span> specifies the Attributes of the Surface Mesh Primitives Macro.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.27.4.html#table_C.27-4"
+    },
+    {
+        "name":"Planning Landmark Point",
+        "id":"planning-landmark-point",
+        "description":"<p>\n<span href=\"#table_C.29.1.5-2\">This macro </span>, <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.29.1.5-3\" target=\"_blank\">Table\u00a0C.29.1.5-3</a> and <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.29.1.5-4\" target=\"_blank\">Table\u00a0C.29.1.5-4</a> contain Macros for the definition of landmarks that can be used during planning to align an implant template with patient geometry.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.29.html#table_C.29.1.5-2"
+    },
+    {
+        "name":"Planning Landmark Line",
+        "id":"planning-landmark-line",
+        "description":"<p>\n<span href=\"#table_C.29.1.5-2\">This macro </span>, <span href=\"#table_C.29.1.5-3\">This macro </span> and <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.29.1.5-4\" target=\"_blank\">Table\u00a0C.29.1.5-4</a> contain Macros for the definition of landmarks that can be used during planning to align an implant template with patient geometry.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.29.html#table_C.29.1.5-3"
+    },
+    {
+        "name":"Planning Landmark Plane",
+        "id":"planning-landmark-plane",
+        "description":"<p>\n<span href=\"#table_C.29.1.5-2\">This macro </span>, <span href=\"#table_C.29.1.5-3\">This macro </span> and <span href=\"#table_C.29.1.5-4\">This macro </span> contain Macros for the definition of landmarks that can be used during planning to align an implant template with patient geometry.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.29.html#table_C.29.1.5-4"
+    },
+    {
+        "name":"Display QA Result Context",
+        "id":"display-qa-result-context",
+        "description":"<p>\nThis Macro records the context for a set of collected display QA results: when they were produced, the person/device that produced them.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.32.3.html#table_C.32.3.1-1"
+    },
+    {
+        "name":"Visual Evaluation Result",
+        "id":"visual-evaluation-result",
+        "description":"<p>\nThis Macro records the result of a Visual Evaluation QA task by a human for a Display System.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.32.3.2.html#table_C.32.3.2-1"
+    },
+    {
+        "name":"Luminance Uniformity Result",
+        "id":"luminance-uniformity-result",
+        "description":"<p>\nThis Macro records the result of a Luminance Uniformity QA task for a Display Subsystem.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.32.3.3.html#table_C.32.3.3-1"
+    },
+    {
+        "name":"Luminance Result",
+        "id":"luminance-result",
+        "description":"<p>\nThis Macro records the result of a Luminance QA task for a Display Subsystem.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.32.3.4.html#table_C.32.3.4-1"
+    },
+    {
+        "name":"Radiation Fraction Pattern",
+        "id":"radiation-fraction-pattern",
+        "description":"<p>\nThe Radiation Fraction Pattern Macro specifies the intended fraction pattern to be used to deliver the radiation treatment.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.2.html#table_C.36.2.1.1-1"
+    },
+    {
+        "name":"RT Treatment Phase",
+        "id":"rt-treatment-phase",
+        "description":"<p>\nThe treatment phase Macro contains the identification and additional information about an RT Treatment Phase.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.2.html#table_C.36.2.1.2-1"
+    },
+    {
+        "name":"RT Treatment Phase Interval",
+        "id":"rt-treatment-phase-interval",
+        "description":"<p>\nThe RT Treatment Phase Interval Macro contains the information about time-relationship between RT Treatment Phases. This consists of sets of pair-wise relationships, declaring the relation of a earlier phase to a later, potentially overlapping, phase.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.2.html#table_C.36.2.1.3-1"
+    },
+    {
+        "name":"Dosimetric Objective",
+        "id":"dosimetric-objective",
+        "description":"<p>\nThe Dosimetric Objective Macro specifies an intended goal to be used in the definition of the dosimetric plan, for plan optimization etc. Dosimetric Objectives may define limits which affect the dose, such as dose volume constraints, minimum or maximum dose, treatment time or MU limits, and radiobiologic effects.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.2.html#table_C.36.2.1.4-1"
+    },
+    {
+        "name":"Radiobiological Dose Effect Description",
+        "id":"radiobiological-dose-effect-description",
+        "description":"<p>\nThe Radiobiological Dose Effect Description Macro describes whether dose values are provided as physical dose or effective dose. An effective dose value incorporates adjustments to dose by taking into account the radiobiological effects.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.2.html#table_C.36.2.1.5-1"
+    },
+    {
+        "name":"Treatment Device Identification",
+        "id":"treatment-device-identification",
+        "description":"<p>\nThe Treatment Device Identification Macro identifies a device used to deliver radiation to the patient during a radiotherapy treatment session.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.2.2.html#table_C.36.2.2.1-1"
+    },
+    {
+        "name":"RT Patient Support Devices",
+        "id":"rt-patient-support-devices",
+        "description":"<p>\nThe RT Patient Support Devices Macro identifies a patient support device (table, table top, chair or similar) which shall be used for treatment.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.2.2.2.html#table_C.36.2.2.2-1"
+    },
+    {
+        "name":"RT Accessory Device Identification",
+        "id":"rt-accessory-device-identification",
+        "description":"<p>\nThe RT Accessory Device Identification Macro identifies an RT accessory device and its location.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.2.2.3.html#table_C.36.2.2.3-1"
+    },
+    {
+        "name":"RT Treatment Position",
+        "id":"rt-treatment-position",
+        "description":"<p>\nThe RT Treatment Position Macro establishes a connection between the patients geometry and the treatment delivery equipment to define the treatment position. When used in an RT Radiation object, this treatment position is the prescribed position. When used in an RT Radiation Record object, this treatment position is the record of the actual position.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.2.2.4.html#table_C.36.2.2.4-1"
+    },
+    {
+        "name":"RT Control Point General",
+        "id":"rt-control-point-general",
+        "description":"<p>\nThis Macro specifies the base Attributes for the definition of an RT Radiation Control Point.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.2.2.5.html#table_C.36.2.2.5-1"
+    },
+    {
+        "name":"External Beam Control Point General",
+        "id":"external-beam-control-point-general",
+        "description":"<p>\nThis Macro specifies the RT Control Point Attributes used to model external beam radiation.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.2.2.6.html#table_C.36.2.2.6-1"
+    },
+    {
+        "name":"Radiation Generation Mode",
+        "id":"radiation-generation-mode",
+        "description":"<p>\nThe Radiation Generation Mode Macro contains Attributes required to generate radiation by a delivery device.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.2.2.7.html#table_C.36.2.2.7-1"
+    },
+    {
+        "name":"RT Beam Limiting Devices Definition",
+        "id":"rt-beam-limiting-devices-definition",
+        "description":"<p>\nThis Macro describes the configuration of Beam Limiting Devices which cannot vary during delivery.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.2.2.8.html#table_C.36.2.2.8-1"
+    },
+    {
+        "name":"RT Beam Limiting Device Opening",
+        "id":"rt-beam-limiting-device-opening",
+        "description":"<p>\nThis Macro defines the opening created by RT Beam Limiting Devices at a specific Control Point or set of Control Points.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.2.2.9.html#table_C.36.2.2.9-1"
+    },
+    {
+        "name":"Wedges Definition",
+        "id":"wedges-definition",
+        "description":"<p>\nThis Macro defines the geometric configuration elements which cannot vary during delivery.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.2.2.10.html#table_C.36.2.2.10-1"
+    },
+    {
+        "name":"Wedge Positions",
+        "id":"wedge-positions",
+        "description":"<p>\nThis Macro defines the positions of Wedges used in a specific Control Point or set of Control Points.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.2.2.11.html#table_C.36.2.2.11-1"
+    },
+    {
+        "name":"Compensators Definition",
+        "id":"compensators-definition",
+        "description":"<p>\nThis Macro defines the geometric configuration elements which cannot vary during delivery.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.2.2.12.html#table_C.36.2.2.12-1"
+    },
+    {
+        "name":"Blocks Definition",
+        "id":"blocks-definition",
+        "description":"<p>\nThis Macro defines the geometric configuration elements which cannot vary during delivery.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.2.2.13.html#table_C.36.2.2.13-1"
+    },
+    {
+        "name":"RT Accessory Holders Definition",
+        "id":"rt-accessory-holders-definition",
+        "description":"<p>\nThis Macro defines the geometric configuration elements which cannot vary during delivery and which are used to hold accessories such as blocks or compensators.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.2.2.14.html#table_C.36.2.2.14-1"
+    },
+    {
+        "name":"General Accessories Definition",
+        "id":"general-accessories-definition",
+        "description":"<p>\nThis Macro defines the geometric configuration elements which cannot vary during delivery.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.2.2.15.html#table_C.36.2.2.15-1"
+    },
+    {
+        "name":"Boluses Definition",
+        "id":"boluses-definition",
+        "description":"<p>\nThis Macro defines the geometric configuration elements which cannot vary during delivery.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.2.2.16.html#table_C.36.2.2.16-1"
+    },
+    {
+        "name":"RT Tolerance Set",
+        "id":"rt-tolerance-set",
+        "description":"<p>\nThe RT Tolerance Set Macro contains information describing the maximum differences between planned and delivered values. This information is used in the context of delivery of the RT Radiation Set. If the absolute difference between a planned and delivered value exceeds the tolerance value, then it is expected that the delivery of the RT Radiation Set will be inhibited unless an authorized operator confirms that the tolerance may be exceeded.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.2.2.17.html#table_C.36.2.2.17-1"
+    }
+]

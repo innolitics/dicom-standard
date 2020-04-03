@@ -19,7 +19,6 @@ from dicom_standard.table_utils import (
 )
 
 TABLE_SUFFIX = re.compile("(.*Module Attributes$)|(.*Module Table$)|(.*Macro Attributes$)|(.*Macro Attributes Description$)")
-MACRO_TABLE_SUFFIX = re.compile("(.*Macro Attributes$)|(.*Macro Attributes Description$)")
 COLUMN_TITLES_WITH_TYPE = ['name', 'tag', 'type', 'description']
 COLUMN_TITLES_NO_TYPE = ['name', 'tag', 'description']
 
@@ -44,9 +43,10 @@ def module_table_to_dict(table: TableListType) -> List[Dict[str, List[Tag]]]:
 
 def get_table_with_metadata(table_with_tdiv: Tuple[TableListType, Tag]) -> Dict[str, Any]:
     table, tdiv = table_with_tdiv
-    clean_name = pl.clean_table_name(pr.table_name(tdiv))
+    table_name = pr.table_name(tdiv)
+    clean_name = pl.clean_table_name(table_name)
     table_description = pr.table_description(tdiv)
-    is_macro = True if MACRO_TABLE_SUFFIX.match(pr.table_name(tdiv)) else False
+    is_macro = 'macro' in table_name.lower()
     return {
         'name': clean_name,
         'attributes': table,

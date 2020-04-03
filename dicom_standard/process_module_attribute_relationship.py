@@ -3,9 +3,9 @@ import sys
 from dicom_standard import parse_lib as pl
 
 
-def module_attr_relationship_table(module_attr_relationship_list):
+def module_attr_relationship_table(module_attr_list):
     entries = []
-    for module in module_attr_relationship_list:
+    for module in module_attr_list:
         for attribute in module['attributes']:
             entries.append({
                 'moduleId': module['id'],

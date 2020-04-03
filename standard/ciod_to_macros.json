@@ -984,61 +984,61 @@
         "conditionalStatement":null
     },
     {
-        "ciodId":"ophthalmic-tomography",
+        "ciodId":"ophthalmic-tomography-image",
         "macroId":"pixel-measures",
         "usage":"M",
         "conditionalStatement":null
     },
     {
-        "ciodId":"ophthalmic-tomography",
+        "ciodId":"ophthalmic-tomography-image",
         "macroId":"frame-content",
         "usage":"M",
         "conditionalStatement":null
     },
     {
-        "ciodId":"ophthalmic-tomography",
+        "ciodId":"ophthalmic-tomography-image",
         "macroId":"plane-position-patient",
         "usage":"C",
         "conditionalStatement":"Required if no Ophthalmic Photography Reference Image is available or if Ophthalmic Volumetric Properties Flag (0022,1622) is YES; May be present otherwise"
     },
     {
-        "ciodId":"ophthalmic-tomography",
+        "ciodId":"ophthalmic-tomography-image",
         "macroId":"plane-orientation-patient",
         "usage":"C",
         "conditionalStatement":"Required if no Ophthalmic Photography Reference Image is available or if Ophthalmic Volumetric Properties Flag (0022,1622) is YES; May be present otherwise"
     },
     {
-        "ciodId":"ophthalmic-tomography",
+        "ciodId":"ophthalmic-tomography-image",
         "macroId":"referenced-image",
         "usage":"C",
         "conditionalStatement":"Required if Ophthalmic Photography Reference Image is available."
     },
     {
-        "ciodId":"ophthalmic-tomography",
+        "ciodId":"ophthalmic-tomography-image",
         "macroId":"derivation-image",
         "usage":"C",
         "conditionalStatement":"Required if the image or frame has been derived from another SOP Instance."
     },
     {
-        "ciodId":"ophthalmic-tomography",
+        "ciodId":"ophthalmic-tomography-image",
         "macroId":"frame-anatomy",
         "usage":"M",
         "conditionalStatement":null
     },
     {
-        "ciodId":"ophthalmic-tomography",
+        "ciodId":"ophthalmic-tomography-image",
         "macroId":"cardiac-synchronization",
         "usage":"C",
         "conditionalStatement":"Required if Cardiac Synchronization Technique (0018,9037) equals other than NONE. May be present otherwise."
     },
     {
-        "ciodId":"ophthalmic-tomography",
+        "ciodId":"ophthalmic-tomography-image",
         "macroId":"contrast-bolus-usage",
         "usage":"C",
         "conditionalStatement":"Required if Contrast/Bolus Agent Sequence (0018,0012) is used. May not be used as a Shared Functional Group"
     },
     {
-        "ciodId":"ophthalmic-tomography",
+        "ciodId":"ophthalmic-tomography-image",
         "macroId":"ophthalmic-frame-location",
         "usage":"U",
         "conditionalStatement":null
@@ -2185,7 +2185,7 @@
     },
     {
         "ciodId":"ophthalmic-optical-coherence-tomography-b-scan-volume-analysis",
-        "macroId":"frame-voi-lut-with-lut-macro",
+        "macroId":"frame-voi-lut-with-lut",
         "usage":"M",
         "conditionalStatement":null
     },

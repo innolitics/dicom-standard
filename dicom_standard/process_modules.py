@@ -7,12 +7,14 @@ import sys
 from dicom_standard import parse_lib as pl
 
 
-def modules_from_tables(tables):
+def modules_from_tables(tables, macros_only=False):
     modules = []
     for module in tables:
-        module['description'] = pl.clean_html(module['description'])
-        module.pop('attributes', None)
-        modules.append(module)
+        if (macros_only and module['isMacro']) or not (macros_only or module['isMacro']):
+            module['description'] = pl.clean_html(module['description'])
+            module.pop('attributes', None)
+            module.pop('isMacro', None)
+            modules.append(module)
     return modules
 
 

@@ -2,11 +2,18 @@
 Takes the extracted CIOD-Macro table information to build a list of all
 CIOD-Macro relationships defined in the DICOM Standard.
 '''
+import re
 import sys
 
 from dicom_standard import parse_lib as pl
 
 from process_ciod_module_relationship import expand_conditional_statement
+
+
+# Remove "Macro" from "Frame VOI LUT With LUT Macro" in Table A.84.3.2-1
+# http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.84.3.2.html#table_A.84.3.2-1
+def clean_macro_name(text):
+    return re.sub(' Macro', '', text).strip()
 
 
 def define_all_relationships(ciod_macro_list):
@@ -23,7 +30,7 @@ def define_ciod_macro_relationship(ciod, macro):
     usage, conditional_statement = expand_conditional_statement(macro['usage'])
     return {
         "ciodId": pl.create_slug(ciod),
-        "macroId": pl.create_slug(pl.text_from_html_string(macro['macro'])),
+        "macroId": pl.create_slug(clean_macro_name(pl.text_from_html_string(macro['macro']))),
         "usage": usage,
         "conditionalStatement": conditional_statement
     }

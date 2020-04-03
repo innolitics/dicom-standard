@@ -21,6 +21,10 @@ def key_tables_by_id(list_of_tables: Iterator[MetadataTableType]) -> Dict[str, M
     return dict_of_tables
 
 
+def filter_modules_or_macros(table_list, macros=False):
+    return [table for table in table_list if macros and table['isMacro'] or not(macros or table['isMacro'])]
+
+
 def expand_all_macros(module_attr_tables, macros):
     expanded_attribute_lists = [expand_macro_rows(table, macros)
                                 for table in module_attr_tables]
@@ -64,7 +68,8 @@ def expand_hierarchy(tables):
 if __name__ == '__main__':
     module_macro_attr_tables = pl.read_json_to_dict(sys.argv[1])
     id_to_table = key_tables_by_id(module_macro_attr_tables)
-    expanded_tables = expand_all_macros(module_macro_attr_tables, id_to_table)
+    module_attr_tables = filter_modules_or_macros(module_macro_attr_tables)
+    expanded_tables = expand_all_macros(module_attr_tables, id_to_table)
     preprocessed_tables = preprocess_attribute_fields(expanded_tables)
     tables_with_hierarchy = expand_hierarchy(preprocessed_tables)
     pl.write_pretty_json(tables_with_hierarchy)
