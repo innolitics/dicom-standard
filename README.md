@@ -124,52 +124,7 @@ and successive processing steps use increasingly refined JSON.
 
 A map of all extraction and processing pathways is shown below:
 
-```
-                            +-------+             +----------+  +-------+     +-------+
-                            | PS3.3 |             |  Other   |  | PS3.4 |     | PS3.6 |
-                            +---+---+             |  DICOM   |  +---+---+     +---+---+
-                                |                 | Sections |      |             |
-                                |                 +-----+----+      |             |
-                                |                       |           |             |
-           +-----------+--------+-------+-----------+   |           |             |
-           |           |                |           |   |           |             |
-      +----v----+  +---v-----+     +----v-----+  +--v---v---+  +----v----+  +-----v------+
-      | Extract |  | Extract |     | Extract  |  | Extract  |  | Extract |  | Extract    |
-      | CIODs/  |  | CIODs/  |     | Modules/ |  | Sections |  | SOPs    |  | Attributes |
-      | Macros  |  | Modules |     | Attrs    |  +-----+----+  +----+----+  +-----+------+
-      +----+----+  +--+---+--+     +----+-----+        |            |             |
-           |          |   |             |              |            |             |
-           |          |   +---+         |              |            |             |
-           |     +----v----+  |   +-----v------+       |            |             |
-           |     | Process |  |   | Preprocess |       |            |             |
-           |     |  CIODS  |  |   | Modules/   |       |            v             v
-           |     +----+----+  |   | Attributes |       |        sops.json   attributes.json
-           |          |       |   +------+---+-+       |
-           |          v       |          |   |         +---+
-           |      ciods.json  |          |   +----+        |
-           |                  |      +---v-----+  |        |
-     +-----v-----+    +-------v---+  | Process |  |        |
-     | Process   |    | Process   |  | Modules |  |        |
-     | CIOD/     |    | CIOD/     |  +----+----+  |        |
-     | Macro     |    | Module    |       |       |        |
-     | Relations |    | Relations |       v       |        |
-     +-----+-----+    +-----+-----+  modules.json |        |
-           |                |                     |        |
-           |                v               +-----v-----+  |
-           |        ciod_to_modules.json    | Process   |  |
-           |                                | Module    |  |
-           v                                | Attribute |  |
-     ciod_to_macros.json                    | Relations |  |
-                                            +-----+-----+  |
-                                                  |        |
-                                            +-----v--------v-+
-                                            | Post-process   |
-                                            | Add References |
-                                            +--+-----------+-+
-                                               |           |
-                                               v           v
-                           module_to_attributes.json    references.json
-```
+![process_map]
 
 ## Contact
 
@@ -177,4 +132,5 @@ Find a bug? JSON files missing a piece of information? [We welcome pull
 requests!][gh_link] Feel free to make a PR or make a GitHub issue for any bugs
 you may find.
 
+[process_map]: https://user-images.githubusercontent.com/9055029/78311870-b33c6a00-7517-11ea-8366-8cd2cc3ea745.png
 [gh_link]: https://www.github.com/innolitics/dicom-standard

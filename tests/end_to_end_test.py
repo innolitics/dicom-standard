@@ -16,6 +16,11 @@ def ciods(make_standard):
 
 
 @pytest.fixture(scope='module')
+def macros(make_standard):
+    return pl.read_json_to_dict('standard/macros.json')
+
+
+@pytest.fixture(scope='module')
 def modules(make_standard):
     return pl.read_json_to_dict('standard/modules.json')
 
@@ -26,8 +31,23 @@ def attributes(make_standard):
 
 
 @pytest.fixture(scope='module')
+def sops(make_standard):
+    return pl.read_json_to_dict('standard/sops.json')
+
+
+@pytest.fixture(scope='module')
+def ciod_macro_relationship(make_standard):
+    return pl.read_json_to_dict('standard/ciod_to_macros.json')
+
+
+@pytest.fixture(scope='module')
 def ciod_module_relationship(make_standard):
     return pl.read_json_to_dict('standard/ciod_to_modules.json')
+
+
+@pytest.fixture(scope='module')
+def macro_attribute_relationship(make_standard):
+    return pl.read_json_to_dict('standard/macro_to_attributes.json')
 
 
 @pytest.fixture(scope='module')
@@ -36,10 +56,24 @@ def module_attribute_relationship(make_standard):
 
 
 @pytest.mark.endtoend
+def test_valid_foreign_keys_ciod_macro(ciod_macro_relationship, ciods, macros):
+    for pair in ciod_macro_relationship:
+        assert any(d['id'] == pair['ciodId'] for d in ciods)
+        assert any(d['id'] == pair['macroId'] for d in macros)
+
+
+@pytest.mark.endtoend
 def test_valid_foreign_keys_ciod_module(ciod_module_relationship, ciods, modules):
     for pair in ciod_module_relationship:
         assert any(d['id'] == pair['ciodId'] for d in ciods)
         assert any(d['id'] == pair['moduleId'] for d in modules)
+
+
+@pytest.mark.endtoend
+def test_valid_foreign_keys_macro_attribute(macro_attribute_relationship, macros, attributes):
+    for pair in macro_attribute_relationship:
+        assert any(d['id'] == pair['macroId'] for d in macros)
+        assert any(d['id'] == pair['path'].split(':')[-1] for d in attributes)
 
 
 @pytest.mark.endtoend
@@ -62,7 +96,6 @@ def test_vertical_samples_from_standard(ciods, modules, attributes):
         "id": "patient",
         "description": "<p>\n<span href=\"#table_C.7-1\">This module </span> specifies the Attributes of the Patient that describe and identify the Patient who is the subject of a Study. This Module contains Attributes of the Patient that are needed for interpretation of the Composite Instances and are common for all Studies performed on the Patient. It contains Attributes that are also included in the Patient Modules in <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.2.html#sect_C.2\" target=\"_blank\">Section\u00a0C.2</a>.</p>",
         "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.html#table_C.7-1",
-        "isMacro": False,
     }
     test_attributes = [
         {
@@ -145,7 +178,6 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship, modules,
         "name": "Patient Study",
         "description": "<p>\n<span href=\"#table_C.7-4a\">This module </span> defines Attributes that provide information about the Patient at the time the Study started.</p>",
         "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.2.2.html#table_C.7-4a",
-        "isMacro": False,
     }
     ciod_module = {
         "ciodId": "cr-image",
@@ -224,7 +256,6 @@ def test_number_of_module_appearances(ciods, ciod_module_relationship, modules):
         "id": "volume-cropping",
         "description": "<p>\n<span href=\"#table_C.11.24-1\">This module </span> contains the Attributes of the Volume Cropping Module. This Module limits the spatial extent of inputs in Volumetric Presentation State Input Sequence (0070,1201) that are used.</p>",
         "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.24.html#table_C.11.24-1",
-        "isMacro": False,
     }
     ciod_module = [
         {
@@ -248,3 +279,30 @@ def test_number_of_module_appearances(ciods, ciod_module_relationship, modules):
     all_module_appearances = [rel for rel in ciod_module_relationship
                               if rel['moduleId'] == module['id']]
     assert len(all_module_appearances) == 2
+
+
+@pytest.mark.endtoend
+class TestUniqueIds:
+    def ids_are_unique(self, dict_list):
+        return len(dict_list) == len(set(d['id'] for d in dict_list))
+
+    def test_unique_ids_attributes(self, attributes):
+        assert self.ids_are_unique(attributes)
+
+    def test_unique_ids_ciods(self, ciods):
+        assert self.ids_are_unique(ciods)
+
+    def test_unique_ids_macros(self, macros):
+        seen = set()
+        for d in macros:
+            if d['id'] not in seen:
+                seen.add(d['id'])
+            else:
+                print(d['id'])
+        assert self.ids_are_unique(macros)
+
+    def test_unique_ids_modules(self, modules):
+        assert self.ids_are_unique(modules)
+
+    def test_unique_ids_sops(self, sops):
+        assert self.ids_are_unique(sops)
