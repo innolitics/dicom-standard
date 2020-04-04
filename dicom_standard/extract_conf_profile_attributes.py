@@ -1,14 +1,14 @@
 '''
 Extract the listing of all attributes given in table E.1-1 from part 15 of the DICOM Standard.
 '''
-from typing import List
+from typing import cast, Dict, List, Union
 import sys
 
 from bs4 import BeautifulSoup
 
 from dicom_standard import parse_lib as pl
 from dicom_standard.extract_attributes import attribute_table_to_list
-from dicom_standard.table_utils import AttributeDictType, table_to_dict
+from dicom_standard.table_utils import TableDictType, table_to_dict
 
 COLUMN_TITLES = [
     'name', 'tag', 'retired', 'stdCompIOD', 'basicProfile', 'rtnSafePrivOpt',
@@ -18,14 +18,14 @@ COLUMN_TITLES = [
 TABLE_ID = 'table_E.1-1'
 
 
-def get_conf_profile_table(standard: BeautifulSoup) -> List[AttributeDictType]:
+def get_conf_profile_table(standard: BeautifulSoup) -> List[TableDictType]:
     all_tables = standard.find_all('div', class_='table')
     html_table = pl.find_tdiv_by_id(all_tables, TABLE_ID)
     list_table = attribute_table_to_list(html_table)
     return table_to_dict(list_table, COLUMN_TITLES, omit_empty=True)
 
 
-def table_to_json(table: List[AttributeDictType]) -> List[AttributeDictType]:
+def table_to_json(table: List[TableDictType]) -> List[TableDictType]:
     attributes = []
     for attr in table:
         attr['id'] = pl.create_slug(attr['tag'])
@@ -34,8 +34,9 @@ def table_to_json(table: List[AttributeDictType]) -> List[AttributeDictType]:
     return attributes
 
 
-def verify_table_integrity(parsed_table_data: List[AttributeDictType], attributes: List[AttributeDictType]):
-    retired_attrs = [d['name'] for d in attributes if d['retired']]
+def verify_table_integrity(parsed_table_data: List[TableDictType], attributes: pl.JsonDataType):
+    attributes = cast(List[Dict[str, Union[str, bool]]], attributes)
+    retired_attrs = [d['name'] for d in attributes if d['retired'] == 'Y']
     errors = []
     for attr in parsed_table_data:
         attr_name = attr['name']
@@ -54,7 +55,7 @@ def verify_table_integrity(parsed_table_data: List[AttributeDictType], attribute
 
 if __name__ == '__main__':
     standard = pl.parse_html_file(sys.argv[1])
-    attributes = pl.read_json_to_dict(sys.argv[2])
+    attributes = pl.read_json_data(sys.argv[2])
     table = get_conf_profile_table(standard)
     parsed_table_data = table_to_json(table)
     verify_table_integrity(parsed_table_data, attributes)

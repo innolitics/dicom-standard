@@ -16,7 +16,7 @@ def update_sourceurls(module_attr_pairs, references):
 
 
 if __name__ == '__main__':
-    module_attr_pairs = pl.read_json_to_dict(sys.argv[1])
-    references = pl.read_json_to_dict(sys.argv[2])
+    module_attr_pairs = pl.read_json_data(sys.argv[1])
+    references = pl.read_json_data(sys.argv[2])
     updated_pairs = update_sourceurls(module_attr_pairs, references)
     pl.write_pretty_json(updated_pairs)

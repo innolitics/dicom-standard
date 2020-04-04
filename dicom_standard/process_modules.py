@@ -19,6 +19,6 @@ def modules_from_tables(tables, macros_only=False):
 
 
 if __name__ == '__main__':
-    module_attr_tables = pl.read_json_to_dict(sys.argv[1])
+    module_attr_tables = pl.read_json_data(sys.argv[1])
     modules = modules_from_tables(module_attr_tables)
     pl.write_pretty_json(modules)

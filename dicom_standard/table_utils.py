@@ -2,7 +2,7 @@
 Functions for low-level manipulation of standard tables,
 represented by a list-of-lists.
 '''
-from typing import List, Tuple, Dict, Callable, Optional, Match, Any
+from typing import Any, Callable, Dict, List, Match, Optional, Tuple
 from copy import copy
 from bs4 import BeautifulSoup, Tag
 
@@ -10,7 +10,9 @@ from dicom_standard import parse_lib as pl
 from dicom_standard import parse_relations as pr
 
 TableListType = List[List[Tag]]
-AttributeDictType = Dict[str, str]
+TableDictType = Dict[str, str]
+TableToDictFunc = Callable[[TableListType], List[TableDictType]]
+GetTableFunc = Callable[[Tuple[List[TableDictType], Tag]], Dict[str, Any]]
 
 
 def get_chapter_tables(standard: BeautifulSoup, chapter_id: str, validity_func: Callable[[Tag], Match]) -> Tuple[TableListType, List[Tag]]:
@@ -23,8 +25,8 @@ def get_chapter_tables(standard: BeautifulSoup, chapter_id: str, validity_func: 
 def tables_to_json(
     tables: List[TableListType],
     tdivs: List[Tag],
-    table_to_dict_func: Callable[[TableListType], List[Dict[str, List[Tag]]]],
-    get_table_with_metadata: Callable[[Tuple[TableListType, Tag]], Dict[str, Any]]
+    table_to_dict_func: TableToDictFunc,
+    get_table_with_metadata: GetTableFunc
 ) -> List[Dict[str, Any]]:
     expanded_tables = map(expand_spans, tables)
     stringified_tables = map(stringify_table, expanded_tables)
@@ -45,7 +47,7 @@ def get_table_description(tdiv: Tag) -> Optional[Tag]:
         return None
 
 
-def table_to_dict(table: TableListType, row_names: List[str], omit_empty: bool = False) -> List[Dict[str, List[Tag]]]:
+def table_to_dict(table: TableListType, row_names: List[str], omit_empty: bool = False) -> List[TableDictType]:
     if omit_empty:
         return [dict((k, v) for k, v in zip(row_names, row) if v) for row in table]
     return [dict(zip(row_names, row)) for row in table]
@@ -55,7 +57,7 @@ def stringify_table(table: TableListType) -> List[List[str]]:
     return [[str(cell) for cell in row] for row in table]
 
 
-def tdiv_to_table_list(table_div: Tag) -> List[List[Tag]]:
+def tdiv_to_table_list(table_div: Tag) -> TableListType:
     rows = pr.table_rows(table_div)
     table_cells = [row.find_all('td') for row in rows if row.find_all('td')]
     # We must also include `th` elements during table parsing to compensate
@@ -77,7 +79,7 @@ def expand_rows(table: TableListType) -> TableListType:
     communicated between each row (the rowspan information).
     '''
     extended_table = []
-    row_expansion = []  # Format: [(bs_html_object, row_index)]
+    row_expansion: List[Tuple[Tag, int]] = []
     for row in table:
         expanded_row, row_expansion = expand_rowspans(row, row_expansion)
         extended_table.append(expanded_row)

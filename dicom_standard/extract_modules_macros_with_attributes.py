@@ -2,7 +2,7 @@
 Load the module-attribute tables from DICOM Standard PS3.3.
 Output the tables in JSON format, one entry per attribute.
 '''
-from typing import Tuple, List, Dict, Any
+from typing import List, Match, Tuple, Union
 import sys
 import re
 
@@ -10,8 +10,10 @@ from bs4 import BeautifulSoup, Tag
 
 from dicom_standard import parse_lib as pl
 from dicom_standard import parse_relations as pr
+from dicom_standard.macro_utils import MetadataTableType
 from dicom_standard.table_utils import (
     TableListType,
+    TableDictType,
     tdiv_to_table_list,
     table_to_dict,
     get_short_standard_link,
@@ -31,18 +33,18 @@ def get_module_macro_tables(standard: BeautifulSoup) -> Tuple[List[TableListType
     return (table_lists, table_divs)
 
 
-def is_valid_table(table_div):
+def is_valid_table(table_div: Tag) -> Union[Match, bool]:
     table_name = pr.table_name(table_div)
     return TABLE_SUFFIX.match(table_name) and 'Example' not in table_name
 
 
-def module_table_to_dict(table: TableListType) -> List[Dict[str, List[Tag]]]:
+def module_table_to_dict(table: TableListType) -> List[TableDictType]:
     has_type_column = len(table[0]) > 3
     column_titles = COLUMN_TITLES_WITH_TYPE if has_type_column else COLUMN_TITLES_NO_TYPE
     return table_to_dict(table, column_titles)
 
 
-def get_table_with_metadata(table_with_tdiv: Tuple[TableListType, Tag]) -> Dict[str, Any]:
+def get_table_with_metadata(table_with_tdiv: Tuple[List[TableDictType], Tag]) -> MetadataTableType:
     table, tdiv = table_with_tdiv
     table_name = pr.table_name(tdiv)
     clean_name = pl.clean_table_name(table_name)

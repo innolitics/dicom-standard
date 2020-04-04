@@ -37,6 +37,6 @@ def define_ciod_macro_relationship(ciod, macro):
 
 
 if __name__ == '__main__':
-    ciod_macro_list = pl.read_json_to_dict(sys.argv[1])
+    ciod_macro_list = pl.read_json_data(sys.argv[1])
     ciod_macro_relationships = define_all_relationships(ciod_macro_list)
     pl.write_pretty_json(ciod_macro_relationships)

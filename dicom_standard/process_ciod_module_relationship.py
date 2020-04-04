@@ -73,6 +73,6 @@ def extract_conditional_statement(usage_field):
 
 
 if __name__ == '__main__':
-    ciod_module_list = pl.read_json_to_dict(sys.argv[1])
+    ciod_module_list = pl.read_json_data(sys.argv[1])
     ciod_module_relationships = define_all_relationships(ciod_module_list)
     pl.write_pretty_json(ciod_module_relationships)

@@ -60,7 +60,7 @@ def get_location_from_ref(ref):
 
 
 if __name__ == '__main__':
-    module_attr_pairs = pl.read_json_to_dict(sys.argv[1])
-    section_listing = pl.read_json_to_dict(sys.argv[2])
+    module_attr_pairs = pl.read_json_data(sys.argv[1])
+    section_listing = pl.read_json_data(sys.argv[2])
     references = find_reference_html_in_sections(module_attr_pairs, section_listing)
     pl.write_pretty_json(references)

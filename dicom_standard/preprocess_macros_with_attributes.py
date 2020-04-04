@@ -12,7 +12,7 @@ from preprocess_modules_with_attributes import (
 
 
 if __name__ == '__main__':
-    module_macro_attr_tables = pl.read_json_to_dict(sys.argv[1])
+    module_macro_attr_tables = pl.read_json_data(sys.argv[1])
     id_to_table = key_tables_by_id(module_macro_attr_tables)
     macro_attr_tables = filter_modules_or_macros(module_macro_attr_tables, macros=True)
     expanded_tables = expand_all_macros(macro_attr_tables, id_to_table)

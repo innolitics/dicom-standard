@@ -17,6 +17,6 @@ def ciods_from_extracted_list(ciod_module_list):
 
 
 if __name__ == '__main__':
-    ciod_module_list = pl.read_json_to_dict(sys.argv[1])
+    ciod_module_list = pl.read_json_data(sys.argv[1])
     ciods = ciods_from_extracted_list(ciod_module_list)
     pl.write_pretty_json(ciods)

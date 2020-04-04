@@ -21,6 +21,6 @@ def macro_attr_relationship_table(macro_attr_list):
 
 
 if __name__ == "__main__":
-    macro_attr_list = pl.read_json_to_dict(sys.argv[1])
+    macro_attr_list = pl.read_json_data(sys.argv[1])
     macro_attr_relationship_list = macro_attr_relationship_table(macro_attr_list)
     pl.write_pretty_json(macro_attr_relationship_list)

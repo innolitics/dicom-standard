@@ -3,7 +3,7 @@ Common functions for extracting information from the
 DICOM standard HTML file.
 '''
 
-from typing import Dict, List, Any
+from typing import List, Any, Union
 import json
 import re
 import sys
@@ -11,7 +11,9 @@ import sys
 from bs4 import BeautifulSoup, NavigableString, Tag
 
 from dicom_standard import parse_relations as pr
+from dicom_standard.macro_utils import MetadataTableType
 
+ALLOWED_ATTRIBUTES = ["href", "src", "type", "data", "colspan", "rowspan"]
 BASE_DICOM_URL = "http://dicom.nema.org/medical/dicom/current/output/html/"
 BASE_SHORT_DICOM_SECTION_URL = "http://dicom.nema.org/medical/dicom/current/output/chtml/"
 NONSTANDARD_SECTION_IDS = [
@@ -29,7 +31,7 @@ NONSTANDARD_SECTION_IDS = [
 ID_PATTERN = re.compile(r'\b(' + '|'.join(NONSTANDARD_SECTION_IDS) + r').+\b')
 SHORT_DICOM_URL_PREFIX = "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/"
 
-allowed_attributes = ["href", "src", "type", "data", "colspan", "rowspan"]
+JsonDataType = Union[List[MetadataTableType], MetadataTableType]
 
 
 def parse_html_file(filepath: str) -> BeautifulSoup:
@@ -41,7 +43,7 @@ def write_pretty_json(data: Any) -> None:
     json.dump(data, sys.stdout, sort_keys=False, indent=4, separators=(',', ':'))
 
 
-def read_json_to_dict(filepath: str) -> Dict[Any, Any]:
+def read_json_data(filepath: str) -> JsonDataType:
     with open(filepath, 'r') as json_file:
         json_string = json_file.read()
         json_dict = json.loads(json_string)
@@ -87,7 +89,7 @@ def clean_table_name(name: str) -> str:
     # Include optional "s" at end of "Functional Group" to catch Table A.32.9-2
     # http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.9.3.4.html#table_A.32.9-2
     possible_table_suffixes = r'(IOD Module[Ss])|(Module Attributes)|((Functional Group)? Macro Attributes)|(Module Table)|(Functional Groups? Macros)'
-    clean_title, *_ = re.split(possible_table_suffixes, title)
+    clean_title = re.split(possible_table_suffixes, title)[0]
     # Remove extra "Table" from table title (should be "CT Performed Procedure Protocol", not "Table CT Performed ...")
     # http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.82.html#table_A.82.1.3-1
     if clean_title.strip() == 'Table CT Performed Procedure Protocol':
@@ -127,7 +129,7 @@ def remove_attributes_from_html_tags(top_level_tag: Tag) -> None:
 
 def clean_tag_attributes(tag: Tag) -> None:
     if not isinstance(tag, NavigableString):
-        tag.attrs = {k: v for k, v in tag.attrs.items() if k in allowed_attributes}
+        tag.attrs = {k: v for k, v in tag.attrs.items() if k in ALLOWED_ATTRIBUTES}
 
 
 def remove_empty_children(top_level_tag: Tag) -> None:

@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup, Tag
 
 from dicom_standard import parse_lib as pl
 from dicom_standard.extract_attributes import attribute_table_to_list
-from dicom_standard.table_utils import AttributeDictType, table_to_dict
+from dicom_standard.table_utils import TableDictType, table_to_dict
 
 COLUMN_TITLES = ['name', 'id', 'ciod']
 TABLE_ID = 'table_B.5-1'
@@ -25,7 +25,7 @@ IOD_ABBREVIATIONS = {
 }
 
 
-def get_table_and_tdiv(standard: BeautifulSoup) -> Tuple[List[AttributeDictType], Tag]:
+def get_table_and_tdiv(standard: BeautifulSoup) -> Tuple[List[TableDictType], Tag]:
     all_tables = standard.find_all('div', class_='table')
     html_table = pl.find_tdiv_by_id(all_tables, TABLE_ID)
     list_table = attribute_table_to_list(html_table)
@@ -38,7 +38,7 @@ def generate_ciod_id(name: str) -> str:
     return IOD_ABBREVIATIONS.get(cleaned_name, cleaned_name)
 
 
-def table_to_json(table: List[AttributeDictType], tdiv: Tag) -> List[AttributeDictType]:
+def table_to_json(table: List[TableDictType], tdiv: Tag) -> List[TableDictType]:
     attributes = []
     for row in table:
         row['ciod'] = generate_ciod_id(row['ciod'])

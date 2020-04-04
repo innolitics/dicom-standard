@@ -106,7 +106,7 @@ def test_vertical_samples_from_standard(ciods, modules, attributes):
     test_attributes = [
         {
             "tag": "(0010,0010)",
-            "retired": False,
+            "retired": 'N',
             "keyword": "PatientName",
             "name": "Patient's Name",
             "valueMultiplicity": "1",
@@ -115,7 +115,7 @@ def test_vertical_samples_from_standard(ciods, modules, attributes):
         },
         {
             "tag": "(0008,0034)",
-            "retired": True,
+            "retired": 'Y',
             "keyword": "OverlayTime",
             "name": "Overlay Time",
             "valueMultiplicity": "1",
@@ -124,7 +124,7 @@ def test_vertical_samples_from_standard(ciods, modules, attributes):
         },
         {
             "tag": "(0008,0108)",
-            "retired": False,
+            "retired": 'N',
             "keyword": "ExtendedCodeMeaning",
             "name": "Extended Code Meaning",
             "valueMultiplicity": "1",
@@ -142,7 +142,7 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship, modules,
                                       module_attribute_relationship, attributes):
     attr = {
         "name": "Equivalent Code Sequence",
-        "retired": False,
+        "retired": 'N',
         "valueMultiplicity": "1",
         "keyword": "EquivalentCodeSequence",
         "valueRepresentation": "SQ",
@@ -210,7 +210,7 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship, modules,
 def test_number_of_attribute_appearances(module_attribute_relationship, attributes):
     attr = {
         "name": "Strain Nomenclature",
-        "retired": False,
+        "retired": 'N',
         "valueMultiplicity": "1",
         "keyword": "StrainNomenclature",
         "valueRepresentation": "LO",
