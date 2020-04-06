@@ -124,7 +124,58 @@ and successive processing steps use increasingly refined JSON.
 
 A map of all extraction and processing pathways is shown below:
 
-![process_map]
+```
+                                      +-------+             +----------+    +-------+     +-------+
+                                      | PS3.3 |             | Other    |    | PS3.4 |     | PS3.6 |
+                                      +---+---+             | DICOM    |    +---+---+     +---+---+
+                                          |                 | Sections |        |             |
+                                          |                 +-----+----+        |             |
+                                          |                       |        +----v----+  +-----v------+
+                   +-------------+--------+------+-------------+  |        | Extract |  | Extract    |
+                   |             |               |             |  |        | SOPs    |  | Attributes |
+               +---v-----+  +----v----+   +------v------+  +---v--v---+    +----+----+  +-----+------+
+               | Extract |  | Extract |   | Extract     |  | Extract  |         |             |
+               | CIODs/  |  | CIODs/  |   | Modules/    |  | Sections |         |             |
+               | Modules |  | Macros  |   | Macro Attrs |  +--------v-+         v             v
+               +----+----+  +----+----+   +------v-----+            |       sops.json   attributes.json
+                    |            |               |                  |
+      +-------------+            |               +---------------+  +-----------|
+      |             |            |               |               |              |
++-----v-----+  +----v----+  +----v------+  +-----v------+  +-----v------+       |
+| Process   |  | Process |  | Process   |  | Preprocess |  | Preprocess |       |
+| CIOD/     |  | CIODs   |  | CIOD/     |  | Modules/   |  | Macros/    |       |
+| Module    |  +----+----+  | Macro     |  | Attributes |  | Attributes |       |
+| Relations |       |       | Relations |  +-----v------+  +-----v------+       |
++-----+-----+       |       +----+------+        |               |              |
+      |             v            |               +-------+       +-------+      |
+      |        ciods.json        |               |       |       |       |      |
+      v                          v          +----v----+  |  +----v----+  |      |
+ciod_to_modules.json   ciod_to_macros.json  | Process |  |  | Process |  |      |
+                                            | Modules |  |  | Macros  |  |      |
+                                            +----+----+  |  +----+----+  |      |
+                                                 |       |       |       |      |
+                                                 |       |       |       |      |
+                                                 v       |       v       |      |
+                                            modules.json |  macros.json  |      |
+                                                         |               |      |
+                                                 +-------v---+   +-------v---+  |
+                                                 | Process   |   | Process   |  |
+                                                 | Module    |   | Macro     |  |
+                                                 | Attribute |   | Attribute |  |
+                                                 | Relations |   | Relations |  |
+                                                 +-------+---+   +-------v---+  |
+                                                         |               |      |
+                                                       +-v---------------v------v-+
+                                                       |        Postprocess       |
+                                                       |      Add References      |
+                                                       +-----+-------+------+-----+
+                                                             |       |      |
+                                                    +--------+       |      +--------+
+                                                    |                v               |
+                                                    |    macros_to_attributes.json   |
+                                                    v                                v
+                                         modules_to_attributes.json           references.json
+```
 
 ## Contact
 
@@ -132,5 +183,4 @@ Find a bug? JSON files missing a piece of information? [We welcome pull
 requests!][gh_link] Feel free to make a PR or make a GitHub issue for any bugs
 you may find.
 
-[process_map]: https://user-images.githubusercontent.com/9055029/78311870-b33c6a00-7517-11ea-8366-8cd2cc3ea745.png
 [gh_link]: https://www.github.com/innolitics/dicom-standard
