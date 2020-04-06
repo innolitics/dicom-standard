@@ -13,6 +13,7 @@ setup(
 
     description='Parse the DICOM Standard into a human-friendly JSON format.',
     long_description=long_description,
+    long_description_content_type='text/markdown',
     url='https://github.com/innolitics/dicom-standard',
     author='Innolitics, LLC',
     author_email='info@innolitics.com',
