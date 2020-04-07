@@ -12,47 +12,47 @@ def make_standard():
 
 @pytest.fixture(scope='module')
 def ciods(make_standard):
-    return pl.read_json_to_dict('standard/ciods.json')
+    return pl.read_json_data('standard/ciods.json')
 
 
 @pytest.fixture(scope='module')
 def macros(make_standard):
-    return pl.read_json_to_dict('standard/macros.json')
+    return pl.read_json_data('standard/macros.json')
 
 
 @pytest.fixture(scope='module')
 def modules(make_standard):
-    return pl.read_json_to_dict('standard/modules.json')
+    return pl.read_json_data('standard/modules.json')
 
 
 @pytest.fixture(scope='module')
 def attributes(make_standard):
-    return pl.read_json_to_dict('standard/attributes.json')
+    return pl.read_json_data('standard/attributes.json')
 
 
 @pytest.fixture(scope='module')
 def sops(make_standard):
-    return pl.read_json_to_dict('standard/sops.json')
+    return pl.read_json_data('standard/sops.json')
 
 
 @pytest.fixture(scope='module')
 def ciod_fg_macro_relationship(make_standard):
-    return pl.read_json_to_dict('standard/ciod_to_fg_macros.json')
+    return pl.read_json_data('standard/ciod_to_fg_macros.json')
 
 
 @pytest.fixture(scope='module')
 def ciod_module_relationship(make_standard):
-    return pl.read_json_to_dict('standard/ciod_to_modules.json')
+    return pl.read_json_data('standard/ciod_to_modules.json')
 
 
 @pytest.fixture(scope='module')
 def macro_attribute_relationship(make_standard):
-    return pl.read_json_to_dict('standard/macro_to_attributes.json')
+    return pl.read_json_data('standard/macro_to_attributes.json')
 
 
 @pytest.fixture(scope='module')
 def module_attribute_relationship(make_standard):
-    return pl.read_json_to_dict('standard/module_to_attributes.json')
+    return pl.read_json_data('standard/module_to_attributes.json')
 
 
 @pytest.mark.endtoend
