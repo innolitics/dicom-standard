@@ -1,4 +1,5 @@
 import subprocess
+from collections import Counter
 
 import pytest
 
@@ -289,26 +290,21 @@ def test_number_of_module_appearances(ciods, ciod_module_relationship, modules):
 
 @pytest.mark.endtoend
 class TestUniqueIds:
-    def ids_are_unique(self, dict_list):
-        return len(dict_list) == len(set(d['id'] for d in dict_list))
+    def get_duplicate_ids(self, dict_list):
+        id_list = [d['id'] for d in dict_list]
+        return [k for k, v in Counter(id_list).items() if v > 1]
 
-    def test_unique_ids_attributes(self, attributes):
-        assert self.ids_are_unique(attributes)
+    def test_no_duplicate_attributes(self, attributes):
+        assert not self.get_duplicate_ids(attributes)
 
-    def test_unique_ids_ciods(self, ciods):
-        assert self.ids_are_unique(ciods)
+    def test_no_duplicate_ciods(self, ciods):
+        assert not self.get_duplicate_ids(ciods)
 
-    def test_unique_ids_macros(self, macros):
-        seen = set()
-        for d in macros:
-            if d['id'] not in seen:
-                seen.add(d['id'])
-            else:
-                print(d['id'])
-        assert self.ids_are_unique(macros)
+    def test_no_duplicate_macros(self, macros):
+        assert not self.get_duplicate_ids(macros)
 
-    def test_unique_ids_modules(self, modules):
-        assert self.ids_are_unique(modules)
+    def test_no_duplicate_modules(self, modules):
+        assert not self.get_duplicate_ids(modules)
 
-    def test_unique_ids_sops(self, sops):
-        assert self.ids_are_unique(sops)
+    def test_no_duplicate_sops(self, sops):
+        assert not self.get_duplicate_ids(sops)
