@@ -15,7 +15,7 @@ TableToDictFunc = Callable[[TableListType], List[TableDictType]]
 GetTableFunc = Callable[[Tuple[List[TableDictType], Tag]], Dict[str, Any]]
 
 
-def get_chapter_tables(standard: BeautifulSoup, chapter_id: str, validity_func: Callable[[Tag], Match]) -> Tuple[TableListType, List[Tag]]:
+def get_chapter_tables(standard: BeautifulSoup, chapter_id: str, validity_func: Callable[[Tag], bool]) -> Tuple[TableListType, List[Tag]]:
     chapter_table_divs = pl.all_tdivs_in_chapter(standard, chapter_id)
     filtered_table_divs = list(filter(validity_func, chapter_table_divs))
     table_lists = list(map(tdiv_to_table_list, filtered_table_divs))

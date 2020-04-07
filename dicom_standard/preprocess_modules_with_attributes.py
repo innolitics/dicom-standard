@@ -14,8 +14,7 @@ from dicom_standard.macro_utils import expand_macro_rows, get_id_from_link, Meta
 from dicom_standard.hierarchy_utils import record_hierarchy_for_module
 
 
-def key_tables_by_id(table_list: pl.JsonDataType) -> Dict[str, MetadataTableType]:
-    table_list = cast(List[MetadataTableType], table_list)
+def key_tables_by_id(table_list: List[MetadataTableType]) -> Dict[str, MetadataTableType]:
     dict_of_tables = {}
     for table in table_list:
         dict_of_tables[get_id_from_link(table['linkToStandard'])] = table
@@ -67,9 +66,9 @@ def expand_hierarchy(tables):
 
 
 if __name__ == '__main__':
-    module_macro_attr_tables = pl.read_json_data(sys.argv[1])
+    module_macro_attr_tables = cast(List[MetadataTableType], pl.read_json_data(sys.argv[1]))
     id_to_table = key_tables_by_id(module_macro_attr_tables)
-    module_attr_tables = filter_modules_or_macros(module_macro_attr_tables)
+    module_attr_tables = [table for table in module_macro_attr_tables if not table['isMacro']]
     expanded_tables = expand_all_macros(module_attr_tables, id_to_table)
     preprocessed_tables = preprocess_attribute_fields(expanded_tables)
     tables_with_hierarchy = expand_hierarchy(preprocessed_tables)

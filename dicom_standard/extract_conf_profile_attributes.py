@@ -17,6 +17,8 @@ COLUMN_TITLES = [
 ]
 TABLE_ID = 'table_E.1-1'
 
+AttrTableType = List[Dict[str, Union[str, bool]]]
+
 
 def get_conf_profile_table(standard: BeautifulSoup) -> List[TableDictType]:
     all_tables = standard.find_all('div', class_='table')
@@ -34,8 +36,7 @@ def table_to_json(table: List[TableDictType]) -> List[TableDictType]:
     return attributes
 
 
-def verify_table_integrity(parsed_table_data: List[TableDictType], attributes: pl.JsonDataType):
-    attributes = cast(List[Dict[str, Union[str, bool]]], attributes)
+def verify_table_integrity(parsed_table_data: List[TableDictType], attributes: AttrTableType):
     retired_attrs = [d['name'] for d in attributes if d['retired'] == 'Y']
     errors = []
     for attr in parsed_table_data:
@@ -58,7 +59,7 @@ if __name__ == '__main__':
     attributes = pl.read_json_data(sys.argv[2])
     table = get_conf_profile_table(standard)
     parsed_table_data = table_to_json(table)
-    verify_table_integrity(parsed_table_data, attributes)
+    verify_table_integrity(parsed_table_data, cast(AttrTableType, attributes))
     for attr in parsed_table_data:
         del attr['retired']
     pl.write_pretty_json(parsed_table_data)

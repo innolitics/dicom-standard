@@ -3,7 +3,7 @@ Load the CIOD module tables from DICOM Standard PS3.3, Annex A.
 All CIOD tables are defined in chapter A of the DICOM Standard.
 Output the tables in JSON format, one entry per CIOD.
 '''
-from typing import List, Match, Tuple
+from typing import List, Tuple
 import sys
 import re
 
@@ -13,6 +13,7 @@ from dicom_standard import parse_lib as pl
 from dicom_standard import parse_relations as pr
 from dicom_standard.macro_utils import MetadataTableType
 from dicom_standard.table_utils import (
+    TableListType,
     TableDictType,
     get_chapter_tables,
     tables_to_json,
@@ -22,17 +23,17 @@ from dicom_standard.table_utils import (
 )
 
 CHAPTER_ID = 'chapter_A'
-# Include upper case "S" to catch typo in Table A.39.19-1
+# Standard workaround: Include upper case "S" to catch typo in Table A.39.19-1
 # http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.35.19.3.html
 TABLE_SUFFIX = re.compile(".*IOD Module[sS]$")
 COLUMN_TITLES = ['informationEntity', 'module', 'reference_fragment', 'usage']
 
 
-def is_valid_ciod_table(table_div: Tag) -> Match:
-    return TABLE_SUFFIX.match(pr.table_name(table_div))
+def is_valid_ciod_table(table_div: Tag) -> bool:
+    return bool(TABLE_SUFFIX.match(pr.table_name(table_div)))
 
 
-def ciod_table_to_dict(table):
+def ciod_table_to_dict(table: TableListType) -> List[TableDictType]:
     return table_to_dict(table, COLUMN_TITLES)
 
 

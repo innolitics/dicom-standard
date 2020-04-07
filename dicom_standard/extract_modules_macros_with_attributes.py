@@ -2,7 +2,7 @@
 Load the module-attribute tables from DICOM Standard PS3.3.
 Output the tables in JSON format, one entry per attribute.
 '''
-from typing import List, Match, Tuple, Union
+from typing import List, Tuple, Union
 import sys
 import re
 
@@ -33,9 +33,9 @@ def get_module_macro_tables(standard: BeautifulSoup) -> Tuple[List[TableListType
     return (table_lists, table_divs)
 
 
-def is_valid_table(table_div: Tag) -> Union[Match, bool]:
+def is_valid_table(table_div: Tag) -> bool:
     table_name = pr.table_name(table_div)
-    return TABLE_SUFFIX.match(table_name) and 'Example' not in table_name
+    return bool(TABLE_SUFFIX.match(table_name)) and 'Example' not in table_name
 
 
 def module_table_to_dict(table: TableListType) -> List[TableDictType]:
