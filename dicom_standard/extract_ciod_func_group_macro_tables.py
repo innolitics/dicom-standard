@@ -2,7 +2,7 @@
 Load the CIOD to functional group macro tables from DICOM Standard PS3.3, Annex A.
 Output the data from the tables in JSON format, one entry per CIOD.
 '''
-from typing import List, Match, Tuple
+from typing import List, Tuple
 import sys
 import re
 
@@ -22,13 +22,13 @@ from dicom_standard.table_utils import (
 )
 
 CHAPTER_ID = 'chapter_A'
-# Include optional "s" at end of "Functional Group" to catch Table A.32.9-2
+# Standard workaround: Include optional "s" at end of "Functional Group" to catch Table A.32.9-2
 # http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.9.3.4.html#table_A.32.9-2
 TABLE_SUFFIX = re.compile(".*Functional Groups? Macros$")
 COLUMN_TITLES = ['macro', 'section', 'usage']
 
 
-# Add missing "Image" to title of Table A.52.4.3-1
+# Standard workaround: Add missing "Image" to title of Table A.52.4.3-1
 # http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.52.4.3.html#table_A.52.4.3-1
 def clean_macro_table_name(table_name: str) -> str:
     clean_name = pl.clean_table_name(table_name)
@@ -37,8 +37,8 @@ def clean_macro_table_name(table_name: str) -> str:
     return clean_name
 
 
-def is_valid_macro_table(table_div: Tag) -> Match:
-    return TABLE_SUFFIX.match(pr.table_name(table_div))
+def is_valid_macro_table(table_div: Tag) -> bool:
+    return bool(TABLE_SUFFIX.match(pr.table_name(table_div)))
 
 
 def macro_table_to_dict(table: TableListType) -> List[TableDictType]:

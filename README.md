@@ -2,6 +2,8 @@
   <img src="https://travis-ci.org/innolitics/dicom-standard.svg?branch=master">
 </a>
 
+![](https://github.com/russellkan/dicom-standard/workflows/Run%20Makefile/badge.svg?branch=v1.0)
+
 # DICOM Standard Parser
 
 This program parses the web version of the [DICOM Standard][nema] into human
@@ -133,26 +135,26 @@ A map of all extraction and processing pathways is shown below:
                                           |                       |        +----v----+  +-----v------+
                    +-------------+--------+------+-------------+  |        | Extract |  | Extract    |
                    |             |               |             |  |        | SOPs    |  | Attributes |
-               +---v-----+  +----v----+   +------v------+  +---v--v---+    +----+----+  +-----+------+
-               | Extract |  | Extract |   | Extract     |  | Extract  |         |             |
-               | CIODs/  |  | CIODs/  |   | Modules/    |  | Sections |         |             |
-               | Modules |  | Macros  |   | Macro Attrs |  +--------v-+         v             v
-               +----+----+  +----+----+   +------v-----+            |       sops.json   attributes.json
+               +---v-----+  +----v-----+  +------v------+  +---v--v---+    +----+----+  +-----+------+
+               | Extract |  | Extract  |  | Extract     |  | Extract  |         |             |
+               | CIODs/  |  | CIODs/FG |  | Modules/    |  | Sections |         |             |
+               | Modules |  | Macros   |  | Macro Attrs |  +--------v-+         v             v
+               +----+----+  +----+-----+  +------v-----+            |       sops.json   attributes.json
                     |            |               |                  |
       +-------------+            |               +---------------+  +-----------|
       |             |            |               |               |              |
 +-----v-----+  +----v----+  +----v------+  +-----v------+  +-----v------+       |
 | Process   |  | Process |  | Process   |  | Preprocess |  | Preprocess |       |
-| CIOD/     |  | CIODs   |  | CIOD/     |  | Modules/   |  | Macros/    |       |
+| CIOD/     |  | CIODs   |  | CIOD/FG   |  | Modules/   |  | Macros/    |       |
 | Module    |  +----+----+  | Macro     |  | Attributes |  | Attributes |       |
 | Relations |       |       | Relations |  +-----v------+  +-----v------+       |
 +-----+-----+       |       +----+------+        |               |              |
       |             v            |               +-------+       +-------+      |
       |        ciods.json        |               |       |       |       |      |
-      v                          v          +----v----+  |  +----v----+  |      |
-ciod_to_modules.json   ciod_to_macros.json  | Process |  |  | Process |  |      |
-                                            | Modules |  |  | Macros  |  |      |
-                                            +----+----+  |  +----+----+  |      |
+      v                          |          +----v----+  |  +----v----+  |      |
+ciod_to_modules.json             |          | Process |  |  | Process |  |      |
+                                 v          | Modules |  |  | Macros  |  |      |
+           ciod_to_func_group_macros.json   +----+----+  |  +----+----+  |      |
                                                  |       |       |       |      |
                                                  |       |       |       |      |
                                                  v       |       v       |      |

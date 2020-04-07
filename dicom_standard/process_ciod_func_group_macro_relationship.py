@@ -10,7 +10,7 @@ from dicom_standard import parse_lib as pl
 from process_ciod_module_relationship import expand_conditional_statement
 
 
-# Remove "Macro" from "Frame VOI LUT With LUT Macro" in Table A.84.3.2-1
+# Standard workaround: Remove "Macro" from "Frame VOI LUT With LUT Macro" in Table A.84.3.2-1
 # http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.84.3.2.html#table_A.84.3.2-1
 def clean_macro_name(text):
     return re.sub(' Macro', '', text).strip()
