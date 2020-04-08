@@ -38,7 +38,7 @@ def sops(make_standard):
 
 @pytest.fixture(scope='module')
 def ciod_fg_macro_relationship(make_standard):
-    return pl.read_json_data('standard/ciod_to_fg_macros.json')
+    return pl.read_json_data('standard/ciod_to_func_group_macros.json')
 
 
 @pytest.fixture(scope='module')
