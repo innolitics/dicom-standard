@@ -30,6 +30,7 @@ def attribute_table_to_list(table_div: Tag) -> List[List[str]]:
             for row in pr.table_rows(table_div)]
 
 
+# TODO: Convert attributes to a TypedDict when we update to use Python3.8
 def attribute_table_to_json(table: List[TableDictType]) -> List[TableDictType]:
     attributes = []
     for attr in table:

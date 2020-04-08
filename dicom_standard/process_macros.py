@@ -6,7 +6,7 @@ import sys
 
 from dicom_standard import parse_lib as pl
 
-from process_modules import modules_from_tables
+from dicom_standard.process_modules import modules_from_tables
 
 
 if __name__ == '__main__':

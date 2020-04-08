@@ -1,8 +1,7 @@
 import sys
 
 from dicom_standard import parse_lib as pl
-
-from process_module_attribute_relationship import get_standard_link
+from dicom_standard.process_module_attribute_relationship import get_standard_link
 
 
 def macro_attr_relationship_table(macro_attr_list):

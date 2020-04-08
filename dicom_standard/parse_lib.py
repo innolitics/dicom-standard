@@ -30,8 +30,7 @@ NONSTANDARD_SECTION_IDS = [
 ID_PATTERN = re.compile(r'\b(' + '|'.join(NONSTANDARD_SECTION_IDS) + r').+\b')
 SHORT_DICOM_URL_PREFIX = "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/"
 
-MetadataTableType = Dict[str, Any]
-JsonDataType = Union[List[MetadataTableType], MetadataTableType]
+GenericTableType = Union[List[Dict[str, Any]], Dict[str, Any]]
 
 
 def parse_html_file(filepath: str) -> BeautifulSoup:
@@ -43,11 +42,11 @@ def write_pretty_json(data: Any) -> None:
     json.dump(data, sys.stdout, sort_keys=False, indent=4, separators=(',', ':'))
 
 
-def read_json_data(filepath: str) -> JsonDataType:
+def read_json_data(filepath: str) -> GenericTableType:
     with open(filepath, 'r') as json_file:
         json_string = json_file.read()
-        json_dict = json.loads(json_string)
-        return json_dict
+        json_data = json.loads(json_string)
+        return json_data
 
 
 def all_tdivs_in_chapter(standard: BeautifulSoup, chapter_name: str) -> List[Tag]:

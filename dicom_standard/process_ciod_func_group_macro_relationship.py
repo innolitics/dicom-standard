@@ -6,8 +6,7 @@ import re
 import sys
 
 from dicom_standard import parse_lib as pl
-
-from process_ciod_module_relationship import expand_conditional_statement
+from dicom_standard.process_ciod_module_relationship import expand_conditional_statement
 
 
 # Standard workaround: Remove "Macro" from "Frame VOI LUT With LUT Macro" in Table A.84.3.2-1
