@@ -138,16 +138,16 @@ A map of all extraction and processing pathways is shown below:
                +---v-----+  +----v-----+  +------v------+  +---v--v---+    +----+----+  +-----+------+
                | Extract |  | Extract  |  | Extract     |  | Extract  |         |             |
                | CIODs/  |  | CIODs/FG |  | Modules/    |  | Sections |         |             |
-               | Modules |  | Macros   |  | Macro Attrs |  +--------v-+         v             v
-               +----+----+  +----+-----+  +------v-----+            |       sops.json   attributes.json
+               | Modules |  | Macros   |  | Macro Attrs |  +--------+-+         v             v
+               +----+----+  +----+-----+  +------+-----+            |       sops.json   attributes.json
                     |            |               |                  |
-      +-------------+            |               +---------------+  +-----------|
+      +-------------+            |               +---------------+  +-----------+
       |             |            |               |               |              |
 +-----v-----+  +----v----+  +----v------+  +-----v------+  +-----v------+       |
 | Process   |  | Process |  | Process   |  | Preprocess |  | Preprocess |       |
 | CIOD/     |  | CIODs   |  | CIOD/FG   |  | Modules/   |  | Macros/    |       |
 | Module    |  +----+----+  | Macro     |  | Attributes |  | Attributes |       |
-| Relations |       |       | Relations |  +-----v------+  +-----v------+       |
+| Relations |       |       | Relations |  +-----+------+  +-----+------+       |
 +-----+-----+       |       +----+------+        |               |              |
       |             v            |               +-------+       +-------+      |
       |        ciods.json        |               |       |       |       |      |
@@ -165,7 +165,7 @@ ciod_to_modules.json             |          | Process |  |  | Process |  |      
                                                  | Module    |   | Macro     |  |
                                                  | Attribute |   | Attribute |  |
                                                  | Relations |   | Relations |  |
-                                                 +-------+---+   +-------v---+  |
+                                                 +-------+---+   +-------+---+  |
                                                          |               |      |
                                                        +-v---------------v------v-+
                                                        |        Postprocess       |
@@ -178,6 +178,8 @@ ciod_to_modules.json             |          | Process |  |  | Process |  |      
                                                     v                                v
                                          modules_to_attributes.json           references.json
 ```
+
+To update the parser map, please use [ASCIIFlow][http://asciiflow.com/].
 
 ## Contact
 
