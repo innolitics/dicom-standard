@@ -15,7 +15,7 @@ ATTR_TABLE_IDS = ['table_6-1', 'table_7-1', 'table_8-1', 'table_9-1']
 
 
 def get_attribute_table(standard: BeautifulSoup) -> List[TableDictType]:
-    attr_dict_list = []
+    attr_dict_list: List[TableDictType] = []
     all_tables = standard.find_all('div', class_='table')
     for table_id in ATTR_TABLE_IDS:
         html_table = pl.find_tdiv_by_id(all_tables, table_id)
