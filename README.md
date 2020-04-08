@@ -2,8 +2,6 @@
   <img src="https://travis-ci.org/innolitics/dicom-standard.svg?branch=master">
 </a>
 
-![](https://github.com/russellkan/dicom-standard/workflows/Run%20Makefile/badge.svg?branch=v1.0)
-
 # DICOM Standard Parser
 
 This program parses the web version of the [DICOM Standard][nema] into human
