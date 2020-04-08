@@ -11,7 +11,6 @@ from bs4 import Tag
 
 from dicom_standard import parse_lib as pl
 from dicom_standard import parse_relations as pr
-from dicom_standard.macro_utils import MetadataTableType
 from dicom_standard.table_utils import (
     TableListType,
     TableDictType,
@@ -37,7 +36,7 @@ def ciod_table_to_dict(table: TableListType) -> List[TableDictType]:
     return table_to_dict(table, COLUMN_TITLES)
 
 
-def get_table_with_metadata(table_with_tdiv: Tuple[List[TableDictType], Tag]) -> MetadataTableType:
+def get_table_with_metadata(table_with_tdiv: Tuple[List[TableDictType], Tag]) -> pl.MetadataTableType:
     table, tdiv = table_with_tdiv
     clean_name = pl.clean_table_name(pr.table_name(tdiv))
     table_description = get_table_description(tdiv)

@@ -2,7 +2,7 @@
 Functions for low-level manipulation of standard tables,
 represented by a list-of-lists.
 '''
-from typing import Any, Callable, Dict, List, Match, Optional, Tuple
+from typing import Any, Callable, Dict, List, Optional, Tuple
 from copy import copy
 from bs4 import BeautifulSoup, Tag
 

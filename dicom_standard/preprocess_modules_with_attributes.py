@@ -10,19 +10,15 @@ from typing import cast, Dict, List
 import sys
 
 from dicom_standard import parse_lib as pl
-from dicom_standard.macro_utils import expand_macro_rows, get_id_from_link, MetadataTableType
+from dicom_standard.macro_utils import expand_macro_rows, get_id_from_link
 from dicom_standard.hierarchy_utils import record_hierarchy_for_module
 
 
-def key_tables_by_id(table_list: List[MetadataTableType]) -> Dict[str, MetadataTableType]:
+def key_tables_by_id(table_list: List[pl.MetadataTableType]) -> Dict[str, pl.MetadataTableType]:
     dict_of_tables = {}
     for table in table_list:
         dict_of_tables[get_id_from_link(table['linkToStandard'])] = table
     return dict_of_tables
-
-
-def filter_modules_or_macros(table_list, macros=False):
-    return [table for table in table_list if macros and table['isMacro'] or not(macros or table['isMacro'])]
 
 
 def expand_all_macros(module_attr_tables, macros):
@@ -66,7 +62,7 @@ def expand_hierarchy(tables):
 
 
 if __name__ == '__main__':
-    module_macro_attr_tables = cast(List[MetadataTableType], pl.read_json_data(sys.argv[1]))
+    module_macro_attr_tables = cast(List[pl.MetadataTableType], pl.read_json_data(sys.argv[1]))
     id_to_table = key_tables_by_id(module_macro_attr_tables)
     module_attr_tables = [table for table in module_macro_attr_tables if not table['isMacro']]
     expanded_tables = expand_all_macros(module_attr_tables, id_to_table)

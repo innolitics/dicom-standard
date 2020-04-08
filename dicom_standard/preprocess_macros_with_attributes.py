@@ -3,10 +3,8 @@ import sys
 
 from dicom_standard import parse_lib as pl
 
-from dicom_standard.macro_utils import MetadataTableType
 from preprocess_modules_with_attributes import (
     key_tables_by_id,
-    filter_modules_or_macros,
     expand_all_macros,
     preprocess_attribute_fields,
     expand_hierarchy,
@@ -14,7 +12,7 @@ from preprocess_modules_with_attributes import (
 
 
 if __name__ == '__main__':
-    module_macro_attr_tables = cast(List[MetadataTableType], pl.read_json_data(sys.argv[1]))
+    module_macro_attr_tables = cast(List[pl.MetadataTableType], pl.read_json_data(sys.argv[1]))
     id_to_table = key_tables_by_id(module_macro_attr_tables)
     macro_attr_tables = [table for table in module_macro_attr_tables if table['isMacro']]
     expanded_tables = expand_all_macros(macro_attr_tables, id_to_table)

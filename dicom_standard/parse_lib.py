@@ -3,7 +3,7 @@ Common functions for extracting information from the
 DICOM standard HTML file.
 '''
 
-from typing import List, Any, Union
+from typing import Any, Dict, List, Union
 import json
 import re
 import sys
@@ -11,7 +11,6 @@ import sys
 from bs4 import BeautifulSoup, NavigableString, Tag
 
 from dicom_standard import parse_relations as pr
-from dicom_standard.macro_utils import MetadataTableType
 
 ALLOWED_ATTRIBUTES = ["href", "src", "type", "data", "colspan", "rowspan"]
 BASE_DICOM_URL = "http://dicom.nema.org/medical/dicom/current/output/html/"
@@ -31,6 +30,7 @@ NONSTANDARD_SECTION_IDS = [
 ID_PATTERN = re.compile(r'\b(' + '|'.join(NONSTANDARD_SECTION_IDS) + r').+\b')
 SHORT_DICOM_URL_PREFIX = "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/"
 
+MetadataTableType = Dict[str, Any]
 JsonDataType = Union[List[MetadataTableType], MetadataTableType]
 
 

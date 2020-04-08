@@ -48,7 +48,7 @@ setup(
     package_data={
         'standard': [
             'attributes.json',
-            'ciod_to_fg_macros.json',
+            'ciod_to_func_group_macros.json',
             'ciod_to_modules.json',
             'ciods.json',
             'confidentiality_profile_attributes.json',

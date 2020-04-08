@@ -2,7 +2,7 @@
 Load the module-attribute tables from DICOM Standard PS3.3.
 Output the tables in JSON format, one entry per attribute.
 '''
-from typing import List, Tuple, Union
+from typing import List, Tuple
 import sys
 import re
 

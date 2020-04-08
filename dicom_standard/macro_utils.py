@@ -9,9 +9,9 @@ from copy import deepcopy
 from bs4 import BeautifulSoup, Tag
 
 from dicom_standard.hierarchy_utils import get_hierarchy_markers
+from dicom_standard.parse_lib import MetadataTableType
 
 AttributeType = Dict[str, str]
-MetadataTableType = Dict[str, Any]
 MacrosType = Dict[str, MetadataTableType]
 
 
