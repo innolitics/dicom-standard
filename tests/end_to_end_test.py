@@ -1,4 +1,5 @@
 import subprocess
+from collections import Counter
 
 import pytest
 
@@ -12,110 +13,146 @@ def make_standard():
 
 @pytest.fixture(scope='module')
 def ciods(make_standard):
-    return pl.read_json_to_dict('standard/ciods.json')
+    return pl.read_json_data('standard/ciods.json')
+
+
+@pytest.fixture(scope='module')
+def macros(make_standard):
+    return pl.read_json_data('standard/macros.json')
 
 
 @pytest.fixture(scope='module')
 def modules(make_standard):
-    return pl.read_json_to_dict('standard/modules.json')
+    return pl.read_json_data('standard/modules.json')
 
 
 @pytest.fixture(scope='module')
 def attributes(make_standard):
-    return pl.read_json_to_dict('standard/attributes.json')
+    return pl.read_json_data('standard/attributes.json')
+
+
+@pytest.fixture(scope='module')
+def sops(make_standard):
+    return pl.read_json_data('standard/sops.json')
+
+
+@pytest.fixture(scope='module')
+def ciod_fg_macro_relationship(make_standard):
+    return pl.read_json_data('standard/ciod_to_func_group_macros.json')
 
 
 @pytest.fixture(scope='module')
 def ciod_module_relationship(make_standard):
-    return pl.read_json_to_dict('standard/ciod_to_modules.json')
+    return pl.read_json_data('standard/ciod_to_modules.json')
+
+
+@pytest.fixture(scope='module')
+def macro_attribute_relationship(make_standard):
+    return pl.read_json_data('standard/macro_to_attributes.json')
 
 
 @pytest.fixture(scope='module')
 def module_attribute_relationship(make_standard):
-    return pl.read_json_to_dict('standard/module_to_attributes.json')
+    return pl.read_json_data('standard/module_to_attributes.json')
+
+
+@pytest.mark.endtoend
+def test_valid_foreign_keys_ciod_macro(ciod_fg_macro_relationship, ciods, macros):
+    for pair in ciod_fg_macro_relationship:
+        assert any(d['id'] == pair['ciodId'] for d in ciods)
+        assert any(d['id'] == pair['macroId'] for d in macros)
 
 
 @pytest.mark.endtoend
 def test_valid_foreign_keys_ciod_module(ciod_module_relationship, ciods, modules):
     for pair in ciod_module_relationship:
-        assert pair['ciod'] in ciods
-        assert pair['module'] in modules
+        assert any(d['id'] == pair['ciodId'] for d in ciods)
+        assert any(d['id'] == pair['moduleId'] for d in modules)
+
+
+@pytest.mark.endtoend
+def test_valid_foreign_keys_macro_attribute(macro_attribute_relationship, macros, attributes):
+    for pair in macro_attribute_relationship:
+        assert any(d['id'] == pair['macroId'] for d in macros)
+        assert any(d['id'] == pair['path'].split(':')[-1] for d in attributes)
 
 
 @pytest.mark.endtoend
 def test_valid_foreign_keys_module_attribute(module_attribute_relationship, modules, attributes):
     for pair in module_attribute_relationship:
-        assert pair['module'] in modules
-        assert pair['path'].split(':')[-1] in attributes
+        assert any(d['id'] == pair['moduleId'] for d in modules)
+        assert any(d['id'] == pair['path'].split(':')[-1] for d in attributes)
+
+
+@pytest.mark.endtoend
+def test_valid_ciod_names(sops, ciods):
+    for pair in sops:
+        assert any(d['name'] == pair['ciod'] for d in ciods)
 
 
 @pytest.mark.endtoend
 def test_vertical_samples_from_standard(ciods, modules, attributes):
     test_ciod = {
-        "us-multi-frame-image": {
-            "description": "<p>\nThe Ultrasound (US) Multi-frame Image Information Object Definition specifies a Multi-frame image that has been created by an ultrasound imaging device.</p>",
-            "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.7.4.html#table_A.7-1",
-            "name": "US Multi-frame Image",
-            "id": "us-multi-frame-image",
-        }
+        "name": "US Multi-frame Image",
+        "id": "us-multi-frame-image",
+        "description": "<p>\nThe Ultrasound (US) Multi-frame Image Information Object Definition specifies a Multi-frame image that has been created by an ultrasound imaging device.</p>",
+        "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.7.4.html#table_A.7-1",
     }
     test_module = {
-        "patient": {
-            "name": "Patient",
-            "id": "patient",
-            "description": "<p>\n<span href=\"#table_C.7-1\">This module </span> specifies the Attributes of the Patient that describe and identify the Patient who is the subject of a Study.\n            This Module contains Attributes of the patient that are needed for interpretation of the Composite Instances and are common for all studies performed on the patient. It contains Attributes that are also included in the Patient Modules in <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.2.html#sect_C.2\" target=\"_blank\">Section\u00a0C.2</a>.</p>",
-            "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.html#table_C.7-1"
-        }
+        "name": "Patient",
+        "id": "patient",
+        "description": "<p>\n<span href=\"#table_C.7-1\">This module </span> specifies the Attributes of the Patient that describe and identify the Patient who is the subject of a Study. This Module contains Attributes of the Patient that are needed for interpretation of the Composite Instances and are common for all Studies performed on the Patient. It contains Attributes that are also included in the Patient Modules in <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.2.html#sect_C.2\" target=\"_blank\">Section\u00a0C.2</a>.</p>",
+        "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.html#table_C.7-1",
     }
-    test_attribute = {
-        "00100010": {
+    test_attributes = [
+        {
             "tag": "(0010,0010)",
-            "retired": False,
+            "retired": 'N',
             "keyword": "PatientName",
             "name": "Patient's Name",
             "valueMultiplicity": "1",
-            "valueRepresentation": "PN"
+            "valueRepresentation": "PN",
+            "id": "00100010"
         },
-        "00080034": {
+        {
             "tag": "(0008,0034)",
-            "retired": True,
+            "retired": 'Y',
             "keyword": "OverlayTime",
             "name": "Overlay Time",
             "valueMultiplicity": "1",
-            "valueRepresentation": "TM"
+            "valueRepresentation": "TM",
+            "id": "00080034"
         },
-        "00080108": {
+        {
             "tag": "(0008,0108)",
-            "retired": False,
+            "retired": 'N',
             "keyword": "ExtendedCodeMeaning",
             "name": "Extended Code Meaning",
             "valueMultiplicity": "1",
-            "valueRepresentation": "LT"
+            "valueRepresentation": "LT",
+            "id": "00080108"
         }
-    }
-    assert test_ciod["us-multi-frame-image"] == ciods["us-multi-frame-image"]
-    assert test_module["patient"] == modules["patient"]
-    assert test_attribute["00100010"] == attributes["00100010"]
-    assert test_attribute["00080034"] == attributes["00080034"]
-    assert test_attribute["00080108"] == attributes["00080108"]
+    ]
+    assert test_ciod in ciods
+    assert test_module in modules
+    assert all(attr in attributes for attr in test_attributes)
 
 
 @pytest.mark.endtoend
 def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship, modules,
                                       module_attribute_relationship, attributes):
     attr = {
-        "00080121": {
-            "name": "Equivalent Code Sequence",
-            "retired": False,
-            "valueMultiplicity": "1",
-            "keyword": "EquivalentCodeSequence",
-            "valueRepresentation": "SQ",
-            "tag": "(0008,0121)"
-        }
+        "name": "Equivalent Code Sequence",
+        "retired": 'N',
+        "valueMultiplicity": "1",
+        "keyword": "EquivalentCodeSequence",
+        "valueRepresentation": "SQ",
+        "tag": "(0008,0121)",
+        "id": "00080121"
     }
     module_attr = [
         {
-            "module": "patient-study",
+            "moduleId": "patient-study",
             "path": "patient-study:00081084:00080121",
             "tag": "(0008,0121)",
             "type": "3",
@@ -129,7 +166,7 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship, modules,
             ]
         },
         {
-            "module": "patient-study",
+            "moduleId": "patient-study",
             "path": "patient-study:00101021:00080121",
             "tag": "(0008,0121)",
             "type": "3",
@@ -144,43 +181,46 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship, modules,
         },
     ]
     module = {
-        "patient-study": {
-            "id": "patient-study",
-            "name": "Patient Study",
-            "description": "<p>\n<span href=\"#table_C.7-4a\">This module </span> defines Attributes that provide information about the Patient at the time the Study started.</p>",
-            "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.2.2.html#table_C.7-4a"
-        },
+        "id": "patient-study",
+        "name": "Patient Study",
+        "description": "<p>\n<span href=\"#table_C.7-4a\">This module </span> defines Attributes that provide information about the Patient at the time the Study started.</p>",
+        "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.2.2.html#table_C.7-4a",
     }
-    ciod_module = [
-        {
-            "ciod": "cr-image",
-            "module": "patient-study",
-            "usage": "U",
-            "conditionalStatement": None,
-            "informationEntity": "Study"
-        },
-    ]
+    ciod_module = {
+        "ciodId": "cr-image",
+        "moduleId": "patient-study",
+        "usage": "U",
+        "conditionalStatement": None,
+        "informationEntity": "Study"
+    }
     ciod = {
-        "cr-image": {
-            "description": "<p>\nThe Computed Radiography (CR) Image Information Object Definition specifies an image that has been created by a computed radiography imaging device.</p>",
-            "name": "CR Image",
-            "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.2.3.html#table_A.2-1",
-            "id": "cr-image",
-        }
+        "name": "CR Image",
+        "id": "cr-image",
+        "description": "<p>\nThe Computed Radiography (CR) Image Information Object Definition specifies an image that has been created by a computed radiography imaging device.</p>",
+        "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.2.3.html#table_A.2-1",
     }
-    assert attr["00080121"] == attributes["00080121"]
+    assert attr in attributes
     assert module_attr[0] in module_attribute_relationship
     assert module_attr[1] in module_attribute_relationship
-    assert module['patient-study'] == modules['patient-study']
-    assert ciod_module[0] in ciod_module_relationship
-    assert ciod['cr-image'] == ciods['cr-image']
+    assert module in modules
+    assert ciod_module in ciod_module_relationship
+    assert ciod in ciods
 
 
 @pytest.mark.endtoend
 def test_number_of_attribute_appearances(module_attribute_relationship, attributes):
+    attr = {
+        "name": "Strain Nomenclature",
+        "retired": 'N',
+        "valueMultiplicity": "1",
+        "keyword": "StrainNomenclature",
+        "valueRepresentation": "LO",
+        "tag": "(0010,0213)",
+        "id": "00100213"
+    }
     module_attr = [
         {
-            "module": "patient-demographic",
+            "moduleId": "patient-demographic",
             "path": "patient-demographic:00100213",
             "tag": "(0010,0213)",
             "type": "None",
@@ -194,7 +234,7 @@ def test_number_of_attribute_appearances(module_attribute_relationship, attribut
             ]
         },
         {
-            "module": "patient",
+            "moduleId": "patient",
             "path": "patient:00100213",
             "tag": "(0010,0213)",
             "type": "3",
@@ -208,54 +248,63 @@ def test_number_of_attribute_appearances(module_attribute_relationship, attribut
             ]
         },
     ]
-
-    attrs = {
-        "00100213": {
-            "name": "Strain Nomenclature",
-            "retired": False,
-            "valueMultiplicity": "1",
-            "keyword": "StrainNomenclature",
-            "valueRepresentation": "LO",
-            "tag": "(0010,0213)"
-        }
-    }
-    assert attrs['00100213'] == attributes['00100213']
+    assert attr in attributes
     assert module_attr[0] in module_attribute_relationship
     assert module_attr[1] in module_attribute_relationship
     all_attribute_appearances = [rel for rel in module_attribute_relationship
-                                 if rel['tag'] == '(0010,0213)']
+                                 if rel['tag'] == attr['tag']]
     assert len(all_attribute_appearances) == 2
 
 
 @pytest.mark.endtoend
 def test_number_of_module_appearances(ciods, ciod_module_relationship, modules):
     module = {
-        "volume-cropping": {
-            "name": "Volume Cropping",
-            "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.24.html#table_C.11.24-1",
-            "description": "<p>\n<span href=\"#table_C.11.24-1\">This module </span> contains the attributes of the Volume Cropping Module. This Module limits the spatial extent of inputs in Volumetric Presentation State Input Sequence (0070,1201) that are used.</p>",
-            "id": "volume-cropping"
-        }
+        "name": "Volume Cropping",
+        "id": "volume-cropping",
+        "description": "<p>\n<span href=\"#table_C.11.24-1\">This module </span> contains the Attributes of the Volume Cropping Module. This Module limits the spatial extent of inputs in Volumetric Presentation State Input Sequence (0070,1201) that are used.</p>",
+        "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.24.html#table_C.11.24-1",
     }
     ciod_module = [
         {
-            "ciod": "planar-mpr-volumetric-presentation-state",
-            "module": "volume-cropping",
+            "ciodId": "planar-mpr-volumetric-presentation-state",
+            "moduleId": "volume-cropping",
             "usage": "C",
             "conditionalStatement": "Required if Global Crop (0070,120B) or any value of Crop (0070,1204) is YES",
             "informationEntity": "Presentation State"
         },
         {
-            "ciod": "volume-rendering-volumetric-presentation-state",
-            "module": "volume-cropping",
+            "ciodId": "volume-rendering-volumetric-presentation-state",
+            "moduleId": "volume-cropping",
             "usage": "C",
             "conditionalStatement": "Required if Global Crop (0070,120B) or any value of Crop (0070,1204) is YES",
             "informationEntity": "Presentation State"
         },
     ]
-    assert module['volume-cropping'] == modules['volume-cropping']
+    assert module in modules
     for ciod_module_pair in ciod_module:
         assert ciod_module_pair in ciod_module_relationship
     all_module_appearances = [rel for rel in ciod_module_relationship
-                              if rel['module'] == 'volume-cropping']
+                              if rel['moduleId'] == module['id']]
     assert len(all_module_appearances) == 2
+
+
+@pytest.mark.endtoend
+class TestUniqueIds:
+    def get_duplicate_ids(self, dict_list):
+        id_list = [d['id'] for d in dict_list]
+        return [k for k, v in Counter(id_list).items() if v > 1]
+
+    def test_no_duplicate_attributes(self, attributes):
+        assert not self.get_duplicate_ids(attributes)
+
+    def test_no_duplicate_ciods(self, ciods):
+        assert not self.get_duplicate_ids(ciods)
+
+    def test_no_duplicate_macros(self, macros):
+        assert not self.get_duplicate_ids(macros)
+
+    def test_no_duplicate_modules(self, modules):
+        assert not self.get_duplicate_ids(modules)
+
+    def test_no_duplicate_sops(self, sops):
+        assert not self.get_duplicate_ids(sops)

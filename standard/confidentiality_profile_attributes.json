@@ -1,0 +1,3340 @@
+[
+    {
+        "name":"Accession Number",
+        "tag":"(0008,0050)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "id":"00080050"
+    },
+    {
+        "name":"Acquisition Comments",
+        "tag":"(0018,4000)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00184000"
+    },
+    {
+        "name":"Acquisition Context Sequence",
+        "tag":"(0040,0555)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/Z",
+        "cleanStructContOpt":"C",
+        "id":"00400555"
+    },
+    {
+        "name":"Acquisition Date",
+        "tag":"(0008,0022)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/Z",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00080022"
+    },
+    {
+        "name":"Acquisition DateTime",
+        "tag":"(0008,002A)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/Z/D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0008002a"
+    },
+    {
+        "name":"Acquisition Device Processing Description",
+        "tag":"(0018,1400)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/D",
+        "cleanDescOpt":"C",
+        "id":"00181400"
+    },
+    {
+        "name":"Acquisition Protocol Description",
+        "tag":"(0018,9424)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00189424"
+    },
+    {
+        "name":"Acquisition Time",
+        "tag":"(0008,0032)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/Z",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00080032"
+    },
+    {
+        "name":"Actual Human Performers Sequence",
+        "tag":"(0040,4035)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00404035"
+    },
+    {
+        "name":"Additional Patient History",
+        "tag":"(0010,21B0)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"001021b0"
+    },
+    {
+        "name":"Address (Trial)",
+        "tag":"(0040,A353)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"0040a353"
+    },
+    {
+        "name":"Admission ID",
+        "tag":"(0038,0010)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00380010"
+    },
+    {
+        "name":"Admitting Date",
+        "tag":"(0038,0020)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00380020"
+    },
+    {
+        "name":"Admitting Diagnoses Code Sequence",
+        "tag":"(0008,1084)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00081084"
+    },
+    {
+        "name":"Admitting Diagnoses Description",
+        "tag":"(0008,1080)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00081080"
+    },
+    {
+        "name":"Admitting Time",
+        "tag":"(0038,0021)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00380021"
+    },
+    {
+        "name":"Affected SOP Instance UID",
+        "tag":"(0000,1000)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnUIDsOpt":"K",
+        "id":"00001000"
+    },
+    {
+        "name":"Allergies",
+        "tag":"(0010,2110)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnPatCharsOpt":"C",
+        "cleanDescOpt":"C",
+        "id":"00102110"
+    },
+    {
+        "name":"Arbitrary",
+        "tag":"(4000,0010)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"40000010"
+    },
+    {
+        "name":"Author Observer Sequence",
+        "tag":"(0040,A078)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"0040a078"
+    },
+    {
+        "name":"Barcode Value",
+        "tag":"(2200,0005)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/Z",
+        "id":"22000005"
+    },
+    {
+        "name":"Beam Description",
+        "tag":"(300A,00C3)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"300a00c3"
+    },
+    {
+        "name":"Bolus Description",
+        "tag":"(300A,00DD)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"300a00dd"
+    },
+    {
+        "name":"Branch of Service",
+        "tag":"(0010,1081)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00101081"
+    },
+    {
+        "name":"Camera Owner Name",
+        "tag":"(0016,004D)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"0016004d"
+    },
+    {
+        "name":"Cassette ID",
+        "tag":"(0018,1007)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "id":"00181007"
+    },
+    {
+        "name":"Clinical Trial Coordinating Center Name",
+        "tag":"(0012,0060)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "rtnInstIdOpt":"K",
+        "id":"00120060"
+    },
+    {
+        "name":"Clinical Trial Protocol Ethics Committee Approval Number",
+        "tag":"(0012,0082)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00120082"
+    },
+    {
+        "name":"Clinical Trial Protocol Ethics Committee Name",
+        "tag":"(0012,0081)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnInstIdOpt":"K",
+        "id":"00120081"
+    },
+    {
+        "name":"Clinical Trial Protocol ID",
+        "tag":"(0012,0020)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "id":"00120020"
+    },
+    {
+        "name":"Clinical Trial Protocol Name",
+        "tag":"(0012,0021)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "id":"00120021"
+    },
+    {
+        "name":"Clinical Trial Series Description",
+        "tag":"(0012,0072)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00120072"
+    },
+    {
+        "name":"Clinical Trial Series ID",
+        "tag":"(0012,0071)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00120071"
+    },
+    {
+        "name":"Clinical Trial Site ID",
+        "tag":"(0012,0030)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "rtnInstIdOpt":"K",
+        "id":"00120030"
+    },
+    {
+        "name":"Clinical Trial Site Name",
+        "tag":"(0012,0031)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "rtnInstIdOpt":"K",
+        "id":"00120031"
+    },
+    {
+        "name":"Clinical Trial Sponsor Name",
+        "tag":"(0012,0010)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "id":"00120010"
+    },
+    {
+        "name":"Clinical Trial Subject ID",
+        "tag":"(0012,0040)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "id":"00120040"
+    },
+    {
+        "name":"Clinical Trial Subject Reading ID",
+        "tag":"(0012,0042)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "id":"00120042"
+    },
+    {
+        "name":"Clinical Trial Time Point Description",
+        "tag":"(0012,0051)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00120051"
+    },
+    {
+        "name":"Clinical Trial Time Point ID",
+        "tag":"(0012,0050)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "id":"00120050"
+    },
+    {
+        "name":"Comments on the Performed Procedure Step",
+        "tag":"(0040,0280)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00400280"
+    },
+    {
+        "name":"Compensator Description",
+        "tag":"(300A,02EB)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"300a02eb"
+    },
+    {
+        "name":"Concatenation UID",
+        "tag":"(0020,9161)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"00209161"
+    },
+    {
+        "name":"Conceptual Volume Combination Description",
+        "tag":"(3010,000F)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "cleanDescOpt":"C",
+        "id":"3010000f"
+    },
+    {
+        "name":"Conceptual Volume Description",
+        "tag":"(3010,0017)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "cleanDescOpt":"C",
+        "id":"30100017"
+    },
+    {
+        "name":"Conceptual Volume UID",
+        "tag":"(3010,0006)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"30100006"
+    },
+    {
+        "name":"Confidentiality Constraint on Patient Data Description",
+        "tag":"(0040,3001)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00403001"
+    },
+    {
+        "name":"Constituent Conceptual Volume UID",
+        "tag":"(3010,0013)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"30100013"
+    },
+    {
+        "name":"Consulting Physician's Name",
+        "tag":"(0008,009C)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "id":"0008009c"
+    },
+    {
+        "name":"Consulting Physician Identification Sequence",
+        "tag":"(0008,009D)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"0008009d"
+    },
+    {
+        "name":"Container Component ID",
+        "tag":"(0050,001B)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"0050001b"
+    },
+    {
+        "name":"Container Description",
+        "tag":"(0040,051A)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"0040051a"
+    },
+    {
+        "name":"Container Identifier",
+        "tag":"(0040,0512)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "id":"00400512"
+    },
+    {
+        "name":"Content Creator's Identification Code Sequence",
+        "tag":"(0070,0086)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00700086"
+    },
+    {
+        "name":"Content Creator's Name",
+        "tag":"(0070,0084)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z/D",
+        "id":"00700084"
+    },
+    {
+        "name":"Content Date",
+        "tag":"(0008,0023)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z/D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00080023"
+    },
+    {
+        "name":"Content Sequence",
+        "tag":"(0040,A730)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "cleanStructContOpt":"C",
+        "id":"0040a730"
+    },
+    {
+        "name":"Content Time",
+        "tag":"(0008,0033)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z/D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00080033"
+    },
+    {
+        "name":"Contrast/Bolus Agent",
+        "tag":"(0018,0010)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z/D",
+        "cleanDescOpt":"C",
+        "id":"00180010"
+    },
+    {
+        "name":"Contribution Description",
+        "tag":"(0018,A003)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"0018a003"
+    },
+    {
+        "name":"Country of Residence",
+        "tag":"(0010,2150)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00102150"
+    },
+    {
+        "name":"Current Observer (Trial)",
+        "tag":"(0040,A307)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"0040a307"
+    },
+    {
+        "name":"Current Patient Location",
+        "tag":"(0038,0300)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00380300"
+    },
+    {
+        "name":"Curve Data",
+        "tag":"(50XX,XXXX)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "cleanGraphOpt":"C",
+        "id":"50xxxxxx"
+    },
+    {
+        "name":"Curve Date",
+        "tag":"(0008,0025)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00080025"
+    },
+    {
+        "name":"Curve Time",
+        "tag":"(0008,0035)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00080035"
+    },
+    {
+        "name":"Custodial Organization Sequence",
+        "tag":"(0040,A07C)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"0040a07c"
+    },
+    {
+        "name":"Data Set Trailing Padding",
+        "tag":"(FFFC,FFFC)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"fffcfffc"
+    },
+    {
+        "name":"Decomposition Description",
+        "tag":"(0018,937F)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"0018937f"
+    },
+    {
+        "name":"Derivation Description",
+        "tag":"(0008,2111)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00082111"
+    },
+    {
+        "name":"Detector ID",
+        "tag":"(0018,700A)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/D",
+        "rtnDevIdOpt":"K",
+        "id":"0018700a"
+    },
+    {
+        "name":"Device Alternate Identifier",
+        "tag":"(3010,001B)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "id":"3010001b"
+    },
+    {
+        "name":"Device Description",
+        "tag":"(0050,0020)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "id":"00500020"
+    },
+    {
+        "name":"Device Label",
+        "tag":"(3010,002D)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnDevIdOpt":"K",
+        "id":"3010002d"
+    },
+    {
+        "name":"Device Serial Number",
+        "tag":"(0018,1000)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/Z/D",
+        "rtnDevIdOpt":"K",
+        "id":"00181000"
+    },
+    {
+        "name":"Device Setting Description",
+        "tag":"(0016,004B)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"0016004b"
+    },
+    {
+        "name":"Device UID",
+        "tag":"(0018,1002)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "rtnDevIdOpt":"K",
+        "id":"00181002"
+    },
+    {
+        "name":"Digital Signatures Sequence",
+        "tag":"(FFFA,FFFA)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"fffafffa"
+    },
+    {
+        "name":"Digital Signature UID",
+        "tag":"(0400,0100)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "id":"04000100"
+    },
+    {
+        "name":"Dimension Organization UID",
+        "tag":"(0020,9164)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"00209164"
+    },
+    {
+        "name":"Discharge Diagnosis Description",
+        "tag":"(0038,0040)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00380040"
+    },
+    {
+        "name":"Distribution Address",
+        "tag":"(4008,011A)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"4008011a"
+    },
+    {
+        "name":"Distribution Name",
+        "tag":"(4008,0119)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"40080119"
+    },
+    {
+        "name":"Dose Reference Description",
+        "tag":"(300A,0016)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"300a0016"
+    },
+    {
+        "name":"Dose Reference UID",
+        "tag":"(300A,0013)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"300a0013"
+    },
+    {
+        "name":"Dosimetric Objective UID",
+        "tag":"(3010,006E)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"3010006e"
+    },
+    {
+        "name":"End Acquisition DateTime",
+        "tag":"(0018,9517)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00189517"
+    },
+    {
+        "name":"Entity Description",
+        "tag":"(3010,0037)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"30100037"
+    },
+    {
+        "name":"Entity Label",
+        "tag":"(3010,0035)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "cleanDescOpt":"C",
+        "id":"30100035"
+    },
+    {
+        "name":"Entity Long Label",
+        "tag":"(3010,0038)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "cleanDescOpt":"C",
+        "id":"30100038"
+    },
+    {
+        "name":"Entity Name",
+        "tag":"(3010,0036)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"30100036"
+    },
+    {
+        "name":"Equipment Frame of Reference Description",
+        "tag":"(300A,0676)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"300a0676"
+    },
+    {
+        "name":"Ethnic Group",
+        "tag":"(0010,2160)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnPatCharsOpt":"K",
+        "id":"00102160"
+    },
+    {
+        "name":"Expected Completion DateTime",
+        "tag":"(0040,4011)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00404011"
+    },
+    {
+        "name":"Failed SOP Instance UID List",
+        "tag":"(0008,0058)",
+        "stdCompIOD":"N",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"00080058"
+    },
+    {
+        "name":"Fiducial UID",
+        "tag":"(0070,031A)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"0070031a"
+    },
+    {
+        "name":"Filler Order Number / Imaging Service Request",
+        "tag":"(0040,2017)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "id":"00402017"
+    },
+    {
+        "name":"First Treatment Date",
+        "tag":"(3008,0054)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"30080054"
+    },
+    {
+        "name":"Fixation Device Description",
+        "tag":"(300A,0196)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"300a0196"
+    },
+    {
+        "name":"Flow Identifier",
+        "tag":"(0034,0002)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "id":"00340002"
+    },
+    {
+        "name":"Flow Identifier Sequence",
+        "tag":"(0034,0001)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "id":"00340001"
+    },
+    {
+        "name":"Fractionation Notes",
+        "tag":"(3010,007F)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "cleanDescOpt":"C",
+        "id":"3010007f"
+    },
+    {
+        "name":"Fraction Group Description",
+        "tag":"(300A,0072)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"300a0072"
+    },
+    {
+        "name":"Frame Comments",
+        "tag":"(0020,9158)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00209158"
+    },
+    {
+        "name":"Frame of Reference UID",
+        "tag":"(0020,0052)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"00200052"
+    },
+    {
+        "name":"Frame Origin Timestamp",
+        "tag":"(0034,0007)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00340007"
+    },
+    {
+        "name":"Gantry ID",
+        "tag":"(0018,1008)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "id":"00181008"
+    },
+    {
+        "name":"Generator ID",
+        "tag":"(0018,1005)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "id":"00181005"
+    },
+    {
+        "name":"GPS Altitude",
+        "tag":"(0016,0076)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00160076"
+    },
+    {
+        "name":"GPS Altitude Ref",
+        "tag":"(0016,0075)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00160075"
+    },
+    {
+        "name":"GPS Area Information",
+        "tag":"(0016,008C)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"0016008c"
+    },
+    {
+        "name":"GPS Date Stamp",
+        "tag":"(0016,008D)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0016008d"
+    },
+    {
+        "name":"GPS Dest Bearing",
+        "tag":"(0016,0088)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00160088"
+    },
+    {
+        "name":"GPS Dest Bearing Ref",
+        "tag":"(0016,0087)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00160087"
+    },
+    {
+        "name":"GPS Dest Distance",
+        "tag":"(0016,008A)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"0016008a"
+    },
+    {
+        "name":"GPS Dest Distance Ref",
+        "tag":"(0016,0089)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00160089"
+    },
+    {
+        "name":"GPS Dest Latitude",
+        "tag":"(0016,0084)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00160084"
+    },
+    {
+        "name":"GPS Dest Latitude Ref",
+        "tag":"(0016,0083)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00160083"
+    },
+    {
+        "name":"GPS Dest Longitude",
+        "tag":"(0016,0086)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00160086"
+    },
+    {
+        "name":"GPS Dest Longitude Ref",
+        "tag":"(0016,0085)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00160085"
+    },
+    {
+        "name":"GPS Differential",
+        "tag":"(0016,008E)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"0016008e"
+    },
+    {
+        "name":"GPS DOP",
+        "tag":"(0016,007B)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"0016007b"
+    },
+    {
+        "name":"GPS Img Direction",
+        "tag":"(0016,0081)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00160081"
+    },
+    {
+        "name":"GPS Img Direction Ref",
+        "tag":"(0016,0080)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00160080"
+    },
+    {
+        "name":"GPS Latitude",
+        "tag":"(0016,0072)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00160072"
+    },
+    {
+        "name":"GPS Latitude Ref",
+        "tag":"(0016,0071)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00160071"
+    },
+    {
+        "name":"GPS Longitude",
+        "tag":"(0016,0074)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00160074"
+    },
+    {
+        "name":"GPS Longitude Ref",
+        "tag":"(0016,0073)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00160073"
+    },
+    {
+        "name":"GPS Map Datum",
+        "tag":"(0016,0082)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00160082"
+    },
+    {
+        "name":"GPS Measure Mode",
+        "tag":"(0016,007A)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"0016007a"
+    },
+    {
+        "name":"GPS Processing Method",
+        "tag":"(0016,008B)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"0016008b"
+    },
+    {
+        "name":"GPS Satellites",
+        "tag":"(0016,0078)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00160078"
+    },
+    {
+        "name":"GPS Speed",
+        "tag":"(0016,007D)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"0016007d"
+    },
+    {
+        "name":"GPS Speed Ref",
+        "tag":"(0016,007C)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"0016007c"
+    },
+    {
+        "name":"GPS Status",
+        "tag":"(0016,0079)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00160079"
+    },
+    {
+        "name":"GPS Time Stamp",
+        "tag":"(0016,0077)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00160077"
+    },
+    {
+        "name":"GPS Track",
+        "tag":"(0016,007F)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"0016007f"
+    },
+    {
+        "name":"GPS Track Ref",
+        "tag":"(0016,007E)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"0016007e"
+    },
+    {
+        "name":"GPS Version ID",
+        "tag":"(0016,0070)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00160070"
+    },
+    {
+        "name":"Graphic Annotation Sequence",
+        "tag":"(0070,0001)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "cleanGraphOpt":"C",
+        "id":"00700001"
+    },
+    {
+        "name":"Human Performer's Name",
+        "tag":"(0040,4037)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00404037"
+    },
+    {
+        "name":"Human Performer's Organization",
+        "tag":"(0040,4036)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00404036"
+    },
+    {
+        "name":"Icon Image Sequence\n\n(see Note 12)",
+        "tag":"(0088,0200)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00880200"
+    },
+    {
+        "name":"Identifying Comments",
+        "tag":"(0008,4000)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00084000"
+    },
+    {
+        "name":"Image Comments",
+        "tag":"(0020,4000)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00204000"
+    },
+    {
+        "name":"Image Presentation Comments",
+        "tag":"(0028,4000)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00284000"
+    },
+    {
+        "name":"Imaging Service Request Comments",
+        "tag":"(0040,2400)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00402400"
+    },
+    {
+        "name":"Impressions",
+        "tag":"(4008,0300)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"40080300"
+    },
+    {
+        "name":"Instance Coercion DateTime",
+        "tag":"(0008,0015)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00080015"
+    },
+    {
+        "name":"Instance Creator UID",
+        "tag":"(0008,0014)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"00080014"
+    },
+    {
+        "name":"Instance Origin Status",
+        "tag":"(0400,0600)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"04000600"
+    },
+    {
+        "name":"Institution Address",
+        "tag":"(0008,0081)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnInstIdOpt":"K",
+        "id":"00080081"
+    },
+    {
+        "name":"Institutional Department Name",
+        "tag":"(0008,1040)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnInstIdOpt":"K",
+        "id":"00081040"
+    },
+    {
+        "name":"Institutional Department Type Code Sequence",
+        "tag":"(0008,1041)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnInstIdOpt":"K",
+        "id":"00081041"
+    },
+    {
+        "name":"Institution Code Sequence",
+        "tag":"(0008,0082)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/Z/D",
+        "rtnInstIdOpt":"K",
+        "id":"00080082"
+    },
+    {
+        "name":"Institution Name",
+        "tag":"(0008,0080)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/Z/D",
+        "rtnInstIdOpt":"K",
+        "id":"00080080"
+    },
+    {
+        "name":"Insurance Plan Identification",
+        "tag":"(0010,1050)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00101050"
+    },
+    {
+        "name":"Intended Phase End Date",
+        "tag":"(3010,004D)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"3010004d"
+    },
+    {
+        "name":"Intended Phase Start Date",
+        "tag":"(3010,004C)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"3010004c"
+    },
+    {
+        "name":"Intended Recipients of Results Identification Sequence",
+        "tag":"(0040,1011)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00401011"
+    },
+    {
+        "name":"Interpretation Approver Sequence",
+        "tag":"(4008,0111)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"40080111"
+    },
+    {
+        "name":"Interpretation Author",
+        "tag":"(4008,010C)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"4008010c"
+    },
+    {
+        "name":"Interpretation Diagnosis Description",
+        "tag":"(4008,0115)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"40080115"
+    },
+    {
+        "name":"Interpretation ID Issuer",
+        "tag":"(4008,0202)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"40080202"
+    },
+    {
+        "name":"Interpretation Recorder",
+        "tag":"(4008,0102)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"40080102"
+    },
+    {
+        "name":"Interpretation Text",
+        "tag":"(4008,010B)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"4008010b"
+    },
+    {
+        "name":"Interpretation Transcriber",
+        "tag":"(4008,010A)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"4008010a"
+    },
+    {
+        "name":"Irradiation Event UID",
+        "tag":"(0008,3010)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"00083010"
+    },
+    {
+        "name":"Issuer of Admission ID",
+        "tag":"(0038,0011)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00380011"
+    },
+    {
+        "name":"Issuer of Admission ID Sequence",
+        "tag":"(0038,0014)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00380014"
+    },
+    {
+        "name":"Issuer of Patient ID",
+        "tag":"(0010,0021)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00100021"
+    },
+    {
+        "name":"Issuer of Service Episode ID",
+        "tag":"(0038,0061)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00380061"
+    },
+    {
+        "name":"Issuer of Service Episode ID Sequence",
+        "tag":"(0038,0064)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00380064"
+    },
+    {
+        "name":"Issuer of the Container Identifier Sequence",
+        "tag":"(0040,0513)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "id":"00400513"
+    },
+    {
+        "name":"Issuer of the Specimen Identifier Sequence",
+        "tag":"(0040,0562)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "id":"00400562"
+    },
+    {
+        "name":"Label Text",
+        "tag":"(2200,0002)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/Z",
+        "cleanDescOpt":"C",
+        "id":"22000002"
+    },
+    {
+        "name":"Large Palette Color Lookup Table UID",
+        "tag":"(0028,1214)",
+        "stdCompIOD":"N",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"00281214"
+    },
+    {
+        "name":"Last Menstrual Date",
+        "tag":"(0010,21D0)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"001021d0"
+    },
+    {
+        "name":"Lens Make",
+        "tag":"(0016,004F)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "id":"0016004f"
+    },
+    {
+        "name":"Lens Model",
+        "tag":"(0016,0050)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "id":"00160050"
+    },
+    {
+        "name":"Lens Serial Number",
+        "tag":"(0016,0051)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "id":"00160051"
+    },
+    {
+        "name":"Lens Specification",
+        "tag":"(0016,004E)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "id":"0016004e"
+    },
+    {
+        "name":"Long Device Description",
+        "tag":"(0050,0021)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00500021"
+    },
+    {
+        "name":"MAC",
+        "tag":"(0400,0404)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"04000404"
+    },
+    {
+        "name":"Maker Note",
+        "tag":"(0016,002B)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"0016002b"
+    },
+    {
+        "name":"Manufacturer's Device Class UID",
+        "tag":"(0018,100B)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "rtnDevIdOpt":"K",
+        "id":"0018100b"
+    },
+    {
+        "name":"Manufacturer's Device Identifier",
+        "tag":"(3010,0043)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "rtnDevIdOpt":"K",
+        "id":"30100043"
+    },
+    {
+        "name":"Media Storage SOP Instance UID",
+        "tag":"(0002,0003)",
+        "stdCompIOD":"N",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"00020003"
+    },
+    {
+        "name":"Medical Alerts",
+        "tag":"(0010,2000)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00102000"
+    },
+    {
+        "name":"Medical Record Locator",
+        "tag":"(0010,1090)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00101090"
+    },
+    {
+        "name":"Military Rank",
+        "tag":"(0010,1080)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00101080"
+    },
+    {
+        "name":"Modified Attributes Sequence",
+        "tag":"(0400,0550)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"04000550"
+    },
+    {
+        "name":"Modified Image Description",
+        "tag":"(0020,3406)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00203406"
+    },
+    {
+        "name":"Modifying Device ID",
+        "tag":"(0020,3401)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00203401"
+    },
+    {
+        "name":"Most Recent Treatment Date",
+        "tag":"(3008,0056)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"30080056"
+    },
+    {
+        "name":"Multi-energy Acquisition Description",
+        "tag":"(0018,937B)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"0018937b"
+    },
+    {
+        "name":"Name of Physician(s) Reading Study",
+        "tag":"(0008,1060)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00081060"
+    },
+    {
+        "name":"Names of Intended Recipients of Results",
+        "tag":"(0040,1010)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00401010"
+    },
+    {
+        "name":"Observation Date (Trial)",
+        "tag":"(0040,A192)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0040a192"
+    },
+    {
+        "name":"Observation Subject UID (Trial)",
+        "tag":"(0040,A402)",
+        "stdCompIOD":"N",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"0040a402"
+    },
+    {
+        "name":"Observation Time (Trial)",
+        "tag":"(0040,A193)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0040a193"
+    },
+    {
+        "name":"Observation UID",
+        "tag":"(0040,A171)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"0040a171"
+    },
+    {
+        "name":"Occupation",
+        "tag":"(0010,2180)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00102180"
+    },
+    {
+        "name":"Operator Identification Sequence",
+        "tag":"(0008,1072)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/D",
+        "id":"00081072"
+    },
+    {
+        "name":"Operators' Name",
+        "tag":"(0008,1070)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/Z/D",
+        "id":"00081070"
+    },
+    {
+        "name":"Order Callback Phone Number",
+        "tag":"(0040,2010)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00402010"
+    },
+    {
+        "name":"Order Callback Telecom Information",
+        "tag":"(0040,2011)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00402011"
+    },
+    {
+        "name":"Order Entered By",
+        "tag":"(0040,2008)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00402008"
+    },
+    {
+        "name":"Order Enterer's Location",
+        "tag":"(0040,2009)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00402009"
+    },
+    {
+        "name":"Original Attributes Sequence",
+        "tag":"(0400,0561)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"04000561"
+    },
+    {
+        "name":"Other Patient IDs",
+        "tag":"(0010,1000)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00101000"
+    },
+    {
+        "name":"Other Patient IDs Sequence",
+        "tag":"(0010,1002)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00101002"
+    },
+    {
+        "name":"Other Patient Names",
+        "tag":"(0010,1001)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00101001"
+    },
+    {
+        "name":"Overlay Comments",
+        "tag":"(60XX,4000)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "cleanGraphOpt":"C",
+        "id":"60xx4000"
+    },
+    {
+        "name":"Overlay Data",
+        "tag":"(60XX,3000)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanGraphOpt":"C",
+        "id":"60xx3000"
+    },
+    {
+        "name":"Overlay Date",
+        "tag":"(0008,0024)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00080024"
+    },
+    {
+        "name":"Overlay Time",
+        "tag":"(0008,0034)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00080034"
+    },
+    {
+        "name":"Palette Color Lookup Table UID",
+        "tag":"(0028,1199)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"00281199"
+    },
+    {
+        "name":"Participant Sequence",
+        "tag":"(0040,A07A)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"0040a07a"
+    },
+    {
+        "name":"Patient's Address",
+        "tag":"(0010,1040)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00101040"
+    },
+    {
+        "name":"Patient's Age",
+        "tag":"(0010,1010)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnPatCharsOpt":"K",
+        "id":"00101010"
+    },
+    {
+        "name":"Patient's Birth Date",
+        "tag":"(0010,0030)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "id":"00100030"
+    },
+    {
+        "name":"Patient's Birth Name",
+        "tag":"(0010,1005)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00101005"
+    },
+    {
+        "name":"Patient's Birth Time",
+        "tag":"(0010,0032)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00100032"
+    },
+    {
+        "name":"Patient's Institution Residence",
+        "tag":"(0038,0400)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00380400"
+    },
+    {
+        "name":"Patient's Insurance Plan Code Sequence",
+        "tag":"(0010,0050)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00100050"
+    },
+    {
+        "name":"Patient's Mother's Birth Name",
+        "tag":"(0010,1060)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00101060"
+    },
+    {
+        "name":"Patient's Name",
+        "tag":"(0010,0010)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "id":"00100010"
+    },
+    {
+        "name":"Patient's Primary Language Code Sequence",
+        "tag":"(0010,0101)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00100101"
+    },
+    {
+        "name":"Patient's Primary Language Modifier Code Sequence",
+        "tag":"(0010,0102)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00100102"
+    },
+    {
+        "name":"Patient's Religious Preference",
+        "tag":"(0010,21F0)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"001021f0"
+    },
+    {
+        "name":"Patient's Sex",
+        "tag":"(0010,0040)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "rtnPatCharsOpt":"K",
+        "id":"00100040"
+    },
+    {
+        "name":"Patient's Sex Neutered",
+        "tag":"(0010,2203)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/Z",
+        "rtnPatCharsOpt":"K",
+        "id":"00102203"
+    },
+    {
+        "name":"Patient's Size",
+        "tag":"(0010,1020)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnPatCharsOpt":"K",
+        "id":"00101020"
+    },
+    {
+        "name":"Patient's Telecom Information",
+        "tag":"(0010,2155)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00102155"
+    },
+    {
+        "name":"Patient's Telephone Numbers",
+        "tag":"(0010,2154)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00102154"
+    },
+    {
+        "name":"Patient's Weight",
+        "tag":"(0010,1030)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnPatCharsOpt":"K",
+        "id":"00101030"
+    },
+    {
+        "name":"Patient Comments",
+        "tag":"(0010,4000)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00104000"
+    },
+    {
+        "name":"Patient ID",
+        "tag":"(0010,0020)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "id":"00100020"
+    },
+    {
+        "name":"Patient Setup UID",
+        "tag":"(300A,0650)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"300a0650"
+    },
+    {
+        "name":"Patient State",
+        "tag":"(0038,0500)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnPatCharsOpt":"C",
+        "cleanDescOpt":"C",
+        "id":"00380500"
+    },
+    {
+        "name":"Patient Transport Arrangements",
+        "tag":"(0040,1004)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00401004"
+    },
+    {
+        "name":"Performed Location",
+        "tag":"(0040,0243)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00400243"
+    },
+    {
+        "name":"Performed Procedure Step Description",
+        "tag":"(0040,0254)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00400254"
+    },
+    {
+        "name":"Performed Procedure Step End Date",
+        "tag":"(0040,0250)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00400250"
+    },
+    {
+        "name":"Performed Procedure Step End DateTime",
+        "tag":"(0040,4051)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00404051"
+    },
+    {
+        "name":"Performed Procedure Step End Time",
+        "tag":"(0040,0251)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00400251"
+    },
+    {
+        "name":"Performed Procedure Step ID",
+        "tag":"(0040,0253)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00400253"
+    },
+    {
+        "name":"Performed Procedure Step Start Date",
+        "tag":"(0040,0244)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00400244"
+    },
+    {
+        "name":"Performed Procedure Step Start DateTime",
+        "tag":"(0040,4050)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00404050"
+    },
+    {
+        "name":"Performed Procedure Step Start Time",
+        "tag":"(0040,0245)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00400245"
+    },
+    {
+        "name":"Performed Station AE Title",
+        "tag":"(0040,0241)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "id":"00400241"
+    },
+    {
+        "name":"Performed Station Geographic Location Code Sequence",
+        "tag":"(0040,4030)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "id":"00404030"
+    },
+    {
+        "name":"Performed Station Name",
+        "tag":"(0040,0242)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "id":"00400242"
+    },
+    {
+        "name":"Performed Station Name Code Sequence",
+        "tag":"(0040,4028)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "id":"00404028"
+    },
+    {
+        "name":"Performing Physician's Name",
+        "tag":"(0008,1050)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00081050"
+    },
+    {
+        "name":"Performing Physician Identification Sequence",
+        "tag":"(0008,1052)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00081052"
+    },
+    {
+        "name":"Person's Address",
+        "tag":"(0040,1102)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00401102"
+    },
+    {
+        "name":"Person's Telecom Information",
+        "tag":"(0040,1104)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00401104"
+    },
+    {
+        "name":"Person's Telephone Numbers",
+        "tag":"(0040,1103)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00401103"
+    },
+    {
+        "name":"Person Identification Code Sequence",
+        "tag":"(0040,1101)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "id":"00401101"
+    },
+    {
+        "name":"Person Name",
+        "tag":"(0040,A123)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "id":"0040a123"
+    },
+    {
+        "name":"Physician(s) of Record",
+        "tag":"(0008,1048)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00081048"
+    },
+    {
+        "name":"Physician(s) of Record Identification Sequence",
+        "tag":"(0008,1049)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00081049"
+    },
+    {
+        "name":"Physician(s) Reading Study Identification Sequence",
+        "tag":"(0008,1062)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00081062"
+    },
+    {
+        "name":"Physician Approving Interpretation",
+        "tag":"(4008,0114)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"40080114"
+    },
+    {
+        "name":"Placer Order Number / Imaging Service Request",
+        "tag":"(0040,2016)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "id":"00402016"
+    },
+    {
+        "name":"Plate ID",
+        "tag":"(0018,1004)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "id":"00181004"
+    },
+    {
+        "name":"Pregnancy Status",
+        "tag":"(0010,21C0)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnPatCharsOpt":"K",
+        "id":"001021c0"
+    },
+    {
+        "name":"Pre-Medication",
+        "tag":"(0040,0012)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnPatCharsOpt":"C",
+        "id":"00400012"
+    },
+    {
+        "name":"Prescription Description",
+        "tag":"(300A,000E)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"300a000e"
+    },
+    {
+        "name":"Prescription Notes",
+        "tag":"(3010,007B)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "cleanDescOpt":"C",
+        "id":"3010007b"
+    },
+    {
+        "name":"Prescription Notes Sequence",
+        "tag":"(3010,0081)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "cleanDescOpt":"C",
+        "id":"30100081"
+    },
+    {
+        "name":"Presentation Display Collection UID",
+        "tag":"(0070,1101)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"00701101"
+    },
+    {
+        "name":"Presentation Sequence Collection UID",
+        "tag":"(0070,1102)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"00701102"
+    },
+    {
+        "name":"Prior Treatment Dose Description",
+        "tag":"(3010,0061)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"30100061"
+    },
+    {
+        "name":"Private attributes",
+        "tag":"(GGGG,EEEE) WHERE GGGG IS ODD",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnSafePrivOpt":"C",
+        "id":"ggggeeee-where-gggg-is-odd"
+    },
+    {
+        "name":"Procedure Step Cancellation DateTime",
+        "tag":"(0040,4052)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00404052"
+    },
+    {
+        "name":"Protocol Name",
+        "tag":"(0018,1030)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/D",
+        "cleanDescOpt":"C",
+        "id":"00181030"
+    },
+    {
+        "name":"Radiation Dose Identification Label",
+        "tag":"(300A,0619)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "cleanDescOpt":"C",
+        "id":"300a0619"
+    },
+    {
+        "name":"Radiation Dose In-Vivo Measurement Label",
+        "tag":"(300A,0623)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "cleanDescOpt":"C",
+        "id":"300a0623"
+    },
+    {
+        "name":"Radiation Generation Mode Description",
+        "tag":"(300A,067D)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "cleanDescOpt":"C",
+        "id":"300a067d"
+    },
+    {
+        "name":"Radiation Generation Mode Label",
+        "tag":"(300A,067C)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "cleanDescOpt":"C",
+        "id":"300a067c"
+    },
+    {
+        "name":"Reason for Omission Description",
+        "tag":"(300C,0113)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"300c0113"
+    },
+    {
+        "name":"Reason for Requested Procedure Code Sequence",
+        "tag":"(0040,100A)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"0040100a"
+    },
+    {
+        "name":"Reason for Study",
+        "tag":"(0032,1030)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00321030"
+    },
+    {
+        "name":"Reason for Superseding",
+        "tag":"(3010,005C)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "cleanDescOpt":"C",
+        "id":"3010005c"
+    },
+    {
+        "name":"Reason for the Imaging Service Request",
+        "tag":"(0040,2001)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00402001"
+    },
+    {
+        "name":"Reason for the Requested Procedure",
+        "tag":"(0040,1002)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00401002"
+    },
+    {
+        "name":"Reason for Visit",
+        "tag":"(0032,1066)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00321066"
+    },
+    {
+        "name":"Reason for Visit Code Sequence",
+        "tag":"(0032,1067)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00321067"
+    },
+    {
+        "name":"Referenced Conceptual Volume UID",
+        "tag":"(3010,000B)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"3010000b"
+    },
+    {
+        "name":"Referenced Digital Signature Sequence",
+        "tag":"(0400,0402)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"04000402"
+    },
+    {
+        "name":"Referenced Dose Reference UID",
+        "tag":"(300A,0083)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"300a0083"
+    },
+    {
+        "name":"Referenced Dosimetric Objective UID",
+        "tag":"(3010,006F)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"3010006f"
+    },
+    {
+        "name":"Referenced Fiducials UID",
+        "tag":"(3010,0031)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"30100031"
+    },
+    {
+        "name":"Referenced Frame of Reference UID",
+        "tag":"(3006,0024)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"30060024"
+    },
+    {
+        "name":"Referenced General Purpose Scheduled Procedure Step Transaction UID",
+        "tag":"(0040,4023)",
+        "stdCompIOD":"N",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"00404023"
+    },
+    {
+        "name":"Referenced Image Sequence",
+        "tag":"(0008,1140)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/Z/U*",
+        "rtnUIDsOpt":"K",
+        "id":"00081140"
+    },
+    {
+        "name":"Referenced Observation UID (Trial)",
+        "tag":"(0040,A172)",
+        "stdCompIOD":"N",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"0040a172"
+    },
+    {
+        "name":"Referenced Patient Alias Sequence",
+        "tag":"(0038,0004)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00380004"
+    },
+    {
+        "name":"Referenced Patient Photo Sequence",
+        "tag":"(0010,1100)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00101100"
+    },
+    {
+        "name":"Referenced Patient Sequence",
+        "tag":"(0008,1120)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnUIDsOpt":"X",
+        "id":"00081120"
+    },
+    {
+        "name":"Referenced Performed Procedure Step Sequence",
+        "tag":"(0008,1111)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/Z/D",
+        "rtnUIDsOpt":"K",
+        "id":"00081111"
+    },
+    {
+        "name":"Referenced SOP Instance MAC Sequence",
+        "tag":"(0400,0403)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"04000403"
+    },
+    {
+        "name":"Referenced SOP Instance UID",
+        "tag":"(0008,1155)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"00081155"
+    },
+    {
+        "name":"Referenced SOP Instance UID in File",
+        "tag":"(0004,1511)",
+        "stdCompIOD":"N",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"00041511"
+    },
+    {
+        "name":"Referenced Study Sequence",
+        "tag":"(0008,1110)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/Z",
+        "rtnUIDsOpt":"K",
+        "id":"00081110"
+    },
+    {
+        "name":"Referring Physician's Address",
+        "tag":"(0008,0092)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00080092"
+    },
+    {
+        "name":"Referring Physician's Name",
+        "tag":"(0008,0090)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "id":"00080090"
+    },
+    {
+        "name":"Referring Physician's Telephone Numbers",
+        "tag":"(0008,0094)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00080094"
+    },
+    {
+        "name":"Referring Physician Identification Sequence",
+        "tag":"(0008,0096)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00080096"
+    },
+    {
+        "name":"Region of Residence",
+        "tag":"(0010,2152)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00102152"
+    },
+    {
+        "name":"Related Frame of Reference UID",
+        "tag":"(3006,00C2)",
+        "stdCompIOD":"N",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"300600c2"
+    },
+    {
+        "name":"Request Attributes Sequence",
+        "tag":"(0040,0275)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00400275"
+    },
+    {
+        "name":"Requested Contrast Agent",
+        "tag":"(0032,1070)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00321070"
+    },
+    {
+        "name":"Requested Procedure Comments",
+        "tag":"(0040,1400)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00401400"
+    },
+    {
+        "name":"Requested Procedure Description",
+        "tag":"(0032,1060)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/Z",
+        "cleanDescOpt":"C",
+        "id":"00321060"
+    },
+    {
+        "name":"Requested Procedure ID",
+        "tag":"(0040,1001)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00401001"
+    },
+    {
+        "name":"Requested Procedure Location",
+        "tag":"(0040,1005)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00401005"
+    },
+    {
+        "name":"Requested SOP Instance UID",
+        "tag":"(0000,1001)",
+        "stdCompIOD":"N",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"00001001"
+    },
+    {
+        "name":"Requesting Physician",
+        "tag":"(0032,1032)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00321032"
+    },
+    {
+        "name":"Requesting Service",
+        "tag":"(0032,1033)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00321033"
+    },
+    {
+        "name":"Respiratory Motion Compensation Technique Description",
+        "tag":"(0018,9185)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00189185"
+    },
+    {
+        "name":"Responsible Organization",
+        "tag":"(0010,2299)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00102299"
+    },
+    {
+        "name":"Responsible Person",
+        "tag":"(0010,2297)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00102297"
+    },
+    {
+        "name":"Results Comments",
+        "tag":"(4008,4000)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"40084000"
+    },
+    {
+        "name":"Results Distribution List Sequence",
+        "tag":"(4008,0118)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"40080118"
+    },
+    {
+        "name":"Results ID Issuer",
+        "tag":"(4008,0042)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"40080042"
+    },
+    {
+        "name":"Reviewer Name",
+        "tag":"(300E,0008)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/Z",
+        "id":"300e0008"
+    },
+    {
+        "name":"RT Accessory Device Slot ID",
+        "tag":"(300A,0615)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "id":"300a0615"
+    },
+    {
+        "name":"RT Accessory Holder Slot ID",
+        "tag":"(300A,0611)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "id":"300a0611"
+    },
+    {
+        "name":"RT Physician Intent Narrative",
+        "tag":"(3010,005A)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "cleanDescOpt":"C",
+        "id":"3010005a"
+    },
+    {
+        "name":"RT Plan Date",
+        "tag":"(300A,0006)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"300a0006"
+    },
+    {
+        "name":"RT Plan Description",
+        "tag":"(300A,0004)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"300a0004"
+    },
+    {
+        "name":"RT Plan Label",
+        "tag":"(300A,0002)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "cleanDescOpt":"C",
+        "id":"300a0002"
+    },
+    {
+        "name":"RT Plan Name",
+        "tag":"(300A,0003)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"300a0003"
+    },
+    {
+        "name":"RT Plan Time",
+        "tag":"(300A,0007)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"300a0007"
+    },
+    {
+        "name":"RT Prescription Label",
+        "tag":"(3010,0054)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "cleanDescOpt":"C",
+        "id":"30100054"
+    },
+    {
+        "name":"RT Tolerance Set Label",
+        "tag":"(300A,062A)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "cleanDescOpt":"C",
+        "id":"300a062a"
+    },
+    {
+        "name":"RT Treatment Approach Label",
+        "tag":"(3010,0056)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/D",
+        "cleanDescOpt":"C",
+        "id":"30100056"
+    },
+    {
+        "name":"RT Treatment Phase UID",
+        "tag":"(3010,003B)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"3010003b"
+    },
+    {
+        "name":"Scheduled Human Performers Sequence",
+        "tag":"(0040,4034)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00404034"
+    },
+    {
+        "name":"Scheduled Patient Institution Residence",
+        "tag":"(0038,001E)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"0038001e"
+    },
+    {
+        "name":"Scheduled Performing Physician's Name",
+        "tag":"(0040,0006)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00400006"
+    },
+    {
+        "name":"Scheduled Performing Physician Identification Sequence",
+        "tag":"(0040,000B)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"0040000b"
+    },
+    {
+        "name":"Scheduled Procedure Step Description",
+        "tag":"(0040,0007)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00400007"
+    },
+    {
+        "name":"Scheduled Procedure Step End Date",
+        "tag":"(0040,0004)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00400004"
+    },
+    {
+        "name":"Scheduled Procedure Step End Time",
+        "tag":"(0040,0005)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00400005"
+    },
+    {
+        "name":"Scheduled Procedure Step Expiration DateTime",
+        "tag":"(0040,4008)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00404008"
+    },
+    {
+        "name":"Scheduled Procedure Step Location",
+        "tag":"(0040,0011)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "id":"00400011"
+    },
+    {
+        "name":"Scheduled Procedure Step Modification DateTime",
+        "tag":"(0040,4010)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00404010"
+    },
+    {
+        "name":"Scheduled Procedure Step Start Date",
+        "tag":"(0040,0002)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00400002"
+    },
+    {
+        "name":"Scheduled Procedure Step Start DateTime",
+        "tag":"(0040,4005)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00404005"
+    },
+    {
+        "name":"Scheduled Procedure Step Start Time",
+        "tag":"(0040,0003)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00400003"
+    },
+    {
+        "name":"Scheduled Station AE Title",
+        "tag":"(0040,0001)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "id":"00400001"
+    },
+    {
+        "name":"Scheduled Station Geographic Location Code Sequence",
+        "tag":"(0040,4027)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "id":"00404027"
+    },
+    {
+        "name":"Scheduled Station Name",
+        "tag":"(0040,0010)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "id":"00400010"
+    },
+    {
+        "name":"Scheduled Station Name Code Sequence",
+        "tag":"(0040,4025)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "id":"00404025"
+    },
+    {
+        "name":"Scheduled Study Location",
+        "tag":"(0032,1020)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "id":"00321020"
+    },
+    {
+        "name":"Scheduled Study Location AE Title",
+        "tag":"(0032,1021)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "id":"00321021"
+    },
+    {
+        "name":"Series Date",
+        "tag":"(0008,0021)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00080021"
+    },
+    {
+        "name":"Series Description",
+        "tag":"(0008,103E)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"0008103e"
+    },
+    {
+        "name":"Series Instance UID",
+        "tag":"(0020,000E)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"0020000e"
+    },
+    {
+        "name":"Series Time",
+        "tag":"(0008,0031)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00080031"
+    },
+    {
+        "name":"Service Episode Description",
+        "tag":"(0038,0062)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00380062"
+    },
+    {
+        "name":"Service Episode ID",
+        "tag":"(0038,0060)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00380060"
+    },
+    {
+        "name":"Setup Technique Description",
+        "tag":"(300A,01B2)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"300a01b2"
+    },
+    {
+        "name":"Shielding Device Description",
+        "tag":"(300A,01A6)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"300a01a6"
+    },
+    {
+        "name":"Slide Identifier",
+        "tag":"(0040,06FA)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"004006fa"
+    },
+    {
+        "name":"Smoking Status",
+        "tag":"(0010,21A0)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnPatCharsOpt":"K",
+        "id":"001021a0"
+    },
+    {
+        "name":"SOP Instance UID",
+        "tag":"(0008,0018)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"00080018"
+    },
+    {
+        "name":"Source Conceptual Volume UID",
+        "tag":"(3010,0015)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"30100015"
+    },
+    {
+        "name":"Source End DateTime",
+        "tag":"(0018,936A)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0018936a"
+    },
+    {
+        "name":"Source Identifier",
+        "tag":"(0034,0005)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "id":"00340005"
+    },
+    {
+        "name":"Source Image Sequence",
+        "tag":"(0008,2112)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/Z/U*",
+        "rtnUIDsOpt":"K",
+        "id":"00082112"
+    },
+    {
+        "name":"Source Manufacturer",
+        "tag":"(300A,0216)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "id":"300a0216"
+    },
+    {
+        "name":"Source Serial Number",
+        "tag":"(3008,0105)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/Z",
+        "rtnDevIdOpt":"K",
+        "id":"30080105"
+    },
+    {
+        "name":"Source Serial Number",
+        "tag":"(3008,0105)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "id":"30080105"
+    },
+    {
+        "name":"Source Start DateTime",
+        "tag":"(0018,9369)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00189369"
+    },
+    {
+        "name":"Special Needs",
+        "tag":"(0038,0050)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnPatCharsOpt":"C",
+        "id":"00380050"
+    },
+    {
+        "name":"Specimen Accession Number",
+        "tag":"(0040,050A)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"0040050a"
+    },
+    {
+        "name":"Specimen Detailed Description",
+        "tag":"(0040,0602)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00400602"
+    },
+    {
+        "name":"Specimen Identifier",
+        "tag":"(0040,0551)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "id":"00400551"
+    },
+    {
+        "name":"Specimen Preparation Sequence",
+        "tag":"(0040,0610)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "cleanStructContOpt":"C",
+        "id":"00400610"
+    },
+    {
+        "name":"Specimen Short Description",
+        "tag":"(0040,0600)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00400600"
+    },
+    {
+        "name":"Specimen UID",
+        "tag":"(0040,0554)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"00400554"
+    },
+    {
+        "name":"Start Acquisition DateTime",
+        "tag":"(0018,9516)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00189516"
+    },
+    {
+        "name":"Station Name",
+        "tag":"(0008,1010)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/Z/D",
+        "rtnDevIdOpt":"K",
+        "id":"00081010"
+    },
+    {
+        "name":"Storage Media File-set UID",
+        "tag":"(0088,0140)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"00880140"
+    },
+    {
+        "name":"Study Comments",
+        "tag":"(0032,4000)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00324000"
+    },
+    {
+        "name":"Study Date",
+        "tag":"(0008,0020)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00080020"
+    },
+    {
+        "name":"Study Description",
+        "tag":"(0008,1030)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00081030"
+    },
+    {
+        "name":"Study ID",
+        "tag":"(0020,0010)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "id":"00200010"
+    },
+    {
+        "name":"Study ID Issuer",
+        "tag":"(0032,0012)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00320012"
+    },
+    {
+        "name":"Study Instance UID",
+        "tag":"(0020,000D)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"0020000d"
+    },
+    {
+        "name":"Study Time",
+        "tag":"(0008,0030)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00080030"
+    },
+    {
+        "name":"Synchronization Frame of Reference UID",
+        "tag":"(0020,0200)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"00200200"
+    },
+    {
+        "name":"Target UID",
+        "tag":"(0018,2042)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"00182042"
+    },
+    {
+        "name":"Telephone Number (Trial)",
+        "tag":"(0040,A354)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"0040a354"
+    },
+    {
+        "name":"Template Extension Creator UID",
+        "tag":"(0040,DB0D)",
+        "stdCompIOD":"N",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"0040db0d"
+    },
+    {
+        "name":"Template Extension Organization UID",
+        "tag":"(0040,DB0C)",
+        "stdCompIOD":"N",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"0040db0c"
+    },
+    {
+        "name":"Text Comments",
+        "tag":"(4000,4000)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"40004000"
+    },
+    {
+        "name":"Text String",
+        "tag":"(2030,0020)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"20300020"
+    },
+    {
+        "name":"Timezone Offset From UTC",
+        "tag":"(0008,0201)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00080201"
+    },
+    {
+        "name":"Topic Author",
+        "tag":"(0088,0910)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00880910"
+    },
+    {
+        "name":"Topic Keywords",
+        "tag":"(0088,0912)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00880912"
+    },
+    {
+        "name":"Topic Subject",
+        "tag":"(0088,0906)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00880906"
+    },
+    {
+        "name":"Topic Title",
+        "tag":"(0088,0904)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"00880904"
+    },
+    {
+        "name":"Tracking UID",
+        "tag":"(0062,0021)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"00620021"
+    },
+    {
+        "name":"Transaction UID",
+        "tag":"(0008,1195)",
+        "stdCompIOD":"N",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"00081195"
+    },
+    {
+        "name":"Treatment Date",
+        "tag":"(3008,0250)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"30080250"
+    },
+    {
+        "name":"Treatment Machine Name",
+        "tag":"(300A,00B2)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "id":"300a00b2"
+    },
+    {
+        "name":"Treatment Position Group Label",
+        "tag":"(300A,0608)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "cleanDescOpt":"C",
+        "id":"300a0608"
+    },
+    {
+        "name":"Treatment Position Group UID",
+        "tag":"(300A,0609)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"300a0609"
+    },
+    {
+        "name":"Treatment Site",
+        "tag":"(3010,0077)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "cleanDescOpt":"C",
+        "id":"30100077"
+    },
+    {
+        "name":"Treatment Technique Notes",
+        "tag":"(3010,007A)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "cleanDescOpt":"C",
+        "id":"3010007a"
+    },
+    {
+        "name":"Treatment Time",
+        "tag":"(3008,0251)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"30080251"
+    },
+    {
+        "name":"UDI Sequence",
+        "tag":"(0018,100A)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "id":"0018100a"
+    },
+    {
+        "name":"UID",
+        "tag":"(0040,A124)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "id":"0040a124"
+    },
+    {
+        "name":"Unique Device Identifier",
+        "tag":"(0018,1009)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "id":"00181009"
+    },
+    {
+        "name":"User Content Label",
+        "tag":"(3010,0033)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "cleanDescOpt":"C",
+        "id":"30100033"
+    },
+    {
+        "name":"User Content Long Label",
+        "tag":"(3010,0034)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "cleanDescOpt":"C",
+        "id":"30100034"
+    },
+    {
+        "name":"Verbal Source (Trial)",
+        "tag":"(0040,A352)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"0040a352"
+    },
+    {
+        "name":"Verbal Source Identifier Code Sequence (Trial)",
+        "tag":"(0040,A358)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"0040a358"
+    },
+    {
+        "name":"Verifying Observer Identification Code Sequence",
+        "tag":"(0040,A088)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "id":"0040a088"
+    },
+    {
+        "name":"Verifying Observer Name",
+        "tag":"(0040,A075)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "id":"0040a075"
+    },
+    {
+        "name":"Verifying Observer Sequence",
+        "tag":"(0040,A073)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "id":"0040a073"
+    },
+    {
+        "name":"Verifying Organization",
+        "tag":"(0040,A027)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "id":"0040a027"
+    },
+    {
+        "name":"Visit Comments",
+        "tag":"(0038,4000)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00384000"
+    },
+    {
+        "name":"X-Ray Detector ID",
+        "tag":"(0018,9371)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnDevIdOpt":"K",
+        "id":"00189371"
+    },
+    {
+        "name":"X-Ray Detector Label",
+        "tag":"(0018,9373)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "id":"00189373"
+    },
+    {
+        "name":"X-Ray Source ID",
+        "tag":"(0018,9367)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnDevIdOpt":"K",
+        "id":"00189367"
+    }
+]

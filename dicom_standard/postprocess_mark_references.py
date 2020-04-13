@@ -51,6 +51,6 @@ def mark_as_recorded(anchor):
 
 
 if __name__ == '__main__':
-    module_attr_pairs = pl.read_json_to_dict(sys.argv[1])
+    module_attr_pairs = pl.read_json_data(sys.argv[1])
     updated_pairs = record_references_inside_pairs(module_attr_pairs)
     pl.write_pretty_json(updated_pairs)

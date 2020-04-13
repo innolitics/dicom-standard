@@ -41,7 +41,7 @@ def update_hierarchy_position(attr: Dict[str, str], last_id: List[str], current_
         print(attr)
         raise Exception('this shouldn\'t happen')
     if delta_l > 1:
-        # There is a typo in the DICOM standard where two hierarchy
+        # Standard workaround: There is a typo in the DICOM standard where two hierarchy
         # markers are used instead of one. This catches that anomaly.
         delta_l = 1
         # Error can be seen at the following link:

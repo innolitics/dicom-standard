@@ -13,6 +13,7 @@ setup(
 
     description='Parse the DICOM Standard into a human-friendly JSON format.',
     long_description=long_description,
+    long_description_content_type='text/markdown',
     url='https://github.com/innolitics/dicom-standard',
     author='Innolitics, LLC',
     author_email='info@innolitics.com',
@@ -46,12 +47,17 @@ setup(
 
     package_data={
         'standard': [
-            'ciods.json',
+            'attributes.json',
+            'ciod_to_func_group_macros.json',
             'ciod_to_modules.json',
+            'ciods.json',
+            'confidentiality_profile_attributes.json',
+            'macros.json',
+            'macro_to_attributes.json',
             'modules.json',
             'module_to_attributes.json',
-            'attributes.json',
             'references.json',
+            'sops.json',
         ],
     },
 

@@ -2,7 +2,7 @@
 Utility functions for expanding macros in the module-attribute
 relationship tables.
 '''
-from typing import List, Dict, Any
+from typing import Any, Dict, List
 import re
 from copy import deepcopy
 
@@ -10,6 +10,7 @@ from bs4 import BeautifulSoup, Tag
 
 from dicom_standard.hierarchy_utils import get_hierarchy_markers
 
+AttributeType = Dict[str, str]
 MetadataTableType = Dict[str, Any]
 MacrosType = Dict[str, MetadataTableType]
 
@@ -25,7 +26,7 @@ def expand_macro_rows(table: Tag, macros: MacrosType) -> List[Dict[str, str]]:
     return [attribute for attribute in new_table if attribute['tag'] != 'None']
 
 
-def get_attributes_to_insert(attribute: Dict[str, str], macros: MacrosType, table_id: str) -> List[Dict[str, str]]:
+def get_attributes_to_insert(attribute: AttributeType, macros: MacrosType, table_id: str) -> List[Dict[str, str]]:
     if is_macro_row(attribute):
         new_attributes = get_macro_attributes(attribute, macros, table_id)
         return new_attributes if new_attributes is not None else []
@@ -33,7 +34,7 @@ def get_attributes_to_insert(attribute: Dict[str, str], macros: MacrosType, tabl
         return [attribute]
 
 
-def is_macro_row(attribute: Dict[str, str]) -> bool:
+def is_macro_row(attribute: AttributeType) -> bool:
     is_abnormal_row = attribute['tag'] == 'None'
     reference_anchor_tag = BeautifulSoup(attribute['name'], 'html.parser').find('a', class_='xref')
     contains_link = reference_anchor_tag is not None
@@ -45,7 +46,7 @@ def is_macro_row(attribute: Dict[str, str]) -> bool:
 
 # Note that this function *recursively expands* macro references using
 # the `expand_macro_rows` function.
-def get_macro_attributes(attribute: Dict[str, str], macros: MacrosType, table_id: str) -> List[Dict[str, str]]:
+def get_macro_attributes(attribute: AttributeType, macros: MacrosType, table_id: str) -> List[AttributeType]:
     macro_id = referenced_macro_id_from_include_statement(attribute['name'])
     parsed_name = BeautifulSoup(attribute['name'], 'html.parser').get_text()
     hierarchy_marker = get_hierarchy_markers(parsed_name)
@@ -73,7 +74,7 @@ def get_macros_by_id(macro_id: str, macros: MacrosType, hierarchy_marker: str) -
     return macro
 
 
-def update_attribute_hierarchy_markers(attributes: List[Dict[str, str]], marker: str) -> List[Dict[str, str]]:
+def update_attribute_hierarchy_markers(attributes: List[AttributeType], marker: str) -> List[AttributeType]:
     return [add_marker_to_attr(attribute, marker) for attribute in attributes]
 
 

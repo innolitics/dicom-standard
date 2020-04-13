@@ -18,13 +18,32 @@ def define_all_relationships(ciod_module_list):
 
 
 def define_ciod_module_relationship(ciod, module):
-    usage, conditional_statement = expand_conditional_statement(module['usage'])
+    try:
+        usage, conditional_statement = expand_conditional_statement(module['usage'])
+    except KeyError as e:
+        # TODO: Remove try/except block once missing IE column in Table A.85.1-1 is fixed (Related to Issue #17)
+        if 'Common Instance Reference' in module['informationEntity']:
+            # Shift every column right by one and replace missing IE column
+            module['usage'] = module['reference_fragment']
+            module['reference_fragment'] = module['module']
+            module['module'] = module['informationEntity']
+            module['informationEntity'] = "<td align=\"left\" colspan=\"1\" rowspan=\"1\">\n<p>\n<a id=\"para_040bd3bd-9a9f-4066-8431-ea1ded2a909e\" shape=\"rect\"></a>Encapsulated Document</p>\n</td>"
+            usage, conditional_statement = expand_conditional_statement(module['usage'])
+        else:
+            raise e
+    informationEntity = pl.text_from_html_string(module['informationEntity'])
+    # TODO: Remove if block once missing IE column in Table A.32.10-1 is fixed (Issue #17)
+    if (not informationEntity
+            and ciod == 'Real-Time Video Photographic Image'
+            and any(mod in module['module'] for mod in ['Real-Time Acquisition', 'Current Frame Functional Groups'])):
+        # Manually input missing field
+        informationEntity = 'Image'
     return {
-        "ciod": pl.create_slug(ciod),
-        "module": pl.create_slug(pl.text_from_html_string(module['module'])),
+        "ciodId": pl.create_slug(ciod),
+        "moduleId": pl.create_slug(pl.text_from_html_string(module['module'])),
         "usage": usage,
         "conditionalStatement": conditional_statement,
-        "informationEntity": pl.text_from_html_string(module['informationEntity'])
+        "informationEntity": informationEntity
     }
 
 
@@ -54,6 +73,6 @@ def extract_conditional_statement(usage_field):
 
 
 if __name__ == '__main__':
-    ciod_module_list = pl.read_json_to_dict(sys.argv[1])
+    ciod_module_list = pl.read_json_data(sys.argv[1])
     ciod_module_relationships = define_all_relationships(ciod_module_list)
     pl.write_pretty_json(ciod_module_relationships)
