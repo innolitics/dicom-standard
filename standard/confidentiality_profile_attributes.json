@@ -2909,14 +2909,6 @@
         "id":"30080105"
     },
     {
-        "name":"Source Serial Number",
-        "tag":"(3008,0105)",
-        "stdCompIOD":"Y",
-        "basicProfile":"X",
-        "rtnDevIdOpt":"K",
-        "id":"30080105"
-    },
-    {
         "name":"Source Start DateTime",
         "tag":"(0018,9369)",
         "stdCompIOD":"Y",
