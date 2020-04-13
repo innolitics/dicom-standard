@@ -38,7 +38,6 @@ deps =
     pep517
     twine
 commands =
-    rm -rfv {toxinidir}/dist/
     python -m pep517.check {toxinidir}
     python -m pep517.build \
       --source \
