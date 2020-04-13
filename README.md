@@ -181,7 +181,7 @@ ciod_to_modules.json             |          | Process |  |  | Process |  |      
                                          modules_to_attributes.json           references.json
 ```
 
-To update the parser map, please use [ASCIIFlow][http://asciiflow.com/].
+To update the parser map, please use [ASCIIFlow](http://asciiflow.com/).
 
 ## Contact
 
