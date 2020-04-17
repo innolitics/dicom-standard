@@ -1,4 +1,5 @@
-[![CI Status](https://travis-ci.org/innolitics/dicom-standard.svg?branch=master)](https://travis-ci.org/innolitics/dicom-standard)
+[![CI status](https://travis-ci.org/innolitics/dicom-standard.svg?branch=master)](https://travis-ci.org/innolitics/dicom-standard)
+[![Workflow status](https://github.com/innolitics/dicom-standard/workflows/publish-to-pypi/badge.svg)](https://github.com/innolitics/dicom-standard/actions?query=workflow%3Apublish-to-pypi)
 
 # DICOM Standard Parser
 
