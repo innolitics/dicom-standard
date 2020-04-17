@@ -153,7 +153,7 @@ def remove_completed_rowspans(row_expansion: List[Tuple[Tag, int]]) -> List[Tupl
 
 def has_rowspans_to_expand(cell: Tag) -> bool:
     rowspan_attr = cell.get('rowspan')
-    return int(cell.get('rowspan')) > 1 if rowspan_attr is not None else None
+    return int(cell.get('rowspan')) > 1 if rowspan_attr is not None else False
 
 
 def expand_columns_in_row(row: List[Tag]) -> List[Tag]:

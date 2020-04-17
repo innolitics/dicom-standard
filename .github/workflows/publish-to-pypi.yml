@@ -1,0 +1,62 @@
+name: publish-to-pypi
+
+on:
+  push:
+    tags:
+      - v*
+
+jobs:
+  test:
+    name: Run tests and and publish to Test PyPI
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.7'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip tox
+          pip install -r requirements.txt
+      - name: Run tests
+        run: python -m tox -e pytest
+      - name: Update dev version
+        run: |
+          ver=$(grep 'version\s=' setup.cfg | grep -o '[^ ]*$')
+          dev_ver=${ver%.*}.dev$(date +%Y%m%d%H%M%S)
+          sed -i "s/$ver/$dev_ver/g" setup.cfg
+      - name: Generate distribution archives
+        run: python -m tox -e build-dist
+      - name: Publish distribution to TestPyPI
+        uses: pypa/gh-action-pypi-publish@master
+        with:
+          password: ${{ secrets.test_pypi_password }}
+          repository_url: http://test.pypi.org/legacy/
+        if: success()
+  publish:
+    needs: test
+    name: Publish package to PyPI
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.7'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip tox
+          pip install -r requirements.txt
+      - name: Update version to tag
+        run: |
+          ver=$(grep 'version\s=' setup.cfg | grep -o '[^ ]*$')
+          tag=${GITHUB_REF##*/}
+          sed -i "s/$ver/$tag/g" setup.cfg
+      - name: Generate distribution archives
+        run: python -m tox -e build-dist
+      - name: Publish distribution to PyPI
+        uses: pypa/gh-action-pypi-publish@master
+        with:
+          password: ${{ secrets.pypi_password }}
+        if: success()

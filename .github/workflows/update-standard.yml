@@ -1,0 +1,64 @@
+name: update-standard
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'
+
+jobs:
+  make:
+    name: Run make
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.7'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run Makefile
+        run: |
+          make clean
+          make updatestandard
+          make
+        working-directory: dicom_standard
+      - name: Upload JSON files
+        uses: actions/upload-artifact@v1
+        with:
+          name: new_standard
+          path: dicom_standard/dist
+  test-and-commit:
+    needs: make
+    name: Run tox and commit to master
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.7'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip tox
+          pip install -r requirements.txt
+      - name: Download updated standard
+        uses: actions/download-artifact@v1
+        with:
+          name: new_standard
+      - name: Diff JSON files
+        run: echo ::set-output name=diff_lines::$(diff -qr standard new_standard | grep -v ".gitignore" | wc -l)
+        id: diff_files
+      - name: Update standard
+        run: |
+          mv new_standard/*.json standard
+          rm -rf new_standard
+        if: steps.diff_files.outputs.diff_lines > 0
+      - name: Run tests
+        run: tox
+      - name: Publish to master
+        uses: mikeal/publish-to-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        if: success() && steps.diff_files.outputs.diff_lines > 0

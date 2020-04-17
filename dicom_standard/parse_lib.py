@@ -58,7 +58,7 @@ def all_tdivs_in_chapter(standard: BeautifulSoup, chapter_name: str) -> List[Tag
         if chapter.div.div.div.h1.a.get('id') == chapter_name:
             table_divs = chapter.find_all('div', class_='table')
             return table_divs
-    return None
+    return []
 
 
 def create_slug(title: str) -> str:
