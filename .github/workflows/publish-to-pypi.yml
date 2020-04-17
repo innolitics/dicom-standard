@@ -23,7 +23,7 @@ jobs:
         run: python -m tox -e pytest
       - name: Update dev version
         run: |
-          ver=$(grep version setup.cfg | grep -io '[^ ]*$')
+          ver=$(grep 'version\s=' setup.cfg | grep -o '[^ ]*$')
           dev_ver=${ver%.*}.dev$(date +%Y%m%d%H%M%S)
           sed -i "s/$ver/$dev_ver/g" setup.cfg
       - name: Generate distribution archives
@@ -50,7 +50,7 @@ jobs:
           pip install -r requirements.txt
       - name: Update version to tag
         run: |
-          ver=$(grep version setup.cfg | grep -io '[^ ]*$')
+          ver=$(grep 'version\s=' setup.cfg | grep -o '[^ ]*$')
           tag=${GITHUB_REF##*/}
           sed -i "s/$ver/$tag/g" setup.cfg
       - name: Generate distribution archives
