@@ -2,10 +2,6 @@
 [![update-standard workflow status](https://github.com/innolitics/dicom-standard/workflows/update-standard/badge.svg)](https://github.com/innolitics/dicom-standard/actions?query=workflow%3Aupdate-standard)
 [![PyPI version](https://img.shields.io/pypi/v/dicom-standard?label=PyPI&color=blue&logo=pypi)](https://pypi.org/project/dicom-standard/)
 
-<a href="https://github.com/innolitics/dicom-standard/actions?query=workflow%3Abuild-and-update">
-   <img src="https://github.com/innolitics/dicom-standard/workflows/build-and-update/badge.svg">
-</a>
-
 # DICOM Standard Parser
 
 This program parses the web version of the [DICOM Standard][nema] into human
