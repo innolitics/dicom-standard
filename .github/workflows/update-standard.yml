@@ -1,11 +1,6 @@
-name: update-and-publish
+name: update-standard
 
 on:
-  push:
-    branches:
-      - master
-    tags:
-      - v*
   schedule:
     - cron: '0 0 1 * *'
 
@@ -34,9 +29,9 @@ jobs:
         with:
           name: new_standard
           path: dicom_standard/dist
-  test-and-publish:
+  test-and-commit:
     needs: make
-    name: Run tests and publish distribution
+    name: Run tox and commit to master
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -61,36 +56,9 @@ jobs:
           rm -rf new_standard
         if: steps.diff_files.outputs.diff_lines > 0
       - name: Run tests
-        run: pytest tests
+        run: tox
       - name: Publish to master
         uses: mikeal/publish-to-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        if: success() && steps.diff_files.outputs.diff_lines > 0 && !startsWith(github.event.ref, 'refs/tags')
-      - name: Update dev version
-        run: |
-          ver=$(grep version setup.cfg | grep -io '[^ ]*$')
-          dev_ver=${ver%.*}.dev$(date +%Y%m%d%H%M%S)
-          sed -i "s/$ver/$dev_ver/g" setup.cfg
-          echo ::set-env name=dev_ver::$dev_ver
-      - name: Generate distribution archives
-        run: python -m tox -e build-dist
-      - name: Publish distribution to TestPyPI
-        uses: pypa/gh-action-pypi-publish@master
-        with:
-          password: ${{ secrets.test_pypi_password }}
-          repository_url: http://test.pypi.org/legacy/
-        if: success()
-      - name: Update version to tag
-        run: |
-          tag=${GITHUB_REF##*/}
-          sed -i "s/$dev_ver/$tag/g" setup.cfg
-        if: success() && startsWith(github.event.ref, 'refs/tags')
-      - name: Generate distribution archives
-        run: python -m tox -e build-dist
-        if: success() && startsWith(github.event.ref, 'refs/tags')
-      - name: Publish distribution to PyPI
-        uses: pypa/gh-action-pypi-publish@master
-        with:
-          password: ${{ secrets.pypi_password }}
-        if: success() && startsWith(github.event.ref, 'refs/tags')
+        if: success() && steps.diff_files.outputs.diff_lines > 0
