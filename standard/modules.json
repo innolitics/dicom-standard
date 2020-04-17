@@ -254,7 +254,7 @@
     {
         "name":"Multi-frame Functional Groups",
         "id":"multi-frame-functional-groups",
-        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP instances even if there is only one frame in the instance.</p>",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
     },
     {
@@ -392,7 +392,7 @@
     {
         "name":"NM Multi-frame",
         "id":"nm-multi-frame",
-        "description":"<p>\n<span href=\"#table_C.8-7\">This module </span> specifies the Attributes of a NM Multi-frame Image. This Module is always included in a NM SOP instance, even if there is only one frame in the image.</p>",
+        "description":"<p>\n<span href=\"#table_C.8-7\">This module </span> specifies the Attributes of a NM Multi-frame Image. This Module is always included in a NM SOP Instance, even if there is only one frame in the image.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.4.8.html#table_C.8-7"
     },
     {
@@ -1076,19 +1076,19 @@
     {
         "name":"X-Ray 3D Angiographic Image Contributing Sources",
         "id":"x-ray-3d-angiographic-image-contributing-sources",
-        "description":"<p>\nThis section describes the X-Ray 3D Angiographic Image Contributing Sources Module. The Attributes in this Module specify the overall characteristics of one or more sources that were used to create a X-Ray 3D Angiographic Image SOP Class instance. <span href=\"#table_C.8.21.2.1-1\">This module </span> contains the relevant IOD Attributes that describe X-Ray 3D Angiographic Image Contributing Sources.</p>",
+        "description":"<p>\nThis section describes the X-Ray 3D Angiographic Image Contributing Sources Module. The Attributes in this Module specify the overall characteristics of one or more sources that were used to create a X-Ray 3D Angiographic Image SOP Instance. <span href=\"#table_C.8.21.2.1-1\">This module </span> contains the relevant IOD Attributes that describe X-Ray 3D Angiographic Image Contributing Sources.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.21.2.html#table_C.8.21.2.1-1"
     },
     {
         "name":"X-Ray 3D Craniofacial Image Contributing Sources",
         "id":"x-ray-3d-craniofacial-image-contributing-sources",
-        "description":"<p>\nThis section describes the X-Ray 3D Craniofacial Image Contributing Sources Module. The Attributes in this Module specify the overall characteristics of one or more sources that were used to create a X-Ray 3D Craniofacial Image SOP Class instance. <span href=\"#table_C.8.21.2.2-1\">This module </span> contains the relevant IOD Attributes that describe X-Ray 3D Craniofacial Image Contributing Sources.</p>",
+        "description":"<p>\nThis section describes the X-Ray 3D Craniofacial Image Contributing Sources Module. The Attributes in this Module specify the overall characteristics of one or more sources that were used to create a X-Ray 3D Craniofacial Image SOP Instance. <span href=\"#table_C.8.21.2.2-1\">This module </span> contains the relevant IOD Attributes that describe X-Ray 3D Craniofacial Image Contributing Sources.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.21.2.2.html#table_C.8.21.2.2-1"
     },
     {
         "name":"Breast Tomosynthesis Contributing Sources",
         "id":"breast-tomosynthesis-contributing-sources",
-        "description":"<p>\nThis section describes the Breast Tomosynthesis Contributing Sources Module. The Attributes in this Module specify the overall characteristics of one or more source images that were used to create a Breast Tomosynthesis Image SOP Class instance. <span href=\"#table_C.8.21.2.3-1\">This module </span> contains the IOD Attributes that describe Breast Tomosynthesis Contributing Sources.</p>",
+        "description":"<p>\nThis section describes the Breast Tomosynthesis Contributing Sources Module. The Attributes in this Module specify the overall characteristics of one or more source images that were used to create a Breast Tomosynthesis Image SOP Instance. <span href=\"#table_C.8.21.2.3-1\">This module </span> contains the IOD Attributes that describe Breast Tomosynthesis Contributing Sources.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.21.2.3.html#table_C.8.21.2.3-1"
     },
     {
@@ -1700,7 +1700,7 @@
     {
         "name":"General Reference",
         "id":"general-reference",
-        "description":"<p>\n<span href=\"#table_C.12-10\">This module </span> specifies the Attributes that reference source and other related instances and describe the manner of derivation.</p>",
+        "description":"<p>\n<span href=\"#table_C.12-10\">This module </span> specifies the Attributes that reference source and other related Instances and describe the manner of derivation.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.12.4.html#table_C.12-10"
     },
     {
@@ -2180,7 +2180,7 @@
     {
         "name":"RT Radiation Set",
         "id":"rt-radiation-set",
-        "description":"<p>\nThe RT Radiation Set Module describes treatment fractions that contain a set of beams or brachytherapy setups used within a treatment session to help achieve the dosimetric requirements of a given Treatment Phase. The Module references a set of RT Radiation instances that describe the geometric and physical parameters that define the delivery of dose for a single fraction. In addition, the overall number of treatment fractions is defined, as well as possibly the fractionation scheme according to which, fractions will be delivered.</p>",
+        "description":"<p>\nThe RT Radiation Set Module describes treatment fractions that contain a set of beams or brachytherapy setups used within a treatment session to help achieve the dosimetric requirements of a given Treatment Phase. The Module references a set of RT Radiation Instances that describe the geometric and physical parameters that define the delivery of dose for a single fraction. In addition, the overall number of treatment fractions is defined, as well as possibly the fractionation scheme according to which, fractions will be delivered.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.10.html#table_C.36.10-1"
     },
     {
@@ -2234,7 +2234,7 @@
     {
         "name":"Robotic-Arm Path",
         "id":"robotic-arm-path",
-        "description":"<p>\nThe Robotic-Arm Path Module specifies or records how a Robotic Path treatment is to be delivered. Multiple paths are encoded as separate RT Radiation instances referred to in the RT Radiation Set IOD.</p>",
+        "description":"<p>\nThe Robotic-Arm Path Module specifies or records how a Robotic Path treatment is to be delivered. Multiple paths are encoded as separate RT Radiation Instances referred to in the RT Radiation Set IOD.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.19.html#table_C.36.19-1"
     },
     {

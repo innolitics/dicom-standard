@@ -40807,7 +40807,7 @@
     },
     {
         "tag":"(3010,0096)",
-        "name":"Radiation Source Coordinate SystemPitch Angle",
+        "name":"Radiation Source Coordinate System Pitch Angle",
         "keyword":"RadiationSourceCoordinateSystemPitchAngle",
         "valueRepresentation":"FD",
         "valueMultiplicity":"1",

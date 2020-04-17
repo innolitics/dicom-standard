@@ -104,7 +104,7 @@
     {
         "name":"SOP Instance Reference",
         "id":"sop-instance-reference",
-        "description":"<p>\n<span href=\"#table_10-11\">This macro </span> specifies the Attributes that reference an SOP instance.</p>",
+        "description":"<p>\n<span href=\"#table_10-11\">This macro </span> specifies the Attributes that reference an SOP Instance.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.8.html#table_10-11"
     },
     {
