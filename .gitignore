@@ -1,6 +1,6 @@
 *.pyc
 __pycache__
-*.cache*
+*.*cache*
 venv
 env
 old_standards
@@ -8,3 +8,5 @@ tags
 .tox/
 *.egg-info/
 .python-version
+build
+dist
