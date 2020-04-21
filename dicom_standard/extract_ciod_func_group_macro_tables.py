@@ -12,7 +12,7 @@ from dicom_standard import parse_lib as pl
 from dicom_standard import parse_relations as pr
 from dicom_standard.macro_utils import MetadataTableType
 from dicom_standard.table_utils import (
-    TableListType,
+    StringifiedTableListType,
     TableDictType,
     get_chapter_tables,
     tables_to_json,
@@ -41,7 +41,7 @@ def is_valid_macro_table(table_div: Tag) -> bool:
     return bool(TABLE_SUFFIX.match(pr.table_name(table_div)))
 
 
-def macro_table_to_dict(table: TableListType) -> List[TableDictType]:
+def macro_table_to_dict(table: StringifiedTableListType) -> List[TableDictType]:
     return table_to_dict(table, COLUMN_TITLES)
 
 

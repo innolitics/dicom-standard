@@ -13,7 +13,7 @@ from dicom_standard import parse_lib as pl
 from dicom_standard import parse_relations as pr
 from dicom_standard.macro_utils import MetadataTableType
 from dicom_standard.table_utils import (
-    TableListType,
+    StringifiedTableListType,
     TableDictType,
     get_chapter_tables,
     tables_to_json,
@@ -22,19 +22,24 @@ from dicom_standard.table_utils import (
     table_to_dict,
 )
 
-CHAPTER_ID = 'chapter_A'
+CHAPTER_IDS = ['chapter_A', 'chapter_F']
 # Standard workaround: Include upper case "S" to catch typo in Table A.39.19-1
 # http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.35.19.3.html
 TABLE_SUFFIX = re.compile(".*IOD Module[sS]$")
-COLUMN_TITLES = ['informationEntity', 'module', 'reference_fragment', 'usage']
+COLUMN_TITLES_WITH_IE = ['informationEntity', 'module', 'referenceFragment', 'usage']
+COLUMN_TITLES_NO_IE = ['module', 'referenceFragment', 'usage', 'description']
 
 
 def is_valid_ciod_table(table_div: Tag) -> bool:
     return bool(TABLE_SUFFIX.match(pr.table_name(table_div)))
 
 
-def ciod_table_to_dict(table: TableListType) -> List[TableDictType]:
-    return table_to_dict(table, COLUMN_TITLES)
+def ciod_table_to_dict(table: StringifiedTableListType) -> List[TableDictType]:
+    # Table F.3-1 (the only table in section F) has no "Information Entity" column, so we check for the href in the second column
+    # http://dicom.nema.org/dicom/2013/output/chtml/part03/sect_F.3.html#table_F.3-1
+    sect_f_table = 'href' in table[0][1]
+    column_titles = COLUMN_TITLES_NO_IE if sect_f_table else COLUMN_TITLES_WITH_IE
+    return table_to_dict(table, column_titles)
 
 
 def get_table_with_metadata(table_with_tdiv: Tuple[List[TableDictType], Tag]) -> MetadataTableType:
@@ -52,6 +57,11 @@ def get_table_with_metadata(table_with_tdiv: Tuple[List[TableDictType], Tag]) ->
 
 if __name__ == "__main__":
     standard = pl.parse_html_file(sys.argv[1])
-    tables, tdivs = get_chapter_tables(standard, CHAPTER_ID, is_valid_ciod_table)
+    tables = []
+    tdivs = []
+    for chapter_id in CHAPTER_IDS:
+        chapter_tables, chapter_tdivs = get_chapter_tables(standard, chapter_id, is_valid_ciod_table)
+        tables += chapter_tables
+        tdivs += chapter_tdivs
     parsed_table_data = tables_to_json(tables, tdivs, ciod_table_to_dict, get_table_with_metadata)
     pl.write_pretty_json(parsed_table_data)

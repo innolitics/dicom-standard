@@ -1,14 +1,11 @@
-from typing import Tuple, List
+from typing import List
 import sys
 
-from bs4 import BeautifulSoup, Tag
-
 from dicom_standard import parse_lib as pl
-from dicom_standard.extract_attributes import attribute_table_to_list
-from dicom_standard.table_utils import TableDictType, table_to_dict
+from dicom_standard.table_utils import TableDictType, get_tables_from_ids
 
 COLUMN_TITLES = ['name', 'id', 'ciod']
-TABLE_ID = 'table_B.5-1'
+TABLE_IDS = ['table_B.5-1', 'table_I.4-1', 'table_GG.3-1']
 IOD_ABBREVIATIONS = {
     'Computed Radiography Image': 'CR Image',
     'Ultrasound Multi-frame Image': 'US Multi-frame Image',
@@ -25,29 +22,21 @@ IOD_ABBREVIATIONS = {
 }
 
 
-def get_table_and_tdiv(standard: BeautifulSoup) -> Tuple[List[TableDictType], Tag]:
-    all_tables = standard.find_all('div', class_='table')
-    html_table = pl.find_tdiv_by_id(all_tables, TABLE_ID)
-    list_table = attribute_table_to_list(html_table)
-    table_dict_list = table_to_dict(list_table, COLUMN_TITLES)
-    return (table_dict_list, html_table)
-
-
 def generate_ciod_id(name: str) -> str:
     cleaned_name = name.split('IOD')[0].strip()
     return IOD_ABBREVIATIONS.get(cleaned_name, cleaned_name)
 
 
-def table_to_json(table: List[TableDictType], tdiv: Tag) -> List[TableDictType]:
-    attributes = []
-    for row in table:
-        row['ciod'] = generate_ciod_id(row['ciod'])
-        attributes.append(row)
-    return attributes
+def sop_table_to_json(table: List[TableDictType]) -> List[TableDictType]:
+    sops = []
+    for sop in table:
+        sop['ciod'] = generate_ciod_id(sop['ciod'])
+        sops.append(sop)
+    return sops
 
 
 if __name__ == '__main__':
     standard = pl.parse_html_file(sys.argv[1])
-    table, tdiv = get_table_and_tdiv(standard)
-    parsed_table_data = table_to_json(table, tdiv)
+    table = get_tables_from_ids(standard, TABLE_IDS, COLUMN_TITLES)
+    parsed_table_data = sop_table_to_json(table)
     pl.write_pretty_json(parsed_table_data)

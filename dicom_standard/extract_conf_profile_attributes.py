@@ -7,8 +7,7 @@ import sys
 from bs4 import BeautifulSoup
 
 from dicom_standard import parse_lib as pl
-from dicom_standard.extract_attributes import attribute_table_to_list
-from dicom_standard.table_utils import TableDictType, table_to_dict
+from dicom_standard.table_utils import TableDictType, table_to_list, table_to_dict
 
 COLUMN_TITLES = [
     'name', 'tag', 'retired', 'stdCompIOD', 'basicProfile', 'rtnSafePrivOpt',
@@ -23,7 +22,7 @@ AttrTableType = List[Dict[str, Union[str, bool]]]
 def get_conf_profile_table(standard: BeautifulSoup) -> List[TableDictType]:
     all_tables = standard.find_all('div', class_='table')
     html_table = pl.find_tdiv_by_id(all_tables, TABLE_ID)
-    list_table = attribute_table_to_list(html_table)
+    list_table = table_to_list(html_table)
     return table_to_dict(list_table, COLUMN_TITLES, omit_empty=True)
 
 

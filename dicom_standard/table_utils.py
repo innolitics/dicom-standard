@@ -10,9 +10,26 @@ from dicom_standard import parse_lib as pl
 from dicom_standard import parse_relations as pr
 
 TableListType = List[List[Tag]]
+StringifiedTableListType = List[List[str]]
 TableDictType = Dict[str, str]
-TableToDictFunc = Callable[[TableListType], List[TableDictType]]
+TableToDictFunc = Callable[[StringifiedTableListType], List[TableDictType]]
 GetTableFunc = Callable[[Tuple[List[TableDictType], Tag]], Dict[str, Any]]
+
+
+def table_to_list(table_div: Tag) -> List[List[str]]:
+    return [[cell.text.strip() for cell in row.find_all('td')]
+            for row in pr.table_rows(table_div)]
+
+
+def get_tables_from_ids(standard: BeautifulSoup, table_ids: List[str], col_titles: List[str]) -> List[TableDictType]:
+    table_dict_list: List[TableDictType] = []
+    all_tables = standard.find_all('div', class_='table')
+    for table_id in table_ids:
+        html_table = pl.find_tdiv_by_id(all_tables, table_id)
+        table_list = table_to_list(html_table)
+        table_dict = table_to_dict(table_list, col_titles)
+        table_dict_list.extend(table_dict)
+    return table_dict_list
 
 
 def get_chapter_tables(standard: BeautifulSoup, chapter_id: str, validity_func: Callable[[Tag], bool]) -> Tuple[TableListType, List[Tag]]:

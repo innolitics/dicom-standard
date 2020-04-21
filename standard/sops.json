@@ -505,7 +505,7 @@
         "ciod":"Mammography CAD SR"
     },
     {
-        "name":"Key Object Selection Document Storage",
+        "name":"Key Object Selection Storage",
         "id":"1.2.840.10008.5.1.4.1.1.88.59",
         "ciod":"Key Object Selection Document"
     },
@@ -698,5 +698,45 @@
         "name":"RT Brachy Application Setup Delivery Instruction Storage",
         "id":"1.2.840.10008.5.1.4.34.10",
         "ciod":"RT Brachy Application Setup Delivery Instruction"
+    },
+    {
+        "name":"Media Storage Directory Storage",
+        "id":"1.2.840.10008.1.3.10",
+        "ciod":"Basic Directory"
+    },
+    {
+        "name":"Hanging Protocol Storage",
+        "id":"1.2.840.10008.5.1.4.38.1",
+        "ciod":"Hanging Protocol"
+    },
+    {
+        "name":"Color Palette Storage",
+        "id":"1.2.840.10008.5.1.4.39.1",
+        "ciod":"Color Palette"
+    },
+    {
+        "name":"Generic Implant Template Storage",
+        "id":"1.2.840.10008.5.1.4.43.1",
+        "ciod":"Generic Implant Template"
+    },
+    {
+        "name":"Implant Assembly Template Storage",
+        "id":"1.2.840.10008.5.1.4.44.1",
+        "ciod":"Implant Assembly Template"
+    },
+    {
+        "name":"Implant Template Group Storage",
+        "id":"1.2.840.10008.5.1.4.45.1",
+        "ciod":"Implant Template Group"
+    },
+    {
+        "name":"CT Defined Procedure Protocol Storage",
+        "id":"1.2.840.10008.5.1.4.1.1.200.1",
+        "ciod":"CT Defined Procedure Protocol"
+    },
+    {
+        "name":"Protocol Approval Storage",
+        "id":"1.2.840.10008.5.1.4.1.1.200.3",
+        "ciod":"Protocol Approval"
     }
 ]

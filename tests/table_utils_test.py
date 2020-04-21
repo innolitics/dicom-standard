@@ -7,6 +7,20 @@ import dicom_standard.table_utils as t
 import tests.html_snippets as tables
 
 
+def test_table_to_list():
+    example_table = '''
+    <tbody>
+        <tr><td>Data</td><td>inside</td><td>this</td><td>table</td></tr>
+        <tr><td>should</td><td>be</td><td>a</td><td>list</td></tr>
+    </tbody
+    '''
+    table = bs(example_table, 'html.parser')
+    expected_table_list = [['Data', 'inside', 'this', 'table'],
+                           ['should', 'be', 'a', 'list']]
+    table_as_list_of_lists = t.table_to_list(table)
+    assert expected_table_list == table_as_list_of_lists
+
+
 def parsed_html_table(string_table):
     parsed_html = bs(string_table, 'html.parser')
     table_tag = parsed_html.find('tbody')
