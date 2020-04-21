@@ -505,7 +505,7 @@
         "ciod":"Mammography CAD SR"
     },
     {
-        "name":"Key Object Selection Storage",
+        "name":"Key Object Selection Document Storage",
         "id":"1.2.840.10008.5.1.4.1.1.88.59",
         "ciod":"Key Object Selection Document"
     },

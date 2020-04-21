@@ -230,7 +230,7 @@
     {
         "name":"Basic Structured Display",
         "id":"basic-structured-display",
-        "description":"<p>\nThe Basic Structured Display Information Object Definition (IOD) specifies an instance of a single screen structured display that has been created for a Patient. It references specific image or other composite SOP instances from one or more Studies for that Patient, or for other Patients for comparison, arranged in a specific presentation layout. Presentation of images within the structured display may be controlled by referenced Softcopy Presentation State instances. The structured display may include text annotations.</p>",
+        "description":"<p>\nThe Basic Structured Display Information Object Definition (IOD) specifies an Instance of a single screen structured display that has been created for a Patient. It references specific image or other composite SOP Instances from one or more Studies for that Patient, or for other Patients for comparison, arranged in a specific presentation layout. Presentation of images within the structured display may be controlled by referenced Softcopy Presentation State Instances. The structured display may include text annotations.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.33.5.3.html#table_A.33.5.1-1"
     },
     {
@@ -374,7 +374,7 @@
     {
         "name":"Implantation Plan SR Document",
         "id":"implantation-plan-sr-document",
-        "description":"<p>\nThe Implantation Plan SR Document IOD contains the results of a planning process for an individual Patient, wherein specific implant templates are selected and positioned using images of the Patient. The Implantation Plan SR Document references the implant templates, the images, and the registration SOP instances that are used in the planning.</p>",
+        "description":"<p>\nThe Implantation Plan SR Document IOD contains the results of a planning process for an individual Patient, wherein specific implant templates are selected and positioned using images of the Patient. The Implantation Plan SR Document references the implant templates, the images, and the registration SOP Instances that are used in the planning.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.35.12.3.html#table_A.35.12-1"
     },
     {
@@ -422,7 +422,7 @@
     {
         "name":"Performed Imaging Agent Administration SR",
         "id":"performed-imaging-agent-administration-sr",
-        "description":"<p>\nThe Performed Imaging Agent Administration SR IOD describes the imaging agent delivery whether manual methods or automated power-injector devices were used. It includes a reference to the Planned Imaging Agent Administration Procedure SR SOP instance if based on a plan.</p>",
+        "description":"<p>\nThe Performed Imaging Agent Administration SR IOD describes the imaging agent delivery whether manual methods or automated power-injector devices were used. It includes a reference to the Planned Imaging Agent Administration Procedure SR SOP Instance if based on a plan.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.35.20.3.html#table_A.35.20-1"
     },
     {
@@ -476,7 +476,7 @@
     {
         "name":"Spatial Fiducials",
         "id":"spatial-fiducials",
-        "description":"<p>\nThe Fiducials IOD specifies the spatial relationship between the Composite Fiducial instance, to one or more images.</p>",
+        "description":"<p>\nThe Fiducials IOD specifies the spatial relationship between the Composite Fiducial Instance, to one or more images.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.40.3.html#table_A.40-1"
     },
     {
@@ -548,7 +548,7 @@
     {
         "name":"Segmentation",
         "id":"segmentation",
-        "description":"<p>\nThe Segmentation Information Object Definition (IOD) specifies a multi-frame image representing a classification of pixels in one or more referenced images. Segmentations are either binary or fractional. If the referenced images have a defined Frame of Reference, the segmentation instance shall have the same Frame of Reference and is not required to have the same spatial sampling or extent as the referenced images. If the referenced image does not have a defined Frame of Reference, the segmentation instance shall have the same spatial sampling and extent as the referenced image.</p>",
+        "description":"<p>\nThe Segmentation Information Object Definition (IOD) specifies a multi-frame image representing a classification of pixels in one or more referenced images. Segmentations are either binary or fractional. If the referenced images have a defined Frame of Reference, the Segmentation Instance shall have the same Frame of Reference and is not required to have the same spatial sampling or extent as the referenced images. If the referenced image does not have a defined Frame of Reference, the Segmentation Instance shall have the same spatial sampling and extent as the referenced image.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.51.3.html#table_A.51-1"
     },
     {
@@ -752,7 +752,7 @@
     {
         "name":"RT Brachy Application Setup Delivery Instruction",
         "id":"rt-brachy-application-setup-delivery-instruction",
-        "description":"<p>\nIn order to deliver a Brachytherapy treatment fraction described in an RT Plan IOD, the RT Brachy Application Setup Delivery Instruction IOD describes which part of the RT Plan is to be delivered and contains additional parameters. This information is supplied by a Treatment Management System (TMS) when it creates an RT Brachy Application Setup Delivery Instruction SOP instance which is referenced by a Unified Procedure Step (UPS) in the Unified Worklist and Procedure Step model.</p>",
+        "description":"<p>\nIn order to deliver a Brachytherapy treatment fraction described in an RT Plan IOD, the RT Brachy Application Setup Delivery Instruction IOD describes which part of the RT Plan is to be delivered and contains additional parameters. This information is supplied by a Treatment Management System (TMS) when it creates an RT Brachy Application Setup Delivery Instruction SOP Instance which is referenced by a Unified Procedure Step (UPS) in the Unified Worklist and Procedure Step model.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.79.3.html#table_A.79.3-1"
     },
     {

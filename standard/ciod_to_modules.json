@@ -5540,7 +5540,7 @@
         "ciodId":"real-time-video-endoscopic-image",
         "moduleId":"frame-of-reference",
         "usage":"C",
-        "conditionalStatement":"Required if multiple instances are spatially related or if the Camera Position Functional Group Macro is present in the Current Frame Functional Groups Module",
+        "conditionalStatement":"Required if multiple Instances are spatially related or if the Camera Position Functional Group Macro is present in the Current Frame Functional Groups Module",
         "informationEntity":"Frame of Reference"
     },
     {
@@ -5701,7 +5701,7 @@
         "ciodId":"real-time-video-photographic-image",
         "moduleId":"frame-of-reference",
         "usage":"C",
-        "conditionalStatement":"Required if multiple instances are spatially related or if the Camera Position Functional Group Module is present in the Current Frame Functional Groups Module",
+        "conditionalStatement":"Required if multiple Instances are spatially related or if the Camera Position Functional Group Module is present in the Current Frame Functional Groups Module",
         "informationEntity":"Frame of Reference"
     },
     {
@@ -18014,7 +18014,7 @@
         "ciodId":"encapsulated-stl",
         "moduleId":"common-instance-reference",
         "usage":"C",
-        "conditionalStatement":"Required if other instances are referenced",
+        "conditionalStatement":"Required if other Instances are referenced",
         "informationEntity":"Encapsulated Document"
     },
     {
@@ -18119,7 +18119,7 @@
         "ciodId":"encapsulated-obj",
         "moduleId":"common-instance-reference",
         "usage":"C",
-        "conditionalStatement":"Required if other instances are referenced",
+        "conditionalStatement":"Required if other Instances are referenced",
         "informationEntity":"Encapsulated Document"
     },
     {
@@ -18217,7 +18217,7 @@
         "ciodId":"encapsulated-mtl",
         "moduleId":"common-instance-reference",
         "usage":"C",
-        "conditionalStatement":"Required if other instances are referenced",
+        "conditionalStatement":"Required if other Instances are referenced",
         "informationEntity":"Encapsulated Document"
     },
     {
