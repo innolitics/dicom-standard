@@ -2,7 +2,7 @@ from typing import List
 import sys
 
 from dicom_standard import parse_lib as pl
-from dicom_standard.table_utils import TableDictType, get_tables_from_ids
+from dicom_standard.table_utils import TableDictType, get_table_rows_from_ids
 
 COLUMN_TITLES = ['name', 'id', 'ciod']
 TABLE_IDS = ['table_B.5-1', 'table_I.4-1', 'table_GG.3-1']
@@ -37,6 +37,6 @@ def sop_table_to_json(table: List[TableDictType]) -> List[TableDictType]:
 
 if __name__ == '__main__':
     standard = pl.parse_html_file(sys.argv[1])
-    table = get_tables_from_ids(standard, TABLE_IDS, COLUMN_TITLES)
+    table = get_table_rows_from_ids(standard, TABLE_IDS, COLUMN_TITLES)
     parsed_table_data = sop_table_to_json(table)
     pl.write_pretty_json(parsed_table_data)

@@ -21,7 +21,7 @@ def table_to_list(table_div: Tag) -> List[List[str]]:
             for row in pr.table_rows(table_div)]
 
 
-def get_tables_from_ids(standard: BeautifulSoup, table_ids: List[str], col_titles: List[str]) -> List[TableDictType]:
+def get_table_rows_from_ids(standard: BeautifulSoup, table_ids: List[str], col_titles: List[str]) -> List[TableDictType]:
     table_dict_list: List[TableDictType] = []
     all_tables = standard.find_all('div', class_='table')
     for table_id in table_ids:
