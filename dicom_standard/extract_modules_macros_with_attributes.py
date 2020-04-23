@@ -12,6 +12,7 @@ from dicom_standard import parse_lib as pl
 from dicom_standard import parse_relations as pr
 from dicom_standard.macro_utils import MetadataTableType
 from dicom_standard.table_utils import (
+    StringifiedTableListType,
     TableListType,
     TableDictType,
     tdiv_to_table_list,
@@ -38,7 +39,7 @@ def is_valid_table(table_div: Tag) -> bool:
     return bool(TABLE_SUFFIX.match(table_name)) and 'Example' not in table_name
 
 
-def module_table_to_dict(table: TableListType) -> List[TableDictType]:
+def module_table_to_dict(table: StringifiedTableListType) -> List[TableDictType]:
     has_type_column = len(table[0]) > 3
     column_titles = COLUMN_TITLES_WITH_TYPE if has_type_column else COLUMN_TITLES_NO_TYPE
     return table_to_dict(table, column_titles)

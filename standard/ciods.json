@@ -856,5 +856,11 @@
         "id":"robotic-arm-radiation",
         "description":"None",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.86.html#table_A.86.1.7-1"
+    },
+    {
+        "name":"Basic Directory",
+        "id":"basic-directory",
+        "description":"<p>\nThe Basic Directory IOD includes the Modules specified by <a href=\"http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_F.3-1\" target=\"_blank\">Table\u00a0F.3-1</a>.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_F.3.html#table_F.3-1"
     }
 ]

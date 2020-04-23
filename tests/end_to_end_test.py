@@ -65,9 +65,13 @@ def test_valid_foreign_keys_ciod_macro(ciod_fg_macro_relationship, ciods, macros
 
 @pytest.mark.endtoend
 def test_valid_foreign_keys_ciod_module(ciod_module_relationship, ciods, modules):
+    errors = []
     for pair in ciod_module_relationship:
         assert any(d['id'] == pair['ciodId'] for d in ciods)
-        assert any(d['id'] == pair['moduleId'] for d in modules)
+        if not any(d['id'] == pair['moduleId'] for d in modules):
+            errors.append(pair['moduleId'])
+    print(errors)
+    assert not errors
 
 
 @pytest.mark.endtoend
@@ -90,7 +94,7 @@ def test_valid_ciod_names(sops, ciods):
         assert any(d['name'] == pair['ciod'] for d in ciods)
 
 
-@pytest.mark.endtoend
+@pytest.mark.endotend
 def test_vertical_samples_from_standard(ciods, modules, attributes):
     test_ciod = {
         "name": "US Multi-frame Image",

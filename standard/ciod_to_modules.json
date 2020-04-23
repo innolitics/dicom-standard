@@ -18968,5 +18968,19 @@
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"RT Radiation"
+    },
+    {
+        "ciodId":"basic-directory",
+        "moduleId":"file-set-identification",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":null
+    },
+    {
+        "ciodId":"basic-directory",
+        "moduleId":"directory-information",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":null
     }
 ]
