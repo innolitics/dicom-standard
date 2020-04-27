@@ -12,7 +12,7 @@ from dicom_standard import parse_lib as pl
 
 def get_hierarchy_markers(name: str) -> str:
     clean_name = name.strip().replace('\n', '')
-    _, *split = re.split('^(>+)', clean_name)
+    _, *split = re.split(r'^(>+)', clean_name)
     return '' if split == [] else split[0]
 
 
