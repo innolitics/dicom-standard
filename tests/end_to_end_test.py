@@ -317,6 +317,5 @@ class TestUniqueIds:
 @pytest.mark.endtoend
 def test_no_duplicate_paths(module_attribute_relationship):
     path_list = [d['path'] for d in module_attribute_relationship]
-    duplicates = [k for k, v in Counter(path_list).items() if v > 1]
-    print(duplicates)
-    assert not duplicates
+    duplicate_paths = [k for k, v in Counter(path_list).items() if v > 1]
+    assert not duplicate_paths
