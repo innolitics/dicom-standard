@@ -5,16 +5,9 @@ import re
 import sys
 from collections import Counter
 
-from bs4 import BeautifulSoup
-
 from dicom_standard import parse_lib as pl
 
 DUPLICATE_PATH_EXCEPTIONS = ['rt-segment-annotation:00700084']
-
-
-def get_description_text(raw_description):
-    description = BeautifulSoup(raw_description, "html.parser")
-    return description.getText()
 
 
 def add_conditional_to_description(node):
@@ -27,7 +20,7 @@ def add_conditional_to_description(node):
 
 def is_duplicate_node(path, module_attr_list):
     instances = filter(lambda n: n['path'] == path, module_attr_list)
-    descriptions = map(lambda n: get_description_text(n['description']), instances)
+    descriptions = map(lambda n: n['description'], instances)
     return len(set(descriptions)) > 1
 
 
