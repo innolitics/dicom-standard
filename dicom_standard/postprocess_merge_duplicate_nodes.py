@@ -25,33 +25,35 @@ def add_conditional_to_description(node):
     node['description'] = formatted_conditional + node['description']
 
 
+def is_duplicate_node(path, module_attr_list):
+    instances = filter(lambda n: n['path'] == path, module_attr_list)
+    descriptions = map(lambda n: get_description_text(n['description']), instances)
+    return len(set(descriptions)) > 1
+
+
 def merge_duplicate_nodes(module_attr_list):
     path_list = [d['path'] for d in module_attr_list]
     duplicate_paths = [k for k, v in Counter(path_list).items() if v > 1]
     path_to_node = {}
     for node in module_attr_list:
         path = node['path']
-        # Standard workaround: Catch inconsistency in Table C.36.8-1 where "Content Creator's Name" attribute
-        # appears twice in same hierarchy without a conditional
-        # http://dicom.nema.org/medical/dicom/2019c/output/chtml/part03/sect_C.36.8.html
-        if path not in DUPLICATE_PATH_EXCEPTIONS:
-            if path in path_to_node:
+        if path in path_to_node:
+            # Standard workaround: Catch inconsistency in Table C.36.8-1 where "Content Creator's Name" attribute
+            # appears twice in same hierarchy without a conditional
+            # http://dicom.nema.org/medical/dicom/2019c/output/chtml/part03/sect_C.36.8.html
+            if path not in DUPLICATE_PATH_EXCEPTIONS:
                 # Add conditional to description only if the duplicates do not have identical descriptions
-                instances = filter(lambda n: n['path'] == path, module_attr_list)
-                descriptions = map(lambda n: get_description_text(n['description']), instances)
-                if len(set(descriptions)) > 1:
+                if is_duplicate_node(path, module_attr_list):
                     add_conditional_to_description(node)
                     path_to_node[path]['description'] += node['description']
                     path_to_node[path]['externalReferences'].extend(node['externalReferences'])
-            else:
-                if path in duplicate_paths:
-                    # Add conditional to description only if the duplicates do not have identical descriptions
-                    instances = filter(lambda n: n['path'] == path, module_attr_list)
-                    descriptions = map(lambda n: get_description_text(n['description']), instances)
-                    if len(set(descriptions)) > 1:
-                        add_conditional_to_description(node)
-                path_to_node[path] = node
-            path_to_node[path].pop('conditional', None)
+        else:
+            if path in duplicate_paths and path not in DUPLICATE_PATH_EXCEPTIONS:
+                # Add conditional to description only if the duplicates do not have identical descriptions
+                if is_duplicate_node(path, module_attr_list):
+                    add_conditional_to_description(node)
+            path_to_node[path] = node
+        path_to_node[path].pop('conditional', None)
     return list(path_to_node.values())
 
 
