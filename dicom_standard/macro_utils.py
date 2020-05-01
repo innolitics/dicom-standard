@@ -2,7 +2,7 @@
 Utility functions for expanding macros in the module-attribute
 relationship tables.
 '''
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 import re
 from copy import deepcopy
 
@@ -15,22 +15,24 @@ MetadataTableType = Dict[str, Any]
 MacrosType = Dict[str, MetadataTableType]
 
 
-def expand_macro_rows(table: Tag, macros: MacrosType) -> List[Dict[str, str]]:
+def expand_macro_rows(table: Tag, macros: MacrosType, conditional: Optional[str] = None) -> List[Dict[str, str]]:
     # This variable is used to stop an infinite macro reference
     # loop in the standard at the SR Document Content module.
     table_id = get_id_from_link(table['linkToStandard'])
-    attribute_insertion_lists = [get_attributes_to_insert(attr, macros, table_id)
+    attribute_insertion_lists = [get_attributes_to_insert(attr, macros, table_id, conditional)
                                  for attr in table['attributes']]
     new_table = flatten_one_layer(attribute_insertion_lists)
     # Removes divider or stylistic rows
     return [attribute for attribute in new_table if attribute['tag'] != 'None']
 
 
-def get_attributes_to_insert(attribute: AttributeType, macros: MacrosType, table_id: str) -> List[Dict[str, str]]:
+def get_attributes_to_insert(attribute: AttributeType, macros: MacrosType, table_id: str, conditional: Optional[str] = None) -> List[Dict[str, str]]:
     if is_macro_row(attribute):
-        new_attributes = get_macro_attributes(attribute, macros, table_id)
+        new_attributes = get_macro_attributes(attribute, macros, table_id, conditional)
         return new_attributes if new_attributes is not None else []
     else:
+        if conditional:
+            attribute['conditional'] = conditional
         return [attribute]
 
 
@@ -46,12 +48,15 @@ def is_macro_row(attribute: AttributeType) -> bool:
 
 # Note that this function *recursively expands* macro references using
 # the `expand_macro_rows` function.
-def get_macro_attributes(attribute: AttributeType, macros: MacrosType, table_id: str) -> List[AttributeType]:
+def get_macro_attributes(attribute: AttributeType, macros: MacrosType, table_id: str, conditional: Optional[str] = None) -> List[AttributeType]:
     macro_id = referenced_macro_id_from_include_statement(attribute['name'])
     parsed_name = BeautifulSoup(attribute['name'], 'html.parser').get_text()
     hierarchy_marker = get_hierarchy_markers(parsed_name)
+    conditional_match = re.search("if +.*", parsed_name.strip())
+    if conditional_match:
+        conditional = conditional_match.group()
     if table_id != macro_id:
-        return expand_macro_rows(get_macros_by_id(macro_id, macros, hierarchy_marker), macros)
+        return expand_macro_rows(get_macros_by_id(macro_id, macros, hierarchy_marker), macros, conditional)
     return []
 
 

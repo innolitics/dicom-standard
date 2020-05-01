@@ -12,7 +12,7 @@ from dicom_standard import parse_lib as pl
 
 def get_hierarchy_markers(name: str) -> str:
     clean_name = name.strip().replace('\n', '')
-    _, *split = re.split('^(>+)', clean_name)
+    _, *split = re.split(r'^(>+)', clean_name)
     return '' if split == [] else split[0]
 
 
@@ -40,6 +40,12 @@ def update_hierarchy_position(attr: Dict[str, str], last_id: List[str], current_
     if attr_id == 'none':
         print(attr)
         raise Exception('this shouldn\'t happen')
+    if delta_l > 1:
+        # Standard workaround: There is a typo in the DICOM standard where two hierarchy
+        # markers are used instead of one. This catches that anomaly.
+        delta_l = 1
+        # Error can be seen at the following link (rev. 2020b):
+        # http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.25.16-8
     if delta_l == 0:
         last_id[-1] = attr_id
     elif delta_l == 1:

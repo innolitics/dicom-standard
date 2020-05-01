@@ -42,8 +42,8 @@ dist/ciod_to_modules.json: tmp/raw_ciod_module_tables.json
 dist/ciod_to_func_group_macros.json: tmp/raw_ciod_func_group_macro_tables.json
 	$(PYTHONPATH_PREFIX) python3 process_ciod_func_group_macro_relationship.py $< > $@
 
-dist/module_to_attributes.json: tmp/modules_attributes_partial_references.json dist/references.json
-	$(PYTHONPATH_PREFIX) python3 postprocess_update_reference_links.py $^ > $@
+dist/module_to_attributes.json: tmp/modules_attributes_updated_references.json
+	$(PYTHONPATH_PREFIX) python3 postprocess_merge_duplicate_nodes.py $< > $@
 
 dist/macro_to_attributes.json: tmp/macros_attributes_partial_references.json dist/references.json
 	$(PYTHONPATH_PREFIX) python3 postprocess_update_reference_links.py $^ > $@
@@ -51,6 +51,9 @@ dist/macro_to_attributes.json: tmp/macros_attributes_partial_references.json dis
 dist/references.json: tmp/modules_attributes_partial_references.json tmp/raw_section_tables.json
 	$(PYTHONPATH_PREFIX) python3 postprocess_save_references.py $^ > $@
 
+
+tmp/modules_attributes_updated_references.json: tmp/modules_attributes_partial_references.json dist/references.json
+	$(PYTHONPATH_PREFIX) python3 postprocess_update_reference_links.py $^ > $@
 
 tmp/modules_attributes_partial_references.json: tmp/modules_attributes_no_references.json
 	$(PYTHONPATH_PREFIX) python3 postprocess_mark_references.py $< > $@

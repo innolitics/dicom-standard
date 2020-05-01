@@ -94,7 +94,7 @@ def test_valid_ciod_names(sops, ciods):
         assert any(d['name'] == pair['ciod'] for d in ciods)
 
 
-@pytest.mark.endotend
+@pytest.mark.endtoend
 def test_vertical_samples_from_standard(ciods, modules, attributes):
     test_ciod = {
         "name": "US Multi-frame Image",
@@ -312,3 +312,10 @@ class TestUniqueIds:
 
     def test_no_duplicate_sops(self, sops):
         assert not self.get_duplicate_ids(sops)
+
+
+@pytest.mark.endtoend
+def test_no_duplicate_paths(module_attribute_relationship):
+    path_list = [d['path'] for d in module_attribute_relationship]
+    duplicate_paths = [k for k, v in Counter(path_list).items() if v > 1]
+    assert not duplicate_paths

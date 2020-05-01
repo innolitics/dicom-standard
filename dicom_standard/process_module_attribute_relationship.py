@@ -13,7 +13,8 @@ def module_attr_relationship_table(module_attr_list):
                 'tag': attribute['tag'],
                 'type': attribute['type'],
                 'linkToStandard': get_standard_link(module, attribute),
-                'description': attribute['description']
+                'description': attribute['description'],
+                'conditional': attribute.get('conditional'),
             })
     return entries
 
