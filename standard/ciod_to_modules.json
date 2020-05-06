@@ -1485,7 +1485,7 @@
     },
     {
         "ciodId":"multi-frame-grayscale-byte-sc-image",
-        "moduleId":"multi-frame-functional-groups",
+        "moduleId":"multi-frame-grayscale-byte-sc-image-multi-frame-functional-groups",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
@@ -1681,7 +1681,7 @@
     },
     {
         "ciodId":"multi-frame-grayscale-word-sc-image",
-        "moduleId":"multi-frame-functional-groups",
+        "moduleId":"multi-frame-grayscale-word-sc-image-multi-frame-functional-groups",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
@@ -1877,7 +1877,7 @@
     },
     {
         "ciodId":"multi-frame-true-color-sc-image",
-        "moduleId":"multi-frame-functional-groups",
+        "moduleId":"multi-frame-true-color-sc-image-multi-frame-functional-groups",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
@@ -5405,7 +5405,7 @@
     },
     {
         "ciodId":"vl-whole-slide-microscopy-image",
-        "moduleId":"multi-frame-functional-groups",
+        "moduleId":"vl-whole-slide-microscopy-image-multi-frame-functional-groups",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
@@ -9822,7 +9822,7 @@
     },
     {
         "ciodId":"enhanced-mr-image",
-        "moduleId":"multi-frame-functional-groups",
+        "moduleId":"enhanced-mr-image-multi-frame-functional-groups",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
@@ -10018,7 +10018,7 @@
     },
     {
         "ciodId":"mr-spectroscopy",
-        "moduleId":"multi-frame-functional-groups",
+        "moduleId":"mr-spectroscopy-multi-frame-functional-groups",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"MR Spectroscopy"
@@ -10207,7 +10207,7 @@
     },
     {
         "ciodId":"enhanced-mr-color-image",
-        "moduleId":"multi-frame-functional-groups",
+        "moduleId":"enhanced-mr-color-image-multi-frame-functional-groups",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
@@ -10501,7 +10501,7 @@
     },
     {
         "ciodId":"enhanced-ct-image",
-        "moduleId":"multi-frame-functional-groups",
+        "moduleId":"enhanced-ct-image-multi-frame-functional-groups",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
@@ -11733,7 +11733,7 @@
     },
     {
         "ciodId":"enhanced-xa-image",
-        "moduleId":"multi-frame-functional-groups",
+        "moduleId":"enhanced-xa-image-multi-frame-functional-groups",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
@@ -11964,7 +11964,7 @@
     },
     {
         "ciodId":"enhanced-xrf-image",
-        "moduleId":"multi-frame-functional-groups",
+        "moduleId":"enhanced-xrf-image-multi-frame-functional-groups",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
@@ -12440,7 +12440,7 @@
     },
     {
         "ciodId":"segmentation",
-        "moduleId":"multi-frame-functional-groups",
+        "moduleId":"segmentation-multi-frame-functional-groups",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
@@ -12580,7 +12580,7 @@
     },
     {
         "ciodId":"ophthalmic-tomography-image",
-        "moduleId":"multi-frame-functional-groups",
+        "moduleId":"ophthalmic-tomography-image-multi-frame-functional-groups",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
@@ -12776,7 +12776,7 @@
     },
     {
         "ciodId":"x-ray-3d-angiographic-image",
-        "moduleId":"multi-frame-functional-groups",
+        "moduleId":"x-ray-3d-angiographic-image-multi-frame-functional-groups",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
@@ -12986,7 +12986,7 @@
     },
     {
         "ciodId":"x-ray-3d-craniofacial-image",
-        "moduleId":"multi-frame-functional-groups",
+        "moduleId":"x-ray-3d-craniofacial-image-multi-frame-functional-groups",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
@@ -13189,7 +13189,7 @@
     },
     {
         "ciodId":"breast-tomosynthesis-image",
-        "moduleId":"multi-frame-functional-groups",
+        "moduleId":"breast-tomosynthesis-image-multi-frame-functional-groups",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
@@ -13378,7 +13378,7 @@
     },
     {
         "ciodId":"enhanced-pet-image",
-        "moduleId":"multi-frame-functional-groups",
+        "moduleId":"enhanced-pet-image-multi-frame-functional-groups",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
@@ -13721,7 +13721,7 @@
     },
     {
         "ciodId":"enhanced-us-volume",
-        "moduleId":"multi-frame-functional-groups",
+        "moduleId":"enhanced-us-volume-multi-frame-functional-groups",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
@@ -14841,7 +14841,7 @@
     },
     {
         "ciodId":"intravascular-optical-coherence-tomography-image",
-        "moduleId":"multi-frame-functional-groups",
+        "moduleId":"intravascular-optical-coherence-tomography-image-multi-frame-functional-groups",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
@@ -15387,7 +15387,7 @@
     },
     {
         "ciodId":"legacy-converted-enhanced-ct-image",
-        "moduleId":"multi-frame-functional-groups",
+        "moduleId":"legacy-converted-enhanced-ct-image-multi-frame-functional-groups",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
@@ -15569,7 +15569,7 @@
     },
     {
         "ciodId":"legacy-converted-enhanced-mr-image",
-        "moduleId":"multi-frame-functional-groups",
+        "moduleId":"legacy-converted-enhanced-mr-image-multi-frame-functional-groups",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
@@ -15758,7 +15758,7 @@
     },
     {
         "ciodId":"legacy-converted-enhanced-pet-image",
-        "moduleId":"multi-frame-functional-groups",
+        "moduleId":"legacy-converted-enhanced-pet-image-multi-frame-functional-groups",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
@@ -16108,7 +16108,7 @@
     },
     {
         "ciodId":"breast-projection-x-ray-image",
-        "moduleId":"multi-frame-functional-groups",
+        "moduleId":"breast-projection-x-ray-image-multi-frame-functional-groups",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
@@ -16283,7 +16283,7 @@
     },
     {
         "ciodId":"parametric-map",
-        "moduleId":"multi-frame-functional-groups",
+        "moduleId":"parametric-map-multi-frame-functional-groups",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
@@ -17879,7 +17879,7 @@
     },
     {
         "ciodId":"ophthalmic-optical-coherence-tomography-b-scan-volume-analysis",
-        "moduleId":"multi-frame-functional-groups",
+        "moduleId":"ophthalmic-optical-coherence-tomography-b-scan-volume-analysis-multi-frame-functional-groups",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
