@@ -1,4 +1,5 @@
 .SUFFIXES:)
+.DELETE_ON_ERROR:
 
 .PHONY: clean tests unittest endtoendtest updatestandard checkversions
 
@@ -21,8 +22,8 @@ relationship_tables: dist/ciod_to_modules.json dist/ciod_to_func_group_macros.js
 dist/ciods.json: tmp/raw_ciod_module_tables.json
 	$(PYTHONPATH_PREFIX) python3 process_ciods.py $< > $@
 
-dist/modules.json: tmp/preprocessed_modules_attributes.json
-	$(PYTHONPATH_PREFIX) python3 process_modules.py $< > $@
+dist/modules.json: tmp/preprocessed_modules_attributes.json dist/ciod_to_func_group_macros.json
+	$(PYTHONPATH_PREFIX) python3 process_modules.py $^ > $@
 
 dist/macros.json: tmp/preprocessed_macros_attributes.json
 	$(PYTHONPATH_PREFIX) python3 process_macros.py $< > $@
@@ -42,8 +43,8 @@ dist/ciod_to_modules.json: tmp/raw_ciod_module_tables.json
 dist/ciod_to_func_group_macros.json: tmp/raw_ciod_func_group_macro_tables.json
 	$(PYTHONPATH_PREFIX) python3 process_ciod_func_group_macro_relationship.py $< > $@
 
-dist/module_to_attributes.json: tmp/modules_attributes_updated_references.json
-	$(PYTHONPATH_PREFIX) python3 postprocess_merge_duplicate_nodes.py $< > $@
+dist/module_to_attributes.json: tmp/module_to_attributes_no_duplicates.json dist/macros.json dist/ciod_to_func_group_macros.json dist/macro_to_attributes.json
+	$(PYTHONPATH_PREFIX) python3 postprocess_integrate_func_group_macros.py $^ > $@
 
 dist/macro_to_attributes.json: tmp/macros_attributes_partial_references.json dist/references.json
 	$(PYTHONPATH_PREFIX) python3 postprocess_update_reference_links.py $^ > $@
@@ -51,6 +52,9 @@ dist/macro_to_attributes.json: tmp/macros_attributes_partial_references.json dis
 dist/references.json: tmp/modules_attributes_partial_references.json tmp/raw_section_tables.json
 	$(PYTHONPATH_PREFIX) python3 postprocess_save_references.py $^ > $@
 
+
+tmp/module_to_attributes_no_duplicates.json: tmp/modules_attributes_updated_references.json
+	$(PYTHONPATH_PREFIX) python3 postprocess_merge_duplicate_nodes.py $< > $@
 
 tmp/modules_attributes_updated_references.json: tmp/modules_attributes_partial_references.json dist/references.json
 	$(PYTHONPATH_PREFIX) python3 postprocess_update_reference_links.py $^ > $@

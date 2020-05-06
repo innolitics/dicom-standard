@@ -39,9 +39,14 @@ def define_ciod_module_relationship(ciod, module):
             and any(mod in module['module'] for mod in ['Real-Time Acquisition', 'Current Frame Functional Groups'])):
         # Manually input missing field
         information_entity = 'Image'
+    ciod_id = pl.create_slug(ciod)
+    module_id = pl.create_slug(pl.text_from_html_string(module['module']))
+    # Add CIOD ID to differentiate "Multi-Frame Functional Group" modules for different CIODs
+    if module_id == 'multi-frame-functional-groups':
+        module_id = f'{ciod_id}-{module_id}'
     return {
-        "ciodId": pl.create_slug(ciod),
-        "moduleId": pl.create_slug(pl.text_from_html_string(module['module'])),
+        "ciodId": ciod_id,
+        "moduleId": module_id,
         "usage": usage,
         "conditionalStatement": conditional_statement,
         "informationEntity": information_entity,
