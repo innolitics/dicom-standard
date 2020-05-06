@@ -61,7 +61,7 @@ def get_table_with_metadata(table_with_tdiv: Tuple[List[TableDictType], Tag]) ->
 
 def add_enhanced_mr_color_image_table(table_data):
     ''' Standard workaround: The Enhanced MR Color Image IOD does not have its own set
-    of Functional Group Macros, but instead refers to the Enhanced MR Image Functioanl
+    of Functional Group Macros, but instead refers to the Enhanced MR Image Functional
     Group Macros Table, so we duplicate that table object and modify the name
     See http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.36.4.4.html
     '''

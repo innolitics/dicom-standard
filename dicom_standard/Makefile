@@ -1,4 +1,4 @@
-.SUFFIXES:)
+.SUFFIXES:
 .DELETE_ON_ERROR:
 
 .PHONY: clean tests unittest endtoendtest updatestandard checkversions
