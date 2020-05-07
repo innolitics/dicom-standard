@@ -2194,5 +2194,179 @@
         "macroId":"real-world-value-mapping",
         "usage":"U",
         "conditionalStatement":null
+    },
+    {
+        "ciodId":"enhanced-mr-color-image",
+        "macroId":"pixel-measures",
+        "usage":"M",
+        "conditionalStatement":null
+    },
+    {
+        "ciodId":"enhanced-mr-color-image",
+        "macroId":"frame-content",
+        "usage":"M",
+        "conditionalStatement":null
+    },
+    {
+        "ciodId":"enhanced-mr-color-image",
+        "macroId":"plane-position-patient",
+        "usage":"M",
+        "conditionalStatement":null
+    },
+    {
+        "ciodId":"enhanced-mr-color-image",
+        "macroId":"plane-orientation-patient",
+        "usage":"M",
+        "conditionalStatement":null
+    },
+    {
+        "ciodId":"enhanced-mr-color-image",
+        "macroId":"referenced-image",
+        "usage":"C",
+        "conditionalStatement":"Required if the image or frame has been planned on another image or frame. May be present otherwise"
+    },
+    {
+        "ciodId":"enhanced-mr-color-image",
+        "macroId":"derivation-image",
+        "usage":"C",
+        "conditionalStatement":"Required if the image or frame has been derived from another SOP Instance."
+    },
+    {
+        "ciodId":"enhanced-mr-color-image",
+        "macroId":"cardiac-synchronization",
+        "usage":"C",
+        "conditionalStatement":"Required if Cardiac Synchronization Technique (0018,9037) equals other than NONE and if Image Type (0008,0008) Value 1 is ORIGINAL or MIXED. May be present otherwise."
+    },
+    {
+        "ciodId":"enhanced-mr-color-image",
+        "macroId":"frame-anatomy",
+        "usage":"M",
+        "conditionalStatement":null
+    },
+    {
+        "ciodId":"enhanced-mr-color-image",
+        "macroId":"pixel-value-transformation",
+        "usage":"C",
+        "conditionalStatement":"Required if Photometric Interpretation (0028,0004) is MONOCHROME2."
+    },
+    {
+        "ciodId":"enhanced-mr-color-image",
+        "macroId":"frame-voi-lut",
+        "usage":"U",
+        "conditionalStatement":null
+    },
+    {
+        "ciodId":"enhanced-mr-color-image",
+        "macroId":"real-world-value-mapping",
+        "usage":"U",
+        "conditionalStatement":null
+    },
+    {
+        "ciodId":"enhanced-mr-color-image",
+        "macroId":"contrast-bolus-usage",
+        "usage":"C",
+        "conditionalStatement":"Required if Contrast/Bolus Agent Sequence (0018,0012) is used."
+    },
+    {
+        "ciodId":"enhanced-mr-color-image",
+        "macroId":"respiratory-synchronization",
+        "usage":"C",
+        "conditionalStatement":"Required if Respiratory Motion Compensation Technique (0018,9170) equals other than NONE, REALTIME or BREATH_HOLD and if Image Type (0008,0008) Value 1 is ORIGINAL or MIXED. May be present otherwise."
+    },
+    {
+        "ciodId":"enhanced-mr-color-image",
+        "macroId":"mr-image-frame-type",
+        "usage":"M",
+        "conditionalStatement":null
+    },
+    {
+        "ciodId":"enhanced-mr-color-image",
+        "macroId":"mr-timing-and-related-parameters",
+        "usage":"C",
+        "conditionalStatement":"Required if Image Type (0008,0008) Value 1 is ORIGINAL or MIXED. May be present otherwise."
+    },
+    {
+        "ciodId":"enhanced-mr-color-image",
+        "macroId":"mr-fov-geometry",
+        "usage":"C",
+        "conditionalStatement":"Required if Geometry of k-Space Traversal (0018,9032) equals RECTILINEAR and if Image Type (0008,0008) Value 1 is ORIGINAL or MIXED. May be present otherwise."
+    },
+    {
+        "ciodId":"enhanced-mr-color-image",
+        "macroId":"mr-echo",
+        "usage":"C",
+        "conditionalStatement":"Required if Image Type (0008,0008) Value 1 is ORIGINAL or MIXED. May be present otherwise."
+    },
+    {
+        "ciodId":"enhanced-mr-color-image",
+        "macroId":"mr-modifier",
+        "usage":"C",
+        "conditionalStatement":"Required if Image Type (0008,0008) Value 1 is ORIGINAL or MIXED. May be present otherwise."
+    },
+    {
+        "ciodId":"enhanced-mr-color-image",
+        "macroId":"mr-imaging-modifier",
+        "usage":"C",
+        "conditionalStatement":"Required if Image Type (0008,0008) Value 1 is ORIGINAL or MIXED. May be present otherwise."
+    },
+    {
+        "ciodId":"enhanced-mr-color-image",
+        "macroId":"mr-receive-coil",
+        "usage":"C",
+        "conditionalStatement":"Required if Image Type (0008,0008) Value 1 is ORIGINAL or MIXED. May be present otherwise."
+    },
+    {
+        "ciodId":"enhanced-mr-color-image",
+        "macroId":"mr-transmit-coil",
+        "usage":"C",
+        "conditionalStatement":"Required if Image Type (0008,0008) Value 1 is ORIGINAL or MIXED. May be present otherwise."
+    },
+    {
+        "ciodId":"enhanced-mr-color-image",
+        "macroId":"mr-diffusion",
+        "usage":"C",
+        "conditionalStatement":"Required if Acquisition Contrast (0008,9209) in any MR Image Frame Type Functional Group in the SOP Instance equals DIFFUSION and Image Type (0008,0008) Value 1 is ORIGINAL or MIXED. May be present otherwise."
+    },
+    {
+        "ciodId":"enhanced-mr-color-image",
+        "macroId":"mr-averages",
+        "usage":"C",
+        "conditionalStatement":"Required if Image Type (0008,0008) Value 1 is ORIGINAL or MIXED. May be present otherwise."
+    },
+    {
+        "ciodId":"enhanced-mr-color-image",
+        "macroId":"mr-spatial-saturation",
+        "usage":"C",
+        "conditionalStatement":"Required if Spatial Pre-saturation (0018,9027) equals SLAB for any frame in the SOP Instance and Image Type (0008,0008) Value 1 is ORIGINAL or MIXED. May be present otherwise."
+    },
+    {
+        "ciodId":"enhanced-mr-color-image",
+        "macroId":"mr-metabolite-map",
+        "usage":"C",
+        "conditionalStatement":"Required if Image Type (0008,0008) Value 3 equals METABOLITE_MAP. May be present otherwise."
+    },
+    {
+        "ciodId":"enhanced-mr-color-image",
+        "macroId":"mr-velocity-encoding",
+        "usage":"C",
+        "conditionalStatement":"Required if Phase Contrast (0018,9014) equals YES and Image Type (0008,0008) Value 1 is ORIGINAL or MIXED. May be present otherwise."
+    },
+    {
+        "ciodId":"enhanced-mr-color-image",
+        "macroId":"mr-arterial-spin-labeling",
+        "usage":"C",
+        "conditionalStatement":"Required if Image Type (0008,0008) Value 3 is ASL. May be present otherwise."
+    },
+    {
+        "ciodId":"enhanced-mr-color-image",
+        "macroId":"functional-mr",
+        "usage":"U",
+        "conditionalStatement":null
+    },
+    {
+        "ciodId":"enhanced-mr-color-image",
+        "macroId":"temporal-position",
+        "usage":"U",
+        "conditionalStatement":null
     }
 ]

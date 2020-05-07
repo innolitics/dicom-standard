@@ -2248,5 +2248,167 @@
         "id":"directory-information",
         "description":"<p>\nThis Module contains a Sequence of Directory Records forming one or more Directory Entities. This Module defines at least one Directory Entity, the Root Directory Entity (which may be empty). Each Directory Record is composed of Directory Elements (marked by a \"&gt;\"). They include:</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_F.3.2.2.html#table_F.3-3"
+    },
+    {
+        "name":"Multi-frame Functional Groups",
+        "id":"intravascular-optical-coherence-tomography-image-multi-frame-functional-groups",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
+    },
+    {
+        "name":"Multi-frame Functional Groups",
+        "id":"enhanced-xa-image-multi-frame-functional-groups",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
+    },
+    {
+        "name":"Multi-frame Functional Groups",
+        "id":"x-ray-3d-craniofacial-image-multi-frame-functional-groups",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
+    },
+    {
+        "name":"Multi-frame Functional Groups",
+        "id":"ophthalmic-tomography-image-multi-frame-functional-groups",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
+    },
+    {
+        "name":"Multi-frame Functional Groups",
+        "id":"multi-frame-grayscale-word-sc-image-multi-frame-functional-groups",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
+    },
+    {
+        "name":"Multi-frame Functional Groups",
+        "id":"enhanced-ct-image-multi-frame-functional-groups",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
+    },
+    {
+        "name":"Multi-frame Functional Groups",
+        "id":"enhanced-mr-image-multi-frame-functional-groups",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
+    },
+    {
+        "name":"Multi-frame Functional Groups",
+        "id":"ophthalmic-optical-coherence-tomography-b-scan-volume-analysis-multi-frame-functional-groups",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
+    },
+    {
+        "name":"Multi-frame Functional Groups",
+        "id":"legacy-converted-enhanced-ct-image-multi-frame-functional-groups",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
+    },
+    {
+        "name":"Multi-frame Functional Groups",
+        "id":"real-time-video-endoscopic-image-multi-frame-functional-groups",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
+    },
+    {
+        "name":"Multi-frame Functional Groups",
+        "id":"parametric-map-multi-frame-functional-groups",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
+    },
+    {
+        "name":"Multi-frame Functional Groups",
+        "id":"multi-frame-grayscale-byte-sc-image-multi-frame-functional-groups",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
+    },
+    {
+        "name":"Multi-frame Functional Groups",
+        "id":"real-time-audio-waveform-multi-frame-functional-groups",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
+    },
+    {
+        "name":"Multi-frame Functional Groups",
+        "id":"vl-whole-slide-microscopy-image-multi-frame-functional-groups",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
+    },
+    {
+        "name":"Multi-frame Functional Groups",
+        "id":"legacy-converted-enhanced-mr-image-multi-frame-functional-groups",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
+    },
+    {
+        "name":"Multi-frame Functional Groups",
+        "id":"multi-frame-true-color-sc-image-multi-frame-functional-groups",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
+    },
+    {
+        "name":"Multi-frame Functional Groups",
+        "id":"segmentation-multi-frame-functional-groups",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
+    },
+    {
+        "name":"Multi-frame Functional Groups",
+        "id":"legacy-converted-enhanced-pet-image-multi-frame-functional-groups",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
+    },
+    {
+        "name":"Multi-frame Functional Groups",
+        "id":"enhanced-us-volume-multi-frame-functional-groups",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
+    },
+    {
+        "name":"Multi-frame Functional Groups",
+        "id":"x-ray-3d-angiographic-image-multi-frame-functional-groups",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
+    },
+    {
+        "name":"Multi-frame Functional Groups",
+        "id":"breast-projection-x-ray-image-multi-frame-functional-groups",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
+    },
+    {
+        "name":"Multi-frame Functional Groups",
+        "id":"enhanced-xrf-image-multi-frame-functional-groups",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
+    },
+    {
+        "name":"Multi-frame Functional Groups",
+        "id":"breast-tomosynthesis-image-multi-frame-functional-groups",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
+    },
+    {
+        "name":"Multi-frame Functional Groups",
+        "id":"real-time-video-photographic-image-multi-frame-functional-groups",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
+    },
+    {
+        "name":"Multi-frame Functional Groups",
+        "id":"enhanced-pet-image-multi-frame-functional-groups",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
+    },
+    {
+        "name":"Multi-frame Functional Groups",
+        "id":"enhanced-mr-color-image-multi-frame-functional-groups",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
+    },
+    {
+        "name":"Multi-frame Functional Groups",
+        "id":"mr-spectroscopy-multi-frame-functional-groups",
+        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
     }
 ]

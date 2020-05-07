@@ -15,10 +15,7 @@ from dicom_standard.hierarchy_utils import record_hierarchy_for_module
 
 
 def key_tables_by_id(table_list: List[MetadataTableType]) -> Dict[str, MetadataTableType]:
-    dict_of_tables = {}
-    for table in table_list:
-        dict_of_tables[get_id_from_link(table['linkToStandard'])] = table
-    return dict_of_tables
+    return {get_id_from_link(table['linkToStandard']): table for table in table_list}
 
 
 def expand_all_macros(module_attr_tables, macros):
