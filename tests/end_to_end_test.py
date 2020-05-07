@@ -68,10 +68,7 @@ def test_valid_foreign_keys_ciod_module(ciod_module_relationship, ciods, modules
     errors = []
     for pair in ciod_module_relationship:
         assert any(d['id'] == pair['ciodId'] for d in ciods)
-        if not any(d['id'] == pair['moduleId'] for d in modules):
-            errors.append(pair['moduleId'])
-    print(errors)
-    assert not errors
+        assert any(d['id'] == pair['moduleId'] for d in modules)
 
 
 @pytest.mark.endtoend
@@ -294,9 +291,16 @@ def test_number_of_module_appearances(ciods, ciod_module_relationship, modules):
 
 @pytest.mark.endtoend
 class TestUniqueIds:
+    def get_duplicates(self, l):
+        return [k for k, v in Counter(l).items() if v > 1]
+
     def get_duplicate_ids(self, dict_list):
         id_list = [d['id'] for d in dict_list]
-        return [k for k, v in Counter(id_list).items() if v > 1]
+        return self.get_duplicates(id_list)
+
+    def get_duplicate_paths(self, dict_list):
+        path_list = [d['path'] for d in dict_list]
+        return self.get_duplicates(path_list)
 
     def test_no_duplicate_attributes(self, attributes):
         assert not self.get_duplicate_ids(attributes)
@@ -313,9 +317,16 @@ class TestUniqueIds:
     def test_no_duplicate_sops(self, sops):
         assert not self.get_duplicate_ids(sops)
 
+    def test_no_duplicate_macro_attr_paths(self, macro_attribute_relationship):
+        assert not self.get_duplicate_paths(macro_attribute_relationship)
 
-@pytest.mark.endtoend
-def test_no_duplicate_paths(module_attribute_relationship):
-    path_list = [d['path'] for d in module_attribute_relationship]
-    duplicate_paths = [k for k, v in Counter(path_list).items() if v > 1]
-    assert not duplicate_paths
+    def test_no_duplicate_module_attr_paths(self, module_attribute_relationship):
+        assert not self.get_duplicate_paths(module_attribute_relationship)
+
+    def test_no_duplicate_ciod_module_relationships(self, ciod_module_relationship):
+        key_list = [d['ciodId'] + d['moduleId'] for d in ciod_module_relationship]
+        assert not self.get_duplicates(key_list)
+
+    def test_no_duplicate_ciod_macro_relationships(self, ciod_fg_macro_relationship):
+        key_list = [d['ciodId'] + d['macroId'] for d in ciod_fg_macro_relationship]
+        assert not self.get_duplicates(key_list)

@@ -14,7 +14,8 @@ def macro_attr_relationship_table(macro_attr_list):
                 'tag': attribute['tag'],
                 'type': attribute['type'],
                 'linkToStandard': get_standard_link(macro, attribute),
-                'description': attribute['description']
+                'description': attribute['description'],
+                'conditional': attribute.get('conditional'),
             })
     return entries
 
