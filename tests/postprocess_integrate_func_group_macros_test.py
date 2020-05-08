@@ -1,5 +1,3 @@
-import pytest
-
 from dicom_standard.postprocess_integrate_func_group_macros import update_description, process_macro_attributes, process_mffg_attributes
 
 
@@ -43,15 +41,15 @@ def test_process_macro_attributes():
         {
             'moduleId': 'example-ciod-multi-frame-functional-groups',
             'path': 'example-ciod-multi-frame-functional-groups:52009230:0001',
-            'description': 'Attribute of Example Macro 1.<h3>Note</h3>' \
-                           '<p>Part of the Example Macro 1 Functional Group Macro with usage: C</p>' \
+            'description': 'Attribute of Example Macro 1.<h3>Note</h3>'
+                           '<p>Part of the Example Macro 1 Functional Group Macro with usage: C</p>'
                            '<p>Required if Test Macro present.</p>'
         },
         {
             'moduleId': 'example-ciod-multi-frame-functional-groups',
             'path': 'example-ciod-multi-frame-functional-groups:52009230:0001:0002',
-            'description': 'Sub-attribute of Example Macro 1.<h3>Note</h3>' \
-                           '<p>Part of the Example Macro 1 Functional Group Macro with usage: C</p>' \
+            'description': 'Sub-attribute of Example Macro 1.<h3>Note</h3>'
+                           '<p>Part of the Example Macro 1 Functional Group Macro with usage: C</p>'
                            '<p>Required if Test Macro present.</p>'
         },
     ]
