@@ -1,5 +1,6 @@
 import subprocess
 from collections import Counter
+from operator import itemgetter
 
 import pytest
 
@@ -137,6 +138,53 @@ def test_vertical_samples_from_standard(ciods, modules, attributes):
     assert test_ciod in ciods
     assert test_module in modules
     assert all(attr in attributes for attr in test_attributes)
+
+
+@pytest.mark.endtoend
+def test_trace_from_ciod_to_func_group_attribute(ciod_fg_macro_relationship, ciods, macros,
+                                                 macro_attribute_relationship, modules,
+                                                 module_attribute_relationship, attributes):
+    ciod_macro =  {
+        "ciodId":"enhanced-mr-image",
+        "macroId":"referenced-image",
+        "usage":"C",
+        "conditionalStatement":"Required if the image or frame has been planned on another image or frame. May be present otherwise"
+    }
+    macro_attr = {
+        "macroId":"referenced-image",
+        "path":"referenced-image:00081140:00081150",
+        "tag":"(0008,1150)",
+        "type":"1",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.5.html#table_C.7.6.16-6",
+        "description":"<td colspan=\"1\" rowspan=\"1\">\n<p>\nUniquely identifies the referenced SOP Class.</p>\n</td>",
+        "externalReferences":[]
+    }
+    ciod_specific_module_id = f'{ciod_macro["ciodId"]}-multi-frame-functional-groups'
+    module_attr = {
+        "moduleId":"enhanced-mr-image-multi-frame-functional-groups",
+        "path":"enhanced-mr-image-multi-frame-functional-groups:52009230:00081140:00081150",
+        "tag":"(0008,1150)",
+        "type":"1",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.5.html#table_C.7.6.16-6",
+        "description":"<td colspan=\"1\" rowspan=\"1\">\n<p>\nUniquely identifies the referenced SOP Class.</p>\n</td><h3>Note</h3><p>Part of the Referenced Image Functional Group Macro with usage: C</p><p>Required if the image or frame has been planned on another image or frame. May be present otherwise.</p>",
+        "externalReferences":[]
+    }
+    attr = {
+        "tag":"(0008,1150)",
+        "name":"Referenced SOP Class UID",
+        "keyword":"ReferencedSOPClassUID",
+        "valueRepresentation":"UI",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"00081150"
+    }
+    assert ciod_macro in ciod_fg_macro_relationship
+    assert ciod_macro['ciodId'] in map(itemgetter('id'), ciods)
+    assert ciod_macro['macroId'] in map(itemgetter('id'), macros)
+    assert macro_attr in macro_attribute_relationship
+    assert ciod_specific_module_id in map(itemgetter('id'), modules)
+    assert module_attr in module_attribute_relationship
+    assert attr in attributes
 
 
 @pytest.mark.endtoend
