@@ -25,6 +25,7 @@ TABLE_SUFFIX = re.compile("(.*Module Attributes$)|(.*Module Table$)|(.*Macro Att
 MACRO_TABLE_SUFFIX = re.compile("(.*Macro Attributes$)|(.*Macro Attributes Description$)")
 COLUMN_TITLES_WITH_TYPE = ['name', 'tag', 'type', 'description']
 COLUMN_TITLES_NO_TYPE = ['name', 'tag', 'description']
+VALID_URL_PATTERN = re.compile(r'(.*)(' + '|'.join(pl.NONSTANDARD_SECTION_IDS) + r').*(.html.*)')
 
 
 def get_module_macro_tables(standard: BeautifulSoup) -> Tuple[List[TableListType], List[Tag]]:
@@ -45,6 +46,18 @@ def module_table_to_dict(table: StringifiedTableListType) -> List[TableDictType]
     return table_to_dict(table, column_titles)
 
 
+def fix_nonstandard_section_links(link: str) -> str:
+    '''
+    Standard workaround: For some reason, certain subsections are located within the base section, so return only the valid part
+    Ex: C.7.16.2.5.1 should be within C.7.16.2.5, but "sect_C.7.16.2.5.html" is invalid
+    The pattern has three capturing groups: anything before a nonstandard section ID, the nonstandard ID, and an instance of ".html" with anything after
+    The substitution removes the extraneous subsection numbers that produce invalid links.
+    "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.3.html#table_C.7.6.16-4" is replaced with
+    "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16-4"
+    '''
+    return VALID_URL_PATTERN.sub(r'\1\2\3', link)
+
+
 def get_table_with_metadata(table_with_tdiv: Tuple[List[TableDictType], Tag]) -> MetadataTableType:
     table, tdiv = table_with_tdiv
     table_name = pr.table_name(tdiv)
@@ -56,7 +69,7 @@ def get_table_with_metadata(table_with_tdiv: Tuple[List[TableDictType], Tag]) ->
         'attributes': table,
         'id': pl.create_slug(clean_name),
         'description': str(clean_table_description(table_description, is_macro)),
-        'linkToStandard': get_short_standard_link(tdiv),
+        'linkToStandard': fix_nonstandard_section_links(get_short_standard_link(tdiv)),
         'isMacro': is_macro,
     }
 

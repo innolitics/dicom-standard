@@ -194,7 +194,7 @@ def get_standard_page(sect_id: str) -> str:
     '''
     try:
         # TODO: Remove if block (and constant) once URL once links for subsections exist (Issue #10 and related sections)
-        invalid_sect_id_match = re.match(ID_PATTERN, sect_id)
+        invalid_sect_id_match = ID_PATTERN.match(sect_id)
         if invalid_sect_id_match:
             # Standard workaround: For some reason, certain subsections are located within the base section, so return only the valid part
             # Ex: C.7.16.2.5.1 should be within C.7.16.2.5, but "sect_C.7.16.2.5.html" is invalid

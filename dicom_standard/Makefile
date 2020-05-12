@@ -49,7 +49,7 @@ dist/module_to_attributes.json: tmp/module_to_attributes_no_duplicates.json dist
 dist/macro_to_attributes.json: tmp/macros_attributes_updated_references.json
 	$(PYTHONPATH_PREFIX) python3 postprocess_merge_duplicate_nodes.py $< > $@
 
-dist/references.json: tmp/modules_attributes_partial_references.json tmp/raw_section_tables.json
+dist/references.json: tmp/modules_attributes_partial_references.json tmp/macros_attributes_partial_references.json tmp/raw_section_tables.json
 	$(PYTHONPATH_PREFIX) python3 postprocess_save_references.py $^ > $@
 
 
