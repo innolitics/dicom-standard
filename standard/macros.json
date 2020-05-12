@@ -351,199 +351,199 @@
         "name":"Frame Content",
         "id":"frame-content",
         "description":"<p>\n<span href=\"#table_C.7.6.16-3\">This macro </span> specifies the Attributes of the Frame Content Functional Group Macro.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.2.html#table_C.7.6.16-3"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16-3"
     },
     {
         "name":"Plane Position (Patient)",
         "id":"plane-position-patient",
         "description":"<p>\n<span href=\"#table_C.7.6.16-4\">This macro </span> specifies the Attributes of the Plane Position (Patient) Functional Group Macro.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.3.html#table_C.7.6.16-4"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16-4"
     },
     {
         "name":"Plane Orientation (Patient)",
         "id":"plane-orientation-patient",
         "description":"<p>\n<span href=\"#table_C.7.6.16-5\">This macro </span> specifies the Attributes of the Plane Orientation (Patient) Functional Group Macro.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.4.html#table_C.7.6.16-5"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16-5"
     },
     {
         "name":"Referenced Image",
         "id":"referenced-image",
         "description":"<p>\n<span href=\"#table_C.7.6.16-6\">This macro </span> specifies the Attributes of the Referenced Image Functional Group Macro.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.5.html#table_C.7.6.16-6"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16-6"
     },
     {
         "name":"Derivation Image",
         "id":"derivation-image",
         "description":"<p>\n<span href=\"#table_C.7.6.16-7\">This macro </span> specifies the Attributes of the Derivation Image Functional Group Macro.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.6.html#table_C.7.6.16-7"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16-7"
     },
     {
         "name":"Cardiac Synchronization",
         "id":"cardiac-synchronization",
         "description":"<p>\n<span href=\"#table_C.7.6.16-8\">This macro </span> specifies the Attributes of the Cardiac Synchronization Functional Group Macro.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.7.html#table_C.7.6.16-8"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16-8"
     },
     {
         "name":"Frame Anatomy",
         "id":"frame-anatomy",
         "description":"<p>\n<span href=\"#table_C.7.6.16-9\">This macro </span> specifies the Attributes of the Frame Anatomy Functional Group Macro.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.8.html#table_C.7.6.16-9"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16-9"
     },
     {
         "name":"Pixel Value Transformation",
         "id":"pixel-value-transformation",
         "description":"<p>\n<span href=\"#table_C.7.6.16-10\">This macro </span> specifies the Attributes of the Pixel Value Transformation Functional Group Macro.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.9.html#table_C.7.6.16-10"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16-10"
     },
     {
         "name":"Identity Pixel Value Transformation",
         "id":"identity-pixel-value-transformation",
         "description":"<p>\n<span href=\"#table_C.7.6.16-10b\">This macro </span> specifies the Attributes of the Identity Pixel Value Transformation Functional Group Macro.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.9b.html#table_C.7.6.16-10b"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16-10b"
     },
     {
         "name":"Frame VOI LUT",
         "id":"frame-voi-lut",
         "description":"<p>\n<span href=\"#table_C.7.6.16-11\">This macro </span> specifies the Attributes of the Frame VOI LUT Functional Group Macro.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.10.html#table_C.7.6.16-11"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16-11"
     },
     {
         "name":"Frame VOI LUT with LUT",
         "id":"frame-voi-lut-with-lut",
         "description":"<p>\n<span href=\"#table_C.7.6.16-11b\">This macro </span> specifies the Attributes of the Frame VOI LUT With LUT Functional Group Macro. This Macro contains one or more sets of linear or sigmoid window values and/or one or more sets of lookup tables.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.10b.html#table_C.7.6.16-11b"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16-11b"
     },
     {
         "name":"Real World Value Mapping",
         "id":"real-world-value-mapping",
         "description":"<p>\n<span href=\"#table_C.7.6.16-12\">This macro </span> specifies the Attributes of the Real World Value Mapping Functional Group Macro.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.11.html#table_C.7.6.16-12"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16-12"
     },
     {
         "name":"Real World Value Mapping Item",
         "id":"real-world-value-mapping-item",
         "description":"<p>\n<span href=\"#table_C.7.6.16-12\">This macro </span> specifies the Attributes of the Real World Value Mapping Functional Group Macro.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.11.html#table_C.7.6.16-12b"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16-12b"
     },
     {
         "name":"Contrast/Bolus Usage",
         "id":"contrast-bolus-usage",
         "description":"<p>\n<span href=\"#table_C.7.16-13\">This macro </span> specifies the Attributes of the Contrast/Bolus Usage Macro.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.12.html#table_C.7.16-13"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.16-13"
     },
     {
         "name":"Pixel Intensity Relationship LUT",
         "id":"pixel-intensity-relationship-lut",
         "description":"<p>\n<span href=\"#table_C.7.6.16-14\">This macro </span> specifies the Attributes of the Pixel Intensity Relationship LUT Functional Group Macro.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.13.html#table_C.7.6.16-14"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16-14"
     },
     {
         "name":"Frame Pixel Shift",
         "id":"frame-pixel-shift",
         "description":"<p>\n<span href=\"#table_C.7.6.16-15\">This macro </span> specifies the Attributes of the Frame Pixel Shift Functional Group Macro.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.14.html#table_C.7.6.16-15"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16-15"
     },
     {
         "name":"Patient Orientation in Frame",
         "id":"patient-orientation-in-frame",
         "description":"<p>\n<span href=\"#table_C.7.6.16-16\">This macro </span> specifies the Attributes of the Patient Orientation in Frame Functional Group Macro.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.15.html#table_C.7.6.16-16"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16-16"
     },
     {
         "name":"Frame Display Shutter",
         "id":"frame-display-shutter",
         "description":"<p>\n<span href=\"#table_C.7.6.16-17\">This macro </span> specifies the Attributes of the Frame Display Shutter Functional Group Macro.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.16.html#table_C.7.6.16-17"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16-17"
     },
     {
         "name":"Respiratory Synchronization",
         "id":"respiratory-synchronization",
         "description":"<p>\n<span href=\"#table_C.7.6.16-18\">This macro </span> specifies the Attributes of the Respiratory Synchronization Functional Group Macro.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.17.html#table_C.7.6.16-18"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16-18"
     },
     {
         "name":"Irradiation Event Identification",
         "id":"irradiation-event-identification",
         "description":"<p>\n<span href=\"#table_C.7.6.16-19\">This macro </span> specifies the Attributes containing the Irradiation Event Identification Functional Group Macro.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.18.html#table_C.7.6.16-19"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16-19"
     },
     {
         "name":"Radiopharmaceutical Usage",
         "id":"radiopharmaceutical-usage",
         "description":"<p>\n<span href=\"#table_C.7.6.16.2-20\">This macro </span> specifies the Attributes of the Radiopharmaceutical Usage Functional Group Macro.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.19.html#table_C.7.6.16.2-20"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16.2-20"
     },
     {
         "name":"Patient Physiological State",
         "id":"patient-physiological-state",
         "description":"<p>\n<span href=\"#table_C.7.6.16.2-21\">This macro </span> specifies the Attributes of the Patient Physiological State Functional Group Macro, which describes the physiological state of the patient.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.20.html#table_C.7.6.16.2-21"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16.2-21"
     },
     {
         "name":"Plane Position (Volume)",
         "id":"plane-position-volume",
         "description":"<p>\n<span href=\"#table_C.7.6.16.2.21-1\">This macro </span> specifies the Attributes of the Plane Position (Volume) Functional Group Macro.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.21.html#table_C.7.6.16.2.21-1"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16.2.21-1"
     },
     {
         "name":"Plane Orientation (Volume)",
         "id":"plane-orientation-volume",
         "description":"<p>\n<span href=\"#table_C.7.6.16.2.22-1\">This macro </span> specifies the Attributes of the Plane Orientation (Volume) Functional Group Macro.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.22.html#table_C.7.6.16.2.22-1"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16.2.22-1"
     },
     {
         "name":"Temporal Position",
         "id":"temporal-position",
         "description":"<p>\n<span href=\"#table_C.7.6.16.2.23-1\">This macro </span> specifies the Attributes of the Temporal Position Functional Group Macro.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.23.html#table_C.7.6.16.2.23-1"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16.2.23-1"
     },
     {
         "name":"Image Data Type",
         "id":"image-data-type",
         "description":"<p>\n<span href=\"#table_C.7.6.16.2.24-1\">This macro </span> specifies the Attributes of the Image Data Type Functional Group Macro.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.24.html#table_C.7.6.16.2.24-1"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16.2.24-1"
     },
     {
         "name":"Unassigned Shared Converted Attributes",
         "id":"unassigned-shared-converted-attributes",
         "description":"<p>\n<span href=\"#table_C.7.6.16.2.25.1-1\">This macro </span> specifies the Attributes of the Unassigned Shared Converted Attributes Functional Group Macro.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.25.html#table_C.7.6.16.2.25.1-1"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16.2.25.1-1"
     },
     {
         "name":"Unassigned Per-Frame Converted Attributes",
         "id":"unassigned-per-frame-converted-attributes",
         "description":"<p>\n<span href=\"#table_C.7.6.16.2.25.2-1\">This macro </span> specifies the Attributes of the Unassigned Per-Frame Converted Attributes Functional Group Macro.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.25.2.html#table_C.7.6.16.2.25.2-1"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16.2.25.2-1"
     },
     {
         "name":"Image Frame Conversion Source",
         "id":"image-frame-conversion-source",
         "description":"<p>\n<span href=\"#table_C.7.6.16.2.25.2-1\">This macro </span> specifies the Attributes of the Image Frame Conversion Source Functional Group Macro.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.25.3.html#table_C.7.6.16.2.25.3-1"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16.2.25.3-1"
     },
     {
         "name":"Stored Value Color Range",
         "id":"stored-value-color-range",
         "description":"<p>\n<span href=\"#table_C.7.6.16.2.26-1\">This macro </span> defines the Attributes of the Stored Value Color Range Functional Group Macro</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.26.html#table_C.7.6.16.2.26-1"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16.2.26-1"
     },
     {
         "name":"Frame Usefulness",
         "id":"frame-usefulness",
         "description":"<p>\n<span href=\"#table_C.7.6.16.2.27-1\">This macro </span> specifies the Attributes of the Frame Usefulness Functional Group Macro, related to the clinical usefulness of the current frame.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.27.html#table_C.7.6.16.2.27-1"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16.2.27-1"
     },
     {
         "name":"Camera Position",
         "id":"camera-position",
         "description":"<p>\n<span href=\"#table_C.7.6.16.2.28-1\">This macro </span> specifies the Attributes of the Camera Position Functional Group Macro, related to the position of the camera or the acquisition device for the current frame, with regards to the patient.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.28.html#table_C.7.6.16.2.28-1"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16.2.28-1"
     },
     {
         "name":"Time of Frame",
         "id":"time-of-frame",
         "description":"<p>\n<span href=\"#table_C.7.6.16.2.29-1\">This macro </span> specifies the Attributes of the Time of Frame Functional Group Macro, related to the time of frame.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.29.html#table_C.7.6.16.2.29-1"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16.2.29-1"
     },
     {
         "name":"Specimen",

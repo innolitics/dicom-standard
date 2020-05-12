@@ -7,6 +7,7 @@ from copy import deepcopy
 import dicom_standard.parse_lib as pl
 from dicom_standard.process_modules import FUNC_GROUP_MODULE_ID
 
+SHARED_FUNC_GROUP_ID = 52009229
 PER_FRAME_FUNC_GROUP_ID = 52009230
 
 
@@ -20,16 +21,21 @@ def update_description(attribute, macro):
     attribute['description'] += note_header + usage + conditional
 
 
+def convert_macro_attr(macro_attr, macro, fg_attr_id):
+    attr = deepcopy(macro_attr)
+    macro_id = attr.pop('macroId')
+    attr['moduleId'] = f'{macro["ciodId"]}-{FUNC_GROUP_MODULE_ID}'
+    new_path_prefix = f'{attr["moduleId"]}:{fg_attr_id}'
+    attr['path'] = attr['path'].replace(macro_id, new_path_prefix)
+    update_description(attr, macro)
+    return attr
+
+
 def process_macro_attributes(macro_attrs, macro):
     attr_list = []
     for macro_attr in macro_attrs:
-        attr = deepcopy(macro_attr)
-        macro_id = attr.pop('macroId')
-        attr['moduleId'] = f'{macro["ciodId"]}-{FUNC_GROUP_MODULE_ID}'
-        new_path_prefix = f'{attr["moduleId"]}:{PER_FRAME_FUNC_GROUP_ID}'
-        attr['path'] = attr['path'].replace(macro_id, new_path_prefix)
-        update_description(attr, macro)
-        attr_list.append(attr)
+        attr_list.append(convert_macro_attr(macro_attr, macro, SHARED_FUNC_GROUP_ID))
+        attr_list.append(convert_macro_attr(macro_attr, macro, PER_FRAME_FUNC_GROUP_ID))
     return attr_list
 
 
