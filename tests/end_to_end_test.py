@@ -38,6 +38,11 @@ def sops(make_standard):
 
 
 @pytest.fixture(scope='module')
+def references(make_standard):
+    return pl.read_json_data('standard/references.json')
+
+
+@pytest.fixture(scope='module')
 def ciod_fg_macro_relationship(make_standard):
     return pl.read_json_data('standard/ciod_to_func_group_macros.json')
 
@@ -83,6 +88,20 @@ def test_valid_foreign_keys_module_attribute(module_attribute_relationship, modu
     for pair in module_attribute_relationship:
         assert any(d['id'] == pair['moduleId'] for d in modules)
         assert any(d['id'] == pair['path'].split(':')[-1] for d in attributes)
+
+
+@pytest.mark.endtoend
+def test_macro_attr_refs_in_references(macro_attribute_relationship, references):
+    for pair in macro_attribute_relationship:
+        for ref in pair['externalReferences']:
+            assert ref['sourceUrl'] in references
+
+
+@pytest.mark.endtoend
+def test_module_attr_refs_in_references(module_attribute_relationship, references):
+    for pair in module_attribute_relationship:
+        for ref in pair['externalReferences']:
+            assert ref['sourceUrl'] in references
 
 
 @pytest.mark.endtoend
@@ -154,7 +173,7 @@ def test_trace_from_ciod_to_func_group_attribute(ciod_fg_macro_relationship, cio
         "path": "referenced-image:00081140:00081150",
         "tag": "(0008,1150)",
         "type": "1",
-        "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.5.html#table_C.7.6.16-6",
+        "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16-6",
         "description": "<td colspan=\"1\" rowspan=\"1\">\n<p>\nUniquely identifies the referenced SOP Class.</p>\n</td>",
         "externalReferences": []
     }
@@ -164,7 +183,7 @@ def test_trace_from_ciod_to_func_group_attribute(ciod_fg_macro_relationship, cio
         "path": "enhanced-mr-image-multi-frame-functional-groups:52009230:00081140:00081150",
         "tag": "(0008,1150)",
         "type": "1",
-        "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.5.html#table_C.7.6.16-6",
+        "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16-6",
         "description": "<td colspan=\"1\" rowspan=\"1\">\n<p>\nUniquely identifies the referenced SOP Class.</p>\n</td><h3>Note</h3><p>Part of the Referenced Image Functional Group Macro with usage: C</p><p>Required if the image or frame has been planned on another image or frame. May be present otherwise.</p>",
         "externalReferences": []
     }
