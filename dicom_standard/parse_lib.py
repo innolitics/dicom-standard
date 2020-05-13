@@ -109,7 +109,20 @@ def clean_html(html: str) -> str:
     else:
         remove_attributes_from_html_tags(top_level_tag)
         remove_empty_children(top_level_tag)
-        return resolve_relative_resource_urls(str(top_level_tag))
+        if top_level_tag.name == 'td':
+            html_string = get_content_string(top_level_tag)
+        else:
+            html_string = str(top_level_tag)
+        return resolve_relative_resource_urls(html_string)
+
+
+def get_content_string(tag: Tag) -> str:
+    '''
+    Returns the contents of an element as a string
+    with whitespace stripped.
+    '''
+    content_strings = [str(el) for el in tag.contents]
+    return ''.join(content_strings).strip()
 
 
 def get_top_level_tag(parsed_html: BeautifulSoup) -> Tag:

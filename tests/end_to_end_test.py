@@ -174,7 +174,7 @@ def test_trace_from_ciod_to_func_group_attribute(ciod_fg_macro_relationship, cio
         "tag": "(0008,1150)",
         "type": "1",
         "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16-6",
-        "description": "<td colspan=\"1\" rowspan=\"1\">\n<p>\nUniquely identifies the referenced SOP Class.</p>\n</td>",
+        "description": "<p>\nUniquely identifies the referenced SOP Class.</p>",
         "externalReferences": []
     }
     ciod_specific_module_id = f'{ciod_macro["ciodId"]}-multi-frame-functional-groups'
@@ -184,7 +184,7 @@ def test_trace_from_ciod_to_func_group_attribute(ciod_fg_macro_relationship, cio
         "tag": "(0008,1150)",
         "type": "1",
         "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16-6",
-        "description": "<td colspan=\"1\" rowspan=\"1\">\n<p>\nUniquely identifies the referenced SOP Class.</p>\n</td><h3>Note</h3><p>Part of the Referenced Image Functional Group Macro with usage: C</p><p>Required if the image or frame has been planned on another image or frame. May be present otherwise.</p>",
+        "description": "<p>\nUniquely identifies the referenced SOP Class.</p><h3>Note</h3><p>Part of the Referenced Image Functional Group Macro with usage: C</p><p>Required if the image or frame has been planned on another image or frame. May be present otherwise.</p>",
         "externalReferences": []
     }
     attr = {
@@ -224,7 +224,7 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship, modules,
             "tag": "(0008,0121)",
             "type": "3",
             "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.2.2.html#table_C.7-4a",
-            "description": "<td colspan=\"1\" rowspan=\"1\">\n<p>\nCodes that are considered equivalent by the creating system.</p>\n<p>\nOne or more Items are permitted in this Sequence.</p>\n<p>\nSee <span href=\"\">Section\u00a08.9</span>.</p>\n</td>",
+            "description": "<p>\nCodes that are considered equivalent by the creating system.</p>\n<p>\nOne or more Items are permitted in this Sequence.</p>\n<p>\nSee <span href=\"\">Section\u00a08.9</span>.</p>",
             "externalReferences": [
                 {
                     "sourceUrl": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_8.9.html#sect_8.9",
@@ -238,7 +238,7 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship, modules,
             "tag": "(0008,0121)",
             "type": "3",
             "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.2.2.html#table_C.7-4a",
-            "description": "<td colspan=\"1\" rowspan=\"1\">\n<p>\nCodes that are considered equivalent by the creating system.</p>\n<p>\nOne or more Items are permitted in this Sequence.</p>\n<p>\nSee <span href=\"\">Section\u00a08.9</span>.</p>\n</td>",
+            "description": "<p>\nCodes that are considered equivalent by the creating system.</p>\n<p>\nOne or more Items are permitted in this Sequence.</p>\n<p>\nSee <span href=\"\">Section\u00a08.9</span>.</p>",
             "externalReferences": [
                 {
                     "sourceUrl": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_8.9.html#sect_8.9",
@@ -292,7 +292,7 @@ def test_number_of_attribute_appearances(module_attribute_relationship, attribut
             "tag": "(0010,0213)",
             "type": "None",
             "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.2.3.html#table_C.2-3",
-            "description": "<td colspan=\"1\" rowspan=\"1\">\n<p>\nThe nomenclature used for Strain Description (0010,0212). See <span href=\"\">Section\u00a0C.7.1.1.1.4</span>.</p>\n</td>",
+            "description": "<p>\nThe nomenclature used for Strain Description (0010,0212). See <span href=\"\">Section\u00a0C.7.1.1.1.4</span>.</p>",
             "externalReferences": [
                 {
                     "sourceUrl": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.html#sect_C.7.1.1.1.4",
@@ -306,7 +306,7 @@ def test_number_of_attribute_appearances(module_attribute_relationship, attribut
             "tag": "(0010,0213)",
             "type": "3",
             "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.html#table_C.7-1",
-            "description": "<td colspan=\"1\" rowspan=\"1\">\n<p>\nThe nomenclature used for Strain Description (0010,0212). See <span href=\"\">Section\u00a0C.7.1.1.1.4</span>.</p>\n</td>",
+            "description": "<p>\nThe nomenclature used for Strain Description (0010,0212). See <span href=\"\">Section\u00a0C.7.1.1.1.4</span>.</p>",
             "externalReferences": [
                 {
                     "sourceUrl": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.html#sect_C.7.1.1.1.4",
