@@ -16,7 +16,10 @@ and machine-friendly JSON files. The purpose of these JSON files is twofold:
 The finalized JSON output of this program is in the `standard` directory at the
 top level of this project.
 
+A GitHub Actions [workflow][workflow_link] regenerates the JSON files using the most current web version of the DICOM Standard at the beginning of each month. If there are any changes, the updated files are automatically pushed to `master`.
+
 [nema]: http://dicom.nema.org/
+[workflow_link]: https://github.com/innolitics/dicom-standard/actions?query=workflow%3Aupdate-standard
 
 ## Usage
 
