@@ -169,46 +169,48 @@ A map of all extraction and processing pathways is shown below:
                    |             |               |             |  |        | SOPs    |  | Attributes |
                +---v-----+  +----v-----+  +------v------+  +---v--v---+    +----+----+  +-----+------+
                | Extract |  | Extract  |  | Extract     |  | Extract  |         |             |
-               | CIODs/  |  | CIODs/FG |  | Modules/    |  | Sections |         |             |
-               | Modules |  | Macros   |  | Macro Attrs |  +--------+-+         v             v
-               +----+----+  +----+-----+  +------+-----+            |       sops.json   attributes.json
+               | CIODs/  |  | CIODs/FG |  | Modules/    |  | Sections |         v             v
+               | Modules |  | Macros   |  | Macro Attrs +  +--------+-+     sops.json   attributes.json
+               +----+----+  +----+-----+  +------+-----+            |
                     |            |               |                  |
       +-------------+            |               +---------------+  +-----------+
       |             |            |               |               |              |
 +-----v-----+  +----v----+  +----v------+  +-----v------+  +-----v------+       |
 | Process   |  | Process |  | Process   |  | Preprocess |  | Preprocess |       |
-| CIOD/     |  | CIODs   |  | CIOD/FG   |  | Modules/   |  | Macros/    |       |
+| CIOD/     |  | CIODs   |  | CIOD/FG   |  | Macros     |  | Modules/   |       |
 | Module    |  +----+----+  | Macro     |  | Attributes |  | Attributes |       |
 | Relations |       |       | Relations |  +-----+------+  +-----+------+       |
-+-----+-----+       |       +----+------+        |               |              |
-      |             v            |               +-------+       +-------+      |
-      |        ciods.json        |               |       |       |       |      |
-      v                          |          +----v----+  |  +----v----+  |      |
-ciod_to_modules.json             |          | Process |  |  | Process |  |      |
-                                 v          | Modules |  |  | Macros  |  |      |
-           ciod_to_func_group_macros.json   +----+----+  |  +----+----+  |      |
-                                                 |       |       |       |      |
-                                                 |       |       |       |      |
-                                                 v       |       v       |      |
-                                            modules.json |  macros.json  |      |
-                                                         |               |      |
-                                                 +-------v---+   +-------v---+  |
-                                                 | Process   |   | Process   |  |
-                                                 | Module    |   | Macro     |  |
-                                                 | Attribute |   | Attribute |  |
-                                                 | Relations |   | Relations |  |
-                                                 +-------+---+   +-------+---+  |
-                                                         |               |      |
-                                                       +-v---------------v------v-+
-                                                       |        Postprocess       |
-                                                       |      Add References      |
-                                                       +-----+-------+------+-----+
-                                                             |       |      |
-                                                    +--------+       |      +--------+
-                                                    |                v               |
-                                                    |    macros_to_attributes.json   |
-                                                    v                                v
-                                         modules_to_attributes.json           references.json
++-----+-----+       v       +----+------+        |               |              |
+      |        ciods.json        |               +-------+       +-------+      |
+      v                          |               |       |       |       |      |
+ciod_to_modules.json             |          +----v----+  |  +----v----+  |      |
+                                 v          | Process |  |  | Process |  |      |
+           ciod_to_func_group_macros.json   | Macros  |  |  | Modules |  |      |
+                                 |          +----+----+  |  +----+----+  |      |
+                                 |               |       |       |       |      |
+                                 |               v       |       v       |      |
+                                 |          macros.json  |  modules.json |      |
+                                 |           |           |               |      |
+                                 |           |   +-------v---+   +-------v---+  |
+                                 |           |   | Process   |   | Process   |  |
+                                 |           |   | Macro     |   | Module    |  |
+                                 |           |   | Attribute |   | Attribute |  |
+                                 |           |   | Relations |   | Relations |  |
+                                 |           |   +-------+---+   +-------+---+  |
+                                 |           |           |               |      |
+                                 |           |         +-v---------------v------v-+
+                                 |           |         |       Postprocess        |
+                                 |           |         |      Add References      +-----------+
+                                 |           |         +-+---------------+--------+           |
+                                 |           |           |               |                    |
+                          +------v-----------v---+     +-v---------------v--------+  +--------v--------+
+                          |     Postprocess      <-----+       Postprocess        |  | Save References |
+                          | Integrate Functional |     |   Merge Duplicate Nodes  |  +--------+--------+
+                          |     Group Macros     <--+  +-------------+------------+           |
+                          +-----------+----------+  |                |                        |
+                                      |             |                v                        v
+                                      v             +----macros_to_attributes.json      references.json
+                         modules_to_attributes.json
 ```
 
 To update the parser map, please use [ASCIIFlow][asciiflow].
