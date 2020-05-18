@@ -357,8 +357,8 @@ def test_number_of_module_appearances(ciods, ciod_module_relationship, modules):
 
 @pytest.mark.endtoend
 class TestUniqueIds:
-    def get_duplicates(self, l):
-        return [k for k, v in Counter(l).items() if v > 1]
+    def get_duplicates(self, lst):
+        return [k for k, v in Counter(lst).items() if v > 1]
 
     def get_duplicate_ids(self, dict_list):
         id_list = [d['id'] for d in dict_list]
