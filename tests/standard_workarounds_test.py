@@ -49,6 +49,12 @@ def test_extra_hierarchy_marker_in_table_c_8_25_16_8(part03):
     assert '>>' in row['attribute_name'], 'Row no longer contains two hierarchy markers'
 
 
+def test_missing_ie_field_in_table_a_32_10_1(part03):
+    rows = get_table_rows_from_ids(part03, ['table_A.32.10-1'], col_titles=['information_entity', 'module'])
+    empty_ie_rows = list(filter(lambda r: not r['information_entity'], rows))
+    assert empty_ie_rows, 'Table no longer contains rows with empty IE field'
+
+
 def test_sect_tid_1004_invalid_url():
     test_url = 'http://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_TID_1004.html#sect_TID_1004'
     status_code = requests.get(test_url).status_code
