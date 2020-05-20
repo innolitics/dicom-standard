@@ -107,8 +107,8 @@ endtoendtest:
 
 
 updatestandard:
-	if [ ! -d old_standards ]; then mkdir old_standards; fi
-	mv -f standard/*.html old_standards/
+	if [ ! -d old_standard ]; then mkdir old_standard; fi
+	mv -f standard/*.html old_standard/
 	wget http://dicom.nema.org/medical/dicom/${VERSION}/output/html/part03.html -O standard/part03.html
 	wget http://dicom.nema.org/medical/dicom/${VERSION}/output/html/part04.html -O standard/part04.html
 	wget http://dicom.nema.org/medical/dicom/${VERSION}/output/html/part06.html -O standard/part06.html
