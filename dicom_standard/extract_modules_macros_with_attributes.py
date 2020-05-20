@@ -64,6 +64,11 @@ def get_table_with_metadata(table_with_tdiv: Tuple[List[TableDictType], Tag]) ->
     clean_name = pl.clean_table_name(table_name)
     table_description = pr.table_description(tdiv)
     is_macro = True if MACRO_TABLE_SUFFIX.match(table_name) else False
+    # Standard workaround: Add description to module without a description paragraph
+    # http://dicom.nema.org/dicom/2013/output/chtml/part03/sect_F.3.html#sect_F.3.2.1
+    if table_description.has_attr('class') and 'title' in table_description.get('class'):
+        table_description_str = f'<p>{clean_name.capitalize()} {"macro" if is_macro else "module"}.</p>'
+        table_description = BeautifulSoup(table_description_str, 'html.parser')
     return {
         'name': clean_name,
         'attributes': table,

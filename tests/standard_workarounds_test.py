@@ -2,6 +2,7 @@ import pytest
 import requests
 
 from dicom_standard.parse_lib import NONSTANDARD_SECTION_IDS, SHORT_DICOM_URL_PREFIX, parse_html_file
+from dicom_standard.parse_relations import table_description
 from dicom_standard.table_utils import get_table_rows_from_ids
 
 
@@ -10,9 +11,13 @@ def part03():
     return parse_html_file('dicom_standard/standard/part03.html')
 
 
+def find_tdiv_from_id(standard, table_id):
+    return standard.find('a', {'id': table_id})
+
+
 def get_table_title_from_id(standard, table_id):
-    table_id_element = standard.find('a', {'id': table_id})
-    return table_id_element.find_next('p').text.strip()
+    tdiv = find_tdiv_from_id(standard, table_id)
+    return tdiv.find_next('p').text.strip()
 
 
 def test_upper_case_S_in_table_a_39_19_1(part03):
@@ -52,7 +57,7 @@ def test_extra_hierarchy_marker_in_table_c_8_25_16_8(part03):
 def test_missing_ie_field_in_table_a_32_10_1(part03):
     rows = get_table_rows_from_ids(part03, ['table_A.32.10-1'], col_titles=['information_entity', 'module'])
     empty_ie_rows = list(filter(lambda r: not r['information_entity'], rows))
-    assert empty_ie_rows, 'Table no longer contains rows with empty IE field'
+    assert empty_ie_rows, 'Table no longer contains rows with an empty "Information Entity" field'
 
 
 def test_sect_tid_1004_invalid_url():
@@ -70,3 +75,10 @@ def test_nonstandard_sections_invalid_url():
             standard_sections.append(sect_id)
     sections_str = ', '.join(standard_sections)
     assert not standard_sections, f'Section(s) {sections_str} have at least one valid subsection URL'
+
+
+def test_missing_file_set_id_module_description(part03):
+    tdiv = find_tdiv_from_id(part03, 'table_F.3-2')
+    table_description_text = table_description(tdiv).text.strip()
+    table_title = get_table_title_from_id(part03, 'table_F.3-2')
+    assert table_description_text == table_title, 'File-set ID module now has a description paragraph'
