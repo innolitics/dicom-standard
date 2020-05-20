@@ -5786,14 +5786,14 @@
         "moduleId":"real-time-acquisition",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Image"
+        "informationEntity":""
     },
     {
         "ciodId":"real-time-video-photographic-image",
         "moduleId":"current-frame-functional-groups",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Image"
+        "informationEntity":""
     },
     {
         "ciodId":"grayscale-softcopy-presentation-state",
@@ -18974,13 +18974,13 @@
         "moduleId":"file-set-identification",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":null
+        "informationEntity":"Basic Directory"
     },
     {
         "ciodId":"basic-directory",
         "moduleId":"directory-information",
         "usage":"U",
         "conditionalStatement":null,
-        "informationEntity":null
+        "informationEntity":"Basic Directory"
     }
 ]
