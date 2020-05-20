@@ -38,19 +38,19 @@
     {
         "name":"Image SOP Instance Reference",
         "id":"image-sop-instance-reference",
-        "description":"<p>\n<strong>Table\u00a010-3.\u00a0Image SOP Instance Reference Macro Attributes</strong>\n</p>",
+        "description":"<p>Image SOP Instance Reference Macro.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.3.html#table_10-3"
     },
     {
         "name":"Referenced Instances and Access",
         "id":"referenced-instances-and-access",
-        "description":"<p>\n<strong>Table\u00a010-3.\u00a0Image SOP Instance Reference Macro Attributes</strong>\n</p>",
+        "description":"<p>Referenced Instances and Access Macro.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.3.html#table_10-3b"
     },
     {
         "name":"Storage",
         "id":"storage",
-        "description":"<p>\n<strong>Table\u00a010-3.\u00a0Image SOP Instance Reference Macro Attributes</strong>\n</p>",
+        "description":"<p>Storage Macro.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.3.html#table_10-3c"
     },
     {
@@ -92,7 +92,7 @@
     {
         "name":"Request Attributes",
         "id":"request-attributes",
-        "description":"<p>\n<strong>Table\u00a010-9.\u00a0Request Attributes Macro Attributes</strong>\n</p>",
+        "description":"<p>Request Attributes Macro.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.6.html#table_10-9"
     },
     {
@@ -146,7 +146,7 @@
     {
         "name":"Performed Procedure Step Summary",
         "id":"performed-procedure-step-summary",
-        "description":"<p>\n<strong>Table\u00a010-16.\u00a0Performed Procedure Step Summary Macro Attributes</strong>\n</p>",
+        "description":"<p>Performed Procedure Step Summary Macro.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.13.html#table_10-16"
     },
     {
@@ -212,7 +212,7 @@
     {
         "name":"RT Equipment Correlation",
         "id":"rt-equipment-correlation",
-        "description":"<p>\n<strong>Table\u00a010-27.\u00a0RT Equipment Correlation Macro Attributes Description</strong>\n</p>",
+        "description":"<p>RT Equipment Correlation Macro.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.23.html#table_10-27"
     },
     {

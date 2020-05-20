@@ -5,6 +5,7 @@ normalized listing of all modules in the DICOM Standard.
 from typing import cast, List
 import sys
 from copy import deepcopy
+from operator import itemgetter
 
 from dicom_standard import parse_lib as pl
 from dicom_standard.macro_utils import MetadataTableType
@@ -39,4 +40,5 @@ if __name__ == '__main__':
     multi_frame_func_group_module = next(filter(lambda rel: rel['id'] == FUNC_GROUP_MODULE_ID, modules), None)
     assert multi_frame_func_group_module is not None, f'Module ID "{FUNC_GROUP_MODULE_ID}" not found in modules.json'
     ciod_specific_modules = create_ciod_specific_modules(ciods_with_macros, multi_frame_func_group_module)
-    pl.write_pretty_json(modules + ciod_specific_modules)
+    sorted_modules = sorted(modules + ciod_specific_modules, key=itemgetter('id'))
+    pl.write_pretty_json(sorted_modules)

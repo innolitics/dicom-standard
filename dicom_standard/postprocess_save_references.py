@@ -66,4 +66,4 @@ if __name__ == '__main__':
     macro_attr_pairs = cast(List[MetadataTableType], pl.read_json_data(sys.argv[2]))
     section_listing = pl.read_json_data(sys.argv[3])
     references = find_reference_html_in_sections(module_attr_pairs + macro_attr_pairs, section_listing)
-    pl.write_pretty_json(references)
+    pl.write_pretty_json({r[0]: r[1] for r in sorted(references.items())})

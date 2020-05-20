@@ -3,6 +3,7 @@ Add functional group macro attributes to module_to_attributes.json
 '''
 import sys
 from copy import deepcopy
+from operator import itemgetter
 
 import dicom_standard.parse_lib as pl
 from dicom_standard.process_modules import FUNC_GROUP_MODULE_ID
@@ -71,4 +72,5 @@ if __name__ == '__main__':
     ciod_to_macro = pl.read_json_data(sys.argv[3])
     macro_to_attributes = pl.read_json_data(sys.argv[4])
     new_attributes = process_ciod_specific_attributes(module_to_attributes, macros, ciod_to_macro, macro_to_attributes)
-    pl.write_pretty_json(module_to_attributes + new_attributes)
+    sorted_modules_to_attributes = sorted(module_to_attributes + new_attributes, key=itemgetter('path'))
+    pl.write_pretty_json(sorted_modules_to_attributes)
