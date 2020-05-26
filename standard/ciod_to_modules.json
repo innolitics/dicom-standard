@@ -5786,14 +5786,14 @@
         "moduleId":"real-time-acquisition",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":""
+        "informationEntity":"Image"
     },
     {
         "ciodId":"real-time-video-photographic-image",
         "moduleId":"current-frame-functional-groups",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":""
+        "informationEntity":"Image"
     },
     {
         "ciodId":"grayscale-softcopy-presentation-state",
