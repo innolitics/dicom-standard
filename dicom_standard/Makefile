@@ -46,10 +46,10 @@ dist/ciod_to_func_group_macros.json: tmp/raw_ciod_func_group_macro_tables.json
 dist/module_to_attributes.json: tmp/module_to_attributes_no_duplicates.json dist/macros.json dist/ciod_to_func_group_macros.json dist/macro_to_attributes.json
 	$(PYTHONPATH_PREFIX) python3 postprocess_integrate_func_group_macros.py $^ > $@
 
-dist/macro_to_attributes.json: tmp/macros_attributes_partial_references.json dist/references.json
-	$(PYTHONPATH_PREFIX) python3 postprocess_update_reference_links.py $^ > $@
+dist/macro_to_attributes.json: tmp/macros_attributes_updated_references.json
+	$(PYTHONPATH_PREFIX) python3 postprocess_merge_duplicate_nodes.py $< > $@
 
-dist/references.json: tmp/modules_attributes_partial_references.json tmp/raw_section_tables.json
+dist/references.json: tmp/modules_attributes_partial_references.json tmp/macros_attributes_partial_references.json tmp/raw_section_tables.json
 	$(PYTHONPATH_PREFIX) python3 postprocess_save_references.py $^ > $@
 
 
@@ -57,6 +57,9 @@ tmp/module_to_attributes_no_duplicates.json: tmp/modules_attributes_updated_refe
 	$(PYTHONPATH_PREFIX) python3 postprocess_merge_duplicate_nodes.py $< > $@
 
 tmp/modules_attributes_updated_references.json: tmp/modules_attributes_partial_references.json dist/references.json
+	$(PYTHONPATH_PREFIX) python3 postprocess_update_reference_links.py $^ > $@
+
+tmp/macros_attributes_updated_references.json: tmp/macros_attributes_partial_references.json dist/references.json
 	$(PYTHONPATH_PREFIX) python3 postprocess_update_reference_links.py $^ > $@
 
 tmp/modules_attributes_partial_references.json: tmp/modules_attributes_no_references.json
@@ -104,8 +107,8 @@ endtoendtest:
 
 
 updatestandard:
-	if [ ! -d old_standards ]; then mkdir old_standards; fi
-	mv -f standard/*.html old_standards/
+	if [ ! -d old_standard ]; then mkdir old_standard; fi
+	mv -f standard/*.html old_standard/
 	wget http://dicom.nema.org/medical/dicom/${VERSION}/output/html/part03.html -O standard/part03.html
 	wget http://dicom.nema.org/medical/dicom/${VERSION}/output/html/part04.html -O standard/part04.html
 	wget http://dicom.nema.org/medical/dicom/${VERSION}/output/html/part06.html -O standard/part06.html

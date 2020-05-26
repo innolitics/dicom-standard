@@ -3,7 +3,7 @@ __pycache__
 *.*cache*
 venv
 env
-old_standards
+old_standard
 tags
 .tox/
 *.egg-info/

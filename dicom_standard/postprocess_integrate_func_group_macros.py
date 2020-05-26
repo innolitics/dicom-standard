@@ -3,10 +3,12 @@ Add functional group macro attributes to module_to_attributes.json
 '''
 import sys
 from copy import deepcopy
+from operator import itemgetter
 
 import dicom_standard.parse_lib as pl
 from dicom_standard.process_modules import FUNC_GROUP_MODULE_ID
 
+SHARED_FUNC_GROUP_ID = 52009229
 PER_FRAME_FUNC_GROUP_ID = 52009230
 
 
@@ -20,16 +22,21 @@ def update_description(attribute, macro):
     attribute['description'] += note_header + usage + conditional
 
 
+def convert_macro_attr(macro_attr, macro, fg_attr_id):
+    attr = deepcopy(macro_attr)
+    macro_id = attr.pop('macroId')
+    attr['moduleId'] = f'{macro["ciodId"]}-{FUNC_GROUP_MODULE_ID}'
+    new_path_prefix = f'{attr["moduleId"]}:{fg_attr_id}'
+    attr['path'] = attr['path'].replace(macro_id, new_path_prefix)
+    update_description(attr, macro)
+    return attr
+
+
 def process_macro_attributes(macro_attrs, macro):
     attr_list = []
     for macro_attr in macro_attrs:
-        attr = deepcopy(macro_attr)
-        macro_id = attr.pop('macroId')
-        attr['moduleId'] = f'{macro["ciodId"]}-{FUNC_GROUP_MODULE_ID}'
-        new_path_prefix = f'{attr["moduleId"]}:{PER_FRAME_FUNC_GROUP_ID}'
-        attr['path'] = attr['path'].replace(macro_id, new_path_prefix)
-        update_description(attr, macro)
-        attr_list.append(attr)
+        attr_list.append(convert_macro_attr(macro_attr, macro, SHARED_FUNC_GROUP_ID))
+        attr_list.append(convert_macro_attr(macro_attr, macro, PER_FRAME_FUNC_GROUP_ID))
     return attr_list
 
 
@@ -65,4 +72,5 @@ if __name__ == '__main__':
     ciod_to_macro = pl.read_json_data(sys.argv[3])
     macro_to_attributes = pl.read_json_data(sys.argv[4])
     new_attributes = process_ciod_specific_attributes(module_to_attributes, macros, ciod_to_macro, macro_to_attributes)
-    pl.write_pretty_json(module_to_attributes + new_attributes)
+    sorted_modules_to_attributes = sorted(module_to_attributes + new_attributes, key=itemgetter('path'))
+    pl.write_pretty_json(sorted_modules_to_attributes)

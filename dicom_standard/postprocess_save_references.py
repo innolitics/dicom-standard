@@ -1,6 +1,7 @@
 '''
 Save reference HTML into a separate JSON file.
 '''
+from typing import cast, List
 import sys
 import re
 from urllib.parse import urljoin
@@ -8,6 +9,7 @@ from urllib.parse import urljoin
 from bs4 import BeautifulSoup
 
 from dicom_standard import parse_lib as pl
+from dicom_standard.macro_utils import MetadataTableType
 
 
 def find_reference_html_in_sections(pairs, section_listing):
@@ -60,7 +62,8 @@ def get_location_from_ref(ref):
 
 
 if __name__ == '__main__':
-    module_attr_pairs = pl.read_json_data(sys.argv[1])
-    section_listing = pl.read_json_data(sys.argv[2])
-    references = find_reference_html_in_sections(module_attr_pairs, section_listing)
-    pl.write_pretty_json(references)
+    module_attr_pairs = cast(List[MetadataTableType], pl.read_json_data(sys.argv[1]))
+    macro_attr_pairs = cast(List[MetadataTableType], pl.read_json_data(sys.argv[2]))
+    section_listing = pl.read_json_data(sys.argv[3])
+    references = find_reference_html_in_sections(module_attr_pairs + macro_attr_pairs, section_listing)
+    pl.write_pretty_json({r[0]: r[1] for r in sorted(references.items())})

@@ -17,8 +17,8 @@ def get_valid_reference_anchors(parsed_html):
     return [a for a in anchor_tags if not re.match(IGNORED_REFS_RE, a['href'])]
 
 
-def record_references_inside_pairs(module_attr_pairs):
-    updated_pairs = [record_reference_in_pair(pair) for pair in module_attr_pairs]
+def record_references_inside_pairs(pairs):
+    updated_pairs = [record_reference_in_pair(pair) for pair in pairs]
     return updated_pairs
 
 
@@ -51,6 +51,6 @@ def mark_as_recorded(anchor):
 
 
 if __name__ == '__main__':
-    module_attr_pairs = pl.read_json_data(sys.argv[1])
-    updated_pairs = record_references_inside_pairs(module_attr_pairs)
+    pairs = pl.read_json_data(sys.argv[1])
+    updated_pairs = record_references_inside_pairs(pairs)
     pl.write_pretty_json(updated_pairs)

@@ -41,11 +41,10 @@ def update_hierarchy_position(attr: Dict[str, str], last_id: List[str], current_
         print(attr)
         raise Exception('this shouldn\'t happen')
     if delta_l > 1:
-        # Standard workaround: There is a typo in the DICOM standard where two hierarchy
-        # markers are used instead of one. This catches that anomaly.
+        # Standard workaround: Catch typo in Table C.8.25.16-8 where an include
+        # statement uses two hierarchy markers instead of one
+        # http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.16.8.html
         delta_l = 1
-        # Error can be seen at the following link (rev. 2020b):
-        # http://dicom.nema.org/medical/dicom/current/output/html/part03.html#table_C.8.25.16-8
     if delta_l == 0:
         last_id[-1] = attr_id
     elif delta_l == 1:

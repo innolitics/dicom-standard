@@ -18974,13 +18974,13 @@
         "moduleId":"file-set-identification",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":null
+        "informationEntity":"Basic Directory"
     },
     {
         "ciodId":"basic-directory",
         "moduleId":"directory-information",
         "usage":"U",
         "conditionalStatement":null,
-        "informationEntity":null
+        "informationEntity":"Basic Directory"
     }
 ]

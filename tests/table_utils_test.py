@@ -2,6 +2,7 @@
 Unit tests covering functions in `table_utils.py`.
 '''
 from bs4 import BeautifulSoup as bs
+import pytest
 
 import dicom_standard.table_utils as t
 import tests.html_snippets as tables
@@ -107,3 +108,24 @@ def test_expand_both():
         ['<td>1</td>', '<td>2</td>', '<td>3</td>', '<td>4</td>']
     ]
     assert t.stringify_table(table_list) == expected_table_list
+
+
+class TestGetTableDescription:
+    def parse_html(self, html):
+        return bs(html, 'html.parser')
+
+    def test_get_table_description_h3(self):
+        snippet = self.parse_html(tables.h3_description)
+        tdiv = snippet.find('div', class_='table')
+        assert t.get_table_description(tdiv).text == 'Description'
+
+    def test_get_table_description_h5(self):
+        snippet = self.parse_html(tables.h5_description)
+        tdiv = snippet.find('div', class_='table')
+        assert t.get_table_description(tdiv).text == 'Description'
+
+    def test_get_table_description_assert_error(self):
+        snippet = self.parse_html(tables.no_description)
+        tdiv = snippet.find('div', class_='table')
+        with pytest.raises(AssertionError):
+            t.get_table_description(tdiv)

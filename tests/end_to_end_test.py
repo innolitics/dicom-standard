@@ -12,6 +12,11 @@ def make_standard():
 
 
 @pytest.fixture(scope='module')
+def attributes(make_standard):
+    return pl.read_json_data('standard/attributes.json')
+
+
+@pytest.fixture(scope='module')
 def ciods(make_standard):
     return pl.read_json_data('standard/ciods.json')
 
@@ -27,8 +32,8 @@ def modules(make_standard):
 
 
 @pytest.fixture(scope='module')
-def attributes(make_standard):
-    return pl.read_json_data('standard/attributes.json')
+def references(make_standard):
+    return pl.read_json_data('standard/references.json')
 
 
 @pytest.fixture(scope='module')
@@ -56,42 +61,73 @@ def module_attribute_relationship(make_standard):
     return pl.read_json_data('standard/module_to_attributes.json')
 
 
+@pytest.fixture(scope='module')
+def attribute_ids(attributes):
+    return [d['id'] for d in attributes]
+
+
+@pytest.fixture(scope='module')
+def ciod_ids(ciods):
+    return [d['id'] for d in ciods]
+
+
+@pytest.fixture(scope='module')
+def macro_ids(macros):
+    return [d['id'] for d in macros]
+
+
+@pytest.fixture(scope='module')
+def module_ids(modules):
+    return [d['id'] for d in modules]
+
+
 @pytest.mark.endtoend
-def test_valid_foreign_keys_ciod_macro(ciod_fg_macro_relationship, ciods, macros):
+def test_valid_foreign_keys_ciod_macro(ciod_fg_macro_relationship, ciod_ids, macro_ids):
     for pair in ciod_fg_macro_relationship:
-        assert any(d['id'] == pair['ciodId'] for d in ciods)
-        assert any(d['id'] == pair['macroId'] for d in macros)
+        assert pair['ciodId'] in ciod_ids
+        assert pair['macroId'] in macro_ids
 
 
 @pytest.mark.endtoend
-def test_valid_foreign_keys_ciod_module(ciod_module_relationship, ciods, modules):
-    errors = []
+def test_valid_foreign_keys_ciod_module(ciod_module_relationship, ciod_ids, module_ids):
     for pair in ciod_module_relationship:
-        assert any(d['id'] == pair['ciodId'] for d in ciods)
-        if not any(d['id'] == pair['moduleId'] for d in modules):
-            errors.append(pair['moduleId'])
-    print(errors)
-    assert not errors
+        assert pair['ciodId'] in ciod_ids
+        assert pair['moduleId'] in module_ids
 
 
 @pytest.mark.endtoend
-def test_valid_foreign_keys_macro_attribute(macro_attribute_relationship, macros, attributes):
+def test_valid_foreign_keys_macro_attribute(macro_attribute_relationship, macro_ids, attribute_ids):
     for pair in macro_attribute_relationship:
-        assert any(d['id'] == pair['macroId'] for d in macros)
-        assert any(d['id'] == pair['path'].split(':')[-1] for d in attributes)
+        assert pair['macroId'] in macro_ids
+        assert pair['path'].split(':')[-1] in attribute_ids
 
 
 @pytest.mark.endtoend
-def test_valid_foreign_keys_module_attribute(module_attribute_relationship, modules, attributes):
+def test_valid_foreign_keys_module_attribute(module_attribute_relationship, module_ids, attribute_ids):
     for pair in module_attribute_relationship:
-        assert any(d['id'] == pair['moduleId'] for d in modules)
-        assert any(d['id'] == pair['path'].split(':')[-1] for d in attributes)
+        assert pair['moduleId'] in module_ids
+        assert pair['path'].split(':')[-1] in attribute_ids
+
+
+@pytest.mark.endtoend
+def test_macro_attr_refs_in_references(macro_attribute_relationship, references):
+    for pair in macro_attribute_relationship:
+        for ref in pair['externalReferences']:
+            assert ref['sourceUrl'] in references
+
+
+@pytest.mark.endtoend
+def test_module_attr_refs_in_references(module_attribute_relationship, references):
+    for pair in module_attribute_relationship:
+        for ref in pair['externalReferences']:
+            assert ref['sourceUrl'] in references
 
 
 @pytest.mark.endtoend
 def test_valid_ciod_names(sops, ciods):
+    ciod_names = [d['name'] for d in ciods]
     for pair in sops:
-        assert any(d['name'] == pair['ciod'] for d in ciods)
+        assert pair['ciod'] in ciod_names
 
 
 @pytest.mark.endtoend
@@ -143,6 +179,53 @@ def test_vertical_samples_from_standard(ciods, modules, attributes):
 
 
 @pytest.mark.endtoend
+def test_trace_from_ciod_to_func_group_attribute(ciod_fg_macro_relationship, ciod_ids, macro_ids,
+                                                 macro_attribute_relationship, module_ids,
+                                                 module_attribute_relationship, attributes):
+    ciod_macro = {
+        "ciodId": "enhanced-mr-image",
+        "macroId": "referenced-image",
+        "usage": "C",
+        "conditionalStatement": "Required if the image or frame has been planned on another image or frame. May be present otherwise"
+    }
+    macro_attr = {
+        "macroId": "referenced-image",
+        "path": "referenced-image:00081140:00081150",
+        "tag": "(0008,1150)",
+        "type": "1",
+        "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16-6",
+        "description": "<p>\nUniquely identifies the referenced SOP Class.</p>",
+        "externalReferences": []
+    }
+    ciod_specific_module_id = f'{ciod_macro["ciodId"]}-multi-frame-functional-groups'
+    module_attr = {
+        "moduleId": "enhanced-mr-image-multi-frame-functional-groups",
+        "path": "enhanced-mr-image-multi-frame-functional-groups:52009230:00081140:00081150",
+        "tag": "(0008,1150)",
+        "type": "1",
+        "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.2.html#table_C.7.6.16-6",
+        "description": "<p>\nUniquely identifies the referenced SOP Class.</p><h3>Note</h3><p>Part of the Referenced Image Functional Group Macro with usage: C</p><p>Required if the image or frame has been planned on another image or frame. May be present otherwise.</p>",
+        "externalReferences": []
+    }
+    attr = {
+        "tag": "(0008,1150)",
+        "name": "Referenced SOP Class UID",
+        "keyword": "ReferencedSOPClassUID",
+        "valueRepresentation": "UI",
+        "valueMultiplicity": "1",
+        "retired": "N",
+        "id": "00081150"
+    }
+    assert ciod_macro in ciod_fg_macro_relationship
+    assert ciod_macro['ciodId'] in ciod_ids
+    assert ciod_macro['macroId'] in macro_ids
+    assert macro_attr in macro_attribute_relationship
+    assert ciod_specific_module_id in module_ids
+    assert module_attr in module_attribute_relationship
+    assert attr in attributes
+
+
+@pytest.mark.endtoend
 def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship, modules,
                                       module_attribute_relationship, attributes):
     attr = {
@@ -161,7 +244,7 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship, modules,
             "tag": "(0008,0121)",
             "type": "3",
             "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.2.2.html#table_C.7-4a",
-            "description": "<td colspan=\"1\" rowspan=\"1\">\n<p>\nCodes that are considered equivalent by the creating system.</p>\n<p>\nOne or more Items are permitted in this Sequence.</p>\n<p>\nSee <span href=\"\">Section\u00a08.9</span>.</p>\n</td>",
+            "description": "<p>\nCodes that are considered equivalent by the creating system.</p>\n<p>\nOne or more Items are permitted in this Sequence.</p>\n<p>\nSee <span href=\"\">Section\u00a08.9</span>.</p>",
             "externalReferences": [
                 {
                     "sourceUrl": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_8.9.html#sect_8.9",
@@ -175,7 +258,7 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship, modules,
             "tag": "(0008,0121)",
             "type": "3",
             "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.2.2.html#table_C.7-4a",
-            "description": "<td colspan=\"1\" rowspan=\"1\">\n<p>\nCodes that are considered equivalent by the creating system.</p>\n<p>\nOne or more Items are permitted in this Sequence.</p>\n<p>\nSee <span href=\"\">Section\u00a08.9</span>.</p>\n</td>",
+            "description": "<p>\nCodes that are considered equivalent by the creating system.</p>\n<p>\nOne or more Items are permitted in this Sequence.</p>\n<p>\nSee <span href=\"\">Section\u00a08.9</span>.</p>",
             "externalReferences": [
                 {
                     "sourceUrl": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_8.9.html#sect_8.9",
@@ -229,7 +312,7 @@ def test_number_of_attribute_appearances(module_attribute_relationship, attribut
             "tag": "(0010,0213)",
             "type": "None",
             "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.2.3.html#table_C.2-3",
-            "description": "<td colspan=\"1\" rowspan=\"1\">\n<p>\nThe nomenclature used for Strain Description (0010,0212). See <span href=\"\">Section\u00a0C.7.1.1.1.4</span>.</p>\n</td>",
+            "description": "<p>\nThe nomenclature used for Strain Description (0010,0212). See <span href=\"\">Section\u00a0C.7.1.1.1.4</span>.</p>",
             "externalReferences": [
                 {
                     "sourceUrl": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.html#sect_C.7.1.1.1.4",
@@ -243,7 +326,7 @@ def test_number_of_attribute_appearances(module_attribute_relationship, attribut
             "tag": "(0010,0213)",
             "type": "3",
             "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.html#table_C.7-1",
-            "description": "<td colspan=\"1\" rowspan=\"1\">\n<p>\nThe nomenclature used for Strain Description (0010,0212). See <span href=\"\">Section\u00a0C.7.1.1.1.4</span>.</p>\n</td>",
+            "description": "<p>\nThe nomenclature used for Strain Description (0010,0212). See <span href=\"\">Section\u00a0C.7.1.1.1.4</span>.</p>",
             "externalReferences": [
                 {
                     "sourceUrl": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.html#sect_C.7.1.1.1.4",
@@ -294,28 +377,39 @@ def test_number_of_module_appearances(ciods, ciod_module_relationship, modules):
 
 @pytest.mark.endtoend
 class TestUniqueIds:
-    def get_duplicate_ids(self, dict_list):
-        id_list = [d['id'] for d in dict_list]
-        return [k for k, v in Counter(id_list).items() if v > 1]
+    def get_duplicates(self, lst):
+        return [k for k, v in Counter(lst).items() if v > 1]
 
-    def test_no_duplicate_attributes(self, attributes):
-        assert not self.get_duplicate_ids(attributes)
+    def get_duplicate_paths(self, dict_list):
+        path_list = [d['path'] for d in dict_list]
+        return self.get_duplicates(path_list)
 
-    def test_no_duplicate_ciods(self, ciods):
-        assert not self.get_duplicate_ids(ciods)
+    def test_no_duplicate_attributes(self, attribute_ids):
+        assert not self.get_duplicates(attribute_ids)
 
-    def test_no_duplicate_macros(self, macros):
-        assert not self.get_duplicate_ids(macros)
+    def test_no_duplicate_ciods(self, ciod_ids):
+        assert not self.get_duplicates(ciod_ids)
 
-    def test_no_duplicate_modules(self, modules):
-        assert not self.get_duplicate_ids(modules)
+    def test_no_duplicate_macros(self, macro_ids):
+        assert not self.get_duplicates(macro_ids)
+
+    def test_no_duplicate_modules(self, module_ids):
+        assert not self.get_duplicates(module_ids)
 
     def test_no_duplicate_sops(self, sops):
-        assert not self.get_duplicate_ids(sops)
+        sop_ids = [d['id'] for d in sops]
+        assert not self.get_duplicates(sop_ids)
 
+    def test_no_duplicate_ciod_module_relationships(self, ciod_module_relationship):
+        key_list = [d['ciodId'] + d['moduleId'] for d in ciod_module_relationship]
+        assert not self.get_duplicates(key_list)
 
-@pytest.mark.endtoend
-def test_no_duplicate_paths(module_attribute_relationship):
-    path_list = [d['path'] for d in module_attribute_relationship]
-    duplicate_paths = [k for k, v in Counter(path_list).items() if v > 1]
-    assert not duplicate_paths
+    def test_no_duplicate_ciod_macro_relationships(self, ciod_fg_macro_relationship):
+        key_list = [d['ciodId'] + d['macroId'] for d in ciod_fg_macro_relationship]
+        assert not self.get_duplicates(key_list)
+
+    def test_no_duplicate_macro_attr_paths(self, macro_attribute_relationship):
+        assert not self.get_duplicate_paths(macro_attribute_relationship)
+
+    def test_no_duplicate_module_attr_paths(self, module_attribute_relationship):
+        assert not self.get_duplicate_paths(module_attribute_relationship)

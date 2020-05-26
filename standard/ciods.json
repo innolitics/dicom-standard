@@ -788,7 +788,7 @@
     {
         "name":"Protocol Approval",
         "id":"protocol-approval",
-        "description":"None",
+        "description":"<p>\nThe Protocol Approval IOD describes approval-related Assertions made by people, organizations and devices about Instances.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.82.3.html#table_A.82.3.1.3-1"
     },
     {
@@ -824,37 +824,37 @@
     {
         "name":"RT Physician Intent",
         "id":"rt-physician-intent",
-        "description":"None",
+        "description":"<p>\nThe RT Physician Intent IOD carries the prescriptions by which the physician describes the therapeutic goal and strategy for the radiotherapeutic treatment.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.86.html#table_A.86.1.2-1"
     },
     {
         "name":"RT Segment Annotation",
         "id":"rt-segment-annotation",
-        "description":"None",
+        "description":"<p>\nThe RT Segment Annotation IOD annotates any general-purpose entity that represents geometric information such as Segmentation IOD, Surface Segmentation IOD, and RT Structure Set IOD with radiotherapy-specific information that cannot be encoded in the content of the annotated SOP Instance, or overrides that content with new or additional interpretation.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.86.html#table_A.86.1.3-1"
     },
     {
         "name":"RT Radiation Set",
         "id":"rt-radiation-set",
-        "description":"None",
+        "description":"<p>\nThe RT Radiation Set IOD represents an RT Radiation Set, which is a set of radiation deliveries that are intended to be delivered together in a single fraction (see <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_7.14.5.html#sect_7.14.5\" target=\"_blank\">Section\u00a07.14.5</a>). The RT Radiation Set also contains a description of the fractionation pattern, the intended number of fractions and the associated dose contributions.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.86.html#table_A.86.1.4-1"
     },
     {
         "name":"C-Arm Photon-Electron Radiation",
         "id":"c-arm-photon-electron-radiation",
-        "description":"None",
+        "description":"<p>\nThe C-Arm Photon-Electron Radiation IOD describes a radiotherapy treatment to be performed on a C-Arm delivery device using photon or electron radiation.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.86.html#table_A.86.1.5-1"
     },
     {
         "name":"Tomotherapeutic Radiation",
         "id":"tomotherapeutic-radiation",
-        "description":"None",
+        "description":"<p>\nThe Tomotherapeutic Radiation IOD represents the information required to describe a radiotherapy treatment on a serial or helical tomotherapeutic delivery device.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.86.html#table_A.86.1.6-1"
     },
     {
         "name":"Robotic-Arm Radiation",
         "id":"robotic-arm-radiation",
-        "description":"None",
+        "description":"<p>\nThe Robotic-Arm Radiation IOD specifies the Robotic Path and collimation parameters required to describe a radiotherapy treatment on a robotic-arm delivery device. A Robotic Path is a sequence of Robotic Nodes. A Robotic Node specifies a Radiation Source location for a Robotic-Arm delivery device.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.86.html#table_A.86.1.7-1"
     },
     {

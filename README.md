@@ -16,7 +16,10 @@ and machine-friendly JSON files. The purpose of these JSON files is twofold:
 The finalized JSON output of this program is in the `standard` directory at the
 top level of this project.
 
+A GitHub Actions [workflow][workflow_link] regenerates the JSON files using the most current web version of the DICOM Standard at the beginning of each month. If there are any changes, the updated files are automatically pushed to `master`.
+
 [nema]: http://dicom.nema.org/
+[workflow_link]: https://github.com/innolitics/dicom-standard/actions?query=workflow%3Aupdate-standard
 
 ## Usage
 
@@ -166,46 +169,48 @@ A map of all extraction and processing pathways is shown below:
                    |             |               |             |  |        | SOPs    |  | Attributes |
                +---v-----+  +----v-----+  +------v------+  +---v--v---+    +----+----+  +-----+------+
                | Extract |  | Extract  |  | Extract     |  | Extract  |         |             |
-               | CIODs/  |  | CIODs/FG |  | Modules/    |  | Sections |         |             |
-               | Modules |  | Macros   |  | Macro Attrs |  +--------+-+         v             v
-               +----+----+  +----+-----+  +------+-----+            |       sops.json   attributes.json
+               | CIODs/  |  | CIODs/FG |  | Modules/    |  | Sections |         v             v
+               | Modules |  | Macros   |  | Macro Attrs +  +--------+-+     sops.json   attributes.json
+               +----+----+  +----+-----+  +------+-----+            |
                     |            |               |                  |
       +-------------+            |               +---------------+  +-----------+
       |             |            |               |               |              |
 +-----v-----+  +----v----+  +----v------+  +-----v------+  +-----v------+       |
 | Process   |  | Process |  | Process   |  | Preprocess |  | Preprocess |       |
-| CIOD/     |  | CIODs   |  | CIOD/FG   |  | Modules/   |  | Macros/    |       |
+| CIOD/     |  | CIODs   |  | CIOD/FG   |  | Macros     |  | Modules/   |       |
 | Module    |  +----+----+  | Macro     |  | Attributes |  | Attributes |       |
 | Relations |       |       | Relations |  +-----+------+  +-----+------+       |
-+-----+-----+       |       +----+------+        |               |              |
-      |             v            |               +-------+       +-------+      |
-      |        ciods.json        |               |       |       |       |      |
-      v                          |          +----v----+  |  +----v----+  |      |
-ciod_to_modules.json             |          | Process |  |  | Process |  |      |
-                                 v          | Modules |  |  | Macros  |  |      |
-           ciod_to_func_group_macros.json   +----+----+  |  +----+----+  |      |
-                                                 |       |       |       |      |
-                                                 |       |       |       |      |
-                                                 v       |       v       |      |
-                                            modules.json |  macros.json  |      |
-                                                         |               |      |
-                                                 +-------v---+   +-------v---+  |
-                                                 | Process   |   | Process   |  |
-                                                 | Module    |   | Macro     |  |
-                                                 | Attribute |   | Attribute |  |
-                                                 | Relations |   | Relations |  |
-                                                 +-------+---+   +-------+---+  |
-                                                         |               |      |
-                                                       +-v---------------v------v-+
-                                                       |        Postprocess       |
-                                                       |      Add References      |
-                                                       +-----+-------+------+-----+
-                                                             |       |      |
-                                                    +--------+       |      +--------+
-                                                    |                v               |
-                                                    |    macros_to_attributes.json   |
-                                                    v                                v
-                                         modules_to_attributes.json           references.json
++-----+-----+       v       +----+------+        |               |              |
+      |        ciods.json        |               +-------+       +-------+      |
+      v                          |               |       |       |       |      |
+ciod_to_modules.json             |          +----v----+  |  +----v----+  |      |
+                                 v          | Process |  |  | Process |  |      |
+           ciod_to_func_group_macros.json   | Macros  |  |  | Modules |  |      |
+                                 |          +----+----+  |  +----+----+  |      |
+                                 |               |       |       |       |      |
+                                 |               v       |       v       |      |
+                                 |          macros.json  |  modules.json |      |
+                                 |           |           |               |      |
+                                 |           |   +-------v---+   +-------v---+  |
+                                 |           |   | Process   |   | Process   |  |
+                                 |           |   | Macro     |   | Module    |  |
+                                 |           |   | Attribute |   | Attribute |  |
+                                 |           |   | Relations |   | Relations |  |
+                                 |           |   +-------+---+   +-------+---+  |
+                                 |           |           |               |      |
+                                 |           |         +-v---------------v------v-+
+                                 |           |         |       Postprocess        |
+                                 |           |         |      Add References      +-----------+
+                                 |           |         +-+---------------+--------+           |
+                                 |           |           |               |                    |
+                          +------v-----------v---+     +-v---------------v--------+  +--------v--------+
+                          |     Postprocess      <-----+       Postprocess        |  | Save References |
+                          | Integrate Functional |     |   Merge Duplicate Nodes  |  +--------+--------+
+                          |     Group Macros     <--+  +-------------+------------+           |
+                          +-----------+----------+  |                |                        |
+                                      |             |                v                        v
+                                      v             +----macros_to_attributes.json      references.json
+                         modules_to_attributes.json
 ```
 
 To update the parser map, please use [ASCIIFlow][asciiflow].
@@ -224,6 +229,31 @@ To run a specific test, run `tox -e <testenv>`. Test environments include:
 - `build-dist`: test building the backend into source and binary distributions
 
 [tox]: https://pypi.org/project/tox/
+
+## DICOM Standard Workarounds
+
+Certain parts of the DICOM Standard site cause errors when running the parser, often due to typos or formatting inconsistencies.
+
+When we find one of these issues, we add a hard-coded fix in the relevant file and add a comment starting with 'Standard workaround' that describes the issue and links to its location in the Standard. To be aware when these fixes are obsolete, we add a unit test that fails once the issue no longer exists.
+
+Current standard workarounds (as of rev.2020b):
+| *Issue description* | *Workaround location* |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------|
+| [Table A.39.19-1](http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.35.19.3.html) ends its title with an upper case "S" | `extract_ciod_module_tables.py`<br>`parse_lib.py` |
+| [Table A.32.9-2](http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.9.3.4.html#table_A.32.9-2) has "Functional Groups Macros" in its title while other tables use "Functional Group Macros" | `extract_ciod_func_group_macro_tables.py`<br>`parse_lib.py` |
+| [Table A.52.4.3-1](http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.52.4.3.html#table_A.52.4.3-1) is missing "Image" from the IOD name portion of the title | `extract_ciod_func_group_macro_tables.py` |
+| [Table C.8-125](http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.15.3.9.html#table_C.8-125) has an extra "Sequence" in its title (should be "CT X-Ray Details", not "CT X-Ray Details Sequence") | `parse_lib.py` |
+| [Table A.84.3.2-1](http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.84.3.2.html#table_A.84.3.2-1) contains a macro that has an extra "Macro" in its name ("Frame VOI LUT With LUT Macro") | `process_ciod_func_group_macro_relationship.py` |
+| [Table C.8.25.16-8](http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.16.8.html) has an include statement with an extra hierarchy marker (two instead of one) | `hierarchy_utils.py` |
+| [Table A.32.10-1](http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.10.2.html#table_A.32.10-1) is missing values in the "Information Entity" field of two rows | `process_ciod_module_relationship.py` |
+| [Table TID 1004](http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1004) has a section URL pattern ("sect_TID_1004") that doesn't exist within the HTML version of the standard | `parse_lib.py` |
+| Certain subsections are located within the base section rather than having their own section (C.7.16.2.5.1 should be within C.7.16.2.5, but `sect_C.7.16.2.5.html` is invalid) | `parse_lib.py`<br>`extract_modules_macros_with_attributes.py` |
+| [The File-Set Identification Module](http://dicom.nema.org/dicom/2013/output/chtml/part03/sect_F.3.html#sect_F.3.2.1) has no description paragraph | `extract_modules_macros_with_attributes.py` |
+| \*[The Enhanced MR Color Image IOD](http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.36.4.4.html) references the Enhanced MR Image IOD's functional group macros table instead of having its own (they would be identical tables) | `extract_ciod_func_group_macro_tables.py` |
+| \*The "Content Creator's Name" attribute appears twice in [Table C.36.8-1](http://dicom.nema.org/medical/dicom/2019c/output/chtml/part03/sect_C.36.8.html#table_C.36.8-1) with the same hierarchy without a conditional statement | `postprocess_merge_duplicate_nodes.py` |
+| \*[Table F.3-3](http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_F.3.2.2.html#table_F.3-3) contains a "Record Selection Keys" attribute with an invalid tag ("See F.5") | `preprocess_modules_with_attributes.py` |
+
+(\*) This issue is not caused by a typo or error in the Standard but rather an exception from the normal format and thus does not have a unit test for a fix.
 
 ## Contact
 

@@ -57,11 +57,10 @@ def get_short_standard_link(tdiv: Tag) -> str:
 
 def get_table_description(tdiv: Tag) -> Optional[Tag]:
     section = tdiv.parent.parent
-    description_title = section.find('h3', class_='title')
-    try:
-        return description_title.parent.parent.parent.parent.p
-    except AttributeError:
-        return None
+    # Some descriptions are children of 'h3' tags while others are children of 'h5' tags
+    description_title = section.find(['h3', 'h5'], class_='title')
+    assert description_title is not None, 'Table description not found.'
+    return description_title.parent.parent.parent.parent.p
 
 
 def table_to_dict(table: TableListType, row_names: List[str], omit_empty: bool = False) -> List[TableDictType]:

@@ -83,16 +83,12 @@ def clean_table_name(name: str) -> str:
         Table C.7-5b. Clinical Trial Series Module Attributes --> Clinical Trial Series
     '''
     _, _, title = re.split('\u00a0', name)
-    # Standard workaround: Include upper case "S" at end of "IOD Modules" to catch typo in Table A.39.19-1
-    # http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.35.19.3.html
+    # Standard workaround: Include upper case "S" at end of "IOD Modules" to catch typo in Table A.35.19-1
+    # http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.35.19.3.html#table_A.35.19-1
     # Standard workaround: Include optional "s" at end of "Functional Group" to catch Table A.32.9-2
     # http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.9.3.4.html#table_A.32.9-2
     possible_table_suffixes = r'(IOD Module[Ss])|(Module Attributes)|((Functional Group)? Macro Attributes)|(Module Table)|(Functional Groups? Macros)'
     clean_title = re.split(possible_table_suffixes, title)[0]
-    # Standard workaround: Remove extra "Table" from table title (should be "CT Performed Procedure Protocol", not "Table CT Performed ...")
-    # http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.82.html#table_A.82.1.3-1
-    if clean_title.strip() == 'Table CT Performed Procedure Protocol':
-        clean_title = 'CT Performed Procedure Protocol'
     # Standard workaround: Remove extra "Sequence" from table title (should be "CT X-Ray Details", not "CT X-Ray Details Sequence")
     # http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.15.3.9.html#table_C.8-125
     if clean_title == 'CT X-Ray Details Sequence':
@@ -113,7 +109,20 @@ def clean_html(html: str) -> str:
     else:
         remove_attributes_from_html_tags(top_level_tag)
         remove_empty_children(top_level_tag)
-        return resolve_relative_resource_urls(str(top_level_tag))
+        if top_level_tag.name == 'td':
+            html_string = get_content_string(top_level_tag)
+        else:
+            html_string = str(top_level_tag)
+        return resolve_relative_resource_urls(html_string)
+
+
+def get_content_string(tag: Tag) -> str:
+    '''
+    Returns the contents of an element as a string
+    with whitespace stripped.
+    '''
+    content_strings = [str(el) for el in tag.contents]
+    return ''.join(content_strings).strip()
 
 
 def get_top_level_tag(parsed_html: BeautifulSoup) -> Tag:
@@ -198,12 +207,14 @@ def get_standard_page(sect_id: str) -> str:
     '''
     try:
         # TODO: Remove if block (and constant) once URL once links for subsections exist (Issue #10 and related sections)
-        invalid_sect_id_match = re.match(ID_PATTERN, sect_id)
+        invalid_sect_id_match = ID_PATTERN.match(sect_id)
         if invalid_sect_id_match:
             # Standard workaround: For some reason, certain subsections are located within the base section, so return only the valid part
             # Ex: C.7.16.2.5.1 should be within C.7.16.2.5, but "sect_C.7.16.2.5.html" is invalid
             return invalid_sect_id_match.group(1)
-        # Standard workaround: Fix broken link produced by inconsistent URL pattern: http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1004
+        # Standard workaround: Fix broken reference link produced by inconsistent URL pattern
+        # Invalid generated URL: http://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_TID_1004.html#sect_TID_1004
+        # Working URL: http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1004
         if sect_id == 'sect_TID_1004':
             return 'chapter_A'
         sections = sect_id.split('.')
