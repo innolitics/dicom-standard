@@ -18,7 +18,6 @@ from dicom_standard.table_utils import (
     get_chapter_tables,
     tables_to_json,
     get_short_standard_link,
-    get_table_description,
     table_to_dict,
 )
 
@@ -49,13 +48,17 @@ def macro_table_to_dict(table: StringifiedTableListType) -> List[TableDictType]:
 def get_table_with_metadata(table_with_tdiv: Tuple[List[TableDictType], Tag]) -> MetadataTableType:
     table, tdiv = table_with_tdiv
     clean_name = clean_macro_table_name(pr.table_name(tdiv))
-    table_description = get_table_description(tdiv)
+    clean_description = pl.clean_html(str(tdiv.find_previous('p')))
+    module_type = 'Multi-frame' if 'Multi-frame' in clean_description \
+        else 'Current Frame' if 'Current Frame' in clean_description \
+        else None
     return {
         'name': clean_name,
         'macros': table,
         'id': pl.create_slug(clean_name),
-        'description': str(table_description),
-        'linkToStandard': get_short_standard_link(tdiv)
+        'description': clean_description,
+        'linkToStandard': get_short_standard_link(tdiv),
+        'moduleType': module_type,
     }
 
 

@@ -20,18 +20,20 @@ def define_all_relationships(ciod_macro_list):
     for table in ciod_macro_list:
         ciod = table['name']
         macros = table['macros']
-        all_relationships.extend([define_ciod_macro_relationship(ciod, macro)
+        module_type = table['moduleType']
+        all_relationships.extend([define_ciod_macro_relationship(ciod, macro, module_type)
                                   for macro in macros])
     return all_relationships
 
 
-def define_ciod_macro_relationship(ciod, macro):
+def define_ciod_macro_relationship(ciod, macro, module_type):
     usage, conditional_statement = expand_conditional_statement(macro['usage'])
     return {
         "ciodId": pl.create_slug(ciod),
         "macroId": pl.create_slug(clean_macro_name(pl.text_from_html_string(macro['macro']))),
         "usage": usage,
-        "conditionalStatement": conditional_statement
+        "conditionalStatement": conditional_statement,
+        "moduleType": module_type,
     }
 
 

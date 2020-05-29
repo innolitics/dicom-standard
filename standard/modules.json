@@ -1464,10 +1464,10 @@
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.28.html#table_C.7.6.28-1"
     },
     {
-        "name":"Multi-frame Functional Groups",
-        "id":"real-time-audio-waveform-multi-frame-functional-groups",
-        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
+        "name":"Current Frame Functional Groups",
+        "id":"real-time-audio-waveform-current-frame-functional-groups",
+        "description":"<p>\n<span href=\"#table_C.7.6.27-1\">This module </span> defines the Attributes related to the current frame when the IOD is transported using Real-Time Communication. It corresponds to the \"per-frame\" Attribute for the non-Real-Time IODs.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.27.html#table_C.7.6.27-1"
     },
     {
         "name":"Real-Time Bulk Data Flow",
@@ -1476,16 +1476,16 @@
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.26.html#table_C.7.6.26-1"
     },
     {
-        "name":"Multi-frame Functional Groups",
-        "id":"real-time-video-endoscopic-image-multi-frame-functional-groups",
-        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
+        "name":"Current Frame Functional Groups",
+        "id":"real-time-video-endoscopic-image-current-frame-functional-groups",
+        "description":"<p>\n<span href=\"#table_C.7.6.27-1\">This module </span> defines the Attributes related to the current frame when the IOD is transported using Real-Time Communication. It corresponds to the \"per-frame\" Attribute for the non-Real-Time IODs.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.27.html#table_C.7.6.27-1"
     },
     {
-        "name":"Multi-frame Functional Groups",
-        "id":"real-time-video-photographic-image-multi-frame-functional-groups",
-        "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
+        "name":"Current Frame Functional Groups",
+        "id":"real-time-video-photographic-image-current-frame-functional-groups",
+        "description":"<p>\n<span href=\"#table_C.7.6.27-1\">This module </span> defines the Attributes related to the current frame when the IOD is transported using Real-Time Communication. It corresponds to the \"per-frame\" Attribute for the non-Real-Time IODs.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.27.html#table_C.7.6.27-1"
     },
     {
         "name":"Real World Value Mapping",
