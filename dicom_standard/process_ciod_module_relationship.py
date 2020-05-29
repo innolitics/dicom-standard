@@ -5,6 +5,7 @@ CIOD-Module relationships defined in the DICOM Standard.
 import sys
 
 from dicom_standard import parse_lib as pl
+from dicom_standard.process_modules import MF_FUNC_GROUP_MODULE_ID, CF_FUNC_GROUP_MODULE_ID
 
 
 def define_all_relationships(ciod_module_list):
@@ -42,8 +43,11 @@ def define_ciod_module_relationship(ciod, module):
         information_entity = 'Image'
     ciod_id = pl.create_slug(ciod)
     module_id = pl.create_slug(pl.text_from_html_string(module['module']))
-    # Add CIOD ID to differentiate "Multi-Frame Functional Group" modules for different CIODs
-    if module_id == 'multi-frame-functional-groups':
+    # Create CIOD-specific "Multi-frame Functional Group" module IDs
+    if module_id == MF_FUNC_GROUP_MODULE_ID:
+        module_id = f'{ciod_id}-{module_id}'
+    # Create CIOD-specific "Current Frame Functional Group" module IDs
+    if module_id == CF_FUNC_GROUP_MODULE_ID:
         module_id = f'{ciod_id}-{module_id}'
     return {
         "ciodId": ciod_id,

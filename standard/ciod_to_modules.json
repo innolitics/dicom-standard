@@ -5629,7 +5629,7 @@
     },
     {
         "ciodId":"real-time-video-endoscopic-image",
-        "moduleId":"current-frame-functional-groups",
+        "moduleId":"real-time-video-endoscopic-image-current-frame-functional-groups",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
@@ -5790,7 +5790,7 @@
     },
     {
         "ciodId":"real-time-video-photographic-image",
-        "moduleId":"current-frame-functional-groups",
+        "moduleId":"real-time-video-photographic-image-current-frame-functional-groups",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
@@ -7918,7 +7918,7 @@
     },
     {
         "ciodId":"real-time-audio-waveform",
-        "moduleId":"current-frame-functional-groups",
+        "moduleId":"real-time-audio-waveform-current-frame-functional-groups",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Waveform"

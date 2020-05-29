@@ -186,7 +186,8 @@ def test_trace_from_ciod_to_func_group_attribute(ciod_fg_macro_relationship, cio
         "ciodId": "enhanced-mr-image",
         "macroId": "referenced-image",
         "usage": "C",
-        "conditionalStatement": "Required if the image or frame has been planned on another image or frame. May be present otherwise"
+        "conditionalStatement": "Required if the image or frame has been planned on another image or frame. May be present otherwise",
+        "moduleType": "Multi-frame"
     }
     macro_attr = {
         "macroId": "referenced-image",
