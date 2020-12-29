@@ -43,6 +43,10 @@ def define_ciod_module_relationship(ciod, module):
         information_entity = 'Image'
     ciod_id = pl.create_slug(ciod)
     module_id = pl.create_slug(pl.text_from_html_string(module['module']))
+    # Standard workaround: Fix inconsistent capitalization in the "Information Entity" field of Rendition Selection Document
+    # http://dicom.nema.org/medical/dicom/2019e/output/chtml/part03/sect_A.35.21.3.html#table_A.35.21-1
+    if ciod == 'Rendition Selection Document' and module_id == 'synchronization':
+        information_entity = 'Frame of Reference'
     # Create CIOD-specific "Multi-frame Functional Group" module IDs
     if module_id == MF_FUNC_GROUP_MODULE_ID:
         module_id = f'{ciod_id}-{module_id}'
