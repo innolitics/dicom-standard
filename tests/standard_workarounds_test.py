@@ -60,6 +60,13 @@ def test_missing_ie_field_in_table_a_32_10_1(part03):
     assert empty_ie_rows, 'Table no longer contains rows with an empty "Information Entity" field'
 
 
+def test_upper_case_O_in_table_a_35_21_1(part03):
+    rows = get_table_rows_from_ids(part03, ['table_A.35.21-1'], col_titles=['information_entity'])
+    information_entity = 'Frame'
+    row = next(filter(lambda r: information_entity in r['information_entity'], rows))
+    assert 'Of' in row['information_entity'], 'Table no longer contains capital "O"'
+
+
 def test_sect_tid_1004_invalid_url():
     test_url = 'http://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_TID_1004.html#sect_TID_1004'
     status_code = requests.get(test_url).status_code
