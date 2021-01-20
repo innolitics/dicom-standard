@@ -4,10 +4,9 @@ python:
     - "3.7"
 before_install:
 - deactivate
+- pyenv global 3.7.1
+- python3.7 -m pip install -U tox --user
 install:
- - pyenv install -v 3.7.1
- - pyenv global 3.7.1
- - python3.7 -m pip install -U tox --user
  - python3.7 -m tox --notest
 script: python3.7 -m tox
 notifications:
