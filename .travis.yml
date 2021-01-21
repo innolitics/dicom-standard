@@ -7,7 +7,7 @@ before_install:
 - pyenv global 3.7.1
 - python3.7 -m pip install -U tox --user
 install:
- - python3.7 -m tox --notest
+- python3.7 -m tox --notest
 script: python3.7 -m tox
 notifications:
   email: false
