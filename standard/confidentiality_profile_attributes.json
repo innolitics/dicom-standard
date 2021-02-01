@@ -49,6 +49,14 @@
         "id":"00181400"
     },
     {
+        "name":"Acquisition Field Of View Label",
+        "tag":"(0018,11BB)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "cleanDescOpt":"C",
+        "id":"001811bb"
+    },
+    {
         "name":"Acquisition Protocol Description",
         "tag":"(0018,9424)",
         "stdCompIOD":"Y",
@@ -307,6 +315,14 @@
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "id":"00120050"
+    },
+    {
+        "name":"Comments on Radiation Dose",
+        "tag":"(0040,0310)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00400310"
     },
     {
         "name":"Comments on the Performed Procedure Step",
@@ -1121,6 +1137,15 @@
         "id":"00402400"
     },
     {
+        "name":"Impedance Measurement DateTime",
+        "tag":"(003A,0314)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"003a0314"
+    },
+    {
         "name":"Impressions",
         "tag":"(4008,0300)",
         "stdCompIOD":"N",
@@ -1223,6 +1248,31 @@
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00401011"
+    },
+    {
+        "name":"Interlock DateTime",
+        "tag":"(300A,0741)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"300a0741"
+    },
+    {
+        "name":"Interlock Description",
+        "tag":"(300A,0742)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "cleanDescOpt":"C",
+        "id":"300a0742"
+    },
+    {
+        "name":"Interlock Origin Description",
+        "tag":"(300A,0783)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "cleanDescOpt":"C",
+        "id":"300a0783"
     },
     {
         "name":"Interpretation Approver Sequence",
@@ -1498,6 +1548,14 @@
         "id":"0018937b"
     },
     {
+        "name":"Multiplex Group UID",
+        "tag":"(003A,0310)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"003a0310"
+    },
+    {
         "name":"Name of Physician(s) Reading Study",
         "tag":"(0008,1060)",
         "stdCompIOD":"Y",
@@ -1510,6 +1568,20 @@
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00401010"
+    },
+    {
+        "name":"Nonconforming Modified Attributes Sequence",
+        "tag":"(0400,0551)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"04000551"
+    },
+    {
+        "name":"Nonconforming Data Element Value",
+        "tag":"(0400,0552)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"04000552"
     },
     {
         "name":"Observation Date (Trial)",
@@ -1656,6 +1728,15 @@
         "rtnLongFullDatesOpt":"K",
         "rtnLongModifDatesOpt":"C",
         "id":"00080034"
+    },
+    {
+        "name":"Override DateTime",
+        "tag":"(300A,0760)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"300a0760"
     },
     {
         "name":"Palette Color Lookup Table UID",
@@ -2228,6 +2309,15 @@
         "id":"00321067"
     },
     {
+        "name":"Recorded RT Control Point DateTime",
+        "tag":"(300A,073A)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"300a073a"
+    },
+    {
         "name":"Referenced Conceptual Volume UID",
         "tag":"(3010,000B)",
         "stdCompIOD":"Y",
@@ -2449,6 +2539,14 @@
         "id":"00401005"
     },
     {
+        "name":"Requested Series Description",
+        "tag":"(0018,9937)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00189937"
+    },
+    {
         "name":"Requested SOP Instance UID",
         "tag":"(0000,1001)",
         "stdCompIOD":"N",
@@ -2520,6 +2618,53 @@
         "stdCompIOD":"Y",
         "basicProfile":"X/Z",
         "id":"300e0008"
+    },
+    {
+        "name":"ROI Description",
+        "tag":"(3006,0028)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"30060028"
+    },
+    {
+        "name":"ROI Generation Description",
+        "tag":"(3006,0038)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"30060038"
+    },
+    {
+        "name":"ROI Interpreter",
+        "tag":"(3006,00A6)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "id":"300600a6"
+    },
+    {
+        "name":"ROI Name",
+        "tag":"(3006,0026)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "cleanDescOpt":"C",
+        "id":"30060026"
+    },
+    {
+        "name":"ROI Observation Description",
+        "tag":"(3006,0088)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"30060088"
+    },
+    {
+        "name":"ROI Observation Label",
+        "tag":"(3006,0085)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"30060085"
     },
     {
         "name":"RT Accessory Device Slot ID",
@@ -2679,6 +2824,13 @@
         "rtnLongFullDatesOpt":"K",
         "rtnLongModifDatesOpt":"C",
         "id":"00404008"
+    },
+    {
+        "name":"Scheduled Procedure Step ID",
+        "tag":"(0040,0009)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00400009"
     },
     {
         "name":"Scheduled Procedure Step Location",
@@ -2997,6 +3149,48 @@
         "id":"00880140"
     },
     {
+        "name":"Structure Set Date",
+        "tag":"(3006,0008)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"30060008"
+    },
+    {
+        "name":"Structure Set Description",
+        "tag":"(3006,0006)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"30060006"
+    },
+    {
+        "name":"Structure Set Label",
+        "tag":"(3006,0002)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "cleanDescOpt":"C",
+        "id":"30060002"
+    },
+    {
+        "name":"Structure Set Name",
+        "tag":"(3006,0004)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"30060004"
+    },
+    {
+        "name":"Structure Set Time",
+        "tag":"(3006,0009)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"30060009"
+    },
+    {
         "name":"Study Comments",
         "tag":"(0032,4000)",
         "stdCompIOD":"N",
@@ -3159,6 +3353,14 @@
         "id":"00081195"
     },
     {
+        "name":"Transducer Identification Sequence",
+        "tag":"(0018,5011)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "id":"00185011"
+    },
+    {
         "name":"Treatment Date",
         "tag":"(3008,0250)",
         "stdCompIOD":"Y",
@@ -3192,6 +3394,14 @@
         "id":"300a0609"
     },
     {
+        "name":"Treatment Session UID",
+        "tag":"(300A,0700)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"300a0700"
+    },
+    {
         "name":"Treatment Site",
         "tag":"(3010,0077)",
         "stdCompIOD":"Y",
@@ -3215,6 +3425,23 @@
         "rtnLongFullDatesOpt":"K",
         "rtnLongModifDatesOpt":"C",
         "id":"30080251"
+    },
+    {
+        "name":"Treatment Tolerance Violation DateTime",
+        "tag":"(300A,0736)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"300a0736"
+    },
+    {
+        "name":"Treatment Tolerance Violation Description",
+        "tag":"(300A,0734)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "cleanDescOpt":"C",
+        "id":"300a0734"
     },
     {
         "name":"UDI Sequence",

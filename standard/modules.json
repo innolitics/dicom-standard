@@ -246,18 +246,6 @@
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.27.html#table_C.7.6.27-1"
     },
     {
-        "name":"Defined CT Acquisition",
-        "id":"defined-ct-acquisition",
-        "description":"<p>\n<span href=\"#table_C.34.9-1\">This module </span> contains a specification of acceptable values and ranges of acquisition parameters for an imaging procedure.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.34.9.html#table_C.34.9-1"
-    },
-    {
-        "name":"Defined CT Reconstruction",
-        "id":"defined-ct-reconstruction",
-        "description":"<p>\n<span href=\"#table_C.34.11-1\">This module </span> contains specification of acceptable values and ranges of reconstruction parameters for an imaging procedure.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.34.11.html#table_C.34.11-1"
-    },
-    {
         "name":"Defined Storage",
         "id":"defined-storage",
         "description":"<p>\n<span href=\"#table_C.34.13-1\">This module </span> contains specification of acceptable values and ranges of storage parameters for an imaging procedure. Storage protocol elements may be used to automatically send the output of particular protocol elements to particular destinations. For example, a lung protocol might send thick images to PACS for reading and thin images to a CAD workstation for detection of nodules; a cardiac protocol might send an image set to a clinical analysis workstation; and a protocol used for pre-operative hip replacement planning might send images to the orthopedics department.</p>",
@@ -268,6 +256,12 @@
         "id":"deformable-spatial-registration",
         "description":"<p>\n<span href=\"#table_C.20.3-1\">This module </span> defines the general Attributes of the Deformable Spatial Registration Module.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.20.3.html#table_C.20.3-1"
+    },
+    {
+        "name":"Dermoscopic Image",
+        "id":"dermoscopic-image",
+        "description":"<p>\n<span href=\"#table_C.8.12.13-1\">This module </span> specifies the Attributes that describe dermoscopic images.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.12.13.html#table_C.8.12.13-1"
     },
     {
         "name":"Device",
@@ -512,7 +506,7 @@
     {
         "name":"File-Set Identification",
         "id":"file-set-identification",
-        "description":"<p>File-Set Identification Module.</p>",
+        "description":"<p>\nThis Module contains Attributes that identify a File-set.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_F.3.2.html#table_F.3-2"
     },
     {
@@ -538,6 +532,18 @@
         "id":"frame-pointers",
         "description":"<p>\n<span href=\"#table_C.7-15\">This module </span> specifies the Attributes of a Frame Pointer Module.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.9.html#table_C.7-15"
+    },
+    {
+        "name":"General Defined Acquisition",
+        "id":"general-defined-acquisition",
+        "description":"<p>\n<span href=\"#table_C.34.9-1\">This module </span> contains a specification of acceptable values and ranges of acquisition parameters for an imaging procedure.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.34.9.html#table_C.34.9-1"
+    },
+    {
+        "name":"General Defined Reconstruction",
+        "id":"general-defined-reconstruction",
+        "description":"<p>\n<span href=\"#table_C.34.11-1\">This module </span> contains specification of acceptable values and ranges of reconstruction parameters for an imaging procedure.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.34.11.html#table_C.34.11-1"
     },
     {
         "name":"General Equipment",
@@ -680,7 +686,7 @@
     {
         "name":"Image Plane",
         "id":"image-plane",
-        "description":"<p>\n<span href=\"#table_C.7-10\">This module </span> specifies the Attributes that define the transmitted pixel array of a two dimensional image plane.</p>",
+        "description":"<p>\n<span href=\"#table_C.7-10\">This module </span> specifies the Attributes that define the transmitted pixel array of a two dimensional image plane in a three dimensional space.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.2.html#table_C.7-10"
     },
     {
@@ -968,7 +974,7 @@
     {
         "name":"Multi-frame Overlay",
         "id":"multi-frame-overlay",
-        "description":"<p>\n<span href=\"#table_C.9-3\">This module </span> specifies the Attributes of a Multi-frame overlay.</p>",
+        "description":"<p>\n<span href=\"#table_C.9-3\">This module </span> specifies the Attributes of a Multi-frame overlay, or of a single frame overlay applied to a specific image frame.\n                    This Module specifies additional attributes for overlay planes specified in <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.9.2.html#sect_C.9.2\" target=\"_blank\">Section\u00a0C.9.2 Overlay Plane Module</a>.\n                    All Overlay frames have the same characteristics.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.9.3.html#table_C.9-3"
     },
     {
@@ -1320,6 +1326,18 @@
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.34.14.html#table_C.34.14-1"
     },
     {
+        "name":"Performed XA Acquisition",
+        "id":"performed-xa-acquisition",
+        "description":"<p>\nThis Module contains acquisition parameter values for a performed XA imaging procedure.\n                    The purpose of this Module is to record all relevant parameters, not just to record the values that were constrained in the executed Defined Protocol (if any).</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.34.17.html#table_C.34.17-1"
+    },
+    {
+        "name":"Performed XA Reconstruction",
+        "id":"performed-xa-reconstruction",
+        "description":"<p>\nThis Module contains reconstruction parameter values for a performed XA imaging procedure.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.34.18.html#table_C.34.18-1"
+    },
+    {
         "name":"PET Image",
         "id":"pet-image",
         "description":"<p>\n<span href=\"#table_C.8-63\">This module </span> contains IOD Attributes that describe PET images.</p>",
@@ -1472,7 +1490,7 @@
     {
         "name":"Real-Time Bulk Data Flow",
         "id":"real-time-bulk-data-flow",
-        "description":"<p>\nThis module references pixels/waveforms that are not contained within the DICOM dataset but conveyed in the associated Flows, as described in <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part22/chapter_6.html#sect_6.1\" target=\"_blank\">Section\u00a06.1 in <span>PS3.22</span>\n</a>.</p>",
+        "description":"<p>\nThis module references pixels/waveforms that are not contained within the DICOM data set but conveyed in the associated Flows, as described in <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part22/chapter_6.html#sect_6.1\" target=\"_blank\">Section\u00a06.1 in <span>PS3.22</span>\n</a>.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.26.html#table_C.7.6.26-1"
     },
     {
@@ -1602,6 +1620,12 @@
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.11.html#table_C.36.11-1"
     },
     {
+        "name":"RT Dose Contribution Record",
+        "id":"rt-dose-contribution-record",
+        "description":"<p>\nThe RT Dose Contribution Record Module contains information about the delivered dose.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.21.html#table_C.36.21-1"
+    },
+    {
         "name":"RT Dose ROI",
         "id":"rt-dose-roi",
         "description":"<p>\nRT Dose ROI provides ancillary dose-related information to the ROI data defined within the <span href=\"#sect_C.8.8.5\">This module </span> and <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.6.html#sect_C.8.8.6\" target=\"_blank\">ROI Contour Module</a>, which may be included in the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.18.html#sect_A.18\" target=\"_blank\">RT Dose IOD</a> composite object. These Modules in combination provide for the definition of dose data in the form of <span>isodose curves</span> or named or unnamed dose points. Isodose curves in radiation oncology are simply contours identifying a set of points with the same dose value.</p>",
@@ -1696,6 +1720,24 @@
         "id":"rt-radiation-common",
         "description":"<p>\nThe RT Radiation Common Module contains the Attributes shared by all RT Radiation IODs used for radiation treatment delivery.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.13.html#table_C.36.13-1"
+    },
+    {
+        "name":"RT Radiation Record Common",
+        "id":"rt-radiation-record-common",
+        "description":"<p>\nThe RT Radiation Record Common Module contains treatment-modality-independent information about a delivered RT Radiation. A delivered RT Radiation may be radiation to a patient or radiation without a patient being present (e.g. for QA purposes).</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.22.html#table_C.36.22-1"
+    },
+    {
+        "name":"RT Radiation Record Set",
+        "id":"rt-radiation-record-set",
+        "description":"<p>\nThe RT Radiation Record Set Module contains treatment-modality-independent information about a set of delivered RT Radiations.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.20.html#table_C.36.20-1R"
+    },
+    {
+        "name":"RT Radiation Salvage Record",
+        "id":"rt-radiation-salvage-record",
+        "description":"<p>\nThe RT Radiation Salvage Record Module contains information about the values which have been recorded when recording by the modality-specific RT Radiation Record IOD was not possible and thus only a minimal subset of attributes is present.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.23.html#table_C.36.23-1"
     },
     {
         "name":"RT Radiation Set",
@@ -2138,7 +2180,7 @@
     {
         "name":"VL Image",
         "id":"vl-image",
-        "description":"<p>\n<span href=\"#table_C.8-77\">This module </span> specifies the Attributes that describe a VL Image produced by Endoscopy (ES), General Microscopy (GM), Automated-Stage Microscopy (SM), External-camera Photography (XC), or other VL imaging Modalities.</p>",
+        "description":"<p>\n<span href=\"#table_C.8-77\">This module </span> specifies the Attributes that describe a VL Image produced by Endoscopy (ES), General Microscopy (GM), Automated-Stage Microscopy (SM), External-camera Photography (XC), Dermoscopy (DMS), or other VL imaging Modalities.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.12.html#table_C.8-77"
     },
     {
@@ -2368,6 +2410,12 @@
         "id":"xa-positioner",
         "description":"<p>\n<span href=\"#table_C.8-30\">This module </span> contains IOD Attributes that describe a c-arm positioner typically used in acquiring X-Ray Angiographic Images. The coordinate system used to track the positioner is defined in reference to the patient. The definition of coordinates with respect to the equipment is not supported. Furthermore, this Module does not describe the movement of the patient.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.7.5.html#table_C.8-30"
+    },
+    {
+        "name":"XA Protocol Series",
+        "id":"xa-protocol-series",
+        "description":"<p>\nThe XA Protocol IODs use the <span href=\"#sect_C.7.3.1\">This module </span>, specialized by the XA Protocol Series Module,\n                    to describe the DICOM Series Entity described in <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/chapter_A.html#sect_A.1.2.3\" target=\"_blank\">Section\u00a0A.1.2.3</a>,\n                    and to define what constitutes a Series for the context of a Protocol.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.34.16.html#table_C.34.16-1"
     },
     {
         "name":"XA/XRF Acquisition",

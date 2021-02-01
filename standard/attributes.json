@@ -307,7 +307,7 @@
     },
     {
         "tag":"(0008,0055)",
-        "name":"Station  AE Title",
+        "name":"Station AE Title",
         "keyword":"StationAETitle",
         "valueRepresentation":"AE",
         "valueMultiplicity":"1",
@@ -745,6 +745,15 @@
         "valueMultiplicity":"1",
         "retired":"N",
         "id":"00080201"
+    },
+    {
+        "tag":"(0008,0202)",
+        "name":"",
+        "keyword":"",
+        "valueRepresentation":"",
+        "valueMultiplicity":"",
+        "retired":"Y",
+        "id":"00080202"
     },
     {
         "tag":"(0008,0220)",
@@ -5517,6 +5526,51 @@
         "id":"0016008e"
     },
     {
+        "tag":"(0016,1001)",
+        "name":"Light Source Polarization",
+        "keyword":"LightSourcePolarization",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"00161001"
+    },
+    {
+        "tag":"(0016,1002)",
+        "name":"Emitter Color Temperature",
+        "keyword":"EmitterColorTemperature",
+        "valueRepresentation":"DS",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"00161002"
+    },
+    {
+        "tag":"(0016,1003)",
+        "name":"Contact Method",
+        "keyword":"ContactMethod",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"00161003"
+    },
+    {
+        "tag":"(0016,1004)",
+        "name":"Immersion Media",
+        "keyword":"ImmersionMedia",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1-n",
+        "retired":"N",
+        "id":"00161004"
+    },
+    {
+        "tag":"(0016,1005)",
+        "name":"Optical Magnification Factor",
+        "keyword":"OpticalMagnificationFactor",
+        "valueRepresentation":"DS",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"00161005"
+    },
+    {
         "tag":"(0018,0010)",
         "name":"Contrast/Bolus Agent",
         "keyword":"ContrastBolusAgent",
@@ -7065,6 +7119,168 @@
         "id":"001811a5"
     },
     {
+        "tag":"(0018,11B0)",
+        "name":"Acquisition Mode",
+        "keyword":"AcquisitionMode",
+        "valueRepresentation":"LO",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"001811b0"
+    },
+    {
+        "tag":"(0018,11B1)",
+        "name":"Dose Mode Name",
+        "keyword":"DoseModeName",
+        "valueRepresentation":"LO",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"001811b1"
+    },
+    {
+        "tag":"(0018,11B2)",
+        "name":"Acquired Subtraction Mask Flag",
+        "keyword":"AcquiredSubtractionMaskFlag",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"001811b2"
+    },
+    {
+        "tag":"(0018,11B3)",
+        "name":"Fluoroscopy Persistence Flag",
+        "keyword":"FluoroscopyPersistenceFlag",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"001811b3"
+    },
+    {
+        "tag":"(0018,11B4)",
+        "name":"Fluoroscopy Last Image Hold Persistence Flag",
+        "keyword":"FluoroscopyLastImageHoldPersistenceFlag",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"001811b4"
+    },
+    {
+        "tag":"(0018,11B5)",
+        "name":"Upper Limit Number Of Persistent Fluoroscopy Frames",
+        "keyword":"UpperLimitNumberOfPersistentFluoroscopyFrames",
+        "valueRepresentation":"IS",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"001811b5"
+    },
+    {
+        "tag":"(0018,11B6)",
+        "name":"Contrast/Bolus Auto Injection Trigger Flag",
+        "keyword":"ContrastBolusAutoInjectionTriggerFlag",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"001811b6"
+    },
+    {
+        "tag":"(0018,11B7)",
+        "name":"Contrast/Bolus Injection Delay",
+        "keyword":"ContrastBolusInjectionDelay",
+        "valueRepresentation":"FD",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"001811b7"
+    },
+    {
+        "tag":"(0018,11B8)",
+        "name":"XA Acquisition Phase Details Sequence",
+        "keyword":"XAAcquisitionPhaseDetailsSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"001811b8"
+    },
+    {
+        "tag":"(0018,11B9)",
+        "name":"XA Acquisition Frame Rate",
+        "keyword":"XAAcquisitionFrameRate",
+        "valueRepresentation":"FD",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"001811b9"
+    },
+    {
+        "tag":"(0018,11BA)",
+        "name":"XA Plane Details Sequence",
+        "keyword":"XAPlaneDetailsSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"001811ba"
+    },
+    {
+        "tag":"(0018,11BB)",
+        "name":"Acquisition Field of View Label",
+        "keyword":"AcquisitionFieldOfViewLabel",
+        "valueRepresentation":"LO",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"001811bb"
+    },
+    {
+        "tag":"(0018,11BC)",
+        "name":"X-Ray Filter Details Sequence",
+        "keyword":"XRayFilterDetailsSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"001811bc"
+    },
+    {
+        "tag":"(0018,11BD)",
+        "name":"XA Acquisition Duration",
+        "keyword":"XAAcquisitionDuration",
+        "valueRepresentation":"FD",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"001811bd"
+    },
+    {
+        "tag":"(0018,11BE)",
+        "name":"Reconstruction Pipeline Type",
+        "keyword":"ReconstructionPipelineType",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"001811be"
+    },
+    {
+        "tag":"(0018,11BF)",
+        "name":"Image Filter Details Sequence",
+        "keyword":"ImageFilterDetailsSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"001811bf"
+    },
+    {
+        "tag":"(0018,11C0)",
+        "name":"Applied Mask Subtraction Flag",
+        "keyword":"AppliedMaskSubtractionFlag",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"001811c0"
+    },
+    {
+        "tag":"(0018,11C1)",
+        "name":"Requested Series Description Code Sequence",
+        "keyword":"RequestedSeriesDescriptionCodeSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"001811c1"
+    },
+    {
         "tag":"(0018,1200)",
         "name":"Date of Last Calibration",
         "keyword":"DateOfLastCalibration",
@@ -8001,6 +8217,15 @@
         "id":"00185010"
     },
     {
+        "tag":"(0018,5011)",
+        "name":"Transducer Identification Sequence",
+        "keyword":"TransducerIdentificationSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"00185011"
+    },
+    {
         "tag":"(0018,5012)",
         "name":"Focus Depth",
         "keyword":"FocusDepth",
@@ -8575,6 +8800,15 @@
         "valueMultiplicity":"1-n",
         "retired":"N",
         "id":"00186060"
+    },
+    {
+        "tag":"(0018,6070)",
+        "name":"Active Image Area Overlay Group",
+        "keyword":"ActiveImageAreaOverlayGroup",
+        "valueRepresentation":"US",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"00186070"
     },
     {
         "tag":"(0018,7000)",
@@ -19971,6 +20205,69 @@
         "id":"003a0302"
     },
     {
+        "tag":"(003A,0310)",
+        "name":"Multiplex Group UID",
+        "keyword":"MultiplexGroupUID",
+        "valueRepresentation":"UI",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"003a0310"
+    },
+    {
+        "tag":"(003A,0311)",
+        "name":"Powerline Frequency",
+        "keyword":"PowerlineFrequency",
+        "valueRepresentation":"DS",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"003a0311"
+    },
+    {
+        "tag":"(003A,0312)",
+        "name":"Channel Impedance Sequence",
+        "keyword":"ChannelImpedanceSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"003a0312"
+    },
+    {
+        "tag":"(003A,0313)",
+        "name":"Impedance Value",
+        "keyword":"ImpedanceValue",
+        "valueRepresentation":"DS",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"003a0313"
+    },
+    {
+        "tag":"(003A,0314)",
+        "name":"Impedance Measurement DateTime",
+        "keyword":"ImpedanceMeasurementDateTime",
+        "valueRepresentation":"DT",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"003a0314"
+    },
+    {
+        "tag":"(003A,0315)",
+        "name":"Impedance Measurement Frequency",
+        "keyword":"ImpedanceMeasurementFrequency",
+        "valueRepresentation":"DS",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"003a0315"
+    },
+    {
+        "tag":"(003A,0316)",
+        "name":"Impedance Measurement Current Type",
+        "keyword":"ImpedanceMeasurementCurrentType",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"003a0316"
+    },
+    {
         "tag":"(0040,0001)",
         "name":"Scheduled Station AE Title",
         "keyword":"ScheduledStationAETitle",
@@ -21780,6 +22077,15 @@
         "id":"0040a032"
     },
     {
+        "tag":"(0040,A033)",
+        "name":"Observation Start DateTime",
+        "keyword":"ObservationStartDateTime",
+        "valueRepresentation":"DT",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"0040a033"
+    },
+    {
         "tag":"(0040,A040)",
         "name":"Value Type",
         "keyword":"ValueType",
@@ -22633,6 +22939,78 @@
         "valueMultiplicity":"1",
         "retired":"Y",
         "id":"0040a744"
+    },
+    {
+        "tag":"(0040,A801)",
+        "name":"Tabulated Values Sequence",
+        "keyword":"TabulatedValuesSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"0040a801"
+    },
+    {
+        "tag":"(0040,A802)",
+        "name":"Number of Table Rows",
+        "keyword":"NumberOfTableRows",
+        "valueRepresentation":"UL",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"0040a802"
+    },
+    {
+        "tag":"(0040,A803)",
+        "name":"Number of Table Columns",
+        "keyword":"NumbeOfTableColumns",
+        "valueRepresentation":"UL",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"0040a803"
+    },
+    {
+        "tag":"(0040,A804)",
+        "name":"Table Row Number",
+        "keyword":"TableRowNumber",
+        "valueRepresentation":"UL",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"0040a804"
+    },
+    {
+        "tag":"(0040,A805)",
+        "name":"Table Column Number",
+        "keyword":"TableColumnNumber",
+        "valueRepresentation":"UL",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"0040a805"
+    },
+    {
+        "tag":"(0040,A806)",
+        "name":"Table Row Definition Sequence",
+        "keyword":"TableRowDefinitionSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"0040a806"
+    },
+    {
+        "tag":"(0040,A807)",
+        "name":"Table Column Definition Sequence",
+        "keyword":"TableColumnDefinitionSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"0040a807"
+    },
+    {
+        "tag":"(0040,A808)",
+        "name":"Cell Values Sequence",
+        "keyword":"CellValuesSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"0040a808"
     },
     {
         "tag":"(0040,A992)",
@@ -29142,6 +29520,33 @@
         "id":"00720080"
     },
     {
+        "tag":"(0072,0081)",
+        "name":"Selector OV Value",
+        "keyword":"SelectorOVValue",
+        "valueRepresentation":"OV",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"00720081"
+    },
+    {
+        "tag":"(0072,0082)",
+        "name":"Selector SV Value",
+        "keyword":"SelectorSVValue",
+        "valueRepresentation":"SV",
+        "valueMultiplicity":"1-n",
+        "retired":"N",
+        "id":"00720082"
+    },
+    {
+        "tag":"(0072,0083)",
+        "name":"Selector UV Value",
+        "keyword":"SelectorUVValue",
+        "valueRepresentation":"UV",
+        "valueMultiplicity":"1-n",
+        "retired":"N",
+        "id":"00720083"
+    },
+    {
         "tag":"(0072,0100)",
         "name":"Number of Screens",
         "keyword":"NumberOfScreens",
@@ -33215,7 +33620,7 @@
         "keyword":"ContourSlabThickness",
         "valueRepresentation":"DS",
         "valueMultiplicity":"1",
-        "retired":"N",
+        "retired":"Y",
         "id":"30060044"
     },
     {
@@ -33224,7 +33629,7 @@
         "keyword":"ContourOffsetVector",
         "valueRepresentation":"DS",
         "valueMultiplicity":"3",
-        "retired":"N",
+        "retired":"Y",
         "id":"30060045"
     },
     {
@@ -33251,8 +33656,17 @@
         "keyword":"AttachedContours",
         "valueRepresentation":"IS",
         "valueMultiplicity":"1-n",
-        "retired":"N",
+        "retired":"Y",
         "id":"30060049"
+    },
+    {
+        "tag":"(3006,004A)",
+        "name":"Source Pixel Planes Characteristics Sequence",
+        "keyword":"SourcePixelPlanesCharacteristicsSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"3006004a"
     },
     {
         "tag":"(3006,0050)",
@@ -37539,6 +37953,15 @@
         "id":"300a0398"
     },
     {
+        "tag":"(300A,0399)",
+        "name":"Scan Spot Sizes Delivered",
+        "keyword":"ScanSpotSizesDelivered",
+        "valueRepresentation":"FL",
+        "valueMultiplicity":"2-2n",
+        "retired":"N",
+        "id":"300a0399"
+    },
+    {
         "tag":"(300A,039A)",
         "name":"Number of Paintings",
         "keyword":"NumberOfPaintings",
@@ -39184,6 +39607,384 @@
         "valueMultiplicity":"1",
         "retired":"N",
         "id":"300a068a"
+    },
+    {
+        "tag":"(300A,0700)",
+        "name":"Treatment Session UID",
+        "keyword":"TreatmentSessionUID",
+        "valueRepresentation":"UI",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0700"
+    },
+    {
+        "tag":"(300A,0701)",
+        "name":"RT Radiation Usage",
+        "keyword":"RTRadiationUsage",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0701"
+    },
+    {
+        "tag":"(300A,0702)",
+        "name":"Referenced RT Radiation Set Sequence",
+        "keyword":"ReferencedRTRadiationSetSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0702"
+    },
+    {
+        "tag":"(300A,0703)",
+        "name":"Referenced RT Radiation Record Sequence",
+        "keyword":"ReferencedRTRadiationRecordSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0703"
+    },
+    {
+        "tag":"(300A,0704)",
+        "name":"RT Radiation Set Delivery Number",
+        "keyword":"RTRadiationSetDeliveryNumber",
+        "valueRepresentation":"US",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0704"
+    },
+    {
+        "tag":"(300A,0705)",
+        "name":"Clinical Fraction Number",
+        "keyword":"ClinicalFractionNumber",
+        "valueRepresentation":"US",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0705"
+    },
+    {
+        "tag":"(300A,0706)",
+        "name":"RT Treatment Fraction Completion Status",
+        "keyword":"RTTreatmentFractionCompletionStatus",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0706"
+    },
+    {
+        "tag":"(300A,0707)",
+        "name":"RT Radiation Set Usage",
+        "keyword":"RTRadiationSetUsage",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0707"
+    },
+    {
+        "tag":"(300A,0708)",
+        "name":"Treatment Delivery Continuation Flag",
+        "keyword":"TreatmentDeliveryContinuationFlag",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0708"
+    },
+    {
+        "tag":"(300A,0709)",
+        "name":"Treatment Record Content Origin",
+        "keyword":"TreatmentRecordContentOrigin",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0709"
+    },
+    {
+        "tag":"(300A,0714)",
+        "name":"RT Treatment Termination Status",
+        "keyword":"RTTreatmentTerminationStatus",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0714"
+    },
+    {
+        "tag":"(300A,0715)",
+        "name":"RT Treatment Termination Reason Code Sequence",
+        "keyword":"RTTreatmentTerminationReasonCodeSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0715"
+    },
+    {
+        "tag":"(300A,0716)",
+        "name":"Machine-Specific Treatment Termination Code Sequence",
+        "keyword":"MachineSpecificTreatmentTerminationCodeSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0716"
+    },
+    {
+        "tag":"(300A,0722)",
+        "name":"RT Radiation Salvage Record Control Point Sequence",
+        "keyword":"RTRadiationSalvageRecordControlPointSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0722"
+    },
+    {
+        "tag":"(300A,0723)",
+        "name":"Starting Meterset Value Known Flag",
+        "keyword":"StartingMetersetValueKnownFlag",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0723"
+    },
+    {
+        "tag":"(300A,0730)",
+        "name":"Treatment Termination Description",
+        "keyword":"TreatmentTerminationDescription",
+        "valueRepresentation":"ST",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0730"
+    },
+    {
+        "tag":"(300A,0731)",
+        "name":"Treatment Tolerance Violation Sequence",
+        "keyword":"TreatmentToleranceViolationSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0731"
+    },
+    {
+        "tag":"(300A,0732)",
+        "name":"Treatment Tolerance Violation Category",
+        "keyword":"TreatmentToleranceViolationCategory",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0732"
+    },
+    {
+        "tag":"(300A,0733)",
+        "name":"Treatment Tolerance Violation Attribute Sequence",
+        "keyword":"TreatmentToleranceViolationAttributeSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0733"
+    },
+    {
+        "tag":"(300A,0734)",
+        "name":"Treatment Tolerance Violation Description",
+        "keyword":"TreatmentToleranceViolationDescription",
+        "valueRepresentation":"ST",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0734"
+    },
+    {
+        "tag":"(300A,0735)",
+        "name":"Treatment Tolerance Violation Identification",
+        "keyword":"TreatmentToleranceViolationIdentification",
+        "valueRepresentation":"ST",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0735"
+    },
+    {
+        "tag":"(300A,0736)",
+        "name":"Treatment Tolerance Violation DateTime",
+        "keyword":"TreatmentToleranceViolationDateTime",
+        "valueRepresentation":"DT",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0736"
+    },
+    {
+        "tag":"(300A,073A)",
+        "name":"Recorded RT Control Point DateTime",
+        "keyword":"RecordedRTControlPointDateTime",
+        "valueRepresentation":"DT",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a073a"
+    },
+    {
+        "tag":"(300A,073B)",
+        "name":"Referenced Radiation RT Control Point Index",
+        "keyword":"ReferencedRadiationRTControlPointIndex",
+        "valueRepresentation":"US",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a073b"
+    },
+    {
+        "tag":"(300A,073E)",
+        "name":"Alternate Value Sequence",
+        "keyword":"AlternateValueSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a073e"
+    },
+    {
+        "tag":"(300A,073F)",
+        "name":"Confirmation Sequence",
+        "keyword":"ConfirmationSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a073f"
+    },
+    {
+        "tag":"(300A,0740)",
+        "name":"Interlock Sequence",
+        "keyword":"InterlockSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0740"
+    },
+    {
+        "tag":"(300A,0741)",
+        "name":"Interlock DateTime",
+        "keyword":"InterlockDateTime",
+        "valueRepresentation":"DT",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0741"
+    },
+    {
+        "tag":"(300A,0742)",
+        "name":"Interlock Description",
+        "keyword":"InterlockDescription",
+        "valueRepresentation":"ST",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0742"
+    },
+    {
+        "tag":"(300A,0743)",
+        "name":"Interlock Originating Device Sequence",
+        "keyword":"InterlockOriginatingDeviceSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0743"
+    },
+    {
+        "tag":"(300A,0744)",
+        "name":"Interlock Code Sequence",
+        "keyword":"InterlockCodeSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0744"
+    },
+    {
+        "tag":"(300A,0745)",
+        "name":"Interlock Resolution Code Sequence",
+        "keyword":"InterlockResolutionCodeSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0745"
+    },
+    {
+        "tag":"(300A,0746)",
+        "name":"Interlock Resolution User Sequence",
+        "keyword":"InterlockResolutionUserSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0746"
+    },
+    {
+        "tag":"(300A,0760)",
+        "name":"Override DateTime",
+        "keyword":"OverrideDateTime",
+        "valueRepresentation":"DT",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0760"
+    },
+    {
+        "tag":"(300A,0761)",
+        "name":"Treatment Tolerance Violation Type Code Sequence",
+        "keyword":"TreatmentToleranceViolationTypeCodeSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0761"
+    },
+    {
+        "tag":"(300A,0762)",
+        "name":"Treatment Tolerance Violation Cause Code Sequence",
+        "keyword":"TreatmentToleranceViolationCauseCodeSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0762"
+    },
+    {
+        "tag":"(300A,0772)",
+        "name":"Measured Meterset to Dose Mapping Sequence",
+        "keyword":"MeasuredMetersetToDoseMappingSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0772"
+    },
+    {
+        "tag":"(300A,0773)",
+        "name":"Referenced Expected In-Vivo Measurement Value Index",
+        "keyword":"ReferencedExpectedInVivoMeasurementValueIndex",
+        "valueRepresentation":"US",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0773"
+    },
+    {
+        "tag":"(300A,0774)",
+        "name":"Dose Measurement Device Code Sequence",
+        "keyword":"DoseMeasurementDeviceCodeSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0774"
+    },
+    {
+        "tag":"(300A,0780)",
+        "name":"Additional Parameter Recording Instance Sequence",
+        "keyword":"AdditionalParameterRecordingInstanceSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0780"
+    },
+    {
+        "tag":"(300A,0782)",
+        "name":"",
+        "keyword":"",
+        "valueRepresentation":"US",
+        "valueMultiplicity":"1",
+        "retired":"Y",
+        "id":"300a0782"
+    },
+    {
+        "tag":"(300A,0783)",
+        "name":"Interlock Origin Description",
+        "keyword":"InterlockOriginDescription",
+        "valueRepresentation":"ST",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"300a0783"
     },
     {
         "tag":"(300C,0002)",
@@ -41438,7 +42239,7 @@
     {
         "tag":"(4010,1029)",
         "name":"Threat Detection Algorithm and Version",
-        "keyword":"ThreatDetectionAlgorithmandVersion",
+        "keyword":"ThreatDetectionAlgorithmAndVersion",
         "valueRepresentation":"LO",
         "valueMultiplicity":"1-n",
         "retired":"N",

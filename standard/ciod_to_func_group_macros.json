@@ -710,7 +710,7 @@
         "ciodId":"enhanced-ct-image",
         "macroId":"ct-additional-x-ray-source",
         "usage":"C",
-        "conditionalStatement":"Required if the image is reconstructed from a system with multiple X-Ray sources.",
+        "conditionalStatement":"Required if the image is reconstructed from a system with multiple X-Ray sources and Multi-energy CT Acquisition (0018,9361) is NO or is absent.",
         "moduleType":"Multi-frame"
     },
     {
@@ -1123,7 +1123,7 @@
         "ciodId":"segmentation",
         "macroId":"plane-position-slide",
         "usage":"C",
-        "conditionalStatement":"Required if Derivation Image Functional Group (C.7.6.16.2.6) is not present and the Frame of Reference is defined in the Slide Coordinate System. May be present otherwise if the Frame of Reference is defined in the Slide Coordinate System. See Section\u00a0A.51.5.1.",
+        "conditionalStatement":"Required if Derivation Image Functional Group (C.7.6.16.2.6) is not present and the Frame of Reference is defined in the Slide Coordinate System and Dimension Organization Type (0020,9311) is not TILED_FULL. May be present otherwise if the Frame of Reference is defined in the Slide Coordinate System. See Section\u00a0A.51.5.1.",
         "moduleType":"Multi-frame"
     },
     {
@@ -2397,7 +2397,7 @@
         "ciodId":"parametric-map",
         "macroId":"plane-position-slide",
         "usage":"C",
-        "conditionalStatement":"Required if the Frame of Reference is defined in the Slide Coordinate System.",
+        "conditionalStatement":"Required if the Frame of Reference is defined in the Slide Coordinate System and Dimension Organization Type (0020,9311) is not TILED_FULL. May be present otherwise if the Frame of Reference is defined in the Slide Coordinate System.",
         "moduleType":"Multi-frame"
     },
     {
@@ -2431,7 +2431,7 @@
     {
         "ciodId":"parametric-map",
         "macroId":"frame-anatomy",
-        "usage":"M",
+        "usage":"U",
         "conditionalStatement":null,
         "moduleType":"Multi-frame"
     },

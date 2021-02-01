@@ -153,37 +153,37 @@
         "name":"VL Microscopic Image",
         "id":"vl-microscopic-image",
         "description":"<p>\nThe VL Microscopic Image IOD specifies the Attributes of Single-frame VL Microscopic Images, including both imaging of specimens and direct microscopic imaging of the Patient (e.g., perioperative microscopy). Microscopic Images with Slide Coordinates shall not be encoded with this IOD.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.2.2.html#table_A.32.1-2"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.2.3.html#table_A.32.1-2"
     },
     {
         "name":"VL Slide-Coordinates Microscopic Image",
         "id":"vl-slide-coordinates-microscopic-image",
         "description":"<p>\nThe VL Slide-Coordinates Microscopic Image IOD specifies the Attributes of VL single frame Slide-Coordinates Microscopic Images.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.3.2.html#table_A.32.1-3"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.3.3.html#table_A.32.1-3"
     },
     {
         "name":"VL Photographic Image",
         "id":"vl-photographic-image",
         "description":"<p>\nThe VL Photographic Image IOD specifies the Attributes of VL Single-frame photographic Images.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.4.2.html#table_A.32.4-1"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.4.3.html#table_A.32.4-1"
     },
     {
         "name":"Video Endoscopic Image",
         "id":"video-endoscopic-image",
         "description":"<p>\nThe Video Endoscopic Image IOD specifies the Attributes of Multi-frame Video Endoscopic Images.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.5.2.html#table_A.32.5-1"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.5.3.html#table_A.32.5-1"
     },
     {
         "name":"Video Microscopic Image",
         "id":"video-microscopic-image",
         "description":"<p>\nThe Video Microscopic Image IOD specifies the Attributes of Video Microscopic Images, including both imaging of specimens and direct microscopic imaging of the Patient (e.g., perioperative microscopy). Microscopic Images with Slide Coordinates shall not be encoded with this IOD.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.6.2.html#table_A.32.6-1"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.6.3.html#table_A.32.6-1"
     },
     {
         "name":"Video Photographic Image",
         "id":"video-photographic-image",
         "description":"<p>\nThe Video Photographic Image IOD specifies the Attributes of VL Multi-frame photographic Images.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.7.2.html#table_A.32.7-1"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.7.3.html#table_A.32.7-1"
     },
     {
         "name":"VL Whole Slide Microscopy Image",
@@ -195,13 +195,19 @@
         "name":"Real-Time Video Endoscopic Image",
         "id":"real-time-video-endoscopic-image",
         "description":"<p>\nThe Real-Time Video Endoscopic Image IOD specifies the Attributes of Multi-frame Video Endoscopic Images transmitted in real-time.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.9.2.html#table_A.32.9-1"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.9.3.html#table_A.32.9-1"
     },
     {
         "name":"Real-Time Video Photographic Image",
         "id":"real-time-video-photographic-image",
         "description":"<p>\nThe Real-Time Video Photographic Image IOD specifies Multi-frame photographic Images, transmitted in real-time.</p>",
-        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.10.2.html#table_A.32.10-1"
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.10.3.html#table_A.32.10-1"
+    },
+    {
+        "name":"Dermoscopic Photography Image",
+        "id":"dermoscopic-photography-image",
+        "description":"<p>\nThe Dermoscopic Photography Image Information Object Definition (IOD) specifies an image that has been created using a dermoscope.\n                        The dermoscope may be a dedicated dermoscopic device, or a camera-attached or smart device-attached dermoscope.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.11.3.html#table_A.32.11-1"
     },
     {
         "name":"Grayscale Softcopy Presentation State",
@@ -304,6 +310,42 @@
         "id":"real-time-audio-waveform",
         "description":"<p>\nThe Real-Time Audio Waveform IOD specifies one-channel or two-channel digitized audio signals, transmitted in real-time.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.34.11.3.html#table_A.34.11-1"
+    },
+    {
+        "name":"Routine Scalp Electroencephalogram",
+        "id":"routine-scalp-electroencephalogram",
+        "description":"<p>\nThe Routine Scalp Electroencephalogram (EEG) IOD is the specification of digitized electrical signals from the patient's encephalon collected on the skull surface, which has been acquired by an EEG modality or by an EEG acquisition function within an imaging modality or a neurophysiology recording device.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.34.12.3.html#table_A.34.12-1"
+    },
+    {
+        "name":"Electromyogram",
+        "id":"electromyogram",
+        "description":"<p>\nThe Electromyogram (EMG) IOD is the specification of digitized electrical signals evoked by the patient's muscle movements, which has been acquired by an EMG modality or by an EMG acquisition function within a neurophysiology recording device or a polysomnography modality.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.34.13.3.html#table_A.34.13-1"
+    },
+    {
+        "name":"Electrooculogram",
+        "id":"electrooculogram",
+        "description":"<p>\nThe Electrooculogram (EOG) IOD is the specification of digitized electrical signals evoked by the patient's eye movements collected on the face, which has been acquired by an EOG modality or by an EOG acquisition function within a neurophysiology recording device or a polysomnography modality.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.34.14.3.html#table_A.34.14-1"
+    },
+    {
+        "name":"Sleep Electroencephalogram",
+        "id":"sleep-electroencephalogram",
+        "description":"<p>\nThe Sleep Electroencephalogram (EEG) IOD is the specification of digitized electrical signals from the patient's encephalon collected on the skull surface, which has been acquired by an EEG modality or by an EEG acquisition function within a polysomnography modality.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.34.15.3.html#table_A.34.15-1"
+    },
+    {
+        "name":"Multi-channel Respiratory Waveform",
+        "id":"multi-channel-respiratory-waveform",
+        "description":"<p>\nThe Multi-channel Respiratory Waveform IOD is the specification of digitized electrical signals from the patient respiratory system, which has been acquired by a Respiratory modality or by a Respiratory acquisition function within a neurophysiology recording device or a polysomnography modality.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.34.16.3.html#table_A.34.16-1"
+    },
+    {
+        "name":"Body Position Waveform",
+        "id":"body-position-waveform",
+        "description":"<p>\nThe Body Position Waveform IOD is the specification of digitized electrical signals acquired by a device or sensor on the body of the patient measuring the position of the patient. Depending on the measurement method, either the digitized sensor data is saved directly or values derived from it.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.34.17.3.html#table_A.34.17-1"
     },
     {
         "name":"Basic Text SR",
@@ -758,13 +800,13 @@
     {
         "name":"Planar MPR Volumetric Presentation State",
         "id":"planar-mpr-volumetric-presentation-state",
-        "description":"<p>\nThe Planar MPR Volumetric Presentation State Information Object Definition (IOD) specifies information that defines a Planar MPR presentation from volume datasets that are referenced from within the IOD.</p>",
+        "description":"<p>\nThe Planar MPR Volumetric Presentation State Information Object Definition (IOD) specifies information that defines a Planar MPR presentation from volume data sets that are referenced from within the IOD.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.80.html#table_A.80.1-1"
     },
     {
         "name":"Volume Rendering Volumetric Presentation State",
         "id":"volume-rendering-volumetric-presentation-state",
-        "description":"<p>\nThe Volume Rendering Volumetric Presentation State Information Object Definition (IOD) specifies information that defines a Volume Rendering presentation from volume datasets that are referenced from within the IOD.</p>",
+        "description":"<p>\nThe Volume Rendering Volumetric Presentation State Information Object Definition (IOD) specifies information that defines a Volume Rendering presentation from volume data sets that are referenced from within the IOD.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.80.2.3.html#table_A.80.2.3-1"
     },
     {
@@ -790,6 +832,18 @@
         "id":"protocol-approval",
         "description":"<p>\nThe Protocol Approval IOD describes approval-related Assertions made by people, organizations and devices about Instances.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.82.3.html#table_A.82.3.1.3-1"
+    },
+    {
+        "name":"XA Performed Procedure Protocol",
+        "id":"xa-performed-procedure-protocol",
+        "description":"<p>\nThe XA Performed Procedure Protocol IOD describes acquisition, reconstruction, and storage protocol parameter values used during a specific performed XA procedure.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.82.4.3.html#table_A.82.4.3-1"
+    },
+    {
+        "name":"XA Defined Procedure Protocol",
+        "id":"xa-defined-procedure-protocol",
+        "description":"<p>\nThe XA Defined Procedure Protocol IOD describes acquisition protocol parameters and related details for a defined XA procedure.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.82.5.3.html#table_A.82.5.3-1"
     },
     {
         "name":"Ophthalmic Optical Coherence Tomography En Face Image",
@@ -856,6 +910,36 @@
         "id":"robotic-arm-radiation",
         "description":"<p>\nThe Robotic-Arm Radiation IOD specifies the Robotic Path and collimation parameters required to describe a radiotherapy treatment on a robotic-arm delivery device. A Robotic Path is a sequence of Robotic Nodes. A Robotic Node specifies a Radiation Source location for a Robotic-Arm delivery device.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.86.html#table_A.86.1.7-1"
+    },
+    {
+        "name":"RT Radiation Record Set",
+        "id":"rt-radiation-record-set",
+        "description":"<p>\n</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.86.html#table_A.86.1.8-1"
+    },
+    {
+        "name":"RT Radiation Salvage Record",
+        "id":"rt-radiation-salvage-record",
+        "description":"<p>\nThe RT Radiation Salvage Record IOD contains the record of a complete or partial fraction of therapeutic radiation delivered using any therapeutic device where recording by the modality-specific RT Radiation Record IOD was not possible.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.86.html#table_A.86.1.9-1"
+    },
+    {
+        "name":"C-Arm Photon-Electron Radiation Record",
+        "id":"c-arm-photon-electron-radiation-record",
+        "description":"<p>\nThe C-Arm Photon-Electron Radiation Record IOD contains the record of a radiotherapy treatment that has been performed using a C-Arm Photon-Electron Radiation SOP Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.86.html#table_A.86.1.10.3-1"
+    },
+    {
+        "name":"Tomotherapeutic Radiation Record",
+        "id":"tomotherapeutic-radiation-record",
+        "description":"<p>\nThe Tomotherapeutic Radiation Record IOD contains the record of a radiotherapy treatment that has been performed using a Tomotherapeutic Radiation SOP Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.86.html#table_A.86.1.11-1"
+    },
+    {
+        "name":"Robotic-Arm Radiation Record",
+        "id":"robotic-arm-radiation-record",
+        "description":"<p>\nThe Robotic-Arm Radiation Record IOD contains the record of a radiotherapy treatment that has been performed using a Robotic-Arm Radiation SOP Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.86.html#table_A.86.1.12-1"
     },
     {
         "name":"Basic Directory",

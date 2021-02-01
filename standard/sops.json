@@ -160,6 +160,36 @@
         "ciod":"Respiratory Waveform"
     },
     {
+        "name":"Multi-channel Respiratory Waveform Storage",
+        "id":"1.2.840.10008.5.1.4.1.1.9.6.2",
+        "ciod":"Multi-channel Respiratory Waveform"
+    },
+    {
+        "name":"Routine Scalp Electroencephalogram Waveform Storage",
+        "id":"1.2.840.10008.5.1.4.1.1.9.7.1",
+        "ciod":"Routine Scalp Electroencephalogram"
+    },
+    {
+        "name":"Electromyogram Waveform Storage",
+        "id":"1.2.840.10008.5.1.4.1.1.9.7.2",
+        "ciod":"Electromyogram"
+    },
+    {
+        "name":"Electrooculogram Waveform Storage",
+        "id":"1.2.840.10008.5.1.4.1.1.9.7.3",
+        "ciod":"Electrooculogram"
+    },
+    {
+        "name":"Sleep Electroencephalogram Waveform Storage",
+        "id":"1.2.840.10008.5.1.4.1.1.9.7.4",
+        "ciod":"Sleep Electroencephalogram"
+    },
+    {
+        "name":"Body Position Waveform Storage",
+        "id":"1.2.840.10008.5.1.4.1.1.9.8.1",
+        "ciod":"Body Position Waveform"
+    },
+    {
         "name":"Grayscale Softcopy Presentation State Storage",
         "id":"1.2.840.10008.5.1.4.1.1.11.1",
         "ciod":"Grayscale Softcopy Presentation State"
@@ -410,6 +440,11 @@
         "ciod":"VL Whole Slide Microscopy Image"
     },
     {
+        "name":"Dermoscopic Photography Image Storage",
+        "id":"1.2.840.10008.5.1.4.1.1.77.1.7",
+        "ciod":"Dermoscopic Photography Image"
+    },
+    {
         "name":"Lensometry Measurements Storage",
         "id":"1.2.840.10008.5.1.4.1.1.78.1",
         "ciod":"Lensometry Measurements"
@@ -615,6 +650,11 @@
         "ciod":"CT Performed Procedure Protocol"
     },
     {
+        "name":"XA Performed Procedure Protocol Storage",
+        "id":"1.2.840.10008.5.1.4.1.1.200.8",
+        "ciod":"XA Performed Procedure Protocol"
+    },
+    {
         "name":"RT Image Storage",
         "id":"1.2.840.10008.5.1.4.1.1.481.1",
         "ciod":"RT Image"
@@ -690,6 +730,31 @@
         "ciod":"Robotic-Arm Radiation"
     },
     {
+        "name":"RT Radiation Record Set Storage",
+        "id":"1.2.840.10008.5.1.4.1.1.481.16",
+        "ciod":"RT Radiation Record Set"
+    },
+    {
+        "name":"RT Radiation Salvage Record Storage",
+        "id":"1.2.840.10008.5.1.4.1.1.481.17",
+        "ciod":"RT Radiation Salvage Record"
+    },
+    {
+        "name":"Tomotherapeutic Radiation Record Storage",
+        "id":"1.2.840.10008.5.1.4.1.1.481.18",
+        "ciod":"Tomotherapeutic Radiation Record"
+    },
+    {
+        "name":"C-Arm Photon-Electron Radiation Record Storage",
+        "id":"1.2.840.10008.5.1.4.1.1.481.19",
+        "ciod":"C-Arm Photon-Electron Radiation Record"
+    },
+    {
+        "name":"Robotic Radiation Record Storage",
+        "id":"1.2.840.10008.5.1.4.1.1.481.20",
+        "ciod":"Robotic-Arm Radiation Record"
+    },
+    {
         "name":"RT Beams Delivery Instruction Storage",
         "id":"1.2.840.10008.5.1.4.34.7",
         "ciod":"RT Beams Delivery Instruction"
@@ -738,5 +803,10 @@
         "name":"Protocol Approval Storage",
         "id":"1.2.840.10008.5.1.4.1.1.200.3",
         "ciod":"Protocol Approval"
+    },
+    {
+        "name":"XA Defined Procedure Protocol Storage",
+        "id":"1.2.840.10008.5.1.4.1.1.200.7",
+        "ciod":"XA Defined Procedure Protocol"
     }
 ]

@@ -224,7 +224,7 @@
     {
         "name":"Attribute Value Constraint",
         "id":"attribute-value-constraint",
-        "description":"<p>\n<span href=\"#table_10.25-1\">This macro </span> allows an Attribute to be identified and to have constraints placed on acceptable values for that Attribute. An Attribute being constrained is refered to in the Macro as a Selector Attribute.</p>",
+        "description":"<p>\n<span href=\"#table_10.25-1\">This macro </span> allows an Attribute to be identified and to have constraints placed on acceptable values for that Attribute. An Attribute being constrained is referred to in the Macro as a Selector Attribute.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.25.html#table_10.25-1"
     },
     {
@@ -316,6 +316,12 @@
         "id":"patient-support-position",
         "description":"<p>\nThis Macro provides the device-specific geometric settings for the Patient Support device.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.40.html#table_10.40-1"
+    },
+    {
+        "name":"General Procedure Protocol Reference",
+        "id":"general-procedure-protocol-reference",
+        "description":"<p>\n<span href=\"#table_10.41-1\">This macro </span> describes the Attributes for identifying the Procedure Protocol SOP Instance and the Protocol Element related to the creation of an Instance.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.41.html#table_10.41-1"
     },
     {
         "name":"Patient Group",
@@ -572,7 +578,7 @@
     {
         "name":"Multi-energy CT Path",
         "id":"multi-energy-ct-path",
-        "description":"<p>\nA Multi-energy CTPath is an X-Ray source paired with a corresponding X-Ray detector for a particular energy level.</p>",
+        "description":"<p>\nA Multi-energy CT Path is an X-Ray source paired with a corresponding X-Ray detector for a particular energy level.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.2.2.3.html#table_C.8.2.2-4"
     },
     {
@@ -1350,6 +1356,12 @@
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.18.9.html#table_C.18.9-1"
     },
     {
+        "name":"Table Content Item",
+        "id":"table-content-item",
+        "description":"<p>\n<span href=\"#table_C.18.10-1\">This macro </span> specifies the Attributes that convey a TABLE (two-dimensional tabulated data) Content Item value.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.18.10.html#table_C.18.10-1"
+    },
+    {
         "name":"Screen Specifications",
         "id":"screen-specifications",
         "description":"<p>\n<span href=\"#table_C.23.2-1\">This module </span> specifies the Attributes that describe and identify the best suited display environment for a Hanging Protocol.</p>",
@@ -1456,6 +1468,12 @@
         "id":"radiobiological-dose-effect-description",
         "description":"<p>\nThe Radiobiological Dose Effect Description Macro describes whether dose values are provided as physical dose or effective dose. An effective dose value incorporates adjustments to dose by taking into account the radiobiological effects.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.2.html#table_C.36.2.1.5-1"
+    },
+    {
+        "name":"RT Radiation Common Base",
+        "id":"rt-radiation-common-base",
+        "description":"<p>\nThe Radiation Fraction Pattern Macro specifies the intended fraction pattern to be used to deliver the radiation treatment.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.2.html#table_C.36.2.1.6-1"
     },
     {
         "name":"Treatment Device Identification",
