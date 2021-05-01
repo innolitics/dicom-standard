@@ -5881,6 +5881,13 @@
     },
     {
         "ciodId":"dermoscopic-photography-image",
+        "moduleId":"enhanced-general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"dermoscopic-photography-image",
         "moduleId":"vl-photographic-equipment",
         "usage":"U",
         "conditionalStatement":null,
@@ -10508,6 +10515,97 @@
     },
     {
         "ciodId":"rendition-selection-document",
+        "moduleId":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Document"
+    },
+    {
+        "ciodId":"enhanced-x-ray-radiation-dose-structured-report",
+        "moduleId":"patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciodId":"enhanced-x-ray-radiation-dose-structured-report",
+        "moduleId":"clinical-trial-subject",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciodId":"enhanced-x-ray-radiation-dose-structured-report",
+        "moduleId":"general-study",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"enhanced-x-ray-radiation-dose-structured-report",
+        "moduleId":"patient-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"enhanced-x-ray-radiation-dose-structured-report",
+        "moduleId":"clinical-trial-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"enhanced-x-ray-radiation-dose-structured-report",
+        "moduleId":"sr-document-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"enhanced-x-ray-radiation-dose-structured-report",
+        "moduleId":"clinical-trial-series",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"enhanced-x-ray-radiation-dose-structured-report",
+        "moduleId":"synchronization",
+        "usage":"C",
+        "conditionalStatement":"shall be present if system time is synchronized to an external reference. May be present otherwise.",
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciodId":"enhanced-x-ray-radiation-dose-structured-report",
+        "moduleId":"general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"enhanced-x-ray-radiation-dose-structured-report",
+        "moduleId":"enhanced-general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"enhanced-x-ray-radiation-dose-structured-report",
+        "moduleId":"sr-document-general",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Document"
+    },
+    {
+        "ciodId":"enhanced-x-ray-radiation-dose-structured-report",
+        "moduleId":"sr-document-content",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Document"
+    },
+    {
+        "ciodId":"enhanced-x-ray-radiation-dose-structured-report",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,

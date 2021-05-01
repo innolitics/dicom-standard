@@ -212,7 +212,7 @@
     {
         "name":"Grayscale Softcopy Presentation State",
         "id":"grayscale-softcopy-presentation-state",
-        "description":"<p>\nThe Grayscale Softcopy Presentation State Information Object Definition (IOD) specifies information that may be used to present (display) images that are referenced from within the IOD.</p>",
+        "description":"<p>\nThe Grayscale Softcopy Presentation State Information Object Definition (IOD) specifies information that may be used to present (display) monochrome images that are referenced from within the IOD.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.33.html#table_A.33.1-1"
     },
     {
@@ -472,6 +472,12 @@
         "id":"rendition-selection-document",
         "description":"<p>\nThe Rendition Selection Document IOD associates a group of time-synchronized Flows produced for a simultaneous presentation, transported using DICOM-RTV.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.35.21.3.html#table_A.35.21-1"
+    },
+    {
+        "name":"Enhanced X-Ray Radiation Dose Structured Report",
+        "id":"enhanced-x-ray-radiation-dose-structured-report",
+        "description":"<p>\nThe Enhanced X-Ray Radiation Dose Structured Report IOD addresses cone-beam CT and tomosynthesis. This generic radiation description is capable of representing previously addressed acquisition types (Angiography, Mammography, CR/DR, CT).</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.35.22.3.html#table_A.35.22-1"
     },
     {
         "name":"Enhanced MR Image",

@@ -1730,7 +1730,7 @@
     {
         "name":"RT Radiation Record Set",
         "id":"rt-radiation-record-set",
-        "description":"<p>\nThe RT Radiation Record Set Module contains treatment-modality-independent information about a set of delivered RT Radiations.</p>",
+        "description":"<p>\nThe RT Radiation Record Set Module contains treatment-modality-independent information about a set of RT Radiation Records.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.36.20.html#table_C.36.20-1R"
     },
     {

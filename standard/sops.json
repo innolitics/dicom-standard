@@ -595,6 +595,11 @@
         "ciod":"Performed Imaging Agent Administration SR"
     },
     {
+        "name":"Enhanced X-Ray Radiation Dose SR Storage",
+        "id":"1.2.840.10008.5.1.4.1.1.88.76",
+        "ciod":"Patient Radiation Dose Structured Report"
+    },
+    {
         "name":"Content Assessment Results Storage",
         "id":"1.2.840.10008.5.1.4.1.1.90.1",
         "ciod":"Content Assessment Results"

@@ -3185,7 +3185,7 @@
         "name":"Structure Set Time",
         "tag":"(3006,0009)",
         "stdCompIOD":"Y",
-        "basicProfile":"X/D",
+        "basicProfile":"Z",
         "rtnLongFullDatesOpt":"K",
         "rtnLongModifDatesOpt":"C",
         "id":"30060009"
@@ -3373,7 +3373,7 @@
         "name":"Treatment Machine Name",
         "tag":"(300A,00B2)",
         "stdCompIOD":"Y",
-        "basicProfile":"X",
+        "basicProfile":"X/Z",
         "rtnDevIdOpt":"K",
         "id":"300a00b2"
     },
