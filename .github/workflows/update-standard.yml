@@ -9,9 +9,9 @@ jobs:
     name: Run make
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Set up Python
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v5
         with:
           python-version: '3.7'
       - name: Install dependencies
@@ -25,7 +25,7 @@ jobs:
           make
         working-directory: dicom_standard
       - name: Upload JSON files
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
           name: new_standard
           path: dicom_standard/dist
@@ -34,9 +34,9 @@ jobs:
     name: Run tox and commit to master
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Set up Python
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v5
         with:
           python-version: '3.7'
       - name: Install dependencies
@@ -44,7 +44,7 @@ jobs:
           python -m pip install --upgrade pip tox
           pip install -r requirements.txt
       - name: Download updated standard
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v4
         with:
           name: new_standard
       - name: Diff JSON files
