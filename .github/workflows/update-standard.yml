@@ -7,6 +7,7 @@ on:
 
 env:
   PYTHON_VERSION: '3.7'
+  DICOM_VERSION: 'current'
 
 jobs:
   make:
@@ -23,10 +24,10 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Run Makefile
+      - name: Run Makefile (DICOM version ${{ env.DICOM_VERSION }})
         run: |
           make clean
-          make updatestandard
+          make updatestandard VERSION='${{ env.DICOM_VERSION }}'
           make
         working-directory: dicom_standard
       - name: Upload JSON files
