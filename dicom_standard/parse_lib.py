@@ -93,6 +93,11 @@ def clean_table_name(name: str) -> str:
     # http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.15.3.9.html#table_C.8-125
     if clean_title == 'CT X-Ray Details Sequence':
         clean_title = 'CT X-Ray Details'
+    # Standard workaround: Macro table name 'Photoacoustic Excitation Characteristics Attributes',
+    # which is not following the normal format
+    # https://dicom.nema.org/medical/dicom/2023c/output/html/part03.html#table_C.8.34.5.1-1
+    elif clean_title == 'Photoacoustic Excitation Characteristics Attributes':
+        clean_title = 'Photoacoustic Excitation Characteristics'
     return clean_title.strip()
 
 

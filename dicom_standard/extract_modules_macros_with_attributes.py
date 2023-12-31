@@ -21,8 +21,13 @@ from dicom_standard.table_utils import (
     tables_to_json,
 )
 
-TABLE_SUFFIX = re.compile("(.*Module Attributes$)|(.*Module Table$)|(.*Macro Attributes$)|(.*Macro Attributes Description$)")
-MACRO_TABLE_SUFFIX = re.compile("(.*Macro Attributes$)|(.*Macro Attributes Description$)")
+# Standard workaround: Macro table 'Photoacoustic Excitation Characteristics Attributes'
+# is not using suffix 'Macro Attributes'
+# https://dicom.nema.org/medical/dicom/2023c/output/html/part03.html#table_C.8.34.5.1-1
+MACRO_TABLE_EXCEPTION = "|(.*Photoacoustic Excitation Characteristics Attributes$)"
+
+TABLE_SUFFIX = re.compile("(.*Module Attributes$)|(.*Module Table$)|(.*Macro Attributes$)|(.*Macro Attributes Description$)" + MACRO_TABLE_EXCEPTION)
+MACRO_TABLE_SUFFIX = re.compile("(.*Macro Attributes$)|(.*Macro Attributes Description$)" + MACRO_TABLE_EXCEPTION)
 COLUMN_TITLES_WITH_TYPE = ['name', 'tag', 'type', 'description']
 COLUMN_TITLES_NO_TYPE = ['name', 'tag', 'description']
 VALID_URL_PATTERN = re.compile(r'(.*)(' + '|'.join(pl.NONSTANDARD_SECTION_IDS) + r').*(.html.*)')
