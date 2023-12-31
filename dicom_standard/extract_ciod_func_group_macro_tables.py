@@ -34,6 +34,10 @@ def clean_macro_table_name(table_name: str) -> str:
     clean_name = pl.clean_table_name(table_name)
     if clean_name == 'Ophthalmic Tomography':
         clean_name = 'Ophthalmic Tomography Image'
+    # Standard workaround: Mismatch of 'Photoacoustic Reconstruction Algorithm' name
+    # https://dicom.nema.org/medical/dicom/2023c/output/html/part03.html#table_A.89.4-1
+    elif clean_name == 'Photoacoustic Reconstruction Algorithm Macro Attributes':
+        clean_name = 'Photoacoustic Reconstruction Algorithm'
     return clean_name
 
 
