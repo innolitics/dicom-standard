@@ -253,6 +253,8 @@ Current standard workarounds (as of rev.2020b):
 | \*[The Enhanced MR Color Image IOD](http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.36.4.4.html) references the Enhanced MR Image IOD's functional group macros table instead of having its own (they would be identical tables) | `extract_ciod_func_group_macro_tables.py` |
 | \*The "Content Creator's Name" attribute appears twice in [Table C.36.8-1](http://dicom.nema.org/medical/dicom/2019c/output/chtml/part03/sect_C.36.8.html#table_C.36.8-1) with the same hierarchy without a conditional statement | `postprocess_merge_duplicate_nodes.py` |
 | \*[Table F.3-3](http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_F.3.2.2.html#table_F.3-3) contains a "Record Selection Keys" attribute with an invalid tag ("See F.5") | `preprocess_modules_with_attributes.py` |
+| [Table C.8.34.5.1-1](https://dicom.nema.org/medical/dicom/2023c/output/chtml/part03/sect_C.8.34.5.html#table_C.8.34.5.1-1) Macro table 'Photoacoustic Excitation Characteristics Attributes' is not using suffix 'Macro Attributes' | `extract_modules_macros_with_attributes.py`<br>`parse_lib.py` |
+| [Table A.89.4-1](https://dicom.nema.org/medical/dicom/2023c/output/chtml/part03/sect_A.89.4.html#table_A.89.4-1) Mismatch of 'Photoacoustic Reconstruction Algorithm' name | `extract_ciod_func_group_macro_tables.py`<br>`parse_lib.py`<br>`process_ciod_func_group_macro_relationship.py` |
 
 (\*) This issue is not caused by a typo or error in the Standard but rather an exception from the normal format and thus does not have a unit test for a fix.
 
