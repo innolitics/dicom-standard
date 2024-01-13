@@ -21,13 +21,8 @@ from dicom_standard.table_utils import (
     tables_to_json,
 )
 
-# Standard workaround: Macro table 'Photoacoustic Excitation Characteristics Attributes'
-# is not using suffix 'Macro Attributes'
-# https://dicom.nema.org/medical/dicom/2023c/output/html/part03.html#table_C.8.34.5.1-1
-MACRO_TABLE_EXCEPTION = "|(.*Photoacoustic Excitation Characteristics Attributes$)"
-
-TABLE_SUFFIX = re.compile("(.*Module Attributes$)|(.*Module Table$)|(.*Macro Attributes$)|(.*Macro Attributes Description$)" + MACRO_TABLE_EXCEPTION)
-MACRO_TABLE_SUFFIX = re.compile("(.*Macro Attributes$)|(.*Macro Attributes Description$)" + MACRO_TABLE_EXCEPTION)
+TABLE_SUFFIX = re.compile("(.*Module Attributes$)|(.*Module Table$)|(.*Macro Attributes$)|(.*Macro Attributes Description$)")
+MACRO_TABLE_SUFFIX = re.compile("(.*Macro Attributes$)|(.*Macro Attributes Description$)")
 COLUMN_TITLES_WITH_TYPE = ['name', 'tag', 'type', 'description']
 COLUMN_TITLES_NO_TYPE = ['name', 'tag', 'description']
 VALID_URL_PATTERN = re.compile(r'(.*)(' + '|'.join(pl.NONSTANDARD_SECTION_IDS) + r').*(.html.*)')
@@ -69,11 +64,6 @@ def get_table_with_metadata(table_with_tdiv: Tuple[List[TableDictType], Tag]) ->
     clean_name = pl.clean_table_name(table_name)
     table_description = pr.table_description(tdiv)
     is_macro = True if MACRO_TABLE_SUFFIX.match(table_name) else False
-    # Standard workaround: Add description to module without a description paragraph
-    # http://dicom.nema.org/dicom/2013/output/chtml/part03/sect_F.3.html#sect_F.3.2.1
-    if table_description.has_attr('class') and 'title' in table_description.get('class'):
-        table_description_str = f'<p>{clean_name} {"Macro" if is_macro else "Module"}.</p>'
-        table_description = BeautifulSoup(table_description_str, 'html.parser')
     return {
         'name': clean_name,
         'attributes': table,

@@ -35,18 +35,8 @@ def define_ciod_module_relationship(ciod, module):
     raw_information_entity = module.get('informationEntity')
     # If the "Information Entity" field doesn't exist, this is probably an single IOD rather than a CIOD, so just use the IOD name
     information_entity = pl.text_from_html_string(raw_information_entity) if raw_information_entity else ciod
-    # Standard workaround: Fill in missing values in the "Information Entity" field of certain rows in Table A.32.10-1
-    # http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.10.2.html#table_A.32.10-1
-    if (ciod == 'Real-Time Video Photographic Image'
-            and any(mod in module['module'] for mod in ['Real-Time Acquisition', 'Current Frame Functional Groups'])):
-        # Manually input missing field
-        information_entity = 'Image'
     ciod_id = pl.create_slug(ciod)
     module_id = pl.create_slug(pl.text_from_html_string(module['module']))
-    # Standard workaround: Fix inconsistent capitalization in the "Information Entity" field of Rendition Selection Document
-    # http://dicom.nema.org/medical/dicom/2019e/output/chtml/part03/sect_A.35.21.3.html#table_A.35.21-1
-    if ciod == 'Rendition Selection Document' and module_id == 'synchronization':
-        information_entity = 'Frame of Reference'
     # Create CIOD-specific "Multi-frame Functional Group" module IDs
     if module_id == MF_FUNC_GROUP_MODULE_ID:
         module_id = f'{ciod_id}-{module_id}'

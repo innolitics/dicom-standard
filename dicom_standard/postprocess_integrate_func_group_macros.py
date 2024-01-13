@@ -71,7 +71,7 @@ def process_ciod_specific_attributes(module_to_attr, macros, ciod_to_macro, macr
         elif module_type == 'Current Frame':
             processed_macro_attrs = process_cffg_macro_attributes(macro_attrs, rel)
         else:
-            raise Exception(f'Module type property should be either "Multi-frame" or "Current Frame" but is {module_type}')
+            raise Exception(f'Module type property should be either "Multi-frame" or "Current Frame" but is {module_type}, {rel}')
         ciod_specific_attrs += processed_macro_attrs
     # Create CIOD-specific versions of each non-macro attribute within the relevant modules
     ciods_with_mffg_macros = list(set([rel['ciodId'] for rel in ciod_to_macro if rel['moduleType'] == 'Multi-frame']))
