@@ -28,8 +28,6 @@ COLUMN_TITLES = ['macro', 'section', 'usage']
 
 def clean_macro_table_name(table_name: str) -> str:
     clean_name = pl.clean_table_name(table_name)
-    # if clean_name == 'Ophthalmic Tomography':
-    #     clean_name = 'Ophthalmic Tomography Image'
     # Standard workaround: Mismatch of 'Photoacoustic Reconstruction Algorithm' name
     # https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.89.4.html#table_A.89.4-1
     if clean_name == 'Photoacoustic Reconstruction Algorithm Macro Attributes':
