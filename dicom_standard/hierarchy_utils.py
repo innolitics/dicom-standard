@@ -41,9 +41,8 @@ def update_hierarchy_position(attr: Dict[str, str], last_id: List[str], current_
         print(attr)
         raise Exception('this shouldn\'t happen')
     if delta_l > 1:
-        # Standard workaround: Catch typo in Table C.8.25.16-8 where an include
-        # statement uses two hierarchy markers instead of one
-        # http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.16.8.html
+        # Used for a now-fixed standard workaround; keeping in case of future
+        # typo where more than one hierarchy marker is used
         delta_l = 1
     if delta_l == 0:
         last_id[-1] = attr_id

@@ -40,7 +40,7 @@ def preprocess_single_table(table):
 
 
 def preprocess_attribute(attr):
-    cleaned_attribute = {
+    return {
         'name': pl.text_from_html_string(attr['name']),
         'tag': pl.text_from_html_string(attr['tag']),
         'type': 'None' if 'type' not in attr.keys()
@@ -48,11 +48,6 @@ def preprocess_attribute(attr):
         'description': attr['description'],
         'conditional': attr.get('conditional'),
     }
-    # Standard workaround: Catch exception in Table F.3-3 where an attribute has an invalid tag
-    # http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_F.3.2.2.html#table_F.3-3
-    if cleaned_attribute['tag'] == 'See F.5':
-        return {}
-    return cleaned_attribute
 
 
 def expand_hierarchy(tables):

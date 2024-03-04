@@ -9,10 +9,10 @@ from dicom_standard import parse_lib as pl
 from dicom_standard.process_ciod_module_relationship import expand_conditional_statement
 
 
-# Standard workaround: Remove "Macro" from "Frame VOI LUT With LUT Macro" in Table A.84.3.2-1
-# http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.84.3.2.html#table_A.84.3.2-1
+# Standard workaround: Remove "Macro Attributes" from "Photoacoustic Reconstruction Algorithm Macro Attributes" in Table A.89.4-1
+# https://dicom.nema.org/medical/dicom/2023c/output/html/part03.html#table_A.89.4-1
 def clean_macro_name(text):
-    return re.sub(' Macro', '', text).strip()
+    return re.sub(' Macro Attributes', '', text).strip()
 
 
 def define_all_relationships(ciod_macro_list):

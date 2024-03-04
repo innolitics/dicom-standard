@@ -22,18 +22,16 @@ from dicom_standard.table_utils import (
 )
 
 CHAPTER_ID = 'chapter_A'
-# Standard workaround: Include optional "s" at end of "Functional Group" to catch Table A.32.9-2
-# http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.9.3.4.html#table_A.32.9-2
-TABLE_SUFFIX = re.compile(".*Functional Groups? Macros$")
+TABLE_SUFFIX = re.compile(".*Functional Group Macros$")
 COLUMN_TITLES = ['macro', 'section', 'usage']
 
 
-# Standard workaround: Add missing "Image" to title of Table A.52.4.3-1
-# http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.52.4.3.html#table_A.52.4.3-1
 def clean_macro_table_name(table_name: str) -> str:
     clean_name = pl.clean_table_name(table_name)
-    if clean_name == 'Ophthalmic Tomography':
-        clean_name = 'Ophthalmic Tomography Image'
+    # Standard workaround: Mismatch of 'Photoacoustic Reconstruction Algorithm' name
+    # https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.89.4.html#table_A.89.4-1
+    if clean_name == 'Photoacoustic Reconstruction Algorithm Macro Attributes':
+        clean_name = 'Photoacoustic Reconstruction Algorithm'
     return clean_name
 
 
@@ -52,6 +50,14 @@ def get_table_with_metadata(table_with_tdiv: Tuple[List[TableDictType], Tag]) ->
     module_type = 'Multi-frame' if 'Multi-frame' in clean_description \
         else 'Current Frame' if 'Current Frame' in clean_description \
         else None
+    # Standard workaround: Sections A.90.1.5 and A.90.2.5 do not have a description, causing the "module_type"
+    # to be None when it should be "Multi-frame" as per Table A.90.1.3-1 and Table A.90.2.3-1, respectively
+    # https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.90.html#sect_A.90.1.5
+    # https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.90.2.5.html#sect_A.90.2.5
+    # https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.90.html#para_432a2653-f9c3-474e-829b-3997312e0ecd
+    # Example valid section: https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.8.3.5.html
+    if clean_name == "Confocal Microscopy Image" or clean_name == "Confocal Microscopy Tiled Pyramidal Image":
+        module_type = 'Multi-frame'
     return {
         'name': clean_name,
         'macros': table,

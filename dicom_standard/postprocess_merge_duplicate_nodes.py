@@ -31,10 +31,6 @@ def merge_duplicate_nodes(node_list):
     for node in node_list:
         path = node['path']
         if path in path_to_node:
-            # Standard workaround: Catch inconsistency in Table C.36.8-1 where "Content Creator's Name" attribute
-            # appears twice in same hierarchy without a conditional (once in Table C.36.8-1 and once in included Table 10.9.2-1)
-            # http://dicom.nema.org/medical/dicom/2019c/output/chtml/part03/sect_C.36.8.html#table_C.36.8-1
-            # http://dicom.nema.org/medical/dicom/2019c/output/chtml/part03/sect_10.9.2.html#table_10.9.2-1
             if path not in DUPLICATE_PATH_EXCEPTIONS:
                 # Add conditional to description only if the duplicates do not have identical descriptions
                 if is_duplicate_node(path, node_list):

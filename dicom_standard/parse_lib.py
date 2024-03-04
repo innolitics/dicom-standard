@@ -83,16 +83,13 @@ def clean_table_name(name: str) -> str:
         Table C.7-5b. Clinical Trial Series Module Attributes --> Clinical Trial Series
     '''
     _, _, title = re.split('\u00a0', name)
-    # Standard workaround: Include upper case "S" at end of "IOD Modules" to catch typo in Table A.35.19-1
-    # http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.35.19.3.html#table_A.35.19-1
-    # Standard workaround: Include optional "s" at end of "Functional Group" to catch Table A.32.9-2
-    # http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.32.9.3.4.html#table_A.32.9-2
-    possible_table_suffixes = r'(IOD Module[Ss])|(Module Attributes)|((Functional Group)? Macro Attributes)|(Module Table)|(Functional Groups? Macros)'
+    possible_table_suffixes = r'(IOD Modules)|(Module Attributes)|((Functional Group)? Macro Attributes)|(Module Table)|(Functional Group Macros)'
     clean_title = re.split(possible_table_suffixes, title)[0]
-    # Standard workaround: Remove extra "Sequence" from table title (should be "CT X-Ray Details", not "CT X-Ray Details Sequence")
-    # http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.15.3.9.html#table_C.8-125
-    if clean_title == 'CT X-Ray Details Sequence':
-        clean_title = 'CT X-Ray Details'
+    # Standard workaround: Macro table name 'Photoacoustic Reconstruction Algorithm Attributes',
+    # which is not following the normal format
+    # https://dicom.nema.org/medical/dicom/2023c/output/chtml/part03/sect_A.89.4.html#table_A.89.4-1
+    if clean_title == 'Photoacoustic Reconstruction Algorithm Attributes':
+        clean_title = 'Photoacoustic Reconstruction Algorithm'
     return clean_title.strip()
 
 

@@ -16,7 +16,20 @@ COLUMN_TITLES = [
 ]
 TABLE_ID = 'table_E.1-1'
 
+RETIREMENT_MISMATCH_ATTRIBUTES = ['Referenced Patient Alias Sequence']
+
 AttrTableType = List[Dict[str, Union[str, bool]]]
+
+
+def ignore_retirement_mismatch(attr_name: str) -> bool:
+    """Standard workaround: Indicates that an attribute name should be ignored if there is a retirement mismatch
+    The list of specific known mismatches to be worked around is hardcoded internally
+    Args:
+        attr_name (str): _description_
+    Returns:
+        bool: _description_
+    """
+    return attr_name in RETIREMENT_MISMATCH_ATTRIBUTES
 
 
 def get_conf_profile_table(standard: BeautifulSoup) -> List[TableDictType]:
@@ -41,10 +54,10 @@ def verify_table_integrity(parsed_table_data: List[TableDictType], attributes: A
     for attr in parsed_table_data:
         attr_name = attr['name']
         retired = attr['retired'] == 'Y'
-        if retired and attr['name'] not in retired_attrs:
+        if retired and attr['name'] not in retired_attrs and not ignore_retirement_mismatch(attr_name):
             errors.append(f'Attribute "{attr_name}" {attr["tag"]} is retired in Table '
                           'E.1-1 but not in Table 6-1.')
-        if not retired and attr['name'] in retired_attrs:
+        if not retired and attr['name'] in retired_attrs and not ignore_retirement_mismatch(attr_name):
             errors.append(f'Attribute "{attr_name}" {attr["tag"]} is retired in Table '
                           '6-1 but not in Table E.1-1.')
     if errors:

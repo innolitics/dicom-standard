@@ -23,9 +23,7 @@ from dicom_standard.table_utils import (
 )
 
 CHAPTER_IDS = ['chapter_A', 'chapter_F']
-# Standard workaround: Include upper case "S" to catch typo in Table A.39.19-1
-# http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.35.19.3.html
-TABLE_SUFFIX = re.compile(".*IOD Module[sS]$")
+TABLE_SUFFIX = re.compile(".*IOD Modules$")
 COLUMN_TITLES_WITH_IE = ['informationEntity', 'module', 'referenceFragment', 'usage']
 COLUMN_TITLES_NO_IE = ['module', 'referenceFragment', 'usage', 'description']
 
@@ -35,7 +33,8 @@ def is_valid_ciod_table(table_div: Tag) -> bool:
 
 
 def ciod_table_to_dict(table: StringifiedTableListType) -> List[TableDictType]:
-    # Table F.3-1 (the only table in section F) has no "Information Entity" column, so we check for the href in the second column
+    # Standard workaround: Table F.3-1 (the only table in section F) has no "Information Entity" column,
+    # so we check for the href in the second column
     # http://dicom.nema.org/dicom/2013/output/chtml/part03/sect_F.3.html#table_F.3-1
     sect_f_table = 'href' in table[0][1]
     column_titles = COLUMN_TITLES_NO_IE if sect_f_table else COLUMN_TITLES_WITH_IE
