@@ -2407,7 +2407,7 @@
         "tag":"(0008,1120)",
         "stdCompIOD":"Y",
         "basicProfile":"X",
-        "rtnUIDsOpt":"X",
+        "rtnUIDsOpt":"K",
         "id":"00081120"
     },
     {
