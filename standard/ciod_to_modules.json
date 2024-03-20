@@ -1,153 +1,160 @@
 [
     {
-        "ciodId":"cr-image",
+        "ciodId":"computed-radiography-image",
         "moduleId":"patient",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Patient"
     },
     {
-        "ciodId":"cr-image",
+        "ciodId":"computed-radiography-image",
         "moduleId":"clinical-trial-subject",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Patient"
     },
     {
-        "ciodId":"cr-image",
+        "ciodId":"computed-radiography-image",
         "moduleId":"general-study",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"cr-image",
+        "ciodId":"computed-radiography-image",
         "moduleId":"patient-study",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"cr-image",
+        "ciodId":"computed-radiography-image",
         "moduleId":"clinical-trial-study",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"cr-image",
+        "ciodId":"computed-radiography-image",
         "moduleId":"general-series",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"cr-image",
+        "ciodId":"computed-radiography-image",
         "moduleId":"cr-series",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"cr-image",
+        "ciodId":"computed-radiography-image",
         "moduleId":"clinical-trial-series",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"cr-image",
+        "ciodId":"computed-radiography-image",
         "moduleId":"general-equipment",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
     },
     {
-        "ciodId":"cr-image",
+        "ciodId":"computed-radiography-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
+    },
+    {
+        "ciodId":"computed-radiography-image",
         "moduleId":"general-image",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"cr-image",
+        "ciodId":"computed-radiography-image",
         "moduleId":"general-reference",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"cr-image",
+        "ciodId":"computed-radiography-image",
         "moduleId":"image-pixel",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"cr-image",
+        "ciodId":"computed-radiography-image",
         "moduleId":"contrast-bolus",
         "usage":"C",
         "conditionalStatement":"Required if contrast media was used in this image",
         "informationEntity":"Image"
     },
     {
-        "ciodId":"cr-image",
+        "ciodId":"computed-radiography-image",
         "moduleId":"display-shutter",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"cr-image",
+        "ciodId":"computed-radiography-image",
         "moduleId":"device",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"cr-image",
+        "ciodId":"computed-radiography-image",
         "moduleId":"specimen",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"cr-image",
+        "ciodId":"computed-radiography-image",
         "moduleId":"cr-image",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"cr-image",
+        "ciodId":"computed-radiography-image",
         "moduleId":"overlay-plane",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"cr-image",
+        "ciodId":"computed-radiography-image",
         "moduleId":"modality-lut",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"cr-image",
+        "ciodId":"computed-radiography-image",
         "moduleId":"voi-lut",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"cr-image",
+        "ciodId":"computed-radiography-image",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"cr-image",
+        "ciodId":"computed-radiography-image",
         "moduleId":"common-instance-reference",
         "usage":"U",
         "conditionalStatement":null,
@@ -222,6 +229,13 @@
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"ct-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
     },
     {
         "ciodId":"ct-image",
@@ -379,6 +393,13 @@
     },
     {
         "ciodId":"mr-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
+    },
+    {
+        "ciodId":"mr-image",
         "moduleId":"general-image",
         "usage":"M",
         "conditionalStatement":null,
@@ -462,609 +483,630 @@
         "informationEntity":"Image"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"patient",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Patient"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"clinical-trial-subject",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Patient"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"general-study",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"patient-study",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"clinical-trial-study",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"general-series",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"clinical-trial-series",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"nm-pet-patient-orientation",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"frame-of-reference",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Frame of Reference"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"synchronization",
         "usage":"C",
         "conditionalStatement":"Required if time synchronization was applied",
         "informationEntity":"Frame of Reference"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"general-equipment",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
+    },
+    {
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"general-image",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"general-reference",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"image-pixel",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"acquisition-context",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"device",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"specimen",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"nm-image-pixel",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"multi-frame",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"nm-multi-frame",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"nm-image",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"nm-isotope",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"nm-detector",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"nm-tomo-acquisition",
         "usage":"C",
         "conditionalStatement":"Required if Image Type (0008,0008) Value 3 is TOMO, GATED TOMO, RECON TOMO or RECON GATED TOMO",
         "informationEntity":"Image"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"nm-multi-gated-acquisition",
         "usage":"C",
         "conditionalStatement":"Required if Image Type (0008,0008) Value 3 is GATED, GATED TOMO, or RECON GATED TOMO",
         "informationEntity":"Image"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"nm-phase",
         "usage":"C",
         "conditionalStatement":"Required if Image Type (0008,0008) Value 3 is DYNAMIC",
         "informationEntity":"Image"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"nm-reconstruction",
         "usage":"C",
         "conditionalStatement":"Required if Image Type (0008,0008) Value 3 is RECON TOMO or RECON GATED TOMO",
         "informationEntity":"Image"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"overlay-plane",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"multi-frame-overlay",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"voi-lut",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"icc-profile",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"common-instance-reference",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"nm-image",
+        "ciodId":"nuclear-medicine-image",
         "moduleId":"frame-extraction",
         "usage":"C",
         "conditionalStatement":"Required if the SOP Instance was created in response to a Frame-Level retrieve request",
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-image",
+        "ciodId":"ultrasound-image",
         "moduleId":"patient",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Patient"
     },
     {
-        "ciodId":"us-image",
+        "ciodId":"ultrasound-image",
         "moduleId":"clinical-trial-subject",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Patient"
     },
     {
-        "ciodId":"us-image",
+        "ciodId":"ultrasound-image",
         "moduleId":"general-study",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"us-image",
+        "ciodId":"ultrasound-image",
         "moduleId":"patient-study",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"us-image",
+        "ciodId":"ultrasound-image",
         "moduleId":"clinical-trial-study",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"us-image",
+        "ciodId":"ultrasound-image",
         "moduleId":"general-series",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"us-image",
+        "ciodId":"ultrasound-image",
         "moduleId":"clinical-trial-series",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"us-image",
+        "ciodId":"ultrasound-image",
         "moduleId":"frame-of-reference",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Frame of Reference"
     },
     {
-        "ciodId":"us-image",
+        "ciodId":"ultrasound-image",
         "moduleId":"synchronization",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Frame of Reference"
     },
     {
-        "ciodId":"us-image",
+        "ciodId":"ultrasound-image",
         "moduleId":"general-equipment",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
     },
     {
-        "ciodId":"us-image",
+        "ciodId":"ultrasound-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
+    },
+    {
+        "ciodId":"ultrasound-image",
         "moduleId":"general-image",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-image",
+        "ciodId":"ultrasound-image",
         "moduleId":"general-reference",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-image",
+        "ciodId":"ultrasound-image",
         "moduleId":"image-pixel",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-image",
+        "ciodId":"ultrasound-image",
         "moduleId":"contrast-bolus",
         "usage":"C",
         "conditionalStatement":"Required if contrast media was used in this image",
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-image",
+        "ciodId":"ultrasound-image",
         "moduleId":"palette-color-lookup-table",
         "usage":"C",
         "conditionalStatement":"Required if Photometric Interpretation (0028,0004) has a value of PALETTE COLOR",
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-image",
+        "ciodId":"ultrasound-image",
         "moduleId":"device",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-image",
+        "ciodId":"ultrasound-image",
         "moduleId":"specimen",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-image",
+        "ciodId":"ultrasound-image",
         "moduleId":"us-region-calibration",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-image",
+        "ciodId":"ultrasound-image",
         "moduleId":"us-image",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-image",
+        "ciodId":"ultrasound-image",
         "moduleId":"overlay-plane",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-image",
+        "ciodId":"ultrasound-image",
         "moduleId":"voi-lut",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-image",
+        "ciodId":"ultrasound-image",
         "moduleId":"icc-profile",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-image",
+        "ciodId":"ultrasound-image",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-image",
+        "ciodId":"ultrasound-image",
         "moduleId":"common-instance-reference",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-multi-frame-image",
+        "ciodId":"ultrasound-multi-frame-image",
         "moduleId":"patient",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Patient"
     },
     {
-        "ciodId":"us-multi-frame-image",
+        "ciodId":"ultrasound-multi-frame-image",
         "moduleId":"clinical-trial-subject",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Patient"
     },
     {
-        "ciodId":"us-multi-frame-image",
+        "ciodId":"ultrasound-multi-frame-image",
         "moduleId":"general-study",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"us-multi-frame-image",
+        "ciodId":"ultrasound-multi-frame-image",
         "moduleId":"patient-study",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"us-multi-frame-image",
+        "ciodId":"ultrasound-multi-frame-image",
         "moduleId":"clinical-trial-study",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"us-multi-frame-image",
+        "ciodId":"ultrasound-multi-frame-image",
         "moduleId":"general-series",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"us-multi-frame-image",
+        "ciodId":"ultrasound-multi-frame-image",
         "moduleId":"clinical-trial-series",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"us-multi-frame-image",
+        "ciodId":"ultrasound-multi-frame-image",
         "moduleId":"frame-of-reference",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Frame of Reference"
     },
     {
-        "ciodId":"us-multi-frame-image",
+        "ciodId":"ultrasound-multi-frame-image",
         "moduleId":"synchronization",
         "usage":"C",
         "conditionalStatement":"Required if Modality (0008,0060) = IVUS.\n\nMay be present otherwise.",
         "informationEntity":"Frame of Reference"
     },
     {
-        "ciodId":"us-multi-frame-image",
+        "ciodId":"ultrasound-multi-frame-image",
         "moduleId":"general-equipment",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
     },
     {
-        "ciodId":"us-multi-frame-image",
+        "ciodId":"ultrasound-multi-frame-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
+    },
+    {
+        "ciodId":"ultrasound-multi-frame-image",
         "moduleId":"general-image",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-multi-frame-image",
+        "ciodId":"ultrasound-multi-frame-image",
         "moduleId":"general-reference",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-multi-frame-image",
+        "ciodId":"ultrasound-multi-frame-image",
         "moduleId":"image-pixel",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-multi-frame-image",
+        "ciodId":"ultrasound-multi-frame-image",
         "moduleId":"contrast-bolus",
         "usage":"C",
         "conditionalStatement":"Required if contrast media was used in this image.",
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-multi-frame-image",
+        "ciodId":"ultrasound-multi-frame-image",
         "moduleId":"cine",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-multi-frame-image",
+        "ciodId":"ultrasound-multi-frame-image",
         "moduleId":"multi-frame",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-multi-frame-image",
+        "ciodId":"ultrasound-multi-frame-image",
         "moduleId":"frame-pointers",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-multi-frame-image",
+        "ciodId":"ultrasound-multi-frame-image",
         "moduleId":"palette-color-lookup-table",
         "usage":"C",
         "conditionalStatement":"Required if Photometric Interpretation (0028,0004) has a value of PALETTE COLOR",
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-multi-frame-image",
+        "ciodId":"ultrasound-multi-frame-image",
         "moduleId":"device",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-multi-frame-image",
+        "ciodId":"ultrasound-multi-frame-image",
         "moduleId":"specimen",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-multi-frame-image",
+        "ciodId":"ultrasound-multi-frame-image",
         "moduleId":"us-region-calibration",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-multi-frame-image",
+        "ciodId":"ultrasound-multi-frame-image",
         "moduleId":"us-image",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-multi-frame-image",
+        "ciodId":"ultrasound-multi-frame-image",
         "moduleId":"overlay-plane",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-multi-frame-image",
+        "ciodId":"ultrasound-multi-frame-image",
         "moduleId":"multi-frame-overlay",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-multi-frame-image",
+        "ciodId":"ultrasound-multi-frame-image",
         "moduleId":"voi-lut",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-multi-frame-image",
+        "ciodId":"ultrasound-multi-frame-image",
         "moduleId":"icc-profile",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-multi-frame-image",
+        "ciodId":"ultrasound-multi-frame-image",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-multi-frame-image",
+        "ciodId":"ultrasound-multi-frame-image",
         "moduleId":"common-instance-reference",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"us-multi-frame-image",
+        "ciodId":"ultrasound-multi-frame-image",
         "moduleId":"frame-extraction",
         "usage":"C",
         "conditionalStatement":"Required if the SOP Instance was created in response to a Frame-Level retrieve request",
@@ -1132,6 +1174,13 @@
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"secondary-capture-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
     },
     {
         "ciodId":"secondary-capture-image",
@@ -1218,749 +1267,777 @@
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-single-bit-sc-image",
+        "ciodId":"multi-frame-single-bit-secondary-capture-image",
         "moduleId":"patient",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Patient"
     },
     {
-        "ciodId":"multi-frame-single-bit-sc-image",
+        "ciodId":"multi-frame-single-bit-secondary-capture-image",
         "moduleId":"clinical-trial-subject",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Patient"
     },
     {
-        "ciodId":"multi-frame-single-bit-sc-image",
+        "ciodId":"multi-frame-single-bit-secondary-capture-image",
         "moduleId":"general-study",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"multi-frame-single-bit-sc-image",
+        "ciodId":"multi-frame-single-bit-secondary-capture-image",
         "moduleId":"patient-study",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"multi-frame-single-bit-sc-image",
+        "ciodId":"multi-frame-single-bit-secondary-capture-image",
         "moduleId":"clinical-trial-study",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"multi-frame-single-bit-sc-image",
+        "ciodId":"multi-frame-single-bit-secondary-capture-image",
         "moduleId":"general-series",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"multi-frame-single-bit-sc-image",
+        "ciodId":"multi-frame-single-bit-secondary-capture-image",
         "moduleId":"clinical-trial-series",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"multi-frame-single-bit-sc-image",
+        "ciodId":"multi-frame-single-bit-secondary-capture-image",
         "moduleId":"general-equipment",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
     },
     {
-        "ciodId":"multi-frame-single-bit-sc-image",
+        "ciodId":"multi-frame-single-bit-secondary-capture-image",
         "moduleId":"sc-equipment",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
     },
     {
-        "ciodId":"multi-frame-single-bit-sc-image",
+        "ciodId":"multi-frame-single-bit-secondary-capture-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
+    },
+    {
+        "ciodId":"multi-frame-single-bit-secondary-capture-image",
         "moduleId":"general-image",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-single-bit-sc-image",
+        "ciodId":"multi-frame-single-bit-secondary-capture-image",
         "moduleId":"general-reference",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-single-bit-sc-image",
+        "ciodId":"multi-frame-single-bit-secondary-capture-image",
         "moduleId":"image-pixel",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-single-bit-sc-image",
+        "ciodId":"multi-frame-single-bit-secondary-capture-image",
         "moduleId":"cine",
         "usage":"C",
         "conditionalStatement":"Required if Frame Increment Pointer (0028,0009) is Frame Time (0018,1063) or Frame Time Vector (0018,1065)",
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-single-bit-sc-image",
+        "ciodId":"multi-frame-single-bit-secondary-capture-image",
         "moduleId":"multi-frame",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-single-bit-sc-image",
+        "ciodId":"multi-frame-single-bit-secondary-capture-image",
         "moduleId":"frame-pointers",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-single-bit-sc-image",
+        "ciodId":"multi-frame-single-bit-secondary-capture-image",
         "moduleId":"device",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-single-bit-sc-image",
+        "ciodId":"multi-frame-single-bit-secondary-capture-image",
         "moduleId":"specimen",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-single-bit-sc-image",
+        "ciodId":"multi-frame-single-bit-secondary-capture-image",
         "moduleId":"sc-image",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-single-bit-sc-image",
+        "ciodId":"multi-frame-single-bit-secondary-capture-image",
         "moduleId":"sc-multi-frame-image",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-single-bit-sc-image",
+        "ciodId":"multi-frame-single-bit-secondary-capture-image",
         "moduleId":"sc-multi-frame-vector",
         "usage":"C",
         "conditionalStatement":"Required if Number of Frames is greater than 1",
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-single-bit-sc-image",
+        "ciodId":"multi-frame-single-bit-secondary-capture-image",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-single-bit-sc-image",
+        "ciodId":"multi-frame-single-bit-secondary-capture-image",
         "moduleId":"common-instance-reference",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-single-bit-sc-image",
+        "ciodId":"multi-frame-single-bit-secondary-capture-image",
         "moduleId":"frame-extraction",
         "usage":"C",
         "conditionalStatement":"Required if the SOP Instance was created in response to a Frame-Level retrieve request",
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
         "moduleId":"patient",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Patient"
     },
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
         "moduleId":"clinical-trial-subject",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Patient"
     },
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
         "moduleId":"general-study",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
         "moduleId":"patient-study",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
         "moduleId":"clinical-trial-study",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
         "moduleId":"general-series",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
         "moduleId":"clinical-trial-series",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
         "moduleId":"general-equipment",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
     },
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
         "moduleId":"sc-equipment",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
     },
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
         "moduleId":"frame-of-reference",
         "usage":"C",
         "conditionalStatement":"Required if Pixel Measures or Plane Position (Patient) or Plane Orientation (Patient) Functional Group Macros Present",
         "informationEntity":"Frame of Reference"
     },
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
         "moduleId":"synchronization",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Frame of Reference"
     },
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
+    },
+    {
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
         "moduleId":"general-image",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
         "moduleId":"general-reference",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
         "moduleId":"image-pixel",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
         "moduleId":"cine",
         "usage":"C",
         "conditionalStatement":"Required if Frame Increment Pointer (0028,0009) is Frame Time (0018,1063) or Frame Time Vector (0018,1065)",
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
         "moduleId":"multi-frame",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
         "moduleId":"frame-pointers",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
         "moduleId":"device",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
-        "moduleId":"multi-frame-grayscale-byte-sc-image-multi-frame-functional-groups",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
+        "moduleId":"multi-frame-grayscale-byte-secondary-capture-image-multi-frame-functional-groups",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
         "moduleId":"multi-frame-dimension",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
         "moduleId":"specimen",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
         "moduleId":"sc-image",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
         "moduleId":"sc-multi-frame-image",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
         "moduleId":"sc-multi-frame-vector",
         "usage":"C",
         "conditionalStatement":"Required if Number of Frames is greater than 1",
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
         "moduleId":"voi-lut",
         "usage":"C",
         "conditionalStatement":"Required if the VOI LUT stage is not an identity transformation",
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
         "moduleId":"common-instance-reference",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
         "moduleId":"frame-extraction",
         "usage":"C",
         "conditionalStatement":"Required if the SOP Instance was created in response to a Frame-Level retrieve request",
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
         "moduleId":"patient",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Patient"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
         "moduleId":"clinical-trial-subject",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Patient"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
         "moduleId":"general-study",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
         "moduleId":"patient-study",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
         "moduleId":"clinical-trial-study",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
         "moduleId":"general-series",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
         "moduleId":"clinical-trial-series",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
         "moduleId":"general-equipment",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
         "moduleId":"sc-equipment",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
         "moduleId":"frame-of-reference",
         "usage":"C",
         "conditionalStatement":"Required if Pixel Measures or Plane Position (Patient) or Plane Orientation (Patient) Functional Group Macros Present",
         "informationEntity":"Frame of Reference"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
         "moduleId":"synchronization",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Frame of Reference"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
+    },
+    {
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
         "moduleId":"general-image",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
         "moduleId":"general-reference",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
         "moduleId":"image-pixel",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
         "moduleId":"cine",
         "usage":"C",
         "conditionalStatement":"Required if Frame Increment Pointer (0028,0009) is Frame Time (0018,1063) or Frame Time Vector (0018,1065)",
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
         "moduleId":"multi-frame",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
         "moduleId":"frame-pointers",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
         "moduleId":"device",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
-        "moduleId":"multi-frame-grayscale-word-sc-image-multi-frame-functional-groups",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
+        "moduleId":"multi-frame-grayscale-word-secondary-capture-image-multi-frame-functional-groups",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
         "moduleId":"multi-frame-dimension",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
         "moduleId":"specimen",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
         "moduleId":"sc-image",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
         "moduleId":"sc-multi-frame-image",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
         "moduleId":"sc-multi-frame-vector",
         "usage":"C",
         "conditionalStatement":"Required if Number of Frames is greater than 1",
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
         "moduleId":"voi-lut",
         "usage":"C",
         "conditionalStatement":"Required if the VOI LUT stage is not an identity transformation",
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
         "moduleId":"common-instance-reference",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
         "moduleId":"frame-extraction",
         "usage":"C",
         "conditionalStatement":"Required if the SOP Instance was created in response to a Frame-Level retrieve request",
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
         "moduleId":"patient",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Patient"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
         "moduleId":"clinical-trial-subject",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Patient"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
         "moduleId":"general-study",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
         "moduleId":"patient-study",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
         "moduleId":"clinical-trial-study",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
         "moduleId":"general-series",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
         "moduleId":"clinical-trial-series",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
         "moduleId":"frame-of-reference",
         "usage":"C",
         "conditionalStatement":"Required if Pixel Measures or Plane Position (Patient) or Plane Orientation (Patient) Functional Group Macros Present",
         "informationEntity":"Frame of Reference"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
         "moduleId":"synchronization",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Frame of Reference"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
         "moduleId":"general-equipment",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
         "moduleId":"sc-equipment",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
+    },
+    {
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
         "moduleId":"general-image",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
         "moduleId":"general-reference",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
         "moduleId":"image-pixel",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
         "moduleId":"cine",
         "usage":"C",
         "conditionalStatement":"Required if Frame Increment Pointer (0028,0009) is Frame Time (0018,1063) or Frame Time Vector (0018,1065)",
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
         "moduleId":"multi-frame",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
         "moduleId":"frame-pointers",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
         "moduleId":"device",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
-        "moduleId":"multi-frame-true-color-sc-image-multi-frame-functional-groups",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
+        "moduleId":"multi-frame-true-color-secondary-capture-image-multi-frame-functional-groups",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
         "moduleId":"multi-frame-dimension",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
         "moduleId":"specimen",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
         "moduleId":"sc-image",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
         "moduleId":"sc-multi-frame-image",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
         "moduleId":"sc-multi-frame-vector",
         "usage":"C",
         "conditionalStatement":"Required if Number of Frames is greater than 1",
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
         "moduleId":"icc-profile",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
         "moduleId":"common-instance-reference",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
         "moduleId":"frame-extraction",
         "usage":"C",
         "conditionalStatement":"Required if the SOP Instance was created in response to a Frame-Level retrieve request",
@@ -2028,6 +2105,13 @@
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"x-ray-angiographic-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
     },
     {
         "ciodId":"x-ray-angiographic-image",
@@ -2266,6 +2350,13 @@
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"x-ray-radiofluoroscopic-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
     },
     {
         "ciodId":"x-ray-radiofluoroscopic-image",
@@ -2514,6 +2605,13 @@
     },
     {
         "ciodId":"rt-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
+    },
+    {
+        "ciodId":"rt-image",
         "moduleId":"general-image",
         "usage":"M",
         "conditionalStatement":null,
@@ -2703,27 +2801,6 @@
     },
     {
         "ciodId":"rt-dose",
-        "moduleId":"overlay-plane",
-        "usage":"U",
-        "conditionalStatement":null,
-        "informationEntity":"Dose"
-    },
-    {
-        "ciodId":"rt-dose",
-        "moduleId":"multi-frame-overlay",
-        "usage":"U",
-        "conditionalStatement":null,
-        "informationEntity":"Dose"
-    },
-    {
-        "ciodId":"rt-dose",
-        "moduleId":"modality-lut",
-        "usage":"U",
-        "conditionalStatement":null,
-        "informationEntity":"Dose"
-    },
-    {
-        "ciodId":"rt-dose",
         "moduleId":"rt-dose",
         "usage":"M",
         "conditionalStatement":null,
@@ -2734,27 +2811,6 @@
         "moduleId":"rt-dvh",
         "usage":"U",
         "conditionalStatement":null,
-        "informationEntity":"Dose"
-    },
-    {
-        "ciodId":"rt-dose",
-        "moduleId":"structure-set",
-        "usage":"C",
-        "conditionalStatement":"Required if dose data contains dose points or isodose curves",
-        "informationEntity":"Dose"
-    },
-    {
-        "ciodId":"rt-dose",
-        "moduleId":"roi-contour",
-        "usage":"C",
-        "conditionalStatement":"Required if dose data contains dose points or isodose curves",
-        "informationEntity":"Dose"
-    },
-    {
-        "ciodId":"rt-dose",
-        "moduleId":"rt-dose-roi",
-        "usage":"C",
-        "conditionalStatement":"Required if dose data contains dose points or isodose curves",
         "informationEntity":"Dose"
     },
     {
@@ -3031,182 +3087,189 @@
         "informationEntity":"Plan"
     },
     {
-        "ciodId":"pet-image",
+        "ciodId":"positron-emission-tomography-image",
         "moduleId":"patient",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Patient"
     },
     {
-        "ciodId":"pet-image",
+        "ciodId":"positron-emission-tomography-image",
         "moduleId":"clinical-trial-subject",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Patient"
     },
     {
-        "ciodId":"pet-image",
+        "ciodId":"positron-emission-tomography-image",
         "moduleId":"general-study",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"pet-image",
+        "ciodId":"positron-emission-tomography-image",
         "moduleId":"patient-study",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"pet-image",
+        "ciodId":"positron-emission-tomography-image",
         "moduleId":"clinical-trial-study",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"pet-image",
+        "ciodId":"positron-emission-tomography-image",
         "moduleId":"general-series",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"pet-image",
+        "ciodId":"positron-emission-tomography-image",
         "moduleId":"clinical-trial-series",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"pet-image",
+        "ciodId":"positron-emission-tomography-image",
         "moduleId":"pet-series",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"pet-image",
+        "ciodId":"positron-emission-tomography-image",
         "moduleId":"pet-isotope",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"pet-image",
+        "ciodId":"positron-emission-tomography-image",
         "moduleId":"pet-multi-gated-acquisition",
         "usage":"C",
         "conditionalStatement":"Required if Series Type (0054,1000) Value 1 is GATED.",
         "informationEntity":"Series"
     },
     {
-        "ciodId":"pet-image",
+        "ciodId":"positron-emission-tomography-image",
         "moduleId":"nm-pet-patient-orientation",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"pet-image",
+        "ciodId":"positron-emission-tomography-image",
         "moduleId":"frame-of-reference",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Frame of Reference"
     },
     {
-        "ciodId":"pet-image",
+        "ciodId":"positron-emission-tomography-image",
         "moduleId":"synchronization",
         "usage":"C",
         "conditionalStatement":"Required if time synchronization was applied",
         "informationEntity":"Frame of Reference"
     },
     {
-        "ciodId":"pet-image",
+        "ciodId":"positron-emission-tomography-image",
         "moduleId":"general-equipment",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
     },
     {
-        "ciodId":"pet-image",
+        "ciodId":"positron-emission-tomography-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
+    },
+    {
+        "ciodId":"positron-emission-tomography-image",
         "moduleId":"general-image",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"pet-image",
+        "ciodId":"positron-emission-tomography-image",
         "moduleId":"general-reference",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"pet-image",
+        "ciodId":"positron-emission-tomography-image",
         "moduleId":"image-plane",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"pet-image",
+        "ciodId":"positron-emission-tomography-image",
         "moduleId":"image-pixel",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"pet-image",
+        "ciodId":"positron-emission-tomography-image",
         "moduleId":"device",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"pet-image",
+        "ciodId":"positron-emission-tomography-image",
         "moduleId":"specimen",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"pet-image",
+        "ciodId":"positron-emission-tomography-image",
         "moduleId":"pet-image",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"pet-image",
+        "ciodId":"positron-emission-tomography-image",
         "moduleId":"overlay-plane",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"pet-image",
+        "ciodId":"positron-emission-tomography-image",
         "moduleId":"voi-lut",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"pet-image",
+        "ciodId":"positron-emission-tomography-image",
         "moduleId":"acquisition-context",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"pet-image",
+        "ciodId":"positron-emission-tomography-image",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
     {
-        "ciodId":"pet-image",
+        "ciodId":"positron-emission-tomography-image",
         "moduleId":"common-instance-reference",
         "usage":"U",
         "conditionalStatement":null,
@@ -3281,6 +3344,13 @@
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"digital-x-ray-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
     },
     {
         "ciodId":"digital-x-ray-image",
@@ -3419,7 +3489,7 @@
         "ciodId":"digital-x-ray-image",
         "moduleId":"voi-lut",
         "usage":"C",
-        "conditionalStatement":"Required if Presentation Intent Type (0008,0068) is FOR PRESENTATION. Shall not be present otherwise. See Note 8.",
+        "conditionalStatement":"Required if Presentation Intent Type (0008,0068) is FOR PRESENTATION. Shall not be present otherwise. See Note 6.",
         "informationEntity":"Image"
     },
     {
@@ -3526,6 +3596,13 @@
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"digital-mammography-x-ray-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
     },
     {
         "ciodId":"digital-mammography-x-ray-image",
@@ -3778,6 +3855,13 @@
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"digital-intra-oral-x-ray-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
     },
     {
         "ciodId":"digital-intra-oral-x-ray-image",
@@ -4355,6 +4439,13 @@
     },
     {
         "ciodId":"vl-endoscopic-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
+    },
+    {
+        "ciodId":"vl-endoscopic-image",
         "moduleId":"general-image",
         "usage":"M",
         "conditionalStatement":null,
@@ -4485,6 +4576,13 @@
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"vl-microscopic-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
     },
     {
         "ciodId":"vl-microscopic-image",
@@ -4632,6 +4730,13 @@
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"vl-slide-coordinates-microscopic-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
     },
     {
         "ciodId":"vl-slide-coordinates-microscopic-image",
@@ -4789,6 +4894,13 @@
     },
     {
         "ciodId":"vl-photographic-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
+    },
+    {
+        "ciodId":"vl-photographic-image",
         "moduleId":"general-image",
         "usage":"M",
         "conditionalStatement":null,
@@ -4936,6 +5048,13 @@
     },
     {
         "ciodId":"video-endoscopic-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
+    },
+    {
+        "ciodId":"video-endoscopic-image",
         "moduleId":"general-image",
         "usage":"M",
         "conditionalStatement":null,
@@ -5080,6 +5199,13 @@
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"video-microscopic-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
     },
     {
         "ciodId":"video-microscopic-image",
@@ -5234,6 +5360,13 @@
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"video-photographic-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
     },
     {
         "ciodId":"video-photographic-image",
@@ -5405,6 +5538,20 @@
     },
     {
         "ciodId":"vl-whole-slide-microscopy-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
+    },
+    {
+        "ciodId":"vl-whole-slide-microscopy-image",
+        "moduleId":"multi-resolution-pyramid",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Multi-Resolution Pyramid"
+    },
+    {
+        "ciodId":"vl-whole-slide-microscopy-image",
         "moduleId":"general-image",
         "usage":"M",
         "conditionalStatement":null,
@@ -5414,6 +5561,13 @@
         "ciodId":"vl-whole-slide-microscopy-image",
         "moduleId":"general-reference",
         "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"vl-whole-slide-microscopy-image",
+        "moduleId":"microscope-slide-layer-tile-organization",
+        "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Image"
     },
@@ -5464,13 +5618,6 @@
         "moduleId":"optical-path",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Image"
-    },
-    {
-        "ciodId":"vl-whole-slide-microscopy-image",
-        "moduleId":"multi-resolution-navigation",
-        "usage":"C",
-        "conditionalStatement":"Required if Image Type (0008,0008) Value 3 is LOCALIZER",
         "informationEntity":"Image"
     },
     {
@@ -5577,6 +5724,13 @@
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciodId":"real-time-video-endoscopic-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
     },
     {
         "ciodId":"real-time-video-endoscopic-image",
@@ -5741,6 +5895,13 @@
     },
     {
         "ciodId":"real-time-video-photographic-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
+    },
+    {
+        "ciodId":"real-time-video-photographic-image",
         "moduleId":"general-image",
         "usage":"M",
         "conditionalStatement":null,
@@ -5892,6 +6053,13 @@
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"dermoscopic-photography-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
     },
     {
         "ciodId":"dermoscopic-photography-image",
@@ -6114,7 +6282,7 @@
         "ciodId":"grayscale-softcopy-presentation-state",
         "moduleId":"graphic-layer",
         "usage":"C",
-        "conditionalStatement":"Required if Graphic Annotations or Overlays or Curves are to be applied to referenced image(s)",
+        "conditionalStatement":"Required if Graphic Annotations or Overlays are to be applied to referenced image(s)",
         "informationEntity":"Presentation State"
     },
     {
@@ -6142,6 +6310,13 @@
         "ciodId":"grayscale-softcopy-presentation-state",
         "moduleId":"softcopy-presentation-lut",
         "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciodId":"grayscale-softcopy-presentation-state",
+        "moduleId":"specimen",
+        "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Presentation State"
     },
@@ -6289,7 +6464,7 @@
         "ciodId":"color-softcopy-presentation-state",
         "moduleId":"graphic-layer",
         "usage":"C",
-        "conditionalStatement":"Required if Graphic Annotations or Overlays or Curves are to be applied to referenced image(s)",
+        "conditionalStatement":"Required if Graphic Annotations or Overlays are to be applied to referenced image(s)",
         "informationEntity":"Presentation State"
     },
     {
@@ -6303,6 +6478,13 @@
         "ciodId":"color-softcopy-presentation-state",
         "moduleId":"icc-profile",
         "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciodId":"color-softcopy-presentation-state",
+        "moduleId":"specimen",
+        "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Presentation State"
     },
@@ -6464,7 +6646,7 @@
         "ciodId":"pseudo-color-softcopy-presentation-state",
         "moduleId":"graphic-layer",
         "usage":"C",
-        "conditionalStatement":"Required if Graphic Annotations or Overlays or Curves are to be applied to referenced image(s)",
+        "conditionalStatement":"Required if Graphic Annotations or Overlays are to be applied to referenced image(s)",
         "informationEntity":"Presentation State"
     },
     {
@@ -6499,6 +6681,13 @@
         "ciodId":"pseudo-color-softcopy-presentation-state",
         "moduleId":"icc-profile",
         "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciodId":"pseudo-color-softcopy-presentation-state",
+        "moduleId":"specimen",
+        "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Presentation State"
     },
@@ -6637,6 +6826,13 @@
     },
     {
         "ciodId":"blending-softcopy-presentation-state",
+        "moduleId":"specimen",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciodId":"blending-softcopy-presentation-state",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
@@ -6737,6 +6933,13 @@
         "ciodId":"basic-structured-display",
         "moduleId":"common-instance-reference",
         "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciodId":"basic-structured-display",
+        "moduleId":"specimen",
+        "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Presentation State"
     },
@@ -6884,7 +7087,7 @@
         "ciodId":"xa-xrf-grayscale-softcopy-presentation-state",
         "moduleId":"graphic-layer",
         "usage":"C",
-        "conditionalStatement":"Required if Graphic Annotations or Overlays or Curves are to be applied to referenced image(s)",
+        "conditionalStatement":"Required if Graphic Annotations or Overlays are to be applied to referenced image(s)",
         "informationEntity":"Presentation State"
     },
     {
@@ -6919,6 +7122,13 @@
         "ciodId":"xa-xrf-grayscale-softcopy-presentation-state",
         "moduleId":"softcopy-presentation-lut",
         "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciodId":"xa-xrf-grayscale-softcopy-presentation-state",
+        "moduleId":"specimen",
+        "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Presentation State"
     },
@@ -7078,6 +7288,216 @@
     },
     {
         "ciodId":"advanced-blending-presentation-state",
+        "moduleId":"specimen",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciodId":"advanced-blending-presentation-state",
+        "moduleId":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciodId":"variable-modality-lut-softcopy-presentation-state",
+        "moduleId":"patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciodId":"variable-modality-lut-softcopy-presentation-state",
+        "moduleId":"clinical-trial-subject",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciodId":"variable-modality-lut-softcopy-presentation-state",
+        "moduleId":"general-study",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"variable-modality-lut-softcopy-presentation-state",
+        "moduleId":"patient-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"variable-modality-lut-softcopy-presentation-state",
+        "moduleId":"clinical-trial-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"variable-modality-lut-softcopy-presentation-state",
+        "moduleId":"general-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"variable-modality-lut-softcopy-presentation-state",
+        "moduleId":"clinical-trial-series",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"variable-modality-lut-softcopy-presentation-state",
+        "moduleId":"presentation-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"variable-modality-lut-softcopy-presentation-state",
+        "moduleId":"general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"variable-modality-lut-softcopy-presentation-state",
+        "moduleId":"presentation-state-identification",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciodId":"variable-modality-lut-softcopy-presentation-state",
+        "moduleId":"presentation-state-relationship",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciodId":"variable-modality-lut-softcopy-presentation-state",
+        "moduleId":"presentation-state-shutter",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciodId":"variable-modality-lut-softcopy-presentation-state",
+        "moduleId":"presentation-state-mask",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciodId":"variable-modality-lut-softcopy-presentation-state",
+        "moduleId":"mask",
+        "usage":"C",
+        "conditionalStatement":"Required if the referenced image(s) are multi-frame and are to be subtracted",
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciodId":"variable-modality-lut-softcopy-presentation-state",
+        "moduleId":"display-shutter",
+        "usage":"C",
+        "conditionalStatement":"Required if a Display Shutter is to be applied to referenced image(s) and the Bitmap Display Shutter Module is not present",
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciodId":"variable-modality-lut-softcopy-presentation-state",
+        "moduleId":"bitmap-display-shutter",
+        "usage":"C",
+        "conditionalStatement":"Required if a Display Shutter is to be applied to referenced image(s) and the Display Shutter Module is not present",
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciodId":"variable-modality-lut-softcopy-presentation-state",
+        "moduleId":"overlay-plane",
+        "usage":"C",
+        "conditionalStatement":"Required if Overlay is to be applied to referenced image(s) or the Bitmap Display Shutter Module is present.",
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciodId":"variable-modality-lut-softcopy-presentation-state",
+        "moduleId":"overlay-activation",
+        "usage":"C",
+        "conditionalStatement":"Required if referenced image contains overlay data that is to be displayed or Presentation State Instance contains Overlay data other than Bitmap Shutter",
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciodId":"variable-modality-lut-softcopy-presentation-state",
+        "moduleId":"displayed-area",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciodId":"variable-modality-lut-softcopy-presentation-state",
+        "moduleId":"graphic-annotation",
+        "usage":"C",
+        "conditionalStatement":"Required if Graphic Annotations are to be applied to referenced image(s)",
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciodId":"variable-modality-lut-softcopy-presentation-state",
+        "moduleId":"spatial-transformation",
+        "usage":"C",
+        "conditionalStatement":"Required if rotation or flipping are to be applied to referenced image(s)",
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciodId":"variable-modality-lut-softcopy-presentation-state",
+        "moduleId":"graphic-layer",
+        "usage":"C",
+        "conditionalStatement":"Required if Graphic Annotations or Overlays are to be applied to referenced image(s)",
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciodId":"variable-modality-lut-softcopy-presentation-state",
+        "moduleId":"graphic-group",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciodId":"variable-modality-lut-softcopy-presentation-state",
+        "moduleId":"variable-modality-lut",
+        "usage":"C",
+        "conditionalStatement":"Required if a Modality LUT is to be applied to referenced image(s)",
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciodId":"variable-modality-lut-softcopy-presentation-state",
+        "moduleId":"softcopy-voi-lut",
+        "usage":"C",
+        "conditionalStatement":"Required if a VOI LUT is to be applied to referenced image(s)",
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciodId":"variable-modality-lut-softcopy-presentation-state",
+        "moduleId":"softcopy-presentation-lut",
+        "usage":"C",
+        "conditionalStatement":"Required if the Palette Color Lookup Table Module is not present",
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciodId":"variable-modality-lut-softcopy-presentation-state",
+        "moduleId":"icc-profile",
+        "usage":"C",
+        "conditionalStatement":"Required if the Palette Color Lookup Table Module is present",
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciodId":"variable-modality-lut-softcopy-presentation-state",
+        "moduleId":"specimen",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Presentation State"
+    },
+    {
+        "ciodId":"variable-modality-lut-softcopy-presentation-state",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
@@ -8722,6 +9142,111 @@
         "informationEntity":"Waveform"
     },
     {
+        "ciodId":"general-32-bit-ecg",
+        "moduleId":"patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciodId":"general-32-bit-ecg",
+        "moduleId":"clinical-trial-subject",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciodId":"general-32-bit-ecg",
+        "moduleId":"general-study",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"general-32-bit-ecg",
+        "moduleId":"patient-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"general-32-bit-ecg",
+        "moduleId":"clinical-trial-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"general-32-bit-ecg",
+        "moduleId":"general-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"general-32-bit-ecg",
+        "moduleId":"clinical-trial-series",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"general-32-bit-ecg",
+        "moduleId":"synchronization",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciodId":"general-32-bit-ecg",
+        "moduleId":"general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"general-32-bit-ecg",
+        "moduleId":"enhanced-general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"general-32-bit-ecg",
+        "moduleId":"waveform-identification",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Waveform"
+    },
+    {
+        "ciodId":"general-32-bit-ecg",
+        "moduleId":"waveform",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Waveform"
+    },
+    {
+        "ciodId":"general-32-bit-ecg",
+        "moduleId":"acquisition-context",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Waveform"
+    },
+    {
+        "ciodId":"general-32-bit-ecg",
+        "moduleId":"waveform-annotation",
+        "usage":"C",
+        "conditionalStatement":"Required if annotation is present.",
+        "informationEntity":"Waveform"
+    },
+    {
+        "ciodId":"general-32-bit-ecg",
+        "moduleId":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Waveform"
+    },
+    {
         "ciodId":"basic-text-sr",
         "moduleId":"patient",
         "usage":"M",
@@ -8782,21 +9307,21 @@
         "moduleId":"sr-document-general",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"basic-text-sr",
         "moduleId":"sr-document-content",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"basic-text-sr",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"enhanced-sr",
@@ -8866,21 +9391,21 @@
         "moduleId":"sr-document-general",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"enhanced-sr",
         "moduleId":"sr-document-content",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"enhanced-sr",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"comprehensive-sr",
@@ -8950,21 +9475,21 @@
         "moduleId":"sr-document-general",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"comprehensive-sr",
         "moduleId":"sr-document-content",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"comprehensive-sr",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"key-object-selection-document",
@@ -9027,21 +9552,21 @@
         "moduleId":"key-object-document",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"key-object-selection-document",
         "moduleId":"sr-document-content",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"key-object-selection-document",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"mammography-cad-sr",
@@ -9104,21 +9629,21 @@
         "moduleId":"sr-document-general",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"mammography-cad-sr",
         "moduleId":"sr-document-content",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"mammography-cad-sr",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"chest-cad-sr",
@@ -9188,21 +9713,21 @@
         "moduleId":"sr-document-general",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"chest-cad-sr",
         "moduleId":"sr-document-content",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"chest-cad-sr",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"procedure-log",
@@ -9265,21 +9790,21 @@
         "moduleId":"sr-document-general",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"procedure-log",
         "moduleId":"sr-document-content",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"procedure-log",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"x-ray-radiation-dose-sr",
@@ -9356,21 +9881,21 @@
         "moduleId":"sr-document-general",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"x-ray-radiation-dose-sr",
         "moduleId":"sr-document-content",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"x-ray-radiation-dose-sr",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"spectacle-prescription-report",
@@ -9440,21 +9965,21 @@
         "moduleId":"sr-document-general",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"spectacle-prescription-report",
         "moduleId":"sr-document-content",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"spectacle-prescription-report",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"colon-cad-sr",
@@ -9524,21 +10049,21 @@
         "moduleId":"sr-document-general",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"colon-cad-sr",
         "moduleId":"sr-document-content",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"colon-cad-sr",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"macular-grid-thickness-and-volume-report",
@@ -9608,21 +10133,21 @@
         "moduleId":"sr-document-general",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"macular-grid-thickness-and-volume-report",
         "moduleId":"sr-document-content",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"macular-grid-thickness-and-volume-report",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"implantation-plan-sr-document",
@@ -9692,21 +10217,21 @@
         "moduleId":"sr-document-general",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"implantation-plan-sr-document",
         "moduleId":"sr-document-content",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"implantation-plan-sr-document",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"comprehensive-3d-sr",
@@ -9776,21 +10301,21 @@
         "moduleId":"sr-document-general",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"comprehensive-3d-sr",
         "moduleId":"sr-document-content",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"comprehensive-3d-sr",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"radiopharmaceutical-radiation-dose-sr",
@@ -9867,21 +10392,21 @@
         "moduleId":"sr-document-general",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"radiopharmaceutical-radiation-dose-sr",
         "moduleId":"sr-document-content",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"radiopharmaceutical-radiation-dose-sr",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"extensible-sr",
@@ -9958,21 +10483,21 @@
         "moduleId":"sr-document-general",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"extensible-sr",
         "moduleId":"sr-document-content",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"extensible-sr",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"acquisition-context-sr",
@@ -10049,21 +10574,21 @@
         "moduleId":"sr-document-general",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"acquisition-context-sr",
         "moduleId":"sr-document-content",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"acquisition-context-sr",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"simplified-adult-echo-sr",
@@ -10140,119 +10665,119 @@
         "moduleId":"sr-document-general",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"simplified-adult-echo-sr",
         "moduleId":"sr-document-content",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"simplified-adult-echo-sr",
         "moduleId":"timezone",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"simplified-adult-echo-sr",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
-        "ciodId":"patient-radiation-dose-structured-report",
+        "ciodId":"patient-radiation-dose-sr",
         "moduleId":"patient",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Patient"
     },
     {
-        "ciodId":"patient-radiation-dose-structured-report",
+        "ciodId":"patient-radiation-dose-sr",
         "moduleId":"clinical-trial-subject",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Patient"
     },
     {
-        "ciodId":"patient-radiation-dose-structured-report",
+        "ciodId":"patient-radiation-dose-sr",
         "moduleId":"general-study",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"patient-radiation-dose-structured-report",
+        "ciodId":"patient-radiation-dose-sr",
         "moduleId":"patient-study",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"patient-radiation-dose-structured-report",
+        "ciodId":"patient-radiation-dose-sr",
         "moduleId":"clinical-trial-study",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"patient-radiation-dose-structured-report",
+        "ciodId":"patient-radiation-dose-sr",
         "moduleId":"sr-document-series",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"patient-radiation-dose-structured-report",
+        "ciodId":"patient-radiation-dose-sr",
         "moduleId":"clinical-trial-series",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"patient-radiation-dose-structured-report",
+        "ciodId":"patient-radiation-dose-sr",
         "moduleId":"synchronization",
         "usage":"C",
         "conditionalStatement":"shall be present if system time is synchronized to an external reference. May be present otherwise.",
         "informationEntity":"Frame of Reference"
     },
     {
-        "ciodId":"patient-radiation-dose-structured-report",
+        "ciodId":"patient-radiation-dose-sr",
         "moduleId":"general-equipment",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
     },
     {
-        "ciodId":"patient-radiation-dose-structured-report",
+        "ciodId":"patient-radiation-dose-sr",
         "moduleId":"enhanced-general-equipment",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
     },
     {
-        "ciodId":"patient-radiation-dose-structured-report",
+        "ciodId":"patient-radiation-dose-sr",
         "moduleId":"sr-document-general",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
-        "ciodId":"patient-radiation-dose-structured-report",
+        "ciodId":"patient-radiation-dose-sr",
         "moduleId":"sr-document-content",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
-        "ciodId":"patient-radiation-dose-structured-report",
+        "ciodId":"patient-radiation-dose-sr",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"planned-imaging-agent-administration-sr",
@@ -10322,21 +10847,21 @@
         "moduleId":"sr-document-general",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"planned-imaging-agent-administration-sr",
         "moduleId":"sr-document-content",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"planned-imaging-agent-administration-sr",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"performed-imaging-agent-administration-sr",
@@ -10413,21 +10938,21 @@
         "moduleId":"sr-document-general",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"performed-imaging-agent-administration-sr",
         "moduleId":"sr-document-content",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"performed-imaging-agent-administration-sr",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"rendition-selection-document",
@@ -10504,112 +11029,112 @@
         "moduleId":"key-object-document",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"rendition-selection-document",
         "moduleId":"sr-document-content",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"rendition-selection-document",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
-        "ciodId":"enhanced-x-ray-radiation-dose-structured-report",
+        "ciodId":"enhanced-x-ray-radiation-dose-sr",
         "moduleId":"patient",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Patient"
     },
     {
-        "ciodId":"enhanced-x-ray-radiation-dose-structured-report",
+        "ciodId":"enhanced-x-ray-radiation-dose-sr",
         "moduleId":"clinical-trial-subject",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Patient"
     },
     {
-        "ciodId":"enhanced-x-ray-radiation-dose-structured-report",
+        "ciodId":"enhanced-x-ray-radiation-dose-sr",
         "moduleId":"general-study",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"enhanced-x-ray-radiation-dose-structured-report",
+        "ciodId":"enhanced-x-ray-radiation-dose-sr",
         "moduleId":"patient-study",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"enhanced-x-ray-radiation-dose-structured-report",
+        "ciodId":"enhanced-x-ray-radiation-dose-sr",
         "moduleId":"clinical-trial-study",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Study"
     },
     {
-        "ciodId":"enhanced-x-ray-radiation-dose-structured-report",
+        "ciodId":"enhanced-x-ray-radiation-dose-sr",
         "moduleId":"sr-document-series",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"enhanced-x-ray-radiation-dose-structured-report",
+        "ciodId":"enhanced-x-ray-radiation-dose-sr",
         "moduleId":"clinical-trial-series",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Series"
     },
     {
-        "ciodId":"enhanced-x-ray-radiation-dose-structured-report",
+        "ciodId":"enhanced-x-ray-radiation-dose-sr",
         "moduleId":"synchronization",
         "usage":"C",
         "conditionalStatement":"shall be present if system time is synchronized to an external reference. May be present otherwise.",
         "informationEntity":"Frame of Reference"
     },
     {
-        "ciodId":"enhanced-x-ray-radiation-dose-structured-report",
+        "ciodId":"enhanced-x-ray-radiation-dose-sr",
         "moduleId":"general-equipment",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
     },
     {
-        "ciodId":"enhanced-x-ray-radiation-dose-structured-report",
+        "ciodId":"enhanced-x-ray-radiation-dose-sr",
         "moduleId":"enhanced-general-equipment",
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
     },
     {
-        "ciodId":"enhanced-x-ray-radiation-dose-structured-report",
+        "ciodId":"enhanced-x-ray-radiation-dose-sr",
         "moduleId":"sr-document-general",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
-        "ciodId":"enhanced-x-ray-radiation-dose-structured-report",
+        "ciodId":"enhanced-x-ray-radiation-dose-sr",
         "moduleId":"sr-document-content",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
-        "ciodId":"enhanced-x-ray-radiation-dose-structured-report",
+        "ciodId":"enhanced-x-ray-radiation-dose-sr",
         "moduleId":"sop-common",
         "usage":"M",
         "conditionalStatement":null,
-        "informationEntity":"Document"
+        "informationEntity":"SR Document"
     },
     {
         "ciodId":"enhanced-mr-image",
@@ -11852,6 +12377,13 @@
     },
     {
         "ciodId":"ophthalmic-photography-8-bit-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
+    },
+    {
+        "ciodId":"ophthalmic-photography-8-bit-image",
         "moduleId":"general-image",
         "usage":"M",
         "conditionalStatement":null,
@@ -12031,6 +12563,13 @@
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"ophthalmic-photography-16-bit-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
     },
     {
         "ciodId":"ophthalmic-photography-16-bit-image",
@@ -13301,6 +13840,20 @@
     },
     {
         "ciodId":"segmentation",
+        "moduleId":"general-acquisition",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
+    },
+    {
+        "ciodId":"segmentation",
+        "moduleId":"multi-resolution-pyramid",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Multi-Resolution Pyramid"
+    },
+    {
+        "ciodId":"segmentation",
         "moduleId":"general-image",
         "usage":"M",
         "conditionalStatement":null,
@@ -13311,6 +13864,13 @@
         "moduleId":"general-reference",
         "usage":"U",
         "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"segmentation",
+        "moduleId":"microscope-slide-layer-tile-organization",
+        "usage":"C",
+        "conditionalStatement":"Required if Dimension Organization Type (0020,9311) is present with a value of TILED_FULL. May be present otherwise.",
         "informationEntity":"Image"
     },
     {
@@ -14579,6 +15139,13 @@
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"enhanced-us-volume",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
     },
     {
         "ciodId":"enhanced-us-volume",
@@ -15884,6 +16451,13 @@
     },
     {
         "ciodId":"ophthalmic-thickness-map",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
+    },
+    {
+        "ciodId":"ophthalmic-thickness-map",
         "moduleId":"general-image",
         "usage":"M",
         "conditionalStatement":null,
@@ -16801,6 +17375,13 @@
     },
     {
         "ciodId":"corneal-topography-map",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
+    },
+    {
+        "ciodId":"corneal-topography-map",
         "moduleId":"general-image",
         "usage":"M",
         "conditionalStatement":null,
@@ -17144,6 +17725,20 @@
     },
     {
         "ciodId":"parametric-map",
+        "moduleId":"general-acquisition",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
+    },
+    {
+        "ciodId":"parametric-map",
+        "moduleId":"multi-resolution-pyramid",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Multi-Resolution Pyramid"
+    },
+    {
+        "ciodId":"parametric-map",
         "moduleId":"general-image",
         "usage":"M",
         "conditionalStatement":null,
@@ -17154,6 +17749,13 @@
         "moduleId":"general-reference",
         "usage":"U",
         "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"parametric-map",
+        "moduleId":"microscope-slide-layer-tile-organization",
+        "usage":"C",
+        "conditionalStatement":"Required if Dimension Organization Type (0020,9311) is present with a value of TILED_FULL. May be present otherwise.",
         "informationEntity":"Image"
     },
     {
@@ -17351,6 +17953,13 @@
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"wide-field-ophthalmic-photography-stereographic-projection-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
     },
     {
         "ciodId":"wide-field-ophthalmic-photography-stereographic-projection-image",
@@ -17554,6 +18163,13 @@
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"wide-field-ophthalmic-photography-3d-coordinates-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
     },
     {
         "ciodId":"wide-field-ophthalmic-photography-3d-coordinates-image",
@@ -18849,6 +19465,13 @@
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"ophthalmic-optical-coherence-tomography-en-face-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
     },
     {
         "ciodId":"ophthalmic-optical-coherence-tomography-en-face-image",
@@ -20753,6 +21376,1399 @@
         "usage":"M",
         "conditionalStatement":null,
         "informationEntity":"RT Delivered Radiation"
+    },
+    {
+        "ciodId":"rt-radiation-set-delivery-instruction",
+        "moduleId":"patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciodId":"rt-radiation-set-delivery-instruction",
+        "moduleId":"clinical-trial-subject",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciodId":"rt-radiation-set-delivery-instruction",
+        "moduleId":"general-study",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"rt-radiation-set-delivery-instruction",
+        "moduleId":"patient-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"rt-radiation-set-delivery-instruction",
+        "moduleId":"clinical-trial-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"rt-radiation-set-delivery-instruction",
+        "moduleId":"general-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"rt-radiation-set-delivery-instruction",
+        "moduleId":"clinical-trial-series",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"rt-radiation-set-delivery-instruction",
+        "moduleId":"enhanced-rt-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"rt-radiation-set-delivery-instruction",
+        "moduleId":"general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"rt-radiation-set-delivery-instruction",
+        "moduleId":"enhanced-general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"rt-radiation-set-delivery-instruction",
+        "moduleId":"general-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Plan"
+    },
+    {
+        "ciodId":"rt-radiation-set-delivery-instruction",
+        "moduleId":"rt-radiation-set-delivery-instruction",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Plan"
+    },
+    {
+        "ciodId":"rt-radiation-set-delivery-instruction",
+        "moduleId":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Plan"
+    },
+    {
+        "ciodId":"rt-radiation-set-delivery-instruction",
+        "moduleId":"common-instance-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Plan"
+    },
+    {
+        "ciodId":"rt-radiation-set-delivery-instruction",
+        "moduleId":"radiotherapy-common-instance",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Plan"
+    },
+    {
+        "ciodId":"rt-treatment-preparation",
+        "moduleId":"patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciodId":"rt-treatment-preparation",
+        "moduleId":"clinical-trial-subject",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciodId":"rt-treatment-preparation",
+        "moduleId":"general-study",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"rt-treatment-preparation",
+        "moduleId":"patient-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"rt-treatment-preparation",
+        "moduleId":"clinical-trial-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"rt-treatment-preparation",
+        "moduleId":"general-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"rt-treatment-preparation",
+        "moduleId":"clinical-trial-series",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"rt-treatment-preparation",
+        "moduleId":"enhanced-rt-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"rt-treatment-preparation",
+        "moduleId":"general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"rt-treatment-preparation",
+        "moduleId":"enhanced-general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"rt-treatment-preparation",
+        "moduleId":"general-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"RT Treatment Preparation"
+    },
+    {
+        "ciodId":"rt-treatment-preparation",
+        "moduleId":"rt-treatment-preparation",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"RT Treatment Preparation"
+    },
+    {
+        "ciodId":"rt-treatment-preparation",
+        "moduleId":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"RT Treatment Preparation"
+    },
+    {
+        "ciodId":"rt-treatment-preparation",
+        "moduleId":"common-instance-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"RT Treatment Preparation"
+    },
+    {
+        "ciodId":"rt-treatment-preparation",
+        "moduleId":"radiotherapy-common-instance",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"RT Treatment Preparation"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "moduleId":"patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "moduleId":"clinical-trial-subject",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "moduleId":"general-study",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "moduleId":"patient-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "moduleId":"clinical-trial-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "moduleId":"general-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "moduleId":"clinical-trial-series",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "moduleId":"enhanced-rt-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "moduleId":"frame-of-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "moduleId":"synchronization",
+        "usage":"C",
+        "conditionalStatement":"Required if time synchronization was applied.",
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "moduleId":"general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "moduleId":"enhanced-general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "moduleId":"general-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "moduleId":"image-pixel",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "moduleId":"enhanced-rt-image-multi-frame-functional-groups",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "moduleId":"multi-frame-dimension",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "moduleId":"cardiac-synchronization",
+        "usage":"C",
+        "conditionalStatement":"Required if cardiac synchronization was applied for image acquisition",
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "moduleId":"respiratory-synchronization",
+        "usage":"C",
+        "conditionalStatement":"Required if respiratory synchronization was applied for image acquisition.",
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "moduleId":"enhanced-contrast-bolus",
+        "usage":"C",
+        "conditionalStatement":"Required if contrast media was used",
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "moduleId":"device",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "moduleId":"enhanced-rt-image-device",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "moduleId":"enhanced-rt-image",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "moduleId":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "moduleId":"common-instance-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "moduleId":"radiotherapy-common-instance",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "moduleId":"frame-extraction",
+        "usage":"C",
+        "conditionalStatement":"Required if the SOP Instance was created in response to a Frame-Level retrieve request",
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "moduleId":"patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "moduleId":"clinical-trial-subject",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "moduleId":"general-study",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "moduleId":"patient-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "moduleId":"clinical-trial-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "moduleId":"general-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "moduleId":"clinical-trial-series",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "moduleId":"enhanced-rt-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "moduleId":"frame-of-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "moduleId":"synchronization",
+        "usage":"C",
+        "conditionalStatement":"Required if time synchronization was applied.",
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "moduleId":"general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "moduleId":"enhanced-general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "moduleId":"general-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "moduleId":"image-pixel",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "moduleId":"sparse-multi-frame-functional-groups",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "moduleId":"cardiac-synchronization",
+        "usage":"C",
+        "conditionalStatement":"Required if cardiac synchronization was applied for image acquisition.",
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "moduleId":"respiratory-synchronization",
+        "usage":"C",
+        "conditionalStatement":"Required if respiratory synchronization was applied for image acquisition.",
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "moduleId":"enhanced-contrast-bolus",
+        "usage":"C",
+        "conditionalStatement":"Required if contrast media was used",
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "moduleId":"device",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "moduleId":"enhanced-rt-image-device",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "moduleId":"enhanced-rt-image",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "moduleId":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "moduleId":"common-instance-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "moduleId":"radiotherapy-common-instance",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"rt-patient-position-acquisition-instruction",
+        "moduleId":"patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciodId":"rt-patient-position-acquisition-instruction",
+        "moduleId":"clinical-trial-subject",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciodId":"rt-patient-position-acquisition-instruction",
+        "moduleId":"general-study",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"rt-patient-position-acquisition-instruction",
+        "moduleId":"patient-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"rt-patient-position-acquisition-instruction",
+        "moduleId":"clinical-trial-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"rt-patient-position-acquisition-instruction",
+        "moduleId":"general-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"rt-patient-position-acquisition-instruction",
+        "moduleId":"clinical-trial-series",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"rt-patient-position-acquisition-instruction",
+        "moduleId":"enhanced-rt-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"rt-patient-position-acquisition-instruction",
+        "moduleId":"general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"rt-patient-position-acquisition-instruction",
+        "moduleId":"enhanced-general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"rt-patient-position-acquisition-instruction",
+        "moduleId":"general-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Plan"
+    },
+    {
+        "ciodId":"rt-patient-position-acquisition-instruction",
+        "moduleId":"rt-patient-position-acquisition-device",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Plan"
+    },
+    {
+        "ciodId":"rt-patient-position-acquisition-instruction",
+        "moduleId":"rt-patient-position-acquisition-instruction",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Plan"
+    },
+    {
+        "ciodId":"rt-patient-position-acquisition-instruction",
+        "moduleId":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Plan"
+    },
+    {
+        "ciodId":"rt-patient-position-acquisition-instruction",
+        "moduleId":"common-instance-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Plan"
+    },
+    {
+        "ciodId":"rt-patient-position-acquisition-instruction",
+        "moduleId":"radiotherapy-common-instance",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Plan"
+    },
+    {
+        "ciodId":"microscopy-bulk-simple-annotations",
+        "moduleId":"patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciodId":"microscopy-bulk-simple-annotations",
+        "moduleId":"clinical-trial-subject",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciodId":"microscopy-bulk-simple-annotations",
+        "moduleId":"general-study",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"microscopy-bulk-simple-annotations",
+        "moduleId":"patient-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"microscopy-bulk-simple-annotations",
+        "moduleId":"clinical-trial-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"microscopy-bulk-simple-annotations",
+        "moduleId":"general-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"microscopy-bulk-simple-annotations",
+        "moduleId":"microscopy-bulk-simple-annotations-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"microscopy-bulk-simple-annotations",
+        "moduleId":"clinical-trial-series",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"microscopy-bulk-simple-annotations",
+        "moduleId":"frame-of-reference",
+        "usage":"C",
+        "conditionalStatement":"Required if Annotation Coordinate Type (006A,0001) is 3D",
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciodId":"microscopy-bulk-simple-annotations",
+        "moduleId":"general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"microscopy-bulk-simple-annotations",
+        "moduleId":"enhanced-general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"microscopy-bulk-simple-annotations",
+        "moduleId":"microscopy-bulk-simple-annotations",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Annotation"
+    },
+    {
+        "ciodId":"microscopy-bulk-simple-annotations",
+        "moduleId":"icc-profile",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Annotation"
+    },
+    {
+        "ciodId":"microscopy-bulk-simple-annotations",
+        "moduleId":"specimen",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Annotation"
+    },
+    {
+        "ciodId":"microscopy-bulk-simple-annotations",
+        "moduleId":"common-instance-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Annotation"
+    },
+    {
+        "ciodId":"microscopy-bulk-simple-annotations",
+        "moduleId":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Annotation"
+    },
+    {
+        "ciodId":"inventory",
+        "moduleId":"general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"inventory",
+        "moduleId":"inventory",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Inventory"
+    },
+    {
+        "ciodId":"inventory",
+        "moduleId":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Inventory"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"clinical-trial-subject",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"general-study",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"patient-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"clinical-trial-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"general-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"enhanced-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"clinical-trial-series",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"frame-of-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"ultrasound-frame-of-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"synchronization",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"enhanced-general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"general-image",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"general-reference",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"image-pixel",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"enhanced-contrast-bolus",
+        "usage":"C",
+        "conditionalStatement":"Required if contrast media was used in this image",
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"photoacoustic-image-multi-frame-functional-groups",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"multi-frame-dimension",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"device",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"specimen",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"acquisition-context",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"supplemental-palette-color-lookup-table",
+        "usage":"C",
+        "conditionalStatement":"Required if Pixel Presentation (0008,9205) in the Photoacoustic Image Module equals COLOR",
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"photoacoustic-image",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"photoacoustic-acquisition-parameters",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"photoacoustic-transducer",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"photoacoustic-reconstruction",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"icc-profile",
+        "usage":"C",
+        "conditionalStatement":"Required if Pixel Presentation (0008,9205) in the Photoacoustic Image Module equals TRUE_COLOR or COLOR (Section\u00a0A.89.3.1.2)",
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"common-instance-reference",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"photoacoustic-image",
+        "moduleId":"frame-extraction",
+        "usage":"C",
+        "conditionalStatement":"Required if the SOP Instance was created in response to a Frame-Level retrieve request",
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "moduleId":"patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "moduleId":"clinical-trial-subject",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "moduleId":"general-study",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "moduleId":"patient-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "moduleId":"clinical-trial-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "moduleId":"general-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "moduleId":"clinical-trial-series",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "moduleId":"frame-of-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "moduleId":"synchronization",
+        "usage":"C",
+        "conditionalStatement":"Required if time synchronization was applied",
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "moduleId":"general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "moduleId":"enhanced-general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "moduleId":"general-image",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "moduleId":"general-reference",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "moduleId":"image-pixel",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "moduleId":"confocal-microscopy-image-multi-frame-functional-groups",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "moduleId":"multi-frame-dimension",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "moduleId":"specimen",
+        "usage":"C",
+        "conditionalStatement":"Required if the Imaging Subject is a Specimen",
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "moduleId":"acquisition-context",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "moduleId":"confocal-microscopy-image",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "moduleId":"cutaneous-confocal-microscopy-image-acquisition-parameters",
+        "usage":"C",
+        "conditionalStatement":"Required for cutaneous confocal microscopy",
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "moduleId":"optical-path",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "moduleId":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "moduleId":"common-instance-reference",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "moduleId":"frame-extraction",
+        "usage":"C",
+        "conditionalStatement":"Required if the SOP Instance was created in response to a Frame-Level retrieve request",
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "moduleId":"patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "moduleId":"clinical-trial-subject",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Patient"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "moduleId":"general-study",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "moduleId":"patient-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "moduleId":"clinical-trial-study",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Study"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "moduleId":"general-series",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "moduleId":"clinical-trial-series",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Series"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "moduleId":"frame-of-reference",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "moduleId":"synchronization",
+        "usage":"C",
+        "conditionalStatement":"Required if time synchronization was applied.",
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "moduleId":"general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "moduleId":"enhanced-general-equipment",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Equipment"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "moduleId":"general-acquisition",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Acquisition"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "moduleId":"multi-resolution-pyramid",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Multi-Resolution Pyramid"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "moduleId":"general-image",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "moduleId":"general-reference",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "moduleId":"microscope-slide-layer-tile-organization",
+        "usage":"C",
+        "conditionalStatement":"Required for slide microscopy imaging. May be present otherwise",
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "moduleId":"image-pixel",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "moduleId":"confocal-microscopy-tiled-pyramidal-image-multi-frame-functional-groups",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "moduleId":"multi-frame-dimension",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "moduleId":"specimen",
+        "usage":"C",
+        "conditionalStatement":"Required if the Imaging Subject is a Specimen",
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "moduleId":"acquisition-context",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "moduleId":"confocal-microscopy-image",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "moduleId":"confocal-microscopy-tiled-pyramidal-image",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "moduleId":"cutaneous-confocal-microscopy-image-acquisition-parameters",
+        "usage":"C",
+        "conditionalStatement":"Required for cutaneous confocal microscopy",
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "moduleId":"optical-path",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "moduleId":"sop-common",
+        "usage":"M",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "moduleId":"common-instance-reference",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "moduleId":"frame-extraction",
+        "usage":"C",
+        "conditionalStatement":"Required if the SOP Instance was created in response to a Frame-Level retrieve request",
+        "informationEntity":"Image"
     },
     {
         "ciodId":"basic-directory",

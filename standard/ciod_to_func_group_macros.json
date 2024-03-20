@@ -1,62 +1,62 @@
 [
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
         "macroId":"pixel-measures",
         "usage":"C",
         "conditionalStatement":"Required if Plane Position (Patient) or Plane Orientation (Patient) Macros Present",
         "moduleType":"Multi-frame"
     },
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
         "macroId":"plane-position-patient",
         "usage":"C",
         "conditionalStatement":"Required if Pixel Measures or Plane Orientation (Patient) Macros Present",
         "moduleType":"Multi-frame"
     },
     {
-        "ciodId":"multi-frame-grayscale-byte-sc-image",
+        "ciodId":"multi-frame-grayscale-byte-secondary-capture-image",
         "macroId":"plane-orientation-patient",
         "usage":"C",
         "conditionalStatement":"Required if Pixel Measures or Plane Position (Patient) Macros Present",
         "moduleType":"Multi-frame"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
         "macroId":"pixel-measures",
         "usage":"C",
         "conditionalStatement":"Required if Plane Position (Patient) or Plane Orientation (Patient) Macros Present",
         "moduleType":"Multi-frame"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
         "macroId":"plane-position-patient",
         "usage":"C",
         "conditionalStatement":"Required if Pixel Measures or Plane Orientation (Patient) Macros Present",
         "moduleType":"Multi-frame"
     },
     {
-        "ciodId":"multi-frame-grayscale-word-sc-image",
+        "ciodId":"multi-frame-grayscale-word-secondary-capture-image",
         "macroId":"plane-orientation-patient",
         "usage":"C",
         "conditionalStatement":"Required if Pixel Measures or Plane Position (Patient) Macros Present",
         "moduleType":"Multi-frame"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
         "macroId":"pixel-measures",
         "usage":"C",
         "conditionalStatement":"Required if Plane Position (Patient) or Plane Orientation (Patient) Macros Present",
         "moduleType":"Multi-frame"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
         "macroId":"plane-position-patient",
         "usage":"C",
         "conditionalStatement":"Required if Pixel Measures or Plane Orientation (Patient) Macros Present",
         "moduleType":"Multi-frame"
     },
     {
-        "ciodId":"multi-frame-true-color-sc-image",
+        "ciodId":"multi-frame-true-color-secondary-capture-image",
         "macroId":"plane-orientation-patient",
         "usage":"C",
         "conditionalStatement":"Required if Pixel Measures or Plane Position (Patient) Macros Present",
@@ -1116,7 +1116,7 @@
         "ciodId":"segmentation",
         "macroId":"plane-orientation-patient",
         "usage":"C",
-        "conditionalStatement":"Required if Derivation Image Functional Group (C.7.6.16.2.6) is not present. May be present otherwise. See Section\u00a0A.51.5.1",
+        "conditionalStatement":"Required if Derivation Image Functional Group (C.7.6.16.2.6) is not present and the Frame of Reference is defined in the patient-relative Reference Coordinate System. May be present otherwise if the Frame of Reference is defined in the patient-relative Reference Coordinate System. See Section\u00a0A.51.5.1",
         "moduleType":"Multi-frame"
     },
     {
@@ -1795,7 +1795,7 @@
         "ciodId":"intravascular-optical-coherence-tomography-image",
         "macroId":"cardiac-synchronization",
         "usage":"C",
-        "conditionalStatement":"Required if Cardiac Synchronization Technique (0018,9037) equals other than NONE May be present otherwise.",
+        "conditionalStatement":"Required if Cardiac Synchronization Technique (0018,9037) equals other than NONE. May be present otherwise.",
         "moduleType":"Multi-frame"
     },
     {
@@ -1823,7 +1823,7 @@
         "ciodId":"intravascular-optical-coherence-tomography-image",
         "macroId":"intravascular-frame-content",
         "usage":"C",
-        "conditionalStatement":"Required if Intravascular Acquisition (0018,3100) equals MEASURED or Presentation Intent Type (0008,0068) equals FORPRESENTATION.",
+        "conditionalStatement":"Required if Intravascular Acquisition (0018,3100) equals MEASURED or Presentation Intent Type (0008,0068) equals FOR PRESENTATION.",
         "moduleType":"Multi-frame"
     },
     {
@@ -2558,6 +2558,489 @@
         "ciodId":"ophthalmic-optical-coherence-tomography-b-scan-volume-analysis",
         "macroId":"real-world-value-mapping",
         "usage":"U",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "macroId":"pixel-measures",
+        "usage":"M",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "macroId":"frame-content",
+        "usage":"M",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "macroId":"plane-position-patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "macroId":"plane-orientation-patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "macroId":"referenced-image",
+        "usage":"U",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "macroId":"derivation-image",
+        "usage":"C",
+        "conditionalStatement":"Required if the image or frame has been derived from another SOP Instance.",
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "macroId":"cardiac-synchronization",
+        "usage":"C",
+        "conditionalStatement":"Required if Cardiac Synchronization Technique (0018,9037) equals other than NONE and if Image Type (0008,0008) Value 1 is ORIGINAL or MIXED. May be present otherwise.",
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "macroId":"respiratory-synchronization",
+        "usage":"C",
+        "conditionalStatement":"Required if Respiratory Motion Compensation Technique (0018,9170) equals other than NONE, REALTIME or BREATH_HOLD and if Image Type (0008,0008) Value 1 is ORIGINAL or MIXED. May be present otherwise.",
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "macroId":"contrast-bolus-usage",
+        "usage":"C",
+        "conditionalStatement":"Required if Contrast/Bolus Agent Sequence (0018,0012) is used.",
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "macroId":"rt-image-frame-general-content",
+        "usage":"M",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "macroId":"rt-image-frame-imaging-device-position",
+        "usage":"M",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "macroId":"rt-image-frame-radiation-acquisition-parameters",
+        "usage":"C",
+        "conditionalStatement":"Required if Image Type (0008,0008) Value 1 is ORIGINAL. May be present otherwise.",
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "macroId":"rt-image-frame-context",
+        "usage":"C",
+        "conditionalStatement":"Required if the SOP Instance was created for the purpose of controlling the treatment position of the patient.",
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "macroId":"rt-beam-limiting-device-opening-sequence",
+        "usage":"C",
+        "conditionalStatement":"Required if all Frames or the current Frame were acquired using a Beam Limiting Device.",
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "macroId":"frame-voi-lut",
+        "usage":"U",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-rt-image",
+        "macroId":"real-world-value-mapping",
+        "usage":"U",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "macroId":"pixel-measures",
+        "usage":"M",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "macroId":"frame-content",
+        "usage":"M",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "macroId":"plane-position-patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "macroId":"plane-orientation-patient",
+        "usage":"M",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "macroId":"referenced-image",
+        "usage":"U",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "macroId":"derivation-image",
+        "usage":"C",
+        "conditionalStatement":"Required if the image has been derived from another SOP Instance.",
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "macroId":"cardiac-synchronization",
+        "usage":"C",
+        "conditionalStatement":"Required if Cardiac Synchronization Technique (0018,9037) equals other than NONE and if Image Type (0008,0008) Value 1 is ORIGINAL or MIXED. May be present otherwise",
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "macroId":"respiratory-synchronization",
+        "usage":"C",
+        "conditionalStatement":"Required if Respiratory Motion Compensation Technique (0018,9170) equals other than NONE, REALTIME or BREATH_HOLD and if Image Type (0008,0008) Value 1 is ORIGINAL or MIXED. May be present otherwise.",
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "macroId":"contrast-bolus-usage",
+        "usage":"C",
+        "conditionalStatement":"Required if Contrast/Bolus Agent Sequence (0018,0012) is used.",
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "macroId":"rt-image-frame-general-content",
+        "usage":"M",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "macroId":"rt-image-frame-imaging-device-position",
+        "usage":"M",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "macroId":"rt-image-frame-radiation-acquisition-parameters",
+        "usage":"C",
+        "conditionalStatement":"Required if Image Type (0008,0008) Value 1 is ORIGINAL. May be present otherwise.",
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "macroId":"rt-image-frame-context",
+        "usage":"C",
+        "conditionalStatement":"Required if the SOP Instance was created for the purpose of controlling the treatment position of the patient.",
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "macroId":"rt-beam-limiting-device-opening-sequence",
+        "usage":"C",
+        "conditionalStatement":"Required if all Frames or the current Frame was acquired using a Beam Limiting Device.",
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "macroId":"frame-voi-lut",
+        "usage":"U",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"enhanced-continuous-rt-image",
+        "macroId":"real-world-value-mapping",
+        "usage":"U",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"photoacoustic",
+        "macroId":"frame-content",
+        "usage":"M",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"photoacoustic",
+        "macroId":"pixel-measures",
+        "usage":"M",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"photoacoustic",
+        "macroId":"plane-position-patient",
+        "usage":"C",
+        "conditionalStatement":"Required if Ultrasound Acquisition Geometry (0020,9307) has a value of PATIENT. May be present otherwise. See Section\u00a0A.59.4.1.2.",
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"photoacoustic",
+        "macroId":"plane-orientation-patient",
+        "usage":"C",
+        "conditionalStatement":"Required if Ultrasound Acquisition Geometry (0020,9307) has a value of PATIENT. May be present otherwise. See Section\u00a0A.59.4.1.2.",
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"photoacoustic",
+        "macroId":"referenced-image",
+        "usage":"U",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"photoacoustic",
+        "macroId":"derivation-image",
+        "usage":"C",
+        "conditionalStatement":"Required if the image or frame has been derived from another SOP Instance.",
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"photoacoustic",
+        "macroId":"frame-voi-lut",
+        "usage":"U",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"photoacoustic",
+        "macroId":"real-world-value-mapping",
+        "usage":"U",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"photoacoustic",
+        "macroId":"contrast-bolus-usage",
+        "usage":"C",
+        "conditionalStatement":"Required if the Enhanced Contrast/Bolus Module is present.",
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"photoacoustic",
+        "macroId":"patient-orientation-in-frame",
+        "usage":"U",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"photoacoustic",
+        "macroId":"frame-display-shutter",
+        "usage":"U",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"photoacoustic",
+        "macroId":"plane-position-volume",
+        "usage":"M",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"photoacoustic",
+        "macroId":"plane-orientation-volume",
+        "usage":"M",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"photoacoustic",
+        "macroId":"temporal-position",
+        "usage":"M",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"photoacoustic",
+        "macroId":"photoacoustic-excitation-characteristics",
+        "usage":"U",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"photoacoustic",
+        "macroId":"photoacoustic-image-frame-type",
+        "usage":"M",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"photoacoustic",
+        "macroId":"photoacoustic-image-data-type",
+        "usage":"M",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"photoacoustic",
+        "macroId":"photoacoustic-reconstruction-algorithm",
+        "usage":"U",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "macroId":"pixel-measures",
+        "usage":"M",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "macroId":"derivation-image",
+        "usage":"C",
+        "conditionalStatement":"Required if the image or frame has been derived from another SOP Instance.",
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "macroId":"optical-path-identification",
+        "usage":"C",
+        "conditionalStatement":"Required if Dimension Organization Type (0020,9311) is not TILED_FULL; may be present otherwise.",
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "macroId":"referenced-image",
+        "usage":"C",
+        "conditionalStatement":"Required if the image or frame has been planned on another image or frame. May be present otherwise.",
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "macroId":"frame-content",
+        "usage":"U",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "macroId":"real-world-value-mapping",
+        "usage":"U",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "macroId":"plane-position-slide",
+        "usage":"C",
+        "conditionalStatement":"Required if the Frame of Reference is defined in the Slide Coordinate System.",
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "macroId":"confocal-microscopy-image-frame-type",
+        "usage":"M",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"confocal-microscopy-image",
+        "macroId":"frame-anatomy",
+        "usage":"M",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "macroId":"pixel-measures",
+        "usage":"M",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "macroId":"derivation-image",
+        "usage":"C",
+        "conditionalStatement":"Required if the image or frame has been derived from another SOP Instance.",
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "macroId":"optical-path-identification",
+        "usage":"C",
+        "conditionalStatement":"Required if Dimension Organization Type (0020,9311) is not TILED_FULL; may be present otherwise.",
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "macroId":"specimen-reference",
+        "usage":"U",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "macroId":"referenced-image",
+        "usage":"C",
+        "conditionalStatement":"Required if the image or frame has been planned on another image or frame. May be present otherwise.",
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "macroId":"frame-content",
+        "usage":"U",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "macroId":"real-world-value-mapping",
+        "usage":"U",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "macroId":"plane-position-slide",
+        "usage":"C",
+        "conditionalStatement":"Required if the Frame of Reference is defined in the Slide Coordinate System.",
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "macroId":"confocal-microscopy-image-frame-type",
+        "usage":"M",
+        "conditionalStatement":null,
+        "moduleType":"Multi-frame"
+    },
+    {
+        "ciodId":"confocal-microscopy-tiled-pyramidal-image",
+        "macroId":"frame-anatomy",
+        "usage":"M",
         "conditionalStatement":null,
         "moduleType":"Multi-frame"
     },

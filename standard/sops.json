@@ -90,6 +90,11 @@
         "ciod":"Enhanced US Volume"
     },
     {
+        "name":"Photoacoustic Image Storage",
+        "id":"1.2.840.10008.5.1.4.1.1.6.3",
+        "ciod":"Photoacoustic Image"
+    },
+    {
         "name":"Secondary Capture Image Storage",
         "id":"1.2.840.10008.5.1.4.1.1.7",
         "ciod":"Secondary Capture Image"
@@ -128,6 +133,11 @@
         "name":"Ambulatory ECG Waveform Storage",
         "id":"1.2.840.10008.5.1.4.1.1.9.1.3",
         "ciod":"Ambulatory ECG"
+    },
+    {
+        "name":"General 32-bit ECG Waveform Storage",
+        "id":"1.2.840.10008.5.1.4.1.1.9.1.4",
+        "ciod":"General 32-bit ECG"
     },
     {
         "name":"Hemodynamic Waveform Storage",
@@ -243,6 +253,11 @@
         "name":"Multiple Volume Rendering Volumetric Presentation State Storage",
         "id":"1.2.840.10008.5.1.4.1.1.11.11",
         "ciod":"Volume Rendering Volumetric Presentation State"
+    },
+    {
+        "name":"Variable Modality LUT Softcopy Presentation State Storage",
+        "id":"1.2.840.10008.5.1.4.1.1.11.12",
+        "ciod":"Variable Modality LUT Softcopy Presentation State"
     },
     {
         "name":"X-Ray Angiographic Image Storage",
@@ -445,6 +460,16 @@
         "ciod":"Dermoscopic Photography Image"
     },
     {
+        "name":"Confocal Microscopy Image Storage",
+        "id":"1.2.840.10008.5.1.4.1.1.77.1.8",
+        "ciod":"Confocal Microscopy Image"
+    },
+    {
+        "name":"Confocal Microscopy Tiled Pyramidal Image Storage",
+        "id":"1.2.840.10008.5.1.4.1.1.77.1.9",
+        "ciod":"Confocal Microscopy Tiled Pyramidal"
+    },
+    {
         "name":"Lensometry Measurements Storage",
         "id":"1.2.840.10008.5.1.4.1.1.78.1",
         "ciod":"Lensometry Measurements"
@@ -565,7 +590,7 @@
         "ciod":"Colon CAD SR"
     },
     {
-        "name":"Implantation Plan SR Document Storage",
+        "name":"Implantation Plan SR Storage",
         "id":"1.2.840.10008.5.1.4.1.1.88.70",
         "ciod":"Implantation Plan SR Document"
     },
@@ -597,12 +622,17 @@
     {
         "name":"Enhanced X-Ray Radiation Dose SR Storage",
         "id":"1.2.840.10008.5.1.4.1.1.88.76",
-        "ciod":"Patient Radiation Dose Structured Report"
+        "ciod":"Enhanced X-Ray Radiation Dose SR"
     },
     {
         "name":"Content Assessment Results Storage",
         "id":"1.2.840.10008.5.1.4.1.1.90.1",
         "ciod":"Content Assessment Results"
+    },
+    {
+        "name":"Microscopy Bulk Simple Annotations Storage",
+        "id":"1.2.840.10008.5.1.4.1.1.91.1",
+        "ciod":"Microscopy Bulk Simple Annotations"
     },
     {
         "name":"Encapsulated PDF Storage",
@@ -760,6 +790,31 @@
         "ciod":"Robotic-Arm Radiation Record"
     },
     {
+        "name":"RT Radiation Set Delivery Instruction Storage",
+        "id":"1.2.840.10008.5.1.4.1.1.481.21",
+        "ciod":"RT Radiation Set Delivery Instruction"
+    },
+    {
+        "name":"RT Treatment Preparation Storage",
+        "id":"1.2.840.10008.5.1.4.1.1.481.22",
+        "ciod":"RT Treatment Preparation"
+    },
+    {
+        "name":"Enhanced RT Image Storage",
+        "id":"1.2.840.10008.5.1.4.1.1.481.23",
+        "ciod":"Enhanced RT Image"
+    },
+    {
+        "name":"Enhanced Continuous RT Image Storage",
+        "id":"1.2.840.10008.5.1.4.1.1.481.24",
+        "ciod":"Enhanced Continuous RT Image"
+    },
+    {
+        "name":"RT Patient Position Acquisition Instruction Storage",
+        "id":"1.2.840.10008.5.1.4.1.1.481.25",
+        "ciod":"RT Patient Position Acquisition Instruction"
+    },
+    {
         "name":"RT Beams Delivery Instruction Storage",
         "id":"1.2.840.10008.5.1.4.34.7",
         "ciod":"RT Beams Delivery Instruction"
@@ -813,5 +868,10 @@
         "name":"XA Defined Procedure Protocol Storage",
         "id":"1.2.840.10008.5.1.4.1.1.200.7",
         "ciod":"XA Defined Procedure Protocol"
+    },
+    {
+        "name":"Inventory Storage",
+        "id":"1.2.840.10008.5.1.4.1.1.201.1",
+        "ciod":"Inventory"
     }
 ]

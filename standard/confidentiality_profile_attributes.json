@@ -74,6 +74,14 @@
         "id":"00080032"
     },
     {
+        "name":"Acquisition UID",
+        "tag":"(0008,0017)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"00080017"
+    },
+    {
         "name":"Actual Human Performers Sequence",
         "tag":"(0040,4035)",
         "stdCompIOD":"N",
@@ -154,11 +162,71 @@
         "id":"00102110"
     },
     {
+        "name":"Annotation Group Description",
+        "tag":"(006A,0006)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"006a0006"
+    },
+    {
+        "name":"Annotation Group Label",
+        "tag":"(006A,0005)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "cleanDescOpt":"C",
+        "id":"006a0005"
+    },
+    {
+        "name":"Annotation Group UID",
+        "tag":"(006A,0003)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnUIDsOpt":"K",
+        "id":"006a0003"
+    },
+    {
+        "name":"Approval Status DateTime",
+        "tag":"(0044,0004)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00440004"
+    },
+    {
         "name":"Arbitrary",
         "tag":"(4000,0010)",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"40000010"
+    },
+    {
+        "name":"Assertion DateTime",
+        "tag":"(0044,0104)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00440104"
+    },
+    {
+        "name":"Assertion Expiration DateTime",
+        "tag":"(0044,0105)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00440105"
+    },
+    {
+        "name":"Attribute Modification DateTime",
+        "tag":"(0400,0562)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"04000562"
     },
     {
         "name":"Author Observer Sequence",
@@ -183,6 +251,16 @@
         "id":"300a00c3"
     },
     {
+        "name":"Beam Hold Transition DateTime",
+        "tag":"(300C,0127)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnDevIdOpt":"K",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"300c0127"
+    },
+    {
         "name":"Bolus Description",
         "tag":"(300A,00DD)",
         "stdCompIOD":"Y",
@@ -198,6 +276,36 @@
         "id":"00101081"
     },
     {
+        "name":"Calibration Date",
+        "tag":"(0014,407E)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0014407e"
+    },
+    {
+        "name":"Calibration DateTime",
+        "tag":"(0018,1203)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "rtnDevIdOpt":"K",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00181203"
+    },
+    {
+        "name":"Calibration Time",
+        "tag":"(0014,407C)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0014407c"
+    },
+    {
         "name":"Camera Owner Name",
         "tag":"(0016,004D)",
         "stdCompIOD":"Y",
@@ -211,6 +319,22 @@
         "basicProfile":"X",
         "rtnDevIdOpt":"K",
         "id":"00181007"
+    },
+    {
+        "name":"Certificate of Signer",
+        "tag":"(0400,0115)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "id":"04000115"
+    },
+    {
+        "name":"Certified Timestamp",
+        "tag":"(0400,0310)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"04000310"
     },
     {
         "name":"Clinical Trial Coordinating Center Name",
@@ -464,12 +588,57 @@
         "id":"00080033"
     },
     {
+        "name":"Context Group Local Version",
+        "tag":"(0008,0107)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00080107"
+    },
+    {
+        "name":"Context Group Version",
+        "tag":"(0008,0106)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00080106"
+    },
+    {
         "name":"Contrast/Bolus Agent",
         "tag":"(0018,0010)",
         "stdCompIOD":"Y",
         "basicProfile":"Z/D",
         "cleanDescOpt":"C",
         "id":"00180010"
+    },
+    {
+        "name":"Contrast/Bolus Start Time",
+        "tag":"(0018,1042)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00181042"
+    },
+    {
+        "name":"Contrast/Bolus Stop Time",
+        "tag":"(0018,1043)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00181043"
+    },
+    {
+        "name":"Contribution DateTime",
+        "tag":"(0018,A002)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0018a002"
     },
     {
         "name":"Contribution Description",
@@ -485,6 +654,24 @@
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00102150"
+    },
+    {
+        "name":"Creation Date",
+        "tag":"(2100,0040)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"21000040"
+    },
+    {
+        "name":"Creation Time",
+        "tag":"(2100,0050)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"21000050"
     },
     {
         "name":"Current Observer (Trial)",
@@ -541,6 +728,101 @@
         "id":"fffcfffc"
     },
     {
+        "name":"Date",
+        "tag":"(0040,A121)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0040a121"
+    },
+    {
+        "name":"Date of Document or Verbal Transaction (Trial)",
+        "tag":"(0040,A110)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0040a110"
+    },
+    {
+        "name":"Date of Installation",
+        "tag":"(0018,1205)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00181205"
+    },
+    {
+        "name":"Date of Last Calibration",
+        "tag":"(0018,1200)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00181200"
+    },
+    {
+        "name":"Date of Last Detector Calibration",
+        "tag":"(0018,700C)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/D",
+        "rtnDevIdOpt":"K",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0018700c"
+    },
+    {
+        "name":"Date of Manufacture",
+        "tag":"(0018,1204)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00181204"
+    },
+    {
+        "name":"Date of Secondary Capture",
+        "tag":"(0018,1012)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00181012"
+    },
+    {
+        "name":"DateTime",
+        "tag":"(0040,A120)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0040a120"
+    },
+    {
+        "name":"DateTime of Last Calibration",
+        "tag":"(0018,1202)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00181202"
+    },
+    {
+        "name":"Decay Correction DateTime",
+        "tag":"(0018,9701)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00189701"
+    },
+    {
         "name":"Decomposition Description",
         "tag":"(0018,937F)",
         "stdCompIOD":"Y",
@@ -555,6 +837,14 @@
         "basicProfile":"X",
         "cleanDescOpt":"C",
         "id":"00082111"
+    },
+    {
+        "name":"Destination AE",
+        "tag":"(2100,0140)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnDevIdOpt":"C",
+        "id":"21000140"
     },
     {
         "name":"Detector ID",
@@ -613,6 +903,15 @@
         "id":"00181002"
     },
     {
+        "name":"Digital Signature DateTime",
+        "tag":"(0400,0105)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"04000105"
+    },
+    {
         "name":"Digital Signatures Sequence",
         "tag":"(FFFA,FFFA)",
         "stdCompIOD":"Y",
@@ -635,12 +934,38 @@
         "id":"00209164"
     },
     {
+        "name":"Discharge Date",
+        "tag":"(0038,0030)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00380030"
+    },
+    {
         "name":"Discharge Diagnosis Description",
         "tag":"(0038,0040)",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "cleanDescOpt":"C",
         "id":"00380040"
+    },
+    {
+        "name":"Discharge Time",
+        "tag":"(0038,0032)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00380032"
+    },
+    {
+        "name":"Displacement Reference Label",
+        "tag":"(300A,079A)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"300a079a"
     },
     {
         "name":"Distribution Address",
@@ -679,6 +1004,22 @@
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
         "id":"3010006e"
+    },
+    {
+        "name":"Effective DateTime",
+        "tag":"(0068,6226)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00686226"
+    },
+    {
+        "name":"Encapsulated Document",
+        "tag":"(0042,0011)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "id":"00420011"
     },
     {
         "name":"End Acquisition DateTime",
@@ -730,12 +1071,39 @@
         "id":"300a0676"
     },
     {
+        "name":"Ethics Committee Approval Effectiveness End Date",
+        "tag":"(0012,0087)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00120087"
+    },
+    {
+        "name":"Ethics Committee Approval Effectiveness Start Date",
+        "tag":"(0012,0086)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00120086"
+    },
+    {
         "name":"Ethnic Group",
         "tag":"(0010,2160)",
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "rtnPatCharsOpt":"K",
         "id":"00102160"
+    },
+    {
+        "name":"Exclusion Start DateTime",
+        "tag":"(0018,9804)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00189804"
     },
     {
         "name":"Expected Completion DateTime",
@@ -768,6 +1136,32 @@
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "id":"00402017"
+    },
+    {
+        "name":"Filter Lookup Table Description",
+        "tag":"(003A,032B)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"003a032b"
+    },
+    {
+        "name":"Findings Group Recording Date (Trial)",
+        "tag":"(0040,A023)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0040a023"
+    },
+    {
+        "name":"Findings Group Recording Time (Trial)",
+        "tag":"(0040,A024)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0040a024"
     },
     {
         "name":"First Treatment Date",
@@ -817,6 +1211,15 @@
         "id":"300a0072"
     },
     {
+        "name":"Frame Acquisition DateTime",
+        "tag":"(0018,9074)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00189074"
+    },
+    {
         "name":"Frame Comments",
         "tag":"(0020,9158)",
         "stdCompIOD":"Y",
@@ -840,6 +1243,24 @@
         "rtnLongFullDatesOpt":"K",
         "rtnLongModifDatesOpt":"C",
         "id":"00340007"
+    },
+    {
+        "name":"Frame Reference DateTime",
+        "tag":"(0018,9151)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00189151"
+    },
+    {
+        "name":"Functional Sync Pulse",
+        "tag":"(0018,9623)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00189623"
     },
     {
         "name":"Gantry ID",
@@ -1085,6 +1506,24 @@
         "id":"00700001"
     },
     {
+        "name":"Hanging Protocol Creation DateTime",
+        "tag":"(0072,000A)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0072000a"
+    },
+    {
+        "name":"HL7 Document Effective Time",
+        "tag":"(0040,E004)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0040e004"
+    },
+    {
         "name":"Human Performer's Name",
         "tag":"(0040,4037)",
         "stdCompIOD":"N",
@@ -1099,7 +1538,7 @@
         "id":"00404036"
     },
     {
-        "name":"Icon Image Sequence\n\n(see Note 12)",
+        "name":"Icon Image Sequence\n\n(see Note 11)",
         "tag":"(0088,0200)",
         "stdCompIOD":"Y",
         "basicProfile":"X",
@@ -1154,6 +1593,15 @@
         "id":"40080300"
     },
     {
+        "name":"Information Issue DateTime",
+        "tag":"(0068,6270)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00686270"
+    },
+    {
         "name":"Instance Coercion DateTime",
         "tag":"(0008,0015)",
         "stdCompIOD":"Y",
@@ -1161,6 +1609,24 @@
         "rtnLongFullDatesOpt":"K",
         "rtnLongModifDatesOpt":"C",
         "id":"00080015"
+    },
+    {
+        "name":"Instance Creation Date",
+        "tag":"(0008,0012)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00080012"
+    },
+    {
+        "name":"Instance Creation Time",
+        "tag":"(0008,0013)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/Z/D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00080013"
     },
     {
         "name":"Instance Creator UID",
@@ -1218,11 +1684,29 @@
         "id":"00080080"
     },
     {
+        "name":"Instruction Performed DateTime",
+        "tag":"(0018,9919)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z/D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00189919"
+    },
+    {
         "name":"Insurance Plan Identification",
         "tag":"(0010,1050)",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00101050"
+    },
+    {
+        "name":"Intended Fraction Start Time",
+        "tag":"(3010,0085)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"30100085"
     },
     {
         "name":"Intended Phase End Date",
@@ -1275,6 +1759,24 @@
         "id":"300a0783"
     },
     {
+        "name":"Interpretation Approval Date",
+        "tag":"(4008,0112)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"40080112"
+    },
+    {
+        "name":"Interpretation Approval Time",
+        "tag":"(4008,0113)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"40080113"
+    },
+    {
         "name":"Interpretation Approver Sequence",
         "tag":"(4008,0111)",
         "stdCompIOD":"N",
@@ -1297,11 +1799,36 @@
         "id":"40080115"
     },
     {
+        "name":"Interpretation ID",
+        "tag":"(4008,0200)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"40080200"
+    },
+    {
         "name":"Interpretation ID Issuer",
         "tag":"(4008,0202)",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"40080202"
+    },
+    {
+        "name":"Interpretation Recorded Date",
+        "tag":"(4008,0100)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"40080100"
+    },
+    {
+        "name":"Interpretation Recorded Time",
+        "tag":"(4008,0101)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"40080101"
     },
     {
         "name":"Interpretation Recorder",
@@ -1326,12 +1853,57 @@
         "id":"4008010a"
     },
     {
+        "name":"Interpretation Transcription Date",
+        "tag":"(4008,0108)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"40080108"
+    },
+    {
+        "name":"Interpretation Transcription Time",
+        "tag":"(4008,0109)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"40080109"
+    },
+    {
+        "name":"Intervention Drug Start Time",
+        "tag":"(0018,0035)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00180035"
+    },
+    {
+        "name":"Intervention Drug Stop Time",
+        "tag":"(0018,0027)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00180027"
+    },
+    {
         "name":"Irradiation Event UID",
         "tag":"(0008,3010)",
         "stdCompIOD":"Y",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
         "id":"00083010"
+    },
+    {
+        "name":"Issue Date of Imaging Service Request",
+        "tag":"(0040,2004)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00402004"
     },
     {
         "name":"Issuer of Admission ID",
@@ -1381,6 +1953,15 @@
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "id":"00400562"
+    },
+    {
+        "name":"Issue Time of Imaging Service Request",
+        "tag":"(0040,2005)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00402005"
     },
     {
         "name":"Label Text",
@@ -1517,6 +2098,15 @@
         "id":"04000550"
     },
     {
+        "name":"Modified Image Date",
+        "tag":"(0020,3403)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00203403"
+    },
+    {
         "name":"Modified Image Description",
         "tag":"(0020,3406)",
         "stdCompIOD":"N",
@@ -1524,11 +2114,29 @@
         "id":"00203406"
     },
     {
+        "name":"Modified Image Time",
+        "tag":"(0020,3405)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00203405"
+    },
+    {
         "name":"Modifying Device ID",
         "tag":"(0020,3401)",
         "stdCompIOD":"N",
         "basicProfile":"X",
+        "rtnDevIdOpt":"K",
         "id":"00203401"
+    },
+    {
+        "name":"Modifying System",
+        "tag":"(0400,0563)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnDevIdOpt":"K",
+        "id":"04000563"
     },
     {
         "name":"Most Recent Treatment Date",
@@ -1570,11 +2178,12 @@
         "id":"00401010"
     },
     {
-        "name":"Nonconforming Modified Attributes Sequence",
-        "tag":"(0400,0551)",
+        "name":"Network ID",
+        "tag":"(0008,1000)",
         "stdCompIOD":"N",
         "basicProfile":"X",
-        "id":"04000551"
+        "rtnDevIdOpt":"C",
+        "id":"00081000"
     },
     {
         "name":"Nonconforming Data Element Value",
@@ -1584,6 +2193,13 @@
         "id":"04000552"
     },
     {
+        "name":"Nonconforming Modified Attributes Sequence",
+        "tag":"(0400,0551)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"04000551"
+    },
+    {
         "name":"Observation Date (Trial)",
         "tag":"(0040,A192)",
         "stdCompIOD":"N",
@@ -1591,6 +2207,24 @@
         "rtnLongFullDatesOpt":"K",
         "rtnLongModifDatesOpt":"C",
         "id":"0040a192"
+    },
+    {
+        "name":"Observation DateTime",
+        "tag":"(0040,A032)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0040a032"
+    },
+    {
+        "name":"Observation Start DateTime",
+        "tag":"(0040,A033)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0040a033"
     },
     {
         "name":"Observation Subject UID (Trial)",
@@ -1675,6 +2309,14 @@
         "id":"04000561"
     },
     {
+        "name":"Originator",
+        "tag":"(2100,0070)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"C",
+        "id":"21000070"
+    },
+    {
         "name":"Other Patient IDs",
         "tag":"(0010,1000)",
         "stdCompIOD":"Y",
@@ -1752,6 +2394,15 @@
         "stdCompIOD":"Y",
         "basicProfile":"X",
         "id":"0040a07a"
+    },
+    {
+        "name":"Participation DateTime",
+        "tag":"(0040,A082)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0040a082"
     },
     {
         "name":"Patient's Address",
@@ -1900,9 +2551,17 @@
         "id":"00100020"
     },
     {
+        "name":"Patient Setup Photo Description",
+        "tag":"(300A,0794)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"300a0794"
+    },
+    {
         "name":"Patient Setup UID",
         "tag":"(300A,0650)",
-        "stdCompIOD":"Y",
+        "stdCompIOD":"N",
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
         "id":"300a0650"
@@ -1922,6 +2581,22 @@
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"00401004"
+    },
+    {
+        "name":"Patient Treatment Preparation Method Description",
+        "tag":"(300A,0792)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"300a0792"
+    },
+    {
+        "name":"Patient Treatment Preparation Procedure Parameter Description",
+        "tag":"(300A,078E)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"300a078e"
     },
     {
         "name":"Performed Location",
@@ -2004,7 +2679,7 @@
         "tag":"(0040,0241)",
         "stdCompIOD":"N",
         "basicProfile":"X",
-        "rtnDevIdOpt":"K",
+        "rtnDevIdOpt":"C",
         "id":"00400241"
     },
     {
@@ -2124,6 +2799,22 @@
         "id":"00181004"
     },
     {
+        "name":"Position Acquisition Template Description",
+        "tag":"(3002,0123)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"30020123"
+    },
+    {
+        "name":"Position Acquisition Template Name",
+        "tag":"(3002,0121)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"30020121"
+    },
+    {
         "name":"Pregnancy Status",
         "tag":"(0010,21C0)",
         "stdCompIOD":"N",
@@ -2164,6 +2855,24 @@
         "id":"30100081"
     },
     {
+        "name":"Presentation Creation Date",
+        "tag":"(0070,0082)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00700082"
+    },
+    {
+        "name":"Presentation Creation Time",
+        "tag":"(0070,0083)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00700083"
+    },
+    {
         "name":"Presentation Display Collection UID",
         "tag":"(0070,1101)",
         "stdCompIOD":"Y",
@@ -2188,7 +2897,7 @@
         "id":"30100061"
     },
     {
-        "name":"Private attributes",
+        "name":"Private Attributes",
         "tag":"(GGGG,EEEE) WHERE GGGG IS ODD",
         "stdCompIOD":"N",
         "basicProfile":"X",
@@ -2205,12 +2914,45 @@
         "id":"00404052"
     },
     {
+        "name":"Product Expiration DateTime",
+        "tag":"(0044,000B)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0044000b"
+    },
+    {
         "name":"Protocol Name",
         "tag":"(0018,1030)",
         "stdCompIOD":"Y",
         "basicProfile":"X/D",
         "cleanDescOpt":"C",
         "id":"00181030"
+    },
+    {
+        "name":"Pyramid Description",
+        "tag":"(0008,1088)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00081088"
+    },
+    {
+        "name":"Pyramid Label",
+        "tag":"(0020,0027)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"00200027"
+    },
+    {
+        "name":"Pyramid UID",
+        "tag":"(0008,0019)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"00080019"
     },
     {
         "name":"Radiation Dose Identification Label",
@@ -2245,6 +2987,42 @@
         "id":"300a067c"
     },
     {
+        "name":"Radiopharmaceutical Start DateTime",
+        "tag":"(0018,1078)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00181078"
+    },
+    {
+        "name":"Radiopharmaceutical Start Time",
+        "tag":"(0018,1072)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00181072"
+    },
+    {
+        "name":"Radiopharmaceutical Stop DateTime",
+        "tag":"(0018,1079)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00181079"
+    },
+    {
+        "name":"Radiopharmaceutical Stop Time",
+        "tag":"(0018,1073)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00181073"
+    },
+    {
         "name":"Reason for Omission Description",
         "tag":"(300C,0113)",
         "stdCompIOD":"Y",
@@ -2275,6 +3053,14 @@
         "basicProfile":"Z",
         "cleanDescOpt":"C",
         "id":"3010005c"
+    },
+    {
+        "name":"Reason for the Attribute Modification",
+        "tag":"(0400,0565)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "cleanDescOpt":"C",
+        "id":"04000565"
     },
     {
         "name":"Reason for the Imaging Service Request",
@@ -2309,6 +3095,14 @@
         "id":"00321067"
     },
     {
+        "name":"Receiving AE",
+        "tag":"(0074,1234)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"C",
+        "id":"00741234"
+    },
+    {
         "name":"Recorded RT Control Point DateTime",
         "tag":"(300A,073A)",
         "stdCompIOD":"Y",
@@ -2324,6 +3118,15 @@
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
         "id":"3010000b"
+    },
+    {
+        "name":"Referenced DateTime",
+        "tag":"(0040,A13A)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0040a13a"
     },
     {
         "name":"Referenced Digital Signature Sequence",
@@ -2407,7 +3210,7 @@
         "tag":"(0008,1120)",
         "stdCompIOD":"Y",
         "basicProfile":"X",
-        "rtnUIDsOpt":"X",
+        "rtnUIDsOpt":"K",
         "id":"00081120"
     },
     {
@@ -2448,6 +3251,14 @@
         "basicProfile":"X/Z",
         "rtnUIDsOpt":"K",
         "id":"00081110"
+    },
+    {
+        "name":"Referenced Treatment Position Group UID",
+        "tag":"(300A,0785)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"300a0785"
     },
     {
         "name":"Referring Physician's Address",
@@ -2555,6 +3366,14 @@
         "id":"00001001"
     },
     {
+        "name":"Requesting AE",
+        "tag":"(0074,1236)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"C",
+        "id":"00741236"
+    },
+    {
         "name":"Requesting Physician",
         "tag":"(0032,1032)",
         "stdCompIOD":"N",
@@ -2606,6 +3425,13 @@
         "id":"40080118"
     },
     {
+        "name":"Results ID",
+        "tag":"(4008,0040)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "id":"40080040"
+    },
+    {
         "name":"Results ID Issuer",
         "tag":"(4008,0042)",
         "stdCompIOD":"N",
@@ -2613,11 +3439,53 @@
         "id":"40080042"
     },
     {
+        "name":"Retrieve AE Title",
+        "tag":"(0008,0054)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"C",
+        "id":"00080054"
+    },
+    {
+        "name":"Review Date",
+        "tag":"(300E,0004)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"300e0004"
+    },
+    {
         "name":"Reviewer Name",
         "tag":"(300E,0008)",
         "stdCompIOD":"Y",
         "basicProfile":"X/Z",
         "id":"300e0008"
+    },
+    {
+        "name":"Review Time",
+        "tag":"(300E,0005)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"300e0005"
+    },
+    {
+        "name":"ROI Creator Sequence",
+        "tag":"(3006,004D)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"3006004d"
+    },
+    {
+        "name":"ROI DateTime",
+        "tag":"(3006,002D)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"3006002d"
     },
     {
         "name":"ROI Description",
@@ -2643,12 +3511,28 @@
         "id":"300600a6"
     },
     {
+        "name":"ROI Interpreter Sequence",
+        "tag":"(3006,004E)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"3006004e"
+    },
+    {
         "name":"ROI Name",
         "tag":"(3006,0026)",
         "stdCompIOD":"Y",
         "basicProfile":"Z",
         "cleanDescOpt":"C",
         "id":"30060026"
+    },
+    {
+        "name":"ROI Observation DateTime",
+        "tag":"(3006,002E)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"3006002e"
     },
     {
         "name":"ROI Observation Description",
@@ -2761,6 +3645,78 @@
         "basicProfile":"U",
         "rtnUIDsOpt":"K",
         "id":"3010003b"
+    },
+    {
+        "name":"Safe Position Exit Date",
+        "tag":"(3008,0162)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"30080162"
+    },
+    {
+        "name":"Safe Position Exit Time",
+        "tag":"(3008,0164)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"30080164"
+    },
+    {
+        "name":"Safe Position Return Date",
+        "tag":"(3008,0166)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"30080166"
+    },
+    {
+        "name":"Safe Position Return Time",
+        "tag":"(3008,0168)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"30080168"
+    },
+    {
+        "name":"Scheduled Admission Date",
+        "tag":"(0038,001A)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0038001a"
+    },
+    {
+        "name":"Scheduled Admission Time",
+        "tag":"(0038,001B)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0038001b"
+    },
+    {
+        "name":"Scheduled Discharge Date",
+        "tag":"(0038,001C)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0038001c"
+    },
+    {
+        "name":"Scheduled Discharge Time",
+        "tag":"(0038,001D)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0038001d"
     },
     {
         "name":"Scheduled Human Performers Sequence",
@@ -2881,7 +3837,7 @@
         "tag":"(0040,0001)",
         "stdCompIOD":"N",
         "basicProfile":"X",
-        "rtnDevIdOpt":"K",
+        "rtnDevIdOpt":"C",
         "id":"00400001"
     },
     {
@@ -2921,8 +3877,155 @@
         "tag":"(0032,1021)",
         "stdCompIOD":"N",
         "basicProfile":"X",
-        "rtnDevIdOpt":"K",
+        "rtnDevIdOpt":"C",
         "id":"00321021"
+    },
+    {
+        "name":"Scheduled Study Start Date",
+        "tag":"(0032,1000)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00321000"
+    },
+    {
+        "name":"Scheduled Study Start Time",
+        "tag":"(0032,1001)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00321001"
+    },
+    {
+        "name":"Scheduled Study Stop Date",
+        "tag":"(0032,1010)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00321010"
+    },
+    {
+        "name":"Scheduled Study Stop Time",
+        "tag":"(0032,1011)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00321011"
+    },
+    {
+        "name":"Selector AE Value",
+        "tag":"(0072,005E)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnDevIdOpt":"C",
+        "id":"0072005e"
+    },
+    {
+        "name":"Selector AS Value",
+        "tag":"(0072,005F)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnPatCharsOpt":"K",
+        "id":"0072005f"
+    },
+    {
+        "name":"Selector DA Value",
+        "tag":"(0072,0061)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00720061"
+    },
+    {
+        "name":"Selector DT Value",
+        "tag":"(0072,0063)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00720063"
+    },
+    {
+        "name":"Selector LO Value",
+        "tag":"(0072,0066)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "cleanDescOpt":"C",
+        "id":"00720066"
+    },
+    {
+        "name":"Selector LT Value",
+        "tag":"(0072,0068)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "cleanDescOpt":"C",
+        "id":"00720068"
+    },
+    {
+        "name":"Selector OB Value",
+        "tag":"(0072,0065)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "id":"00720065"
+    },
+    {
+        "name":"Selector PN Value",
+        "tag":"(0072,006A)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "id":"0072006a"
+    },
+    {
+        "name":"Selector SH Value",
+        "tag":"(0072,006C)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "cleanDescOpt":"C",
+        "id":"0072006c"
+    },
+    {
+        "name":"Selector ST Value",
+        "tag":"(0072,006E)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "cleanDescOpt":"C",
+        "id":"0072006e"
+    },
+    {
+        "name":"Selector TM Value",
+        "tag":"(0072,006B)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0072006b"
+    },
+    {
+        "name":"Selector UN Value",
+        "tag":"(0072,006D)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "id":"0072006d"
+    },
+    {
+        "name":"Selector UR Value",
+        "tag":"(0072,0071)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "id":"00720071"
+    },
+    {
+        "name":"Selector UT Value",
+        "tag":"(0072,0070)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "cleanDescOpt":"C",
+        "id":"00720070"
     },
     {
         "name":"Series Date",
@@ -3005,6 +4108,15 @@
         "id":"001021a0"
     },
     {
+        "name":"SOP Authorization DateTime",
+        "tag":"(0100,0420)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"01000420"
+    },
+    {
         "name":"SOP Instance UID",
         "tag":"(0008,0018)",
         "stdCompIOD":"Y",
@@ -3030,6 +4142,14 @@
         "id":"0018936a"
     },
     {
+        "name":"Source Frame of Reference UID",
+        "tag":"(0064,0003)",
+        "stdCompIOD":"Y",
+        "basicProfile":"U",
+        "rtnUIDsOpt":"K",
+        "id":"00640003"
+    },
+    {
         "name":"Source Identifier",
         "tag":"(0034,0005)",
         "stdCompIOD":"Y",
@@ -3053,6 +4173,14 @@
         "id":"300a0216"
     },
     {
+        "name":"Source of Previous Values",
+        "tag":"(0400,0564)",
+        "stdCompIOD":"Y",
+        "basicProfile":"Z",
+        "rtnInstIdOpt":"K",
+        "id":"04000564"
+    },
+    {
         "name":"Source Serial Number",
         "tag":"(3008,0105)",
         "stdCompIOD":"Y",
@@ -3068,6 +4196,24 @@
         "rtnLongFullDatesOpt":"K",
         "rtnLongModifDatesOpt":"C",
         "id":"00189369"
+    },
+    {
+        "name":"Source Strength Reference Date",
+        "tag":"(300A,022C)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"300a022c"
+    },
+    {
+        "name":"Source Strength Reference Time",
+        "tag":"(300A,022E)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"300a022e"
     },
     {
         "name":"Special Needs",
@@ -3133,6 +4279,14 @@
         "id":"00189516"
     },
     {
+        "name":"Station AE Title",
+        "tag":"(0008,0055)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"C",
+        "id":"00080055"
+    },
+    {
         "name":"Station Name",
         "tag":"(0008,1010)",
         "stdCompIOD":"Y",
@@ -3191,12 +4345,48 @@
         "id":"30060009"
     },
     {
+        "name":"Study Arrival Date",
+        "tag":"(0032,1040)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00321040"
+    },
+    {
+        "name":"Study Arrival Time",
+        "tag":"(0032,1041)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00321041"
+    },
+    {
         "name":"Study Comments",
         "tag":"(0032,4000)",
         "stdCompIOD":"N",
         "basicProfile":"X",
         "cleanDescOpt":"C",
         "id":"00324000"
+    },
+    {
+        "name":"Study Completion Date",
+        "tag":"(0032,1050)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00321050"
+    },
+    {
+        "name":"Study Completion Time",
+        "tag":"(0032,1051)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00321051"
     },
     {
         "name":"Study Date",
@@ -3238,6 +4428,24 @@
         "id":"0020000d"
     },
     {
+        "name":"Study Read Date",
+        "tag":"(0032,0034)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00320034"
+    },
+    {
+        "name":"Study Read Time",
+        "tag":"(0032,0035)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00320035"
+    },
+    {
         "name":"Study Time",
         "tag":"(0008,0030)",
         "stdCompIOD":"Y",
@@ -3245,6 +4453,33 @@
         "rtnLongFullDatesOpt":"K",
         "rtnLongModifDatesOpt":"C",
         "id":"00080030"
+    },
+    {
+        "name":"Study Verified Date",
+        "tag":"(0032,0032)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00320032"
+    },
+    {
+        "name":"Study Verified Time",
+        "tag":"(0032,0033)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00320033"
+    },
+    {
+        "name":"Substance Administration DateTime",
+        "tag":"(0044,0010)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00440010"
     },
     {
         "name":"Synchronization Frame of Reference UID",
@@ -3286,6 +4521,24 @@
         "id":"0040db0c"
     },
     {
+        "name":"Template Local Version",
+        "tag":"(0040,DB07)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0040db07"
+    },
+    {
+        "name":"Template Version",
+        "tag":"(0040,DB06)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0040db06"
+    },
+    {
         "name":"Text Comments",
         "tag":"(4000,4000)",
         "stdCompIOD":"N",
@@ -3298,6 +4551,53 @@
         "stdCompIOD":"N",
         "basicProfile":"X",
         "id":"20300020"
+    },
+    {
+        "name":"Time",
+        "tag":"(0040,A122)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0040a122"
+    },
+    {
+        "name":"Time of Document Creation or Verbal Transaction (Trial)",
+        "tag":"(0040,A112)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0040a112"
+    },
+    {
+        "name":"Time of Last Calibration",
+        "tag":"(0018,1201)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnDevIdOpt":"K",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00181201"
+    },
+    {
+        "name":"Time of Last Detector Calibration",
+        "tag":"(0018,700E)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X/D",
+        "rtnDevIdOpt":"K",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0018700e"
+    },
+    {
+        "name":"Time of Secondary Capture",
+        "tag":"(0018,1014)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"00181014"
     },
     {
         "name":"Timezone Offset From UTC",
@@ -3361,6 +4661,24 @@
         "id":"00185011"
     },
     {
+        "name":"Treatment Control Point Date",
+        "tag":"(3008,0024)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"30080024"
+    },
+    {
+        "name":"Treatment Control Point Time",
+        "tag":"(3008,0025)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"30080025"
+    },
+    {
         "name":"Treatment Date",
         "tag":"(3008,0250)",
         "stdCompIOD":"Y",
@@ -3405,9 +4723,17 @@
         "name":"Treatment Site",
         "tag":"(3010,0077)",
         "stdCompIOD":"Y",
-        "basicProfile":"D",
+        "basicProfile":"X/D",
         "cleanDescOpt":"C",
         "id":"30100077"
+    },
+    {
+        "name":"Treatment Sites",
+        "tag":"(300A,000B)",
+        "stdCompIOD":"N",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"300a000b"
     },
     {
         "name":"Treatment Technique Notes",
@@ -3497,6 +4823,15 @@
         "id":"0040a358"
     },
     {
+        "name":"Verification DateTime",
+        "tag":"(0040,A030)",
+        "stdCompIOD":"Y",
+        "basicProfile":"D",
+        "rtnLongFullDatesOpt":"K",
+        "rtnLongModifDatesOpt":"C",
+        "id":"0040a030"
+    },
+    {
         "name":"Verifying Observer Identification Code Sequence",
         "tag":"(0040,A088)",
         "stdCompIOD":"Y",
@@ -3531,6 +4866,14 @@
         "basicProfile":"X",
         "cleanDescOpt":"C",
         "id":"00384000"
+    },
+    {
+        "name":"Waveform Filter Description",
+        "tag":"(003A,0329)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "cleanDescOpt":"C",
+        "id":"003a0329"
     },
     {
         "name":"X-Ray Detector ID",
