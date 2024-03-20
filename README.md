@@ -1,4 +1,4 @@
-[![Travis CI build status](https://img.shields.io/travis/innolitics/dicom-standard?label=Travis%20CI&logo=travis)](https://travis-ci.org/innolitics/dicom-standard)
+[![CI workflow status](https://github.com/innolitics/dicom-standard/workflows/CI/badge.svg)](https://github.com/innolitics/dicom-standard/actions?query=workflow%3ACI)
 [![update-standard workflow status](https://github.com/innolitics/dicom-standard/workflows/update-standard/badge.svg)](https://github.com/innolitics/dicom-standard/actions?query=workflow%3Aupdate-standard)
 [![PyPI version](https://img.shields.io/pypi/v/dicom-standard?label=PyPI&color=blue&logo=pypi)](https://pypi.org/project/dicom-standard/)
 

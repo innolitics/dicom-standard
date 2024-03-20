@@ -21,6 +21,7 @@ commands = flake8
 [testenv:mypy]
 deps = mypy
 commands =
+    pip install types-requests
     mypy -p dicom_standard
     mypy -p tests
 
