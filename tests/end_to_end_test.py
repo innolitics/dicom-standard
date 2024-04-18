@@ -133,16 +133,16 @@ def test_valid_ciod_names(sops, ciods):
 @pytest.mark.endtoend
 def test_vertical_samples_from_standard(ciods, modules, attributes):
     test_ciod = {
-        "name": "US Multi-frame Image",
-        "id": "us-multi-frame-image",
-        "description": "<p>\nThe Ultrasound (US) Multi-frame Image Information Object Definition specifies a Multi-frame image that has been created by an ultrasound imaging device.</p>",
-        "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.7.4.html#table_A.7-1",
+        "name": "Ultrasound Multi-frame Image",
+        "id": "ultrasound-multi-frame-image",
+        "description": "<p>\nThe Ultrasound Multi-frame Image IOD specifies a Multi-frame image that has been created by an ultrasound imaging device.</p>",
+        "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.7.4.html#table_A.7-1"
     }
     test_module = {
         "name": "Patient",
         "id": "patient",
-        "description": "<p>\n<span href=\"#table_C.7-1\">This module </span> specifies the Attributes of the Patient that describe and identify the Patient who is the subject of a Study. This Module contains Attributes of the Patient that are needed for interpretation of the Composite Instances and are common for all Studies performed on the Patient. It contains Attributes that are also included in the Patient Modules in <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.2.html#sect_C.2\" target=\"_blank\">Section\u00a0C.2</a>.</p>",
-        "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.html#table_C.7-1",
+        "description": "<p>\n<span href=\"#table_C.7-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.html#sect_C.7.1.1\" target=\"_blank\">Patient Module</a>, which identify and describe the Patient who is the subject of the Study. This Module contains Attributes of the Patient that are needed for interpretation of the Composite Instances and are common for all Studies performed on the Patient. It contains Attributes that are also included in the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.2.html#sect_C.2\" target=\"_blank\">Section\u00a0C.2 Patient Modules</a>.</p>",
+        "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.html#table_C.7-1"
     }
     test_attributes = [
         {
@@ -271,21 +271,21 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship, modules,
     module = {
         "id": "patient-study",
         "name": "Patient Study",
-        "description": "<p>\n<span href=\"#table_C.7-4a\">This module </span> defines Attributes that provide information about the Patient at the time the Study started.</p>",
-        "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.2.2.html#table_C.7-4a",
+        "description": "<p>\n<span href=\"#table_C.7-4a\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.2.2.html#sect_C.7.2.2\" target=\"_blank\">Patient Study Module</a>, which provide information about the Patient at the time the Study started.</p>",
+        "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.2.2.html#table_C.7-4a"
     }
     ciod_module = {
-        "ciodId": "cr-image",
+        "ciodId": "computed-radiography-image",
         "moduleId": "patient-study",
         "usage": "U",
         "conditionalStatement": None,
         "informationEntity": "Study"
     }
     ciod = {
-        "name": "CR Image",
-        "id": "cr-image",
-        "description": "<p>\nThe Computed Radiography (CR) Image Information Object Definition specifies an image that has been created by a computed radiography imaging device.</p>",
-        "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.2.3.html#table_A.2-1",
+        "name": "Computed Radiography Image",
+        "id": "computed-radiography-image",
+        "description": "<p>\nThe Computed Radiography (CR) Image IOD specifies an image that has been created by a computed radiography imaging device.</p>",
+        "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.2.3.html#table_A.2-1"
     }
     assert attr in attributes
     assert module_attr[0] in module_attribute_relationship
@@ -345,12 +345,12 @@ def test_number_of_attribute_appearances(module_attribute_relationship, attribut
 
 
 @pytest.mark.endtoend
-def test_number_of_module_appearances(ciods, ciod_module_relationship, modules):
+def test_number_of_module_appearances(ciod_module_relationship, modules):
     module = {
         "name": "Volume Cropping",
         "id": "volume-cropping",
-        "description": "<p>\n<span href=\"#table_C.11.24-1\">This module </span> contains the Attributes of the Volume Cropping Module. This Module limits the spatial extent of inputs in Volumetric Presentation State Input Sequence (0070,1201) that are used.</p>",
-        "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.24.html#table_C.11.24-1",
+        "description": "<p>\n<span href=\"#table_C.11.24-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.24.html#sect_C.11.24\" target=\"_blank\">Volume Cropping Module</a>. This Module limits the spatial extent of inputs in Volumetric Presentation State Input Sequence (0070,1201) that are used.</p>",
+        "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.24.html#table_C.11.24-1"
     }
     ciod_module = [
         {

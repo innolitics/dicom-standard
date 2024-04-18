@@ -1920,6 +1920,48 @@
         "id":"00380014"
     },
     {
+        "name":"Issuer of Clinical Trial Protocol ID",
+        "tag":"(0012,0022)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00120022"
+    },
+    {
+        "name":"Issuer of Clinical Trial Series ID",
+        "tag":"(0012,0073)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00120073"
+    },
+    {
+        "name":"Issuer of Clinical Trial Site ID",
+        "tag":"(0012,0032)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00120032"
+    },
+    {
+        "name":"Issuer of Clinical Trial Subject ID",
+        "tag":"(0012,0041)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00120041"
+    },
+    {
+        "name":"Issuer of Clinical Trial Subject Reading ID",
+        "tag":"(0012,0043)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00120043"
+    },
+    {
+        "name":"Issuer of Clinical Trial Time Point ID",
+        "tag":"(0012,0055)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00120055"
+    },
+    {
         "name":"Issuer of Patient ID",
         "tag":"(0010,0021)",
         "stdCompIOD":"Y",
@@ -2317,6 +2359,13 @@
         "id":"21000070"
     },
     {
+        "name":"Other Clinical Trial Protocol IDs Sequence",
+        "tag":"(0012,0023)",
+        "stdCompIOD":"Y",
+        "basicProfile":"X",
+        "id":"00120023"
+    },
+    {
         "name":"Other Patient IDs",
         "tag":"(0010,1000)",
         "stdCompIOD":"Y",
@@ -2547,7 +2596,7 @@
         "name":"Patient ID",
         "tag":"(0010,0020)",
         "stdCompIOD":"Y",
-        "basicProfile":"Z",
+        "basicProfile":"Z/D",
         "id":"00100020"
     },
     {

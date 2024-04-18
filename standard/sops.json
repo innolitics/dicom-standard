@@ -2,7 +2,7 @@
     {
         "name":"Computed Radiography Image Storage",
         "id":"1.2.840.10008.5.1.4.1.1.1",
-        "ciod":"CR Image"
+        "ciod":"Computed Radiography Image"
     },
     {
         "name":"Digital X-Ray Image Storage - For Presentation",
@@ -52,7 +52,7 @@
     {
         "name":"Ultrasound Multi-frame Image Storage",
         "id":"1.2.840.10008.5.1.4.1.1.3.1",
-        "ciod":"US Multi-frame Image"
+        "ciod":"Ultrasound Multi-frame Image"
     },
     {
         "name":"MR Image Storage",
@@ -82,7 +82,7 @@
     {
         "name":"Ultrasound Image Storage",
         "id":"1.2.840.10008.5.1.4.1.1.6.1",
-        "ciod":"US Image"
+        "ciod":"Ultrasound Image"
     },
     {
         "name":"Enhanced US Volume Storage",
@@ -102,22 +102,22 @@
     {
         "name":"Multi-frame Single Bit Secondary Capture Image Storage",
         "id":"1.2.840.10008.5.1.4.1.1.7.1",
-        "ciod":"Multi-frame Single Bit SC Image"
+        "ciod":"Multi-frame Single Bit Secondary Capture Image"
     },
     {
         "name":"Multi-frame Grayscale Byte Secondary Capture Image Storage",
         "id":"1.2.840.10008.5.1.4.1.1.7.2",
-        "ciod":"Multi-frame Grayscale Byte SC Image"
+        "ciod":"Multi-frame Grayscale Byte Secondary Capture Image"
     },
     {
         "name":"Multi-frame Grayscale Word Secondary Capture Image Storage",
         "id":"1.2.840.10008.5.1.4.1.1.7.3",
-        "ciod":"Multi-frame Grayscale Word SC Image"
+        "ciod":"Multi-frame Grayscale Word Secondary Capture Image"
     },
     {
         "name":"Multi-frame True Color Secondary Capture Image Storage",
         "id":"1.2.840.10008.5.1.4.1.1.7.4",
-        "ciod":"Multi-frame True Color SC Image"
+        "ciod":"Multi-frame True Color Secondary Capture Image"
     },
     {
         "name":"12-lead ECG Waveform Storage",
@@ -317,7 +317,7 @@
     {
         "name":"Nuclear Medicine Image Storage",
         "id":"1.2.840.10008.5.1.4.1.1.20",
-        "ciod":"NM Image"
+        "ciod":"Nuclear Medicine Image"
     },
     {
         "name":"Parametric Map Storage",
@@ -467,7 +467,7 @@
     {
         "name":"Confocal Microscopy Tiled Pyramidal Image Storage",
         "id":"1.2.840.10008.5.1.4.1.1.77.1.9",
-        "ciod":"Confocal Microscopy Tiled Pyramidal"
+        "ciod":"Confocal Microscopy Tiled Pyramidal Image"
     },
     {
         "name":"Lensometry Measurements Storage",
@@ -607,7 +607,7 @@
     {
         "name":"Patient Radiation Dose SR Storage",
         "id":"1.2.840.10008.5.1.4.1.1.88.73",
-        "ciod":"Patient Radiation Dose Structured Report"
+        "ciod":"Patient Radiation Dose SR"
     },
     {
         "name":"Planned Imaging Agent Administration SR Storage",
@@ -662,7 +662,7 @@
     {
         "name":"Positron Emission Tomography Image Storage",
         "id":"1.2.840.10008.5.1.4.1.1.128",
-        "ciod":"PET Image"
+        "ciod":"Positron Emission Tomography Image"
     },
     {
         "name":"Enhanced PET Image Storage",

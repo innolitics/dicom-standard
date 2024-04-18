@@ -1163,6 +1163,20 @@
     },
     {
         "ciodId":"secondary-capture-image",
+        "moduleId":"frame-of-reference",
+        "usage":"C",
+        "conditionalStatement":"Required if Image Position (Patient) (0020,0032) or Image Orientation (Patient) (0020,0037) are present. May be present otherwise.",
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciodId":"secondary-capture-image",
+        "moduleId":"synchronization",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Frame of Reference"
+    },
+    {
+        "ciodId":"secondary-capture-image",
         "moduleId":"general-equipment",
         "usage":"U",
         "conditionalStatement":null,
@@ -1192,6 +1206,13 @@
     {
         "ciodId":"secondary-capture-image",
         "moduleId":"general-reference",
+        "usage":"U",
+        "conditionalStatement":null,
+        "informationEntity":"Image"
+    },
+    {
+        "ciodId":"secondary-capture-image",
+        "moduleId":"image-plane",
         "usage":"U",
         "conditionalStatement":null,
         "informationEntity":"Image"

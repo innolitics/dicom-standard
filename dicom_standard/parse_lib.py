@@ -85,11 +85,6 @@ def clean_table_name(name: str) -> str:
     _, _, title = re.split('\u00a0', name)
     possible_table_suffixes = r'(IOD Modules)|(Module Attributes)|((Functional Group)? Macro Attributes)|(Module Table)|(Functional Group Macros)'
     clean_title = re.split(possible_table_suffixes, title)[0]
-    # Standard workaround: Macro table name 'Photoacoustic Reconstruction Algorithm Attributes',
-    # which is not following the normal format
-    # https://dicom.nema.org/medical/dicom/2023c/output/chtml/part03/sect_A.89.4.html#table_A.89.4-1
-    if clean_title == 'Photoacoustic Reconstruction Algorithm Attributes':
-        clean_title = 'Photoacoustic Reconstruction Algorithm'
     return clean_title.strip()
 
 

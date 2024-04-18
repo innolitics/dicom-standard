@@ -1465,7 +1465,7 @@
     },
     {
         "name":"Multi-frame Functional Groups",
-        "id":"photoacoustic-multi-frame-functional-groups",
+        "id":"photoacoustic-image-multi-frame-functional-groups",
         "description":"<p>\n<span href=\"#table_C.7.6.16-1\">This module </span> specifies the Attributes of the <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#sect_C.7.6.16\" target=\"_blank\">Multi-frame Functional Groups Module</a>. This Module is included in SOP Instances even if there is only one frame in the Instance.</p>",
         "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1"
     },

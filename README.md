@@ -112,11 +112,15 @@ significantly.
 ### Updating the Standard
 
 To download and parse the most up-to-date web version of the DICOM Standard,
-run the following commands:
+run the following commands in the `dicom_standard` directory:
 
     $ make clean
     $ make updatestandard
     $ make
+
+Then copy the output to the `standard/` directory:
+
+    $ cp dist/* ../standard/
 
 To download an older version of the DICOM Standard, run
 
@@ -236,7 +240,7 @@ Certain parts of the DICOM Standard site cause errors when running the parser, o
 
 When we find one of these issues, we add a hard-coded fix in the relevant file and add a comment starting with 'Standard workaround' that describes the issue and links to its location in the Standard. To be aware when these fixes are obsolete, we add a unit test that fails once the issue no longer exists.
 
-Current standard workarounds (as of rev.2023e):
+Current standard workarounds (as of rev.2024b):
 | *Issue description* | *Workaround location* |
 |---|---|
 | [Table TID 1004](http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1004) has a section URL pattern ("sect_TID_1004") that doesn't exist within the HTML version of the standard | `parse_lib.py` |
@@ -247,6 +251,9 @@ Current standard workarounds (as of rev.2023e):
 | The "Referenced Patient Alias Sequence" attribute is noted to be retired in [Table 6-1](https://dicom.nema.org/medical/dicom/current/output/chtml/part06/chapter_6.html#para_74d743fc-e532-4817-8477-58d1e9a8de57) but is not retired in [Table E.1-1](https://dicom.nema.org/medical/dicom/current/output/html/part15.html#para_26d0b4be-9dae-4b57-ab18-8e524dde7dc1) | `extract_conf_profile_attributes.py` |
 | The [Confocal Microscopy Image Functional Group Macros](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.90.html#sect_A.90.1.5) section doesn't have a description, causing the "module_type" value to be None when it should be "Multi-frame" | `extract_ciod_func_group_macro_tables.py` |
 | The [Confocal Microscopy Tiled Pyramidal Image Functional Group Macros](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.90.2.5.html#sect_A.90.2.5) section doesn't have a description, causing the "module_type" value to be None when it should be "Multi-frame" | `extract_ciod_func_group_macro_tables.py` |
+| [Table A.89.4-1](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.89.4.html#table_A.89.4-1) is missing part of the IOD name ("Photoacoustic" instead of "Photoacoustic Image") in its title | `extract_ciod_func_group_macro_tables.py` |
+| The "Confocal Micrsocopy Tiled Pyramidal" IOD Specification in [Table B.5-1](https://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_B.5.html#table_B.5-1) should include the word "Image" after "Pyramidal" | `extract_sops.py`
+| The "Pseudo-color Softcopy Presentation State" IOD Specification in [Table B.5-1](https://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_B.5.html#table_B.5-1) should have an upper-case "C" in "Color" | `extract_sops.py`
 
 (\*) This issue is not caused by a typo or error in the Standard but rather an exception from the normal format and thus does not have a unit test for a fix.
 
