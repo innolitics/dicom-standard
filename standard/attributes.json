@@ -135,6 +135,15 @@
         "id":"0008001b"
     },
     {
+        "tag":"(0008,001C)",
+        "name":"Synthetic Data",
+        "keyword":"SyntheticData",
+        "valueRepresentation":"CS",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"0008001c"
+    },
+    {
         "tag":"(0008,0020)",
         "name":"Study Date",
         "keyword":"StudyDate",
@@ -3087,6 +3096,24 @@
         "id":"00120021"
     },
     {
+        "tag":"(0012,0022)",
+        "name":"Issuer of Clinical Trial Protocol ID",
+        "keyword":"IssuerOfClinicalTrialProtocolID",
+        "valueRepresentation":"LO",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"00120022"
+    },
+    {
+        "tag":"(0012,0023)",
+        "name":"Other Clinical Trial Protocol IDs Sequence",
+        "keyword":"OtherClinicalTrialProtocolIDsSequence",
+        "valueRepresentation":"SQ",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"00120023"
+    },
+    {
         "tag":"(0012,0030)",
         "name":"Clinical Trial Site ID",
         "keyword":"ClinicalTrialSiteID",
@@ -3105,6 +3132,15 @@
         "id":"00120031"
     },
     {
+        "tag":"(0012,0032)",
+        "name":"Issuer of Clinical Trial Site ID",
+        "keyword":"IssuerOfClinicalTrialSiteID",
+        "valueRepresentation":"LO",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"00120032"
+    },
+    {
         "tag":"(0012,0040)",
         "name":"Clinical Trial Subject ID",
         "keyword":"ClinicalTrialSubjectID",
@@ -3114,6 +3150,15 @@
         "id":"00120040"
     },
     {
+        "tag":"(0012,0041)",
+        "name":"Issuer of Clinical Trial Subject ID",
+        "keyword":"IssuerOfClinicalTrialSubjectID",
+        "valueRepresentation":"LO",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"00120041"
+    },
+    {
         "tag":"(0012,0042)",
         "name":"Clinical Trial Subject Reading ID",
         "keyword":"ClinicalTrialSubjectReadingID",
@@ -3121,6 +3166,15 @@
         "valueMultiplicity":"1",
         "retired":"N",
         "id":"00120042"
+    },
+    {
+        "tag":"(0012,0043)",
+        "name":"Issuer of Clinical Trial Subject Reading ID",
+        "keyword":"IssuerOfClinicalTrialSubjectReadingID",
+        "valueRepresentation":"LO",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"00120043"
     },
     {
         "tag":"(0012,0050)",
@@ -3166,6 +3220,15 @@
         "valueMultiplicity":"1",
         "retired":"N",
         "id":"00120054"
+    },
+    {
+        "tag":"(0012,0055)",
+        "name":"Issuer of Clinical Trial Time Point ID",
+        "keyword":"IssuerOfClinicalTrialTimePointID",
+        "valueRepresentation":"LO",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"00120055"
     },
     {
         "tag":"(0012,0060)",
@@ -3220,6 +3283,15 @@
         "valueMultiplicity":"1",
         "retired":"N",
         "id":"00120072"
+    },
+    {
+        "tag":"(0012,0073)",
+        "name":"Issuer of Clinical Trial Series ID",
+        "keyword":"IssuerOfClinicalTrialSeriesID",
+        "valueRepresentation":"LO",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"00120073"
     },
     {
         "tag":"(0012,0081)",
@@ -15397,6 +15469,15 @@
         "valueMultiplicity":"1",
         "retired":"N",
         "id":"0022000e"
+    },
+    {
+        "tag":"(0022,000F)",
+        "name":"Vertex Distance",
+        "keyword":"VertexDistance",
+        "valueRepresentation":"FD",
+        "valueMultiplicity":"1",
+        "retired":"N",
+        "id":"0022000f"
     },
     {
         "tag":"(0022,0010)",
@@ -29894,7 +29975,7 @@
         "keyword":"WeightingLookupTableDescriptor",
         "valueRepresentation":"US",
         "valueMultiplicity":"3",
-        "retired":"N",
+        "retired":"Y",
         "id":"00701807"
     },
     {
@@ -29903,7 +29984,7 @@
         "keyword":"WeightingLookupTableData",
         "valueRepresentation":"OB",
         "valueMultiplicity":"1",
-        "retired":"N",
+        "retired":"Y",
         "id":"00701808"
     },
     {

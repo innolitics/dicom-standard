@@ -1136,15 +1136,15 @@
     {
         "ciodId":"segmentation",
         "macroId":"frame-content",
-        "usage":"M",
-        "conditionalStatement":null,
+        "usage":"C",
+        "conditionalStatement":"Required if not empty. Shall not be used as a Shared Functional Group.",
         "moduleType":"Multi-frame"
     },
     {
         "ciodId":"segmentation",
         "macroId":"segmentation",
-        "usage":"M",
-        "conditionalStatement":null,
+        "usage":"C",
+        "conditionalStatement":"Required if Dimension Organization Type (0020,9311) is not TILED_FULL",
         "moduleType":"Multi-frame"
     },
     {
@@ -2786,126 +2786,126 @@
         "moduleType":"Multi-frame"
     },
     {
-        "ciodId":"photoacoustic",
+        "ciodId":"photoacoustic-image",
         "macroId":"frame-content",
         "usage":"M",
         "conditionalStatement":null,
         "moduleType":"Multi-frame"
     },
     {
-        "ciodId":"photoacoustic",
+        "ciodId":"photoacoustic-image",
         "macroId":"pixel-measures",
         "usage":"M",
         "conditionalStatement":null,
         "moduleType":"Multi-frame"
     },
     {
-        "ciodId":"photoacoustic",
+        "ciodId":"photoacoustic-image",
         "macroId":"plane-position-patient",
         "usage":"C",
         "conditionalStatement":"Required if Ultrasound Acquisition Geometry (0020,9307) has a value of PATIENT. May be present otherwise. See Section\u00a0A.59.4.1.2.",
         "moduleType":"Multi-frame"
     },
     {
-        "ciodId":"photoacoustic",
+        "ciodId":"photoacoustic-image",
         "macroId":"plane-orientation-patient",
         "usage":"C",
         "conditionalStatement":"Required if Ultrasound Acquisition Geometry (0020,9307) has a value of PATIENT. May be present otherwise. See Section\u00a0A.59.4.1.2.",
         "moduleType":"Multi-frame"
     },
     {
-        "ciodId":"photoacoustic",
+        "ciodId":"photoacoustic-image",
         "macroId":"referenced-image",
         "usage":"U",
         "conditionalStatement":null,
         "moduleType":"Multi-frame"
     },
     {
-        "ciodId":"photoacoustic",
+        "ciodId":"photoacoustic-image",
         "macroId":"derivation-image",
         "usage":"C",
         "conditionalStatement":"Required if the image or frame has been derived from another SOP Instance.",
         "moduleType":"Multi-frame"
     },
     {
-        "ciodId":"photoacoustic",
+        "ciodId":"photoacoustic-image",
         "macroId":"frame-voi-lut",
         "usage":"U",
         "conditionalStatement":null,
         "moduleType":"Multi-frame"
     },
     {
-        "ciodId":"photoacoustic",
+        "ciodId":"photoacoustic-image",
         "macroId":"real-world-value-mapping",
         "usage":"U",
         "conditionalStatement":null,
         "moduleType":"Multi-frame"
     },
     {
-        "ciodId":"photoacoustic",
+        "ciodId":"photoacoustic-image",
         "macroId":"contrast-bolus-usage",
         "usage":"C",
         "conditionalStatement":"Required if the Enhanced Contrast/Bolus Module is present.",
         "moduleType":"Multi-frame"
     },
     {
-        "ciodId":"photoacoustic",
+        "ciodId":"photoacoustic-image",
         "macroId":"patient-orientation-in-frame",
         "usage":"U",
         "conditionalStatement":null,
         "moduleType":"Multi-frame"
     },
     {
-        "ciodId":"photoacoustic",
+        "ciodId":"photoacoustic-image",
         "macroId":"frame-display-shutter",
         "usage":"U",
         "conditionalStatement":null,
         "moduleType":"Multi-frame"
     },
     {
-        "ciodId":"photoacoustic",
+        "ciodId":"photoacoustic-image",
         "macroId":"plane-position-volume",
         "usage":"M",
         "conditionalStatement":null,
         "moduleType":"Multi-frame"
     },
     {
-        "ciodId":"photoacoustic",
+        "ciodId":"photoacoustic-image",
         "macroId":"plane-orientation-volume",
         "usage":"M",
         "conditionalStatement":null,
         "moduleType":"Multi-frame"
     },
     {
-        "ciodId":"photoacoustic",
+        "ciodId":"photoacoustic-image",
         "macroId":"temporal-position",
         "usage":"M",
         "conditionalStatement":null,
         "moduleType":"Multi-frame"
     },
     {
-        "ciodId":"photoacoustic",
+        "ciodId":"photoacoustic-image",
         "macroId":"photoacoustic-excitation-characteristics",
         "usage":"U",
         "conditionalStatement":null,
         "moduleType":"Multi-frame"
     },
     {
-        "ciodId":"photoacoustic",
+        "ciodId":"photoacoustic-image",
         "macroId":"photoacoustic-image-frame-type",
         "usage":"M",
         "conditionalStatement":null,
         "moduleType":"Multi-frame"
     },
     {
-        "ciodId":"photoacoustic",
+        "ciodId":"photoacoustic-image",
         "macroId":"photoacoustic-image-data-type",
         "usage":"M",
         "conditionalStatement":null,
         "moduleType":"Multi-frame"
     },
     {
-        "ciodId":"photoacoustic",
+        "ciodId":"photoacoustic-image",
         "macroId":"photoacoustic-reconstruction-algorithm",
         "usage":"U",
         "conditionalStatement":null,

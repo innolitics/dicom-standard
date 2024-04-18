@@ -28,10 +28,10 @@ COLUMN_TITLES = ['macro', 'section', 'usage']
 
 def clean_macro_table_name(table_name: str) -> str:
     clean_name = pl.clean_table_name(table_name)
-    # Standard workaround: Mismatch of 'Photoacoustic Reconstruction Algorithm' name
+    # Standard workaround: Table A.89.4-1 is missing part of the IOD name ("Photoacoustic" instead of "Photoacoustic Image") in its title
     # https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.89.4.html#table_A.89.4-1
-    if clean_name == 'Photoacoustic Reconstruction Algorithm Macro Attributes':
-        clean_name = 'Photoacoustic Reconstruction Algorithm'
+    if clean_name == 'Photoacoustic':
+        clean_name = 'Photoacoustic Image'
     return clean_name
 
 
@@ -56,7 +56,7 @@ def get_table_with_metadata(table_with_tdiv: Tuple[List[TableDictType], Tag]) ->
     # https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.90.2.5.html#sect_A.90.2.5
     # https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.90.html#para_432a2653-f9c3-474e-829b-3997312e0ecd
     # Example valid section: https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.8.3.5.html
-    if clean_name == "Confocal Microscopy Image" or clean_name == "Confocal Microscopy Tiled Pyramidal Image":
+    if clean_name == 'Confocal Microscopy Image' or clean_name == 'Confocal Microscopy Tiled Pyramidal Image':
         module_type = 'Multi-frame'
     return {
         'name': clean_name,

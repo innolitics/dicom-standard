@@ -17,6 +17,11 @@ def part03():
     return parse_html_file('dicom_standard/standard/part03.html')
 
 
+@pytest.fixture(scope='module')
+def part04():
+    return parse_html_file('dicom_standard/standard/part04.html')
+
+
 # @pytest.fixture(scope='module')
 # def part06():
 #     return parse_html_file('dicom_standard/standard/part06.html')
@@ -138,3 +143,20 @@ def test_missing_module_type_in_section_a_90_2_5_description(part03):
 #     #for attr in RETIREMENT_MISMATCH_ATTRIBUTES:
 #     #    assert table_description_text == table_title, f'{attr} no longer has a retirement value mismatch in tables 6-1 and E.1-1'
 #     assert False
+
+
+def test_missing_word_in_table_a_89_4_1_title(part03):
+    table_title = get_table_title_from_id(part03, 'table_A.89.4-1')
+    assert 'Photoacoustic Image' not in table_title, 'Table title now contains full macro name ("Photoacoustic Image Functional Group Macros")'
+
+
+def test_missing_word_in_table_b_5_1(part04):
+    table = get_table_rows_from_ids(part04, ['table_B.5-1'], ['name', 'id', 'ciod'])
+    row = next(row for row in table if 'Confocal Microscopy' in row['ciod'])
+    assert row['ciod'] != 'Confocal Microscopy Tiled Pyramidal Image', 'Row now contains full IOD name'
+
+
+def test_miscapitalized_word_in_table_b_5_1(part04):
+    table = get_table_rows_from_ids(part04, ['table_B.5-1'], ['name', 'id', 'ciod'])
+    row = next(row for row in table if 'Softcopy Presentation State' in row['ciod'])
+    assert row['ciod'] != 'Pseudo-Color Softcopy Presentation State', 'Row now contains correct capitalization'
