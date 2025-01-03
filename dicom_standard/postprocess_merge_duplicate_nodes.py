@@ -7,7 +7,7 @@ from collections import Counter
 
 from dicom_standard import parse_lib as pl
 
-DUPLICATE_PATH_EXCEPTIONS = ['rt-segment-annotation:00700084']
+DUPLICATE_PATH_EXCEPTIONS = ['enhanced-mr-image:300a012c']
 
 
 def add_conditional_to_description(node):
