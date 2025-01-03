@@ -109,13 +109,13 @@ endtoendtest:
 updatestandard:
 	if [ ! -d old_standard ]; then mkdir old_standard; fi
 	mv -f standard/*.html old_standard/
-	wget http://dicom.nema.org/medical/dicom/${VERSION}/output/html/part03.html -O standard/part03.html
-	wget http://dicom.nema.org/medical/dicom/${VERSION}/output/html/part04.html -O standard/part04.html
-	wget http://dicom.nema.org/medical/dicom/${VERSION}/output/html/part06.html -O standard/part06.html
-	wget http://dicom.nema.org/medical/dicom/${VERSION}/output/html/part15.html -O standard/part15.html
-	wget http://dicom.nema.org/medical/dicom/${VERSION}/output/html/part16.html -O standard/part16.html
-	wget http://dicom.nema.org/medical/dicom/${VERSION}/output/html/part17.html -O standard/part17.html
-	wget http://dicom.nema.org/medical/dicom/${VERSION}/output/html/part18.html -O standard/part18.html
+	wget --compression=auto http://dicom.nema.org/medical/dicom/${VERSION}/output/html/part03.html -O standard/part03.html
+	wget --compression=auto http://dicom.nema.org/medical/dicom/${VERSION}/output/html/part04.html -O standard/part04.html
+	wget --compression=auto http://dicom.nema.org/medical/dicom/${VERSION}/output/html/part06.html -O standard/part06.html
+	wget --compression=auto http://dicom.nema.org/medical/dicom/${VERSION}/output/html/part15.html -O standard/part15.html
+	wget --compression=auto http://dicom.nema.org/medical/dicom/${VERSION}/output/html/part16.html -O standard/part16.html
+	wget --compression=auto http://dicom.nema.org/medical/dicom/${VERSION}/output/html/part17.html -O standard/part17.html
+	wget --compression=auto http://dicom.nema.org/medical/dicom/${VERSION}/output/html/part18.html -O standard/part18.html
 
 checkversions:
 	@python3 --version 2>&1 | grep -q 3.5. || { echo "Need Python 3.5" && exit 1; }
