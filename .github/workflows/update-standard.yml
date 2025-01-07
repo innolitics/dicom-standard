@@ -54,6 +54,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: new_standard
+          path: new_standard/
       - name: Diff JSON files
         run: echo ::set-output name=diff_lines::$(diff -qr standard new_standard | grep -v ".gitignore" | wc -l)
         id: diff_files
