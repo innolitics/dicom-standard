@@ -28,7 +28,7 @@ jobs:
         run: |
           make clean
           make updatestandard VERSION='${{ env.DICOM_VERSION }}'
-          make
+          make -j
         working-directory: dicom_standard
       - name: Upload JSON files
         uses: actions/upload-artifact@v4
