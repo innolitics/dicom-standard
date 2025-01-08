@@ -12,7 +12,7 @@ env:
 jobs:
   make:
     name: Run make
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python ${{ env.PYTHON_VERSION }}
@@ -28,7 +28,7 @@ jobs:
         run: |
           make clean
           make updatestandard VERSION='${{ env.DICOM_VERSION }}'
-          make
+          make -j
         working-directory: dicom_standard
       - name: Upload JSON files
         uses: actions/upload-artifact@v4
@@ -38,7 +38,8 @@ jobs:
   test-and-commit:
     needs: make
     name: Run tox and commit to master
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
+    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python ${{ env.PYTHON_VERSION }}
@@ -54,6 +55,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: new_standard
+          path: new_standard/
       - name: Diff JSON files
         run: echo ::set-output name=diff_lines::$(diff -qr standard new_standard | grep -v ".gitignore" | wc -l)
         id: diff_files

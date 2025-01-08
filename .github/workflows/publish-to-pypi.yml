@@ -10,7 +10,7 @@ env:
 jobs:
   test:
     name: Run tests and and publish to Test PyPI
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python ${{ env.PYTHON_VERSION }}
@@ -40,7 +40,7 @@ jobs:
   publish:
     needs: test
     name: Publish package to PyPI
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python ${{ env.PYTHON_VERSION }}

@@ -19,7 +19,9 @@ deps = flake8
 commands = flake8
 
 [testenv:mypy]
-deps = mypy
+deps =
+    mypy
+    types-requests
 commands =
     mypy -p dicom_standard
     mypy -p tests
