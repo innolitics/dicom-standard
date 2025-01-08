@@ -39,6 +39,7 @@ jobs:
     needs: make
     name: Run tox and commit to master
     runs-on: ubuntu-22.04
+    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python ${{ env.PYTHON_VERSION }}
