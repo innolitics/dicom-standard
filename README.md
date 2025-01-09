@@ -97,14 +97,15 @@ The Python scripts used to generate the JSON files are designed to be as
 extensible as possible. If you want to run the code yourself or configure your
 own custom parsing stage, you'll need the following system-level dependencies:
 
-- Python 3.7
+- Python 3.12
 - Make + Unix tools
 
 You will probably also want to setup a "virtual environment" (e.g. using Conda,
 or Pyenv + Virtualenv) to install the project dependencies into.  Once you are
 in your "virtual environment", you can run:
-
+```shell
     $ make
+```
 
 to install and compile everything. Add the `-j` flag to speed this process up
 significantly.
@@ -113,19 +114,19 @@ significantly.
 
 To download and parse the most up-to-date web version of the DICOM Standard,
 run the following commands in the `dicom_standard` directory:
-
+```shell
     $ make clean
     $ make updatestandard
     $ make
-
+```
 Then copy the output to the `standard/` directory:
-
+```shell
     $ cp dist/* ../standard/
-
+```
 To download an older version of the DICOM Standard, run
-
+```shell
     $ make updatestandard VERSION=<version>
-
+```
 with the year and revision desired, e.g. `2018e`, `2019c`.
 
 WARNING: Differences between previous versions and the current version may cause bugs when used with the current parser library. We recommend forking this repository if you need to use a specific version of the standard.
@@ -140,7 +141,7 @@ and other `*_utils.py` modules.
 
 The overall data flow of this program takes the following form:
 
-```
+```asciidoc
           extract                      (post)process
 Raw HTML ---------> JSON intermediate ---------------> JSON final
 

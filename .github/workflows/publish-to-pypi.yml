@@ -5,12 +5,12 @@ on:
     tags:
       - v*
 env:
-  PYTHON_VERSION: '3.7'
+  PYTHON_VERSION: '3.12'
 
 jobs:
   test:
     name: Run tests and and publish to Test PyPI
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python ${{ env.PYTHON_VERSION }}
@@ -40,7 +40,7 @@ jobs:
   publish:
     needs: test
     name: Publish package to PyPI
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python ${{ env.PYTHON_VERSION }}
