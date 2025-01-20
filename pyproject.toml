@@ -8,11 +8,11 @@ build-backend = "setuptools.build_meta"
 [tool.tox]
 legacy_tox_ini = """
 [tox]
-envlist = py37, flake8, mypy, pytest, build-dist
+envlist = py312, flake8, mypy, pytest, build-dist
 isolated_build = true
 
 [testenv]
-basepython = python3.7
+basepython = python3.12
 
 [testenv:flake8]
 deps = flake8
