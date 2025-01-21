@@ -94,6 +94,11 @@ def get_table_title_from_id(standard, table_id):
 #     assert 'Macro Attributes' not in table_title, 'Table title now contains suffix "Macro Attributes"'
 
 
+# def test_missing_word_in_table_a_89_4_1_title(part03):
+#     table_title = get_table_title_from_id(part03, 'table_A.89.4-1')
+#     assert 'Photoacoustic Image' not in table_title, 'Table title now contains full macro name ("Photoacoustic Image Functional Group Macros")'
+
+
 def test_sect_tid_1004_invalid_url():
     test_url = 'http://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_TID_1004.html#sect_TID_1004'
     status_code = requests.get(test_url).status_code
@@ -143,12 +148,6 @@ def test_missing_module_type_in_section_a_90_2_5_description(part03):
 #     #for attr in RETIREMENT_MISMATCH_ATTRIBUTES:
 #     #    assert table_description_text == table_title, f'{attr} no longer has a retirement value mismatch in tables 6-1 and E.1-1'
 #     assert False
-
-
-def test_missing_word_in_table_a_89_4_1_title(part03):
-    table_title = get_table_title_from_id(part03, 'table_A.89.4-1')
-    assert 'Photoacoustic Image' not in table_title, 'Table title now contains full macro name ("Photoacoustic Image Functional Group Macros")'
-
 
 def test_missing_word_in_table_b_5_1(part04):
     table = get_table_rows_from_ids(part04, ['table_B.5-1'], ['name', 'id', 'ciod'])
