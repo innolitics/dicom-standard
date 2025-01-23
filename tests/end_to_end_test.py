@@ -133,10 +133,10 @@ def test_valid_ciod_names(sops, ciods):
 @pytest.mark.endtoend
 def test_vertical_samples_from_standard(ciods, modules, attributes):
     test_ciod = {
-        "name": "Ultrasound Multi-frame Image",
-        "id": "ultrasound-multi-frame-image",
-        "description": "<p>\nThe Ultrasound Multi-frame Image IOD specifies a Multi-frame image that has been created by an ultrasound imaging device.</p>",
-        "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.7.4.html#table_A.7-1"
+        "name":"Ultrasound Multi-frame Image",
+        "id":"ultrasound-multi-frame-image",
+        "description":"<p>\nThe <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.7.html#sect_A.7\" target=\"_blank\">Ultrasound Multi-frame Image IOD</a> specifies a Multi-frame Image that has been created by an ultrasound imaging device.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.7.4.html#table_A.7-1"
     }
     test_module = {
         "name": "Patient",
@@ -282,10 +282,10 @@ def test_trace_from_attribute_to_ciod(ciods, ciod_module_relationship, modules,
         "informationEntity": "Study"
     }
     ciod = {
-        "name": "Computed Radiography Image",
-        "id": "computed-radiography-image",
-        "description": "<p>\nThe Computed Radiography (CR) Image IOD specifies an image that has been created by a computed radiography imaging device.</p>",
-        "linkToStandard": "http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.2.3.html#table_A.2-1"
+        "name":"Computed Radiography Image",
+        "id":"computed-radiography-image",
+        "description":"<p>\nThe <a href=\"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.2.html#sect_A.2\" target=\"_blank\">Computed Radiography Image IOD</a> specifies an image that has been created by a computed radiography imaging device.</p>",
+        "linkToStandard":"http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.2.3.html#table_A.2-1"
     }
     assert attr in attributes
     assert module_attr[0] in module_attribute_relationship
