@@ -57,7 +57,7 @@ jobs:
           name: new_standard
           path: new_standard/
       - name: Diff JSON files
-        run: echo ::set-output name=diff_lines::$(diff -qr standard new_standard | grep -v ".gitignore" | wc -l)
+        run: echo "diff_lines=$(diff -qr standard new_standard | grep -v '.gitignore' | wc -l)" >> $GITHUB_OUTPUT
         id: diff_files
       - name: Update standard
         run: |
