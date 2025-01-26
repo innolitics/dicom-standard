@@ -57,7 +57,7 @@ jobs:
           name: new_standard
           path: new_standard/
       - name: Diff JSON files
-        run: echo ::set-output name=diff_lines::$(diff -qr standard new_standard | grep -v ".gitignore" | wc -l)
+        run: echo "diff_lines=$(diff -qr standard new_standard | grep -v '.gitignore' | wc -l)" >> $GITHUB_OUTPUT
         id: diff_files
       - name: Update standard
         run: |
@@ -66,8 +66,9 @@ jobs:
         if: steps.diff_files.outputs.diff_lines > 0
       - name: Run tests
         run: tox
-      - name: Publish to master
-        uses: mikeal/publish-to-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        if: success() && steps.diff_files.outputs.diff_lines > 0
+      # temporary disable "publish to master", which may commit the changes in an unapproved PR  
+      # - name: Publish to master
+      #   uses: mikeal/publish-to-github-action@master
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   if: success() && steps.diff_files.outputs.diff_lines > 0
