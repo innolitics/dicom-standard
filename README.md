@@ -253,7 +253,6 @@ Current standard workarounds (as of rev.2024e):
 | The [Confocal Microscopy Image Functional Group Macros](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.90.html#sect_A.90.1.5) section doesn't have a description, causing the "module_type" value to be None when it should be "Multi-frame" | `extract_ciod_func_group_macro_tables.py` |
 | The [Confocal Microscopy Tiled Pyramidal Image Functional Group Macros](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.90.2.5.html#sect_A.90.2.5) section doesn't have a description, causing the "module_type" value to be None when it should be "Multi-frame" | `extract_ciod_func_group_macro_tables.py` |
 | [Table A.89.4-1](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.89.4.html#table_A.89.4-1) is missing part of the IOD name ("Photoacoustic" instead of "Photoacoustic Image") in its title | `extract_ciod_func_group_macro_tables.py` |
-| The "Confocal Micrsocopy Tiled Pyramidal" IOD Specification in [Table B.5-1](https://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_B.5.html#table_B.5-1) should include the word "Image" after "Pyramidal" | `extract_sops.py` |
 | The "Pseudo-color Softcopy Presentation State" IOD Specification in [Table B.5-1](https://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_B.5.html#table_B.5-1) should have an upper-case "C" in "Color" | `extract_sops.py` |
 | \*The "Enhanced MR Image" attribute appears twice in [Table C.8-79](http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.13.html#table_C.8-79) with the same hierarchy without a conditional statement | `postprocess_merge_duplicate_nodes.py` |
 
@@ -274,6 +273,7 @@ Fixed workarounds:
 | [Table C.8.34.5.1-1](https://dicom.nema.org/medical/dicom/2023c/output/chtml/part03/sect_C.8.34.5.html#table_C.8.34.5.1-1) Macro table 'Photoacoustic Excitation Characteristics Attributes' is not using suffix 'Macro Attributes' | `extract_modules_macros_with_attributes.py`<br>`parse_lib.py` | 2023e |
 | \*The "Content Creator's Name" attribute appears twice in [Table C.36.8-1](http://dicom.nema.org/medical/dicom/2019c/output/chtml/part03/sect_C.36.8.html#table_C.36.8-1) with the same hierarchy without a conditional statement | `postprocess_merge_duplicate_nodes.py` | 2023e |
 | \*[Table F.3-3](http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_F.3.2.2.html#table_F.3-3) contains a "Record Selection Keys" attribute with an invalid tag ("See F.5") | `preprocess_modules_with_attributes.py` | 2023e |
+| The "Confocal Micrsocopy Tiled Pyramidal" IOD Specification in [Table B.5-1](https://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_B.5.html#table_B.5-1) should include the word "Image" after "Pyramidal" | `extract_sops.py` | 2024e |
 
 ## Contact
 
