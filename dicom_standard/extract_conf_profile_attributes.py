@@ -2,6 +2,7 @@
 Extract the listing of all attributes given in table E.1-1 from part 15 of the DICOM Standard.
 '''
 from typing import cast, Dict, List, Union
+import re
 import sys
 
 from bs4 import BeautifulSoup
@@ -17,6 +18,8 @@ COLUMN_TITLES = [
 TABLE_ID = 'table_E.1-1'
 
 RETIREMENT_MISMATCH_ATTRIBUTES = ['Referenced Patient Alias Sequence']
+
+TAG_PATTERN = re.compile(r'\(\w{4},\w{4}\)')
 
 AttrTableType = List[Dict[str, Union[str, bool]]]
 
@@ -39,11 +42,26 @@ def get_conf_profile_table(standard: BeautifulSoup) -> List[TableDictType]:
     return table_to_dict(list_table, COLUMN_TITLES, omit_empty=True)
 
 
+def extract_tag(raw_tag: str) -> str:
+    """Standard workaround: isolate the tag from a cell that qualifies it with prose
+    The "Private Attributes" row of Table E.1-1 gives its tag as
+    "(gggg,eeee) where gggg is odd". Without this, the trailing prose ends up in the
+    attribute's tag and ID, giving that one row a shape no other row has.
+    Args:
+        raw_tag (str): the contents of the table's tag cell
+    Returns:
+        str: the tag alone, or the original cell if it contains no tag
+    """
+    match = TAG_PATTERN.search(raw_tag)
+    return match.group(0) if match else raw_tag
+
+
 def table_to_json(table: List[TableDictType]) -> List[TableDictType]:
     attributes = []
     for attr in table:
-        attr['id'] = pl.create_slug(attr['tag'])
-        attr['tag'] = attr['tag'].upper()
+        tag = extract_tag(attr['tag'])
+        attr['id'] = pl.create_slug(tag)
+        attr['tag'] = tag.upper()
         attributes.append(attr)
     return attributes
 
